@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Trunkreturntype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Trunkreturntype" type="Trans.DAL.Entity.Trunkreturntype" />
+		<typeAlias alias="TrunkreturntypePagination" type="Trans.DAL.Entity.TrunkreturntypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Trunkreturntype">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Typename" column="typename" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Trunkreturntype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkreturntype 
+		</select>
+		<select id="Trunkreturntype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM trunkreturntype
+		</select>
+		<select id="Trunkreturntype.FindAllPagination" parameterClass="TrunkreturntypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunkreturntype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkreturntype.Find" parameterClass="Trunkreturntype" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
+			WHERE trunkreturntype.id=#Id#
+		</select>
+		<select id="Trunkreturntype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
+			WHERE trunkreturntype.typename = #value#
+		</select>
+		<select id="TrunkreturntypePagination.FindByTypename" parameterClass="TrunkreturntypePagination" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
+			WHERE trunkreturntype.typename = #Typename# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Trunkreturntype.Insert" parameterClass="Trunkreturntype">
+			INSERT INTO trunkreturntype (id,typename) VALUES (#Id#,#Typename#)
+		</insert>
+		<update id="Trunkreturntype.Update" parameterClass="Trunkreturntype">
+			UPDATE trunkreturntype SET typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Trunkreturntype.Delete" parameterClass="Trunkreturntype">
+			DELETE FROM trunkreturntype WHERE id=#Id#
+		</delete>
+		<delete id="Trunkreturntype.DeleteByTypename" parameterClass="String">
+			DELETE FROM trunkreturntype WHERE typename=#value# 
+		</delete>
+	</statements>
+</sqlMap>

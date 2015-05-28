@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Articletype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Articletype" type="Trans.DAL.Entity.Articletype" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Articletype">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Typename" column="typename" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Articletype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM articletype 
+		</select>
+		<select id="Articletype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM articletype
+		</select>
+		<select id="Articletype.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.active = #value#
+		</select>
+		<select id="Articletype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.typename = #value#
+		</select>
+		<select id="Articletype.Find" parameterClass="Articletype" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.id=#Id#
+		</select>
+		<insert id="Articletype.Insert" parameterClass="Articletype">
+			INSERT INTO articletype (active,typename,id) VALUES (#Active#,#Typename#,#Id#)
+		</insert>
+		<update id="Articletype.Update" parameterClass="Articletype">
+			UPDATE articletype SET active=#Active#,typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Articletype.DeleteByActive" parameterClass="Byte">
+			DELETE FROM articletype WHERE active=#value# 
+		</delete>
+		<delete id="Articletype.DeleteByTypename" parameterClass="String">
+			DELETE FROM articletype WHERE typename=#value# 
+		</delete>
+		<delete id="Articletype.Delete" parameterClass="Articletype">
+			DELETE FROM articletype WHERE id=#Id#
+		</delete>
+	</statements>
+</sqlMap>

@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<artsurvey xmlns="http://tempuri.org/artsurvey.xsd">
+  <degree>
+    <id>1</id>
+    <degree>大专</degree>
+  </degree>
+  <degree>
+    <id>2</id>
+    <degree>本科</degree>
+  </degree>
+  <degree>
+    <id>3</id>
+    <degree>硕士</degree>
+  </degree>
+  <degree>
+    <id>4</id>
+    <degree>博士</degree>
+  </degree>
+</artsurvey>

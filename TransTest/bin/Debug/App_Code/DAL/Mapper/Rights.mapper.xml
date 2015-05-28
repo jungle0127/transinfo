@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Rights" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Rights" type="Trans.DAL.Entity.Rights" />
+		<typeAlias alias="RightsPagination" type="Trans.DAL.Entity.RightsPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Rights">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Righturl" column="righturl" dbType="varchar"/>
+			<result property="Rightname" column="rightname" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Rights.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM rights 
+		</select>
+		<select id="Rights.FindAll" resultMap="FullResultMap">
+			SELECT * FROM rights
+		</select>
+		<select id="Rights.FindAllPagination" parameterClass="RightsPagination" resultMap="FullResultMap">
+			SELECT * FROM rights limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.active = #value#
+		</select>
+		<select id="RightsPagination.FindByActive" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.active = #Active# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.Find" parameterClass="Rights" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.id=#Id#
+		</select>
+		<select id="Rights.FindByRighturl" parameterClass="String" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.righturl = #value#
+		</select>
+		<select id="RightsPagination.FindByRighturl" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.righturl = #Righturl# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.FindByRightname" parameterClass="String" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.rightname = #value#
+		</select>
+		<select id="RightsPagination.FindByRightname" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.rightname = #Rightname# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Rights.Insert" parameterClass="Rights">
+			INSERT INTO rights (active,id,righturl,rightname) VALUES (#Active#,#Id#,#Righturl#,#Rightname#)
+		</insert>
+		<update id="Rights.Update" parameterClass="Rights">
+			UPDATE rights SET active=#Active#,righturl=#Righturl#,rightname=#Rightname# WHERE id=#Id#
+		</update>
+		<delete id="Rights.DeleteByActive" parameterClass="Byte">
+			DELETE FROM rights WHERE active=#value# 
+		</delete>
+		<delete id="Rights.Delete" parameterClass="Rights">
+			DELETE FROM rights WHERE id=#Id#
+		</delete>
+		<delete id="Rights.DeleteByRighturl" parameterClass="String">
+			DELETE FROM rights WHERE righturl=#value# 
+		</delete>
+		<delete id="Rights.DeleteByRightname" parameterClass="String">
+			DELETE FROM rights WHERE rightname=#value# 
+		</delete>
+	</statements>
+</sqlMap>

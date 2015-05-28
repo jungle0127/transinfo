@@ -1,0 +1,142 @@
+body{ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background:url(../imgs/bg.jpg) no-repeat center; background-attachment:fixed;margin:0;}
+homeBg{height:100%,width:100%; background-color: #E0DDDD;}
+.whiteBold{ color:#ccc; font-weight:bold;}
+/*-------------------------------------------------------------------------------#EFEFEF;#23D14D----#177A6C----*/
+#home_top{text-align:right; padding-right:50px; background-color: #000;filter: alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8; }
+/*#home_top a span{ display:none;}
+#home_top a:hover span{ display:inline; text-decoration:none; }*/
+#userI{ width:auto; height:50px;float:right;  text-align:center; margin-bottom:5px;}
+#userI a{ font-size:16px; font-weight:bold;text-decoration:none !important; margin-bottom:0;}
+#logo{float:left; margin-top:10px;}
+/*---------------------------------------------------------------------------------------*/
+#footer { width:100%; height:35px; font-size:12px; color: #666; z-index:1; position:fixed; left:0px; bottom:0;}
+#footer .footer-bg{ width:100%; height:35px;background-color:#000;filter: alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8;position:absolute; left:0px; bottom:0px;}
+#footer_about {color:#76b317; width:auto; position:absolute; left:20px; top:10px;}
+#footer_about a:link { padding:0px 10px; width:400px; color:#76b317; text-decoration:none; font-weight: bold; }
+#footer_about a:visited { padding:0px 10px; width:400px; color:#76b317; text-decoration:none; font-weight: bold; }
+#footer_about a:hover { padding:0px 10px; width:400px; color:#d4ff91; text-decoration:none; font-weight: bold; }
+#footer_copyright { position:absolute; right:10px; top:0px; height:34px; line-height:34px;}
+#footer_copyright a { color:#ede6c7; }
+/*-------------------------------------------------------------------------*/
+#home_middle{width:100%;height:480px;text-align:center; margin-top:0;vertical-align: top;}
+.wrapper{clear: both;position:relative;width: 800px; margin-left:auto;margin-right:auto;}
+.grid-container{ width: 780px;;overflow: hidden;}
+.thumb-container{float: left;position: relative;width: 260px;height: 160px;cursor: pointer;}
+.first-thumb{ background: #5FCCC0; background:url(../imgs/index/thumbg1.png);}
+.second-thumb{ background: #39D87C; background:url(../imgs/index/thumbg2.png);}
+.third-thumb{ background:#23A0DD;background:url(../imgs/index/thumbg4.png);}
+.fourth-thumb{ background: #39D87C; background:url(../imgs/index/thumbg2.png);}
+.fifth-thumb{ background:#23A0DD;background:url(../imgs/index/thumbg4.png);}
+.sixth-thumb{ background: #5FCCC0;background:url(../imgs/index/thumbg1.png);}
+.plateName{ font-size:36px; font-weight:bold; color:#060;}
+img{ margin-left:10px;}
+/*------------------------------物流黄页列表-------------------------------------*/
+/*轮播图片的样式*/
+.company{width:780px; height:100px; position:absolute;}
+.company ul li:hover{}
+.company ul li{ float:left; width:99px; height:100px; background:#000;}
+.companyLogo img{width:100px; height:100px; filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5; border:0; list-style:none;}
+.companyInfo{width:600px; height:60px; position:absolute; margin-top:120px; margin-left:300px;}
+.companyName{ font-family:"宋体"; font-size:20px; font-weight:bold; color:#011b12; margin-left:27px;}
+.address{font-family:"宋体"; font-size:12px; color:#7b7c7c; text-align:left;}
+.tel{font-family:"宋体"; font-size:12px; color:#7b7c7c; text-align:left; margin-top:6px; line-height:150%;}
+.companyLogo_cent img{width:100px; height:100px; border:0; list-style:none;}
+/*---------------------------------------------------------------------------------------*/
+.quote-container{display: none;clear: left;width: 780px;height:auto; margin-bottom:0; text-align:center;}
+.quote-container a{ width:100px;height:100px;}
+.quote-container a font{ display:none;}
+.quote-container a:hover font{ display:inline-block; text-decoration:none;}
+.p131{ margin-left:2px; margin-top:2px;height:150px; width:250px;}
+.p132{width:100%; height:200px;}
+.quote{position: relative;font-size: 1.1em;line-height: 150%;height: auto;clear: left;color: #333;}
+.quote p,.quote a{ margin:0; padding-top:30px; padding-left:10px; padding-right:10px;}
+.light-info{ color: #999;font-size: 16px;padding: 0;line-height: 100%;}
+.popover { position: absolute;z-index: 1010;top: 10px;left: 0px; display: none; width: 260px; height: 160px;text-align: left;white-space: normal; background-color: #fff;}
+.popover-content {line-height: 150%;padding: 9px 14px;}
+.right{width:165px; background:#000;}
+.popover.green{ background: #9ACD32; color: #FFF;}
+.popover.pink{background: #E3D5E7;color: #FFF;}
+.popover.blue{ background: #00BFFF; color: #FFF;}
+.popover .arrow,.popover .arrow:after { position: absolute;display: block; width: 0; height: 0; border-color: transparent; border-style: solid;}
+.popover.top.green .arrow:after {bottom: 1px;margin-left: -10px;border-top-color: #9ACD32; border-bottom-width: 0;}
+.popover.top.pink .arrow:after { bottom: 1px; margin-left: -10px; border-top-color: #E3D5E7; border-bottom-width: 0;}
+.popover.top.blue .arrow:after{ bottom: 1px; margin-left: -10px; border-top-color: #00BFFF; border-bottom-width: 0;}
+/*------------------------------------------------------------------*/
+.showCarInfo{ width: 700px;}
+thead{ background:#B1B0B0;text-align:left;}
+.tableContainer{ border:1px #EBE5E5 solid;width:700px; margin-left:30px;}
+.tableMiddle{ font-style:italic; width:300px; color:#fff; height:42px; display:-moz-inline-box; display:inline-block; padding-top:5px;}
+.moreBottn{ margin-right:5px;width:32px; height:32px;}
+.moreBottn:hover{width:40px; height:40px;}
+#panel-heading{ text-align:right;}
+
+#tabs{ margin-left:200px; height:100px; padding-top:40px;}
+#tabs2{ height:100px; padding-top:40px;}
+#companyInfos{ text-align:left;}
+#company li{ margin-left:5px;}
+
+.listnr { width:720px; border:1px solid #E3DCDC; border-top:0px; padding:15px}
+.listnr li { margin:2px;  line-height:40px; list-style-type:none;}
+.listnr li font { color:#FF6500; font-size:14px; text-decoration:underline; font-weight:bold; font-family:"宋体"}
+.listneir { height:51px; border-top:1px dashed #DDDDDD; line-height:23px; padding:10px 0px; text-indent:2em}
+.green{ color:#060; }
+.white li a{color: #CCC;}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 960px) {
+	.wrapper, .quote{width: 960px; margin: 0 auto;}
+    .quote{font-size: 1.8em;}
+}
+@media (max-width: 900px) {
+	.wrapper, .quote{h: 720px; margin: 0 auto;}
+    .quote{ font-size: 1.4em;}
+}
+@media (max-width: 720px) {
+	.wrapper, .quote{width: 720px;margin: 0 auto;}
+    .quote{font-size: 1.4em;}
+}
+@media (max-width: 700px) {
+  .wrapper, .quote{width: 480px;margin: 0 auto;}
+  .quote{font-size: 1.2em;}
+}
+@media (max-width: 640px) {
+	.wrapper, .quote{width: 480px; margin: 0 auto;}
+    .quote{font-size: 1.2em;}
+}
+@media (max-width: 480px) {
+	.wrapper, .quote{width: 480px;margin: 0 auto;}
+    .quote{font-size: 1.2em;}
+    .info-img{ width: 200px;}
+}
+
+@media (max-width: 450px) {
+  .wrapper, .quote{ width: 240px;margin: 0 auto;}
+  .quote{ font-size: 1em; }
+  .info-img{ width: 120px; }
+}
+/*-------物流黄页------------------------------*/
+#pic_roll li{margin:0 0 5px 5px;padding:0;list-style:none; display:inline-block; width:200px; height:200px;}
+#pic_roll li:hover{ background:#FFF;}
+#pic_roll img{border:0;vertical-align:top; width:100%; height:100%;}
+#pic_roll{position:relative; width:700px; height:auto;text-align:left; margin:0;}
+#toLogistics{ float:right;}
+#toLogistics span{ display:none;}
+#toLogistics:hover{ width:40px; height:40px;}
+#toLogistics:hover span{ display:block;color:#CCC; font-weight:bold;}
+/*-------------------------------------------- for login page------------------*/
+.loginAndRegister{ width:700px;height:500px; background: url(../imgs/index/loginBg.png);margin:30px auto;}
+.tabL{ margin:20px -13px; width:698px; font-weight:bold;}
+#myTab a{ color:#fff; background:none; font-weight:bold;}
+#myTab a:active,#myTab a:focus{color:#00F;  background:#6FC;}
+.register_form,.login_form{ margin:0 auto; margin-top:100px; width:300px; height:200px; text-align:right;}
+.login_form tr{height:50px;}
+.userNameInput,.passwordInput,.checkbox,{margin-right:0;}
+.rember{ margin-right:50px; margin-left:5px;}
+#loginBtn{ background:url(../imgs/index/loginBtn.png); width:80px; height:36px; border:none;}
+#loginBtn:hover{ background:url(../imgs/index/loginOverBtn.png);}
+#exitBtn{ background:url(../imgs/index/outBtn.png);width:80px; height:36px; border:none;}
+#exitBtn:hover{ background:url(../imgs/index/outOverBtn.png);}
+#registerBtn{ background: url(../imgs/index/registerBtn.png);width:80px; height:36px; border:none;}
+#registerBtn:hover{ background:url(../imgs/index/registerOverBtn.png);}

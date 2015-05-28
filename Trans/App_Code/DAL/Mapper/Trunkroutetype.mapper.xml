@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Trunkroutetype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Trunkroutetype" type="Trans.DAL.Entity.Trunkroutetype" />
+		<typeAlias alias="TrunkroutetypePagination" type="Trans.DAL.Entity.TrunkroutetypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Trunkroutetype">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Typename" column="typename" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Trunkroutetype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkroutetype 
+		</select>
+		<select id="Trunkroutetype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM trunkroutetype
+		</select>
+		<select id="Trunkroutetype.FindAllPagination" parameterClass="TrunkroutetypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunkroutetype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkroutetype.Find" parameterClass="Trunkroutetype" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
+			WHERE trunkroutetype.id=#Id#
+		</select>
+		<select id="Trunkroutetype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
+			WHERE trunkroutetype.typename = #value#
+		</select>
+		<select id="TrunkroutetypePagination.FindByTypename" parameterClass="TrunkroutetypePagination" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
+			WHERE trunkroutetype.typename = #Typename# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Trunkroutetype.Insert" parameterClass="Trunkroutetype">
+			INSERT INTO trunkroutetype (id,typename) VALUES (#Id#,#Typename#)
+		</insert>
+		<update id="Trunkroutetype.Update" parameterClass="Trunkroutetype">
+			UPDATE trunkroutetype SET typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Trunkroutetype.Delete" parameterClass="Trunkroutetype">
+			DELETE FROM trunkroutetype WHERE id=#Id#
+		</delete>
+		<delete id="Trunkroutetype.DeleteByTypename" parameterClass="String">
+			DELETE FROM trunkroutetype WHERE typename=#value# 
+		</delete>
+	</statements>
+</sqlMap>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trans", "Trans\Trans.csproj", "{AD324118-AE2E-4875-BC23-8ED0A7854A37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransTest", "TransTest\TransTest.csproj", "{234AC503-9899-46CD-8DE2-12407851FB22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD324118-AE2E-4875-BC23-8ED0A7854A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD324118-AE2E-4875-BC23-8ED0A7854A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD324118-AE2E-4875-BC23-8ED0A7854A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD324118-AE2E-4875-BC23-8ED0A7854A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{234AC503-9899-46CD-8DE2-12407851FB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{234AC503-9899-46CD-8DE2-12407851FB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{234AC503-9899-46CD-8DE2-12407851FB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{234AC503-9899-46CD-8DE2-12407851FB22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Departuretype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Departuretype" type="Trans.DAL.Entity.Departuretype" />
+		<typeAlias alias="DeparturetypePagination" type="Trans.DAL.Entity.DeparturetypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Departuretype">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Typename" column="typename" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Departuretype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM departuretype 
+		</select>
+		<select id="Departuretype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM departuretype
+		</select>
+		<select id="Departuretype.FindAllPagination" parameterClass="DeparturetypePagination" resultMap="FullResultMap">
+			SELECT * FROM departuretype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Departuretype.Find" parameterClass="Departuretype" resultMap="FullResultMap" extends="Departuretype.FindAll">
+			WHERE departuretype.id=#Id#
+		</select>
+		<select id="Departuretype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Departuretype.FindAll">
+			WHERE departuretype.typename = #value#
+		</select>
+		<select id="DeparturetypePagination.FindByTypename" parameterClass="DeparturetypePagination" resultMap="FullResultMap" extends="Departuretype.FindAll">
+			WHERE departuretype.typename = #Typename# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Departuretype.Insert" parameterClass="Departuretype">
+			INSERT INTO departuretype (id,typename) VALUES (#Id#,#Typename#)
+		</insert>
+		<update id="Departuretype.Update" parameterClass="Departuretype">
+			UPDATE departuretype SET typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Departuretype.Delete" parameterClass="Departuretype">
+			DELETE FROM departuretype WHERE id=#Id#
+		</delete>
+		<delete id="Departuretype.DeleteByTypename" parameterClass="String">
+			DELETE FROM departuretype WHERE typename=#value# 
+		</delete>
+	</statements>
+</sqlMap>

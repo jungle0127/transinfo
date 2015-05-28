@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Bussinessscope" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Bussinessscope" type="Trans.DAL.Entity.Bussinessscope" />
+		<typeAlias alias="BussinessscopePagination" type="Trans.DAL.Entity.BussinessscopePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Bussinessscope">
+			<result property="Scopename" column="scopename" dbType="char"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Active" column="active" dbType="tinyint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Bussinessscope.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM bussinessscope 
+		</select>
+		<select id="Bussinessscope.FindAll" resultMap="FullResultMap">
+			SELECT * FROM bussinessscope
+		</select>
+		<select id="Bussinessscope.FindAllPagination" parameterClass="BussinessscopePagination" resultMap="FullResultMap">
+			SELECT * FROM bussinessscope limit #Limit# offset #Offset# 
+		</select>
+		<select id="Bussinessscope.FindByScopename" parameterClass="String" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.scopename = #value#
+		</select>
+		<select id="BussinessscopePagination.FindByScopename" parameterClass="BussinessscopePagination" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.scopename = #Scopename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Bussinessscope.Find" parameterClass="Bussinessscope" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.id=#Id#
+		</select>
+		<select id="Bussinessscope.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.active = #value#
+		</select>
+		<select id="BussinessscopePagination.FindByActive" parameterClass="BussinessscopePagination" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.active = #Active# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Bussinessscope.Insert" parameterClass="Bussinessscope">
+			INSERT INTO bussinessscope (scopename,id,active) VALUES (#Scopename#,#Id#,#Active#)
+		</insert>
+		<update id="Bussinessscope.Update" parameterClass="Bussinessscope">
+			UPDATE bussinessscope SET scopename=#Scopename#,active=#Active# WHERE id=#Id#
+		</update>
+		<delete id="Bussinessscope.DeleteByScopename" parameterClass="String">
+			DELETE FROM bussinessscope WHERE scopename=#value# 
+		</delete>
+		<delete id="Bussinessscope.Delete" parameterClass="Bussinessscope">
+			DELETE FROM bussinessscope WHERE id=#Id#
+		</delete>
+		<delete id="Bussinessscope.DeleteByActive" parameterClass="Byte">
+			DELETE FROM bussinessscope WHERE active=#value# 
+		</delete>
+	</statements>
+</sqlMap>

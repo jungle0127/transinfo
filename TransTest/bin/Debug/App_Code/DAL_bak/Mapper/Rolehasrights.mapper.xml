@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Rolehasrights" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Rolehasrights" type="Trans.DAL.Entity.Rolehasrights" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Rolehasrights">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Rightid" column="rightid" dbType="bigint"/>
+			<result property="Roleid" column="roleid" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Rolehasrights.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM role_has_rights 
+		</select>
+		<select id="Rolehasrights.FindAll" resultMap="FullResultMap">
+			SELECT * FROM role_has_rights
+		</select>
+		<select id="Rolehasrights.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.active = #value#
+		</select>
+		<select id="Rolehasrights.Find" parameterClass="Rolehasrights" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.id=#Id#
+		</select>
+		<select id="Rolehasrights.FindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.rightid = #value#
+		</select>
+		<select id="Rolehasrights.FindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.roleid = #value#
+		</select>
+		<insert id="Rolehasrights.Insert" parameterClass="Rolehasrights">
+			INSERT INTO role_has_rights (active,id,rightid,roleid) VALUES (#Active#,#Id#,#Rightid#,#Roleid#)
+		</insert>
+		<update id="Rolehasrights.Update" parameterClass="Rolehasrights">
+			UPDATE role_has_rights SET active=#Active#,rightid=#Rightid#,roleid=#Roleid# WHERE id=#Id#
+		</update>
+		<delete id="Rolehasrights.DeleteByActive" parameterClass="Byte">
+			DELETE FROM role_has_rights WHERE active=#value# 
+		</delete>
+		<delete id="Rolehasrights.Delete" parameterClass="Rolehasrights">
+			DELETE FROM role_has_rights WHERE id=#Id#
+		</delete>
+		<delete id="Rolehasrights.DeleteByRightid" parameterClass="Int64">
+			DELETE FROM role_has_rights WHERE rightid=#value# 
+		</delete>
+		<delete id="Rolehasrights.DeleteByRoleid" parameterClass="Int64">
+			DELETE FROM role_has_rights WHERE roleid=#value# 
+		</delete>
+	</statements>
+</sqlMap>

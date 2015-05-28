@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<artsurvey xmlns="http://tempuri.org/artsurvey.xsd">
+  <sex>
+    <id>1</id>
+    <sex>男</sex>
+  </sex>
+  <sex>
+    <id>2</id>
+    <sex>女</sex>
+  </sex>
+</artsurvey>

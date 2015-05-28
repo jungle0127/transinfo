@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vvehiclenumber" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vvehiclenumber" type="Trans.DAL.Entity.Vvehiclenumber" />
+		<typeAlias alias="VvehiclenumberPagination" type="Trans.DAL.Entity.VvehiclenumberPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vvehiclenumber">
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Prefixname" column="prefixname" dbType="varchar"/>
+			<result property="Number" column="number" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vvehiclenumber.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_vehicle_number 
+		</select>
+		<select id="Vvehiclenumber.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_vehicle_number
+		</select>
+		<select id="Vvehiclenumber.FindAllPagination" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap">
+			SELECT * FROM v_vehicle_number limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.userid = #value#
+		</select>
+		<select id="VvehiclenumberPagination.FindByUserid" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.userid = #Userid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.id = #value#
+		</select>
+		<select id="VvehiclenumberPagination.FindById" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.id = #Id# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.prefixname = #value#
+		</select>
+		<select id="VvehiclenumberPagination.FindByPrefixname" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.prefixname = #Prefixname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.number = #value#
+		</select>
+		<select id="VvehiclenumberPagination.FindByNumber" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.number = #Number# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://nant.sourceforge.net/release/0.92/nant.xsd" default="build_develop" name="TransTest">
+  <property name="basedir" value="."/>
+  <property name="Configuration" value="Release"/>
+  <!--Release or Debug-->
+  <property name="assembly.version" value="1.0.0.0"/>
+  <property name="assembly.title" value="www.trans.org"/>
+  <property name="dll.filename" value="TransTest.dll"/>
+
+  <property name="Solution" value="${basedir}/../Trans.sln"/>
+  <property name="build.dir" value="d:\target"/>
+  <property name="sdk40.dir" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319"/>
+  <property name="msbuild.exe" value="${sdk40.dir}\msbuild.exe"/>
+
+  <property name="aspnet_compiler.exe" value="${sdk40.dir}\aspnet_compiler.exe"/>
+  <property name="asp_merge.exe" value="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\aspnet_merge.exe"/>
+
+  <target name="init" description="Clear the output directory.">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+  </target>
+  
+  
+  
+</project>

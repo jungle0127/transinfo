@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="UspTestParam" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="UspTestParam" type="Trans.DAL.Entity.UspTestParam" />
+  </alias>
+  <parameterMaps>
+  <parameterMap id="uspTestParam_data" class="UspTestParam">
+      <parameter property="Param1" dbType="text" direction="Input"></parameter>
+      <parameter property="Param2" dbType="varchar(20)" direction="Input"></parameter>
+      <parameter property="Param3" dbType="bigint" direction="Output"></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <statements>
+    <procedure id="uspTestParamid" parameterMap="uspTestParam_data">
+uspTestParam
+    </procedure>
+  </statements>
+</sqlMap>

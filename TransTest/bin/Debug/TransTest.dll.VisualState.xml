@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1015]D:\Study\transinfo\ForSale\Trans\TransTest\bin\Debug\TransTest.dll</TopNode>
+  <SelectedNode>[0-1014]TransTest.DAL.Dao.RoleDaoTest.testDeleteById</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1015]D:\Study\transinfo\ForSale\Trans\TransTest\bin\Debug\TransTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1016]TransTest" Expanded="true" />
+    <Node UniqueName="[0-1017]TransTest.DAL" Expanded="true" />
+    <Node UniqueName="[0-1018]TransTest.DAL.Dao" Expanded="true" />
+    <Node UniqueName="[0-1011]TransTest.DAL.Dao.RoleDaoTest" Expanded="true" />
+    <Node UniqueName="[0-1004]TransTest.DAL.Dao.UsersDaoTest" Expanded="true" />
+    <Node UniqueName="[0-1009]TransTest.DAL.Dao.VrightsfullinfoDaoTest" Expanded="true" />
+    <Node UniqueName="[0-1000]TransTest.DAL.Dao.VuserrightsDaoTest" Expanded="true" />
+  </Nodes>
+</VisualState>

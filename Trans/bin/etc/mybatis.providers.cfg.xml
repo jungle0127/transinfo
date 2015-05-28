@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<providers
+xmlns='http://ibatis.apache.org/providers'
+xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+
+  <clear/>
+  <provider
+  name="MySql"
+  description="MySQL, MySQL provider 6.9.5.0"
+  enabled="true"
+  assemblyName="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" connectionClass="MySql.Data.MySqlClient.MySqlConnection"
+  commandClass="MySql.Data.MySqlClient.MySqlCommand"
+  parameterClass="MySql.Data.MySqlClient.MySqlParameter"
+  parameterDbTypeClass="MySql.Data.MySqlClient.MySqlDbType"
+  parameterDbTypeProperty="MySqlDbType"
+  dataAdapterClass="MySql.Data.MySqlClient.MySqlDataAdapter"
+  commandBuilderClass="MySql.Data.MySqlClient.MySqlCommandBuilder"
+  usePositionalParameters="false"
+  useParameterPrefixInSql="true"
+  useParameterPrefixInParameter="true"
+  parameterPrefix="?"
+  allowMARS="false"
+  />
+  <provider
+   name='MSSQLSERVER2008'
+   enabled='false'
+   description='Microsoft SQL Server, provider V4.0.0.0 in framework .NET V4.0'
+   assemblyName='System.Data, Version=4.0.0.0, Culture=Neutral, PublicKeyToken=b77a5c561934e089'
+   connectionClass='System.Data.SqlClient.SqlConnection'
+   commandClass='System.Data.SqlClient.SqlCommand'
+   parameterClass='System.Data.SqlClient.SqlParameter'
+   parameterDbTypeClass='System.Data.SqlDbType'
+   parameterDbTypeProperty='SqlDbType'
+   dataAdapterClass='System.Data.SqlClient.SqlDataAdapter'
+   commandBuilderClass=' System.Data.SqlClient.SqlCommandBuilder'
+   usePositionalParameters = 'false'
+   useParameterPrefixInSql = 'true'
+   useParameterPrefixInParameter = 'true'
+   parameterPrefix='@'
+   allowMARS='false'
+    />
+</providers>

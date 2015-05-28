@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="UspInsertTrunkMetadata" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="UspInsertTrunkMetadata" type="Trans.DAL.Entity.USP.UspInsertTrunkMetadata" />
+  </alias>
+  <parameterMaps>
+  <parameterMap id="uspInsertTrunkMetadata_data" class="UspInsertTrunkMetadata">
+      <parameter property="XmlData" dbType="text" direction="Input"></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <statements>
+    <procedure id="uspInsertTrunkMetadataid" parameterMap="uspInsertTrunkMetadata_data">
+uspInsertTrunkMetadata
+    </procedure>
+  </statements>
+</sqlMap>

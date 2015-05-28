@@ -1,0 +1,149 @@
+2015-05-25 15:37:28,346 [5] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 15:37:28,640 [5] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 15:37:28,643 [5] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 15:39:34,845 [11] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 15:39:34,867 [11] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 15:39:34,869 [11] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 15:40:55,424 [14] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 15:40:55,521 [14] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 15:40:55,523 [14] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 16:04:09,698 [18] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 16:04:09,720 [18] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 16:04:09,722 [18] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 16:53:46,969 [16] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 16:53:47,006 [16] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 16:53:47,008 [16] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 16:54:31,055 [13] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 16:54:31,058 [13] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 16:54:31,058 [13] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 17:01:21,802 [15] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 17:01:21,858 [15] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 17:01:21,859 [15] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 17:01:47,377 [5] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 17:01:47,386 [5] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 17:01:47,386 [5] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:28:11,374 [18] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:28:11,394 [18] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:28:11,395 [18] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:29:26,935 [21] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:29:26,954 [21] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:29:26,956 [21] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:30:51,217 [96] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:30:51,339 [96] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:30:51,341 [96] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:31:51,904 [96] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:31:51,994 [96] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:31:51,995 [96] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:33:19,733 [22] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:33:19,753 [22] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:33:19,754 [22] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:35:36,184 [6] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:35:36,203 [6] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:35:36,205 [6] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-25 22:42:05,080 [17] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:20) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - role dao initiated done.
+2015-05-25 22:42:05,083 [17] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:22) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - Got all the role entity
+2015-05-25 22:42:05,084 [17] (D:\Study\transinfo\ForSale\Trans\Trans\admin\rightmanager\rolemanagement.aspx.cs:25) INFO  Trans.admin.rightmanager.rolemanagement [(null)] - GridView data bind done.
+2015-05-27 20:53:52,639 [201] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 20:53:53,424 [201] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 20:53:53,709 [201] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-27 20:53:53,718 [201] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-27 20:53:53,718 [201] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-27 21:00:27,202 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:00:27,933 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:00:28,666 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-27 21:00:28,670 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-27 21:00:28,670 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-27 21:00:43,831 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:00:44,521 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:00:48,437 [23] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:00:49,204 [23] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:00:51,303 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:00:51,958 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:01:32,532 [23] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:01:33,277 [23] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:02:35,036 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:02:35,876 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:02:35,906 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-27 21:02:35,906 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-27 21:02:35,906 [49] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-27 21:03:15,896 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:03:16,496 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:03:16,506 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-27 21:03:16,506 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-27 21:03:16,506 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-27 21:03:26,636 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:03:27,286 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:03:27,916 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-27 21:03:27,926 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-27 21:03:27,926 [200] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-27 21:03:32,006 [197] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-27 21:03:32,666 [197] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-27 21:03:32,666 [197] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-27 21:03:32,676 [197] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-27 21:03:32,676 [197] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:01:15,931 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:01:16,708 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:01:16,835 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:01:16,845 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:01:16,847 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:01:24,358 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:01:25,101 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:01:25,110 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:01:25,113 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:01:25,113 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:01:32,540 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:01:33,182 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:01:33,818 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:01:33,821 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:01:33,821 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:01:48,977 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:01:49,642 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:01:49,653 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:01:49,656 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:01:49,656 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:07:10,210 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:07:10,893 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:07:11,384 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:07:11,601 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:07:11,605 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:07:11,606 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:07:11,910 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:07:12,600 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:07:12,603 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:07:12,603 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:07:26,901 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:07:27,525 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:07:37,695 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:07:38,377 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:07:42,191 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:07:42,937 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:08:04,443 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:08:05,109 [185] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:08:09,322 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:08:10,050 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:08:10,061 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:08:10,065 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:08:10,066 [168] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:26:57,362 [164] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:26:58,062 [164] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:26:58,070 [164] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:29) INFO  Trans.Biz.Common.CityManager [(null)] - Begin query all provinces.
+2015-05-28 09:26:58,072 [164] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:32) INFO  Trans.Biz.Common.CityManager [(null)] - Got province items count:34
+2015-05-28 09:26:58,072 [164] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:37) INFO  Trans.Biz.Common.CityManager [(null)] - Query province done.
+2015-05-28 09:27:07,768 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:08,398 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:11,148 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:11,826 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:14,484 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:15,198 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:18,123 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:18,878 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:21,273 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:21,895 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:24,260 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:24,953 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:27,401 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:28,077 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:31,211 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:31,853 [140] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.
+2015-05-28 09:27:57,498 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:20) INFO  Trans.Biz.Common.CityManager [(null)] - Begin initiate CityManager.
+2015-05-28 09:27:58,214 [172] (D:\Study\transinfo\ForSale\Trans\Trans\App_Code\Biz\Common\CityManager.cs:24) INFO  Trans.Biz.Common.CityManager [(null)] - Initiate CityManager done.

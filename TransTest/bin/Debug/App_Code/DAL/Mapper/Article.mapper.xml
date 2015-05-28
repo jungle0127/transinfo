@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Article" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Article" type="Trans.DAL.Entity.Article" />
+		<typeAlias alias="ArticlePagination" type="Trans.DAL.Entity.ArticlePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Article">
+			<result property="Releasedate" column="releasedate" dbType="datetime"/>
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Title" column="title" dbType="varchar"/>
+			<result property="Hittimes" column="hittimes" dbType="bigint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Titlecolor" column="titlecolor" dbType="varchar"/>
+			<result property="Typeid" column="typeid" dbType="bigint"/>
+			<result property="Content" column="content" dbType="text"/>
+			<result property="Releaseip" column="releaseip" dbType="varchar"/>
+			<result property="Istop" column="istop" dbType="tinyint"/>
+			<result property="Ispass" column="ispass" dbType="tinyint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Article.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM article 
+		</select>
+		<select id="Article.FindAll" resultMap="FullResultMap">
+			SELECT * FROM article
+		</select>
+		<select id="Article.FindAllPagination" parameterClass="ArticlePagination" resultMap="FullResultMap">
+			SELECT * FROM article limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.releasedate = #value#
+		</select>
+		<select id="ArticlePagination.FindByReleasedate" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.userid = #value#
+		</select>
+		<select id="ArticlePagination.FindByUserid" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.userid = #Userid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.title = #value#
+		</select>
+		<select id="ArticlePagination.FindByTitle" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.title = #Title# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByHittimes" parameterClass="Int64" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.hittimes = #value#
+		</select>
+		<select id="ArticlePagination.FindByHittimes" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.hittimes = #Hittimes# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.Find" parameterClass="Article" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.id=#Id#
+		</select>
+		<select id="Article.FindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.titlecolor = #value#
+		</select>
+		<select id="ArticlePagination.FindByTitlecolor" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.titlecolor = #Titlecolor# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByTypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.typeid = #value#
+		</select>
+		<select id="ArticlePagination.FindByTypeid" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.typeid = #Typeid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.content = #value#
+		</select>
+		<select id="ArticlePagination.FindByContent" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.content = #Content# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByReleaseip" parameterClass="String" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.releaseip = #value#
+		</select>
+		<select id="ArticlePagination.FindByReleaseip" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.releaseip = #Releaseip# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByIstop" parameterClass="Byte" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.istop = #value#
+		</select>
+		<select id="ArticlePagination.FindByIstop" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.istop = #Istop# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Article.FindByIspass" parameterClass="Byte" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.ispass = #value#
+		</select>
+		<select id="ArticlePagination.FindByIspass" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.ispass = #Ispass# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Article.Insert" parameterClass="Article">
+			INSERT INTO article (releasedate,userid,title,hittimes,id,titlecolor,typeid,content,releaseip,istop,ispass) VALUES (#Releasedate#,#Userid#,#Title#,#Hittimes#,#Id#,#Titlecolor#,#Typeid#,#Content#,#Releaseip#,#Istop#,#Ispass#)
+		</insert>
+		<update id="Article.Update" parameterClass="Article">
+			UPDATE article SET releasedate=#Releasedate#,userid=#Userid#,title=#Title#,hittimes=#Hittimes#,titlecolor=#Titlecolor#,typeid=#Typeid#,content=#Content#,releaseip=#Releaseip#,istop=#Istop#,ispass=#Ispass# WHERE id=#Id#
+		</update>
+		<delete id="Article.DeleteByReleasedate" parameterClass="DateTime">
+			DELETE FROM article WHERE releasedate=#value# 
+		</delete>
+		<delete id="Article.DeleteByUserid" parameterClass="Int64">
+			DELETE FROM article WHERE userid=#value# 
+		</delete>
+		<delete id="Article.DeleteByTitle" parameterClass="String">
+			DELETE FROM article WHERE title=#value# 
+		</delete>
+		<delete id="Article.DeleteByHittimes" parameterClass="Int64">
+			DELETE FROM article WHERE hittimes=#value# 
+		</delete>
+		<delete id="Article.Delete" parameterClass="Article">
+			DELETE FROM article WHERE id=#Id#
+		</delete>
+		<delete id="Article.DeleteByTitlecolor" parameterClass="String">
+			DELETE FROM article WHERE titlecolor=#value# 
+		</delete>
+		<delete id="Article.DeleteByTypeid" parameterClass="Int64">
+			DELETE FROM article WHERE typeid=#value# 
+		</delete>
+		<delete id="Article.DeleteByContent" parameterClass="String">
+			DELETE FROM article WHERE content=#value# 
+		</delete>
+		<delete id="Article.DeleteByReleaseip" parameterClass="String">
+			DELETE FROM article WHERE releaseip=#value# 
+		</delete>
+		<delete id="Article.DeleteByIstop" parameterClass="Byte">
+			DELETE FROM article WHERE istop=#value# 
+		</delete>
+		<delete id="Article.DeleteByIspass" parameterClass="Byte">
+			DELETE FROM article WHERE ispass=#value# 
+		</delete>
+	</statements>
+</sqlMap>

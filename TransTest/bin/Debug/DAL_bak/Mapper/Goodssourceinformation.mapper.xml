@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Goodssourceinformation" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Goodssourceinformation" type="Trans.DAL.Entity.Goodssourceinformation" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Goodssourceinformation">
+			<result property="Cautiontypeid" column="cautiontypeid" dbType="bigint"/>
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Deadline" column="deadline" dbType="datetime"/>
+			<result property="Srccountycode" column="srccountycode" dbType="varchar"/>
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Price" column="price" dbType="varchar"/>
+			<result property="Goodsname" column="goodsname" dbType="varchar"/>
+			<result property="Title" column="title" dbType="varchar"/>
+			<result property="Transporttypeid" column="transporttypeid" dbType="bigint"/>
+			<result property="Content" column="content" dbType="text"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Dstcountycode" column="dstcountycode" dbType="varchar"/>
+			<result property="Goodstypeid" column="goodstypeid" dbType="bigint"/>
+			<result property="Titlecolor" column="titlecolor" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Goodssourceinformation.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation 
+		</select>
+		<select id="Goodssourceinformation.FindAll" resultMap="FullResultMap">
+			SELECT * FROM goodssourceinformation
+		</select>
+		<select id="Goodssourceinformation.FindByCautiontypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.cautiontypeid = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.active = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByDeadline" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.deadline = #value#
+		</select>
+		<select id="Goodssourceinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.srccountycode = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.userid = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.price = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByGoodsname" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.goodsname = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.title = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByTransporttypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.transporttypeid = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.content = #value#
+		</select>
+		<select id="Goodssourceinformation.Find" parameterClass="Goodssourceinformation" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.id=#Id#
+		</select>
+		<select id="Goodssourceinformation.FindByDstcountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.dstcountycode = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByGoodstypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.goodstypeid = #value#
+		</select>
+		<select id="Goodssourceinformation.FindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.titlecolor = #value#
+		</select>
+		<insert id="Goodssourceinformation.Insert" parameterClass="Goodssourceinformation">
+			INSERT INTO goodssourceinformation (cautiontypeid,active,deadline,srccountycode,userid,price,goodsname,title,transporttypeid,content,id,dstcountycode,goodstypeid,titlecolor) VALUES (#Cautiontypeid#,#Active#,#Deadline#,#Srccountycode#,#Userid#,#Price#,#Goodsname#,#Title#,#Transporttypeid#,#Content#,#Id#,#Dstcountycode#,#Goodstypeid#,#Titlecolor#)
+		</insert>
+		<update id="Goodssourceinformation.Update" parameterClass="Goodssourceinformation">
+			UPDATE goodssourceinformation SET cautiontypeid=#Cautiontypeid#,active=#Active#,deadline=#Deadline#,srccountycode=#Srccountycode#,userid=#Userid#,price=#Price#,goodsname=#Goodsname#,title=#Title#,transporttypeid=#Transporttypeid#,content=#Content#,dstcountycode=#Dstcountycode#,goodstypeid=#Goodstypeid#,titlecolor=#Titlecolor# WHERE id=#Id#
+		</update>
+		<delete id="Goodssourceinformation.DeleteByCautiontypeid" parameterClass="Int64">
+			DELETE FROM goodssourceinformation WHERE cautiontypeid=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByActive" parameterClass="Byte">
+			DELETE FROM goodssourceinformation WHERE active=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByDeadline" parameterClass="DateTime">
+			DELETE FROM goodssourceinformation WHERE deadline=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteBySrccountycode" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE srccountycode=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByUserid" parameterClass="Int64">
+			DELETE FROM goodssourceinformation WHERE userid=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByPrice" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE price=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByGoodsname" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE goodsname=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByTitle" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE title=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByTransporttypeid" parameterClass="Int64">
+			DELETE FROM goodssourceinformation WHERE transporttypeid=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByContent" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE content=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.Delete" parameterClass="Goodssourceinformation">
+			DELETE FROM goodssourceinformation WHERE id=#Id#
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByDstcountycode" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE dstcountycode=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByGoodstypeid" parameterClass="Int64">
+			DELETE FROM goodssourceinformation WHERE goodstypeid=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByTitlecolor" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE titlecolor=#value# 
+		</delete>
+	</statements>
+</sqlMap>

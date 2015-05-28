@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Users" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Users" type="Trans.DAL.Entity.Users" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Users">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Username" column="username" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Roleid" column="roleid" dbType="bigint"/>
+			<result property="Loginname" column="loginname" dbType="varchar"/>
+			<result property="Note" column="note" dbType="text"/>
+			<result property="Password" column="password" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Users.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM users 
+		</select>
+		<select id="Users.FindAll" resultMap="FullResultMap">
+			SELECT * FROM users
+		</select>
+		<select id="Users.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.active = #value#
+		</select>
+		<select id="Users.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.username = #value#
+		</select>
+		<select id="Users.Find" parameterClass="Users" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.id=#Id#
+		</select>
+		<select id="Users.FindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.roleid = #value#
+		</select>
+		<select id="Users.FindByLoginname" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.loginname = #value#
+		</select>
+		<select id="Users.FindByNote" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.note = #value#
+		</select>
+		<select id="Users.FindByPassword" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.password = #value#
+		</select>
+		<insert id="Users.Insert" parameterClass="Users">
+			INSERT INTO users (active,username,id,roleid,loginname,note,password) VALUES (#Active#,#Username#,#Id#,#Roleid#,#Loginname#,#Note#,#Password#)
+		</insert>
+		<update id="Users.Update" parameterClass="Users">
+			UPDATE users SET active=#Active#,username=#Username#,roleid=#Roleid#,loginname=#Loginname#,note=#Note#,password=#Password# WHERE id=#Id#
+		</update>
+		<delete id="Users.DeleteByActive" parameterClass="Byte">
+			DELETE FROM users WHERE active=#value# 
+		</delete>
+		<delete id="Users.DeleteByUsername" parameterClass="String">
+			DELETE FROM users WHERE username=#value# 
+		</delete>
+		<delete id="Users.Delete" parameterClass="Users">
+			DELETE FROM users WHERE id=#Id#
+		</delete>
+		<delete id="Users.DeleteByRoleid" parameterClass="Int64">
+			DELETE FROM users WHERE roleid=#value# 
+		</delete>
+		<delete id="Users.DeleteByLoginname" parameterClass="String">
+			DELETE FROM users WHERE loginname=#value# 
+		</delete>
+		<delete id="Users.DeleteByNote" parameterClass="String">
+			DELETE FROM users WHERE note=#value# 
+		</delete>
+		<delete id="Users.DeleteByPassword" parameterClass="String">
+			DELETE FROM users WHERE password=#value# 
+		</delete>
+	</statements>
+</sqlMap>

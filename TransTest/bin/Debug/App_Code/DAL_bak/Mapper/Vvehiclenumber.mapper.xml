@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vvehiclenumber" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vvehiclenumber" type="Trans.DAL.Entity.Vvehiclenumber" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vvehiclenumber">
+			<result property="Number" column="number" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Prefixname" column="prefixname" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vvehiclenumber.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_vehicle_number 
+		</select>
+		<select id="Vvehiclenumber.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_vehicle_number
+		</select>
+		<select id="Vvehiclenumber.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.number = #value#
+		</select>
+		<select id="Vvehiclenumber.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.id = #value#
+		</select>
+		<select id="Vvehiclenumber.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.prefixname = #value#
+		</select>
+	</statements>
+</sqlMap>

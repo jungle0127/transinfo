@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Placeinfo" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Placeinfo" type="Trans.DAL.Entity.Placeinfo" />
+		<typeAlias alias="PlaceinfoPagination" type="Trans.DAL.Entity.PlaceinfoPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Placeinfo">
+			<result property="Address" column="address" dbType="varchar"/>
+			<result property="Contactpersonname" column="contactpersonname" dbType="varchar"/>
+			<result property="Contactphone" column="contactphone" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Contactcellphone" column="contactcellphone" dbType="varchar"/>
+			<result property="Countycode" column="countycode" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Placeinfo.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo 
+		</select>
+		<select id="Placeinfo.FindAll" resultMap="FullResultMap">
+			SELECT * FROM placeinfo
+		</select>
+		<select id="Placeinfo.FindAllPagination" parameterClass="PlaceinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM placeinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.FindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.address = #value#
+		</select>
+		<select id="PlaceinfoPagination.FindByAddress" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.address = #Address# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactpersonname = #value#
+		</select>
+		<select id="PlaceinfoPagination.FindByContactpersonname" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.FindByContactphone" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactphone = #value#
+		</select>
+		<select id="PlaceinfoPagination.FindByContactphone" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactphone = #Contactphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.Find" parameterClass="Placeinfo" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.id=#Id#
+		</select>
+		<select id="Placeinfo.FindByContactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactcellphone = #value#
+		</select>
+		<select id="PlaceinfoPagination.FindByContactcellphone" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactcellphone = #Contactcellphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.countycode = #value#
+		</select>
+		<select id="PlaceinfoPagination.FindByCountycode" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.countycode = #Countycode# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Placeinfo.Insert" parameterClass="Placeinfo">
+			INSERT INTO placeinfo (address,contactpersonname,contactphone,id,contactcellphone,countycode) VALUES (#Address#,#Contactpersonname#,#Contactphone#,#Id#,#Contactcellphone#,#Countycode#)
+		</insert>
+		<update id="Placeinfo.Update" parameterClass="Placeinfo">
+			UPDATE placeinfo SET address=#Address#,contactpersonname=#Contactpersonname#,contactphone=#Contactphone#,contactcellphone=#Contactcellphone#,countycode=#Countycode# WHERE id=#Id#
+		</update>
+		<delete id="Placeinfo.DeleteByAddress" parameterClass="String">
+			DELETE FROM placeinfo WHERE address=#value# 
+		</delete>
+		<delete id="Placeinfo.DeleteByContactpersonname" parameterClass="String">
+			DELETE FROM placeinfo WHERE contactpersonname=#value# 
+		</delete>
+		<delete id="Placeinfo.DeleteByContactphone" parameterClass="String">
+			DELETE FROM placeinfo WHERE contactphone=#value# 
+		</delete>
+		<delete id="Placeinfo.Delete" parameterClass="Placeinfo">
+			DELETE FROM placeinfo WHERE id=#Id#
+		</delete>
+		<delete id="Placeinfo.DeleteByContactcellphone" parameterClass="String">
+			DELETE FROM placeinfo WHERE contactcellphone=#value# 
+		</delete>
+		<delete id="Placeinfo.DeleteByCountycode" parameterClass="String">
+			DELETE FROM placeinfo WHERE countycode=#value# 
+		</delete>
+	</statements>
+</sqlMap>

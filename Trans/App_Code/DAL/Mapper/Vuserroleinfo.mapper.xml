@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vuserroleinfo" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vuserroleinfo" type="Trans.DAL.Entity.Vuserroleinfo" />
+		<typeAlias alias="VuserroleinfoPagination" type="Trans.DAL.Entity.VuserroleinfoPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vuserroleinfo">
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Rolename" column="rolename" dbType="varchar"/>
+			<result property="Loginname" column="loginname" dbType="varchar"/>
+			<result property="Roleid" column="roleid" dbType="bigint"/>
+			<result property="Username" column="username" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vuserroleinfo.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userroleinfo 
+		</select>
+		<select id="Vuserroleinfo.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_userroleinfo
+		</select>
+		<select id="Vuserroleinfo.FindAllPagination" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_userroleinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.userid = #value#
+		</select>
+		<select id="VuserroleinfoPagination.FindByUserid" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.userid = #Userid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.FindByRolename" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.rolename = #value#
+		</select>
+		<select id="VuserroleinfoPagination.FindByRolename" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.rolename = #Rolename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.FindByLoginname" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.loginname = #value#
+		</select>
+		<select id="VuserroleinfoPagination.FindByLoginname" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.loginname = #Loginname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.FindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.roleid = #value#
+		</select>
+		<select id="VuserroleinfoPagination.FindByRoleid" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.roleid = #Roleid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.username = #value#
+		</select>
+		<select id="VuserroleinfoPagination.FindByUsername" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.username = #Username# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

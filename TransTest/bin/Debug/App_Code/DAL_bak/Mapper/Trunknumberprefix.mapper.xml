@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Trunknumberprefix" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Trunknumberprefix" type="Trans.DAL.Entity.Trunknumberprefix" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Trunknumberprefix">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Prefixname" column="prefixname" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Trunknumberprefix.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumberprefix 
+		</select>
+		<select id="Trunknumberprefix.FindAll" resultMap="FullResultMap">
+			SELECT * FROM trunknumberprefix
+		</select>
+		<select id="Trunknumberprefix.Find" parameterClass="Trunknumberprefix" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
+			WHERE trunknumberprefix.id=#Id#
+		</select>
+		<select id="Trunknumberprefix.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
+			WHERE trunknumberprefix.prefixname = #value#
+		</select>
+		<insert id="Trunknumberprefix.Insert" parameterClass="Trunknumberprefix">
+			INSERT INTO trunknumberprefix (id,prefixname) VALUES (#Id#,#Prefixname#)
+		</insert>
+		<update id="Trunknumberprefix.Update" parameterClass="Trunknumberprefix">
+			UPDATE trunknumberprefix SET prefixname=#Prefixname# WHERE id=#Id#
+		</update>
+		<delete id="Trunknumberprefix.Delete" parameterClass="Trunknumberprefix">
+			DELETE FROM trunknumberprefix WHERE id=#Id#
+		</delete>
+		<delete id="Trunknumberprefix.DeleteByPrefixname" parameterClass="String">
+			DELETE FROM trunknumberprefix WHERE prefixname=#value# 
+		</delete>
+	</statements>
+</sqlMap>

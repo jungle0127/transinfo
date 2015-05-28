@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="City" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="City" type="Trans.DAL.Entity.City" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="City">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Code" column="code" dbType="varchar"/>
+			<result property="Provincecode" column="provincecode" dbType="varchar"/>
+			<result property="Name" column="name" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="City.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM city 
+		</select>
+		<select id="City.FindAll" resultMap="FullResultMap">
+			SELECT * FROM city
+		</select>
+		<select id="City.Find" parameterClass="City" resultMap="FullResultMap" extends="City.FindAll">
+			WHERE city.id=#Id#
+		</select>
+		<select id="City.FindByCode" parameterClass="String" resultMap="FullResultMap" extends="City.FindAll">
+			WHERE city.code = #value#
+		</select>
+		<select id="City.FindByProvincecode" parameterClass="String" resultMap="FullResultMap" extends="City.FindAll">
+			WHERE city.provincecode = #value#
+		</select>
+		<select id="City.FindByName" parameterClass="String" resultMap="FullResultMap" extends="City.FindAll">
+			WHERE city.name = #value#
+		</select>
+		<insert id="City.Insert" parameterClass="City">
+			INSERT INTO city (id,code,provincecode,name) VALUES (#Id#,#Code#,#Provincecode#,#Name#)
+		</insert>
+		<update id="City.Update" parameterClass="City">
+			UPDATE city SET code=#Code#,provincecode=#Provincecode#,name=#Name# WHERE id=#Id#
+		</update>
+		<delete id="City.Delete" parameterClass="City">
+			DELETE FROM city WHERE id=#Id#
+		</delete>
+		<delete id="City.DeleteByCode" parameterClass="String">
+			DELETE FROM city WHERE code=#value# 
+		</delete>
+		<delete id="City.DeleteByProvincecode" parameterClass="String">
+			DELETE FROM city WHERE provincecode=#value# 
+		</delete>
+		<delete id="City.DeleteByName" parameterClass="String">
+			DELETE FROM city WHERE name=#value# 
+		</delete>
+	</statements>
+</sqlMap>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vspeciallineinfo" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vspeciallineinfo" type="Trans.DAL.Entity.Vspeciallineinfo" />
+		<typeAlias alias="VspeciallineinfoPagination" type="Trans.DAL.Entity.VspeciallineinfoPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vspeciallineinfo">
+			<result property="Speciallinetypename" column="speciallinetypename" dbType="varchar"/>
+			<result property="Weightprice" column="weightprice" dbType="int"/>
+			<result property="Dstcontactcellphone" column="dstcontactcellphone" dbType="varchar"/>
+			<result property="Volumeprice" column="volumeprice" dbType="int"/>
+			<result property="Description" column="description" dbType="text"/>
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Srccontactpersonname" column="srccontactpersonname" dbType="varchar"/>
+			<result property="Srccontactphone" column="srccontactphone" dbType="varchar"/>
+			<result property="Dstcontactpersonname" column="dstcontactpersonname" dbType="varchar"/>
+			<result property="Srcplaceaddress" column="srcplaceaddress" dbType="varchar"/>
+			<result property="Srccontactcellphone" column="srccontactcellphone" dbType="varchar"/>
+			<result property="Title" column="title" dbType="varchar"/>
+			<result property="Dstcontactphone" column="dstcontactphone" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Departuretypename" column="departuretypename" dbType="varchar"/>
+			<result property="Dstplaceaddress" column="dstplaceaddress" dbType="varchar"/>
+			<result property="Srccounty" column="srccounty" dbType="varchar"/>
+			<result property="Dstcounty" column="dstcounty" dbType="varchar"/>
+			<result property="Username" column="username" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vspeciallineinfo.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo 
+		</select>
+		<select id="Vspeciallineinfo.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_speciallineinfo
+		</select>
+		<select id="Vspeciallineinfo.FindAllPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_speciallineinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindBySpeciallinetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypename = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySpeciallinetypename" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypename = #Speciallinetypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByWeightprice" parameterClass="Int32" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.weightprice = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByWeightprice" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.weightprice = #Weightprice# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDstcontactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactcellphone = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDstcontactcellphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactcellphone = #Dstcontactcellphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByVolumeprice" parameterClass="Int32" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.volumeprice = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByVolumeprice" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.volumeprice = #Volumeprice# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.description = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDescription" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.description = #Description# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.userid = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByUserid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.userid = #Userid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindBySrccontactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactpersonname = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySrccontactpersonname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactpersonname = #Srccontactpersonname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindBySrccontactphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactphone = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySrccontactphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactphone = #Srccontactphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDstcontactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactpersonname = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDstcontactpersonname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactpersonname = #Dstcontactpersonname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindBySrcplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srcplaceaddress = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySrcplaceaddress" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srcplaceaddress = #Srcplaceaddress# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindBySrccontactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactcellphone = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySrccontactcellphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactcellphone = #Srccontactcellphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.title = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByTitle" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.title = #Title# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDstcontactphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactphone = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDstcontactphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactphone = #Dstcontactphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.id = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindById" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.id = #Id# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDeparturetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypename = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDeparturetypename" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypename = #Departuretypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDstplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstplaceaddress = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDstplaceaddress" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstplaceaddress = #Dstplaceaddress# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindBySrccounty" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccounty = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySrccounty" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccounty = #Srccounty# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByDstcounty" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcounty = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDstcounty" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcounty = #Dstcounty# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.username = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByUsername" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.username = #Username# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

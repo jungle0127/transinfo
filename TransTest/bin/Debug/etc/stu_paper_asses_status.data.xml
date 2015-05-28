@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<artsurvey xmlns="http://tempuri.org/artsurvey.xsd">
+  <stu_paper_asses_status>
+    <id>1</id>
+    <description>未点评</description>
+  </stu_paper_asses_status>
+  <stu_paper_asses_status>
+    <id>2</id>
+    <description>已点评</description>
+  </stu_paper_asses_status>
+  <stu_paper_asses_status>
+    <id>3</id>
+    <description>已阅读</description>
+  </stu_paper_asses_status>
+</artsurvey>

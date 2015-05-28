@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Depottype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Depottype" type="Trans.DAL.Entity.Depottype" />
+		<typeAlias alias="DepottypePagination" type="Trans.DAL.Entity.DepottypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Depottype">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Typename" column="typename" dbType="char"/>
+			<result property="Id" column="id" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Depottype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM depottype 
+		</select>
+		<select id="Depottype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM depottype
+		</select>
+		<select id="Depottype.FindAllPagination" parameterClass="DepottypePagination" resultMap="FullResultMap">
+			SELECT * FROM depottype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depottype.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.active = #value#
+		</select>
+		<select id="DepottypePagination.FindByActive" parameterClass="DepottypePagination" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.active = #Active# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depottype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.typename = #value#
+		</select>
+		<select id="DepottypePagination.FindByTypename" parameterClass="DepottypePagination" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.typename = #Typename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depottype.Find" parameterClass="Depottype" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.id=#Id#
+		</select>
+		<insert id="Depottype.Insert" parameterClass="Depottype">
+			INSERT INTO depottype (active,typename,id) VALUES (#Active#,#Typename#,#Id#)
+		</insert>
+		<update id="Depottype.Update" parameterClass="Depottype">
+			UPDATE depottype SET active=#Active#,typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Depottype.DeleteByActive" parameterClass="Byte">
+			DELETE FROM depottype WHERE active=#value# 
+		</delete>
+		<delete id="Depottype.DeleteByTypename" parameterClass="String">
+			DELETE FROM depottype WHERE typename=#value# 
+		</delete>
+		<delete id="Depottype.Delete" parameterClass="Depottype">
+			DELETE FROM depottype WHERE id=#Id#
+		</delete>
+	</statements>
+</sqlMap>

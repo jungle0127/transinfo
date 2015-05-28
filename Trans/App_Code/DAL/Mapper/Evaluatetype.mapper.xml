@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Evaluatetype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Evaluatetype" type="Trans.DAL.Entity.Evaluatetype" />
+		<typeAlias alias="EvaluatetypePagination" type="Trans.DAL.Entity.EvaluatetypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Evaluatetype">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Name" column="name" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Evaluatetype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM evaluatetype 
+		</select>
+		<select id="Evaluatetype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM evaluatetype
+		</select>
+		<select id="Evaluatetype.FindAllPagination" parameterClass="EvaluatetypePagination" resultMap="FullResultMap">
+			SELECT * FROM evaluatetype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Evaluatetype.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Evaluatetype.FindAll">
+			WHERE evaluatetype.active = #value#
+		</select>
+		<select id="EvaluatetypePagination.FindByActive" parameterClass="EvaluatetypePagination" resultMap="FullResultMap" extends="Evaluatetype.FindAll">
+			WHERE evaluatetype.active = #Active# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Evaluatetype.Find" parameterClass="Evaluatetype" resultMap="FullResultMap" extends="Evaluatetype.FindAll">
+			WHERE evaluatetype.id=#Id#
+		</select>
+		<select id="Evaluatetype.FindByName" parameterClass="String" resultMap="FullResultMap" extends="Evaluatetype.FindAll">
+			WHERE evaluatetype.name = #value#
+		</select>
+		<select id="EvaluatetypePagination.FindByName" parameterClass="EvaluatetypePagination" resultMap="FullResultMap" extends="Evaluatetype.FindAll">
+			WHERE evaluatetype.name = #Name# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Evaluatetype.Insert" parameterClass="Evaluatetype">
+			INSERT INTO evaluatetype (active,id,name) VALUES (#Active#,#Id#,#Name#)
+		</insert>
+		<update id="Evaluatetype.Update" parameterClass="Evaluatetype">
+			UPDATE evaluatetype SET active=#Active#,name=#Name# WHERE id=#Id#
+		</update>
+		<delete id="Evaluatetype.DeleteByActive" parameterClass="Byte">
+			DELETE FROM evaluatetype WHERE active=#value# 
+		</delete>
+		<delete id="Evaluatetype.Delete" parameterClass="Evaluatetype">
+			DELETE FROM evaluatetype WHERE id=#Id#
+		</delete>
+		<delete id="Evaluatetype.DeleteByName" parameterClass="String">
+			DELETE FROM evaluatetype WHERE name=#value# 
+		</delete>
+	</statements>
+</sqlMap>

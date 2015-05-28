@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://nant.sourceforge.net/release/0.92/nant.xsd" default="build_develop" name="TransTest">
+  <property name="basedir" value="."/>
+  <property name="Configuration" value="Release"/>
+  <!--Release or Debug-->
+  <property name="assembly.version" value="1.0.0.0"/>
+  <property name="assembly.title" value="www.trans.org"/>
+  <property name="dll.filename" value="TransTest.dll"/>
+
+  <property name="Solution" value="${basedir}/../jiuye.sln"/>
+</project>

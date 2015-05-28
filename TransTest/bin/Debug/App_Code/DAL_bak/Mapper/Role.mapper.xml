@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Role" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Role" type="Trans.DAL.Entity.Role" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Role">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Rolename" column="rolename" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Role.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM role 
+		</select>
+		<select id="Role.FindAll" resultMap="FullResultMap">
+			SELECT * FROM role
+		</select>
+		<select id="Role.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.active = #value#
+		</select>
+		<select id="Role.Find" parameterClass="Role" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.id=#Id#
+		</select>
+		<select id="Role.FindByRolename" parameterClass="String" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.rolename = #value#
+		</select>
+		<insert id="Role.Insert" parameterClass="Role">
+			INSERT INTO role (active,id,rolename) VALUES (#Active#,#Id#,#Rolename#)
+		</insert>
+		<update id="Role.Update" parameterClass="Role">
+			UPDATE role SET active=#Active#,rolename=#Rolename# WHERE id=#Id#
+		</update>
+		<delete id="Role.DeleteByActive" parameterClass="Byte">
+			DELETE FROM role WHERE active=#value# 
+		</delete>
+		<delete id="Role.Delete" parameterClass="Role">
+			DELETE FROM role WHERE id=#Id#
+		</delete>
+		<delete id="Role.DeleteByRolename" parameterClass="String">
+			DELETE FROM role WHERE rolename=#value# 
+		</delete>
+	</statements>
+</sqlMap>

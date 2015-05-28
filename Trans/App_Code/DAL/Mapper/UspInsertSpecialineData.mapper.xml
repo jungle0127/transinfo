@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="UspInsertSpecialineData" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="UspInsertSpecialineData" type="Trans.DAL.Entity.UspInsertSpecialineData" />
+  </alias>
+  <parameterMaps>
+  <parameterMap id="uspInsertSpecialineData_data" class="UspInsertSpecialineData">
+      <parameter property="XmlData" dbType="text" direction="Input"></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <statements>
+    <procedure id="uspInsertSpecialineDataid" parameterMap="uspInsertSpecialineData_data">
+uspInsertSpecialineData
+    </procedure>
+  </statements>
+</sqlMap>

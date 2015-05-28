@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMapConfig
+  xmlns="http://ibatis.apache.org/dataMapper"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <settings>
+    <setting useStatementNamespaces="false"/>
+    <setting cacheModelsEnabled="true"/>
+    <setting validateSqlMap="true"/>
+  </settings>
+
+  <providers resource="etc/mybatis.providers.cfg.xml"/>
+
+  <!-- Database connection information -->
+  <database>
+    <provider name="MySql"/>
+    <dataSource name="conn" connectionString="Server=localhost;Database=transinfo;Uid=root;Pwd=lotus;CharSet=gbk;"/>
+    <!--<dataSource name="conn" connectionString="Data Source=(local);Initial Catalog=transinfo;Persist Security Info=True;User ID=root;Password=lotus"/>-->
+  </database>
+
+  <sqlMaps>
+    <sqlMap resource = "App_Code/DAL/Mapper/Article.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Articletype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Bussinessscope.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Cautiontype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/City.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/County.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Departuretype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Depotinformation.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Depottype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Evaluatetype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Goodssourceinformation.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Goodstype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Placeinfo.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Province.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Rightgroup.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Rightgrouphasrights.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Rights.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Role.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Rolehasrights.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Speciallineinfo.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Speciallinetype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Transporttype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunkinformation.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunkmetadata.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunknumber.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunknumberprefix.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunkreturntype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunkroutetype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunktimetype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Trunktype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Userhasrights.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Users.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vrightsfullinfo.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vspeciallineinfo.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vtrunkmetadata.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vuserrights.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vuserroleinfo.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vvehiclenumber.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/Vantype.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/usp/UspInsertTrunkMetadata.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/usp/UspInsertSpecialineData.mapper.xml"/>
+    <sqlMap resource = "App_Code/DAL/Mapper/usp/UspUpdateRoleHasRights.mapper.xml"/>
+  </sqlMaps>
+
+</sqlMapConfig>

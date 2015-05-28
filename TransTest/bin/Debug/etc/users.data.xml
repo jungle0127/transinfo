@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<artsurvey xmlns="http://tempuri.org/artsurvey.xsd">
+  <users>
+    <id>1</id>
+    <loginname>admin</loginname>
+    <password>21232f297a57a5a743894a0e4a801fc3</password>
+    <roleid>2</roleid>
+    <active>1</active>
+  </users>
+</artsurvey>

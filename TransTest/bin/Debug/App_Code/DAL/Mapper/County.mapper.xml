@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="County" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="County" type="Trans.DAL.Entity.County" />
+		<typeAlias alias="CountyPagination" type="Trans.DAL.Entity.CountyPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="County">
+			<result property="Citycode" column="citycode" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Code" column="code" dbType="varchar"/>
+			<result property="Name" column="name" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="County.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM county 
+		</select>
+		<select id="County.FindAll" resultMap="FullResultMap">
+			SELECT * FROM county
+		</select>
+		<select id="County.FindAllPagination" parameterClass="CountyPagination" resultMap="FullResultMap">
+			SELECT * FROM county limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.FindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.citycode = #value#
+		</select>
+		<select id="CountyPagination.FindByCitycode" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.citycode = #Citycode# limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.Find" parameterClass="County" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.id=#Id#
+		</select>
+		<select id="County.FindByCode" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.code = #value#
+		</select>
+		<select id="CountyPagination.FindByCode" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.code = #Code# limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.FindByName" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.name = #value#
+		</select>
+		<select id="CountyPagination.FindByName" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.name = #Name# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="County.Insert" parameterClass="County">
+			INSERT INTO county (citycode,id,code,name) VALUES (#Citycode#,#Id#,#Code#,#Name#)
+		</insert>
+		<update id="County.Update" parameterClass="County">
+			UPDATE county SET citycode=#Citycode#,code=#Code#,name=#Name# WHERE id=#Id#
+		</update>
+		<delete id="County.DeleteByCitycode" parameterClass="String">
+			DELETE FROM county WHERE citycode=#value# 
+		</delete>
+		<delete id="County.Delete" parameterClass="County">
+			DELETE FROM county WHERE id=#Id#
+		</delete>
+		<delete id="County.DeleteByCode" parameterClass="String">
+			DELETE FROM county WHERE code=#value# 
+		</delete>
+		<delete id="County.DeleteByName" parameterClass="String">
+			DELETE FROM county WHERE name=#value# 
+		</delete>
+	</statements>
+</sqlMap>

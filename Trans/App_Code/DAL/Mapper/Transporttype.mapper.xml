@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Transporttype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Transporttype" type="Trans.DAL.Entity.Transporttype" />
+		<typeAlias alias="TransporttypePagination" type="Trans.DAL.Entity.TransporttypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Transporttype">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Typename" column="typename" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Transporttype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM transporttype 
+		</select>
+		<select id="Transporttype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM transporttype
+		</select>
+		<select id="Transporttype.FindAllPagination" parameterClass="TransporttypePagination" resultMap="FullResultMap">
+			SELECT * FROM transporttype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Transporttype.Find" parameterClass="Transporttype" resultMap="FullResultMap" extends="Transporttype.FindAll">
+			WHERE transporttype.id=#Id#
+		</select>
+		<select id="Transporttype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Transporttype.FindAll">
+			WHERE transporttype.typename = #value#
+		</select>
+		<select id="TransporttypePagination.FindByTypename" parameterClass="TransporttypePagination" resultMap="FullResultMap" extends="Transporttype.FindAll">
+			WHERE transporttype.typename = #Typename# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Transporttype.Insert" parameterClass="Transporttype">
+			INSERT INTO transporttype (id,typename) VALUES (#Id#,#Typename#)
+		</insert>
+		<update id="Transporttype.Update" parameterClass="Transporttype">
+			UPDATE transporttype SET typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Transporttype.Delete" parameterClass="Transporttype">
+			DELETE FROM transporttype WHERE id=#Id#
+		</delete>
+		<delete id="Transporttype.DeleteByTypename" parameterClass="String">
+			DELETE FROM transporttype WHERE typename=#value# 
+		</delete>
+	</statements>
+</sqlMap>

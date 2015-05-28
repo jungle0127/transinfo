@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Student" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <typeAlias alias="UsersPojo" type="Trans.DAL.Entity.Users,Trans"></typeAlias>
+  </alias>
+  <resultMaps>
+    <resultMap id="UserInfo" class="UsersPojo">
+      <result property="id" column="id"/>
+      <result property="username" column="username"/>
+      <result property="password" column="password"/>
+      <result property="roleid" column="roleid"/>
+      <result property="active" column="active" nullValue="0"/>
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id="user.select" parameterClass="UsersPojo" resultMap="UserInfo">
+      select * from users
+    </select>
+    
+  </statements>
+</sqlMap>

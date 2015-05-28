@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="UspUpdateRoleHasRights" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="UspUpdateRoleHasRights" type="Trans.DAL.Entity.USP.UspUpdateRoleHasRights" />
+  </alias>
+  <parameterMaps>
+  <parameterMap id="uspUpdateRoleHasRights_data" class="UspUpdateRoleHasRights">
+      <parameter property="XmlData" dbType="text" direction="Input"></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <statements>
+    <procedure id="uspUpdateRoleHasRightsid" parameterMap="uspUpdateRoleHasRights_data">
+uspUpdateRoleHasRights
+    </procedure>
+  </statements>
+</sqlMap>

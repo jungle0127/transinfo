@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Trunktimetype" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Trunktimetype" type="Trans.DAL.Entity.Trunktimetype" />
+		<typeAlias alias="TrunktimetypePagination" type="Trans.DAL.Entity.TrunktimetypePagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Trunktimetype">
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Typename" column="typename" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Trunktimetype.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunktimetype 
+		</select>
+		<select id="Trunktimetype.FindAll" resultMap="FullResultMap">
+			SELECT * FROM trunktimetype
+		</select>
+		<select id="Trunktimetype.FindAllPagination" parameterClass="TrunktimetypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunktimetype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunktimetype.Find" parameterClass="Trunktimetype" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
+			WHERE trunktimetype.id=#Id#
+		</select>
+		<select id="Trunktimetype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
+			WHERE trunktimetype.typename = #value#
+		</select>
+		<select id="TrunktimetypePagination.FindByTypename" parameterClass="TrunktimetypePagination" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
+			WHERE trunktimetype.typename = #Typename# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Trunktimetype.Insert" parameterClass="Trunktimetype">
+			INSERT INTO trunktimetype (id,typename) VALUES (#Id#,#Typename#)
+		</insert>
+		<update id="Trunktimetype.Update" parameterClass="Trunktimetype">
+			UPDATE trunktimetype SET typename=#Typename# WHERE id=#Id#
+		</update>
+		<delete id="Trunktimetype.Delete" parameterClass="Trunktimetype">
+			DELETE FROM trunktimetype WHERE id=#Id#
+		</delete>
+		<delete id="Trunktimetype.DeleteByTypename" parameterClass="String">
+			DELETE FROM trunktimetype WHERE typename=#value# 
+		</delete>
+	</statements>
+</sqlMap>

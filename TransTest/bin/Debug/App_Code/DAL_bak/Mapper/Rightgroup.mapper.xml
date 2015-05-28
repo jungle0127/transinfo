@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Rightgroup" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Rightgroup" type="Trans.DAL.Entity.Rightgroup" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Rightgroup">
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Groupname" column="groupname" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Rightgroup.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup 
+		</select>
+		<select id="Rightgroup.FindAll" resultMap="FullResultMap">
+			SELECT * FROM rightgroup
+		</select>
+		<select id="Rightgroup.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.active = #value#
+		</select>
+		<select id="Rightgroup.Find" parameterClass="Rightgroup" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.id=#Id#
+		</select>
+		<select id="Rightgroup.FindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.groupname = #value#
+		</select>
+		<insert id="Rightgroup.Insert" parameterClass="Rightgroup">
+			INSERT INTO rightgroup (active,id,groupname) VALUES (#Active#,#Id#,#Groupname#)
+		</insert>
+		<update id="Rightgroup.Update" parameterClass="Rightgroup">
+			UPDATE rightgroup SET active=#Active#,groupname=#Groupname# WHERE id=#Id#
+		</update>
+		<delete id="Rightgroup.DeleteByActive" parameterClass="Byte">
+			DELETE FROM rightgroup WHERE active=#value# 
+		</delete>
+		<delete id="Rightgroup.Delete" parameterClass="Rightgroup">
+			DELETE FROM rightgroup WHERE id=#Id#
+		</delete>
+		<delete id="Rightgroup.DeleteByGroupname" parameterClass="String">
+			DELETE FROM rightgroup WHERE groupname=#value# 
+		</delete>
+	</statements>
+</sqlMap>

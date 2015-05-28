@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Speciallineinfo" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Speciallineinfo" type="Trans.DAL.Entity.Speciallineinfo" />
+		<typeAlias alias="SpeciallineinfoPagination" type="Trans.DAL.Entity.SpeciallineinfoPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Speciallineinfo">
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Destinationplaceinfoid" column="destinationplaceinfoid" dbType="bigint"/>
+			<result property="Departuretypeid" column="departuretypeid" dbType="bigint"/>
+			<result property="Title" column="title" dbType="varchar"/>
+			<result property="Volumeprice" column="volumeprice" dbType="int"/>
+			<result property="Speciallinetypeid" column="speciallinetypeid" dbType="bigint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Weightprice" column="weightprice" dbType="int"/>
+			<result property="Description" column="description" dbType="text"/>
+			<result property="Sourceplaceinfoid" column="sourceplaceinfoid" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Speciallineinfo.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo 
+		</select>
+		<select id="Speciallineinfo.FindAll" resultMap="FullResultMap">
+			SELECT * FROM speciallineinfo
+		</select>
+		<select id="Speciallineinfo.FindAllPagination" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM speciallineinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.userid = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByUserid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.userid = #Userid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindByDestinationplaceinfoid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.destinationplaceinfoid = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByDestinationplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.destinationplaceinfoid = #Destinationplaceinfoid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindByDeparturetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.departuretypeid = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByDeparturetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.departuretypeid = #Departuretypeid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.title = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByTitle" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.title = #Title# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindByVolumeprice" parameterClass="Int32" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.volumeprice = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByVolumeprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.volumeprice = #Volumeprice# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.speciallinetypeid = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindBySpeciallinetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.Find" parameterClass="Speciallineinfo" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.id=#Id#
+		</select>
+		<select id="Speciallineinfo.FindByWeightprice" parameterClass="Int32" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.weightprice = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByWeightprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.weightprice = #Weightprice# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.description = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByDescription" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.description = #Description# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.FindBySourceplaceinfoid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.sourceplaceinfoid = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindBySourceplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.sourceplaceinfoid = #Sourceplaceinfoid# limit #Limit# offset #Offset# 
+		</select>
+		<insert id="Speciallineinfo.Insert" parameterClass="Speciallineinfo">
+			INSERT INTO speciallineinfo (userid,destinationplaceinfoid,departuretypeid,title,volumeprice,speciallinetypeid,id,weightprice,description,sourceplaceinfoid) VALUES (#Userid#,#Destinationplaceinfoid#,#Departuretypeid#,#Title#,#Volumeprice#,#Speciallinetypeid#,#Id#,#Weightprice#,#Description#,#Sourceplaceinfoid#)
+		</insert>
+		<update id="Speciallineinfo.Update" parameterClass="Speciallineinfo">
+			UPDATE speciallineinfo SET userid=#Userid#,destinationplaceinfoid=#Destinationplaceinfoid#,departuretypeid=#Departuretypeid#,title=#Title#,volumeprice=#Volumeprice#,speciallinetypeid=#Speciallinetypeid#,weightprice=#Weightprice#,description=#Description#,sourceplaceinfoid=#Sourceplaceinfoid# WHERE id=#Id#
+		</update>
+		<delete id="Speciallineinfo.DeleteByUserid" parameterClass="Int64">
+			DELETE FROM speciallineinfo WHERE userid=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteByDestinationplaceinfoid" parameterClass="Int64">
+			DELETE FROM speciallineinfo WHERE destinationplaceinfoid=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteByDeparturetypeid" parameterClass="Int64">
+			DELETE FROM speciallineinfo WHERE departuretypeid=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteByTitle" parameterClass="String">
+			DELETE FROM speciallineinfo WHERE title=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteByVolumeprice" parameterClass="Int32">
+			DELETE FROM speciallineinfo WHERE volumeprice=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteBySpeciallinetypeid" parameterClass="Int64">
+			DELETE FROM speciallineinfo WHERE speciallinetypeid=#value# 
+		</delete>
+		<delete id="Speciallineinfo.Delete" parameterClass="Speciallineinfo">
+			DELETE FROM speciallineinfo WHERE id=#Id#
+		</delete>
+		<delete id="Speciallineinfo.DeleteByWeightprice" parameterClass="Int32">
+			DELETE FROM speciallineinfo WHERE weightprice=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteByDescription" parameterClass="String">
+			DELETE FROM speciallineinfo WHERE description=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteBySourceplaceinfoid" parameterClass="Int64">
+			DELETE FROM speciallineinfo WHERE sourceplaceinfoid=#value# 
+		</delete>
+	</statements>
+</sqlMap>
