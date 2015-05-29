@@ -52,6 +52,16 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Goodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume) {
+			String stmtId = "Goodssourceinformation.FindByNeedtrunkvolume";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, needtrunkvolume);
+			return result;
+        }
+		public IList<Goodssourceinformation> PaginationFindByNeedtrunkvolume(GoodssourceinformationPagination obj) {
+			String stmtId = "GoodssourceinformationPagination.FindByNeedtrunkvolume";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Goodssourceinformation> FindByDeadline(DateTime deadline) {
 			String stmtId = "Goodssourceinformation.FindByDeadline";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, deadline);
@@ -59,6 +69,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Goodssourceinformation> PaginationFindByDeadline(GoodssourceinformationPagination obj) {
 			String stmtId = "GoodssourceinformationPagination.FindByDeadline";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Goodssourceinformation> FindByNeedtrunkweight(Int64 needtrunkweight) {
+			String stmtId = "Goodssourceinformation.FindByNeedtrunkweight";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, needtrunkweight);
+			return result;
+        }
+		public IList<Goodssourceinformation> PaginationFindByNeedtrunkweight(GoodssourceinformationPagination obj) {
+			String stmtId = "GoodssourceinformationPagination.FindByNeedtrunkweight";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
@@ -79,6 +99,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Goodssourceinformation> PaginationFindByUserid(GoodssourceinformationPagination obj) {
 			String stmtId = "GoodssourceinformationPagination.FindByUserid";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Goodssourceinformation> FindByNeedtrunklength(Int64 needtrunklength) {
+			String stmtId = "Goodssourceinformation.FindByNeedtrunklength";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, needtrunklength);
+			return result;
+        }
+		public IList<Goodssourceinformation> PaginationFindByNeedtrunklength(GoodssourceinformationPagination obj) {
+			String stmtId = "GoodssourceinformationPagination.FindByNeedtrunklength";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
@@ -201,9 +231,19 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, cautiontypeid);
 			return result;
         }
+		public int DeleteByNeedtrunkvolume(Int64 needtrunkvolume) {
+			String stmtId = "Goodssourceinformation.DeleteByNeedtrunkvolume";
+			int result = this.sqlMapper.Delete(stmtId, needtrunkvolume);
+			return result;
+        }
 		public int DeleteByDeadline(DateTime deadline) {
 			String stmtId = "Goodssourceinformation.DeleteByDeadline";
 			int result = this.sqlMapper.Delete(stmtId, deadline);
+			return result;
+        }
+		public int DeleteByNeedtrunkweight(Int64 needtrunkweight) {
+			String stmtId = "Goodssourceinformation.DeleteByNeedtrunkweight";
+			int result = this.sqlMapper.Delete(stmtId, needtrunkweight);
 			return result;
         }
 		public int DeleteByReleasedate(DateTime releasedate) {
@@ -214,6 +254,11 @@ namespace Trans.DAL.Dao
 		public int DeleteByUserid(Int64 userid) {
 			String stmtId = "Goodssourceinformation.DeleteByUserid";
 			int result = this.sqlMapper.Delete(stmtId, userid);
+			return result;
+        }
+		public int DeleteByNeedtrunklength(Int64 needtrunklength) {
+			String stmtId = "Goodssourceinformation.DeleteByNeedtrunklength";
+			int result = this.sqlMapper.Delete(stmtId, needtrunklength);
 			return result;
         }
 		public int DeleteByPrice(String price) {

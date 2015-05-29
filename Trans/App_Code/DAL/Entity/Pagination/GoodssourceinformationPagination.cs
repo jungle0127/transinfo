@@ -12,6 +12,12 @@ namespace Trans.DAL.Entity
 			get { return m_cautiontypeid; }
 			set { m_cautiontypeid = value;}
 		}
+		private Int64 m_needtrunkvolume;
+		public Int64 Needtrunkvolume
+		{
+			get { return m_needtrunkvolume; }
+			set { m_needtrunkvolume = value;}
+		}
 		private Int64 m_id;
 		public Int64 Id
 		{
@@ -24,6 +30,12 @@ namespace Trans.DAL.Entity
 			get { return m_deadline; }
 			set { m_deadline = value;}
 		}
+		private Int64 m_needtrunkweight;
+		public Int64 Needtrunkweight
+		{
+			get { return m_needtrunkweight; }
+			set { m_needtrunkweight = value;}
+		}
 		private DateTime m_releasedate;
 		public DateTime Releasedate
 		{
@@ -35,6 +47,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_userid; }
 			set { m_userid = value;}
+		}
+		private Int64 m_needtrunklength;
+		public Int64 Needtrunklength
+		{
+			get { return m_needtrunklength; }
+			set { m_needtrunklength = value;}
 		}
 		private String m_price;
 		public String Price

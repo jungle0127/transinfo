@@ -21,9 +21,17 @@ namespace Trans.DAL.Dao
 
 		IList<Goodssourceinformation> PaginationFindByCautiontypeid(GoodssourceinformationPagination obj);
 
+		IList<Goodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume);
+
+		IList<Goodssourceinformation> PaginationFindByNeedtrunkvolume(GoodssourceinformationPagination obj);
+
 		IList<Goodssourceinformation> FindByDeadline(DateTime deadline);
 
 		IList<Goodssourceinformation> PaginationFindByDeadline(GoodssourceinformationPagination obj);
+
+		IList<Goodssourceinformation> FindByNeedtrunkweight(Int64 needtrunkweight);
+
+		IList<Goodssourceinformation> PaginationFindByNeedtrunkweight(GoodssourceinformationPagination obj);
 
 		IList<Goodssourceinformation> FindByReleasedate(DateTime releasedate);
 
@@ -32,6 +40,10 @@ namespace Trans.DAL.Dao
 		IList<Goodssourceinformation> FindByUserid(Int64 userid);
 
 		IList<Goodssourceinformation> PaginationFindByUserid(GoodssourceinformationPagination obj);
+
+		IList<Goodssourceinformation> FindByNeedtrunklength(Int64 needtrunklength);
+
+		IList<Goodssourceinformation> PaginationFindByNeedtrunklength(GoodssourceinformationPagination obj);
 
 		IList<Goodssourceinformation> FindByPrice(String price);
 
@@ -81,11 +93,17 @@ namespace Trans.DAL.Dao
 
 		int DeleteByCautiontypeid(Int64 cautiontypeid);
 
+		int DeleteByNeedtrunkvolume(Int64 needtrunkvolume);
+
 		int DeleteByDeadline(DateTime deadline);
+
+		int DeleteByNeedtrunkweight(Int64 needtrunkweight);
 
 		int DeleteByReleasedate(DateTime releasedate);
 
 		int DeleteByUserid(Int64 userid);
+
+		int DeleteByNeedtrunklength(Int64 needtrunklength);
 
 		int DeleteByPrice(String price);
 
