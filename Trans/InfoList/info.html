@@ -1,26 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DepotInfoDetail.aspx.cs" Inherits="Trans.InfoShow.DepotInfoDetail" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>信息共享界面</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>信息共享界面</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/main_style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
-    <link rel="Stylesheet" type="text/css" href="../css/main_style.css" />
-    <script language="javascript" src="../js/js.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function ($) {
-        $('.grid-container').gridQuote();
-
-    });
-</script>
+    <script type="text/javascript" language="javascript" src="../js/js.js"></script>
+	<script >
+	$(document).ready(function() {
+		backToTop();
+ 	});
+	</script>
 </head>
+
 <body>
-    <form id="form1" runat="server">
-    <div id="top">
+<div id="top">
     <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
     <table width="100%">
       <tbody>
@@ -43,24 +38,20 @@
 		<div class="black-bg left-container">
 			<div class="tm-left-inner-container">
             	<ul class="nav nav-stacked nav-tabs homepage-nav">
-
 				  <li><a href="../index.aspx"><i class="fa fa-medium"></i>返回首页</a></li>
-				  <li><a href="../InfoList/TrunkInfoList.aspx" target="infoMain" class="active" ><i class="fa  fa-medium"></i>车源信息</a></li>
-				  <li><a href="../InfoList/GoodsInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>货源信息</a></li>
-				  <li><a href="../InfoList/SpeciallineInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>专线信息</a></li>
-				  <li><a href="../InfoList/DepotInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>仓储信息</a></li>
+				  <li><a href="TrunkInfoList.aspx" target="infoMain" class="active" ><i class="fa  fa-medium"></i>车源信息</a></li>
+				  <li><a href="GoodsInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>货源信息</a></li>
+				  <li><a href="SpeciallineInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>专线信息</a></li>
+				  <li><a href="DepotInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>仓储信息</a></li>
                   <li><a href="#" target="_blank"><i class="fa fa-medium"></i>个人中心</a></li><!--当用户成功登陆才显示-->
-
 				</ul>
             </div>
 		</div>
         <div class=" white-bg right-container">
 			<div class="tm-right-inner-container" id="frameBox">
-                <iframe src="infoShare/lorry.html" name="infoMain" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
+                <iframe src="TrunkInfoList.aspx" name="infoMain" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
             </div>
         </div>
 	</div>
-
-    </form>
 </body>
 </html>
