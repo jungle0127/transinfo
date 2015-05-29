@@ -11,6 +11,35 @@ VALUES('天津','Jerry','18230762400','028-85313053','654324');
 INSERT INTO speciallineinfo(userid,title,sourceplaceinfoid,destinationplaceinfoid,weightprice,volumeprice,departuretypeid,speciallinetypeid,description)
 VALUES(1,'测试数据，请删除',1,2,20,23,1,1,'note');
 
+INSERT INTO trunknumber(prefixid,number,userid) VALUES(1,'A 23456',1);
+INSERT INTO trunknumber(prefixid,number,userid) VALUES(1,'A 23457',1);
+INSERT INTO trunknumber(prefixid,number,userid) VALUES(1,'A 23458',1);
+INSERt INTO trunkmetadata(numberid,length,weightcapacity,volume,countycode,location,vantypeid,brand,trunktypeid,contactpersonname,conatactphone,trunkidentifynumber)
+VALUES (1,'12','23','21','110105','Location of trunk',1,'Dongfeng','1','联系人','18030762500','SAL234232');
+INSERt INTO trunkmetadata(numberid,length,weightcapacity,volume,countycode,location,vantypeid,brand,trunktypeid,contactpersonname,conatactphone,trunkidentifynumber)
+VALUES (1,'12','23','21','110104','Location of trunk',1,'Dongfeng','1','联系人1','18030762500','SAL234235');
+INSERt INTO trunkmetadata(numberid,length,weightcapacity,volume,countycode,location,vantypeid,brand,trunktypeid,contactpersonname,conatactphone,trunkidentifynumber)
+VALUES (1,'12','23','21','110103','Location of trunk',1,'Dongfeng','1','联系人2','18030762500','SAL234236');
+
+
+insert into trunkinformation(trunkid,routetypeid,srccountycode,dstcountycode,timetypeid,returntypeid,userid,title,releasedate)
+values (1,2,'110101','110102',2,1,1,'dasdasda','2015-05-27');
+
+
+insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
+values (1,'110105','110103','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
+values (1,'110105','110102','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
+values (1,'110105','110107','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
+values (1,'110101','110103','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
+values (1,'110102','110103','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+
+
+
+
 call uspInsertSpecialineData(' <speciallinedata>
 	<userid>1</userid>
 	<title>存储过程测试</title>
