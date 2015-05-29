@@ -41,7 +41,7 @@ namespace Trans.InfoList
             IList<Goodssourceinformation> goodssourcelist = this.goodsinformationtable.PaginationFindAll(goodspage);
             foreach (Goodssourceinformation enti in goodssourcelist)
             {
-                messagebody.Append("<tr><td><a href=\"../InfoShow/GoodsInfoDetail.aspx\" class=\"infoTitle goodsInfoTitle\">");
+                messagebody.Append("<tr><td><a href=\"../InfoShow/GoodsInfoDetail.aspx?id="+enti.Id.ToString()+"\" class=\"infoTitle goodsInfoTitle\">");
                 messagebody.Append(enti.Title);
                 messagebody.Append("</a><p><span class=\"light-info\">所需车辆长度：</span><span class=\"infos spanNeedLength\" id=\"carLength\">");
                 messagebody.Append(enti.Needtrunklength);
@@ -56,14 +56,7 @@ namespace Trans.InfoList
                 IList<County> countyEinfos = this.countyInfos.FindByCode(enti.Srccountycode);
                 messagebody.Append(countyEinfos[0].Name);
                 messagebody.Append("</span></td><td><a class=\"moreBottn\" href=\"#\" target=\"_blank\"><img src=\"../../imgs/plus_alt.png\" id=\"moreBtn\"></a></td></tr>");
-
-                
-
-
-
             }
-
-
             return messagebody.ToString();
         }
 

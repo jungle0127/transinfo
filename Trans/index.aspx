@@ -105,10 +105,10 @@
 			<div class="quote-container">
              <div id="tabs" class="floating">
                <ul class="nav nav-tabs infoShare">
-                  <li><a href="InfoList/info.html" id="car" class="lorryInfoLink">车源信息</a></li>
-                  <li><a href="InfoList/info.html" id="goods" class="goodsInfoLink">货源信息</a></li><!--点击先跳转到info界面，判断当前点击对象，在info主frame中调用对应的html-->
-                  <li><a href="InfoList/info.html" id="line" class="linesInfoLink">专线信息</a></li>
-                  <li><a href="InfoList/info.html" id="store" class="storageInfoLink">存储信息</a></li>
+                  <li><a href="InfoList/TrunkInfoList.aspx" id="car" class="lorryInfoLink">车源信息</a></li>
+                  <li><a href="InfoList/GoodsInfoList.aspx" id="goods" class="goodsInfoLink">货源信息</a></li><!--点击先跳转到info界面，判断当前点击对象，在info主frame中调用对应的html-->
+                  <li><a href="InfoList/SpeciallineInfoList.aspx" id="line" class="linesInfoLink">专线信息</a></li>
+                  <li><a href="InfoList/DepotInfoList.aspx" id="store" class="storageInfoLink">存储信息</a></li>
                </ul>
              </div>
            </div>
@@ -126,11 +126,7 @@
                         <li><a href="#"><img src="imgs/companys/img8.jpg"/></a></li>
                         <li><a href="#"><img src="imgs/companys/img1.jpg"/></a></li>
                         <li><a href="#"><img src="imgs/companys/img2.jpg"/></a></li>
-                        <li><a href="#"><img src="imgs/companys/img3.jpg"/></a></li>
-                        <li><a href="#"><img src="imgs/companys/img4.jpg"></a></li>
-                        <li><a href="#"><img src="imgs/companys/img5.jpg"></a></li>
-                        <li><a href="#"><img src="imgs/companys/img6.jpg"></a></li>
-                        <li><a href="#"><img src="imgs/companys/img6.jpg"></a></li>
+
                     </ul>	
                   </div>
                   </td>
@@ -174,11 +170,11 @@
                <tr>
                <td class="content white">
                 <ul class="news">
-                <li><a href="#">关于提高货源车源信息质量提高物</a></li>
-                <li><a href="#">《满意度有奖调查》双重豪礼送给</a></li>
-                <li><a href="#">关于近期物流企业会员被投诉的处</a></li>
-                <li><a href="#">配货信息部（普通会员）车源发布</a></li>
-                <li><a href="#">物流专线带“运价”优先排名通知</a></li>
+                <li><a href="InfoList/NewsList.aspx">关于提高货源车源信息质量提高物</a></li>
+                <li><a href="InfoList/NewsList.aspx">《满意度有奖调查》双重豪礼送给</a></li>
+                <li><a href="InfoList/NewsList.aspx">关于近期物流企业会员被投诉的处</a></li>
+                <li><a href="InfoList/NewsList.aspx">配货信息部（普通会员）车源发布</a></li>
+                <li><a href="InfoList/NewsList.aspx">物流专线带“运价”优先排名通知</a></li>
                 </ul>
                 </td>
                </tr>

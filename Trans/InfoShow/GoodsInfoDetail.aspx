@@ -17,7 +17,9 @@
         <td class="right-leftSide">
             <table>
                 <tbody>
-                <tr class="infoTitle">
+
+                
+                <%--<tr class="infoTitle">
                     <td><p id="infoTitle" class="pInfoTitle">湖南省长沙市→山西省太原市,有13吨设备,求17.5米前四后八1辆</p><hr class="hr1" /></td>
                 </tr>
                 <tr>
@@ -80,7 +82,11 @@
                 </tr>
                 <tr>
                 <td></td>
-                </tr>
+                </tr>--%>
+
+
+
+
                 </tbody>
             </table>
         </td>

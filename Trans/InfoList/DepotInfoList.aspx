@@ -77,7 +77,7 @@
        </thead>
         <tbody>
 
-          <tr>
+          <%--<tr>
              <td class="infoDeatil">
              <div class="storePic"></div>
              <div class="overFloat">
@@ -92,7 +92,9 @@
              <td><span class="infos" id="publishTime">14小时前</span></td>
              <td><span  id="prePrice">湖南长沙</span></td>
              <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
-          </tr>
+          </tr>--%>
+
+          <%=this.MessageHtmlDepot %>
         
 
 

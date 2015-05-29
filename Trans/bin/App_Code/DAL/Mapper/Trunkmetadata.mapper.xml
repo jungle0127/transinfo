@@ -6,15 +6,15 @@
 	</alias>
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Trunkmetadata">
-			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
-			<result property="Contactpersonname" column="contactpersonname" dbType="varchar"/>
 			<result property="Conatactphone" column="conatactphone" dbType="varchar"/>
 			<result property="Volume" column="volume" dbType="varchar"/>
 			<result property="Numberid" column="numberid" dbType="bigint"/>
 			<result property="Brand" column="brand" dbType="varchar"/>
 			<result property="Length" column="length" dbType="varchar"/>
 			<result property="Trunktypeid" column="trunktypeid" dbType="bigint"/>
+			<result property="Contactpersonname" column="contactpersonname" dbType="varchar"/>
 			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
 			<result property="Weightcapacity" column="weightcapacity" dbType="varchar"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Vantypeid" column="vantypeid" dbType="bigint"/>
@@ -33,18 +33,6 @@
 		</select>
 		<select id="Trunkmetadata.FindAllPagination" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap">
 			SELECT * FROM trunkmetadata limit #Limit# offset #Offset# 
-		</select>
-		<select id="Trunkmetadata.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.vanimageuri = #value#
-		</select>
-		<select id="TrunkmetadataPagination.FindByVanimageuri" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.vanimageuri = #Vanimageuri# limit #Limit# offset #Offset# 
-		</select>
-		<select id="Trunkmetadata.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.contactpersonname = #value#
-		</select>
-		<select id="TrunkmetadataPagination.FindByContactpersonname" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkmetadata.FindByConatactphone" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.conatactphone = #value#
@@ -82,11 +70,23 @@
 		<select id="TrunkmetadataPagination.FindByTrunktypeid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.trunktypeid = #Trunktypeid# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Trunkmetadata.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.contactpersonname = #value#
+		</select>
+		<select id="TrunkmetadataPagination.FindByContactpersonname" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
+		</select>
 		<select id="Trunkmetadata.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.active = #value#
 		</select>
 		<select id="TrunkmetadataPagination.FindByActive" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.active = #Active# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.vanimageuri = #value#
+		</select>
+		<select id="TrunkmetadataPagination.FindByVanimageuri" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.vanimageuri = #Vanimageuri# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkmetadata.FindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.weightcapacity = #value#
@@ -128,17 +128,11 @@
 			WHERE trunkmetadata.location = #Location# limit #Limit# offset #Offset# 
 		</select>
 		<insert id="Trunkmetadata.Insert" parameterClass="Trunkmetadata">
-			INSERT INTO trunkmetadata (vanimageuri,contactpersonname,conatactphone,volume,numberid,brand,length,trunktypeid,active,weightcapacity,id,vantypeid,licenseuri,trunkidentifynumber,countycode,location) VALUES (#Vanimageuri#,#Contactpersonname#,#Conatactphone#,#Volume#,#Numberid#,#Brand#,#Length#,#Trunktypeid#,#Active#,#Weightcapacity#,#Id#,#Vantypeid#,#Licenseuri#,#Trunkidentifynumber#,#Countycode#,#Location#)
+			INSERT INTO trunkmetadata (conatactphone,volume,numberid,brand,length,trunktypeid,contactpersonname,active,vanimageuri,weightcapacity,id,vantypeid,licenseuri,trunkidentifynumber,countycode,location) VALUES (#Conatactphone#,#Volume#,#Numberid#,#Brand#,#Length#,#Trunktypeid#,#Contactpersonname#,#Active#,#Vanimageuri#,#Weightcapacity#,#Id#,#Vantypeid#,#Licenseuri#,#Trunkidentifynumber#,#Countycode#,#Location#)
 		</insert>
 		<update id="Trunkmetadata.Update" parameterClass="Trunkmetadata">
-			UPDATE trunkmetadata SET vanimageuri=#Vanimageuri#,contactpersonname=#Contactpersonname#,conatactphone=#Conatactphone#,volume=#Volume#,numberid=#Numberid#,brand=#Brand#,length=#Length#,trunktypeid=#Trunktypeid#,active=#Active#,weightcapacity=#Weightcapacity#,vantypeid=#Vantypeid#,licenseuri=#Licenseuri#,trunkidentifynumber=#Trunkidentifynumber#,countycode=#Countycode#,location=#Location# WHERE id=#Id#
+			UPDATE trunkmetadata SET conatactphone=#Conatactphone#,volume=#Volume#,numberid=#Numberid#,brand=#Brand#,length=#Length#,trunktypeid=#Trunktypeid#,contactpersonname=#Contactpersonname#,active=#Active#,vanimageuri=#Vanimageuri#,weightcapacity=#Weightcapacity#,vantypeid=#Vantypeid#,licenseuri=#Licenseuri#,trunkidentifynumber=#Trunkidentifynumber#,countycode=#Countycode#,location=#Location# WHERE id=#Id#
 		</update>
-		<delete id="Trunkmetadata.DeleteByVanimageuri" parameterClass="String">
-			DELETE FROM trunkmetadata WHERE vanimageuri=#value# 
-		</delete>
-		<delete id="Trunkmetadata.DeleteByContactpersonname" parameterClass="String">
-			DELETE FROM trunkmetadata WHERE contactpersonname=#value# 
-		</delete>
 		<delete id="Trunkmetadata.DeleteByConatactphone" parameterClass="String">
 			DELETE FROM trunkmetadata WHERE conatactphone=#value# 
 		</delete>
@@ -157,8 +151,14 @@
 		<delete id="Trunkmetadata.DeleteByTrunktypeid" parameterClass="Int64">
 			DELETE FROM trunkmetadata WHERE trunktypeid=#value# 
 		</delete>
+		<delete id="Trunkmetadata.DeleteByContactpersonname" parameterClass="String">
+			DELETE FROM trunkmetadata WHERE contactpersonname=#value# 
+		</delete>
 		<delete id="Trunkmetadata.DeleteByActive" parameterClass="Byte">
 			DELETE FROM trunkmetadata WHERE active=#value# 
+		</delete>
+		<delete id="Trunkmetadata.DeleteByVanimageuri" parameterClass="String">
+			DELETE FROM trunkmetadata WHERE vanimageuri=#value# 
 		</delete>
 		<delete id="Trunkmetadata.DeleteByWeightcapacity" parameterClass="String">
 			DELETE FROM trunkmetadata WHERE weightcapacity=#value# 
