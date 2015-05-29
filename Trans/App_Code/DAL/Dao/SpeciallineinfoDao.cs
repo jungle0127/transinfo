@@ -92,16 +92,6 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
-		public IList<Speciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid) {
-			String stmtId = "Speciallineinfo.FindBySpeciallinetypeid";
-			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, speciallinetypeid);
-			return result;
-        }
-		public IList<Speciallineinfo> PaginationFindBySpeciallinetypeid(SpeciallineinfoPagination obj) {
-			String stmtId = "SpeciallineinfoPagination.FindBySpeciallinetypeid";
-			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
-			return result;
-        }
 		public IList<Speciallineinfo> FindByWeightprice(Int32 weightprice) {
 			String stmtId = "Speciallineinfo.FindByWeightprice";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, weightprice);
@@ -129,6 +119,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Speciallineinfo> PaginationFindBySourceplaceinfoid(SpeciallineinfoPagination obj) {
 			String stmtId = "SpeciallineinfoPagination.FindBySourceplaceinfoid";
+			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Speciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid) {
+			String stmtId = "Speciallineinfo.FindBySpeciallinetypeid";
+			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, speciallinetypeid);
+			return result;
+        }
+		public IList<Speciallineinfo> PaginationFindBySpeciallinetypeid(SpeciallineinfoPagination obj) {
+			String stmtId = "SpeciallineinfoPagination.FindBySpeciallinetypeid";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -171,11 +171,6 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, volumeprice);
 			return result;
         }
-		public int DeleteBySpeciallinetypeid(Int64 speciallinetypeid) {
-			String stmtId = "Speciallineinfo.DeleteBySpeciallinetypeid";
-			int result = this.sqlMapper.Delete(stmtId, speciallinetypeid);
-			return result;
-        }
 		public int DeleteByWeightprice(Int32 weightprice) {
 			String stmtId = "Speciallineinfo.DeleteByWeightprice";
 			int result = this.sqlMapper.Delete(stmtId, weightprice);
@@ -189,6 +184,11 @@ namespace Trans.DAL.Dao
 		public int DeleteBySourceplaceinfoid(Int64 sourceplaceinfoid) {
 			String stmtId = "Speciallineinfo.DeleteBySourceplaceinfoid";
 			int result = this.sqlMapper.Delete(stmtId, sourceplaceinfoid);
+			return result;
+        }
+		public int DeleteBySpeciallinetypeid(Int64 speciallinetypeid) {
+			String stmtId = "Speciallineinfo.DeleteBySpeciallinetypeid";
+			int result = this.sqlMapper.Delete(stmtId, speciallinetypeid);
 			return result;
         }
 		public void Reload(Speciallineinfo obj) {

@@ -12,6 +12,12 @@ namespace Trans.DAL.Entity
 			get { return m_cellphone; }
 			set { m_cellphone = value;}
 		}
+		private String m_description;
+		public String Description
+		{
+			get { return m_description; }
+			set { m_description = value;}
+		}
 		private String m_validtime;
 		public String Validtime
 		{
@@ -42,29 +48,23 @@ namespace Trans.DAL.Entity
 			get { return m_price; }
 			set { m_price = value;}
 		}
-		private Int64 m_depottype;
-		public Int64 Depottype
-		{
-			get { return m_depottype; }
-			set { m_depottype = value;}
-		}
 		private Int64 m_bizscopetype;
 		public Int64 Bizscopetype
 		{
 			get { return m_bizscopetype; }
 			set { m_bizscopetype = value;}
 		}
+		private Int64 m_depottype;
+		public Int64 Depottype
+		{
+			get { return m_depottype; }
+			set { m_depottype = value;}
+		}
 		private String m_title;
 		public String Title
 		{
 			get { return m_title; }
 			set { m_title = value;}
-		}
-		private String m_description;
-		public String Description
-		{
-			get { return m_description; }
-			set { m_description = value;}
 		}
 		private Int64 m_id;
 		public Int64 Id

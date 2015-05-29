@@ -7,15 +7,15 @@
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Depotinformation">
 			<result property="Cellphone" column="cellphone" dbType="varchar"/>
+			<result property="Description" column="description" dbType="text"/>
 			<result property="Validtime" column="validtime" dbType="varchar"/>
 			<result property="Contactperson" column="contactperson" dbType="varchar"/>
 			<result property="Userid" column="userid" dbType="bigint"/>
 			<result property="Useablearea" column="useablearea" dbType="int"/>
 			<result property="Price" column="price" dbType="varchar"/>
-			<result property="Depottype" column="depottype" dbType="bigint"/>
 			<result property="Bizscopetype" column="bizscopetype" dbType="bigint"/>
+			<result property="Depottype" column="depottype" dbType="bigint"/>
 			<result property="Title" column="title" dbType="varchar"/>
-			<result property="Description" column="description" dbType="text"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Address" column="address" dbType="varchar"/>
 			<result property="Area" column="area" dbType="int"/>
@@ -36,6 +36,12 @@
 		</select>
 		<select id="DepotinformationPagination.FindByCellphone" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.cellphone = #Cellphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.description = #value#
+		</select>
+		<select id="DepotinformationPagination.FindByDescription" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.description = #Description# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Depotinformation.FindByValidtime" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.validtime = #value#
@@ -67,29 +73,23 @@
 		<select id="DepotinformationPagination.FindByPrice" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.price = #Price# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Depotinformation.FindByDepottype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.depottype = #value#
-		</select>
-		<select id="DepotinformationPagination.FindByDepottype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.depottype = #Depottype# limit #Limit# offset #Offset# 
-		</select>
 		<select id="Depotinformation.FindByBizscopetype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.bizscopetype = #value#
 		</select>
 		<select id="DepotinformationPagination.FindByBizscopetype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.bizscopetype = #Bizscopetype# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Depotinformation.FindByDepottype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.depottype = #value#
+		</select>
+		<select id="DepotinformationPagination.FindByDepottype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.depottype = #Depottype# limit #Limit# offset #Offset# 
+		</select>
 		<select id="Depotinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.title = #value#
 		</select>
 		<select id="DepotinformationPagination.FindByTitle" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.title = #Title# limit #Limit# offset #Offset# 
-		</select>
-		<select id="Depotinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.description = #value#
-		</select>
-		<select id="DepotinformationPagination.FindByDescription" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.description = #Description# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Depotinformation.Find" parameterClass="Depotinformation" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.id=#Id#
@@ -107,13 +107,16 @@
 			WHERE depotinformation.area = #Area# limit #Limit# offset #Offset# 
 		</select>
 		<insert id="Depotinformation.Insert" parameterClass="Depotinformation">
-			INSERT INTO depotinformation (cellphone,validtime,contactperson,userid,useablearea,price,depottype,bizscopetype,title,description,id,address,area) VALUES (#Cellphone#,#Validtime#,#Contactperson#,#Userid#,#Useablearea#,#Price#,#Depottype#,#Bizscopetype#,#Title#,#Description#,#Id#,#Address#,#Area#)
+			INSERT INTO depotinformation (cellphone,description,validtime,contactperson,userid,useablearea,price,bizscopetype,depottype,title,id,address,area) VALUES (#Cellphone#,#Description#,#Validtime#,#Contactperson#,#Userid#,#Useablearea#,#Price#,#Bizscopetype#,#Depottype#,#Title#,#Id#,#Address#,#Area#)
 		</insert>
 		<update id="Depotinformation.Update" parameterClass="Depotinformation">
-			UPDATE depotinformation SET cellphone=#Cellphone#,validtime=#Validtime#,contactperson=#Contactperson#,userid=#Userid#,useablearea=#Useablearea#,price=#Price#,depottype=#Depottype#,bizscopetype=#Bizscopetype#,title=#Title#,description=#Description#,address=#Address#,area=#Area# WHERE id=#Id#
+			UPDATE depotinformation SET cellphone=#Cellphone#,description=#Description#,validtime=#Validtime#,contactperson=#Contactperson#,userid=#Userid#,useablearea=#Useablearea#,price=#Price#,bizscopetype=#Bizscopetype#,depottype=#Depottype#,title=#Title#,address=#Address#,area=#Area# WHERE id=#Id#
 		</update>
 		<delete id="Depotinformation.DeleteByCellphone" parameterClass="String">
 			DELETE FROM depotinformation WHERE cellphone=#value# 
+		</delete>
+		<delete id="Depotinformation.DeleteByDescription" parameterClass="String">
+			DELETE FROM depotinformation WHERE description=#value# 
 		</delete>
 		<delete id="Depotinformation.DeleteByValidtime" parameterClass="String">
 			DELETE FROM depotinformation WHERE validtime=#value# 
@@ -130,17 +133,14 @@
 		<delete id="Depotinformation.DeleteByPrice" parameterClass="String">
 			DELETE FROM depotinformation WHERE price=#value# 
 		</delete>
-		<delete id="Depotinformation.DeleteByDepottype" parameterClass="Int64">
-			DELETE FROM depotinformation WHERE depottype=#value# 
-		</delete>
 		<delete id="Depotinformation.DeleteByBizscopetype" parameterClass="Int64">
 			DELETE FROM depotinformation WHERE bizscopetype=#value# 
 		</delete>
+		<delete id="Depotinformation.DeleteByDepottype" parameterClass="Int64">
+			DELETE FROM depotinformation WHERE depottype=#value# 
+		</delete>
 		<delete id="Depotinformation.DeleteByTitle" parameterClass="String">
 			DELETE FROM depotinformation WHERE title=#value# 
-		</delete>
-		<delete id="Depotinformation.DeleteByDescription" parameterClass="String">
-			DELETE FROM depotinformation WHERE description=#value# 
 		</delete>
 		<delete id="Depotinformation.Delete" parameterClass="Depotinformation">
 			DELETE FROM depotinformation WHERE id=#Id#

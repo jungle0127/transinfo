@@ -42,16 +42,6 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, null);
 			return result;
         }
-		public IList<Article> FindByReleasedate(DateTime releasedate) {
-			String stmtId = "Article.FindByReleasedate";
-			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releasedate);
-			return result;
-        }
-		public IList<Article> PaginationFindByReleasedate(ArticlePagination obj) {
-			String stmtId = "ArticlePagination.FindByReleasedate";
-			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
-			return result;
-        }
 		public IList<Article> FindByUserid(Int64 userid) {
 			String stmtId = "Article.FindByUserid";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, userid);
@@ -102,6 +92,16 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public IList<Article> FindByIstop(Byte istop) {
+			String stmtId = "Article.FindByIstop";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, istop);
+			return result;
+        }
+		public IList<Article> PaginationFindByIstop(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.FindByIstop";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
 		public IList<Article> FindByContent(String content) {
 			String stmtId = "Article.FindByContent";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, content);
@@ -122,13 +122,13 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
-		public IList<Article> FindByIstop(Byte istop) {
-			String stmtId = "Article.FindByIstop";
-			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, istop);
+		public IList<Article> FindByReleasedate(DateTime releasedate) {
+			String stmtId = "Article.FindByReleasedate";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releasedate);
 			return result;
         }
-		public IList<Article> PaginationFindByIstop(ArticlePagination obj) {
-			String stmtId = "ArticlePagination.FindByIstop";
+		public IList<Article> PaginationFindByReleasedate(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.FindByReleasedate";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -156,11 +156,6 @@ namespace Trans.DAL.Dao
 			String stmtId = "Article.Delete";
 			this.sqlMapper.Delete(stmtId, obj);
 		}
-		public int DeleteByReleasedate(DateTime releasedate) {
-			String stmtId = "Article.DeleteByReleasedate";
-			int result = this.sqlMapper.Delete(stmtId, releasedate);
-			return result;
-        }
 		public int DeleteByUserid(Int64 userid) {
 			String stmtId = "Article.DeleteByUserid";
 			int result = this.sqlMapper.Delete(stmtId, userid);
@@ -186,6 +181,11 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, typeid);
 			return result;
         }
+		public int DeleteByIstop(Byte istop) {
+			String stmtId = "Article.DeleteByIstop";
+			int result = this.sqlMapper.Delete(stmtId, istop);
+			return result;
+        }
 		public int DeleteByContent(String content) {
 			String stmtId = "Article.DeleteByContent";
 			int result = this.sqlMapper.Delete(stmtId, content);
@@ -196,9 +196,9 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, releaseip);
 			return result;
         }
-		public int DeleteByIstop(Byte istop) {
-			String stmtId = "Article.DeleteByIstop";
-			int result = this.sqlMapper.Delete(stmtId, istop);
+		public int DeleteByReleasedate(DateTime releasedate) {
+			String stmtId = "Article.DeleteByReleasedate";
+			int result = this.sqlMapper.Delete(stmtId, releasedate);
 			return result;
         }
 		public int DeleteByIspass(Byte ispass) {

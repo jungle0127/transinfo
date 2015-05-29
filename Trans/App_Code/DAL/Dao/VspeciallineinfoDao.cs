@@ -42,6 +42,16 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, null);
 			return result;
         }
+		public IList<Vspeciallineinfo> FindBySrccounty(String srccounty) {
+			String stmtId = "Vspeciallineinfo.FindBySrccounty";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccounty);
+			return result;
+        }
+		public IList<Vspeciallineinfo> PaginationFindBySrccounty(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindBySrccounty";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
 		public IList<Vspeciallineinfo> FindBySpeciallinetypename(String speciallinetypename) {
 			String stmtId = "Vspeciallineinfo.FindBySpeciallinetypename";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypename);
@@ -49,16 +59,6 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vspeciallineinfo> PaginationFindBySpeciallinetypename(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySpeciallinetypename";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
-			return result;
-        }
-		public IList<Vspeciallineinfo> FindByWeightprice(Int32 weightprice) {
-			String stmtId = "Vspeciallineinfo.FindByWeightprice";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, weightprice);
-			return result;
-        }
-		public IList<Vspeciallineinfo> PaginationFindByWeightprice(VspeciallineinfoPagination obj) {
-			String stmtId = "VspeciallineinfoPagination.FindByWeightprice";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -72,13 +72,13 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
-		public IList<Vspeciallineinfo> FindByVolumeprice(Int32 volumeprice) {
-			String stmtId = "Vspeciallineinfo.FindByVolumeprice";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, volumeprice);
+		public IList<Vspeciallineinfo> FindByDstcounty(String dstcounty) {
+			String stmtId = "Vspeciallineinfo.FindByDstcounty";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcounty);
 			return result;
         }
-		public IList<Vspeciallineinfo> PaginationFindByVolumeprice(VspeciallineinfoPagination obj) {
-			String stmtId = "VspeciallineinfoPagination.FindByVolumeprice";
+		public IList<Vspeciallineinfo> PaginationFindByDstcounty(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindByDstcounty";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -99,16 +99,6 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vspeciallineinfo> PaginationFindByUserid(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByUserid";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
-			return result;
-        }
-		public IList<Vspeciallineinfo> FindBySrccontactpersonname(String srccontactpersonname) {
-			String stmtId = "Vspeciallineinfo.FindBySrccontactpersonname";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactpersonname);
-			return result;
-        }
-		public IList<Vspeciallineinfo> PaginationFindBySrccontactpersonname(VspeciallineinfoPagination obj) {
-			String stmtId = "VspeciallineinfoPagination.FindBySrccontactpersonname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -142,6 +132,16 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public IList<Vspeciallineinfo> FindByWeightprice(Int32 weightprice) {
+			String stmtId = "Vspeciallineinfo.FindByWeightprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, weightprice);
+			return result;
+        }
+		public IList<Vspeciallineinfo> PaginationFindByWeightprice(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindByWeightprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
 		public IList<Vspeciallineinfo> FindBySrccontactcellphone(String srccontactcellphone) {
 			String stmtId = "Vspeciallineinfo.FindBySrccontactcellphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactcellphone);
@@ -169,6 +169,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vspeciallineinfo> PaginationFindByDstcontactphone(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstcontactphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> FindBySrccontactpersonname(String srccontactpersonname) {
+			String stmtId = "Vspeciallineinfo.FindBySrccontactpersonname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactpersonname);
+			return result;
+        }
+		public IList<Vspeciallineinfo> PaginationFindBySrccontactpersonname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindBySrccontactpersonname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -202,23 +212,13 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
-		public IList<Vspeciallineinfo> FindBySrccounty(String srccounty) {
-			String stmtId = "Vspeciallineinfo.FindBySrccounty";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccounty);
+		public IList<Vspeciallineinfo> FindByVolumeprice(Int32 volumeprice) {
+			String stmtId = "Vspeciallineinfo.FindByVolumeprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, volumeprice);
 			return result;
         }
-		public IList<Vspeciallineinfo> PaginationFindBySrccounty(VspeciallineinfoPagination obj) {
-			String stmtId = "VspeciallineinfoPagination.FindBySrccounty";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
-			return result;
-        }
-		public IList<Vspeciallineinfo> FindByDstcounty(String dstcounty) {
-			String stmtId = "Vspeciallineinfo.FindByDstcounty";
-			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcounty);
-			return result;
-        }
-		public IList<Vspeciallineinfo> PaginationFindByDstcounty(VspeciallineinfoPagination obj) {
-			String stmtId = "VspeciallineinfoPagination.FindByDstcounty";
+		public IList<Vspeciallineinfo> PaginationFindByVolumeprice(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindByVolumeprice";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }

@@ -17,10 +17,6 @@ namespace Trans.DAL.Dao
 
 		IList<Article> QuickFindAll();
 
-		IList<Article> FindByReleasedate(DateTime releasedate);
-
-		IList<Article> PaginationFindByReleasedate(ArticlePagination obj);
-
 		IList<Article> FindByUserid(Int64 userid);
 
 		IList<Article> PaginationFindByUserid(ArticlePagination obj);
@@ -41,6 +37,10 @@ namespace Trans.DAL.Dao
 
 		IList<Article> PaginationFindByTypeid(ArticlePagination obj);
 
+		IList<Article> FindByIstop(Byte istop);
+
+		IList<Article> PaginationFindByIstop(ArticlePagination obj);
+
 		IList<Article> FindByContent(String content);
 
 		IList<Article> PaginationFindByContent(ArticlePagination obj);
@@ -49,9 +49,9 @@ namespace Trans.DAL.Dao
 
 		IList<Article> PaginationFindByReleaseip(ArticlePagination obj);
 
-		IList<Article> FindByIstop(Byte istop);
+		IList<Article> FindByReleasedate(DateTime releasedate);
 
-		IList<Article> PaginationFindByIstop(ArticlePagination obj);
+		IList<Article> PaginationFindByReleasedate(ArticlePagination obj);
 
 		IList<Article> FindByIspass(Byte ispass);
 
@@ -63,8 +63,6 @@ namespace Trans.DAL.Dao
 
 		void Delete(Article obj);
 
-		int DeleteByReleasedate(DateTime releasedate);
-
 		int DeleteByUserid(Int64 userid);
 
 		int DeleteByTitle(String title);
@@ -75,11 +73,13 @@ namespace Trans.DAL.Dao
 
 		int DeleteByTypeid(Int64 typeid);
 
+		int DeleteByIstop(Byte istop);
+
 		int DeleteByContent(String content);
 
 		int DeleteByReleaseip(String releaseip);
 
-		int DeleteByIstop(Byte istop);
+		int DeleteByReleasedate(DateTime releasedate);
 
 		int DeleteByIspass(Byte ispass);
 

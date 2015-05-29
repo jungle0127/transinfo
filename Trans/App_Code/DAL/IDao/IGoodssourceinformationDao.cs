@@ -21,17 +21,9 @@ namespace Trans.DAL.Dao
 
 		IList<Goodssourceinformation> PaginationFindByCautiontypeid(GoodssourceinformationPagination obj);
 
-		IList<Goodssourceinformation> FindByActive(Byte active);
-
-		IList<Goodssourceinformation> PaginationFindByActive(GoodssourceinformationPagination obj);
-
 		IList<Goodssourceinformation> FindByDeadline(DateTime deadline);
 
 		IList<Goodssourceinformation> PaginationFindByDeadline(GoodssourceinformationPagination obj);
-
-		IList<Goodssourceinformation> FindBySrccountycode(String srccountycode);
-
-		IList<Goodssourceinformation> PaginationFindBySrccountycode(GoodssourceinformationPagination obj);
 
 		IList<Goodssourceinformation> FindByReleasedate(DateTime releasedate);
 
@@ -61,9 +53,17 @@ namespace Trans.DAL.Dao
 
 		IList<Goodssourceinformation> PaginationFindByContent(GoodssourceinformationPagination obj);
 
+		IList<Goodssourceinformation> FindBySrccountycode(String srccountycode);
+
+		IList<Goodssourceinformation> PaginationFindBySrccountycode(GoodssourceinformationPagination obj);
+
 		IList<Goodssourceinformation> FindByDstcountycode(String dstcountycode);
 
 		IList<Goodssourceinformation> PaginationFindByDstcountycode(GoodssourceinformationPagination obj);
+
+		IList<Goodssourceinformation> FindByActive(Byte active);
+
+		IList<Goodssourceinformation> PaginationFindByActive(GoodssourceinformationPagination obj);
 
 		IList<Goodssourceinformation> FindByGoodstypeid(Int64 goodstypeid);
 
@@ -81,11 +81,7 @@ namespace Trans.DAL.Dao
 
 		int DeleteByCautiontypeid(Int64 cautiontypeid);
 
-		int DeleteByActive(Byte active);
-
 		int DeleteByDeadline(DateTime deadline);
-
-		int DeleteBySrccountycode(String srccountycode);
 
 		int DeleteByReleasedate(DateTime releasedate);
 
@@ -101,7 +97,11 @@ namespace Trans.DAL.Dao
 
 		int DeleteByContent(String content);
 
+		int DeleteBySrccountycode(String srccountycode);
+
 		int DeleteByDstcountycode(String dstcountycode);
+
+		int DeleteByActive(Byte active);
 
 		int DeleteByGoodstypeid(Int64 goodstypeid);
 

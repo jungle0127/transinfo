@@ -19,9 +19,13 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkmetadata> PaginationFindByVantypename(VtrunkmetadataPagination obj);
 
-		IList<Vtrunkmetadata> FindByName(String name);
+		IList<Vtrunkmetadata> FindByContactpersonname(String contactpersonname);
 
-		IList<Vtrunkmetadata> PaginationFindByName(VtrunkmetadataPagination obj);
+		IList<Vtrunkmetadata> PaginationFindByContactpersonname(VtrunkmetadataPagination obj);
+
+		IList<Vtrunkmetadata> FindByTrunktypename(String trunktypename);
+
+		IList<Vtrunkmetadata> PaginationFindByTrunktypename(VtrunkmetadataPagination obj);
 
 		IList<Vtrunkmetadata> FindByConatactphone(String conatactphone);
 
@@ -39,17 +43,17 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkmetadata> PaginationFindByBrand(VtrunkmetadataPagination obj);
 
-		IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri);
-
-		IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj);
-
 		IList<Vtrunkmetadata> FindByLength(String length);
 
 		IList<Vtrunkmetadata> PaginationFindByLength(VtrunkmetadataPagination obj);
 
-		IList<Vtrunkmetadata> FindByTrunktypename(String trunktypename);
+		IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri);
 
-		IList<Vtrunkmetadata> PaginationFindByTrunktypename(VtrunkmetadataPagination obj);
+		IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj);
+
+		IList<Vtrunkmetadata> FindByCountyname(String countyname);
+
+		IList<Vtrunkmetadata> PaginationFindByCountyname(VtrunkmetadataPagination obj);
 
 		IList<Vtrunkmetadata> FindByWeightcapacity(String weightcapacity);
 
@@ -71,9 +75,9 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkmetadata> PaginationFindByTrunkidentifynumber(VtrunkmetadataPagination obj);
 
-		IList<Vtrunkmetadata> FindByContactpersonname(String contactpersonname);
+		IList<Vtrunkmetadata> FindByCountycode(String countycode);
 
-		IList<Vtrunkmetadata> PaginationFindByContactpersonname(VtrunkmetadataPagination obj);
+		IList<Vtrunkmetadata> PaginationFindByCountycode(VtrunkmetadataPagination obj);
 
 		IList<Vtrunkmetadata> FindByLocation(String location);
 

@@ -42,16 +42,6 @@ namespace Trans.DAL.Dao
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, null);
 			return result;
         }
-		public IList<City> FindByCode(String code) {
-			String stmtId = "City.FindByCode";
-			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, code);
-			return result;
-        }
-		public IList<City> PaginationFindByCode(CityPagination obj) {
-			String stmtId = "CityPagination.FindByCode";
-			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, obj);
-			return result;
-        }
 		public IList<City> FindByProvincecode(String provincecode) {
 			String stmtId = "City.FindByProvincecode";
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, provincecode);
@@ -59,6 +49,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<City> PaginationFindByProvincecode(CityPagination obj) {
 			String stmtId = "CityPagination.FindByProvincecode";
+			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, obj);
+			return result;
+        }
+		public IList<City> FindByCode(String code) {
+			String stmtId = "City.FindByCode";
+			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, code);
+			return result;
+        }
+		public IList<City> PaginationFindByCode(CityPagination obj) {
+			String stmtId = "CityPagination.FindByCode";
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, obj);
 			return result;
         }
@@ -86,14 +86,14 @@ namespace Trans.DAL.Dao
 			String stmtId = "City.Delete";
 			this.sqlMapper.Delete(stmtId, obj);
 		}
-		public int DeleteByCode(String code) {
-			String stmtId = "City.DeleteByCode";
-			int result = this.sqlMapper.Delete(stmtId, code);
-			return result;
-        }
 		public int DeleteByProvincecode(String provincecode) {
 			String stmtId = "City.DeleteByProvincecode";
 			int result = this.sqlMapper.Delete(stmtId, provincecode);
+			return result;
+        }
+		public int DeleteByCode(String code) {
+			String stmtId = "City.DeleteByCode";
+			int result = this.sqlMapper.Delete(stmtId, code);
 			return result;
         }
 		public int DeleteByName(String name) {

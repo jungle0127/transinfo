@@ -7,9 +7,8 @@
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Goodssourceinformation">
 			<result property="Cautiontypeid" column="cautiontypeid" dbType="bigint"/>
-			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Deadline" column="deadline" dbType="datetime"/>
-			<result property="Srccountycode" column="srccountycode" dbType="varchar"/>
 			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 			<result property="Userid" column="userid" dbType="bigint"/>
 			<result property="Price" column="price" dbType="varchar"/>
@@ -17,8 +16,9 @@
 			<result property="Title" column="title" dbType="varchar"/>
 			<result property="Transporttypeid" column="transporttypeid" dbType="bigint"/>
 			<result property="Content" column="content" dbType="text"/>
-			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Srccountycode" column="srccountycode" dbType="varchar"/>
 			<result property="Dstcountycode" column="dstcountycode" dbType="varchar"/>
+			<result property="Active" column="active" dbType="tinyint"/>
 			<result property="Goodstypeid" column="goodstypeid" dbType="bigint"/>
 			<result property="Titlecolor" column="titlecolor" dbType="varchar"/>
 		</resultMap>
@@ -39,23 +39,14 @@
 		<select id="GoodssourceinformationPagination.FindByCautiontypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.cautiontypeid = #Cautiontypeid# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Goodssourceinformation.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.active = #value#
-		</select>
-		<select id="GoodssourceinformationPagination.FindByActive" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.active = #Active# limit #Limit# offset #Offset# 
+		<select id="Goodssourceinformation.Find" parameterClass="Goodssourceinformation" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.id=#Id#
 		</select>
 		<select id="Goodssourceinformation.FindByDeadline" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.deadline = #value#
 		</select>
 		<select id="GoodssourceinformationPagination.FindByDeadline" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.deadline = #Deadline# limit #Limit# offset #Offset# 
-		</select>
-		<select id="Goodssourceinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.srccountycode = #value#
-		</select>
-		<select id="GoodssourceinformationPagination.FindBySrccountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.srccountycode = #Srccountycode# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Goodssourceinformation.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.releasedate = #value#
@@ -99,14 +90,23 @@
 		<select id="GoodssourceinformationPagination.FindByContent" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.content = #Content# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Goodssourceinformation.Find" parameterClass="Goodssourceinformation" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.id=#Id#
+		<select id="Goodssourceinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.srccountycode = #value#
+		</select>
+		<select id="GoodssourceinformationPagination.FindBySrccountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.srccountycode = #Srccountycode# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Goodssourceinformation.FindByDstcountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.dstcountycode = #value#
 		</select>
 		<select id="GoodssourceinformationPagination.FindByDstcountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.dstcountycode = #Dstcountycode# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.active = #value#
+		</select>
+		<select id="GoodssourceinformationPagination.FindByActive" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.active = #Active# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Goodssourceinformation.FindByGoodstypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.goodstypeid = #value#
@@ -121,22 +121,19 @@
 			WHERE goodssourceinformation.titlecolor = #Titlecolor# limit #Limit# offset #Offset# 
 		</select>
 		<insert id="Goodssourceinformation.Insert" parameterClass="Goodssourceinformation">
-			INSERT INTO goodssourceinformation (cautiontypeid,active,deadline,srccountycode,releasedate,userid,price,goodsname,title,transporttypeid,content,id,dstcountycode,goodstypeid,titlecolor) VALUES (#Cautiontypeid#,#Active#,#Deadline#,#Srccountycode#,#Releasedate#,#Userid#,#Price#,#Goodsname#,#Title#,#Transporttypeid#,#Content#,#Id#,#Dstcountycode#,#Goodstypeid#,#Titlecolor#)
+			INSERT INTO goodssourceinformation (cautiontypeid,id,deadline,releasedate,userid,price,goodsname,title,transporttypeid,content,srccountycode,dstcountycode,active,goodstypeid,titlecolor) VALUES (#Cautiontypeid#,#Id#,#Deadline#,#Releasedate#,#Userid#,#Price#,#Goodsname#,#Title#,#Transporttypeid#,#Content#,#Srccountycode#,#Dstcountycode#,#Active#,#Goodstypeid#,#Titlecolor#)
 		</insert>
 		<update id="Goodssourceinformation.Update" parameterClass="Goodssourceinformation">
-			UPDATE goodssourceinformation SET cautiontypeid=#Cautiontypeid#,active=#Active#,deadline=#Deadline#,srccountycode=#Srccountycode#,releasedate=#Releasedate#,userid=#Userid#,price=#Price#,goodsname=#Goodsname#,title=#Title#,transporttypeid=#Transporttypeid#,content=#Content#,dstcountycode=#Dstcountycode#,goodstypeid=#Goodstypeid#,titlecolor=#Titlecolor# WHERE id=#Id#
+			UPDATE goodssourceinformation SET cautiontypeid=#Cautiontypeid#,deadline=#Deadline#,releasedate=#Releasedate#,userid=#Userid#,price=#Price#,goodsname=#Goodsname#,title=#Title#,transporttypeid=#Transporttypeid#,content=#Content#,srccountycode=#Srccountycode#,dstcountycode=#Dstcountycode#,active=#Active#,goodstypeid=#Goodstypeid#,titlecolor=#Titlecolor# WHERE id=#Id#
 		</update>
 		<delete id="Goodssourceinformation.DeleteByCautiontypeid" parameterClass="Int64">
 			DELETE FROM goodssourceinformation WHERE cautiontypeid=#value# 
 		</delete>
-		<delete id="Goodssourceinformation.DeleteByActive" parameterClass="Byte">
-			DELETE FROM goodssourceinformation WHERE active=#value# 
+		<delete id="Goodssourceinformation.Delete" parameterClass="Goodssourceinformation">
+			DELETE FROM goodssourceinformation WHERE id=#Id#
 		</delete>
 		<delete id="Goodssourceinformation.DeleteByDeadline" parameterClass="DateTime">
 			DELETE FROM goodssourceinformation WHERE deadline=#value# 
-		</delete>
-		<delete id="Goodssourceinformation.DeleteBySrccountycode" parameterClass="String">
-			DELETE FROM goodssourceinformation WHERE srccountycode=#value# 
 		</delete>
 		<delete id="Goodssourceinformation.DeleteByReleasedate" parameterClass="DateTime">
 			DELETE FROM goodssourceinformation WHERE releasedate=#value# 
@@ -159,11 +156,14 @@
 		<delete id="Goodssourceinformation.DeleteByContent" parameterClass="String">
 			DELETE FROM goodssourceinformation WHERE content=#value# 
 		</delete>
-		<delete id="Goodssourceinformation.Delete" parameterClass="Goodssourceinformation">
-			DELETE FROM goodssourceinformation WHERE id=#Id#
+		<delete id="Goodssourceinformation.DeleteBySrccountycode" parameterClass="String">
+			DELETE FROM goodssourceinformation WHERE srccountycode=#value# 
 		</delete>
 		<delete id="Goodssourceinformation.DeleteByDstcountycode" parameterClass="String">
 			DELETE FROM goodssourceinformation WHERE dstcountycode=#value# 
+		</delete>
+		<delete id="Goodssourceinformation.DeleteByActive" parameterClass="Byte">
+			DELETE FROM goodssourceinformation WHERE active=#value# 
 		</delete>
 		<delete id="Goodssourceinformation.DeleteByGoodstypeid" parameterClass="Int64">
 			DELETE FROM goodssourceinformation WHERE goodstypeid=#value# 

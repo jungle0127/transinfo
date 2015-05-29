@@ -6,18 +6,6 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class TrunkmetadataPagination
 	{
-		private String m_vanimageuri;
-		public String Vanimageuri
-		{
-			get { return m_vanimageuri; }
-			set { m_vanimageuri = value;}
-		}
-		private String m_contactpersonname;
-		public String Contactpersonname
-		{
-			get { return m_contactpersonname; }
-			set { m_contactpersonname = value;}
-		}
 		private String m_conatactphone;
 		public String Conatactphone
 		{
@@ -54,11 +42,23 @@ namespace Trans.DAL.Entity
 			get { return m_trunktypeid; }
 			set { m_trunktypeid = value;}
 		}
+		private String m_contactpersonname;
+		public String Contactpersonname
+		{
+			get { return m_contactpersonname; }
+			set { m_contactpersonname = value;}
+		}
 		private Byte m_active;
 		public Byte Active
 		{
 			get { return m_active; }
 			set { m_active = value;}
+		}
+		private String m_vanimageuri;
+		public String Vanimageuri
+		{
+			get { return m_vanimageuri; }
+			set { m_vanimageuri = value;}
 		}
 		private String m_weightcapacity;
 		public String Weightcapacity

@@ -42,23 +42,13 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, null);
 			return result;
         }
-		public IList<Trunkinformation> FindByRouter(String router) {
-			String stmtId = "Trunkinformation.FindByRouter";
-			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, router);
+		public IList<Trunkinformation> FindBySrccountycode(String srccountycode) {
+			String stmtId = "Trunkinformation.FindBySrccountycode";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, srccountycode);
 			return result;
         }
-		public IList<Trunkinformation> PaginationFindByRouter(TrunkinformationPagination obj) {
-			String stmtId = "TrunkinformationPagination.FindByRouter";
-			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Trunkinformation> FindByTrunkid(Int64 trunkid) {
-			String stmtId = "Trunkinformation.FindByTrunkid";
-			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, trunkid);
-			return result;
-        }
-		public IList<Trunkinformation> PaginationFindByTrunkid(TrunkinformationPagination obj) {
-			String stmtId = "TrunkinformationPagination.FindByTrunkid";
+		public IList<Trunkinformation> PaginationFindBySrccountycode(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.FindBySrccountycode";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -92,23 +82,13 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Trunkinformation> FindBySrccountycode(String srccountycode) {
-			String stmtId = "Trunkinformation.FindBySrccountycode";
-			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, srccountycode);
+		public IList<Trunkinformation> FindByRouter(String router) {
+			String stmtId = "Trunkinformation.FindByRouter";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, router);
 			return result;
         }
-		public IList<Trunkinformation> PaginationFindBySrccountycode(TrunkinformationPagination obj) {
-			String stmtId = "TrunkinformationPagination.FindBySrccountycode";
-			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Trunkinformation> FindByDescription(String description) {
-			String stmtId = "Trunkinformation.FindByDescription";
-			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, description);
-			return result;
-        }
-		public IList<Trunkinformation> PaginationFindByDescription(TrunkinformationPagination obj) {
-			String stmtId = "TrunkinformationPagination.FindByDescription";
+		public IList<Trunkinformation> PaginationFindByRouter(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.FindByRouter";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -152,6 +132,16 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Trunkinformation> FindByTrunkid(Int64 trunkid) {
+			String stmtId = "Trunkinformation.FindByTrunkid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, trunkid);
+			return result;
+        }
+		public IList<Trunkinformation> PaginationFindByTrunkid(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.FindByTrunkid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Trunkinformation> FindByTitle(String title) {
 			String stmtId = "Trunkinformation.FindByTitle";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, title);
@@ -182,6 +172,16 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Trunkinformation> FindByDescription(String description) {
+			String stmtId = "Trunkinformation.FindByDescription";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, description);
+			return result;
+        }
+		public IList<Trunkinformation> PaginationFindByDescription(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.FindByDescription";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Trunkinformation> FindByRoutetypeid(Int64 routetypeid) {
 			String stmtId = "Trunkinformation.FindByRoutetypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, routetypeid);
@@ -206,14 +206,9 @@ namespace Trans.DAL.Dao
 			String stmtId = "Trunkinformation.Delete";
 			this.sqlMapper.Delete(stmtId, obj);
 		}
-		public int DeleteByRouter(String router) {
-			String stmtId = "Trunkinformation.DeleteByRouter";
-			int result = this.sqlMapper.Delete(stmtId, router);
-			return result;
-        }
-		public int DeleteByTrunkid(Int64 trunkid) {
-			String stmtId = "Trunkinformation.DeleteByTrunkid";
-			int result = this.sqlMapper.Delete(stmtId, trunkid);
+		public int DeleteBySrccountycode(String srccountycode) {
+			String stmtId = "Trunkinformation.DeleteBySrccountycode";
+			int result = this.sqlMapper.Delete(stmtId, srccountycode);
 			return result;
         }
 		public int DeleteByMarketprice(String marketprice) {
@@ -231,14 +226,9 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, takeofftime);
 			return result;
         }
-		public int DeleteBySrccountycode(String srccountycode) {
-			String stmtId = "Trunkinformation.DeleteBySrccountycode";
-			int result = this.sqlMapper.Delete(stmtId, srccountycode);
-			return result;
-        }
-		public int DeleteByDescription(String description) {
-			String stmtId = "Trunkinformation.DeleteByDescription";
-			int result = this.sqlMapper.Delete(stmtId, description);
+		public int DeleteByRouter(String router) {
+			String stmtId = "Trunkinformation.DeleteByRouter";
+			int result = this.sqlMapper.Delete(stmtId, router);
 			return result;
         }
 		public int DeleteByUserid(Int64 userid) {
@@ -261,6 +251,11 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, active);
 			return result;
         }
+		public int DeleteByTrunkid(Int64 trunkid) {
+			String stmtId = "Trunkinformation.DeleteByTrunkid";
+			int result = this.sqlMapper.Delete(stmtId, trunkid);
+			return result;
+        }
 		public int DeleteByTitle(String title) {
 			String stmtId = "Trunkinformation.DeleteByTitle";
 			int result = this.sqlMapper.Delete(stmtId, title);
@@ -274,6 +269,11 @@ namespace Trans.DAL.Dao
 		public int DeleteByReleasedate(DateTime releasedate) {
 			String stmtId = "Trunkinformation.DeleteByReleasedate";
 			int result = this.sqlMapper.Delete(stmtId, releasedate);
+			return result;
+        }
+		public int DeleteByDescription(String description) {
+			String stmtId = "Trunkinformation.DeleteByDescription";
+			int result = this.sqlMapper.Delete(stmtId, description);
 			return result;
         }
 		public int DeleteByRoutetypeid(Int64 routetypeid) {

@@ -17,13 +17,9 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkinformation> QuickFindAll();
 
-		IList<Trunkinformation> FindByRouter(String router);
+		IList<Trunkinformation> FindBySrccountycode(String srccountycode);
 
-		IList<Trunkinformation> PaginationFindByRouter(TrunkinformationPagination obj);
-
-		IList<Trunkinformation> FindByTrunkid(Int64 trunkid);
-
-		IList<Trunkinformation> PaginationFindByTrunkid(TrunkinformationPagination obj);
+		IList<Trunkinformation> PaginationFindBySrccountycode(TrunkinformationPagination obj);
 
 		IList<Trunkinformation> FindByMarketprice(String marketprice);
 
@@ -37,13 +33,9 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkinformation> PaginationFindByTakeofftime(TrunkinformationPagination obj);
 
-		IList<Trunkinformation> FindBySrccountycode(String srccountycode);
+		IList<Trunkinformation> FindByRouter(String router);
 
-		IList<Trunkinformation> PaginationFindBySrccountycode(TrunkinformationPagination obj);
-
-		IList<Trunkinformation> FindByDescription(String description);
-
-		IList<Trunkinformation> PaginationFindByDescription(TrunkinformationPagination obj);
+		IList<Trunkinformation> PaginationFindByRouter(TrunkinformationPagination obj);
 
 		IList<Trunkinformation> FindByUserid(Int64 userid);
 
@@ -61,6 +53,10 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkinformation> PaginationFindByActive(TrunkinformationPagination obj);
 
+		IList<Trunkinformation> FindByTrunkid(Int64 trunkid);
+
+		IList<Trunkinformation> PaginationFindByTrunkid(TrunkinformationPagination obj);
+
 		IList<Trunkinformation> FindByTitle(String title);
 
 		IList<Trunkinformation> PaginationFindByTitle(TrunkinformationPagination obj);
@@ -73,6 +69,10 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkinformation> PaginationFindByReleasedate(TrunkinformationPagination obj);
 
+		IList<Trunkinformation> FindByDescription(String description);
+
+		IList<Trunkinformation> PaginationFindByDescription(TrunkinformationPagination obj);
+
 		IList<Trunkinformation> FindByRoutetypeid(Int64 routetypeid);
 
 		IList<Trunkinformation> PaginationFindByRoutetypeid(TrunkinformationPagination obj);
@@ -83,9 +83,7 @@ namespace Trans.DAL.Dao
 
 		void Delete(Trunkinformation obj);
 
-		int DeleteByRouter(String router);
-
-		int DeleteByTrunkid(Int64 trunkid);
+		int DeleteBySrccountycode(String srccountycode);
 
 		int DeleteByMarketprice(String marketprice);
 
@@ -93,9 +91,7 @@ namespace Trans.DAL.Dao
 
 		int DeleteByTakeofftime(DateTime takeofftime);
 
-		int DeleteBySrccountycode(String srccountycode);
-
-		int DeleteByDescription(String description);
+		int DeleteByRouter(String router);
 
 		int DeleteByUserid(Int64 userid);
 
@@ -105,11 +101,15 @@ namespace Trans.DAL.Dao
 
 		int DeleteByActive(Byte active);
 
+		int DeleteByTrunkid(Int64 trunkid);
+
 		int DeleteByTitle(String title);
 
 		int DeleteByDstcountycode(String dstcountycode);
 
 		int DeleteByReleasedate(DateTime releasedate);
+
+		int DeleteByDescription(String description);
 
 		int DeleteByRoutetypeid(Int64 routetypeid);
 

@@ -37,10 +37,6 @@ namespace Trans.DAL.Dao
 
 		IList<Speciallineinfo> PaginationFindByVolumeprice(SpeciallineinfoPagination obj);
 
-		IList<Speciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid);
-
-		IList<Speciallineinfo> PaginationFindBySpeciallinetypeid(SpeciallineinfoPagination obj);
-
 		IList<Speciallineinfo> FindByWeightprice(Int32 weightprice);
 
 		IList<Speciallineinfo> PaginationFindByWeightprice(SpeciallineinfoPagination obj);
@@ -52,6 +48,10 @@ namespace Trans.DAL.Dao
 		IList<Speciallineinfo> FindBySourceplaceinfoid(Int64 sourceplaceinfoid);
 
 		IList<Speciallineinfo> PaginationFindBySourceplaceinfoid(SpeciallineinfoPagination obj);
+
+		IList<Speciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid);
+
+		IList<Speciallineinfo> PaginationFindBySpeciallinetypeid(SpeciallineinfoPagination obj);
 
 		void Insert(Speciallineinfo obj);
 
@@ -69,13 +69,13 @@ namespace Trans.DAL.Dao
 
 		int DeleteByVolumeprice(Int32 volumeprice);
 
-		int DeleteBySpeciallinetypeid(Int64 speciallinetypeid);
-
 		int DeleteByWeightprice(Int32 weightprice);
 
 		int DeleteByDescription(String description);
 
 		int DeleteBySourceplaceinfoid(Int64 sourceplaceinfoid);
+
+		int DeleteBySpeciallinetypeid(Int64 speciallinetypeid);
 
 		void Reload(Speciallineinfo obj);
 	}

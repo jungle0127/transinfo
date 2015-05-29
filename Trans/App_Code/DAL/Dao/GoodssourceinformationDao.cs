@@ -52,16 +52,6 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Goodssourceinformation> FindByActive(Byte active) {
-			String stmtId = "Goodssourceinformation.FindByActive";
-			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, active);
-			return result;
-        }
-		public IList<Goodssourceinformation> PaginationFindByActive(GoodssourceinformationPagination obj) {
-			String stmtId = "GoodssourceinformationPagination.FindByActive";
-			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
-			return result;
-        }
 		public IList<Goodssourceinformation> FindByDeadline(DateTime deadline) {
 			String stmtId = "Goodssourceinformation.FindByDeadline";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, deadline);
@@ -69,16 +59,6 @@ namespace Trans.DAL.Dao
         }
 		public IList<Goodssourceinformation> PaginationFindByDeadline(GoodssourceinformationPagination obj) {
 			String stmtId = "GoodssourceinformationPagination.FindByDeadline";
-			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Goodssourceinformation> FindBySrccountycode(String srccountycode) {
-			String stmtId = "Goodssourceinformation.FindBySrccountycode";
-			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, srccountycode);
-			return result;
-        }
-		public IList<Goodssourceinformation> PaginationFindBySrccountycode(GoodssourceinformationPagination obj) {
-			String stmtId = "GoodssourceinformationPagination.FindBySrccountycode";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
@@ -152,6 +132,16 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Goodssourceinformation> FindBySrccountycode(String srccountycode) {
+			String stmtId = "Goodssourceinformation.FindBySrccountycode";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, srccountycode);
+			return result;
+        }
+		public IList<Goodssourceinformation> PaginationFindBySrccountycode(GoodssourceinformationPagination obj) {
+			String stmtId = "GoodssourceinformationPagination.FindBySrccountycode";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Goodssourceinformation> FindByDstcountycode(String dstcountycode) {
 			String stmtId = "Goodssourceinformation.FindByDstcountycode";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, dstcountycode);
@@ -159,6 +149,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Goodssourceinformation> PaginationFindByDstcountycode(GoodssourceinformationPagination obj) {
 			String stmtId = "GoodssourceinformationPagination.FindByDstcountycode";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Goodssourceinformation> FindByActive(Byte active) {
+			String stmtId = "Goodssourceinformation.FindByActive";
+			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, active);
+			return result;
+        }
+		public IList<Goodssourceinformation> PaginationFindByActive(GoodssourceinformationPagination obj) {
+			String stmtId = "GoodssourceinformationPagination.FindByActive";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
@@ -201,19 +201,9 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, cautiontypeid);
 			return result;
         }
-		public int DeleteByActive(Byte active) {
-			String stmtId = "Goodssourceinformation.DeleteByActive";
-			int result = this.sqlMapper.Delete(stmtId, active);
-			return result;
-        }
 		public int DeleteByDeadline(DateTime deadline) {
 			String stmtId = "Goodssourceinformation.DeleteByDeadline";
 			int result = this.sqlMapper.Delete(stmtId, deadline);
-			return result;
-        }
-		public int DeleteBySrccountycode(String srccountycode) {
-			String stmtId = "Goodssourceinformation.DeleteBySrccountycode";
-			int result = this.sqlMapper.Delete(stmtId, srccountycode);
 			return result;
         }
 		public int DeleteByReleasedate(DateTime releasedate) {
@@ -251,9 +241,19 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, content);
 			return result;
         }
+		public int DeleteBySrccountycode(String srccountycode) {
+			String stmtId = "Goodssourceinformation.DeleteBySrccountycode";
+			int result = this.sqlMapper.Delete(stmtId, srccountycode);
+			return result;
+        }
 		public int DeleteByDstcountycode(String dstcountycode) {
 			String stmtId = "Goodssourceinformation.DeleteByDstcountycode";
 			int result = this.sqlMapper.Delete(stmtId, dstcountycode);
+			return result;
+        }
+		public int DeleteByActive(Byte active) {
+			String stmtId = "Goodssourceinformation.DeleteByActive";
+			int result = this.sqlMapper.Delete(stmtId, active);
 			return result;
         }
 		public int DeleteByGoodstypeid(Int64 goodstypeid) {

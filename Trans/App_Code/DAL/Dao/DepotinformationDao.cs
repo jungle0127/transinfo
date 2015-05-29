@@ -52,6 +52,16 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Depotinformation> FindByDescription(String description) {
+			String stmtId = "Depotinformation.FindByDescription";
+			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, description);
+			return result;
+        }
+		public IList<Depotinformation> PaginationFindByDescription(DepotinformationPagination obj) {
+			String stmtId = "DepotinformationPagination.FindByDescription";
+			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Depotinformation> FindByValidtime(String validtime) {
 			String stmtId = "Depotinformation.FindByValidtime";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, validtime);
@@ -102,16 +112,6 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Depotinformation> FindByDepottype(Int64 depottype) {
-			String stmtId = "Depotinformation.FindByDepottype";
-			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, depottype);
-			return result;
-        }
-		public IList<Depotinformation> PaginationFindByDepottype(DepotinformationPagination obj) {
-			String stmtId = "DepotinformationPagination.FindByDepottype";
-			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
-			return result;
-        }
 		public IList<Depotinformation> FindByBizscopetype(Int64 bizscopetype) {
 			String stmtId = "Depotinformation.FindByBizscopetype";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, bizscopetype);
@@ -122,6 +122,16 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Depotinformation> FindByDepottype(Int64 depottype) {
+			String stmtId = "Depotinformation.FindByDepottype";
+			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, depottype);
+			return result;
+        }
+		public IList<Depotinformation> PaginationFindByDepottype(DepotinformationPagination obj) {
+			String stmtId = "DepotinformationPagination.FindByDepottype";
+			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Depotinformation> FindByTitle(String title) {
 			String stmtId = "Depotinformation.FindByTitle";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, title);
@@ -129,16 +139,6 @@ namespace Trans.DAL.Dao
         }
 		public IList<Depotinformation> PaginationFindByTitle(DepotinformationPagination obj) {
 			String stmtId = "DepotinformationPagination.FindByTitle";
-			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Depotinformation> FindByDescription(String description) {
-			String stmtId = "Depotinformation.FindByDescription";
-			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, description);
-			return result;
-        }
-		public IList<Depotinformation> PaginationFindByDescription(DepotinformationPagination obj) {
-			String stmtId = "DepotinformationPagination.FindByDescription";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
@@ -181,6 +181,11 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, cellphone);
 			return result;
         }
+		public int DeleteByDescription(String description) {
+			String stmtId = "Depotinformation.DeleteByDescription";
+			int result = this.sqlMapper.Delete(stmtId, description);
+			return result;
+        }
 		public int DeleteByValidtime(String validtime) {
 			String stmtId = "Depotinformation.DeleteByValidtime";
 			int result = this.sqlMapper.Delete(stmtId, validtime);
@@ -206,24 +211,19 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, price);
 			return result;
         }
-		public int DeleteByDepottype(Int64 depottype) {
-			String stmtId = "Depotinformation.DeleteByDepottype";
-			int result = this.sqlMapper.Delete(stmtId, depottype);
-			return result;
-        }
 		public int DeleteByBizscopetype(Int64 bizscopetype) {
 			String stmtId = "Depotinformation.DeleteByBizscopetype";
 			int result = this.sqlMapper.Delete(stmtId, bizscopetype);
 			return result;
         }
+		public int DeleteByDepottype(Int64 depottype) {
+			String stmtId = "Depotinformation.DeleteByDepottype";
+			int result = this.sqlMapper.Delete(stmtId, depottype);
+			return result;
+        }
 		public int DeleteByTitle(String title) {
 			String stmtId = "Depotinformation.DeleteByTitle";
 			int result = this.sqlMapper.Delete(stmtId, title);
-			return result;
-        }
-		public int DeleteByDescription(String description) {
-			String stmtId = "Depotinformation.DeleteByDescription";
-			int result = this.sqlMapper.Delete(stmtId, description);
 			return result;
         }
 		public int DeleteByAddress(String address) {

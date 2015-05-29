@@ -52,13 +52,23 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkmetadata> FindByName(String name) {
-			String stmtId = "Vtrunkmetadata.FindByName";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, name);
+		public IList<Vtrunkmetadata> FindByContactpersonname(String contactpersonname) {
+			String stmtId = "Vtrunkmetadata.FindByContactpersonname";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, contactpersonname);
 			return result;
         }
-		public IList<Vtrunkmetadata> PaginationFindByName(VtrunkmetadataPagination obj) {
-			String stmtId = "VtrunkmetadataPagination.FindByName";
+		public IList<Vtrunkmetadata> PaginationFindByContactpersonname(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByContactpersonname";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkmetadata> FindByTrunktypename(String trunktypename) {
+			String stmtId = "Vtrunkmetadata.FindByTrunktypename";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, trunktypename);
+			return result;
+        }
+		public IList<Vtrunkmetadata> PaginationFindByTrunktypename(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByTrunktypename";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
@@ -102,16 +112,6 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri) {
-			String stmtId = "Vtrunkmetadata.FindByVanimageuri";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
-			return result;
-        }
-		public IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj) {
-			String stmtId = "VtrunkmetadataPagination.FindByVanimageuri";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
-			return result;
-        }
 		public IList<Vtrunkmetadata> FindByLength(String length) {
 			String stmtId = "Vtrunkmetadata.FindByLength";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, length);
@@ -122,13 +122,23 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkmetadata> FindByTrunktypename(String trunktypename) {
-			String stmtId = "Vtrunkmetadata.FindByTrunktypename";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, trunktypename);
+		public IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri) {
+			String stmtId = "Vtrunkmetadata.FindByVanimageuri";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
 			return result;
         }
-		public IList<Vtrunkmetadata> PaginationFindByTrunktypename(VtrunkmetadataPagination obj) {
-			String stmtId = "VtrunkmetadataPagination.FindByTrunktypename";
+		public IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByVanimageuri";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkmetadata> FindByCountyname(String countyname) {
+			String stmtId = "Vtrunkmetadata.FindByCountyname";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, countyname);
+			return result;
+        }
+		public IList<Vtrunkmetadata> PaginationFindByCountyname(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByCountyname";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
@@ -182,13 +192,13 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkmetadata> FindByContactpersonname(String contactpersonname) {
-			String stmtId = "Vtrunkmetadata.FindByContactpersonname";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, contactpersonname);
+		public IList<Vtrunkmetadata> FindByCountycode(String countycode) {
+			String stmtId = "Vtrunkmetadata.FindByCountycode";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, countycode);
 			return result;
         }
-		public IList<Vtrunkmetadata> PaginationFindByContactpersonname(VtrunkmetadataPagination obj) {
-			String stmtId = "VtrunkmetadataPagination.FindByContactpersonname";
+		public IList<Vtrunkmetadata> PaginationFindByCountycode(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByCountycode";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }

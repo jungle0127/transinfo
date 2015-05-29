@@ -12,23 +12,17 @@ namespace Trans.DAL.Entity
 			get { return m_cautiontypeid; }
 			set { m_cautiontypeid = value;}
 		}
-		private Byte m_active;
-		public Byte Active
+		private Int64 m_id;
+		public Int64 Id
 		{
-			get { return m_active; }
-			set { m_active = value;}
+			get { return m_id; }
+			set { m_id = value;}
 		}
 		private DateTime m_deadline;
 		public DateTime Deadline
 		{
 			get { return m_deadline; }
 			set { m_deadline = value;}
-		}
-		private String m_srccountycode;
-		public String Srccountycode
-		{
-			get { return m_srccountycode; }
-			set { m_srccountycode = value;}
 		}
 		private DateTime m_releasedate;
 		public DateTime Releasedate
@@ -72,17 +66,23 @@ namespace Trans.DAL.Entity
 			get { return m_content; }
 			set { m_content = value;}
 		}
-		private Int64 m_id;
-		public Int64 Id
+		private String m_srccountycode;
+		public String Srccountycode
 		{
-			get { return m_id; }
-			set { m_id = value;}
+			get { return m_srccountycode; }
+			set { m_srccountycode = value;}
 		}
 		private String m_dstcountycode;
 		public String Dstcountycode
 		{
 			get { return m_dstcountycode; }
 			set { m_dstcountycode = value;}
+		}
+		private Byte m_active;
+		public Byte Active
+		{
+			get { return m_active; }
+			set { m_active = value;}
 		}
 		private Int64 m_goodstypeid;
 		public Int64 Goodstypeid

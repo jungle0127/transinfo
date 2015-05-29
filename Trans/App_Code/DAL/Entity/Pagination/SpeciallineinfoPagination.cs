@@ -36,12 +36,6 @@ namespace Trans.DAL.Entity
 			get { return m_volumeprice; }
 			set { m_volumeprice = value;}
 		}
-		private Int64 m_speciallinetypeid;
-		public Int64 Speciallinetypeid
-		{
-			get { return m_speciallinetypeid; }
-			set { m_speciallinetypeid = value;}
-		}
 		private Int64 m_id;
 		public Int64 Id
 		{
@@ -65,6 +59,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_sourceplaceinfoid; }
 			set { m_sourceplaceinfoid = value;}
+		}
+		private Int64 m_speciallinetypeid;
+		public Int64 Speciallinetypeid
+		{
+			get { return m_speciallinetypeid; }
+			set { m_speciallinetypeid = value;}
 		}
 		private Int32 m_limit;
 		public Int32 Limit

@@ -167,7 +167,8 @@ trunknumber.number,
 trunkmetadata.length,
 trunkmetadata.weightcapacity,
 trunkmetadata.volume,
-county.name, -- uncomplete
+county.name AS countyname, -- uncomplete
+trunkmetadata.countycode,
 location,
 vantype.typename as vantypename,
 brand,
@@ -269,6 +270,9 @@ CREATE INDEX IX_trunkinfo_returntype ON trunkinformation (returntypeid);
 
 GO
 
+
+
+
 -- ----------------------------------------------------------------------------------
 -- ---------------------------货源信息-----------------------------------------------
 -- ----------------------------------------------------------------------------------
@@ -340,6 +344,9 @@ CREATE TABLE `goodssourceinformation`(
 	`cautiontypeid` bigint NOT NULL,
 	`goodstypeid` bigint NOT NULL,
 	`price` varchar(40) NOT NULL, 
+	`needtrunklength` bigint,
+	`needtrunkweight` bigint,
+	`needtrunkvolume` bigint,
 	`content` text,
 	`releasedate` datetime DEFAULT NOW() NOT NULL,
 	`active` tinyint DEFAULT 1 NOT NULL,
@@ -360,6 +367,9 @@ CREATE INDEX IX_goodssrcinfo_transporttype ON goodssourceinformation(transportty
 CREATE INDEX IX_goodssrcinfo_deadline ON goodssourceinformation(deadline);
 CREATE INDEX IX_goodssrcinfo_price ON goodssourceinformation(price);
 CREATE INDEX IX_goodssrcinfo_releasedate ON goodssourceinformation(releasedate);
+CREATE INDEX IX_goodssrcinfo_needtrunklength ON goodssourceinformation(needtrunklength);
+CREATE INDEX IX_goodssrcinfo_needtrunkweight ON goodssourceinformation(needtrunkweight);
+CREATE INDEX IX_goodssrcinfo_needtrunkvolume ON goodssourceinformation(needtrunkvolume);
  
  
 -- ----------------------------------------------------------------------------------

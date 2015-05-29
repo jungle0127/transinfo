@@ -6,21 +6,21 @@
 	</alias>
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Trunkinformation">
-			<result property="Router" column="router" dbType="varchar"/>
-			<result property="Trunkid" column="trunkid" dbType="bigint"/>
+			<result property="Srccountycode" column="srccountycode" dbType="varchar"/>
 			<result property="Marketprice" column="marketprice" dbType="varchar"/>
 			<result property="Timetypeid" column="timetypeid" dbType="bigint"/>
 			<result property="Takeofftime" column="takeofftime" dbType="datetime"/>
-			<result property="Srccountycode" column="srccountycode" dbType="varchar"/>
-			<result property="Description" column="description" dbType="varchar"/>
+			<result property="Router" column="router" dbType="varchar"/>
 			<result property="Userid" column="userid" dbType="bigint"/>
 			<result property="Negotiateprice" column="negotiateprice" dbType="varchar"/>
 			<result property="Returntypeid" column="returntypeid" dbType="bigint"/>
 			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Trunkid" column="trunkid" dbType="bigint"/>
 			<result property="Title" column="title" dbType="varchar"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Dstcountycode" column="dstcountycode" dbType="varchar"/>
 			<result property="Releasedate" column="releasedate" dbType="datetime"/>
+			<result property="Description" column="description" dbType="varchar"/>
 			<result property="Routetypeid" column="routetypeid" dbType="bigint"/>
 		</resultMap>
 	</resultMaps>
@@ -34,17 +34,11 @@
 		<select id="Trunkinformation.FindAllPagination" parameterClass="TrunkinformationPagination" resultMap="FullResultMap">
 			SELECT * FROM trunkinformation limit #Limit# offset #Offset# 
 		</select>
-		<select id="Trunkinformation.FindByRouter" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.router = #value#
+		<select id="Trunkinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.srccountycode = #value#
 		</select>
-		<select id="TrunkinformationPagination.FindByRouter" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.router = #Router# limit #Limit# offset #Offset# 
-		</select>
-		<select id="Trunkinformation.FindByTrunkid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.trunkid = #value#
-		</select>
-		<select id="TrunkinformationPagination.FindByTrunkid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.trunkid = #Trunkid# limit #Limit# offset #Offset# 
+		<select id="TrunkinformationPagination.FindBySrccountycode" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.srccountycode = #Srccountycode# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkinformation.FindByMarketprice" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.marketprice = #value#
@@ -64,17 +58,11 @@
 		<select id="TrunkinformationPagination.FindByTakeofftime" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.takeofftime = #Takeofftime# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Trunkinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.srccountycode = #value#
+		<select id="Trunkinformation.FindByRouter" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.router = #value#
 		</select>
-		<select id="TrunkinformationPagination.FindBySrccountycode" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.srccountycode = #Srccountycode# limit #Limit# offset #Offset# 
-		</select>
-		<select id="Trunkinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.description = #value#
-		</select>
-		<select id="TrunkinformationPagination.FindByDescription" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.description = #Description# limit #Limit# offset #Offset# 
+		<select id="TrunkinformationPagination.FindByRouter" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.router = #Router# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkinformation.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.userid = #value#
@@ -100,6 +88,12 @@
 		<select id="TrunkinformationPagination.FindByActive" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.active = #Active# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Trunkinformation.FindByTrunkid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.trunkid = #value#
+		</select>
+		<select id="TrunkinformationPagination.FindByTrunkid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.trunkid = #Trunkid# limit #Limit# offset #Offset# 
+		</select>
 		<select id="Trunkinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.title = #value#
 		</select>
@@ -121,6 +115,12 @@
 		<select id="TrunkinformationPagination.FindByReleasedate" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.releasedate = #Releasedate# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Trunkinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.description = #value#
+		</select>
+		<select id="TrunkinformationPagination.FindByDescription" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.description = #Description# limit #Limit# offset #Offset# 
+		</select>
 		<select id="Trunkinformation.FindByRoutetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.routetypeid = #value#
 		</select>
@@ -128,16 +128,13 @@
 			WHERE trunkinformation.routetypeid = #Routetypeid# limit #Limit# offset #Offset# 
 		</select>
 		<insert id="Trunkinformation.Insert" parameterClass="Trunkinformation">
-			INSERT INTO trunkinformation (router,trunkid,marketprice,timetypeid,takeofftime,srccountycode,description,userid,negotiateprice,returntypeid,active,title,id,dstcountycode,releasedate,routetypeid) VALUES (#Router#,#Trunkid#,#Marketprice#,#Timetypeid#,#Takeofftime#,#Srccountycode#,#Description#,#Userid#,#Negotiateprice#,#Returntypeid#,#Active#,#Title#,#Id#,#Dstcountycode#,#Releasedate#,#Routetypeid#)
+			INSERT INTO trunkinformation (srccountycode,marketprice,timetypeid,takeofftime,router,userid,negotiateprice,returntypeid,active,trunkid,title,id,dstcountycode,releasedate,description,routetypeid) VALUES (#Srccountycode#,#Marketprice#,#Timetypeid#,#Takeofftime#,#Router#,#Userid#,#Negotiateprice#,#Returntypeid#,#Active#,#Trunkid#,#Title#,#Id#,#Dstcountycode#,#Releasedate#,#Description#,#Routetypeid#)
 		</insert>
 		<update id="Trunkinformation.Update" parameterClass="Trunkinformation">
-			UPDATE trunkinformation SET router=#Router#,trunkid=#Trunkid#,marketprice=#Marketprice#,timetypeid=#Timetypeid#,takeofftime=#Takeofftime#,srccountycode=#Srccountycode#,description=#Description#,userid=#Userid#,negotiateprice=#Negotiateprice#,returntypeid=#Returntypeid#,active=#Active#,title=#Title#,dstcountycode=#Dstcountycode#,releasedate=#Releasedate#,routetypeid=#Routetypeid# WHERE id=#Id#
+			UPDATE trunkinformation SET srccountycode=#Srccountycode#,marketprice=#Marketprice#,timetypeid=#Timetypeid#,takeofftime=#Takeofftime#,router=#Router#,userid=#Userid#,negotiateprice=#Negotiateprice#,returntypeid=#Returntypeid#,active=#Active#,trunkid=#Trunkid#,title=#Title#,dstcountycode=#Dstcountycode#,releasedate=#Releasedate#,description=#Description#,routetypeid=#Routetypeid# WHERE id=#Id#
 		</update>
-		<delete id="Trunkinformation.DeleteByRouter" parameterClass="String">
-			DELETE FROM trunkinformation WHERE router=#value# 
-		</delete>
-		<delete id="Trunkinformation.DeleteByTrunkid" parameterClass="Int64">
-			DELETE FROM trunkinformation WHERE trunkid=#value# 
+		<delete id="Trunkinformation.DeleteBySrccountycode" parameterClass="String">
+			DELETE FROM trunkinformation WHERE srccountycode=#value# 
 		</delete>
 		<delete id="Trunkinformation.DeleteByMarketprice" parameterClass="String">
 			DELETE FROM trunkinformation WHERE marketprice=#value# 
@@ -148,11 +145,8 @@
 		<delete id="Trunkinformation.DeleteByTakeofftime" parameterClass="DateTime">
 			DELETE FROM trunkinformation WHERE takeofftime=#value# 
 		</delete>
-		<delete id="Trunkinformation.DeleteBySrccountycode" parameterClass="String">
-			DELETE FROM trunkinformation WHERE srccountycode=#value# 
-		</delete>
-		<delete id="Trunkinformation.DeleteByDescription" parameterClass="String">
-			DELETE FROM trunkinformation WHERE description=#value# 
+		<delete id="Trunkinformation.DeleteByRouter" parameterClass="String">
+			DELETE FROM trunkinformation WHERE router=#value# 
 		</delete>
 		<delete id="Trunkinformation.DeleteByUserid" parameterClass="Int64">
 			DELETE FROM trunkinformation WHERE userid=#value# 
@@ -166,6 +160,9 @@
 		<delete id="Trunkinformation.DeleteByActive" parameterClass="Byte">
 			DELETE FROM trunkinformation WHERE active=#value# 
 		</delete>
+		<delete id="Trunkinformation.DeleteByTrunkid" parameterClass="Int64">
+			DELETE FROM trunkinformation WHERE trunkid=#value# 
+		</delete>
 		<delete id="Trunkinformation.DeleteByTitle" parameterClass="String">
 			DELETE FROM trunkinformation WHERE title=#value# 
 		</delete>
@@ -177,6 +174,9 @@
 		</delete>
 		<delete id="Trunkinformation.DeleteByReleasedate" parameterClass="DateTime">
 			DELETE FROM trunkinformation WHERE releasedate=#value# 
+		</delete>
+		<delete id="Trunkinformation.DeleteByDescription" parameterClass="String">
+			DELETE FROM trunkinformation WHERE description=#value# 
 		</delete>
 		<delete id="Trunkinformation.DeleteByRoutetypeid" parameterClass="Int64">
 			DELETE FROM trunkinformation WHERE routetypeid=#value# 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Varticleinfo" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Varticleinfo" type="Trans.DAL.Entity.Varticleinfo" />
+		<typeAlias alias="VarticleinfoPagination" type="Trans.DAL.Entity.VarticleinfoPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Varticleinfo">
+			<result property="Title" column="title" dbType="varchar"/>
+			<result property="Hittimes" column="hittimes" dbType="bigint"/>
+			<result property="Username" column="username" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Titlecolor" column="titlecolor" dbType="varchar"/>
+			<result property="Content" column="content" dbType="text"/>
+			<result property="Releaseip" column="releaseip" dbType="varchar"/>
+			<result property="Releasedate" column="releasedate" dbType="datetime"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Varticleinfo.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo 
+		</select>
+		<select id="Varticleinfo.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_articleinfo
+		</select>
+		<select id="Varticleinfo.FindAllPagination" parameterClass="VarticleinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_articleinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.title = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByTitle" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.title = #Title# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByHittimes" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.hittimes = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByHittimes" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.hittimes = #Hittimes# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.username = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByUsername" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.username = #Username# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.id = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindById" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.id = #Id# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.titlecolor = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByTitlecolor" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.titlecolor = #Titlecolor# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.content = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByContent" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.content = #Content# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByReleaseip" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releaseip = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByReleaseip" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releaseip = #Releaseip# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releasedate = #value#
+		</select>
+		<select id="VarticleinfoPagination.FindByReleasedate" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

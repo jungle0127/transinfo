@@ -6,16 +6,16 @@
 	</alias>
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Article">
-			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 			<result property="Userid" column="userid" dbType="bigint"/>
 			<result property="Title" column="title" dbType="varchar"/>
 			<result property="Hittimes" column="hittimes" dbType="bigint"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Titlecolor" column="titlecolor" dbType="varchar"/>
 			<result property="Typeid" column="typeid" dbType="bigint"/>
+			<result property="Istop" column="istop" dbType="tinyint"/>
 			<result property="Content" column="content" dbType="text"/>
 			<result property="Releaseip" column="releaseip" dbType="varchar"/>
-			<result property="Istop" column="istop" dbType="tinyint"/>
+			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 			<result property="Ispass" column="ispass" dbType="tinyint"/>
 		</resultMap>
 	</resultMaps>
@@ -28,12 +28,6 @@
 		</select>
 		<select id="Article.FindAllPagination" parameterClass="ArticlePagination" resultMap="FullResultMap">
 			SELECT * FROM article limit #Limit# offset #Offset# 
-		</select>
-		<select id="Article.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Article.FindAll">
-			WHERE article.releasedate = #value#
-		</select>
-		<select id="ArticlePagination.FindByReleasedate" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
-			WHERE article.releasedate = #Releasedate# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Article.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Article.FindAll">
 			WHERE article.userid = #value#
@@ -68,6 +62,12 @@
 		<select id="ArticlePagination.FindByTypeid" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
 			WHERE article.typeid = #Typeid# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Article.FindByIstop" parameterClass="Byte" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.istop = #value#
+		</select>
+		<select id="ArticlePagination.FindByIstop" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.istop = #Istop# limit #Limit# offset #Offset# 
+		</select>
 		<select id="Article.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Article.FindAll">
 			WHERE article.content = #value#
 		</select>
@@ -80,11 +80,11 @@
 		<select id="ArticlePagination.FindByReleaseip" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
 			WHERE article.releaseip = #Releaseip# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Article.FindByIstop" parameterClass="Byte" resultMap="FullResultMap" extends="Article.FindAll">
-			WHERE article.istop = #value#
+		<select id="Article.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.releasedate = #value#
 		</select>
-		<select id="ArticlePagination.FindByIstop" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
-			WHERE article.istop = #Istop# limit #Limit# offset #Offset# 
+		<select id="ArticlePagination.FindByReleasedate" parameterClass="ArticlePagination" resultMap="FullResultMap" extends="Article.FindAll">
+			WHERE article.releasedate = #Releasedate# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Article.FindByIspass" parameterClass="Byte" resultMap="FullResultMap" extends="Article.FindAll">
 			WHERE article.ispass = #value#
@@ -93,14 +93,11 @@
 			WHERE article.ispass = #Ispass# limit #Limit# offset #Offset# 
 		</select>
 		<insert id="Article.Insert" parameterClass="Article">
-			INSERT INTO article (releasedate,userid,title,hittimes,id,titlecolor,typeid,content,releaseip,istop,ispass) VALUES (#Releasedate#,#Userid#,#Title#,#Hittimes#,#Id#,#Titlecolor#,#Typeid#,#Content#,#Releaseip#,#Istop#,#Ispass#)
+			INSERT INTO article (userid,title,hittimes,id,titlecolor,typeid,istop,content,releaseip,releasedate,ispass) VALUES (#Userid#,#Title#,#Hittimes#,#Id#,#Titlecolor#,#Typeid#,#Istop#,#Content#,#Releaseip#,#Releasedate#,#Ispass#)
 		</insert>
 		<update id="Article.Update" parameterClass="Article">
-			UPDATE article SET releasedate=#Releasedate#,userid=#Userid#,title=#Title#,hittimes=#Hittimes#,titlecolor=#Titlecolor#,typeid=#Typeid#,content=#Content#,releaseip=#Releaseip#,istop=#Istop#,ispass=#Ispass# WHERE id=#Id#
+			UPDATE article SET userid=#Userid#,title=#Title#,hittimes=#Hittimes#,titlecolor=#Titlecolor#,typeid=#Typeid#,istop=#Istop#,content=#Content#,releaseip=#Releaseip#,releasedate=#Releasedate#,ispass=#Ispass# WHERE id=#Id#
 		</update>
-		<delete id="Article.DeleteByReleasedate" parameterClass="DateTime">
-			DELETE FROM article WHERE releasedate=#value# 
-		</delete>
 		<delete id="Article.DeleteByUserid" parameterClass="Int64">
 			DELETE FROM article WHERE userid=#value# 
 		</delete>
@@ -119,14 +116,17 @@
 		<delete id="Article.DeleteByTypeid" parameterClass="Int64">
 			DELETE FROM article WHERE typeid=#value# 
 		</delete>
+		<delete id="Article.DeleteByIstop" parameterClass="Byte">
+			DELETE FROM article WHERE istop=#value# 
+		</delete>
 		<delete id="Article.DeleteByContent" parameterClass="String">
 			DELETE FROM article WHERE content=#value# 
 		</delete>
 		<delete id="Article.DeleteByReleaseip" parameterClass="String">
 			DELETE FROM article WHERE releaseip=#value# 
 		</delete>
-		<delete id="Article.DeleteByIstop" parameterClass="Byte">
-			DELETE FROM article WHERE istop=#value# 
+		<delete id="Article.DeleteByReleasedate" parameterClass="DateTime">
+			DELETE FROM article WHERE releasedate=#value# 
 		</delete>
 		<delete id="Article.DeleteByIspass" parameterClass="Byte">
 			DELETE FROM article WHERE ispass=#value# 

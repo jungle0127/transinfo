@@ -21,6 +21,10 @@ namespace Trans.DAL.Dao
 
 		IList<Depotinformation> PaginationFindByCellphone(DepotinformationPagination obj);
 
+		IList<Depotinformation> FindByDescription(String description);
+
+		IList<Depotinformation> PaginationFindByDescription(DepotinformationPagination obj);
+
 		IList<Depotinformation> FindByValidtime(String validtime);
 
 		IList<Depotinformation> PaginationFindByValidtime(DepotinformationPagination obj);
@@ -41,21 +45,17 @@ namespace Trans.DAL.Dao
 
 		IList<Depotinformation> PaginationFindByPrice(DepotinformationPagination obj);
 
-		IList<Depotinformation> FindByDepottype(Int64 depottype);
-
-		IList<Depotinformation> PaginationFindByDepottype(DepotinformationPagination obj);
-
 		IList<Depotinformation> FindByBizscopetype(Int64 bizscopetype);
 
 		IList<Depotinformation> PaginationFindByBizscopetype(DepotinformationPagination obj);
 
+		IList<Depotinformation> FindByDepottype(Int64 depottype);
+
+		IList<Depotinformation> PaginationFindByDepottype(DepotinformationPagination obj);
+
 		IList<Depotinformation> FindByTitle(String title);
 
 		IList<Depotinformation> PaginationFindByTitle(DepotinformationPagination obj);
-
-		IList<Depotinformation> FindByDescription(String description);
-
-		IList<Depotinformation> PaginationFindByDescription(DepotinformationPagination obj);
 
 		IList<Depotinformation> FindByAddress(String address);
 
@@ -73,6 +73,8 @@ namespace Trans.DAL.Dao
 
 		int DeleteByCellphone(String cellphone);
 
+		int DeleteByDescription(String description);
+
 		int DeleteByValidtime(String validtime);
 
 		int DeleteByContactperson(String contactperson);
@@ -83,13 +85,11 @@ namespace Trans.DAL.Dao
 
 		int DeleteByPrice(String price);
 
-		int DeleteByDepottype(Int64 depottype);
-
 		int DeleteByBizscopetype(Int64 bizscopetype);
 
-		int DeleteByTitle(String title);
+		int DeleteByDepottype(Int64 depottype);
 
-		int DeleteByDescription(String description);
+		int DeleteByTitle(String title);
 
 		int DeleteByAddress(String address);
 

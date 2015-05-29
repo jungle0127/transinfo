@@ -6,12 +6,6 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class Article
 	{
-		private DateTime m_releasedate;
-		public DateTime Releasedate
-		{
-			get { return m_releasedate; }
-			set { m_releasedate = value;}
-		}
 		private Int64 m_userid;
 		public Int64 Userid
 		{
@@ -48,6 +42,12 @@ namespace Trans.DAL.Entity
 			get { return m_typeid; }
 			set { m_typeid = value;}
 		}
+		private Byte m_istop;
+		public Byte Istop
+		{
+			get { return m_istop; }
+			set { m_istop = value;}
+		}
 		private String m_content;
 		public String Content
 		{
@@ -60,11 +60,11 @@ namespace Trans.DAL.Entity
 			get { return m_releaseip; }
 			set { m_releaseip = value;}
 		}
-		private Byte m_istop;
-		public Byte Istop
+		private DateTime m_releasedate;
+		public DateTime Releasedate
 		{
-			get { return m_istop; }
-			set { m_istop = value;}
+			get { return m_releasedate; }
+			set { m_releasedate = value;}
 		}
 		private Byte m_ispass;
 		public Byte Ispass

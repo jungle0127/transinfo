@@ -12,11 +12,17 @@ namespace Trans.DAL.Entity
 			get { return m_vantypename; }
 			set { m_vantypename = value;}
 		}
-		private String m_name;
-		public String Name
+		private String m_contactpersonname;
+		public String Contactpersonname
 		{
-			get { return m_name; }
-			set { m_name = value;}
+			get { return m_contactpersonname; }
+			set { m_contactpersonname = value;}
+		}
+		private String m_trunktypename;
+		public String Trunktypename
+		{
+			get { return m_trunktypename; }
+			set { m_trunktypename = value;}
 		}
 		private String m_conatactphone;
 		public String Conatactphone
@@ -42,23 +48,23 @@ namespace Trans.DAL.Entity
 			get { return m_brand; }
 			set { m_brand = value;}
 		}
-		private String m_vanimageuri;
-		public String Vanimageuri
-		{
-			get { return m_vanimageuri; }
-			set { m_vanimageuri = value;}
-		}
 		private String m_length;
 		public String Length
 		{
 			get { return m_length; }
 			set { m_length = value;}
 		}
-		private String m_trunktypename;
-		public String Trunktypename
+		private String m_vanimageuri;
+		public String Vanimageuri
 		{
-			get { return m_trunktypename; }
-			set { m_trunktypename = value;}
+			get { return m_vanimageuri; }
+			set { m_vanimageuri = value;}
+		}
+		private String m_countyname;
+		public String Countyname
+		{
+			get { return m_countyname; }
+			set { m_countyname = value;}
 		}
 		private String m_weightcapacity;
 		public String Weightcapacity
@@ -90,11 +96,11 @@ namespace Trans.DAL.Entity
 			get { return m_trunkidentifynumber; }
 			set { m_trunkidentifynumber = value;}
 		}
-		private String m_contactpersonname;
-		public String Contactpersonname
+		private String m_countycode;
+		public String Countycode
 		{
-			get { return m_contactpersonname; }
-			set { m_contactpersonname = value;}
+			get { return m_countycode; }
+			set { m_countycode = value;}
 		}
 		private String m_location;
 		public String Location

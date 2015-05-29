@@ -52,16 +52,6 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
-		public IList<Vuserroleinfo> FindByRolename(String rolename) {
-			String stmtId = "Vuserroleinfo.FindByRolename";
-			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, rolename);
-			return result;
-        }
-		public IList<Vuserroleinfo> PaginationFindByRolename(VuserroleinfoPagination obj) {
-			String stmtId = "VuserroleinfoPagination.FindByRolename";
-			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
-			return result;
-        }
 		public IList<Vuserroleinfo> FindByLoginname(String loginname) {
 			String stmtId = "Vuserroleinfo.FindByLoginname";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, loginname);
@@ -69,6 +59,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vuserroleinfo> PaginationFindByLoginname(VuserroleinfoPagination obj) {
 			String stmtId = "VuserroleinfoPagination.FindByLoginname";
+			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vuserroleinfo> FindByUsername(String username) {
+			String stmtId = "Vuserroleinfo.FindByUsername";
+			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, username);
+			return result;
+        }
+		public IList<Vuserroleinfo> PaginationFindByUsername(VuserroleinfoPagination obj) {
+			String stmtId = "VuserroleinfoPagination.FindByUsername";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
@@ -82,13 +82,13 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
-		public IList<Vuserroleinfo> FindByUsername(String username) {
-			String stmtId = "Vuserroleinfo.FindByUsername";
-			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, username);
+		public IList<Vuserroleinfo> FindByRolename(String rolename) {
+			String stmtId = "Vuserroleinfo.FindByRolename";
+			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, rolename);
 			return result;
         }
-		public IList<Vuserroleinfo> PaginationFindByUsername(VuserroleinfoPagination obj) {
-			String stmtId = "VuserroleinfoPagination.FindByUsername";
+		public IList<Vuserroleinfo> PaginationFindByRolename(VuserroleinfoPagination obj) {
+			String stmtId = "VuserroleinfoPagination.FindByRolename";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }

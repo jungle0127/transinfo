@@ -6,6 +6,12 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class CityPagination
 	{
+		private String m_provincecode;
+		public String Provincecode
+		{
+			get { return m_provincecode; }
+			set { m_provincecode = value;}
+		}
 		private Int64 m_id;
 		public Int64 Id
 		{
@@ -17,12 +23,6 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_code; }
 			set { m_code = value;}
-		}
-		private String m_provincecode;
-		public String Provincecode
-		{
-			get { return m_provincecode; }
-			set { m_provincecode = value;}
 		}
 		private String m_name;
 		public String Name

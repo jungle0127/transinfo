@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vprovincecitycounty" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vprovincecitycounty" type="Trans.DAL.Entity.Vprovincecitycounty" />
+		<typeAlias alias="VprovincecitycountyPagination" type="Trans.DAL.Entity.VprovincecitycountyPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vprovincecitycounty">
+			<result property="Fullname" column="fullname" dbType="varchar"/>
+			<result property="Cityname" column="cityname" dbType="varchar"/>
+			<result property="Provincecode" column="provincecode" dbType="varchar"/>
+			<result property="Citycode" column="citycode" dbType="varchar"/>
+			<result property="Countyname" column="countyname" dbType="varchar"/>
+			<result property="Provincename" column="provincename" dbType="varchar"/>
+			<result property="Countycode" column="countycode" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vprovincecitycounty.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty 
+		</select>
+		<select id="Vprovincecitycounty.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_provincecitycounty
+		</select>
+		<select id="Vprovincecitycounty.FindAllPagination" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap">
+			SELECT * FROM v_provincecitycounty limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByFullname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.fullname = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByFullname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.fullname = #Fullname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByCityname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.cityname = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByCityname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.cityname = #Cityname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByProvincecode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincecode = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByProvincecode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincecode = #Provincecode# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.citycode = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByCitycode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.citycode = #Citycode# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByCountyname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countyname = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByCountyname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countyname = #Countyname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByProvincename" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincename = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByProvincename" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincename = #Provincename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countycode = #value#
+		</select>
+		<select id="VprovincecitycountyPagination.FindByCountycode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countycode = #Countycode# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

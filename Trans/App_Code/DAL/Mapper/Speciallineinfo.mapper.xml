@@ -11,11 +11,11 @@
 			<result property="Departuretypeid" column="departuretypeid" dbType="bigint"/>
 			<result property="Title" column="title" dbType="varchar"/>
 			<result property="Volumeprice" column="volumeprice" dbType="int"/>
-			<result property="Speciallinetypeid" column="speciallinetypeid" dbType="bigint"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Weightprice" column="weightprice" dbType="int"/>
 			<result property="Description" column="description" dbType="text"/>
 			<result property="Sourceplaceinfoid" column="sourceplaceinfoid" dbType="bigint"/>
+			<result property="Speciallinetypeid" column="speciallinetypeid" dbType="bigint"/>
 		</resultMap>
 	</resultMaps>
 	<statements>
@@ -58,12 +58,6 @@
 		<select id="SpeciallineinfoPagination.FindByVolumeprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.volumeprice = #Volumeprice# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Speciallineinfo.FindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.speciallinetypeid = #value#
-		</select>
-		<select id="SpeciallineinfoPagination.FindBySpeciallinetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# limit #Limit# offset #Offset# 
-		</select>
 		<select id="Speciallineinfo.Find" parameterClass="Speciallineinfo" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.id=#Id#
 		</select>
@@ -85,11 +79,17 @@
 		<select id="SpeciallineinfoPagination.FindBySourceplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.sourceplaceinfoid = #Sourceplaceinfoid# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Speciallineinfo.FindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.speciallinetypeid = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindBySpeciallinetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# limit #Limit# offset #Offset# 
+		</select>
 		<insert id="Speciallineinfo.Insert" parameterClass="Speciallineinfo">
-			INSERT INTO speciallineinfo (userid,destinationplaceinfoid,departuretypeid,title,volumeprice,speciallinetypeid,id,weightprice,description,sourceplaceinfoid) VALUES (#Userid#,#Destinationplaceinfoid#,#Departuretypeid#,#Title#,#Volumeprice#,#Speciallinetypeid#,#Id#,#Weightprice#,#Description#,#Sourceplaceinfoid#)
+			INSERT INTO speciallineinfo (userid,destinationplaceinfoid,departuretypeid,title,volumeprice,id,weightprice,description,sourceplaceinfoid,speciallinetypeid) VALUES (#Userid#,#Destinationplaceinfoid#,#Departuretypeid#,#Title#,#Volumeprice#,#Id#,#Weightprice#,#Description#,#Sourceplaceinfoid#,#Speciallinetypeid#)
 		</insert>
 		<update id="Speciallineinfo.Update" parameterClass="Speciallineinfo">
-			UPDATE speciallineinfo SET userid=#Userid#,destinationplaceinfoid=#Destinationplaceinfoid#,departuretypeid=#Departuretypeid#,title=#Title#,volumeprice=#Volumeprice#,speciallinetypeid=#Speciallinetypeid#,weightprice=#Weightprice#,description=#Description#,sourceplaceinfoid=#Sourceplaceinfoid# WHERE id=#Id#
+			UPDATE speciallineinfo SET userid=#Userid#,destinationplaceinfoid=#Destinationplaceinfoid#,departuretypeid=#Departuretypeid#,title=#Title#,volumeprice=#Volumeprice#,weightprice=#Weightprice#,description=#Description#,sourceplaceinfoid=#Sourceplaceinfoid#,speciallinetypeid=#Speciallinetypeid# WHERE id=#Id#
 		</update>
 		<delete id="Speciallineinfo.DeleteByUserid" parameterClass="Int64">
 			DELETE FROM speciallineinfo WHERE userid=#value# 
@@ -106,9 +106,6 @@
 		<delete id="Speciallineinfo.DeleteByVolumeprice" parameterClass="Int32">
 			DELETE FROM speciallineinfo WHERE volumeprice=#value# 
 		</delete>
-		<delete id="Speciallineinfo.DeleteBySpeciallinetypeid" parameterClass="Int64">
-			DELETE FROM speciallineinfo WHERE speciallinetypeid=#value# 
-		</delete>
 		<delete id="Speciallineinfo.Delete" parameterClass="Speciallineinfo">
 			DELETE FROM speciallineinfo WHERE id=#Id#
 		</delete>
@@ -120,6 +117,9 @@
 		</delete>
 		<delete id="Speciallineinfo.DeleteBySourceplaceinfoid" parameterClass="Int64">
 			DELETE FROM speciallineinfo WHERE sourceplaceinfoid=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteBySpeciallinetypeid" parameterClass="Int64">
+			DELETE FROM speciallineinfo WHERE speciallinetypeid=#value# 
 		</delete>
 	</statements>
 </sqlMap>

@@ -6,17 +6,11 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class Trunkinformation
 	{
-		private String m_router;
-		public String Router
+		private String m_srccountycode;
+		public String Srccountycode
 		{
-			get { return m_router; }
-			set { m_router = value;}
-		}
-		private Int64 m_trunkid;
-		public Int64 Trunkid
-		{
-			get { return m_trunkid; }
-			set { m_trunkid = value;}
+			get { return m_srccountycode; }
+			set { m_srccountycode = value;}
 		}
 		private String m_marketprice;
 		public String Marketprice
@@ -36,17 +30,11 @@ namespace Trans.DAL.Entity
 			get { return m_takeofftime; }
 			set { m_takeofftime = value;}
 		}
-		private String m_srccountycode;
-		public String Srccountycode
+		private String m_router;
+		public String Router
 		{
-			get { return m_srccountycode; }
-			set { m_srccountycode = value;}
-		}
-		private String m_description;
-		public String Description
-		{
-			get { return m_description; }
-			set { m_description = value;}
+			get { return m_router; }
+			set { m_router = value;}
 		}
 		private Int64 m_userid;
 		public Int64 Userid
@@ -72,6 +60,12 @@ namespace Trans.DAL.Entity
 			get { return m_active; }
 			set { m_active = value;}
 		}
+		private Int64 m_trunkid;
+		public Int64 Trunkid
+		{
+			get { return m_trunkid; }
+			set { m_trunkid = value;}
+		}
 		private String m_title;
 		public String Title
 		{
@@ -95,6 +89,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_releasedate; }
 			set { m_releasedate = value;}
+		}
+		private String m_description;
+		public String Description
+		{
+			get { return m_description; }
+			set { m_description = value;}
 		}
 		private Int64 m_routetypeid;
 		public Int64 Routetypeid

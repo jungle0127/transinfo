@@ -42,26 +42,6 @@ namespace Trans.DAL.Dao
 			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, null);
 			return result;
         }
-		public IList<Trunkmetadata> FindByVanimageuri(String vanimageuri) {
-			String stmtId = "Trunkmetadata.FindByVanimageuri";
-			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, vanimageuri);
-			return result;
-        }
-		public IList<Trunkmetadata> PaginationFindByVanimageuri(TrunkmetadataPagination obj) {
-			String stmtId = "TrunkmetadataPagination.FindByVanimageuri";
-			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, obj);
-			return result;
-        }
-		public IList<Trunkmetadata> FindByContactpersonname(String contactpersonname) {
-			String stmtId = "Trunkmetadata.FindByContactpersonname";
-			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, contactpersonname);
-			return result;
-        }
-		public IList<Trunkmetadata> PaginationFindByContactpersonname(TrunkmetadataPagination obj) {
-			String stmtId = "TrunkmetadataPagination.FindByContactpersonname";
-			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, obj);
-			return result;
-        }
 		public IList<Trunkmetadata> FindByConatactphone(String conatactphone) {
 			String stmtId = "Trunkmetadata.FindByConatactphone";
 			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, conatactphone);
@@ -122,6 +102,16 @@ namespace Trans.DAL.Dao
 			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, obj);
 			return result;
         }
+		public IList<Trunkmetadata> FindByContactpersonname(String contactpersonname) {
+			String stmtId = "Trunkmetadata.FindByContactpersonname";
+			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, contactpersonname);
+			return result;
+        }
+		public IList<Trunkmetadata> PaginationFindByContactpersonname(TrunkmetadataPagination obj) {
+			String stmtId = "TrunkmetadataPagination.FindByContactpersonname";
+			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, obj);
+			return result;
+        }
 		public IList<Trunkmetadata> FindByActive(Byte active) {
 			String stmtId = "Trunkmetadata.FindByActive";
 			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, active);
@@ -129,6 +119,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Trunkmetadata> PaginationFindByActive(TrunkmetadataPagination obj) {
 			String stmtId = "TrunkmetadataPagination.FindByActive";
+			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkmetadata> FindByVanimageuri(String vanimageuri) {
+			String stmtId = "Trunkmetadata.FindByVanimageuri";
+			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, vanimageuri);
+			return result;
+        }
+		public IList<Trunkmetadata> PaginationFindByVanimageuri(TrunkmetadataPagination obj) {
+			String stmtId = "TrunkmetadataPagination.FindByVanimageuri";
 			IList<Trunkmetadata> result = this.sqlMapper.QueryForList<Trunkmetadata>(stmtId, obj);
 			return result;
         }
@@ -206,16 +206,6 @@ namespace Trans.DAL.Dao
 			String stmtId = "Trunkmetadata.Delete";
 			this.sqlMapper.Delete(stmtId, obj);
 		}
-		public int DeleteByVanimageuri(String vanimageuri) {
-			String stmtId = "Trunkmetadata.DeleteByVanimageuri";
-			int result = this.sqlMapper.Delete(stmtId, vanimageuri);
-			return result;
-        }
-		public int DeleteByContactpersonname(String contactpersonname) {
-			String stmtId = "Trunkmetadata.DeleteByContactpersonname";
-			int result = this.sqlMapper.Delete(stmtId, contactpersonname);
-			return result;
-        }
 		public int DeleteByConatactphone(String conatactphone) {
 			String stmtId = "Trunkmetadata.DeleteByConatactphone";
 			int result = this.sqlMapper.Delete(stmtId, conatactphone);
@@ -246,9 +236,19 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.Delete(stmtId, trunktypeid);
 			return result;
         }
+		public int DeleteByContactpersonname(String contactpersonname) {
+			String stmtId = "Trunkmetadata.DeleteByContactpersonname";
+			int result = this.sqlMapper.Delete(stmtId, contactpersonname);
+			return result;
+        }
 		public int DeleteByActive(Byte active) {
 			String stmtId = "Trunkmetadata.DeleteByActive";
 			int result = this.sqlMapper.Delete(stmtId, active);
+			return result;
+        }
+		public int DeleteByVanimageuri(String vanimageuri) {
+			String stmtId = "Trunkmetadata.DeleteByVanimageuri";
+			int result = this.sqlMapper.Delete(stmtId, vanimageuri);
 			return result;
         }
 		public int DeleteByWeightcapacity(String weightcapacity) {

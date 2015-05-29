@@ -17,14 +17,6 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkmetadata> QuickFindAll();
 
-		IList<Trunkmetadata> FindByVanimageuri(String vanimageuri);
-
-		IList<Trunkmetadata> PaginationFindByVanimageuri(TrunkmetadataPagination obj);
-
-		IList<Trunkmetadata> FindByContactpersonname(String contactpersonname);
-
-		IList<Trunkmetadata> PaginationFindByContactpersonname(TrunkmetadataPagination obj);
-
 		IList<Trunkmetadata> FindByConatactphone(String conatactphone);
 
 		IList<Trunkmetadata> PaginationFindByConatactphone(TrunkmetadataPagination obj);
@@ -49,9 +41,17 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkmetadata> PaginationFindByTrunktypeid(TrunkmetadataPagination obj);
 
+		IList<Trunkmetadata> FindByContactpersonname(String contactpersonname);
+
+		IList<Trunkmetadata> PaginationFindByContactpersonname(TrunkmetadataPagination obj);
+
 		IList<Trunkmetadata> FindByActive(Byte active);
 
 		IList<Trunkmetadata> PaginationFindByActive(TrunkmetadataPagination obj);
+
+		IList<Trunkmetadata> FindByVanimageuri(String vanimageuri);
+
+		IList<Trunkmetadata> PaginationFindByVanimageuri(TrunkmetadataPagination obj);
 
 		IList<Trunkmetadata> FindByWeightcapacity(String weightcapacity);
 
@@ -83,10 +83,6 @@ namespace Trans.DAL.Dao
 
 		void Delete(Trunkmetadata obj);
 
-		int DeleteByVanimageuri(String vanimageuri);
-
-		int DeleteByContactpersonname(String contactpersonname);
-
 		int DeleteByConatactphone(String conatactphone);
 
 		int DeleteByVolume(String volume);
@@ -99,7 +95,11 @@ namespace Trans.DAL.Dao
 
 		int DeleteByTrunktypeid(Int64 trunktypeid);
 
+		int DeleteByContactpersonname(String contactpersonname);
+
 		int DeleteByActive(Byte active);
+
+		int DeleteByVanimageuri(String vanimageuri);
 
 		int DeleteByWeightcapacity(String weightcapacity);
 

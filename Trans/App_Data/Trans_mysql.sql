@@ -3935,6 +3935,27 @@ AS
 SELECT users.id AS userid,users.roleid,users.loginname,users.username,role.rolename
 FROM users
 JOIN role ON users.roleid = role.id;
+
+--
+-- View of administrative regions
+--
+
+DROP VIEW IF EXISTS `V_provincecitycounty`;
+CREATE VIEW `V_provincecitycounty`
+AS
+SELECT 
+province.name AS provincename,
+province.code AS provincecode,
+city.name AS cityname,
+city.code AS citycode,
+county.name AS countyname,
+county.code AS countycode,
+IF(county.code,CONCAT(province.name,'-',city.name,'-',county.name),IF(city.code,CONCAT(province.name,'-',city.name),province.name)) AS fullname
+FROM province
+LEFT JOIN city ON city.provincecode = province.code
+LEFT JOIN county ON county.citycode = city.code;
+-- where county.code = '441900' or city.code = '441900' or province.code = '441900';
+
 -- ----------------------------------------------------------------------------------
 -- ----------------------------USP Related-------------------------------------------
 -- ----------------------------------------------------------------------------------

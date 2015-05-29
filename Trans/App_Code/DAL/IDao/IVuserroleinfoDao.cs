@@ -19,21 +19,21 @@ namespace Trans.DAL.Dao
 
 		IList<Vuserroleinfo> PaginationFindByUserid(VuserroleinfoPagination obj);
 
-		IList<Vuserroleinfo> FindByRolename(String rolename);
-
-		IList<Vuserroleinfo> PaginationFindByRolename(VuserroleinfoPagination obj);
-
 		IList<Vuserroleinfo> FindByLoginname(String loginname);
 
 		IList<Vuserroleinfo> PaginationFindByLoginname(VuserroleinfoPagination obj);
+
+		IList<Vuserroleinfo> FindByUsername(String username);
+
+		IList<Vuserroleinfo> PaginationFindByUsername(VuserroleinfoPagination obj);
 
 		IList<Vuserroleinfo> FindByRoleid(Int64 roleid);
 
 		IList<Vuserroleinfo> PaginationFindByRoleid(VuserroleinfoPagination obj);
 
-		IList<Vuserroleinfo> FindByUsername(String username);
+		IList<Vuserroleinfo> FindByRolename(String rolename);
 
-		IList<Vuserroleinfo> PaginationFindByUsername(VuserroleinfoPagination obj);
+		IList<Vuserroleinfo> PaginationFindByRolename(VuserroleinfoPagination obj);
 
 		void Reload(Vuserroleinfo obj);
 	}
