@@ -54,6 +54,7 @@ CREATE TABLE `depotinformation`(
 	`id` bigint auto_increment,
 	`userid` bigint NOT NULL,
 	`title` varchar(300) NOT NULL,
+	`countycode` varchar(6) NOT NULL,
 	`address` varchar(500) NOT NULL,
 	`bizscopetype` bigint NOT NULL,
 	`depottype` bigint NOT NULL,
@@ -76,4 +77,34 @@ CREATE INDEX IX_depotinfo_bizscope ON depotinformation(bizscopetype);
 CREATE INDEX IX_depotinfo_depottype ON depotinformation(depottype);
 CREATE INDEX IX_depotinfo_area ON depotinformation(area);
 CREATE INDEX IX_depotinfo_usearea ON depotinformation(useablearea);
+CREATE INDEX IX_depotinfo_county ON depotinformation(countycode);
+
+--
+-- Depot information view
+--
+
+DROP VIEW IF EXISTS `V_Depotinformation`;
+CREATE VIEW `V_Depotinformation`
+AS
+SELECT
+depotinformation.id,
+ users.username,
+ depotinformation.title,
+ V_provincecitycounty.fullname AS regionname,
+ depotinformation.address,
+ depottype.typename AS depottypename,
+ bussinessscope.scopename,
+ depotinformation.area,
+ depotinformation.useablearea,
+ depotinformation.price,
+ depotinformation.contactperson,
+ depotinformation.cellphone,
+ depotinformation.validtime,
+ depotinformation.description 
+FROM depotinformation
+JOIN V_provincecitycounty ON depotinformation.countycode = V_provincecitycounty.countycode OR depotinformation.countycode = V_provincecitycounty.citycode OR depotinformation.countycode = V_provincecitycounty.provincecode
+JOIN users ON users.id = depotinformation.userid
+JOIN depottype ON depottype.id = depotinformation.depottype
+JOIN bussinessscope ON bussinessscope.id = depotinformation.bizscopetype;
+
 

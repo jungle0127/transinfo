@@ -270,6 +270,39 @@ CREATE INDEX IX_trunkinfo_returntype ON trunkinformation (returntypeid);
 
 GO
 
+--
+-- trunk information view
+--
+DROP VIEW IF EXISTS `V_Trunkinformation`;
+CREATE VIEW `V_Trunkinformation`
+AS
+SELECT 
+users.username,
+trunkinformation.id,
+V_provincecitycounty.fullname AS srcregionname,
+dstregion.fullname AS dstregionname,
+V_trunkmetadata.prefixname,
+V_trunkmetadata.number,
+V_trunkmetadata.length,
+V_trunkmetadata.weightcapacity,
+V_trunkmetadata.volume,
+V_trunkmetadata.countyname AS trunkcountyname, -- uncomplete
+V_trunkmetadata.location,
+V_trunkmetadata.vantypename,
+V_trunkmetadata.brand,
+V_trunkmetadata.trunktypename,
+V_trunkmetadata.contactpersonname,
+V_trunkmetadata.conatactphone,
+V_trunkmetadata.trunkidentifynumber,
+V_trunkmetadata.vanimageuri,
+V_trunkmetadata.licenseuri,
+trunkroutetype.typename AS routetype
+FROM V_provincecitycounty
+JOIN trunkinformation ON trunkinformation.srccountycode = V_provincecitycounty.countycode OR trunkinformation.srccountycode = V_provincecitycounty.citycode OR trunkinformation.srccountycode = V_provincecitycounty.provincecode
+JOIN V_provincecitycounty AS dstregion ON trunkinformation.dstcountycode = dstregion.countycode OR trunkinformation.dstcountycode = dstregion.citycode OR trunkinformation.dstcountycode = dstregion.provincecode
+JOIN V_trunkmetadata ON V_trunkmetadata.id = trunkinformation.trunkid
+JOIN trunkroutetype ON trunkroutetype.id = trunkinformation.routetypeid
+JOIN users ON users.id = trunkinformation.userid;
 
 
 
@@ -370,6 +403,40 @@ CREATE INDEX IX_goodssrcinfo_releasedate ON goodssourceinformation(releasedate);
 CREATE INDEX IX_goodssrcinfo_needtrunklength ON goodssourceinformation(needtrunklength);
 CREATE INDEX IX_goodssrcinfo_needtrunkweight ON goodssourceinformation(needtrunkweight);
 CREATE INDEX IX_goodssrcinfo_needtrunkvolume ON goodssourceinformation(needtrunkvolume);
+ 
+ 
+ --
+ -- Goods source information view
+ --
+ 
+ DROP VIEW IF EXISTS `V_Goodssourceinformation`;
+ CREATE VIEW `V_Goodssourceinformation`
+ AS
+ SELECT
+ goodssourceinformation.id,
+ users.username,
+ V_provincecitycounty.fullname AS srcregionname,
+ dstregion.fullname AS dstregionname,
+ goodssourceinformation.deadline,
+ goodssourceinformation.title,
+ goodssourceinformation.titlecolor,
+ goodssourceinformation.goodsname,
+ transporttype.typename AS transporttypename,
+ cautiontype.typename AS cautiontypename,
+ goodstype.typename AS goodstypename,
+ goodssourceinformation.price,
+ goodssourceinformation.needtrunklength,
+ goodssourceinformation.needtrunkweight,
+ goodssourceinformation.needtrunkvolume,
+ goodssourceinformation.content,
+ goodssourceinformation.releasedate
+ FROM V_provincecitycounty
+ JOIN goodssourceinformation ON goodssourceinformation.srccountycode = V_provincecitycounty.countycode OR goodssourceinformation.srccountycode = V_provincecitycounty.citycode OR goodssourceinformation.srccountycode = V_provincecitycounty.provincecode
+ JOIN V_provincecitycounty AS dstregion ON goodssourceinformation.dstcountycode = dstregion.countycode OR goodssourceinformation.dstcountycode = dstregion.citycode OR goodssourceinformation.dstcountycode = dstregion.provincecode
+ JOIN users ON users.id = goodssourceinformation.userid
+ JOIN transporttype ON transporttype.id = goodssourceinformation.transporttypeid
+ JOIN cautiontype ON cautiontype.id = goodssourceinformation.cautiontypeid
+ JOIN goodstype ON goodstype.id = goodssourceinformation.goodstypeid;
  
  
 -- ----------------------------------------------------------------------------------
