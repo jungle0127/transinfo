@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vtrunkinformation" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vtrunkinformation" type="Trans.DAL.Entity.Vtrunkinformation" />
+		<typeAlias alias="VtrunkinformationPagination" type="Trans.DAL.Entity.VtrunkinformationPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vtrunkinformation">
+			<result property="Vantypename" column="vantypename" dbType="varchar"/>
+			<result property="Trunktypename" column="trunktypename" dbType="varchar"/>
+			<result property="Dstregionname" column="dstregionname" dbType="varchar"/>
+			<result property="Volume" column="volume" dbType="varchar"/>
+			<result property="Number" column="number" dbType="varchar"/>
+			<result property="Brand" column="brand" dbType="varchar"/>
+			<result property="Length" column="length" dbType="varchar"/>
+			<result property="Conatactphone" column="conatactphone" dbType="varchar"/>
+			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
+			<result property="Srcregionname" column="srcregionname" dbType="varchar"/>
+			<result property="Weightcapacity" column="weightcapacity" dbType="varchar"/>
+			<result property="Trunkcountyname" column="trunkcountyname" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Prefixname" column="prefixname" dbType="varchar"/>
+			<result property="Licenseuri" column="licenseuri" dbType="varchar"/>
+			<result property="Trunkidentifynumber" column="trunkidentifynumber" dbType="varchar"/>
+			<result property="Contactpersonname" column="contactpersonname" dbType="varchar"/>
+			<result property="Location" column="location" dbType="varchar"/>
+			<result property="Routetype" column="routetype" dbType="varchar"/>
+			<result property="Username" column="username" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vtrunkinformation.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkinformation 
+		</select>
+		<select id="Vtrunkinformation.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_trunkinformation
+		</select>
+		<select id="Vtrunkinformation.FindAllPagination" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap">
+			SELECT * FROM v_trunkinformation limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByVantypename" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vantypename = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByVantypename" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vantypename = #Vantypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByTrunktypename" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunktypename = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByTrunktypename" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunktypename = #Trunktypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByDstregionname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.dstregionname = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByDstregionname" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.dstregionname = #Dstregionname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.volume = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByVolume" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.volume = #Volume# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.number = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByNumber" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.number = #Number# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByBrand" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.brand = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByBrand" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.brand = #Brand# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByLength" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.length = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByLength" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.length = #Length# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByConatactphone" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.conatactphone = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByConatactphone" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.conatactphone = #Conatactphone# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vanimageuri = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByVanimageuri" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vanimageuri = #Vanimageuri# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindBySrcregionname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.srcregionname = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindBySrcregionname" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.srcregionname = #Srcregionname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.weightcapacity = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByWeightcapacity" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.weightcapacity = #Weightcapacity# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByTrunkcountyname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunkcountyname = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByTrunkcountyname" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunkcountyname = #Trunkcountyname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.id = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindById" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.id = #Id# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.prefixname = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByPrefixname" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.prefixname = #Prefixname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByLicenseuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.licenseuri = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByLicenseuri" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.licenseuri = #Licenseuri# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByTrunkidentifynumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunkidentifynumber = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByTrunkidentifynumber" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunkidentifynumber = #Trunkidentifynumber# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.contactpersonname = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByContactpersonname" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByLocation" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.location = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByLocation" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.location = #Location# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByRoutetype" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.routetype = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByRoutetype" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.routetype = #Routetype# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.username = #value#
+		</select>
+		<select id="VtrunkinformationPagination.FindByUsername" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.username = #Username# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

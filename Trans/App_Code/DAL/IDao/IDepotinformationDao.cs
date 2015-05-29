@@ -65,6 +65,10 @@ namespace Trans.DAL.Dao
 
 		IList<Depotinformation> PaginationFindByArea(DepotinformationPagination obj);
 
+		IList<Depotinformation> FindByCountycode(String countycode);
+
+		IList<Depotinformation> PaginationFindByCountycode(DepotinformationPagination obj);
+
 		void Insert(Depotinformation obj);
 
 		void Update(Depotinformation obj);
@@ -94,6 +98,8 @@ namespace Trans.DAL.Dao
 		int DeleteByAddress(String address);
 
 		int DeleteByArea(Int32 area);
+
+		int DeleteByCountycode(String countycode);
 
 		void Reload(Depotinformation obj);
 	}

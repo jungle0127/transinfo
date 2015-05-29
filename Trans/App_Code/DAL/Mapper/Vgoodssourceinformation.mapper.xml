@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Vgoodssourceinformation" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Vgoodssourceinformation" type="Trans.DAL.Entity.Vgoodssourceinformation" />
+		<typeAlias alias="VgoodssourceinformationPagination" type="Trans.DAL.Entity.VgoodssourceinformationPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Vgoodssourceinformation">
+			<result property="Goodstypename" column="goodstypename" dbType="varchar"/>
+			<result property="Needtrunkvolume" column="needtrunkvolume" dbType="bigint"/>
+			<result property="Deadline" column="deadline" dbType="datetime"/>
+			<result property="Needtrunkweight" column="needtrunkweight" dbType="bigint"/>
+			<result property="Releasedate" column="releasedate" dbType="datetime"/>
+			<result property="Cautiontypename" column="cautiontypename" dbType="varchar"/>
+			<result property="Needtrunklength" column="needtrunklength" dbType="bigint"/>
+			<result property="Price" column="price" dbType="varchar"/>
+			<result property="Goodsname" column="goodsname" dbType="varchar"/>
+			<result property="Transporttypename" column="transporttypename" dbType="varchar"/>
+			<result property="Title" column="title" dbType="varchar"/>
+			<result property="Srcregionname" column="srcregionname" dbType="varchar"/>
+			<result property="Content" column="content" dbType="text"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Dstregionname" column="dstregionname" dbType="varchar"/>
+			<result property="Titlecolor" column="titlecolor" dbType="varchar"/>
+			<result property="Username" column="username" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Vgoodssourceinformation.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_goodssourceinformation 
+		</select>
+		<select id="Vgoodssourceinformation.FindAll" resultMap="FullResultMap">
+			SELECT * FROM v_goodssourceinformation
+		</select>
+		<select id="Vgoodssourceinformation.FindAllPagination" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap">
+			SELECT * FROM v_goodssourceinformation limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByGoodstypename" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodstypename = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByGoodstypename" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodstypename = #Goodstypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkvolume = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByNeedtrunkvolume" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkvolume = #Needtrunkvolume# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByDeadline" parameterClass="DateTime" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.deadline = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByDeadline" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.deadline = #Deadline# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByNeedtrunkweight" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkweight = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByNeedtrunkweight" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkweight = #Needtrunkweight# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.releasedate = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByReleasedate" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByCautiontypename" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.cautiontypename = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByCautiontypename" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.cautiontypename = #Cautiontypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByNeedtrunklength" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunklength = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByNeedtrunklength" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunklength = #Needtrunklength# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.price = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByPrice" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.price = #Price# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByGoodsname" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodsname = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByGoodsname" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodsname = #Goodsname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByTransporttypename" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.transporttypename = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByTransporttypename" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.transporttypename = #Transporttypename# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.title = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByTitle" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.title = #Title# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindBySrcregionname" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.srcregionname = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindBySrcregionname" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.srcregionname = #Srcregionname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.content = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByContent" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.content = #Content# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.id = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindById" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.id = #Id# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByDstregionname" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.dstregionname = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByDstregionname" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.dstregionname = #Dstregionname# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.titlecolor = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByTitlecolor" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.titlecolor = #Titlecolor# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.username = #value#
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByUsername" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.username = #Username# limit #Limit# offset #Offset# 
+		</select>
+	</statements>
+</sqlMap>

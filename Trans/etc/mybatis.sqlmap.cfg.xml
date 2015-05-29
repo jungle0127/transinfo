@@ -52,9 +52,12 @@
 	  <sqlMap resource = "App_Code/DAL/Mapper/Userhasrights.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Users.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Varticleinfo.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/Vdepotinformation.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/Vgoodssourceinformation.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vprovincecitycounty.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vrightsfullinfo.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vspeciallineinfo.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/Vtrunkinformation.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vtrunkmetadata.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vuserrights.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vuserroleinfo.mapper.xml"/>

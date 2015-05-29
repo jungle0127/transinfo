@@ -162,6 +162,16 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Depotinformation> FindByCountycode(String countycode) {
+			String stmtId = "Depotinformation.FindByCountycode";
+			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, countycode);
+			return result;
+        }
+		public IList<Depotinformation> PaginationFindByCountycode(DepotinformationPagination obj) {
+			String stmtId = "DepotinformationPagination.FindByCountycode";
+			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
+			return result;
+        }
 		public void Update(Depotinformation obj) {
 			String stmtId = "Depotinformation.Update";
 			this.sqlMapper.Update(stmtId, obj);
@@ -234,6 +244,11 @@ namespace Trans.DAL.Dao
 		public int DeleteByArea(Int32 area) {
 			String stmtId = "Depotinformation.DeleteByArea";
 			int result = this.sqlMapper.Delete(stmtId, area);
+			return result;
+        }
+		public int DeleteByCountycode(String countycode) {
+			String stmtId = "Depotinformation.DeleteByCountycode";
+			int result = this.sqlMapper.Delete(stmtId, countycode);
 			return result;
         }
 		public void Reload(Depotinformation obj) {

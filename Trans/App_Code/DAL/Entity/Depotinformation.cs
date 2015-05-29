@@ -84,5 +84,11 @@ namespace Trans.DAL.Entity
 			get { return m_area; }
 			set { m_area = value;}
 		}
+		private String m_countycode;
+		public String Countycode
+		{
+			get { return m_countycode; }
+			set { m_countycode = value;}
+		}
 	}
 }

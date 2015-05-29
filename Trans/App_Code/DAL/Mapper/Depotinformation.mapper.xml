@@ -19,6 +19,7 @@
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Address" column="address" dbType="varchar"/>
 			<result property="Area" column="area" dbType="int"/>
+			<result property="Countycode" column="countycode" dbType="varchar"/>
 		</resultMap>
 	</resultMaps>
 	<statements>
@@ -106,11 +107,17 @@
 		<select id="DepotinformationPagination.FindByArea" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.area = #Area# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Depotinformation.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.countycode = #value#
+		</select>
+		<select id="DepotinformationPagination.FindByCountycode" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.countycode = #Countycode# limit #Limit# offset #Offset# 
+		</select>
 		<insert id="Depotinformation.Insert" parameterClass="Depotinformation">
-			INSERT INTO depotinformation (cellphone,description,validtime,contactperson,userid,useablearea,price,bizscopetype,depottype,title,id,address,area) VALUES (#Cellphone#,#Description#,#Validtime#,#Contactperson#,#Userid#,#Useablearea#,#Price#,#Bizscopetype#,#Depottype#,#Title#,#Id#,#Address#,#Area#)
+			INSERT INTO depotinformation (cellphone,description,validtime,contactperson,userid,useablearea,price,bizscopetype,depottype,title,id,address,area,countycode) VALUES (#Cellphone#,#Description#,#Validtime#,#Contactperson#,#Userid#,#Useablearea#,#Price#,#Bizscopetype#,#Depottype#,#Title#,#Id#,#Address#,#Area#,#Countycode#)
 		</insert>
 		<update id="Depotinformation.Update" parameterClass="Depotinformation">
-			UPDATE depotinformation SET cellphone=#Cellphone#,description=#Description#,validtime=#Validtime#,contactperson=#Contactperson#,userid=#Userid#,useablearea=#Useablearea#,price=#Price#,bizscopetype=#Bizscopetype#,depottype=#Depottype#,title=#Title#,address=#Address#,area=#Area# WHERE id=#Id#
+			UPDATE depotinformation SET cellphone=#Cellphone#,description=#Description#,validtime=#Validtime#,contactperson=#Contactperson#,userid=#Userid#,useablearea=#Useablearea#,price=#Price#,bizscopetype=#Bizscopetype#,depottype=#Depottype#,title=#Title#,address=#Address#,area=#Area#,countycode=#Countycode# WHERE id=#Id#
 		</update>
 		<delete id="Depotinformation.DeleteByCellphone" parameterClass="String">
 			DELETE FROM depotinformation WHERE cellphone=#value# 
@@ -150,6 +157,9 @@
 		</delete>
 		<delete id="Depotinformation.DeleteByArea" parameterClass="Int32">
 			DELETE FROM depotinformation WHERE area=#value# 
+		</delete>
+		<delete id="Depotinformation.DeleteByCountycode" parameterClass="String">
+			DELETE FROM depotinformation WHERE countycode=#value# 
 		</delete>
 	</statements>
 </sqlMap>
