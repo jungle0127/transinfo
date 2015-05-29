@@ -119,7 +119,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <%--<tr>
              <td>
              <a href="../InfoShow/GoodsInfoDetail.aspx" class="infoTitle goodsInfoTitle">湖南省长沙市→黑龙江省哈尔滨市,有17.5米半挂,求10吨货</a>
              <p><span class="light-info">所需车辆长度：</span><span class="infos spanNeedLength" id="carLength">17.5米</span>|
@@ -135,21 +135,11 @@
              
              </a>
              </td>
-          </tr>
+          </tr>--%>
+          <%=this.MessageHtmlGoods %>
 
 
-          <tr>
-             <td>Sachin</td>
-             <td>Mumbai</td>
-             <td>400003</td>
-             <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
-          </tr>
-          <tr>
-             <td>Uma</td>
-             <td>Pune</td>
-             <td>411027</td>
-             <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
-          </tr>
+         
        </tbody>
     </table>
     </div>

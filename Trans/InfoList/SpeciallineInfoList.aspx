@@ -89,7 +89,7 @@
     </ul>
    <div class="tab-content">
       <div class="tab-pane active all" id="all" class="allLineDiv"><!----所有---->
-            <div id="line_infos" class="line_infos"><!--动态加载--->
+            <%--<div id="line_infos" class="line_infos"><!--动态加载--->
                 <p class="NEWSline_text">常德市 <span id="line_kuai"><img class="imgSingleLine" src="../../imgs/signle.jpg" /></span>广州市</p>
                 <p class="title"><a href="http://search.jt56.org/hnftwl.jt56.org" target="_blank">湖南福泰物流有限公司</a></p>
                 <div class="align_left">
@@ -104,12 +104,13 @@
                 </div>
                 <div class="clear"></div>
                 <div class="NEWS_button"><a href="../InfoShow/SpeciallineInfoDetail.aspx" target="_blank">查看详情</a></div>
-            </div>
+            </div>--%>
+            <%=this.MessageStringhtml%>>
 
         </div>
             <div class="tab-pane" id="one-way" class="singleLineDiv"><!------单程------>
 
-              <div id="line_infos" class="line_infos"><!--动态加载--->
+              <%--<div id="line_infos" class="line_infos"><!--动态加载--->
                     <p class="NEWSline_text">常德市 <span id="line_kuai">→</span>广州市</p>
                     <p class="title"><a href="http://search.jt56.org/hnftwl.jt56.org" target="_blank">湖南福泰物流有限公司</a></p>
                     <div class="align_left">
@@ -124,12 +125,14 @@
                     </div>
                     <div class="clear"></div>
                     <div class="NEWS_button"><a href="#" target="_blank">查看详情</a></div>
-                </div>
+                </div>--%>
+                <%=this.MessageStringSinglehtml%>
+
 
             </div>
             <div class="tab-pane" id="round-way" class="roundWayLineDiv"><!------双程----->
 
-              <div id="line_infos" class="line_infos"><!--动态加载--->
+              <%--<div id="line_infos" class="line_infos"><!--动态加载--->
                     <p class="NEWSline_text">常德市 <span id="line_kuai"><img class="imgRoundWayLine" src="../../imgs/round-way.jpg" /></span>广州市</p>
                     <p class="title"><a href="http://search.jt56.org/hnftwl.jt56.org" target="_blank">湖南福泰物流有限公司</a></p>
                     <div class="align_left">
@@ -144,7 +147,8 @@
                     </div>
                     <div class="clear"></div>
                     <div class="NEWS_button"><a href="#" target="_blank">查看详情</a></div>
-                </div>
+                </div>--%>
+                <%=this.MessageStringGBHtml%>
 
             </div>
       </div>

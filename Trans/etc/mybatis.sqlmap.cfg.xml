@@ -14,7 +14,7 @@
   <!-- Database connection information -->
   <database>
     <provider name="MySql"/>
-    <dataSource name="conn" connectionString="Server=localhost;Database=transinfo;Uid=root;Pwd=lotus;CharSet=gbk;"/>
+    <dataSource name="conn" connectionString="Server=localhost;Database=transinfo;Uid=root;Pwd=123456;CharSet=gbk;"/>
     <!--<dataSource name="conn" connectionString="Data Source=(local);Initial Catalog=transinfo;Persist Security Info=True;User ID=root;Password=lotus"/>-->
   </database>
 

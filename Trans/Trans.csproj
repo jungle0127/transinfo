@@ -1202,6 +1202,7 @@
     <Content Include="index.aspx" />
     <Content Include="InfoList\DepotInfoList.aspx" />
     <Content Include="InfoList\GoodsInfoList.aspx" />
+    <Content Include="InfoList\info.html" />
     <Content Include="InfoList\NewsList.aspx" />
     <Content Include="InfoList\SpeciallineInfoList.aspx" />
     <Content Include="InfoList\TrunkInfoList.aspx" />
@@ -1859,7 +1860,6 @@
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>

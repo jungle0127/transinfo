@@ -17,15 +17,25 @@
       实时货源：<span id="totalGoods" class="red spanTotalGoods">888888</span>
       </div>
       <div class="dainput">
-          <label class="left"><input id="keyword" placeholder="请输入关键字查询" class="inputSearchKey" type="text"></label>
-          <input id="searchBtn" class="anniu  inputSeachBtn" value="搜搜看" type="button">
+          <label class="left">
+          <%--<input id="keyword" placeholder="请输入关键字查询" class="inputSearchKey" type="text">--%>
+          <asp:TextBox ID="keyword" placeholder="请输入关键字查询" class="inputSearchKey" runat="server"></asp:TextBox>
+
+          </label>
+          <%--<input id="searchBtn" class="anniu  inputSeachBtn" value="搜搜看" type="button">--%>
+          <asp:Button ID="searchBtn" class="anniu  inputSeachBtn" value="搜搜看" runat="server"  />
+
       </div>
   </div>
   <div class="searchSelectionFrame">
    <!--当仓储信息按钮被按下时显示该仓储信息-->
    <table  id="storeSelect" class="selectTb">
     <tbody>
-    <tr><td class="firstTd">所在城市：</td><td class="secondTd"><ul class="selectLi"><input type="text" id="inputStoreCity"></ul></td><td></td></tr>
+    <tr><td class="firstTd">所在城市：</td><td class="secondTd"><ul class="selectLi">
+    <%--<input type="text" id="inputStoreCity">--%>
+    <asp:TextBox ID="inputStoreCity" runat="server"></asp:TextBox>
+    
+    </ul></td><td></td></tr>
       <tr>
         <td class="firstTd"><span>经营范围：</span></td>
         <td class="secondTd">
@@ -66,11 +76,12 @@
           </tr>
        </thead>
         <tbody>
+
           <tr>
              <td class="infoDeatil">
              <div class="storePic"></div>
              <div class="overFloat">
-                 <a href="#"><h4 class="infoTitle">福泰仓储5号库</h4></a>
+                 <a href="../InfoShow/DepotInfoDetail.aspx"><h4 class="infoTitle">福泰仓储5号库</h4></a>
                  <span class="light-info">面积：</span><span class="infos" id="totalArea">1500平米</span>|
                  <span class="light-info">可用面积：</span><span class="infos" id="useableArea">1300平米</span>|
                  <span class="light-info">经营范围：</span><span class="infos" id="storeScorp">自有仓库</span>
@@ -82,18 +93,9 @@
              <td><span  id="prePrice">湖南长沙</span></td>
              <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
           </tr>
-          <tr>
-             <td>Sachin</td>
-             <td>Mumbai</td>
-             <td>400003</td>
-             <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
-          </tr>
-          <tr>
-             <td>Uma</td>
-             <td>Pune</td>
-             <td>411027</td>
-             <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
-          </tr>
+        
+
+
        </tbody>
     </table>
     </div>

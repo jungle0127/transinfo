@@ -70,11 +70,11 @@
                <tr>
                <td class="content">
                 <ul class="announce white">
-                	<li><a href="#">关于提高货源车源信息质量提高物</a></li>
-                	<li><a href="#">《满意度有奖调查》双重豪礼送给</a></li>
-                	<li><a href="#">关于近期物流企业会员被投诉的处</a></li>
-                	<li><a href="#">配货信息部（普通会员）车源发布</a></li>
-                	<li><a href="#">物流专线带“运价”优先排名通知</a></li>
+                	<li><a href="InfoList/info.html">关于提高货源车源信息质量提高物</a></li>
+                	<li><a href="InfoList/info.html">《满意度有奖调查》双重豪礼送给</a></li>
+                	<li><a href="InfoList/info.html">关于近期物流企业会员被投诉的处</a></li>
+                	<li><a href="InfoList/info.html">配货信息部（普通会员）车源发布</a></li>
+                	<li><a href="InfoList/info.html">物流专线带“运价”优先排名通知</a></li>
                 </ul>
                 </td>
                </tr>
@@ -88,7 +88,7 @@
              <td>
 			   <div class="listnr newAnnounce"><!--此处div 放置最新的一条公告部分内容父节点类名若需要，则调用 newAnnounce--->
                 <ul>
-                 <li> <a href="#" target="_blank"><font class="newAnnounceTitle">关于提高货源车源信息质量提高物流币竞价通知</font></a>
+                 <li> <a href="InfoList/info.html" target="_blank"><font class="newAnnounceTitle">关于提高货源车源信息质量提高物流币竞价通知</font></a>
                  <div class="listneir"><a href="#" target="_blank" class="newAnnounceContentLink links green">非常感谢广大用户长期对中国物通网的鼎力支持和关爱，竞价排名做为当前营销中效果最好的推广工具之一，深得客户青睐，但有部分客户利用竞价排名推广其虚假货源信息、车源线路，造成了广大用户搜索使用上的困扰。为了 <span class="more">...更多&gt;&gt;</span></a></div>
                  </li>
                  </ul>
@@ -105,10 +105,10 @@
 			<div class="quote-container">
              <div id="tabs" class="floating">
                <ul class="nav nav-tabs infoShare">
-                  <li><a href="html/info.html" id="car" class="lorryInfoLink">车源信息</a></li>
-                  <li><a href="html/info.html" id="goods" class="goodsInfoLink">货源信息</a></li><!--点击先跳转到info界面，判断当前点击对象，在info主frame中调用对应的html-->
-                  <li><a href="html/info.html" id="line" class="linesInfoLink">专线信息</a></li>
-                  <li><a href="html/info.html" id="store" class="storageInfoLink">存储信息</a></li>
+                  <li><a href="InfoList/info.html" id="car" class="lorryInfoLink">车源信息</a></li>
+                  <li><a href="InfoList/info.html" id="goods" class="goodsInfoLink">货源信息</a></li><!--点击先跳转到info界面，判断当前点击对象，在info主frame中调用对应的html-->
+                  <li><a href="InfoList/info.html" id="line" class="linesInfoLink">专线信息</a></li>
+                  <li><a href="InfoList/info.html" id="store" class="storageInfoLink">存储信息</a></li>
                </ul>
              </div>
            </div>
