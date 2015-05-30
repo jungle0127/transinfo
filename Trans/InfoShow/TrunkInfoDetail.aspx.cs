@@ -48,7 +48,6 @@ namespace Trans.InfoShow
             MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">联系电话：</td><td class=\"secTd\"><span class=\"spanContacts\">");
             MessageShow.Append(trunkownerDetails.Conatactphone);
             MessageShow.Append("</span></td></tr><tr><td><hr /></td><td><hr /></td></tr><tr><td class=\"firstTd\">启运地：</td><td class=\"secTd\"><span class=\"spanBeginAdr\">");
-
             IList<County> countyinfos = this.countyTable.FindByCode(detailForTrunk.Srccountycode);
             MessageShow.Append(countyinfos[0].Name);
             MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">目的地：</td><td class=\"secTd\"><span class=\"spanEndAdr\">");

@@ -20,6 +20,13 @@ namespace Trans.InfoShow
         private IUsersDao userInfos;
         private ICountyDao countyInfos;
         private IGoodstypeDao goodsTypeInfo;
+        private string MessageHtml;
+
+        public string MessageHtmlGoods
+        {
+            get { return MessageHtml; }
+        }
+
 
         public GoodsInfoDetail()
         {
@@ -37,39 +44,35 @@ namespace Trans.InfoShow
             Int32 idformes = Convert.ToInt32(Request.QueryString["id".ToString()]);
             Goodssourceinformation detailForGoods = this.goodsinformationtable.Find(idformes);
             //开始组装html
-            MessageShow.Append("<trclass=\"infoTitle\"><td><pid=\"infoTitle\"class=\"pInfoTitle\">");
+            MessageShow.Append("<tr class=\"infoTitle\"><td><p id=\"infoTitle\" class=\"pInfoTitle\">");
             MessageShow.Append(detailForGoods.Title);
-            MessageShow.Append("</p><hrclass=\"hr1\"/></td></tr><tr><tdclass=\"infoDetail\"><table><tbody><tr><tdclass=\"infoPic\"><divid=\"infoPic\"><imgsrc=\"../../imgs/companys/4.jpg\"class=\"imgInfoPic\"/></div></td><tdclass=\"infoContacts\"><table><tbody><tr><tdclass=\"firstTd\">发布时间：</td><tdclass=\"secTd\"><spanclass=\"spanInfotime\">");
+            MessageShow.Append("</p><hr class=\"hr1\" /></td></tr><tr><td class=\"infoDetail\"><table><tbody><tr><td class=\"infoPic\"><div id=\"infoPic\"><img src=\"../../imgs/companys/4.jpg\" class=\"imgInfoPic\" /></div></td><td class=\"infoContacts\"><table><tbody><tr><td class=\"firstTd\">发布时间：</td><td class=\"secTd\"><span class=\"spanInfotime\">");
             MessageShow.Append(detailForGoods.Releasedate);
-            MessageShow.Append("</span></td></tr><tr><tdclass=\"firstTd\">联系人：</td><tdclass=\"secTd\"><spanclass=\"spanContactor\">");
+            MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">联系人：</td><td class=\"secTd\"><span class=\"spanContactor\">");
             Users userGoods = this.userInfos.Find(detailForGoods.Userid);
             MessageShow.Append(userGoods.Username);
-            MessageShow.Append("</span></td></tr><tr><tdclass=\"firstTd\">联系电话：</td><tdclass=\"secTd\"><spanclass=\"spanContacts\">");
+            MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">联系电话：</td><td class=\"secTd\"><span class=\"spanContacts\">");
             MessageShow.Append("***");
-            MessageShow.Append("</span></td></tr><tr><td><hr/></td><td><hr/></td></tr><tr><tdclass=\"firstTd\">启运地：</td><tdclass=\"secTd\"><spanclass=\"spanBeginAdr\">");
+            MessageShow.Append("</span></td></tr><tr><td><hr /></td><td><hr /></td></tr><tr><td class=\"firstTd\">启运地：</td><td class=\"secTd\"><span class=\"spanBeginAdr\">");
             IList<County> goodsCounty = this.countyInfos.FindByCode(detailForGoods.Srccountycode);
             MessageShow.Append(goodsCounty[0].Name);
-            MessageShow.Append("</span></td></tr><tr><tdclass=\"firstTd\">目的地：</td><tdclass=\"secTd\"><spanclass=\"spanEndAdr\">");
+            MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">目的地：</td><td class=\"secTd\"><span class=\"spanEndAdr\">");
             goodsCounty = this.countyInfos.FindByCode(detailForGoods.Dstcountycode);
             MessageShow.Append(goodsCounty[0].Name);
-            MessageShow.Append("</span></td></tr><tr><tdclass=\"firstTd\">类型：</td><tdclass=\"secTd\"><spanclass=\"spanType\">");
+            MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">类型：</td><td class=\"secTd\"><span class=\"spanType\">");
             Goodstype goodstypeInfos = this.goodsTypeInfo.Find(detailForGoods.Goodstypeid);
             MessageShow.Append(goodstypeInfos.Typename);
-            MessageShow.Append("</span></td></tr><tr><tdclass=\"firstTd\">何时需要：</td><tdclass=\"secTd\"><spanclass=\"spanTimeToUse\">");
+            MessageShow.Append("</span></td></tr><tr><td class=\"firstTd\">何时需要：</td><td class=\"secTd\"><span class=\"spanTimeToUse\">");
             MessageShow.Append("***");
-
-
-
-
-
+            MessageShow.Append("</span></td></tr><tr><td><hr /></td><td><hr /></td></tr><tr><td class=\"firstTd\">特殊说明 ：</td><td class=\"secTd\"><span class=\"spanPrice\">");
+            MessageShow.Append(detailForGoods.Content);
+            MessageShow.Append("</span></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td></td></tr>");
             return MessageShow.ToString();
-
-
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MessageHtml = getmessagebody();
         }
     }
 }

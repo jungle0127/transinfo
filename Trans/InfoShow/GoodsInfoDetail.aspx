@@ -83,8 +83,7 @@
                 <tr>
                 <td></td>
                 </tr>--%>
-
-
+                <%=this.MessageHtmlGoods%>
 
 
                 </tbody>
