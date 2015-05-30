@@ -865,7 +865,11 @@
     <Compile Include="App_Code\DAL\Dao\USP\UspInsertTrunkMetadataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\USP\UspUpdateRoleHasRightsDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VarticleinfoDao.cs" />
+    <Content Include="App_Code\DAL\Dao\VdepotinformationDao.cs" />
+    <Content Include="App_Code\DAL\Dao\VgoodssourceinformationDao.cs" />
+    <Content Include="App_Code\DAL\Dao\VprovincecitycountyDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VspeciallineinfoDao.cs" />
+    <Content Include="App_Code\DAL\Dao\VtrunkinformationDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VUserRightsDao.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -954,10 +958,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Code\DAL\Mapper\Varticleinfo.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\Vdepotinformation.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\Vgoodssourceinformation.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\Vprovincecitycounty.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Vrightsfullinfo.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Code\DAL\Mapper\Vspeciallineinfo.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\Vtrunkinformation.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Vtrunkmetadata.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1768,8 +1776,12 @@
     <Compile Include="App_Code\DAL\Entity\Pagination\UsersPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VantypePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VarticleinfoPagination.cs" />
+    <Content Include="App_Code\DAL\Entity\Pagination\VdepotinformationPagination.cs" />
+    <Content Include="App_Code\DAL\Entity\Pagination\VgoodssourceinformationPagination.cs" />
+    <Content Include="App_Code\DAL\Entity\Pagination\VprovincecitycountyPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VrightsfullinfoPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VspeciallineinfoPagination.cs" />
+    <Content Include="App_Code\DAL\Entity\Pagination\VtrunkinformationPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VtrunkmetadataPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VuserrightsPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VuserroleinfoPagination.cs" />
@@ -1811,8 +1823,12 @@
     <Compile Include="App_Code\DAL\Entity\USP\UspUpdateRoleHasRights.cs" />
     <Compile Include="App_Code\DAL\Entity\Vantype.cs" />
     <Compile Include="App_Code\DAL\Entity\Varticleinfo.cs" />
+    <Content Include="App_Code\DAL\Entity\Vdepotinformation.cs" />
+    <Content Include="App_Code\DAL\Entity\Vgoodssourceinformation.cs" />
+    <Content Include="App_Code\DAL\Entity\Vprovincecitycounty.cs" />
     <Compile Include="App_Code\DAL\Entity\Vrightsfullinfo.cs" />
     <Compile Include="App_Code\DAL\Entity\Vspeciallineinfo.cs" />
+    <Content Include="App_Code\DAL\Entity\Vtrunkinformation.cs" />
     <Compile Include="App_Code\DAL\Entity\Vtrunkmetadata.cs" />
     <Compile Include="App_Code\DAL\Entity\Vuserrights.cs" />
     <Compile Include="App_Code\DAL\Entity\Vuserroleinfo.cs" />
@@ -1851,8 +1867,12 @@
     <Compile Include="App_Code\DAL\IDao\IUsersDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVantypeDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVarticleinfoDao.cs" />
+    <Content Include="App_Code\DAL\IDao\IVdepotinformationDao.cs" />
+    <Content Include="App_Code\DAL\IDao\IVgoodssourceinformationDao.cs" />
+    <Content Include="App_Code\DAL\IDao\IVprovincecitycountyDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVrightsfullinfoDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVspeciallineinfoDao.cs" />
+    <Content Include="App_Code\DAL\IDao\IVtrunkinformationDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVtrunkmetadataDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVuserrightsDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVuserroleinfoDao.cs" />
