@@ -514,6 +514,7 @@ CREATE TABLE `speciallineinfo`(
 	`departuretypeid` bigint,
 	`speciallinetypeid` bigint,
 	`description` text, -- 专线说明
+	`releasedate` datetime DEFAULT NOW() NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY (`userid`) REFERENCES users(id),
 	FOREIGN KEY (`sourceplaceinfoid`) REFERENCES placeinfo(id),
@@ -560,7 +561,8 @@ weightprice,
 volumeprice,
 departuretype.typename AS departuretypename, 
 speciallinetype.typename AS speciallinetypename,
-description
+description,
+speciallineinfo.releasedate
 FROM placeinfo
 JOIN speciallineinfo ON speciallineinfo.sourceplaceinfoid = placeinfo.id
 JOIN users ON speciallineinfo.userid = users.id

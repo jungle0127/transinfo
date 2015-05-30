@@ -53,6 +53,10 @@ namespace Trans.DAL.Dao
 
 		IList<Speciallineinfo> PaginationFindBySpeciallinetypeid(SpeciallineinfoPagination obj);
 
+		IList<Speciallineinfo> FindByReleasedate(DateTime releasedate);
+
+		IList<Speciallineinfo> PaginationFindByReleasedate(SpeciallineinfoPagination obj);
+
 		void Insert(Speciallineinfo obj);
 
 		void Update(Speciallineinfo obj);
@@ -76,6 +80,8 @@ namespace Trans.DAL.Dao
 		int DeleteBySourceplaceinfoid(Int64 sourceplaceinfoid);
 
 		int DeleteBySpeciallinetypeid(Int64 speciallinetypeid);
+
+		int DeleteByReleasedate(DateTime releasedate);
 
 		void Reload(Speciallineinfo obj);
 	}

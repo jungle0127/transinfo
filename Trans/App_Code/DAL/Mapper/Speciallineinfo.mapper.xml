@@ -16,6 +16,7 @@
 			<result property="Description" column="description" dbType="text"/>
 			<result property="Sourceplaceinfoid" column="sourceplaceinfoid" dbType="bigint"/>
 			<result property="Speciallinetypeid" column="speciallinetypeid" dbType="bigint"/>
+			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 		</resultMap>
 	</resultMaps>
 	<statements>
@@ -85,11 +86,17 @@
 		<select id="SpeciallineinfoPagination.FindBySpeciallinetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# limit #Limit# offset #Offset# 
 		</select>
+		<select id="Speciallineinfo.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.releasedate = #value#
+		</select>
+		<select id="SpeciallineinfoPagination.FindByReleasedate" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+		</select>
 		<insert id="Speciallineinfo.Insert" parameterClass="Speciallineinfo">
-			INSERT INTO speciallineinfo (userid,destinationplaceinfoid,departuretypeid,title,volumeprice,id,weightprice,description,sourceplaceinfoid,speciallinetypeid) VALUES (#Userid#,#Destinationplaceinfoid#,#Departuretypeid#,#Title#,#Volumeprice#,#Id#,#Weightprice#,#Description#,#Sourceplaceinfoid#,#Speciallinetypeid#)
+			INSERT INTO speciallineinfo (userid,destinationplaceinfoid,departuretypeid,title,volumeprice,id,weightprice,description,sourceplaceinfoid,speciallinetypeid,releasedate) VALUES (#Userid#,#Destinationplaceinfoid#,#Departuretypeid#,#Title#,#Volumeprice#,#Id#,#Weightprice#,#Description#,#Sourceplaceinfoid#,#Speciallinetypeid#,#Releasedate#)
 		</insert>
 		<update id="Speciallineinfo.Update" parameterClass="Speciallineinfo">
-			UPDATE speciallineinfo SET userid=#Userid#,destinationplaceinfoid=#Destinationplaceinfoid#,departuretypeid=#Departuretypeid#,title=#Title#,volumeprice=#Volumeprice#,weightprice=#Weightprice#,description=#Description#,sourceplaceinfoid=#Sourceplaceinfoid#,speciallinetypeid=#Speciallinetypeid# WHERE id=#Id#
+			UPDATE speciallineinfo SET userid=#Userid#,destinationplaceinfoid=#Destinationplaceinfoid#,departuretypeid=#Departuretypeid#,title=#Title#,volumeprice=#Volumeprice#,weightprice=#Weightprice#,description=#Description#,sourceplaceinfoid=#Sourceplaceinfoid#,speciallinetypeid=#Speciallinetypeid#,releasedate=#Releasedate# WHERE id=#Id#
 		</update>
 		<delete id="Speciallineinfo.DeleteByUserid" parameterClass="Int64">
 			DELETE FROM speciallineinfo WHERE userid=#value# 
@@ -120,6 +127,9 @@
 		</delete>
 		<delete id="Speciallineinfo.DeleteBySpeciallinetypeid" parameterClass="Int64">
 			DELETE FROM speciallineinfo WHERE speciallinetypeid=#value# 
+		</delete>
+		<delete id="Speciallineinfo.DeleteByReleasedate" parameterClass="DateTime">
+			DELETE FROM speciallineinfo WHERE releasedate=#value# 
 		</delete>
 	</statements>
 </sqlMap>

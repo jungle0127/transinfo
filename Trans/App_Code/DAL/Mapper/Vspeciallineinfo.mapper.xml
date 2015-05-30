@@ -6,6 +6,7 @@
 	</alias>
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Vspeciallineinfo">
+			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 			<result property="Speciallinetypename" column="speciallinetypename" dbType="varchar"/>
 			<result property="Srccontactpersonname" column="srccontactpersonname" dbType="varchar"/>
 			<result property="Description" column="description" dbType="text"/>
@@ -40,6 +41,12 @@
 		</select>
 		<select id="Vspeciallineinfo.FindAllPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_speciallineinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.releasedate = #value#
+		</select>
+		<select id="VspeciallineinfoPagination.FindByReleasedate" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.releasedate = #Releasedate# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vspeciallineinfo.FindBySpeciallinetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.speciallinetypename = #value#

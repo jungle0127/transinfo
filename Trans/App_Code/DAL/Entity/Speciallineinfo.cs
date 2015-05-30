@@ -66,5 +66,11 @@ namespace Trans.DAL.Entity
 			get { return m_speciallinetypeid; }
 			set { m_speciallinetypeid = value;}
 		}
+		private DateTime m_releasedate;
+		public DateTime Releasedate
+		{
+			get { return m_releasedate; }
+			set { m_releasedate = value;}
+		}
 	}
 }

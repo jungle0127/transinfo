@@ -132,6 +132,16 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public IList<Speciallineinfo> FindByReleasedate(DateTime releasedate) {
+			String stmtId = "Speciallineinfo.FindByReleasedate";
+			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, releasedate);
+			return result;
+        }
+		public IList<Speciallineinfo> PaginationFindByReleasedate(SpeciallineinfoPagination obj) {
+			String stmtId = "SpeciallineinfoPagination.FindByReleasedate";
+			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
+			return result;
+        }
 		public void Update(Speciallineinfo obj) {
 			String stmtId = "Speciallineinfo.Update";
 			this.sqlMapper.Update(stmtId, obj);
@@ -189,6 +199,11 @@ namespace Trans.DAL.Dao
 		public int DeleteBySpeciallinetypeid(Int64 speciallinetypeid) {
 			String stmtId = "Speciallineinfo.DeleteBySpeciallinetypeid";
 			int result = this.sqlMapper.Delete(stmtId, speciallinetypeid);
+			return result;
+        }
+		public int DeleteByReleasedate(DateTime releasedate) {
+			String stmtId = "Speciallineinfo.DeleteByReleasedate";
+			int result = this.sqlMapper.Delete(stmtId, releasedate);
 			return result;
         }
 		public void Reload(Speciallineinfo obj) {

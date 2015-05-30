@@ -42,6 +42,16 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, null);
 			return result;
         }
+		public IList<Vspeciallineinfo> FindByReleasedate(DateTime releasedate) {
+			String stmtId = "Vspeciallineinfo.FindByReleasedate";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, releasedate);
+			return result;
+        }
+		public IList<Vspeciallineinfo> PaginationFindByReleasedate(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindByReleasedate";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
 		public IList<Vspeciallineinfo> FindBySpeciallinetypename(String speciallinetypename) {
 			String stmtId = "Vspeciallineinfo.FindBySpeciallinetypename";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypename);

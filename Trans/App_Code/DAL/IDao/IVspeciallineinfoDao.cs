@@ -15,6 +15,10 @@ namespace Trans.DAL.Dao
 
 		IList<Vspeciallineinfo> QuickFindAll();
 
+		IList<Vspeciallineinfo> FindByReleasedate(DateTime releasedate);
+
+		IList<Vspeciallineinfo> PaginationFindByReleasedate(VspeciallineinfoPagination obj);
+
 		IList<Vspeciallineinfo> FindBySpeciallinetypename(String speciallinetypename);
 
 		IList<Vspeciallineinfo> PaginationFindBySpeciallinetypename(VspeciallineinfoPagination obj);

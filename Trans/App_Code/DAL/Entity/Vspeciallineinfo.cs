@@ -6,6 +6,12 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class Vspeciallineinfo
 	{
+		private DateTime m_releasedate;
+		public DateTime Releasedate
+		{
+			get { return m_releasedate; }
+			set { m_releasedate = value;}
+		}
 		private String m_speciallinetypename;
 		public String Speciallinetypename
 		{
