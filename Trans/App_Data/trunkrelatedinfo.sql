@@ -281,6 +281,10 @@ users.username,
 trunkinformation.id,
 V_provincecitycounty.fullname AS srcregionname,
 dstregion.fullname AS dstregionname,
+V_provincecitycounty.cityname AS srccityname,
+V_provincecitycounty.citycode AS srccitycode,
+dstregion.cityname AS dstcityname,
+dstregion.citycode AS dstcitycode,
 V_trunkmetadata.prefixname,
 V_trunkmetadata.number,
 V_trunkmetadata.length,
@@ -417,6 +421,10 @@ CREATE INDEX IX_goodssrcinfo_needtrunkvolume ON goodssourceinformation(needtrunk
  users.username,
  V_provincecitycounty.fullname AS srcregionname,
  dstregion.fullname AS dstregionname,
+ V_provincecitycounty.cityname AS srccityname,
+ V_provincecitycounty.citycode AS srccitycode,
+ dstregion.cityname AS dstcityname,
+ dstregion.citycode AS dstcitycode,
  goodssourceinformation.deadline,
  goodssourceinformation.title,
  goodssourceinformation.titlecolor,
@@ -538,12 +546,16 @@ placeinfo.address AS srcplaceaddress,
 placeinfo.contactpersonname AS srccontactpersonname,
 placeinfo.contactcellphone AS srccontactcellphone,
 placeinfo.contactphone AS srccontactphone,
-srccounty.name AS srccounty,
+srccounty.fullname AS srcregionname,
+srccounty.cityname AS srccityname,
+srccounty.citycode AS srccitycode,
 dstplaceinfo.address AS dstplaceaddress,
 dstplaceinfo.contactpersonname AS dstcontactpersonname,
 dstplaceinfo.contactcellphone AS dstcontactcellphone,
 dstplaceinfo.contactphone AS dstcontactphone,
-dstcounty.name AS dstcounty,
+dstcounty.fullname AS dstregionname,
+dstcounty.cityname AS dstcityname,
+dstcounty.citycode AS dstcitycode,
 weightprice,
 volumeprice,
 departuretype.typename AS departuretypename, 
@@ -555,8 +567,9 @@ JOIN users ON speciallineinfo.userid = users.id
 JOIN placeinfo AS dstplaceinfo ON dstplaceinfo.id = speciallineinfo.destinationplaceinfoid
 JOIN departuretype ON departuretype.id = speciallineinfo.departuretypeid
 JOIN speciallinetype ON speciallineinfo.speciallinetypeid = speciallinetype.id
-JOIN county AS srccounty ON srccounty.code  = placeinfo.countycode
-JOIN county AS dstcounty ON dstcounty.code = dstplaceinfo.countycode;
+JOIN V_provincecitycounty AS srccounty ON srccounty.countycode  = placeinfo.countycode
+JOIN V_provincecitycounty AS dstcounty ON dstcounty.countycode = dstplaceinfo.countycode;
+
 
 -- --------------------------------------------------------------------------------------------
 -- ------------------------------User Store Procedure------------------------------------------

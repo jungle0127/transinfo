@@ -122,13 +122,43 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri) {
-			String stmtId = "Vtrunkinformation.FindByVanimageuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vanimageuri);
+		public IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname) {
+			String stmtId = "Vtrunkinformation.FindByContactpersonname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, contactpersonname);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByVanimageuri";
+		public IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByContactpersonname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> FindByLocation(String location) {
+			String stmtId = "Vtrunkinformation.FindByLocation";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, location);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByLocation";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> FindBySrccityname(String srccityname) {
+			String stmtId = "Vtrunkinformation.FindBySrccityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, srccityname);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindBySrccityname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindBySrccityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> FindBySrccitycode(String srccitycode) {
+			String stmtId = "Vtrunkinformation.FindBySrccitycode";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, srccitycode);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindBySrccitycode(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindBySrccitycode";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
@@ -182,6 +212,16 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
+		public IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri) {
+			String stmtId = "Vtrunkinformation.FindByVanimageuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vanimageuri);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByVanimageuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
 		public IList<Vtrunkinformation> FindByLicenseuri(String licenseuri) {
 			String stmtId = "Vtrunkinformation.FindByLicenseuri";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, licenseuri);
@@ -202,23 +242,23 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname) {
-			String stmtId = "Vtrunkinformation.FindByContactpersonname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, contactpersonname);
+		public IList<Vtrunkinformation> FindByDstcityname(String dstcityname) {
+			String stmtId = "Vtrunkinformation.FindByDstcityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstcityname);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByContactpersonname";
+		public IList<Vtrunkinformation> PaginationFindByDstcityname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByDstcityname";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> FindByLocation(String location) {
-			String stmtId = "Vtrunkinformation.FindByLocation";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, location);
+		public IList<Vtrunkinformation> FindByDstcitycode(String dstcitycode) {
+			String stmtId = "Vtrunkinformation.FindByDstcitycode";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstcitycode);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByLocation";
+		public IList<Vtrunkinformation> PaginationFindByDstcitycode(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByDstcitycode";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }

@@ -72,13 +72,13 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vdepotinformation> FindByContactperson(String contactperson) {
-			String stmtId = "Vdepotinformation.FindByContactperson";
-			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, contactperson);
+		public IList<Vdepotinformation> FindByCityname(String cityname) {
+			String stmtId = "Vdepotinformation.FindByCityname";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cityname);
 			return result;
         }
-		public IList<Vdepotinformation> PaginationFindByContactperson(VdepotinformationPagination obj) {
-			String stmtId = "VdepotinformationPagination.FindByContactperson";
+		public IList<Vdepotinformation> PaginationFindByCityname(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.FindByCityname";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -109,6 +109,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vdepotinformation> PaginationFindByPrice(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByPrice";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> FindByContactperson(String contactperson) {
+			String stmtId = "Vdepotinformation.FindByContactperson";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, contactperson);
+			return result;
+        }
+		public IList<Vdepotinformation> PaginationFindByContactperson(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.FindByContactperson";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -159,6 +169,16 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vdepotinformation> PaginationFindByAddress(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByAddress";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> FindByCitycode(String citycode) {
+			String stmtId = "Vdepotinformation.FindByCitycode";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, citycode);
+			return result;
+        }
+		public IList<Vdepotinformation> PaginationFindByCitycode(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.FindByCitycode";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }

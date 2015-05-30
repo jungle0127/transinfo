@@ -54,11 +54,29 @@ namespace Trans.DAL.Entity
 			get { return m_conatactphone; }
 			set { m_conatactphone = value;}
 		}
-		private String m_vanimageuri;
-		public String Vanimageuri
+		private String m_contactpersonname;
+		public String Contactpersonname
 		{
-			get { return m_vanimageuri; }
-			set { m_vanimageuri = value;}
+			get { return m_contactpersonname; }
+			set { m_contactpersonname = value;}
+		}
+		private String m_location;
+		public String Location
+		{
+			get { return m_location; }
+			set { m_location = value;}
+		}
+		private String m_srccityname;
+		public String Srccityname
+		{
+			get { return m_srccityname; }
+			set { m_srccityname = value;}
+		}
+		private String m_srccitycode;
+		public String Srccitycode
+		{
+			get { return m_srccitycode; }
+			set { m_srccitycode = value;}
 		}
 		private String m_srcregionname;
 		public String Srcregionname
@@ -90,6 +108,12 @@ namespace Trans.DAL.Entity
 			get { return m_prefixname; }
 			set { m_prefixname = value;}
 		}
+		private String m_vanimageuri;
+		public String Vanimageuri
+		{
+			get { return m_vanimageuri; }
+			set { m_vanimageuri = value;}
+		}
 		private String m_licenseuri;
 		public String Licenseuri
 		{
@@ -102,17 +126,17 @@ namespace Trans.DAL.Entity
 			get { return m_trunkidentifynumber; }
 			set { m_trunkidentifynumber = value;}
 		}
-		private String m_contactpersonname;
-		public String Contactpersonname
+		private String m_dstcityname;
+		public String Dstcityname
 		{
-			get { return m_contactpersonname; }
-			set { m_contactpersonname = value;}
+			get { return m_dstcityname; }
+			set { m_dstcityname = value;}
 		}
-		private String m_location;
-		public String Location
+		private String m_dstcitycode;
+		public String Dstcitycode
 		{
-			get { return m_location; }
-			set { m_location = value;}
+			get { return m_dstcitycode; }
+			set { m_dstcitycode = value;}
 		}
 		private String m_routetype;
 		public String Routetype

@@ -82,13 +82,13 @@ namespace Trans.DAL.Dao
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vgoodssourceinformation> FindByReleasedate(DateTime releasedate) {
-			String stmtId = "Vgoodssourceinformation.FindByReleasedate";
-			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, releasedate);
+		public IList<Vgoodssourceinformation> FindByTransporttypename(String transporttypename) {
+			String stmtId = "Vgoodssourceinformation.FindByTransporttypename";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, transporttypename);
 			return result;
         }
-		public IList<Vgoodssourceinformation> PaginationFindByReleasedate(VgoodssourceinformationPagination obj) {
-			String stmtId = "VgoodssourceinformationPagination.FindByReleasedate";
+		public IList<Vgoodssourceinformation> PaginationFindByTransporttypename(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByTransporttypename";
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
@@ -132,23 +132,23 @@ namespace Trans.DAL.Dao
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vgoodssourceinformation> FindByTransporttypename(String transporttypename) {
-			String stmtId = "Vgoodssourceinformation.FindByTransporttypename";
-			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, transporttypename);
+		public IList<Vgoodssourceinformation> FindBySrccityname(String srccityname) {
+			String stmtId = "Vgoodssourceinformation.FindBySrccityname";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, srccityname);
 			return result;
         }
-		public IList<Vgoodssourceinformation> PaginationFindByTransporttypename(VgoodssourceinformationPagination obj) {
-			String stmtId = "VgoodssourceinformationPagination.FindByTransporttypename";
+		public IList<Vgoodssourceinformation> PaginationFindBySrccityname(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindBySrccityname";
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vgoodssourceinformation> FindByTitle(String title) {
-			String stmtId = "Vgoodssourceinformation.FindByTitle";
-			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, title);
+		public IList<Vgoodssourceinformation> FindBySrccitycode(String srccitycode) {
+			String stmtId = "Vgoodssourceinformation.FindBySrccitycode";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, srccitycode);
 			return result;
         }
-		public IList<Vgoodssourceinformation> PaginationFindByTitle(VgoodssourceinformationPagination obj) {
-			String stmtId = "VgoodssourceinformationPagination.FindByTitle";
+		public IList<Vgoodssourceinformation> PaginationFindBySrccitycode(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindBySrccitycode";
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
@@ -189,6 +189,46 @@ namespace Trans.DAL.Dao
         }
 		public IList<Vgoodssourceinformation> PaginationFindByDstregionname(VgoodssourceinformationPagination obj) {
 			String stmtId = "VgoodssourceinformationPagination.FindByDstregionname";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> FindByReleasedate(DateTime releasedate) {
+			String stmtId = "Vgoodssourceinformation.FindByReleasedate";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, releasedate);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> PaginationFindByReleasedate(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByReleasedate";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> FindByDstcityname(String dstcityname) {
+			String stmtId = "Vgoodssourceinformation.FindByDstcityname";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, dstcityname);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> PaginationFindByDstcityname(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByDstcityname";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> FindByDstcitycode(String dstcitycode) {
+			String stmtId = "Vgoodssourceinformation.FindByDstcitycode";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, dstcitycode);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> PaginationFindByDstcitycode(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByDstcitycode";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> FindByTitle(String title) {
+			String stmtId = "Vgoodssourceinformation.FindByTitle";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, title);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> PaginationFindByTitle(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByTitle";
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }

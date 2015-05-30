@@ -31,9 +31,9 @@ namespace Trans.DAL.Dao
 
 		IList<Vgoodssourceinformation> PaginationFindByNeedtrunkweight(VgoodssourceinformationPagination obj);
 
-		IList<Vgoodssourceinformation> FindByReleasedate(DateTime releasedate);
+		IList<Vgoodssourceinformation> FindByTransporttypename(String transporttypename);
 
-		IList<Vgoodssourceinformation> PaginationFindByReleasedate(VgoodssourceinformationPagination obj);
+		IList<Vgoodssourceinformation> PaginationFindByTransporttypename(VgoodssourceinformationPagination obj);
 
 		IList<Vgoodssourceinformation> FindByCautiontypename(String cautiontypename);
 
@@ -51,13 +51,13 @@ namespace Trans.DAL.Dao
 
 		IList<Vgoodssourceinformation> PaginationFindByGoodsname(VgoodssourceinformationPagination obj);
 
-		IList<Vgoodssourceinformation> FindByTransporttypename(String transporttypename);
+		IList<Vgoodssourceinformation> FindBySrccityname(String srccityname);
 
-		IList<Vgoodssourceinformation> PaginationFindByTransporttypename(VgoodssourceinformationPagination obj);
+		IList<Vgoodssourceinformation> PaginationFindBySrccityname(VgoodssourceinformationPagination obj);
 
-		IList<Vgoodssourceinformation> FindByTitle(String title);
+		IList<Vgoodssourceinformation> FindBySrccitycode(String srccitycode);
 
-		IList<Vgoodssourceinformation> PaginationFindByTitle(VgoodssourceinformationPagination obj);
+		IList<Vgoodssourceinformation> PaginationFindBySrccitycode(VgoodssourceinformationPagination obj);
 
 		IList<Vgoodssourceinformation> FindBySrcregionname(String srcregionname);
 
@@ -74,6 +74,22 @@ namespace Trans.DAL.Dao
 		IList<Vgoodssourceinformation> FindByDstregionname(String dstregionname);
 
 		IList<Vgoodssourceinformation> PaginationFindByDstregionname(VgoodssourceinformationPagination obj);
+
+		IList<Vgoodssourceinformation> FindByReleasedate(DateTime releasedate);
+
+		IList<Vgoodssourceinformation> PaginationFindByReleasedate(VgoodssourceinformationPagination obj);
+
+		IList<Vgoodssourceinformation> FindByDstcityname(String dstcityname);
+
+		IList<Vgoodssourceinformation> PaginationFindByDstcityname(VgoodssourceinformationPagination obj);
+
+		IList<Vgoodssourceinformation> FindByDstcitycode(String dstcitycode);
+
+		IList<Vgoodssourceinformation> PaginationFindByDstcitycode(VgoodssourceinformationPagination obj);
+
+		IList<Vgoodssourceinformation> FindByTitle(String title);
+
+		IList<Vgoodssourceinformation> PaginationFindByTitle(VgoodssourceinformationPagination obj);
 
 		IList<Vgoodssourceinformation> FindByTitlecolor(String titlecolor);
 

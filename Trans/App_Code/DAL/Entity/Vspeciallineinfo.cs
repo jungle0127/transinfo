@@ -6,29 +6,17 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class Vspeciallineinfo
 	{
-		private String m_srccounty;
-		public String Srccounty
-		{
-			get { return m_srccounty; }
-			set { m_srccounty = value;}
-		}
 		private String m_speciallinetypename;
 		public String Speciallinetypename
 		{
 			get { return m_speciallinetypename; }
 			set { m_speciallinetypename = value;}
 		}
-		private String m_dstcontactcellphone;
-		public String Dstcontactcellphone
+		private String m_srccontactpersonname;
+		public String Srccontactpersonname
 		{
-			get { return m_dstcontactcellphone; }
-			set { m_dstcontactcellphone = value;}
-		}
-		private String m_dstcounty;
-		public String Dstcounty
-		{
-			get { return m_dstcounty; }
-			set { m_dstcounty = value;}
+			get { return m_srccontactpersonname; }
+			set { m_srccontactpersonname = value;}
 		}
 		private String m_description;
 		public String Description
@@ -47,6 +35,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_srccontactphone; }
 			set { m_srccontactphone = value;}
+		}
+		private Int32 m_volumeprice;
+		public Int32 Volumeprice
+		{
+			get { return m_volumeprice; }
+			set { m_volumeprice = value;}
 		}
 		private String m_dstcontactpersonname;
 		public String Dstcontactpersonname
@@ -72,11 +66,23 @@ namespace Trans.DAL.Entity
 			get { return m_srccontactcellphone; }
 			set { m_srccontactcellphone = value;}
 		}
-		private String m_title;
-		public String Title
+		private String m_srccityname;
+		public String Srccityname
 		{
-			get { return m_title; }
-			set { m_title = value;}
+			get { return m_srccityname; }
+			set { m_srccityname = value;}
+		}
+		private String m_srccitycode;
+		public String Srccitycode
+		{
+			get { return m_srccitycode; }
+			set { m_srccitycode = value;}
+		}
+		private String m_srcregionname;
+		public String Srcregionname
+		{
+			get { return m_srcregionname; }
+			set { m_srcregionname = value;}
 		}
 		private String m_dstcontactphone;
 		public String Dstcontactphone
@@ -84,17 +90,17 @@ namespace Trans.DAL.Entity
 			get { return m_dstcontactphone; }
 			set { m_dstcontactphone = value;}
 		}
-		private String m_srccontactpersonname;
-		public String Srccontactpersonname
-		{
-			get { return m_srccontactpersonname; }
-			set { m_srccontactpersonname = value;}
-		}
 		private Int64 m_id;
 		public Int64 Id
 		{
 			get { return m_id; }
 			set { m_id = value;}
+		}
+		private String m_dstregionname;
+		public String Dstregionname
+		{
+			get { return m_dstregionname; }
+			set { m_dstregionname = value;}
 		}
 		private String m_departuretypename;
 		public String Departuretypename
@@ -108,11 +114,29 @@ namespace Trans.DAL.Entity
 			get { return m_dstplaceaddress; }
 			set { m_dstplaceaddress = value;}
 		}
-		private Int32 m_volumeprice;
-		public Int32 Volumeprice
+		private String m_dstcityname;
+		public String Dstcityname
 		{
-			get { return m_volumeprice; }
-			set { m_volumeprice = value;}
+			get { return m_dstcityname; }
+			set { m_dstcityname = value;}
+		}
+		private String m_dstcitycode;
+		public String Dstcitycode
+		{
+			get { return m_dstcitycode; }
+			set { m_dstcitycode = value;}
+		}
+		private String m_title;
+		public String Title
+		{
+			get { return m_title; }
+			set { m_title = value;}
+		}
+		private String m_dstcontactcellphone;
+		public String Dstcontactcellphone
+		{
+			get { return m_dstcontactcellphone; }
+			set { m_dstcontactcellphone = value;}
 		}
 		private String m_username;
 		public String Username

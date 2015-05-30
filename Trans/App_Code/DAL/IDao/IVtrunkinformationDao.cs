@@ -47,9 +47,21 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkinformation> PaginationFindByConatactphone(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri);
+		IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname);
 
-		IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> FindByLocation(String location);
+
+		IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> FindBySrccityname(String srccityname);
+
+		IList<Vtrunkinformation> PaginationFindBySrccityname(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> FindBySrccitycode(String srccitycode);
+
+		IList<Vtrunkinformation> PaginationFindBySrccitycode(VtrunkinformationPagination obj);
 
 		IList<Vtrunkinformation> FindBySrcregionname(String srcregionname);
 
@@ -71,6 +83,10 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkinformation> PaginationFindByPrefixname(VtrunkinformationPagination obj);
 
+		IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri);
+
+		IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj);
+
 		IList<Vtrunkinformation> FindByLicenseuri(String licenseuri);
 
 		IList<Vtrunkinformation> PaginationFindByLicenseuri(VtrunkinformationPagination obj);
@@ -79,13 +95,13 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkinformation> PaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname);
+		IList<Vtrunkinformation> FindByDstcityname(String dstcityname);
 
-		IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByDstcityname(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> FindByLocation(String location);
+		IList<Vtrunkinformation> FindByDstcitycode(String dstcitycode);
 
-		IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByDstcitycode(VtrunkinformationPagination obj);
 
 		IList<Vtrunkinformation> FindByRoutetype(String routetype);
 

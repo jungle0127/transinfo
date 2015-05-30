@@ -30,11 +30,11 @@ namespace Trans.DAL.Entity
 			get { return m_needtrunkweight; }
 			set { m_needtrunkweight = value;}
 		}
-		private DateTime m_releasedate;
-		public DateTime Releasedate
+		private String m_transporttypename;
+		public String Transporttypename
 		{
-			get { return m_releasedate; }
-			set { m_releasedate = value;}
+			get { return m_transporttypename; }
+			set { m_transporttypename = value;}
 		}
 		private String m_cautiontypename;
 		public String Cautiontypename
@@ -60,17 +60,17 @@ namespace Trans.DAL.Entity
 			get { return m_goodsname; }
 			set { m_goodsname = value;}
 		}
-		private String m_transporttypename;
-		public String Transporttypename
+		private String m_srccityname;
+		public String Srccityname
 		{
-			get { return m_transporttypename; }
-			set { m_transporttypename = value;}
+			get { return m_srccityname; }
+			set { m_srccityname = value;}
 		}
-		private String m_title;
-		public String Title
+		private String m_srccitycode;
+		public String Srccitycode
 		{
-			get { return m_title; }
-			set { m_title = value;}
+			get { return m_srccitycode; }
+			set { m_srccitycode = value;}
 		}
 		private String m_srcregionname;
 		public String Srcregionname
@@ -95,6 +95,30 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_dstregionname; }
 			set { m_dstregionname = value;}
+		}
+		private DateTime m_releasedate;
+		public DateTime Releasedate
+		{
+			get { return m_releasedate; }
+			set { m_releasedate = value;}
+		}
+		private String m_dstcityname;
+		public String Dstcityname
+		{
+			get { return m_dstcityname; }
+			set { m_dstcityname = value;}
+		}
+		private String m_dstcitycode;
+		public String Dstcitycode
+		{
+			get { return m_dstcitycode; }
+			set { m_dstcitycode = value;}
+		}
+		private String m_title;
+		public String Title
+		{
+			get { return m_title; }
+			set { m_title = value;}
 		}
 		private String m_titlecolor;
 		public String Titlecolor

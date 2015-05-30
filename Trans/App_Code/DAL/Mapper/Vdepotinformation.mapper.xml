@@ -9,15 +9,17 @@
 			<result property="Cellphone" column="cellphone" dbType="varchar"/>
 			<result property="Description" column="description" dbType="text"/>
 			<result property="Validtime" column="validtime" dbType="varchar"/>
-			<result property="Contactperson" column="contactperson" dbType="varchar"/>
+			<result property="Cityname" column="cityname" dbType="varchar"/>
 			<result property="Useablearea" column="useablearea" dbType="int"/>
 			<result property="Scopename" column="scopename" dbType="char"/>
 			<result property="Price" column="price" dbType="varchar"/>
+			<result property="Contactperson" column="contactperson" dbType="varchar"/>
 			<result property="Title" column="title" dbType="varchar"/>
 			<result property="Regionname" column="regionname" dbType="varchar"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Depottypename" column="depottypename" dbType="char"/>
 			<result property="Address" column="address" dbType="varchar"/>
+			<result property="Citycode" column="citycode" dbType="varchar"/>
 			<result property="Area" column="area" dbType="int"/>
 			<result property="Username" column="username" dbType="varchar"/>
 		</resultMap>
@@ -50,11 +52,11 @@
 		<select id="VdepotinformationPagination.FindByValidtime" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.validtime = #Validtime# limit #Limit# offset #Offset# 
 		</select>
-		<select id="Vdepotinformation.FindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.contactperson = #value#
+		<select id="Vdepotinformation.FindByCityname" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.cityname = #value#
 		</select>
-		<select id="VdepotinformationPagination.FindByContactperson" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.contactperson = #Contactperson# limit #Limit# offset #Offset# 
+		<select id="VdepotinformationPagination.FindByCityname" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.cityname = #Cityname# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vdepotinformation.FindByUseablearea" parameterClass="Int32" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.useablearea = #value#
@@ -73,6 +75,12 @@
 		</select>
 		<select id="VdepotinformationPagination.FindByPrice" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.price = #Price# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.FindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.contactperson = #value#
+		</select>
+		<select id="VdepotinformationPagination.FindByContactperson" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.contactperson = #Contactperson# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vdepotinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.title = #value#
@@ -103,6 +111,12 @@
 		</select>
 		<select id="VdepotinformationPagination.FindByAddress" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.address = #Address# limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.FindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.citycode = #value#
+		</select>
+		<select id="VdepotinformationPagination.FindByCitycode" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.citycode = #Citycode# limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vdepotinformation.FindByArea" parameterClass="Int32" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.area = #value#

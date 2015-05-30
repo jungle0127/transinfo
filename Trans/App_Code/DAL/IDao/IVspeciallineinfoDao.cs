@@ -15,21 +15,13 @@ namespace Trans.DAL.Dao
 
 		IList<Vspeciallineinfo> QuickFindAll();
 
-		IList<Vspeciallineinfo> FindBySrccounty(String srccounty);
-
-		IList<Vspeciallineinfo> PaginationFindBySrccounty(VspeciallineinfoPagination obj);
-
 		IList<Vspeciallineinfo> FindBySpeciallinetypename(String speciallinetypename);
 
 		IList<Vspeciallineinfo> PaginationFindBySpeciallinetypename(VspeciallineinfoPagination obj);
 
-		IList<Vspeciallineinfo> FindByDstcontactcellphone(String dstcontactcellphone);
+		IList<Vspeciallineinfo> FindBySrccontactpersonname(String srccontactpersonname);
 
-		IList<Vspeciallineinfo> PaginationFindByDstcontactcellphone(VspeciallineinfoPagination obj);
-
-		IList<Vspeciallineinfo> FindByDstcounty(String dstcounty);
-
-		IList<Vspeciallineinfo> PaginationFindByDstcounty(VspeciallineinfoPagination obj);
+		IList<Vspeciallineinfo> PaginationFindBySrccontactpersonname(VspeciallineinfoPagination obj);
 
 		IList<Vspeciallineinfo> FindByDescription(String description);
 
@@ -42,6 +34,10 @@ namespace Trans.DAL.Dao
 		IList<Vspeciallineinfo> FindBySrccontactphone(String srccontactphone);
 
 		IList<Vspeciallineinfo> PaginationFindBySrccontactphone(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindByVolumeprice(Int32 volumeprice);
+
+		IList<Vspeciallineinfo> PaginationFindByVolumeprice(VspeciallineinfoPagination obj);
 
 		IList<Vspeciallineinfo> FindByDstcontactpersonname(String dstcontactpersonname);
 
@@ -59,21 +55,29 @@ namespace Trans.DAL.Dao
 
 		IList<Vspeciallineinfo> PaginationFindBySrccontactcellphone(VspeciallineinfoPagination obj);
 
-		IList<Vspeciallineinfo> FindByTitle(String title);
+		IList<Vspeciallineinfo> FindBySrccityname(String srccityname);
 
-		IList<Vspeciallineinfo> PaginationFindByTitle(VspeciallineinfoPagination obj);
+		IList<Vspeciallineinfo> PaginationFindBySrccityname(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindBySrccitycode(String srccitycode);
+
+		IList<Vspeciallineinfo> PaginationFindBySrccitycode(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindBySrcregionname(String srcregionname);
+
+		IList<Vspeciallineinfo> PaginationFindBySrcregionname(VspeciallineinfoPagination obj);
 
 		IList<Vspeciallineinfo> FindByDstcontactphone(String dstcontactphone);
 
 		IList<Vspeciallineinfo> PaginationFindByDstcontactphone(VspeciallineinfoPagination obj);
 
-		IList<Vspeciallineinfo> FindBySrccontactpersonname(String srccontactpersonname);
-
-		IList<Vspeciallineinfo> PaginationFindBySrccontactpersonname(VspeciallineinfoPagination obj);
-
 		IList<Vspeciallineinfo> FindById(Int64 id);
 
 		IList<Vspeciallineinfo> PaginationFindById(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindByDstregionname(String dstregionname);
+
+		IList<Vspeciallineinfo> PaginationFindByDstregionname(VspeciallineinfoPagination obj);
 
 		IList<Vspeciallineinfo> FindByDeparturetypename(String departuretypename);
 
@@ -83,9 +87,21 @@ namespace Trans.DAL.Dao
 
 		IList<Vspeciallineinfo> PaginationFindByDstplaceaddress(VspeciallineinfoPagination obj);
 
-		IList<Vspeciallineinfo> FindByVolumeprice(Int32 volumeprice);
+		IList<Vspeciallineinfo> FindByDstcityname(String dstcityname);
 
-		IList<Vspeciallineinfo> PaginationFindByVolumeprice(VspeciallineinfoPagination obj);
+		IList<Vspeciallineinfo> PaginationFindByDstcityname(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindByDstcitycode(String dstcitycode);
+
+		IList<Vspeciallineinfo> PaginationFindByDstcitycode(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindByTitle(String title);
+
+		IList<Vspeciallineinfo> PaginationFindByTitle(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> FindByDstcontactcellphone(String dstcontactcellphone);
+
+		IList<Vspeciallineinfo> PaginationFindByDstcontactcellphone(VspeciallineinfoPagination obj);
 
 		IList<Vspeciallineinfo> FindByUsername(String username);
 

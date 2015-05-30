@@ -27,9 +27,9 @@ namespace Trans.DAL.Dao
 
 		IList<Vdepotinformation> PaginationFindByValidtime(VdepotinformationPagination obj);
 
-		IList<Vdepotinformation> FindByContactperson(String contactperson);
+		IList<Vdepotinformation> FindByCityname(String cityname);
 
-		IList<Vdepotinformation> PaginationFindByContactperson(VdepotinformationPagination obj);
+		IList<Vdepotinformation> PaginationFindByCityname(VdepotinformationPagination obj);
 
 		IList<Vdepotinformation> FindByUseablearea(Int32 useablearea);
 
@@ -42,6 +42,10 @@ namespace Trans.DAL.Dao
 		IList<Vdepotinformation> FindByPrice(String price);
 
 		IList<Vdepotinformation> PaginationFindByPrice(VdepotinformationPagination obj);
+
+		IList<Vdepotinformation> FindByContactperson(String contactperson);
+
+		IList<Vdepotinformation> PaginationFindByContactperson(VdepotinformationPagination obj);
 
 		IList<Vdepotinformation> FindByTitle(String title);
 
@@ -62,6 +66,10 @@ namespace Trans.DAL.Dao
 		IList<Vdepotinformation> FindByAddress(String address);
 
 		IList<Vdepotinformation> PaginationFindByAddress(VdepotinformationPagination obj);
+
+		IList<Vdepotinformation> FindByCitycode(String citycode);
+
+		IList<Vdepotinformation> PaginationFindByCitycode(VdepotinformationPagination obj);
 
 		IList<Vdepotinformation> FindByArea(Int32 area);
 

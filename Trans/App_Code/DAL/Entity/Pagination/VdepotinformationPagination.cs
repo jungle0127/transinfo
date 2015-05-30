@@ -24,11 +24,11 @@ namespace Trans.DAL.Entity
 			get { return m_validtime; }
 			set { m_validtime = value;}
 		}
-		private String m_contactperson;
-		public String Contactperson
+		private String m_cityname;
+		public String Cityname
 		{
-			get { return m_contactperson; }
-			set { m_contactperson = value;}
+			get { return m_cityname; }
+			set { m_cityname = value;}
 		}
 		private Int32 m_useablearea;
 		public Int32 Useablearea
@@ -47,6 +47,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_price; }
 			set { m_price = value;}
+		}
+		private String m_contactperson;
+		public String Contactperson
+		{
+			get { return m_contactperson; }
+			set { m_contactperson = value;}
 		}
 		private String m_title;
 		public String Title
@@ -77,6 +83,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_address; }
 			set { m_address = value;}
+		}
+		private String m_citycode;
+		public String Citycode
+		{
+			get { return m_citycode; }
+			set { m_citycode = value;}
 		}
 		private Int32 m_area;
 		public Int32 Area
