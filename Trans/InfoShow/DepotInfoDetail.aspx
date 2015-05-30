@@ -5,61 +5,102 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>信息共享界面</title>
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
-    <link rel="Stylesheet" type="text/css" href="../css/main_style.css" />
-    <script language="javascript" src="../js/js.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function ($) {
-        $('.grid-container').gridQuote();
-
-    });
-</script>
+    <title>仓储详细信息页面</title>
+    <link  rel="stylesheet" type="text/css" href="../../css/style_thirdP.css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="top">
-    <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
-    <table width="100%">
-      <tbody>
-      <tr>
-      <td id="logo">
-      <img src="../imgs/index/logo.png"/>
-      </td>
-      <td><ul class="nav nav-tabs floating">
-                <li><a href="../backup/infodeliver.html">我要发布</a></li>
-                <li><a href="logistics.html">物流黄页</a></li>
-                <li><a href="news.html">查看公告</a></li>
-                <li><a href="news.html">查看新闻</a></li>
-         	</ul></td>
-      </tr>
-      </tbody>
-    </table>
-    </div>
-    <div id="shadow"><center><p id="announcement">紧要公告：本站于22222将进行维修</p></center></div><!--若无最新公告则不显示，最新公告显示时间至公告失效-->
-	<div class="homepage-container">
-		<div class="black-bg left-container">
-			<div class="tm-left-inner-container">
-            	<ul class="nav nav-stacked nav-tabs homepage-nav">
+    <div class="currentLoc">您当前浏览的是：<span class="spancurrentLoc">仓储详细信息</span></div>
+<table class="right-bottom">
+<tbody>
+    <tr>
+        <td class="right-leftSide">
+            <table>
+                <%--<tbody>
+                <tr class="infoTitle">
+                    <td><p id="infoTitle" class="pInfoTitle">湖北荆门仓库</p><hr class="hr1" /></td>
+                </tr>
+                <tr>
+                  <td class="infoDetail">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="infoPic">
+                                <div id="infoPic"><!--<img src="#" class="imgInfoPic" />--></div></td>
+                                <td class="infoContacts">
+                                	<table>
+                                    	<tbody>
+                                        	<tr>
+                                            <td class="firstTd">发布时间：</td>
+                                            <td class="secTd"><span class="spanInfotime">10小时前</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">联系人：</td>
+                                            <td class="secTd"><span class="spanContactor">张先生</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">联系电话：</td>
+                                            <td class="secTd"><span class="spanContacts">12345678901</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td><hr /></td>
+                                            <td><hr /></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">仓库类型：</td>
+                                            <td class="secTd"><span class="spanStorageType">普通</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">经营范围：</td>
+                                            <td class="secTd"><span class="spanScorp">自有仓库</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">总面积：</td>
+                                            <td class="secTd"><span class="spanTotalArea">3000m2</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">可用面积：</td>
+                                            <td class="secTd"><span class="spanUseableArea">2000m2</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">参考价：</td>
+                                            <td class="secTd"><span class="spanPrice">面议</span></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">仓库地址：</td>
+                                            <td class="secTd"><span class="spanStorageAdr"> 湖北省荆门市长沙市开福区芙蓉北路388号中石化大楼11、12F </span></td>
+                                            </tr>
+                                            <tr>
+                                            <td><hr /></td>
+                                            <td><hr /></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="firstTd">特殊说明 ：</td>
+                                            <td class="secTd"><span class="spanPrice"></span></td>
+                                            </tr>
+                                        </tbody>
+                                     </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                <td></td>
+                </tr>
+                </tbody>--%>
+            
+            </table>
+        </td>
+        <td class="right-rightSide">
+        	<div class="deliverInfoNum">已发布信息：<span class="spanLorryInfoNum">2222</span>条</div>
+            <div></div>
+        </td>
+    </tr>
+</tbody>
+</table>
 
-				  <li><a href="../index.aspx"><i class="fa fa-medium"></i>返回首页</a></li>
-				  <li><a href="../InfoList/TrunkInfoList.aspx" target="infoMain" class="active" ><i class="fa  fa-medium"></i>车源信息</a></li>
-				  <li><a href="../InfoList/GoodsInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>货源信息</a></li>
-				  <li><a href="../InfoList/SpeciallineInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>专线信息</a></li>
-				  <li><a href="../InfoList/DepotInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>仓储信息</a></li>
-                  <li><a href="#" target="_blank"><i class="fa fa-medium"></i>个人中心</a></li><!--当用户成功登陆才显示-->
-
-				</ul>
-            </div>
-		</div>
-        <div class=" white-bg right-container">
-			<div class="tm-right-inner-container" id="frameBox">
-                <iframe src="infoShare/lorry.html" name="infoMain" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
-            </div>
-        </div>
-	</div>
 
     </form>
 </body>

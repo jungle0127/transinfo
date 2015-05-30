@@ -45,7 +45,7 @@ namespace Trans.InfoList
             IList<Depotinformation> depotinformations = this.depotInformationList.PaginationFindAll(FindByPage);
             foreach (Depotinformation enti in depotinformations)
             {
-                MessageBody.Append("<tr><td class=\"infoDeatil\"><div class=\"storePic\"></div><div class=\"overFloat\"><a href=\"../InfoShow/DepotInfoDetail.aspx\"><h4 class=\"infoTitle\">");
+                MessageBody.Append("<tr><td class=\"infoDeatil\"><div class=\"storePic\"></div><div class=\"overFloat\"><a href=\"../InfoShow/DepotInfoDetail.aspx?id="+enti.Id+"\"><h4 class=\"infoTitle\">");
                 Users depotUser = this.userInfos.Find(enti.Userid);
                 MessageBody.Append(depotUser.Username);
                 MessageBody.Append("</h4></a><span class=\"light-info\">面积：</span><span class=\"infos\" id=\"totalArea\">");

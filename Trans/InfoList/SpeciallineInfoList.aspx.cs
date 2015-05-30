@@ -88,7 +88,7 @@ namespace Trans.InfoList
 
                 MessageBody.Append("</span></p><p class=\"title\">泡货：<span id=\"huo_color\">");
                 MessageBody.Append(enti.Volumeprice);
-                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx\" target=\"_blank\">查看详情</a></div></div>");
+                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx?id=" + enti.Id.ToString() + "\" target=\"_blank\">查看详情</a></div></div>");
 
 
             }
@@ -134,7 +134,7 @@ namespace Trans.InfoList
 
                 MessageBody.Append("</span></p><p class=\"title\">泡货：<span id=\"huo_color\">");
                 MessageBody.Append(enti.Volumeprice);
-                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx\" target=\"_blank\">查看详情</a></div></div>");
+                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx" + enti.Id.ToString() + "\" target=\"_blank\">查看详情</a></div></div>");
             }
             return MessageBody.ToString();
 
@@ -177,7 +177,7 @@ namespace Trans.InfoList
 
                 MessageBody.Append("</span></p><p class=\"title\">泡货：<span id=\"huo_color\">");
                 MessageBody.Append(enti.Volumeprice);
-                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx\" target=\"_blank\">查看详情</a></div></div>");
+                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx" + enti.Id.ToString() + "\" target=\"_blank\">查看详情</a></div></div>");
             }
             return MessageBody.ToString();
 

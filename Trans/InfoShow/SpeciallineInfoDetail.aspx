@@ -107,7 +107,7 @@
                   </tr>
                 </tbody>--%>
 
-
+                <%=this.HtmlMessageBodyPage%>
 
 
             </table>
