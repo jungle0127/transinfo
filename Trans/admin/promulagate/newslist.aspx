@@ -15,7 +15,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="content" class="easyui-panel" style="height:200px" data-options="href:'NewsListHandler.ashx?page=1'"> </div>
+        <div id="content" class="easyui-panel" style="height:400px" data-options="href:'NewsListHandler.ashx?page=1'"> </div>
     <div class="easyui-pagination" style="border:1px solid #ccc;" data-options="
         total: 2000,
         pageSize: 10,

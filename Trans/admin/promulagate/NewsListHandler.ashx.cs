@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text;
+using Trans.DAL.Dao;
+using Trans.DAL.Entity;
 
 namespace Trans.admin.promulagate
 {
@@ -11,13 +13,56 @@ namespace Trans.admin.promulagate
     /// </summary>
     public class NewsListHandler : IHttpHandler
     {
-
+        private IVarticleinfoDao articleInfoDao;
+        public NewsListHandler()
+        {
+            this.articleInfoDao = new VarticleinfoDao();
+        }
         public void ProcessRequest(HttpContext context)
         {
             string pageNumber = context.Request.QueryString["page"].ToString();
-            context.Response.Write(this.getTestData());
+            VarticleinfoPagination pageNationPoco = new VarticleinfoPagination();
+            pageNationPoco.Limit = 30;
+            pageNationPoco.Offset = 0;
+            IList<Varticleinfo> articleInfoList = this.articleInfoDao.PaginationFindAll(pageNationPoco);
+
+            context.Response.Write(this.getTableHtml(this.getTableBodyHtml(articleInfoList)));
         }
 
+        private string getTableHtml(string bodyHtml)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<table class=\"tablelist\">");
+            sb.Append("<thead>");
+            sb.Append(@"<th>标题</th>
+                        <th>用户</th>
+                        <th>操作</th>
+        </tr>
+        </thead>");
+            sb.Append("<tbody>");
+            sb.Append(bodyHtml);
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            return sb.ToString();
+        }
+        private string getTableBodyHtml(IList<Varticleinfo> articleInfoList)
+        {
+            StringBuilder bodyBuilder = new StringBuilder();
+            foreach (Varticleinfo articleInfoPoco in articleInfoList)
+            {
+                bodyBuilder.Append("<tr>");
+                bodyBuilder.Append("<td>");
+                bodyBuilder.Append(articleInfoPoco.Title);
+                bodyBuilder.Append("</td>");
+                bodyBuilder.Append("<td>");
+                bodyBuilder.Append(articleInfoPoco.Username);
+                bodyBuilder.Append("</td>");
+                bodyBuilder.Append("<td>");
+                bodyBuilder.Append("<a href=\"#\" class=\"tablelink\">查看</a>     <a href=\"#\" class=\"tablelink\"> 删除</a>");
+                bodyBuilder.Append("</td>");
+            }
+            return bodyBuilder.ToString();
+        }
         private string getTestData()
         {
             StringBuilder sb = new StringBuilder();
