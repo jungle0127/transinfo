@@ -36,6 +36,12 @@ namespace Trans.DAL.Entity
 			get { return m_titlecolor; }
 			set { m_titlecolor = value;}
 		}
+		private Int64 m_typeid;
+		public Int64 Typeid
+		{
+			get { return m_typeid; }
+			set { m_typeid = value;}
+		}
 		private String m_content;
 		public String Content
 		{

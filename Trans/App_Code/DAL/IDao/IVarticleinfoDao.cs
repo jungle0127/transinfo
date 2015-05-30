@@ -35,6 +35,10 @@ namespace Trans.DAL.Dao
 
 		IList<Varticleinfo> PaginationFindByTitlecolor(VarticleinfoPagination obj);
 
+		IList<Varticleinfo> FindByTypeid(Int64 typeid);
+
+		IList<Varticleinfo> PaginationFindByTypeid(VarticleinfoPagination obj);
+
 		IList<Varticleinfo> FindByContent(String content);
 
 		IList<Varticleinfo> PaginationFindByContent(VarticleinfoPagination obj);

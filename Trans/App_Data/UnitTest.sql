@@ -143,3 +143,17 @@ call uspInsertSpecialineData(' <speciallinedata>
 '
 );
 
+--
+-- article 测试
+--
+
+INSERT INTO article (userid,typeid,title,content,releaseip,ispass,hittimes,releasedate)
+VALUES(1,1,'新闻测试','测试数据请删除','10.200.96.102',1,12,'2015-06-01');
+INSERT INTO article (userid,typeid,title,content,releaseip,ispass,hittimes,releasedate)
+VALUES(1,2,'公告测试','测试数据请删除','10.200.96.102',1,12,'2015-06-01');
+INSERT INTO article (userid,typeid,title,content,releaseip,ispass,hittimes,releasedate)
+VALUES(1,2,'公告测试','测试数据请删除','10.200.96.102',1,12,'2015-06-01');
+INSERT INTO article (userid,typeid,title,content,releaseip,ispass,hittimes,releasedate)
+VALUES(1,1,'新闻测试','测试数据请删除','10.200.96.102',1,12,'2015-06-01');
+INSERT INTO article (userid,typeid,title,content,releaseip,ispass,hittimes,releasedate)
+VALUES(1,1,'新闻测试','测试数据请删除','10.200.96.102',1,12,'2015-06-01');

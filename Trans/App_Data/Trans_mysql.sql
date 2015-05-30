@@ -3894,7 +3894,7 @@ CREATE INDEX IX_article_title ON article(title);
 DROP VIEW IF EXISTS `V_Articleinfo`;
 CREATE VIEW `V_Articleinfo`
 AS
-SELECT article.id,users.username,article.title,article.titlecolor,article.content,article.releaseip,article.releasedate,article.hittimes FROM article
+SELECT article.id,article.typeid,users.username,article.title,article.titlecolor,article.content,article.releaseip,article.releasedate,article.hittimes FROM article
 JOIN users ON users.id = article.userid;
 
 --

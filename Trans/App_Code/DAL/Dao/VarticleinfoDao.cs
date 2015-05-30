@@ -92,6 +92,16 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public IList<Varticleinfo> FindByTypeid(Int64 typeid) {
+			String stmtId = "Varticleinfo.FindByTypeid";
+			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, typeid);
+			return result;
+        }
+		public IList<Varticleinfo> PaginationFindByTypeid(VarticleinfoPagination obj) {
+			String stmtId = "VarticleinfoPagination.FindByTypeid";
+			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
+			return result;
+        }
 		public IList<Varticleinfo> FindByContent(String content) {
 			String stmtId = "Varticleinfo.FindByContent";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, content);
