@@ -5,6 +5,7 @@ using System.Web;
 using System.Text;
 using Trans.DAL.Dao;
 using Trans.DAL.Entity;
+using log4net;
 
 namespace Trans.admin.promulagate
 {
@@ -13,17 +14,24 @@ namespace Trans.admin.promulagate
     /// </summary>
     public class NewsListHandler : IHttpHandler
     {
+        private static ILog logger = LogManager.GetLogger(typeof(NewsListHandler));
         private IVarticleinfoDao articleInfoDao;
         public NewsListHandler()
         {
             this.articleInfoDao = new VarticleinfoDao();
+            logger.Info("Article info view dao init done.");
         }
         public void ProcessRequest(HttpContext context)
         {
-            string pageNumber = context.Request.QueryString["page"].ToString();
+            string pageNumber = context.Request.QueryString["pageNumber"].ToString();
+            logger.Info("Got page number:" + pageNumber);
+            string pageSize = context.Request.QueryString["pageSize"].ToString();
+            logger.Info("Got page size:" + pageSize);
             VarticleinfoPagination pageNationPoco = new VarticleinfoPagination();
-            pageNationPoco.Limit = 30;
-            pageNationPoco.Offset = 0;
+            pageNationPoco.Limit = int.Parse(pageSize);
+            
+            pageNationPoco.Offset = (int.Parse(pageNumber) - 1) * pageNationPoco.Limit;
+            logger.Info("Got offset:" + pageNationPoco.Offset.ToString());
             IList<Varticleinfo> articleInfoList = this.articleInfoDao.PaginationFindAll(pageNationPoco);
 
             context.Response.Write(this.getTableHtml(this.getTableBodyHtml(articleInfoList)));
