@@ -5,69 +5,111 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>欢迎登录后台管理系统</title>
-    <link href="../css/style.css" rel="stylesheet" type="text/css" />
-    <script language="JavaScript" type="text/javascript" src="../js/jquery.js"></script>
-    <script src="../js/cloud.js" type="text/javascript"></script>
-
-    <script type="text/javascript" language="javascript">
-        $(function () {
-            $('.loginbox').css({ 'position': 'absolute', 'left': ($(window).width() - 692) / 2 });
-            $(window).resize(function () {
-                $('.loginbox').css({ 'position': 'absolute', 'left': ($(window).width() - 692) / 2 });
-            })
-        });  
-    </script> 
+    <title>川北物流首页</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script language="javascript" src="../js/bootstrap.min.js"></script>
+    <script language="javascript" src="../js/js.js"></script>
+    <link rel="stylesheet" href="../css/index_login.css" />
+    <link rel="Stylesheet" href="../css/bootstrap.min.css" />
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $("#background").fullBg();
+        });
+    </script>
 </head>
-<body  style="background-color:#1c77ac; background-image:url(../images/light.png); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
+<body  style="background-color:#1c77ac; background-image:url(../imgs/bg3.jpg); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
     <form id="form1" runat="server">
-    <div id="mainBody">
-      <div id="cloud1" class="cloud"></div>
-      <div id="cloud2" class="cloud"></div>
-    </div>  
+    <table width="100%" class="homeBg" cellspacing="0">
+  <tbody>
+     <tr>
+     <td id="home_middle">
+ 	 <div class='container-fluid loginAndRegister'>
+    	<div class='tabL'>
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#" data-toggle='tab' class="loginLink">登陆</a></li>
+                <li><a href="#register" data-toggle='tab' class="registerLink">注册</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="login">
+               <table class="login_form">
+               <tbody>
+                <tr>
+                <td><p class="whiteBold">用户名：</p></td>
+                <td>
+                <%--<input type="text" id="userNameInput" class="userNameInput"/>--%>
+                <asp:TextBox ID="userNameInput" runat="server" class="userNameInput" value="admin" ></asp:TextBox>
+                </td>
+                </tr>
+                 <tr>
+                 <td><p class="whiteBold">密码：</p></td>
+                 <td>
+                 <%--<input type="password" id="passwordInput"  class="passwordInput"/>--%>
+                 <asp:TextBox runat="server" ID="passwordInput" class="passwordInput" TextMode="Password" value="lotus" ></asp:TextBox>
+                 </td>
 
+                 </tr>
+                 <tr>           
+                 <td></td>
+                 <td>
+                 <input type="checkbox" class="checkRemPsw"/><span class="whiteBold rember">记住我</span>
+                 <a href="#" class="findPswLink">找回密码</a>
+                 </td> 
+                 </tr>
+                 <tr>
+                 <td>
+                 <%--<input  type="button" id="loginBtn" class="loginBtn"/>--%>
+                 <asp:Button runat="server"   class="loginBtn" ID="loginBtn" onclick="btnLogin_Click" />
+                 </td>
 
-<div class="logintop">    
-    <span>欢迎登录后台管理界面平台</span>    
-    <ul>
-    <li><a href="#">回首页</a></li>
-    <li><a href="#">帮助</a></li>
-    <li><a href="#">关于</a></li>
-    </ul>    
-    </div>
-    
-    <div class="loginbody">
-    
-    <span class="systemlogo"></span> 
-       
-    <div class="loginbox">
-    
-    <ul>
-    <li>
-        <asp:TextBox ID="txtLoginName" runat="server" class="loginuser" value="admin" ></asp:TextBox>
-        <%--<input name="" type="text" class="loginuser" value="admin" onclick="JavaScript:this.value=''"/>--%>
-    </li>
-    <li>
-        <asp:TextBox runat="server" ID="txtPwd" class="loginpwd" TextMode="Password" value="lotus" ></asp:TextBox>
-        <%--<input name="" type="text" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/>--%>
-    </li>
-    <li>
-        <asp:Button runat="server" Text="登录" CssClass="loginbtn" ID="btnLogin" 
-            onclick="btnLogin_Click" />
-        <%--<input name="" type="button" class="loginbtn" value="登录"  onclick="javascript:window.location='mainframe.htm'"  />--%>
-        <label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a href="#">忘记密码？</a></label>
-    </li>
-    </ul>
-    
-    
-    </div>
-    
-    </div>
-    
-    
-    
-    <div class="loginbm">版权所有  2013  <a href="http://www.uimaker.com">uimaker.com</a>  仅供学习交流，勿用于任何商业用途</div>
-	
+                 <td>
+                 <%--<input  type="button" id="exitBtn" class="exitBtn" onclick="toIndex(this)">--%>
+                 <asp:Button runat="server" id="exitBtn" class="exitBtn"  />
+
+                 </td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+              <div class="tab-pane" id="register">
+                <table class="register_form">
+                 <tbody>
+                  <tr>
+                    <td><p class="whiteBold">用户名：</p></td>
+                    <td><input type="text" id="userNameInput" class="registerNameInput"/></td>
+                  </tr>
+                   <tr>
+                     <td><p class="whiteBold">输入密码：</p></td>
+                     <td><input type="password" id="addPassword" class="registerPswInput"/></td>
+                   </tr>
+                   <tr>
+                     <td><p class="whiteBold">确认密码：</p></td>
+                     <td><input type="password" id="confirmPswInput" class="confirmPswInput"/></td>
+                   </tr>
+                   <tr>
+                     <td><p class="whiteBold">用户类型：</p></td>
+                     <td>
+                     	<select class="selectUserType">
+                        	<option selected="selected" value="个人">个人</option>
+                            <option value="物流企业">物流企业</option>
+                            <option value="运输商">运输商</option>
+                        </select>
+                     </td>
+                   </tr>
+                   <tr>
+                     <td><input  type="button" id="registerBtn" class="registerBtn"/></td>
+                     <td><input  type="button" id="exitBtn" class="exitBtn" onclick="toIndex(this)"></td>
+                   </tr>
+                  </tbody>
+               </table>
+              </div>
+        	</div>
+       	  </div>
+    	</div>
+     </td> 
+    </tr>
+  </tbody>
+</table>
+
     </form>
 </body>
 </html>

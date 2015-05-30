@@ -128,7 +128,7 @@ input.btn100,input.btn120{margin:0px;padding:0px;cursor:pointer;font-size:14px;d
 .gray{ color:#999;}
 .infoDetail,.infoList{ width:95%; margin-left:11%; border: #060 solid thick;}
 #myTab a{ color:#060; font-weight:bold;}
-.newsList tr{ height:20px;}
+.table-hover tr{ height:20px;}
 .newPage{ margin-top:15px; margin-bottom:10px;}
 /*---------------新闻公告三级页面样式------------------*/
 .pictureNews{ margin:0 auto;width:70%; height:300px; max-height:350px;}

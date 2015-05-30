@@ -1,8 +1,9 @@
-body{ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background:url(../imgs/bg.jpg) no-repeat center; background-attachment:fixed;margin:0;}
-homeBg{height:100%,width:100%; background-color: #E0DDDD;}
+body{ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /*background:#000 url(../imgs/bg99.jpg) no-repeat center 100%;background-attachment:fixed;*/margin:0 auto;}
+homeBg{height:100%,width:100%; background:#000;z-index:1;}
 .whiteBold{ color:#ccc; font-weight:bold;}
+.fullBg {position: fixed; top: 0;left:-10px;overflow: hidden; z-index:-10;}
 /*-------------------------------------------------------------------------------#EFEFEF;#23D14D----#177A6C----*/
-#home_top{text-align:right; padding-right:50px; background-color: #000;filter: alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8; }
+#home_top{text-align:right; padding-right:50px; background-color: #000;filter: alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8;}
 /*#home_top a span{ display:none;}
 #home_top a:hover span{ display:inline; text-decoration:none; }*/
 #userI{ width:auto; height:50px;float:right;  text-align:center; margin-bottom:5px;}
@@ -24,9 +25,9 @@ homeBg{height:100%,width:100%; background-color: #E0DDDD;}
 .thumb-container{float: left;position: relative;width: 260px;height: 160px;cursor: pointer;}
 .first-thumb{ background: #5FCCC0; background:url(../imgs/index/thumbg1.png);}
 .second-thumb{ background: #39D87C; background:url(../imgs/index/thumbg2.png);}
-.third-thumb{ background:#23A0DD;background:url(../imgs/index/thumbg4.png);}
-.fourth-thumb{ background: #39D87C; background:url(../imgs/index/thumbg2.png);}
-.fifth-thumb{ background:#23A0DD;background:url(../imgs/index/thumbg4.png);}
+.third-thumb{ background:#23A0DD;background:url(../imgs/index/thumbg3.png);}
+.fourth-thumb{ background: #39D87C; background:url(../imgs/index/thumbg4.png);}
+.fifth-thumb{ background:#23A0DD;background:url(../imgs/index/thumbg5.png);}
 .sixth-thumb{ background: #5FCCC0;background:url(../imgs/index/thumbg1.png);}
 .plateName{ font-size:36px; font-weight:bold; color:#060;}
 img{ margin-left:10px;}
@@ -117,7 +118,7 @@ thead{ background:#B1B0B0;text-align:left;}
   .info-img{ width: 120px; }
 }
 /*-------物流黄页------------------------------*/
-#pic_roll li{margin:0 0 5px 5px;padding:0;list-style:none; display:inline-block; width:200px; height:200px;}
+#pic_roll li{margin:0 0 5px 5px;padding:0;list-style:none; display:inline-block; width:150px; height:150px;}
 #pic_roll li:hover{ background:#FFF;}
 #pic_roll img{border:0;vertical-align:top; width:100%; height:100%;}
 #pic_roll{position:relative; width:700px; height:auto;text-align:left; margin:0;}

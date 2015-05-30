@@ -14,12 +14,12 @@
 <script language="javascript" src="js/js.js"></script>
 <script type="text/javascript">
     $(document).ready(function ($) {
+        $("#background").fullBg();
         $('.grid-container').gridQuote();
-
     });
 </script>
 </head>
-<body>
+<body style=" background-image:url(imgs/bg.jpg)";>
     <form id="form1" runat="server">
         <table width="100%" class="homeBg" cellspacing="0">
              <tbody>
@@ -38,8 +38,8 @@
       </td>
       <td>
          <div id="userI">
-         <a href="html/login.html" id="login—index">登陆</a><br /><br />
-         <a href="html/login.html">注册</a>
+         <a href="admin/login.aspx" id="login—index">登陆</a><br /><br />
+         <a href="admin/login.aspx">注册</a>
         </div>
       </td>
       </tr>
@@ -101,7 +101,7 @@
 			</div>
 		</div>
 		<div class="thumb-container second-thumb" data-title="信息共享>>" data-bgcolor="blue">
-        <img src="imgs/index/thumb1.png" >
+        
 			<div class="quote-container">
              <div id="tabs" class="floating">
                <ul class="nav nav-tabs infoShare">
@@ -114,7 +114,7 @@
            </div>
         </div>
 		<div class="thumb-container third-thumb" data-title="物流黄页>>" data-bgcolor="pink" >
-		<img src="imgs/index/hand.png" >
+		
 		    <div class="quote-container">
               <table>
                <tbody>
@@ -142,7 +142,6 @@
             </div>
 		</div>
 		<div class="thumb-container fourth-thumb" data-title="我要发布>>">
-         <img src="imgs/index/thumb2.png" >
 			<div class="quote-container">
 			 <div id="tabs2">
              <ul class="nav nav-tabs infoDeliver">
@@ -154,7 +153,7 @@
 			</div>
 		</div>
 		<div class="thumb-container fifth-thumb" data-title="关于我们>>" data-bgcolor="pink">
-        <img src="imgs/index/thumb3.png" >
+        
 			<div class="quote-container">
 				<p><span class="plateName">川北物流信息服务公司</span><hr />
                <span  class="green">我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！ <br/>我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！我们综合了多年的心得来设计这两个物流中心，坚信必定能让顾客感到满意。此外，我们更可按顾客的需求度身订造物流方案。除了基本的陆运及海运服务外，我们还可以满足顾客对报关、买卖等代理贸易以及提供作业设施等服务的需求。我们努力成为各位在中国的最佳物流伙伴！</span></p>
