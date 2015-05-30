@@ -90,6 +90,7 @@
                 <td></td>
                 </tr>
                 </tbody>--%>
+                <%=this.MessageForPageHtml %>
             
             </table>
         </td>

@@ -19,6 +19,7 @@ namespace Trans.InfoList
         private IUsersDao usersInfos;
         private ISpeciallinetypeDao speciallineType;
         private IDeparturetypeDao deparInfos;
+        private IVspeciallineinfoDao vspecialLineInfos;
 
         private string MessageString, MessageStringSingle, MessageStringGB;
 
@@ -49,6 +50,7 @@ namespace Trans.InfoList
             usersInfos = new UsersDao();
             speciallineType = new SpeciallinetypeDao();
             deparInfos = new DeparturetypeDao();
+            vspecialLineInfos = new VspeciallineinfoDao();
         }
 
 
@@ -59,15 +61,19 @@ namespace Trans.InfoList
             FindByPageAll.Limit=6;
             FindByPageAll.Offset=0;
             IList<Speciallineinfo> specialLineAll = this.specialLineInfo.PaginationFindAll(FindByPageAll);
+
             foreach (Speciallineinfo enti in specialLineAll)
             {
                 MessageBody.Append("<div id=\"line_infos\" class=\"line_infos\"><p class=\"NEWSline_text\">");
                 //MessageBody.Append(enti.Sourceplaceinfoid);
-                Placeinfo placeInformation = this.placeInfoList.Find(enti.Sourceplaceinfoid);
-                MessageBody.Append(placeInformation.Address);
+                IList<Vspeciallineinfo> specialLineDetail = this.vspecialLineInfos.FindById(enti.Id);
+                //Placeinfo placeInformation = this.placeInfoList.Find(enti.Sourceplaceinfoid);
+                //MessageBody.Append(placeInformation.Address);
+                MessageBody.Append(specialLineDetail[0].Srccityname);
                 MessageBody.Append("<span id=\"line_kuai\"><img class=\"imgSingleLine\" src=\"../../imgs/signle.jpg\" /></span>");
-                placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
-                MessageBody.Append(placeInformation.Address);
+                //placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
+                //MessageBody.Append(placeInformation.Address);
+                MessageBody.Append(specialLineDetail[0].Dstcityname);
                 MessageBody.Append("</p><p class=\"title\"><a href=\"http://search.jt56.org/hnftwl.jt56.org\" target=\"_blank\">");
                 Users usersEinfo = this.usersInfos.Find(enti.Userid);
                 MessageBody.Append(usersEinfo.Username);
@@ -109,11 +115,14 @@ namespace Trans.InfoList
             {
                 MessageBody.Append("<div id=\"line_infos\" class=\"line_infos\"><p class=\"NEWSline_text\">");
                 //MessageBody.Append(enti.Sourceplaceinfoid);
-                Placeinfo placeInformation = this.placeInfoList.Find(enti.Sourceplaceinfoid);
-                MessageBody.Append(placeInformation.Address);
+                IList<Vspeciallineinfo> specialLineDetail = this.vspecialLineInfos.FindById(enti.Id);
+                //Placeinfo placeInformation = this.placeInfoList.Find(enti.Sourceplaceinfoid);
+                //MessageBody.Append(placeInformation.Address);
+                MessageBody.Append(specialLineDetail[0].Srccityname);
                 MessageBody.Append("<span id=\"line_kuai\"><img class=\"imgSingleLine\" src=\"../../imgs/signle.jpg\" /></span>");
-                placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
-                MessageBody.Append(placeInformation.Address);
+                //placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
+                //MessageBody.Append(placeInformation.Address);
+                MessageBody.Append(specialLineDetail[0].Dstcityname);
                 MessageBody.Append("</p><p class=\"title\"><a href=\"http://search.jt56.org/hnftwl.jt56.org\" target=\"_blank\">");
                 Users usersEinfo = this.usersInfos.Find(enti.Userid);
                 MessageBody.Append(usersEinfo.Username);
@@ -152,11 +161,14 @@ namespace Trans.InfoList
             {
                 MessageBody.Append("<div id=\"line_infos\" class=\"line_infos\"><p class=\"NEWSline_text\">");
                 //MessageBody.Append(enti.Sourceplaceinfoid);
-                Placeinfo placeInformation = this.placeInfoList.Find(enti.Sourceplaceinfoid);
-                MessageBody.Append(placeInformation.Address);
+                IList<Vspeciallineinfo> specialLineDetail = this.vspecialLineInfos.FindById(enti.Id);
+                //Placeinfo placeInformation = this.placeInfoList.Find(enti.Sourceplaceinfoid);
+                //MessageBody.Append(placeInformation.Address);
+                MessageBody.Append(specialLineDetail[0].Srccityname);
                 MessageBody.Append("<span id=\"line_kuai\"><img class=\"imgSingleLine\" src=\"../../imgs/signle.jpg\" /></span>");
-                placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
-                MessageBody.Append(placeInformation.Address);
+                //placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
+                //MessageBody.Append(placeInformation.Address);
+                MessageBody.Append(specialLineDetail[0].Dstcityname);
                 MessageBody.Append("</p><p class=\"title\"><a href=\"http://search.jt56.org/hnftwl.jt56.org\" target=\"_blank\">");
                 Users usersEinfo = this.usersInfos.Find(enti.Userid);
                 MessageBody.Append(usersEinfo.Username);
