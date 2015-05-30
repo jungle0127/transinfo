@@ -864,6 +864,7 @@
     <Compile Include="App_Code\DAL\Dao\USP\UspInsertSpecialineDataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\USP\UspInsertTrunkMetadataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\USP\UspUpdateRoleHasRightsDao.cs" />
+    <Compile Include="App_Code\DAL\Dao\VarticleinfoDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VspeciallineinfoDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VUserRightsDao.cs">
       <SubType>Code</SubType>
@@ -952,6 +953,7 @@
     <Content Include="App_Code\DAL\Mapper\Vantype.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Code\DAL\Mapper\Varticleinfo.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Vrightsfullinfo.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1765,6 +1767,7 @@
     <Compile Include="App_Code\DAL\Entity\Pagination\UserhasrightsPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\UsersPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VantypePagination.cs" />
+    <Compile Include="App_Code\DAL\Entity\Pagination\VarticleinfoPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VrightsfullinfoPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VspeciallineinfoPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\VtrunkmetadataPagination.cs" />
@@ -1807,6 +1810,7 @@
     <Compile Include="App_Code\DAL\Entity\USP\UspInsertTrunkMetadata.cs" />
     <Compile Include="App_Code\DAL\Entity\USP\UspUpdateRoleHasRights.cs" />
     <Compile Include="App_Code\DAL\Entity\Vantype.cs" />
+    <Compile Include="App_Code\DAL\Entity\Varticleinfo.cs" />
     <Compile Include="App_Code\DAL\Entity\Vrightsfullinfo.cs" />
     <Compile Include="App_Code\DAL\Entity\Vspeciallineinfo.cs" />
     <Compile Include="App_Code\DAL\Entity\Vtrunkmetadata.cs" />
@@ -1846,6 +1850,7 @@
     <Compile Include="App_Code\DAL\IDao\IUserhasrightsDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IUsersDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVantypeDao.cs" />
+    <Compile Include="App_Code\DAL\IDao\IVarticleinfoDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVrightsfullinfoDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVspeciallineinfoDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IVtrunkmetadataDao.cs" />
