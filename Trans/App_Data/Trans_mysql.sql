@@ -3701,7 +3701,7 @@ INSERT INTO rights (rightname ,righturl )
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('仓储统计','statistic/depositorysourcestatistic.aspx');	 -- 20
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('公告管理','promulagate/newslist.aspx'); -- 21
+	VALUES ('公告管理','promulagate/notificationlist.aspx'); -- 21
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('新闻管理','promulagate/newslist.aspx'); -- 22
 INSERT INTO rights (rightname ,righturl ) 

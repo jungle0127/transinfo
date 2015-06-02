@@ -27,15 +27,15 @@ values (1,2,'110101','110102',2,1,1,'dasdasda','2015-05-27');
 
 
 insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
-values (1,'110105','110103','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+values (1,'110105','110103','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110');
 insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
-values (1,'110105','110102','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+values (1,'110105','110102','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110');
 insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
-values (1,'110105','110107','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+values (1,'110105','110107','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110');
 insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
-values (1,'110101','110103','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+values (1,'110101','110103','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110');
 insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
-values (1,'110102','110103','dfasfadfsdfsdfs','HUOWU',1,1,1,'110');
+values (1,'110102','110103','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110');
 
 INSERT INTO depotinformation
 (
