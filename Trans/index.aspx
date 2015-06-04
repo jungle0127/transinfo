@@ -105,10 +105,10 @@
 			<div class="quote-container">
              <div id="tabs" class="floating">
                <ul class="nav nav-tabs infoShare">
-                  <li><a href="InfoList/TrunkInfoList.aspx" id="car" class="lorryInfoLink">车源信息</a></li>
-                  <li><a href="InfoList/GoodsInfoList.aspx" id="goods" class="goodsInfoLink">货源信息</a></li><!--点击先跳转到info界面，判断当前点击对象，在info主frame中调用对应的html-->
-                  <li><a href="InfoList/SpeciallineInfoList.aspx" id="line" class="linesInfoLink">专线信息</a></li>
-                  <li><a href="InfoList/DepotInfoList.aspx" id="store" class="storageInfoLink">存储信息</a></li>
+                  <li><a href="InfoList/info.html?type=car" id="car" class="lorryInfoLink">车源信息</a></li>
+                  <li><a href="InfoList/info.html?type=goods" id="goods" class="goodsInfoLink">货源信息</a></li><!--点击先跳转到info界面，判断当前点击对象，在info主frame中调用对应的html-->
+                  <li><a href="InfoList/info.html?type=line" id="line" class="linesInfoLink">专线信息</a></li>
+                  <li><a href="InfoList/info.html?type=store" id="store" class="storageInfoLink">仓储信息</a></li>
                </ul>
              </div>
            </div>

@@ -7,14 +7,35 @@
 <link href="../css/main_style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" language="javascript" src="../js/js.js"></script>
-	<script >
+	<script type="text/javascript">
 	$(document).ready(function() {
 		backToTop();
- 	});
+    });
+
+    function get_url_parameter(param_name) {
+        var reg = new RegExp("(^|&)" + param_name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return (r[2]); return null;
+    }
+    function test() {
+        type = get_url_parameter("type");
+        if (type == "car") {
+            $("#frameInfoDetail").attr("src","TrunkInfoList.aspx");
+        }
+        else if (type == "goods") {
+            $("#frameInfoDetail").attr("src", "GoodsInfoList.aspx");
+        }
+        else if (type == "line") {
+            $("#frameInfoDetail").attr("src","SpeciallineInfoList.aspx");
+        }
+        else {
+            $("#frameInfoDetail").attr("src","DepotInfoList.aspx");
+        }
+    }
 	</script>
 </head>
 
-<body>
+<body onload="test()">
 <div id="top">
     <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
     <table width="100%">
@@ -40,7 +61,7 @@
             	<ul class="nav nav-stacked nav-tabs homepage-nav">
 				  <li><a href="../index.aspx"><i class="fa fa-medium"></i>返回首页</a></li>
 				  <li><a href="TrunkInfoList.aspx" target="infoMain" class="active" ><i class="fa  fa-medium"></i>车源信息</a></li>
-				  <li><a href="GoodsInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>货源信息</a></li>
+				  <li><a id="hl_goods" href="GoodsInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>货源信息</a></li>
 				  <li><a href="SpeciallineInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>专线信息</a></li>
 				  <li><a href="DepotInfoList.aspx" target="infoMain" ><i class="fa  fa-medium"></i>仓储信息</a></li>
                   <li><a href="#" target="_blank"><i class="fa fa-medium"></i>个人中心</a></li><!--当用户成功登陆才显示-->
