@@ -39,7 +39,7 @@ namespace Trans.InfoList
             StringBuilder showBody = new StringBuilder();
             foreach (Trunkinformation enti in showData)
             {
-                showBody.Append("<tr><td><a href=\"../InfoShow/TrunkInfoDetail.aspx?id="+enti.Id.ToString()+" \" class=\"infoTitle h4LorryInfoTitle\">");
+                showBody.Append("<tr><td><a target=\"_parent\" href=\"../InfoShow/detailinfoframe.aspx?id="+enti.Id.ToString()+"&type=trunk \" class=\"infoTitle h4LorryInfoTitle\">");
                 showBody.Append(enti.Title);
                 showBody.Append("</a><p><span class=\"light-info\">车辆长度：</span><span class=\"infos spanLorryLength\" id=\"carLength\">");
                 Trunkmetadata trunkDetails = this.trunkmetadata.Find(enti.Trunkid);

@@ -1,14 +1,14 @@
 /* CSS Document for third level page of Info*/
 
 body{ margin:0;}
-#otherHtml{ background:#80F0EB;}
+#otherHtml{ background:#CFF;}
 .top{max-height:150px; height:auto; padding-top:15px; padding-bottom:15px; width:100%;}
 .top table{ margin:0 auto; height:100%;}
 .logo{ width:auto; max-width:600px; height:auto; max-height:120px; margin:0 auto;}
 .tab{ width:auto; max-width:600px;}
 .menus li{ float:right; font-color:#060; list-style:none; font-weight:bold; margin-left:50px;}
-.left-side{ background:#000; width:15%; height:100%; padding-top:20px;}
-.right-side{ background:#80F0EB; width:85% height:100%;}
+.left-side{ background:#cff; width:15%; height:100%; padding-top:20px;}
+.right-side{ background:#CfF; width:85% height:100%;}
 .titles{ font-size:36px; font-weight:bold; background:#F60; width:100%;}
 .backMain{ text-align:center;}
 .templatemo-nav {clear: both;font-size: 16px;font-weight: 300;width:100%;}
@@ -41,4 +41,3 @@ p{margin:0 auto; text-align:center;}
 #comHonor img{ width:100%; height:100%;}
 
 caption{ height:30px; width:100%; background:#CCC;}
-td:hover{ background:#FFF;}

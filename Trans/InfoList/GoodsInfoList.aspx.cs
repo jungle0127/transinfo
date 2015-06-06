@@ -41,7 +41,7 @@ namespace Trans.InfoList
             IList<Goodssourceinformation> goodssourcelist = this.goodsinformationtable.PaginationFindAll(goodspage);
             foreach (Goodssourceinformation enti in goodssourcelist)
             {
-                messagebody.Append("<tr><td><a href=\"../InfoShow/GoodsInfoDetail.aspx?id="+enti.Id.ToString()+"\" class=\"infoTitle goodsInfoTitle\">");
+                messagebody.Append("<tr><td><a target=\"_parent\" href=\"../InfoShow/detailinfoframe.aspx?id="+enti.Id.ToString()+"&type=goods\" class=\"infoTitle goodsInfoTitle\">");
                 messagebody.Append(enti.Title);
                 messagebody.Append("</a><p><span class=\"light-info\">所需车辆长度：</span><span class=\"infos spanNeedLength\" id=\"carLength\">");
                 messagebody.Append(enti.Needtrunklength);

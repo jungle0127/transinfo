@@ -73,7 +73,7 @@ caption{ background: #D7D0D0;}
 .line_infos{ background:#FFF; border:1px solid #d9d9d9; text-align:center; float:left; margin:15px 8px 0px 0px; padding:10px 10px 13px 20px; width: 280px;height: 220px;}
 .line_infos a{ color:#ae9a7a; line-height:30px;}
 .line_infos:hover{border:1px solid #060; background: #CFC;}
-.NEWSline_text{font-size:15px; text-align:center; font-family:"微软雅黑"; color:#4b4b4b;}
+.NEWSline_text{font-size:28px; text-align:center; font-family:"微软雅黑"; color:#4b4b4b;}
 #line_kuai img{vertical-align:middle; padding:0 8px 0 3px;}
 .align_left{ float:left; margin:5px 5px 0 0; text-align:left;}
 #line_infos .title{ font-size:12px; line-height:24px; color:#989898; margin:0 0 0 10px;}

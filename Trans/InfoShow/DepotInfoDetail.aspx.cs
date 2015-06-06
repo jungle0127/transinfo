@@ -31,7 +31,7 @@ namespace Trans.InfoShow
         public string GetMessageBody()
         {
             StringBuilder MessageBody = new StringBuilder();
-            Int32 idformes = Convert.ToInt32(Request.QueryString["id".ToString()]);
+            Int32 idformes = Convert.ToInt32(Request.QueryString["id"].ToString());
             IList<Vdepotinformation> detailForDepots = this.v_depotInformation.FindById(idformes);
             MessageBody.Append("<tbody><tr class=\"infoTitle\"><td><p id=\"infoTitle\" class=\"pInfoTitle\">");
             MessageBody.Append(detailForDepots[0].Title);

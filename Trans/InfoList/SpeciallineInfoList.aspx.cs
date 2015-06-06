@@ -74,7 +74,7 @@ namespace Trans.InfoList
                 //placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
                 //MessageBody.Append(placeInformation.Address);
                 MessageBody.Append(specialLineDetail[0].Dstcityname);
-                MessageBody.Append("</p><p class=\"title\"><a href=\"http://search.jt56.org/hnftwl.jt56.org\" target=\"_blank\">");
+                MessageBody.Append("</p><p class=\"title\"><a href=\"#\" target=\"_blank\">");
                 Users usersEinfo = this.usersInfos.Find(enti.Userid);
                 MessageBody.Append(usersEinfo.Username);
                 MessageBody.Append("</a></p><div class=\"align_left\"><p class=\"title\">发车班次：<span id=\"Dark\">");
@@ -94,7 +94,7 @@ namespace Trans.InfoList
 
                 MessageBody.Append("</span></p><p class=\"title\">泡货：<span id=\"huo_color\">");
                 MessageBody.Append(enti.Volumeprice);
-                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx?id=" + enti.Id.ToString() + "\" target=\"_blank\">查看详情</a></div></div>");
+                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a target=\"_parent\" href=\"../InfoShow/detailinfoframe.aspx?id=" + enti.Id.ToString() + "&type=line\">查看详情</a></div></div>");
 
 
             }
@@ -123,7 +123,7 @@ namespace Trans.InfoList
                 //placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
                 //MessageBody.Append(placeInformation.Address);
                 MessageBody.Append(specialLineDetail[0].Dstcityname);
-                MessageBody.Append("</p><p class=\"title\"><a href=\"http://search.jt56.org/hnftwl.jt56.org\" target=\"_blank\">");
+                MessageBody.Append("</p><p class=\"title\"><a href=\"#\" target=\"_blank\">");
                 Users usersEinfo = this.usersInfos.Find(enti.Userid);
                 MessageBody.Append(usersEinfo.Username);
                 MessageBody.Append("</a></p><div class=\"align_left\"><p class=\"title\">发车班次：<span id=\"Dark\">");
@@ -143,7 +143,7 @@ namespace Trans.InfoList
 
                 MessageBody.Append("</span></p><p class=\"title\">泡货：<span id=\"huo_color\">");
                 MessageBody.Append(enti.Volumeprice);
-                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx" + enti.Id.ToString() + "\" target=\"_blank\">查看详情</a></div></div>");
+                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a target=\"_parent\" href=\"../InfoShow/detailinfoframe.aspx?id=" + enti.Id.ToString() + "&type=line\">查看详情</a></div></div>");
             }
             return MessageBody.ToString();
 
@@ -169,7 +169,7 @@ namespace Trans.InfoList
                 //placeInformation = this.placeInfoList.Find(enti.Destinationplaceinfoid);
                 //MessageBody.Append(placeInformation.Address);
                 MessageBody.Append(specialLineDetail[0].Dstcityname);
-                MessageBody.Append("</p><p class=\"title\"><a href=\"http://search.jt56.org/hnftwl.jt56.org\" target=\"_blank\">");
+                MessageBody.Append("</p><p class=\"title\"><a href=\"#\" target=\"_blank\">");
                 Users usersEinfo = this.usersInfos.Find(enti.Userid);
                 MessageBody.Append(usersEinfo.Username);
                 MessageBody.Append("</a></p><div class=\"align_left\"><p class=\"title\">发车班次：<span id=\"Dark\">");
@@ -189,7 +189,7 @@ namespace Trans.InfoList
 
                 MessageBody.Append("</span></p><p class=\"title\">泡货：<span id=\"huo_color\">");
                 MessageBody.Append(enti.Volumeprice);
-                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a href=\"../InfoShow/SpeciallineInfoDetail.aspx" + enti.Id.ToString() + "\" target=\"_blank\">查看详情</a></div></div>");
+                MessageBody.Append("</span>元/方</p></div><div class=\"clear\"></div><div class=\"NEWS_button\"><a target=\"_parent\" href=\"../InfoShow/detailinfoframe.aspx?id=" + enti.Id.ToString() + "&type=line\">查看详情</a></div></div>");
             }
             return MessageBody.ToString();
 

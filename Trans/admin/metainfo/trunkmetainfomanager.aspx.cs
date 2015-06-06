@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Trans.DAL.Dao;
 using Trans.DAL.Entity;
+using Newtonsoft.Json;
 
 namespace Trans.admin.metainfo
 {
@@ -26,7 +27,9 @@ namespace Trans.admin.metainfo
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            IProvinceDao provinceDao = new ProvinceDao();
+            IList<Province> provinceList = provinceDao.FindAll();
+            Response.Write(JsonConvert.SerializeObject(provinceList));
         }
         #region 下拉框初始化
         /// <summary>

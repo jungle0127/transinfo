@@ -17,8 +17,8 @@
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return (r[2]); return null;
     }
-    function test() {
-        type = get_url_parameter("type");
+    function switch_page() {
+        var type = get_url_parameter("type");
         if (type == "car") {
             $("#frameInfoDetail").attr("src","TrunkInfoList.aspx");
         }
@@ -35,7 +35,7 @@
 	</script>
 </head>
 
-<body onload="test()">
+<body onload="switch_page()">
 <div id="top">
     <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
     <table width="100%">
@@ -45,10 +45,10 @@
       <img src="../imgs/index/logo.png"/>
       </td>
       <td><ul class="nav nav-tabs floating">
-                <li><a href="../backup/infodeliver.html">我要发布</a></li>
-                <li><a href="logistics.html">物流黄页</a></li>
-                <li><a href="news.html">查看公告</a></li>
-                <li><a href="news.html">查看新闻</a></li>
+                <li><a href="../admin/mainframe.htm">我要发布</a></li>
+                <li><a href="#">物流黄页</a></li>
+                <li><a href="NewsList.aspx?type=2">查看公告</a></li>
+                <li><a href="NewsList.aspx?type=1">查看新闻</a></li>
          	</ul></td>
       </tr>
       </tbody>

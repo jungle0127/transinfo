@@ -94,7 +94,7 @@
                  </ul>
                 </div>
               </td>
-              <td><a href="html/news.html"><img src="imgs/plus_alt.png" /></a></td>
+              <td><a href="InfoList/NewsList.aspx?type=2"><img alt="" src="imgs/plus_alt.png" /></a></td>
              </tr>
              </tbody>
             </table>
@@ -193,7 +193,7 @@
                  </ul>
                 </div>
               </td>
-              <td><a href="html/news.html"><img src="imgs/plus_alt.png" /></a></td>
+              <td><a href="InfoList/NewsList.aspx?type=1"><img alt="" src="imgs/plus_alt.png" /></a></td>
              </tr>
              </tbody>
             </table>
