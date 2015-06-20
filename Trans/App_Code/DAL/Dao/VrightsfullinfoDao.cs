@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Vrightsfullinfo result = this.sqlMapper.QueryForObject<Vrightsfullinfo>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Vrightsfullinfo.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Vrightsfullinfo> FindAll() {
 			String stmtId = "Vrightsfullinfo.FindAll";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByGroupname(Vrightsfullinfo obj){
+			String stmtId = "Vrightsfullinfo.GetFindByGroupnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vrightsfullinfo> FindByRightId(Int64 rightId) {
 			String stmtId = "Vrightsfullinfo.FindByRightId";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, rightId);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRightId(Vrightsfullinfo obj){
+			String stmtId = "Vrightsfullinfo.GetFindByRightIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vrightsfullinfo> FindByRighturl(String righturl) {
 			String stmtId = "Vrightsfullinfo.FindByRighturl";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, righturl);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRighturl(Vrightsfullinfo obj){
+			String stmtId = "Vrightsfullinfo.GetFindByRighturlCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vrightsfullinfo> FindByGroupId(Int64 groupId) {
 			String stmtId = "Vrightsfullinfo.FindByGroupId";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, groupId);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByGroupId(Vrightsfullinfo obj){
+			String stmtId = "Vrightsfullinfo.GetFindByGroupIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vrightsfullinfo> FindByRightname(String rightname) {
 			String stmtId = "Vrightsfullinfo.FindByRightname";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, rightname);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRightname(Vrightsfullinfo obj){
+			String stmtId = "Vrightsfullinfo.GetFindByRightnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Vrightsfullinfo obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Vrightsfullinfo.Find";

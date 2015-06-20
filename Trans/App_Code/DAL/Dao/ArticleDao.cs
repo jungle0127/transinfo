@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Article result = this.sqlMapper.QueryForObject<Article>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Article.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Article> FindAll() {
 			String stmtId = "Article.FindAll";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Article obj){
+			String stmtId = "Article.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByTitle(String title) {
 			String stmtId = "Article.FindByTitle";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, title);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Article obj){
+			String stmtId = "Article.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByHittimes(Int64 hittimes) {
 			String stmtId = "Article.FindByHittimes";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, hittimes);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByHittimes(Article obj){
+			String stmtId = "Article.GetFindByHittimesCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByTitlecolor(String titlecolor) {
 			String stmtId = "Article.FindByTitlecolor";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, titlecolor);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitlecolor(Article obj){
+			String stmtId = "Article.GetFindByTitlecolorCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByTypeid(Int64 typeid) {
 			String stmtId = "Article.FindByTypeid";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, typeid);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypeid(Article obj){
+			String stmtId = "Article.GetFindByTypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByIstop(Byte istop) {
 			String stmtId = "Article.FindByIstop";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, istop);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByIstop(Article obj){
+			String stmtId = "Article.GetFindByIstopCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByContent(String content) {
 			String stmtId = "Article.FindByContent";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, content);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContent(Article obj){
+			String stmtId = "Article.GetFindByContentCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByReleaseip(String releaseip) {
 			String stmtId = "Article.FindByReleaseip";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releaseip);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleaseip(Article obj){
+			String stmtId = "Article.GetFindByReleaseipCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByReleasedate(DateTime releasedate) {
 			String stmtId = "Article.FindByReleasedate";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releasedate);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleasedate(Article obj){
+			String stmtId = "Article.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Article> FindByIspass(Byte ispass) {
 			String stmtId = "Article.FindByIspass";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, ispass);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
+		public int FindCountByIspass(Article obj){
+			String stmtId = "Article.GetFindByIspassCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Article obj) {
 			String stmtId = "Article.Update";
 			this.sqlMapper.Update(stmtId, obj);

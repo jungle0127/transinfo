@@ -20,38 +20,89 @@
 		<select id="Vuserroleinfo.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_userroleinfo
 		</select>
+		<select id="Vuserroleinfo.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_userroleinfo ORDER BY id DESC
+		</select>
 		<select id="Vuserroleinfo.FindAllPagination" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_userroleinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.DescendOrderFindAllPagination" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_userroleinfo ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vuserroleinfo.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
 			WHERE v_userroleinfo.userid = #value#
 		</select>
+		<select id="Vuserroleinfo.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="VuserroleinfoPagination.FindByUserid" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
-			WHERE v_userroleinfo.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE v_userroleinfo.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserroleinfoPagination.DescendOrderFindByUserid" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userroleinfo WHERE v_userroleinfo.userid=#Userid#
 		</select>
 		<select id="Vuserroleinfo.FindByLoginname" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
 			WHERE v_userroleinfo.loginname = #value#
 		</select>
+		<select id="Vuserroleinfo.DescendOrderFindByLoginname" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.loginname = #value# ORDER BY id DESC
+		</select>
 		<select id="VuserroleinfoPagination.FindByLoginname" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
-			WHERE v_userroleinfo.loginname = #Loginname# limit #Limit# offset #Offset# 
+			WHERE v_userroleinfo.loginname = #Loginname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserroleinfoPagination.DescendOrderFindByLoginname" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.loginname = #Loginname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.GetFindByLoginnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userroleinfo WHERE v_userroleinfo.loginname=#Loginname#
 		</select>
 		<select id="Vuserroleinfo.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
 			WHERE v_userroleinfo.username = #value#
 		</select>
+		<select id="Vuserroleinfo.DescendOrderFindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.username = #value# ORDER BY id DESC
+		</select>
 		<select id="VuserroleinfoPagination.FindByUsername" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
-			WHERE v_userroleinfo.username = #Username# limit #Limit# offset #Offset# 
+			WHERE v_userroleinfo.username = #Username# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserroleinfoPagination.DescendOrderFindByUsername" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.username = #Username# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.GetFindByUsernameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userroleinfo WHERE v_userroleinfo.username=#Username#
 		</select>
 		<select id="Vuserroleinfo.FindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
 			WHERE v_userroleinfo.roleid = #value#
 		</select>
+		<select id="Vuserroleinfo.DescendOrderFindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.roleid = #value# ORDER BY id DESC
+		</select>
 		<select id="VuserroleinfoPagination.FindByRoleid" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
-			WHERE v_userroleinfo.roleid = #Roleid# limit #Limit# offset #Offset# 
+			WHERE v_userroleinfo.roleid = #Roleid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserroleinfoPagination.DescendOrderFindByRoleid" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.roleid = #Roleid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.GetFindByRoleidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userroleinfo WHERE v_userroleinfo.roleid=#Roleid#
 		</select>
 		<select id="Vuserroleinfo.FindByRolename" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
 			WHERE v_userroleinfo.rolename = #value#
 		</select>
+		<select id="Vuserroleinfo.DescendOrderFindByRolename" parameterClass="String" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.rolename = #value# ORDER BY id DESC
+		</select>
 		<select id="VuserroleinfoPagination.FindByRolename" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
-			WHERE v_userroleinfo.rolename = #Rolename# limit #Limit# offset #Offset# 
+			WHERE v_userroleinfo.rolename = #Rolename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserroleinfoPagination.DescendOrderFindByRolename" parameterClass="VuserroleinfoPagination" resultMap="FullResultMap" extends="Vuserroleinfo.FindAll">
+			WHERE v_userroleinfo.rolename = #Rolename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserroleinfo.GetFindByRolenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userroleinfo WHERE v_userroleinfo.rolename=#Rolename#
 		</select>
 	</statements>
 </sqlMap>

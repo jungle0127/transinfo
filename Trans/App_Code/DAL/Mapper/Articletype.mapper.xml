@@ -18,23 +18,53 @@
 		<select id="Articletype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM articletype
 		</select>
+		<select id="Articletype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM articletype ORDER BY id DESC
+		</select>
 		<select id="Articletype.FindAllPagination" parameterClass="ArticletypePagination" resultMap="FullResultMap">
 			SELECT * FROM articletype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Articletype.DescendOrderFindAllPagination" parameterClass="ArticletypePagination" resultMap="FullResultMap">
+			SELECT * FROM articletype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Articletype.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Articletype.FindAll">
 			WHERE articletype.active = #value#
 		</select>
+		<select id="Articletype.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.active = #value# ORDER BY id DESC
+		</select>
 		<select id="ArticletypePagination.FindByActive" parameterClass="ArticletypePagination" resultMap="FullResultMap" extends="Articletype.FindAll">
-			WHERE articletype.active = #Active# limit #Limit# offset #Offset# 
+			WHERE articletype.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="ArticletypePagination.DescendOrderFindByActive" parameterClass="ArticletypePagination" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Articletype.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM articletype WHERE articletype.active=#Active#
 		</select>
 		<select id="Articletype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Articletype.FindAll">
 			WHERE articletype.typename = #value#
 		</select>
+		<select id="Articletype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="ArticletypePagination.FindByTypename" parameterClass="ArticletypePagination" resultMap="FullResultMap" extends="Articletype.FindAll">
-			WHERE articletype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE articletype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="ArticletypePagination.DescendOrderFindByTypename" parameterClass="ArticletypePagination" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Articletype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM articletype WHERE articletype.typename=#Typename#
 		</select>
 		<select id="Articletype.Find" parameterClass="Articletype" resultMap="FullResultMap" extends="Articletype.FindAll">
 			WHERE articletype.id=#Id#
+		</select>
+		<select id="Articletype.DescendOrderFind" parameterClass="Articletype" resultMap="FullResultMap" extends="Articletype.FindAll">
+			WHERE articletype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Articletype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM articletype WHERE articletype.id=#Id#
 		</select>
 		<insert id="Articletype.Insert" parameterClass="Articletype">
 			INSERT INTO articletype (active,typename,id) VALUES (#Active#,#Typename#,#Id#)

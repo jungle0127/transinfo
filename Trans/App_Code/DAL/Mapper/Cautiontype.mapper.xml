@@ -17,17 +17,38 @@
 		<select id="Cautiontype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM cautiontype
 		</select>
+		<select id="Cautiontype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM cautiontype ORDER BY id DESC
+		</select>
 		<select id="Cautiontype.FindAllPagination" parameterClass="CautiontypePagination" resultMap="FullResultMap">
 			SELECT * FROM cautiontype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Cautiontype.DescendOrderFindAllPagination" parameterClass="CautiontypePagination" resultMap="FullResultMap">
+			SELECT * FROM cautiontype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Cautiontype.Find" parameterClass="Cautiontype" resultMap="FullResultMap" extends="Cautiontype.FindAll">
 			WHERE cautiontype.id=#Id#
 		</select>
+		<select id="Cautiontype.DescendOrderFind" parameterClass="Cautiontype" resultMap="FullResultMap" extends="Cautiontype.FindAll">
+			WHERE cautiontype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Cautiontype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM cautiontype WHERE cautiontype.id=#Id#
+		</select>
 		<select id="Cautiontype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Cautiontype.FindAll">
 			WHERE cautiontype.typename = #value#
 		</select>
+		<select id="Cautiontype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Cautiontype.FindAll">
+			WHERE cautiontype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="CautiontypePagination.FindByTypename" parameterClass="CautiontypePagination" resultMap="FullResultMap" extends="Cautiontype.FindAll">
-			WHERE cautiontype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE cautiontype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CautiontypePagination.DescendOrderFindByTypename" parameterClass="CautiontypePagination" resultMap="FullResultMap" extends="Cautiontype.FindAll">
+			WHERE cautiontype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Cautiontype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM cautiontype WHERE cautiontype.typename=#Typename#
 		</select>
 		<insert id="Cautiontype.Insert" parameterClass="Cautiontype">
 			INSERT INTO cautiontype (id,typename) VALUES (#Id#,#Typename#)

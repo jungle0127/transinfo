@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Cautiontype result = this.sqlMapper.QueryForObject<Cautiontype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Cautiontype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Cautiontype> FindAll() {
 			String stmtId = "Cautiontype.FindAll";
 			IList<Cautiontype> result = this.sqlMapper.QueryForList<Cautiontype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Cautiontype> result = this.sqlMapper.QueryForList<Cautiontype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Cautiontype obj){
+			String stmtId = "Cautiontype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Cautiontype obj) {
 			String stmtId = "Cautiontype.Update";
 			this.sqlMapper.Update(stmtId, obj);

@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Speciallineinfo Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Speciallineinfo> FindAll();
 
 		IList<Speciallineinfo> PaginationFindAll(SpeciallineinfoPagination obj);
@@ -21,41 +23,61 @@ namespace Trans.DAL.Dao
 
 		IList<Speciallineinfo> PaginationFindByUserid(SpeciallineinfoPagination obj);
 
+		int FindCountByUserid(Speciallineinfo obj);
+
 		IList<Speciallineinfo> FindByDestinationplaceinfoid(Int64 destinationplaceinfoid);
 
 		IList<Speciallineinfo> PaginationFindByDestinationplaceinfoid(SpeciallineinfoPagination obj);
+
+		int FindCountByDestinationplaceinfoid(Speciallineinfo obj);
 
 		IList<Speciallineinfo> FindByDeparturetypeid(Int64 departuretypeid);
 
 		IList<Speciallineinfo> PaginationFindByDeparturetypeid(SpeciallineinfoPagination obj);
 
+		int FindCountByDeparturetypeid(Speciallineinfo obj);
+
 		IList<Speciallineinfo> FindByTitle(String title);
 
 		IList<Speciallineinfo> PaginationFindByTitle(SpeciallineinfoPagination obj);
+
+		int FindCountByTitle(Speciallineinfo obj);
 
 		IList<Speciallineinfo> FindByVolumeprice(Int32 volumeprice);
 
 		IList<Speciallineinfo> PaginationFindByVolumeprice(SpeciallineinfoPagination obj);
 
+		int FindCountByVolumeprice(Speciallineinfo obj);
+
 		IList<Speciallineinfo> FindByWeightprice(Int32 weightprice);
 
 		IList<Speciallineinfo> PaginationFindByWeightprice(SpeciallineinfoPagination obj);
+
+		int FindCountByWeightprice(Speciallineinfo obj);
 
 		IList<Speciallineinfo> FindByDescription(String description);
 
 		IList<Speciallineinfo> PaginationFindByDescription(SpeciallineinfoPagination obj);
 
+		int FindCountByDescription(Speciallineinfo obj);
+
 		IList<Speciallineinfo> FindBySourceplaceinfoid(Int64 sourceplaceinfoid);
 
 		IList<Speciallineinfo> PaginationFindBySourceplaceinfoid(SpeciallineinfoPagination obj);
+
+		int FindCountBySourceplaceinfoid(Speciallineinfo obj);
 
 		IList<Speciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid);
 
 		IList<Speciallineinfo> PaginationFindBySpeciallinetypeid(SpeciallineinfoPagination obj);
 
+		int FindCountBySpeciallinetypeid(Speciallineinfo obj);
+
 		IList<Speciallineinfo> FindByReleasedate(DateTime releasedate);
 
 		IList<Speciallineinfo> PaginationFindByReleasedate(SpeciallineinfoPagination obj);
+
+		int FindCountByReleasedate(Speciallineinfo obj);
 
 		void Insert(Speciallineinfo obj);
 

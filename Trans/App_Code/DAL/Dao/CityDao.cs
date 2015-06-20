@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			City result = this.sqlMapper.QueryForObject<City>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "City.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<City> FindAll() {
 			String stmtId = "City.FindAll";
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, obj);
 			return result;
         }
+		public int FindCountByProvincecode(City obj){
+			String stmtId = "City.GetFindByProvincecodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<City> FindByCode(String code) {
 			String stmtId = "City.FindByCode";
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, code);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCode(City obj){
+			String stmtId = "City.GetFindByCodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<City> FindByName(String name) {
 			String stmtId = "City.FindByName";
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, name);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<City> result = this.sqlMapper.QueryForList<City>(stmtId, obj);
 			return result;
         }
+		public int FindCountByName(City obj){
+			String stmtId = "City.GetFindByNameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(City obj) {
 			String stmtId = "City.Update";
 			this.sqlMapper.Update(stmtId, obj);

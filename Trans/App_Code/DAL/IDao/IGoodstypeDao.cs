@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Goodstype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Goodstype> FindAll();
 
 		IList<Goodstype> PaginationFindAll(GoodstypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Goodstype> FindByTypename(String typename);
 
 		IList<Goodstype> PaginationFindByTypename(GoodstypePagination obj);
+
+		int FindCountByTypename(Goodstype obj);
 
 		void Insert(Goodstype obj);
 

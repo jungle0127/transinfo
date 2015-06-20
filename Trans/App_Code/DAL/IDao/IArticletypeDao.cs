@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Articletype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Articletype> FindAll();
 
 		IList<Articletype> PaginationFindAll(ArticletypePagination obj);
@@ -21,9 +23,13 @@ namespace Trans.DAL.Dao
 
 		IList<Articletype> PaginationFindByActive(ArticletypePagination obj);
 
+		int FindCountByActive(Articletype obj);
+
 		IList<Articletype> FindByTypename(String typename);
 
 		IList<Articletype> PaginationFindByTypename(ArticletypePagination obj);
+
+		int FindCountByTypename(Articletype obj);
 
 		void Insert(Articletype obj);
 

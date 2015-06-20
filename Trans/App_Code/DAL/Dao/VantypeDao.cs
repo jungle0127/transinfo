@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Vantype result = this.sqlMapper.QueryForObject<Vantype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Vantype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Vantype> FindAll() {
 			String stmtId = "Vantype.FindAll";
 			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Vantype obj){
+			String stmtId = "Vantype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Vantype obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Vantype.Find";

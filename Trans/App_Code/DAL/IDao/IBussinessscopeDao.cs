@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Bussinessscope Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Bussinessscope> FindAll();
 
 		IList<Bussinessscope> PaginationFindAll(BussinessscopePagination obj);
@@ -21,9 +23,13 @@ namespace Trans.DAL.Dao
 
 		IList<Bussinessscope> PaginationFindByScopename(BussinessscopePagination obj);
 
+		int FindCountByScopename(Bussinessscope obj);
+
 		IList<Bussinessscope> FindByActive(Byte active);
 
 		IList<Bussinessscope> PaginationFindByActive(BussinessscopePagination obj);
+
+		int FindCountByActive(Bussinessscope obj);
 
 		void Insert(Bussinessscope obj);
 

@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Speciallinetype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Speciallinetype> FindAll();
 
 		IList<Speciallinetype> PaginationFindAll(SpeciallinetypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Speciallinetype> FindByTypename(String typename);
 
 		IList<Speciallinetype> PaginationFindByTypename(SpeciallinetypePagination obj);
+
+		int FindCountByTypename(Speciallinetype obj);
 
 		void Insert(Speciallinetype obj);
 

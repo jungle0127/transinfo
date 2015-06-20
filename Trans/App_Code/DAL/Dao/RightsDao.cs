@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Rights result = this.sqlMapper.QueryForObject<Rights>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Rights.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Rights> FindAll() {
 			String stmtId = "Rights.FindAll";
 			IList<Rights> result = this.sqlMapper.QueryForList<Rights>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Rights> result = this.sqlMapper.QueryForList<Rights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Rights obj){
+			String stmtId = "Rights.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rights> FindByRighturl(String righturl) {
 			String stmtId = "Rights.FindByRighturl";
 			IList<Rights> result = this.sqlMapper.QueryForList<Rights>(stmtId, righturl);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Rights> result = this.sqlMapper.QueryForList<Rights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRighturl(Rights obj){
+			String stmtId = "Rights.GetFindByRighturlCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rights> FindByRightname(String rightname) {
 			String stmtId = "Rights.FindByRightname";
 			IList<Rights> result = this.sqlMapper.QueryForList<Rights>(stmtId, rightname);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Rights> result = this.sqlMapper.QueryForList<Rights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRightname(Rights obj){
+			String stmtId = "Rights.GetFindByRightnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Rights obj) {
 			String stmtId = "Rights.Update";
 			this.sqlMapper.Update(stmtId, obj);

@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Trunknumberprefix result = this.sqlMapper.QueryForObject<Trunknumberprefix>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Trunknumberprefix.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Trunknumberprefix> FindAll() {
 			String stmtId = "Trunknumberprefix.FindAll";
 			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPrefixname(Trunknumberprefix obj){
+			String stmtId = "Trunknumberprefix.GetFindByPrefixnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Trunknumberprefix obj) {
 			String stmtId = "Trunknumberprefix.Update";
 			this.sqlMapper.Update(stmtId, obj);

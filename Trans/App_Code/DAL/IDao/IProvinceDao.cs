@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Province Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Province> FindAll();
 
 		IList<Province> PaginationFindAll(ProvincePagination obj);
@@ -21,9 +23,13 @@ namespace Trans.DAL.Dao
 
 		IList<Province> PaginationFindByCode(ProvincePagination obj);
 
+		int FindCountByCode(Province obj);
+
 		IList<Province> FindByName(String name);
 
 		IList<Province> PaginationFindByName(ProvincePagination obj);
+
+		int FindCountByName(Province obj);
 
 		void Insert(Province obj);
 

@@ -19,17 +19,25 @@ namespace Trans.DAL.Dao
 
 		IList<Vvehiclenumber> PaginationFindByUserid(VvehiclenumberPagination obj);
 
+		int FindCountByUserid(Vvehiclenumber obj);
+
 		IList<Vvehiclenumber> FindById(Int64 id);
 
 		IList<Vvehiclenumber> PaginationFindById(VvehiclenumberPagination obj);
+
+		int FindCountById(Vvehiclenumber obj);
 
 		IList<Vvehiclenumber> FindByPrefixname(String prefixname);
 
 		IList<Vvehiclenumber> PaginationFindByPrefixname(VvehiclenumberPagination obj);
 
+		int FindCountByPrefixname(Vvehiclenumber obj);
+
 		IList<Vvehiclenumber> FindByNumber(String number);
 
 		IList<Vvehiclenumber> PaginationFindByNumber(VvehiclenumberPagination obj);
+
+		int FindCountByNumber(Vvehiclenumber obj);
 
 		void Reload(Vvehiclenumber obj);
 	}

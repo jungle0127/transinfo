@@ -17,17 +17,38 @@
 		<select id="Transporttype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM transporttype
 		</select>
+		<select id="Transporttype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM transporttype ORDER BY id DESC
+		</select>
 		<select id="Transporttype.FindAllPagination" parameterClass="TransporttypePagination" resultMap="FullResultMap">
 			SELECT * FROM transporttype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Transporttype.DescendOrderFindAllPagination" parameterClass="TransporttypePagination" resultMap="FullResultMap">
+			SELECT * FROM transporttype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Transporttype.Find" parameterClass="Transporttype" resultMap="FullResultMap" extends="Transporttype.FindAll">
 			WHERE transporttype.id=#Id#
 		</select>
+		<select id="Transporttype.DescendOrderFind" parameterClass="Transporttype" resultMap="FullResultMap" extends="Transporttype.FindAll">
+			WHERE transporttype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Transporttype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM transporttype WHERE transporttype.id=#Id#
+		</select>
 		<select id="Transporttype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Transporttype.FindAll">
 			WHERE transporttype.typename = #value#
 		</select>
+		<select id="Transporttype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Transporttype.FindAll">
+			WHERE transporttype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="TransporttypePagination.FindByTypename" parameterClass="TransporttypePagination" resultMap="FullResultMap" extends="Transporttype.FindAll">
-			WHERE transporttype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE transporttype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TransporttypePagination.DescendOrderFindByTypename" parameterClass="TransporttypePagination" resultMap="FullResultMap" extends="Transporttype.FindAll">
+			WHERE transporttype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Transporttype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM transporttype WHERE transporttype.typename=#Typename#
 		</select>
 		<insert id="Transporttype.Insert" parameterClass="Transporttype">
 			INSERT INTO transporttype (id,typename) VALUES (#Id#,#Typename#)

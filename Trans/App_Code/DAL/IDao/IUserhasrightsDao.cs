@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Userhasrights Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Userhasrights> FindAll();
 
 		IList<Userhasrights> PaginationFindAll(UserhasrightsPagination obj);
@@ -21,13 +23,19 @@ namespace Trans.DAL.Dao
 
 		IList<Userhasrights> PaginationFindByUserid(UserhasrightsPagination obj);
 
+		int FindCountByUserid(Userhasrights obj);
+
 		IList<Userhasrights> FindByRightid(Int64 rightid);
 
 		IList<Userhasrights> PaginationFindByRightid(UserhasrightsPagination obj);
 
+		int FindCountByRightid(Userhasrights obj);
+
 		IList<Userhasrights> FindByAcitve(Byte acitve);
 
 		IList<Userhasrights> PaginationFindByAcitve(UserhasrightsPagination obj);
+
+		int FindCountByAcitve(Userhasrights obj);
 
 		void Insert(Userhasrights obj);
 

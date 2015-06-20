@@ -20,38 +20,89 @@
 		<select id="Vrightsfullinfo.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_rightsfullinfo
 		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_rightsfullinfo ORDER BY id DESC
+		</select>
 		<select id="Vrightsfullinfo.FindAllPagination" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_rightsfullinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindAllPagination" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_rightsfullinfo ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vrightsfullinfo.FindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
 			WHERE v_rightsfullinfo.groupname = #value#
 		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.groupname = #value# ORDER BY id DESC
+		</select>
 		<select id="VrightsfullinfoPagination.FindByGroupname" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
-			WHERE v_rightsfullinfo.groupname = #Groupname# limit #Limit# offset #Offset# 
+			WHERE v_rightsfullinfo.groupname = #Groupname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VrightsfullinfoPagination.DescendOrderFindByGroupname" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.groupname = #Groupname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vrightsfullinfo.GetFindByGroupnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_rightsfullinfo WHERE v_rightsfullinfo.groupname=#Groupname#
 		</select>
 		<select id="Vrightsfullinfo.FindByRightId" parameterClass="Int64" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
 			WHERE v_rightsfullinfo.rightId = #value#
 		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindByRightId" parameterClass="Int64" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.rightId = #value# ORDER BY id DESC
+		</select>
 		<select id="VrightsfullinfoPagination.FindByRightId" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
-			WHERE v_rightsfullinfo.rightId = #RightId# limit #Limit# offset #Offset# 
+			WHERE v_rightsfullinfo.rightId = #RightId# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VrightsfullinfoPagination.DescendOrderFindByRightId" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.rightId = #RightId# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vrightsfullinfo.GetFindByRightIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_rightsfullinfo WHERE v_rightsfullinfo.rightId=#RightId#
 		</select>
 		<select id="Vrightsfullinfo.FindByRighturl" parameterClass="String" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
 			WHERE v_rightsfullinfo.righturl = #value#
 		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindByRighturl" parameterClass="String" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.righturl = #value# ORDER BY id DESC
+		</select>
 		<select id="VrightsfullinfoPagination.FindByRighturl" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
-			WHERE v_rightsfullinfo.righturl = #Righturl# limit #Limit# offset #Offset# 
+			WHERE v_rightsfullinfo.righturl = #Righturl# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VrightsfullinfoPagination.DescendOrderFindByRighturl" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.righturl = #Righturl# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vrightsfullinfo.GetFindByRighturlCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_rightsfullinfo WHERE v_rightsfullinfo.righturl=#Righturl#
 		</select>
 		<select id="Vrightsfullinfo.FindByGroupId" parameterClass="Int64" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
 			WHERE v_rightsfullinfo.groupId = #value#
 		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindByGroupId" parameterClass="Int64" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.groupId = #value# ORDER BY id DESC
+		</select>
 		<select id="VrightsfullinfoPagination.FindByGroupId" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
-			WHERE v_rightsfullinfo.groupId = #GroupId# limit #Limit# offset #Offset# 
+			WHERE v_rightsfullinfo.groupId = #GroupId# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VrightsfullinfoPagination.DescendOrderFindByGroupId" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.groupId = #GroupId# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vrightsfullinfo.GetFindByGroupIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_rightsfullinfo WHERE v_rightsfullinfo.groupId=#GroupId#
 		</select>
 		<select id="Vrightsfullinfo.FindByRightname" parameterClass="String" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
 			WHERE v_rightsfullinfo.rightname = #value#
 		</select>
+		<select id="Vrightsfullinfo.DescendOrderFindByRightname" parameterClass="String" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.rightname = #value# ORDER BY id DESC
+		</select>
 		<select id="VrightsfullinfoPagination.FindByRightname" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
-			WHERE v_rightsfullinfo.rightname = #Rightname# limit #Limit# offset #Offset# 
+			WHERE v_rightsfullinfo.rightname = #Rightname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VrightsfullinfoPagination.DescendOrderFindByRightname" parameterClass="VrightsfullinfoPagination" resultMap="FullResultMap" extends="Vrightsfullinfo.FindAll">
+			WHERE v_rightsfullinfo.rightname = #Rightname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vrightsfullinfo.GetFindByRightnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_rightsfullinfo WHERE v_rightsfullinfo.rightname=#Rightname#
 		</select>
 	</statements>
 </sqlMap>

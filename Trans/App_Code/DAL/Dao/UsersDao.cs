@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Users result = this.sqlMapper.QueryForObject<Users>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Users.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Users> FindAll() {
 			String stmtId = "Users.FindAll";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Users obj){
+			String stmtId = "Users.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Users> FindByUsername(String username) {
 			String stmtId = "Users.FindByUsername";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, username);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUsername(Users obj){
+			String stmtId = "Users.GetFindByUsernameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Users> FindByRoleid(Int64 roleid) {
 			String stmtId = "Users.FindByRoleid";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, roleid);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRoleid(Users obj){
+			String stmtId = "Users.GetFindByRoleidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Users> FindByLoginname(String loginname) {
 			String stmtId = "Users.FindByLoginname";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, loginname);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
+		public int FindCountByLoginname(Users obj){
+			String stmtId = "Users.GetFindByLoginnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Users> FindByNote(String note) {
 			String stmtId = "Users.FindByNote";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, note);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNote(Users obj){
+			String stmtId = "Users.GetFindByNoteCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Users> FindByPassword(String password) {
 			String stmtId = "Users.FindByPassword";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, password);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPassword(Users obj){
+			String stmtId = "Users.GetFindByPasswordCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Users obj) {
 			String stmtId = "Users.Update";
 			this.sqlMapper.Update(stmtId, obj);

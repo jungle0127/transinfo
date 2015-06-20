@@ -31,101 +31,248 @@
 		<select id="Trunkmetadata.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunkmetadata
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunkmetadata ORDER BY id DESC
+		</select>
 		<select id="Trunkmetadata.FindAllPagination" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap">
 			SELECT * FROM trunkmetadata limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.DescendOrderFindAllPagination" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap">
+			SELECT * FROM trunkmetadata ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkmetadata.FindByConatactphone" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.conatactphone = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByConatactphone" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.conatactphone = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByConatactphone" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.conatactphone = #Conatactphone# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.conatactphone = #Conatactphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByConatactphone" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.conatactphone = #Conatactphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByConatactphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.conatactphone=#Conatactphone#
 		</select>
 		<select id="Trunkmetadata.FindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.volume = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.volume = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByVolume" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.volume = #Volume# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.volume = #Volume# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByVolume" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.volume = #Volume# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByVolumeCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.volume=#Volume#
 		</select>
 		<select id="Trunkmetadata.FindByNumberid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.numberid = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByNumberid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.numberid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByNumberid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.numberid = #Numberid# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.numberid = #Numberid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByNumberid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.numberid = #Numberid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByNumberidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.numberid=#Numberid#
 		</select>
 		<select id="Trunkmetadata.FindByBrand" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.brand = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByBrand" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.brand = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByBrand" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.brand = #Brand# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.brand = #Brand# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByBrand" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.brand = #Brand# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByBrandCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.brand=#Brand#
 		</select>
 		<select id="Trunkmetadata.FindByLength" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.length = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByLength" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.length = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByLength" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.length = #Length# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.length = #Length# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByLength" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.length = #Length# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByLengthCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.length=#Length#
 		</select>
 		<select id="Trunkmetadata.FindByTrunktypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.trunktypeid = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByTrunktypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.trunktypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByTrunktypeid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.trunktypeid = #Trunktypeid# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.trunktypeid = #Trunktypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByTrunktypeid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.trunktypeid = #Trunktypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByTrunktypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.trunktypeid=#Trunktypeid#
 		</select>
 		<select id="Trunkmetadata.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.contactpersonname = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.contactpersonname = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByContactpersonname" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.contactpersonname = #Contactpersonname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByContactpersonname" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.contactpersonname = #Contactpersonname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByContactpersonnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.contactpersonname=#Contactpersonname#
 		</select>
 		<select id="Trunkmetadata.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.active = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.active = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByActive" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.active = #Active# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByActive" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.active=#Active#
 		</select>
 		<select id="Trunkmetadata.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.vanimageuri = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.vanimageuri = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByVanimageuri" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.vanimageuri = #Vanimageuri# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.vanimageuri = #Vanimageuri# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByVanimageuri" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.vanimageuri = #Vanimageuri# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByVanimageuriCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.vanimageuri=#Vanimageuri#
 		</select>
 		<select id="Trunkmetadata.FindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.weightcapacity = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.weightcapacity = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByWeightcapacity" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.weightcapacity = #Weightcapacity# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.weightcapacity = #Weightcapacity# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByWeightcapacity" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.weightcapacity = #Weightcapacity# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByWeightcapacityCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.weightcapacity=#Weightcapacity#
 		</select>
 		<select id="Trunkmetadata.Find" parameterClass="Trunkmetadata" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.id=#Id#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFind" parameterClass="Trunkmetadata" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunkmetadata.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.id=#Id#
+		</select>
 		<select id="Trunkmetadata.FindByVantypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.vantypeid = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByVantypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.vantypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByVantypeid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.vantypeid = #Vantypeid# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.vantypeid = #Vantypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByVantypeid" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.vantypeid = #Vantypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByVantypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.vantypeid=#Vantypeid#
 		</select>
 		<select id="Trunkmetadata.FindByLicenseuri" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.licenseuri = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByLicenseuri" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.licenseuri = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByLicenseuri" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.licenseuri = #Licenseuri# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.licenseuri = #Licenseuri# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByLicenseuri" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.licenseuri = #Licenseuri# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByLicenseuriCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.licenseuri=#Licenseuri#
 		</select>
 		<select id="Trunkmetadata.FindByTrunkidentifynumber" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.trunkidentifynumber = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByTrunkidentifynumber" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.trunkidentifynumber = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByTrunkidentifynumber" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.trunkidentifynumber = #Trunkidentifynumber# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.trunkidentifynumber = #Trunkidentifynumber# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByTrunkidentifynumber" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.trunkidentifynumber = #Trunkidentifynumber# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByTrunkidentifynumberCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.trunkidentifynumber=#Trunkidentifynumber#
 		</select>
 		<select id="Trunkmetadata.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.countycode = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.countycode = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByCountycode" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.countycode = #Countycode# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.countycode = #Countycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByCountycode" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.countycode = #Countycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByCountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.countycode=#Countycode#
 		</select>
 		<select id="Trunkmetadata.FindByLocation" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
 			WHERE trunkmetadata.location = #value#
 		</select>
+		<select id="Trunkmetadata.DescendOrderFindByLocation" parameterClass="String" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.location = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkmetadataPagination.FindByLocation" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
-			WHERE trunkmetadata.location = #Location# limit #Limit# offset #Offset# 
+			WHERE trunkmetadata.location = #Location# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkmetadataPagination.DescendOrderFindByLocation" parameterClass="TrunkmetadataPagination" resultMap="FullResultMap" extends="Trunkmetadata.FindAll">
+			WHERE trunkmetadata.location = #Location# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkmetadata.GetFindByLocationCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkmetadata WHERE trunkmetadata.location=#Location#
 		</select>
 		<insert id="Trunkmetadata.Insert" parameterClass="Trunkmetadata">
 			INSERT INTO trunkmetadata (conatactphone,volume,numberid,brand,length,trunktypeid,contactpersonname,active,vanimageuri,weightcapacity,id,vantypeid,licenseuri,trunkidentifynumber,countycode,location) VALUES (#Conatactphone#,#Volume#,#Numberid#,#Brand#,#Length#,#Trunktypeid#,#Contactpersonname#,#Active#,#Vanimageuri#,#Weightcapacity#,#Id#,#Vantypeid#,#Licenseuri#,#Trunkidentifynumber#,#Countycode#,#Location#)

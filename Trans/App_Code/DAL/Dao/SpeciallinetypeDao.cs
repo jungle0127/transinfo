@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Speciallinetype result = this.sqlMapper.QueryForObject<Speciallinetype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Speciallinetype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Speciallinetype> FindAll() {
 			String stmtId = "Speciallinetype.FindAll";
 			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Speciallinetype obj){
+			String stmtId = "Speciallinetype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Speciallinetype obj) {
 			String stmtId = "Speciallinetype.Update";
 			this.sqlMapper.Update(stmtId, obj);

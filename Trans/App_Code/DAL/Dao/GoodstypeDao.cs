@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Goodstype result = this.sqlMapper.QueryForObject<Goodstype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Goodstype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Goodstype> FindAll() {
 			String stmtId = "Goodstype.FindAll";
 			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Goodstype obj){
+			String stmtId = "Goodstype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Goodstype obj) {
 			String stmtId = "Goodstype.Update";
 			this.sqlMapper.Update(stmtId, obj);

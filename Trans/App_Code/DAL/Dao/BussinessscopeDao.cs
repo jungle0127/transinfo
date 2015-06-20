@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Bussinessscope result = this.sqlMapper.QueryForObject<Bussinessscope>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Bussinessscope.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Bussinessscope> FindAll() {
 			String stmtId = "Bussinessscope.FindAll";
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
 			return result;
         }
+		public int FindCountByScopename(Bussinessscope obj){
+			String stmtId = "Bussinessscope.GetFindByScopenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Bussinessscope> FindByActive(Byte active) {
 			String stmtId = "Bussinessscope.FindByActive";
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, active);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Bussinessscope obj){
+			String stmtId = "Bussinessscope.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Bussinessscope obj) {
 			String stmtId = "Bussinessscope.Update";
 			this.sqlMapper.Update(stmtId, obj);

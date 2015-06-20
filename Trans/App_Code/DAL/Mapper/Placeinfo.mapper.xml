@@ -21,41 +21,98 @@
 		<select id="Placeinfo.FindAll" resultMap="FullResultMap">
 			SELECT * FROM placeinfo
 		</select>
+		<select id="Placeinfo.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM placeinfo ORDER BY id DESC
+		</select>
 		<select id="Placeinfo.FindAllPagination" parameterClass="PlaceinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM placeinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.DescendOrderFindAllPagination" parameterClass="PlaceinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM placeinfo ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Placeinfo.FindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
 			WHERE placeinfo.address = #value#
 		</select>
+		<select id="Placeinfo.DescendOrderFindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.address = #value# ORDER BY id DESC
+		</select>
 		<select id="PlaceinfoPagination.FindByAddress" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
-			WHERE placeinfo.address = #Address# limit #Limit# offset #Offset# 
+			WHERE placeinfo.address = #Address# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="PlaceinfoPagination.DescendOrderFindByAddress" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.address = #Address# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.GetFindByAddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo WHERE placeinfo.address=#Address#
 		</select>
 		<select id="Placeinfo.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
 			WHERE placeinfo.contactpersonname = #value#
 		</select>
+		<select id="Placeinfo.DescendOrderFindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactpersonname = #value# ORDER BY id DESC
+		</select>
 		<select id="PlaceinfoPagination.FindByContactpersonname" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
-			WHERE placeinfo.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
+			WHERE placeinfo.contactpersonname = #Contactpersonname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="PlaceinfoPagination.DescendOrderFindByContactpersonname" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactpersonname = #Contactpersonname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.GetFindByContactpersonnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo WHERE placeinfo.contactpersonname=#Contactpersonname#
 		</select>
 		<select id="Placeinfo.FindByContactphone" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
 			WHERE placeinfo.contactphone = #value#
 		</select>
+		<select id="Placeinfo.DescendOrderFindByContactphone" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactphone = #value# ORDER BY id DESC
+		</select>
 		<select id="PlaceinfoPagination.FindByContactphone" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
-			WHERE placeinfo.contactphone = #Contactphone# limit #Limit# offset #Offset# 
+			WHERE placeinfo.contactphone = #Contactphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="PlaceinfoPagination.DescendOrderFindByContactphone" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactphone = #Contactphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.GetFindByContactphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo WHERE placeinfo.contactphone=#Contactphone#
 		</select>
 		<select id="Placeinfo.Find" parameterClass="Placeinfo" resultMap="FullResultMap" extends="Placeinfo.FindAll">
 			WHERE placeinfo.id=#Id#
 		</select>
+		<select id="Placeinfo.DescendOrderFind" parameterClass="Placeinfo" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Placeinfo.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo WHERE placeinfo.id=#Id#
+		</select>
 		<select id="Placeinfo.FindByContactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
 			WHERE placeinfo.contactcellphone = #value#
 		</select>
+		<select id="Placeinfo.DescendOrderFindByContactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactcellphone = #value# ORDER BY id DESC
+		</select>
 		<select id="PlaceinfoPagination.FindByContactcellphone" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
-			WHERE placeinfo.contactcellphone = #Contactcellphone# limit #Limit# offset #Offset# 
+			WHERE placeinfo.contactcellphone = #Contactcellphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="PlaceinfoPagination.DescendOrderFindByContactcellphone" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.contactcellphone = #Contactcellphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.GetFindByContactcellphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo WHERE placeinfo.contactcellphone=#Contactcellphone#
 		</select>
 		<select id="Placeinfo.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
 			WHERE placeinfo.countycode = #value#
 		</select>
+		<select id="Placeinfo.DescendOrderFindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.countycode = #value# ORDER BY id DESC
+		</select>
 		<select id="PlaceinfoPagination.FindByCountycode" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
-			WHERE placeinfo.countycode = #Countycode# limit #Limit# offset #Offset# 
+			WHERE placeinfo.countycode = #Countycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="PlaceinfoPagination.DescendOrderFindByCountycode" parameterClass="PlaceinfoPagination" resultMap="FullResultMap" extends="Placeinfo.FindAll">
+			WHERE placeinfo.countycode = #Countycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Placeinfo.GetFindByCountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM placeinfo WHERE placeinfo.countycode=#Countycode#
 		</select>
 		<insert id="Placeinfo.Insert" parameterClass="Placeinfo">
 			INSERT INTO placeinfo (address,contactpersonname,contactphone,id,contactcellphone,countycode) VALUES (#Address#,#Contactpersonname#,#Contactphone#,#Id#,#Contactcellphone#,#Countycode#)

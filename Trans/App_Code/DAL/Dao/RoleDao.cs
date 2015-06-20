@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Role result = this.sqlMapper.QueryForObject<Role>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Role.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Role> FindAll() {
 			String stmtId = "Role.FindAll";
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Role obj){
+			String stmtId = "Role.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Role> FindByRolename(String rolename) {
 			String stmtId = "Role.FindByRolename";
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, rolename);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRolename(Role obj){
+			String stmtId = "Role.GetFindByRolenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Role obj) {
 			String stmtId = "Role.Update";
 			this.sqlMapper.Update(stmtId, obj);

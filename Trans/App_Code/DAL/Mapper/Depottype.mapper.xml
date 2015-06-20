@@ -18,23 +18,53 @@
 		<select id="Depottype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM depottype
 		</select>
+		<select id="Depottype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM depottype ORDER BY id DESC
+		</select>
 		<select id="Depottype.FindAllPagination" parameterClass="DepottypePagination" resultMap="FullResultMap">
 			SELECT * FROM depottype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depottype.DescendOrderFindAllPagination" parameterClass="DepottypePagination" resultMap="FullResultMap">
+			SELECT * FROM depottype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Depottype.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Depottype.FindAll">
 			WHERE depottype.active = #value#
 		</select>
+		<select id="Depottype.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.active = #value# ORDER BY id DESC
+		</select>
 		<select id="DepottypePagination.FindByActive" parameterClass="DepottypePagination" resultMap="FullResultMap" extends="Depottype.FindAll">
-			WHERE depottype.active = #Active# limit #Limit# offset #Offset# 
+			WHERE depottype.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepottypePagination.DescendOrderFindByActive" parameterClass="DepottypePagination" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depottype.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM depottype WHERE depottype.active=#Active#
 		</select>
 		<select id="Depottype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Depottype.FindAll">
 			WHERE depottype.typename = #value#
 		</select>
+		<select id="Depottype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="DepottypePagination.FindByTypename" parameterClass="DepottypePagination" resultMap="FullResultMap" extends="Depottype.FindAll">
-			WHERE depottype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE depottype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepottypePagination.DescendOrderFindByTypename" parameterClass="DepottypePagination" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depottype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM depottype WHERE depottype.typename=#Typename#
 		</select>
 		<select id="Depottype.Find" parameterClass="Depottype" resultMap="FullResultMap" extends="Depottype.FindAll">
 			WHERE depottype.id=#Id#
+		</select>
+		<select id="Depottype.DescendOrderFind" parameterClass="Depottype" resultMap="FullResultMap" extends="Depottype.FindAll">
+			WHERE depottype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Depottype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM depottype WHERE depottype.id=#Id#
 		</select>
 		<insert id="Depottype.Insert" parameterClass="Depottype">
 			INSERT INTO depottype (active,typename,id) VALUES (#Active#,#Typename#,#Id#)

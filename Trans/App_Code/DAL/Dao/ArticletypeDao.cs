@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Articletype result = this.sqlMapper.QueryForObject<Articletype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Articletype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Articletype> FindAll() {
 			String stmtId = "Articletype.FindAll";
 			IList<Articletype> result = this.sqlMapper.QueryForList<Articletype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Articletype> result = this.sqlMapper.QueryForList<Articletype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Articletype obj){
+			String stmtId = "Articletype.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Articletype> FindByTypename(String typename) {
 			String stmtId = "Articletype.FindByTypename";
 			IList<Articletype> result = this.sqlMapper.QueryForList<Articletype>(stmtId, typename);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Articletype> result = this.sqlMapper.QueryForList<Articletype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Articletype obj){
+			String stmtId = "Articletype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Articletype obj) {
 			String stmtId = "Articletype.Update";
 			this.sqlMapper.Update(stmtId, obj);

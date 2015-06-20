@@ -17,17 +17,38 @@
 		<select id="Trunktype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunktype
 		</select>
+		<select id="Trunktype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunktype ORDER BY id DESC
+		</select>
 		<select id="Trunktype.FindAllPagination" parameterClass="TrunktypePagination" resultMap="FullResultMap">
 			SELECT * FROM trunktype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunktype.DescendOrderFindAllPagination" parameterClass="TrunktypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunktype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunktype.Find" parameterClass="Trunktype" resultMap="FullResultMap" extends="Trunktype.FindAll">
 			WHERE trunktype.id=#Id#
 		</select>
+		<select id="Trunktype.DescendOrderFind" parameterClass="Trunktype" resultMap="FullResultMap" extends="Trunktype.FindAll">
+			WHERE trunktype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunktype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunktype WHERE trunktype.id=#Id#
+		</select>
 		<select id="Trunktype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunktype.FindAll">
 			WHERE trunktype.typename = #value#
 		</select>
+		<select id="Trunktype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunktype.FindAll">
+			WHERE trunktype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunktypePagination.FindByTypename" parameterClass="TrunktypePagination" resultMap="FullResultMap" extends="Trunktype.FindAll">
-			WHERE trunktype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE trunktype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunktypePagination.DescendOrderFindByTypename" parameterClass="TrunktypePagination" resultMap="FullResultMap" extends="Trunktype.FindAll">
+			WHERE trunktype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunktype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunktype WHERE trunktype.typename=#Typename#
 		</select>
 		<insert id="Trunktype.Insert" parameterClass="Trunktype">
 			INSERT INTO trunktype (id,typename) VALUES (#Id#,#Typename#)

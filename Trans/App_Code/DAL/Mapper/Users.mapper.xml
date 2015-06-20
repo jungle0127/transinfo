@@ -22,47 +22,113 @@
 		<select id="Users.FindAll" resultMap="FullResultMap">
 			SELECT * FROM users
 		</select>
+		<select id="Users.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM users ORDER BY id DESC
+		</select>
 		<select id="Users.FindAllPagination" parameterClass="UsersPagination" resultMap="FullResultMap">
 			SELECT * FROM users limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.DescendOrderFindAllPagination" parameterClass="UsersPagination" resultMap="FullResultMap">
+			SELECT * FROM users ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Users.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.active = #value#
 		</select>
+		<select id="Users.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.active = #value# ORDER BY id DESC
+		</select>
 		<select id="UsersPagination.FindByActive" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
-			WHERE users.active = #Active# limit #Limit# offset #Offset# 
+			WHERE users.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UsersPagination.DescendOrderFindByActive" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.active=#Active#
 		</select>
 		<select id="Users.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.username = #value#
 		</select>
+		<select id="Users.DescendOrderFindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.username = #value# ORDER BY id DESC
+		</select>
 		<select id="UsersPagination.FindByUsername" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
-			WHERE users.username = #Username# limit #Limit# offset #Offset# 
+			WHERE users.username = #Username# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UsersPagination.DescendOrderFindByUsername" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.username = #Username# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.GetFindByUsernameCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.username=#Username#
 		</select>
 		<select id="Users.Find" parameterClass="Users" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.id=#Id#
 		</select>
+		<select id="Users.DescendOrderFind" parameterClass="Users" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Users.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.id=#Id#
+		</select>
 		<select id="Users.FindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.roleid = #value#
 		</select>
+		<select id="Users.DescendOrderFindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.roleid = #value# ORDER BY id DESC
+		</select>
 		<select id="UsersPagination.FindByRoleid" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
-			WHERE users.roleid = #Roleid# limit #Limit# offset #Offset# 
+			WHERE users.roleid = #Roleid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UsersPagination.DescendOrderFindByRoleid" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.roleid = #Roleid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.GetFindByRoleidCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.roleid=#Roleid#
 		</select>
 		<select id="Users.FindByLoginname" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.loginname = #value#
 		</select>
+		<select id="Users.DescendOrderFindByLoginname" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.loginname = #value# ORDER BY id DESC
+		</select>
 		<select id="UsersPagination.FindByLoginname" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
-			WHERE users.loginname = #Loginname# limit #Limit# offset #Offset# 
+			WHERE users.loginname = #Loginname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UsersPagination.DescendOrderFindByLoginname" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.loginname = #Loginname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.GetFindByLoginnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.loginname=#Loginname#
 		</select>
 		<select id="Users.FindByNote" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.note = #value#
 		</select>
+		<select id="Users.DescendOrderFindByNote" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.note = #value# ORDER BY id DESC
+		</select>
 		<select id="UsersPagination.FindByNote" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
-			WHERE users.note = #Note# limit #Limit# offset #Offset# 
+			WHERE users.note = #Note# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UsersPagination.DescendOrderFindByNote" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.note = #Note# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.GetFindByNoteCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.note=#Note#
 		</select>
 		<select id="Users.FindByPassword" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
 			WHERE users.password = #value#
 		</select>
+		<select id="Users.DescendOrderFindByPassword" parameterClass="String" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.password = #value# ORDER BY id DESC
+		</select>
 		<select id="UsersPagination.FindByPassword" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
-			WHERE users.password = #Password# limit #Limit# offset #Offset# 
+			WHERE users.password = #Password# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UsersPagination.DescendOrderFindByPassword" parameterClass="UsersPagination" resultMap="FullResultMap" extends="Users.FindAll">
+			WHERE users.password = #Password# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Users.GetFindByPasswordCount" resultClass="System.Int32">
+			SELECT count(*) FROM users WHERE users.password=#Password#
 		</select>
 		<insert id="Users.Insert" parameterClass="Users">
 			INSERT INTO users (active,username,id,roleid,loginname,note,password) VALUES (#Active#,#Username#,#Id#,#Roleid#,#Loginname#,#Note#,#Password#)

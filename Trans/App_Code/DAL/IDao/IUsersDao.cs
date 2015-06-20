@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Users Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Users> FindAll();
 
 		IList<Users> PaginationFindAll(UsersPagination obj);
@@ -21,25 +23,37 @@ namespace Trans.DAL.Dao
 
 		IList<Users> PaginationFindByActive(UsersPagination obj);
 
+		int FindCountByActive(Users obj);
+
 		IList<Users> FindByUsername(String username);
 
 		IList<Users> PaginationFindByUsername(UsersPagination obj);
+
+		int FindCountByUsername(Users obj);
 
 		IList<Users> FindByRoleid(Int64 roleid);
 
 		IList<Users> PaginationFindByRoleid(UsersPagination obj);
 
+		int FindCountByRoleid(Users obj);
+
 		IList<Users> FindByLoginname(String loginname);
 
 		IList<Users> PaginationFindByLoginname(UsersPagination obj);
+
+		int FindCountByLoginname(Users obj);
 
 		IList<Users> FindByNote(String note);
 
 		IList<Users> PaginationFindByNote(UsersPagination obj);
 
+		int FindCountByNote(Users obj);
+
 		IList<Users> FindByPassword(String password);
 
 		IList<Users> PaginationFindByPassword(UsersPagination obj);
+
+		int FindCountByPassword(Users obj);
 
 		void Insert(Users obj);
 

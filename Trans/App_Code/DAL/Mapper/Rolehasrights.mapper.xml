@@ -19,29 +19,68 @@
 		<select id="Rolehasrights.FindAll" resultMap="FullResultMap">
 			SELECT * FROM role_has_rights
 		</select>
+		<select id="Rolehasrights.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM role_has_rights ORDER BY id DESC
+		</select>
 		<select id="Rolehasrights.FindAllPagination" parameterClass="RolehasrightsPagination" resultMap="FullResultMap">
 			SELECT * FROM role_has_rights limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rolehasrights.DescendOrderFindAllPagination" parameterClass="RolehasrightsPagination" resultMap="FullResultMap">
+			SELECT * FROM role_has_rights ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Rolehasrights.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
 			WHERE role_has_rights.active = #value#
 		</select>
+		<select id="Rolehasrights.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.active = #value# ORDER BY id DESC
+		</select>
 		<select id="RolehasrightsPagination.FindByActive" parameterClass="RolehasrightsPagination" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
-			WHERE role_has_rights.active = #Active# limit #Limit# offset #Offset# 
+			WHERE role_has_rights.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RolehasrightsPagination.DescendOrderFindByActive" parameterClass="RolehasrightsPagination" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rolehasrights.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM role_has_rights WHERE role_has_rights.active=#Active#
 		</select>
 		<select id="Rolehasrights.Find" parameterClass="Rolehasrights" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
 			WHERE role_has_rights.id=#Id#
 		</select>
+		<select id="Rolehasrights.DescendOrderFind" parameterClass="Rolehasrights" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Rolehasrights.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM role_has_rights WHERE role_has_rights.id=#Id#
+		</select>
 		<select id="Rolehasrights.FindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
 			WHERE role_has_rights.rightid = #value#
 		</select>
+		<select id="Rolehasrights.DescendOrderFindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.rightid = #value# ORDER BY id DESC
+		</select>
 		<select id="RolehasrightsPagination.FindByRightid" parameterClass="RolehasrightsPagination" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
-			WHERE role_has_rights.rightid = #Rightid# limit #Limit# offset #Offset# 
+			WHERE role_has_rights.rightid = #Rightid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RolehasrightsPagination.DescendOrderFindByRightid" parameterClass="RolehasrightsPagination" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.rightid = #Rightid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rolehasrights.GetFindByRightidCount" resultClass="System.Int32">
+			SELECT count(*) FROM role_has_rights WHERE role_has_rights.rightid=#Rightid#
 		</select>
 		<select id="Rolehasrights.FindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
 			WHERE role_has_rights.roleid = #value#
 		</select>
+		<select id="Rolehasrights.DescendOrderFindByRoleid" parameterClass="Int64" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.roleid = #value# ORDER BY id DESC
+		</select>
 		<select id="RolehasrightsPagination.FindByRoleid" parameterClass="RolehasrightsPagination" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
-			WHERE role_has_rights.roleid = #Roleid# limit #Limit# offset #Offset# 
+			WHERE role_has_rights.roleid = #Roleid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RolehasrightsPagination.DescendOrderFindByRoleid" parameterClass="RolehasrightsPagination" resultMap="FullResultMap" extends="Rolehasrights.FindAll">
+			WHERE role_has_rights.roleid = #Roleid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rolehasrights.GetFindByRoleidCount" resultClass="System.Int32">
+			SELECT count(*) FROM role_has_rights WHERE role_has_rights.roleid=#Roleid#
 		</select>
 		<insert id="Rolehasrights.Insert" parameterClass="Rolehasrights">
 			INSERT INTO role_has_rights (active,id,rightid,roleid) VALUES (#Active#,#Id#,#Rightid#,#Roleid#)

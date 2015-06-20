@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Cautiontype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Cautiontype> FindAll();
 
 		IList<Cautiontype> PaginationFindAll(CautiontypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Cautiontype> FindByTypename(String typename);
 
 		IList<Cautiontype> PaginationFindByTypename(CautiontypePagination obj);
+
+		int FindCountByTypename(Cautiontype obj);
 
 		void Insert(Cautiontype obj);
 

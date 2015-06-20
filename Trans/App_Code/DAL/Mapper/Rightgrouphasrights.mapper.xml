@@ -19,29 +19,68 @@
 		<select id="Rightgrouphasrights.FindAll" resultMap="FullResultMap">
 			SELECT * FROM rightgroup_has_rights
 		</select>
+		<select id="Rightgrouphasrights.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM rightgroup_has_rights ORDER BY id DESC
+		</select>
 		<select id="Rightgrouphasrights.FindAllPagination" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap">
 			SELECT * FROM rightgroup_has_rights limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgrouphasrights.DescendOrderFindAllPagination" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap">
+			SELECT * FROM rightgroup_has_rights ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Rightgrouphasrights.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
 			WHERE rightgroup_has_rights.active = #value#
 		</select>
+		<select id="Rightgrouphasrights.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.active = #value# ORDER BY id DESC
+		</select>
 		<select id="RightgrouphasrightsPagination.FindByActive" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
-			WHERE rightgroup_has_rights.active = #Active# limit #Limit# offset #Offset# 
+			WHERE rightgroup_has_rights.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightgrouphasrightsPagination.DescendOrderFindByActive" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgrouphasrights.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup_has_rights WHERE rightgroup_has_rights.active=#Active#
 		</select>
 		<select id="Rightgrouphasrights.Find" parameterClass="Rightgrouphasrights" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
 			WHERE rightgroup_has_rights.id=#Id#
 		</select>
+		<select id="Rightgrouphasrights.DescendOrderFind" parameterClass="Rightgrouphasrights" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Rightgrouphasrights.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup_has_rights WHERE rightgroup_has_rights.id=#Id#
+		</select>
 		<select id="Rightgrouphasrights.FindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
 			WHERE rightgroup_has_rights.rightid = #value#
 		</select>
+		<select id="Rightgrouphasrights.DescendOrderFindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.rightid = #value# ORDER BY id DESC
+		</select>
 		<select id="RightgrouphasrightsPagination.FindByRightid" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
-			WHERE rightgroup_has_rights.rightid = #Rightid# limit #Limit# offset #Offset# 
+			WHERE rightgroup_has_rights.rightid = #Rightid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightgrouphasrightsPagination.DescendOrderFindByRightid" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.rightid = #Rightid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgrouphasrights.GetFindByRightidCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup_has_rights WHERE rightgroup_has_rights.rightid=#Rightid#
 		</select>
 		<select id="Rightgrouphasrights.FindByGroupid" parameterClass="Int64" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
 			WHERE rightgroup_has_rights.groupid = #value#
 		</select>
+		<select id="Rightgrouphasrights.DescendOrderFindByGroupid" parameterClass="Int64" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.groupid = #value# ORDER BY id DESC
+		</select>
 		<select id="RightgrouphasrightsPagination.FindByGroupid" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
-			WHERE rightgroup_has_rights.groupid = #Groupid# limit #Limit# offset #Offset# 
+			WHERE rightgroup_has_rights.groupid = #Groupid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightgrouphasrightsPagination.DescendOrderFindByGroupid" parameterClass="RightgrouphasrightsPagination" resultMap="FullResultMap" extends="Rightgrouphasrights.FindAll">
+			WHERE rightgroup_has_rights.groupid = #Groupid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgrouphasrights.GetFindByGroupidCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup_has_rights WHERE rightgroup_has_rights.groupid=#Groupid#
 		</select>
 		<insert id="Rightgrouphasrights.Insert" parameterClass="Rightgrouphasrights">
 			INSERT INTO rightgroup_has_rights (active,id,rightid,groupid) VALUES (#Active#,#Id#,#Rightid#,#Groupid#)

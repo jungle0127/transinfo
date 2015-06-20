@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Evaluatetype result = this.sqlMapper.QueryForObject<Evaluatetype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Evaluatetype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Evaluatetype> FindAll() {
 			String stmtId = "Evaluatetype.FindAll";
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Evaluatetype obj){
+			String stmtId = "Evaluatetype.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Evaluatetype> FindByName(String name) {
 			String stmtId = "Evaluatetype.FindByName";
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, name);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByName(Evaluatetype obj){
+			String stmtId = "Evaluatetype.GetFindByNameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Evaluatetype obj) {
 			String stmtId = "Evaluatetype.Update";
 			this.sqlMapper.Update(stmtId, obj);

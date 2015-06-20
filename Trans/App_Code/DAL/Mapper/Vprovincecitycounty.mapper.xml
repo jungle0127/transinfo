@@ -22,50 +22,119 @@
 		<select id="Vprovincecitycounty.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_provincecitycounty
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_provincecitycounty ORDER BY id DESC
+		</select>
 		<select id="Vprovincecitycounty.FindAllPagination" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap">
 			SELECT * FROM v_provincecitycounty limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindAllPagination" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap">
+			SELECT * FROM v_provincecitycounty ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vprovincecitycounty.FindByFullname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.fullname = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByFullname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.fullname = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByFullname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.fullname = #Fullname# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.fullname = #Fullname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByFullname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.fullname = #Fullname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByFullnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.fullname=#Fullname#
 		</select>
 		<select id="Vprovincecitycounty.FindByCityname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.cityname = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByCityname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.cityname = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByCityname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.cityname = #Cityname# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.cityname = #Cityname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByCityname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.cityname = #Cityname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByCitynameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.cityname=#Cityname#
 		</select>
 		<select id="Vprovincecitycounty.FindByProvincecode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.provincecode = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByProvincecode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincecode = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByProvincecode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.provincecode = #Provincecode# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.provincecode = #Provincecode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByProvincecode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincecode = #Provincecode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByProvincecodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.provincecode=#Provincecode#
 		</select>
 		<select id="Vprovincecitycounty.FindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.citycode = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.citycode = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByCitycode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.citycode = #Citycode# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.citycode = #Citycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByCitycode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.citycode = #Citycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByCitycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.citycode=#Citycode#
 		</select>
 		<select id="Vprovincecitycounty.FindByCountyname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.countyname = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByCountyname" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countyname = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByCountyname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.countyname = #Countyname# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.countyname = #Countyname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByCountyname" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countyname = #Countyname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByCountynameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.countyname=#Countyname#
 		</select>
 		<select id="Vprovincecitycounty.FindByProvincename" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.provincename = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByProvincename" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincename = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByProvincename" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.provincename = #Provincename# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.provincename = #Provincename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByProvincename" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.provincename = #Provincename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByProvincenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.provincename=#Provincename#
 		</select>
 		<select id="Vprovincecitycounty.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
 			WHERE v_provincecitycounty.countycode = #value#
 		</select>
+		<select id="Vprovincecitycounty.DescendOrderFindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countycode = #value# ORDER BY id DESC
+		</select>
 		<select id="VprovincecitycountyPagination.FindByCountycode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
-			WHERE v_provincecitycounty.countycode = #Countycode# limit #Limit# offset #Offset# 
+			WHERE v_provincecitycounty.countycode = #Countycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VprovincecitycountyPagination.DescendOrderFindByCountycode" parameterClass="VprovincecitycountyPagination" resultMap="FullResultMap" extends="Vprovincecitycounty.FindAll">
+			WHERE v_provincecitycounty.countycode = #Countycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vprovincecitycounty.GetFindByCountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_provincecitycounty WHERE v_provincecitycounty.countycode=#Countycode#
 		</select>
 	</statements>
 </sqlMap>

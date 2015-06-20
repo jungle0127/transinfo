@@ -20,35 +20,83 @@
 		<select id="Trunknumber.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunknumber
 		</select>
+		<select id="Trunknumber.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunknumber ORDER BY id DESC
+		</select>
 		<select id="Trunknumber.FindAllPagination" parameterClass="TrunknumberPagination" resultMap="FullResultMap">
 			SELECT * FROM trunknumber limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumber.DescendOrderFindAllPagination" parameterClass="TrunknumberPagination" resultMap="FullResultMap">
+			SELECT * FROM trunknumber ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunknumber.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Trunknumber.FindAll">
 			WHERE trunknumber.number = #value#
 		</select>
+		<select id="Trunknumber.DescendOrderFindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.number = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunknumberPagination.FindByNumber" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
-			WHERE trunknumber.number = #Number# limit #Limit# offset #Offset# 
+			WHERE trunknumber.number = #Number# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunknumberPagination.DescendOrderFindByNumber" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.number = #Number# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumber.GetFindByNumberCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumber WHERE trunknumber.number=#Number#
 		</select>
 		<select id="Trunknumber.Find" parameterClass="Trunknumber" resultMap="FullResultMap" extends="Trunknumber.FindAll">
 			WHERE trunknumber.id=#Id#
 		</select>
+		<select id="Trunknumber.DescendOrderFind" parameterClass="Trunknumber" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunknumber.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumber WHERE trunknumber.id=#Id#
+		</select>
 		<select id="Trunknumber.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunknumber.FindAll">
 			WHERE trunknumber.userid = #value#
 		</select>
+		<select id="Trunknumber.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunknumberPagination.FindByUserid" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
-			WHERE trunknumber.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE trunknumber.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunknumberPagination.DescendOrderFindByUserid" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumber.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumber WHERE trunknumber.userid=#Userid#
 		</select>
 		<select id="Trunknumber.FindByPrefixid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunknumber.FindAll">
 			WHERE trunknumber.prefixid = #value#
 		</select>
+		<select id="Trunknumber.DescendOrderFindByPrefixid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.prefixid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunknumberPagination.FindByPrefixid" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
-			WHERE trunknumber.prefixid = #Prefixid# limit #Limit# offset #Offset# 
+			WHERE trunknumber.prefixid = #Prefixid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunknumberPagination.DescendOrderFindByPrefixid" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.prefixid = #Prefixid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumber.GetFindByPrefixidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumber WHERE trunknumber.prefixid=#Prefixid#
 		</select>
 		<select id="Trunknumber.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunknumber.FindAll">
 			WHERE trunknumber.active = #value#
 		</select>
+		<select id="Trunknumber.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.active = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunknumberPagination.FindByActive" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
-			WHERE trunknumber.active = #Active# limit #Limit# offset #Offset# 
+			WHERE trunknumber.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunknumberPagination.DescendOrderFindByActive" parameterClass="TrunknumberPagination" resultMap="FullResultMap" extends="Trunknumber.FindAll">
+			WHERE trunknumber.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumber.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumber WHERE trunknumber.active=#Active#
 		</select>
 		<insert id="Trunknumber.Insert" parameterClass="Trunknumber">
 			INSERT INTO trunknumber (number,id,userid,prefixid,active) VALUES (#Number#,#Id#,#Userid#,#Prefixid#,#Active#)

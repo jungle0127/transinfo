@@ -17,17 +17,38 @@
 		<select id="Trunknumberprefix.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunknumberprefix
 		</select>
+		<select id="Trunknumberprefix.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunknumberprefix ORDER BY id DESC
+		</select>
 		<select id="Trunknumberprefix.FindAllPagination" parameterClass="TrunknumberprefixPagination" resultMap="FullResultMap">
 			SELECT * FROM trunknumberprefix limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumberprefix.DescendOrderFindAllPagination" parameterClass="TrunknumberprefixPagination" resultMap="FullResultMap">
+			SELECT * FROM trunknumberprefix ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunknumberprefix.Find" parameterClass="Trunknumberprefix" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
 			WHERE trunknumberprefix.id=#Id#
 		</select>
+		<select id="Trunknumberprefix.DescendOrderFind" parameterClass="Trunknumberprefix" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
+			WHERE trunknumberprefix.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunknumberprefix.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumberprefix WHERE trunknumberprefix.id=#Id#
+		</select>
 		<select id="Trunknumberprefix.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
 			WHERE trunknumberprefix.prefixname = #value#
 		</select>
+		<select id="Trunknumberprefix.DescendOrderFindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
+			WHERE trunknumberprefix.prefixname = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunknumberprefixPagination.FindByPrefixname" parameterClass="TrunknumberprefixPagination" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
-			WHERE trunknumberprefix.prefixname = #Prefixname# limit #Limit# offset #Offset# 
+			WHERE trunknumberprefix.prefixname = #Prefixname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunknumberprefixPagination.DescendOrderFindByPrefixname" parameterClass="TrunknumberprefixPagination" resultMap="FullResultMap" extends="Trunknumberprefix.FindAll">
+			WHERE trunknumberprefix.prefixname = #Prefixname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunknumberprefix.GetFindByPrefixnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunknumberprefix WHERE trunknumberprefix.prefixname=#Prefixname#
 		</select>
 		<insert id="Trunknumberprefix.Insert" parameterClass="Trunknumberprefix">
 			INSERT INTO trunknumberprefix (id,prefixname) VALUES (#Id#,#Prefixname#)

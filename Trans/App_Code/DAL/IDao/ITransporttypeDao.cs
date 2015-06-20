@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Transporttype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Transporttype> FindAll();
 
 		IList<Transporttype> PaginationFindAll(TransporttypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Transporttype> FindByTypename(String typename);
 
 		IList<Transporttype> PaginationFindByTypename(TransporttypePagination obj);
+
+		int FindCountByTypename(Transporttype obj);
 
 		void Insert(Transporttype obj);
 

@@ -29,89 +29,218 @@
 		<select id="Depotinformation.FindAll" resultMap="FullResultMap">
 			SELECT * FROM depotinformation
 		</select>
+		<select id="Depotinformation.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM depotinformation ORDER BY id DESC
+		</select>
 		<select id="Depotinformation.FindAllPagination" parameterClass="DepotinformationPagination" resultMap="FullResultMap">
 			SELECT * FROM depotinformation limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.DescendOrderFindAllPagination" parameterClass="DepotinformationPagination" resultMap="FullResultMap">
+			SELECT * FROM depotinformation ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Depotinformation.FindByCellphone" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.cellphone = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByCellphone" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.cellphone = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByCellphone" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.cellphone = #Cellphone# limit #Limit# offset #Offset# 
+			WHERE depotinformation.cellphone = #Cellphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByCellphone" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.cellphone = #Cellphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByCellphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.cellphone=#Cellphone#
 		</select>
 		<select id="Depotinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.description = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.description = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByDescription" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.description = #Description# limit #Limit# offset #Offset# 
+			WHERE depotinformation.description = #Description# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByDescription" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.description = #Description# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByDescriptionCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.description=#Description#
 		</select>
 		<select id="Depotinformation.FindByValidtime" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.validtime = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByValidtime" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.validtime = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByValidtime" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.validtime = #Validtime# limit #Limit# offset #Offset# 
+			WHERE depotinformation.validtime = #Validtime# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByValidtime" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.validtime = #Validtime# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByValidtimeCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.validtime=#Validtime#
 		</select>
 		<select id="Depotinformation.FindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.contactperson = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.contactperson = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByContactperson" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.contactperson = #Contactperson# limit #Limit# offset #Offset# 
+			WHERE depotinformation.contactperson = #Contactperson# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByContactperson" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.contactperson = #Contactperson# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByContactpersonCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.contactperson=#Contactperson#
 		</select>
 		<select id="Depotinformation.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.userid = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByUserid" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE depotinformation.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByUserid" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.userid=#Userid#
 		</select>
 		<select id="Depotinformation.FindByUseablearea" parameterClass="Int32" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.useablearea = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByUseablearea" parameterClass="Int32" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.useablearea = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByUseablearea" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.useablearea = #Useablearea# limit #Limit# offset #Offset# 
+			WHERE depotinformation.useablearea = #Useablearea# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByUseablearea" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.useablearea = #Useablearea# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByUseableareaCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.useablearea=#Useablearea#
 		</select>
 		<select id="Depotinformation.FindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.price = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.price = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByPrice" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.price = #Price# limit #Limit# offset #Offset# 
+			WHERE depotinformation.price = #Price# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByPrice" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.price = #Price# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByPriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.price=#Price#
 		</select>
 		<select id="Depotinformation.FindByBizscopetype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.bizscopetype = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByBizscopetype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.bizscopetype = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByBizscopetype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.bizscopetype = #Bizscopetype# limit #Limit# offset #Offset# 
+			WHERE depotinformation.bizscopetype = #Bizscopetype# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByBizscopetype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.bizscopetype = #Bizscopetype# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByBizscopetypeCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.bizscopetype=#Bizscopetype#
 		</select>
 		<select id="Depotinformation.FindByDepottype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.depottype = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByDepottype" parameterClass="Int64" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.depottype = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByDepottype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.depottype = #Depottype# limit #Limit# offset #Offset# 
+			WHERE depotinformation.depottype = #Depottype# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByDepottype" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.depottype = #Depottype# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByDepottypeCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.depottype=#Depottype#
 		</select>
 		<select id="Depotinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.title = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.title = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByTitle" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.title = #Title# limit #Limit# offset #Offset# 
+			WHERE depotinformation.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByTitle" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.title=#Title#
 		</select>
 		<select id="Depotinformation.Find" parameterClass="Depotinformation" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.id=#Id#
 		</select>
+		<select id="Depotinformation.DescendOrderFind" parameterClass="Depotinformation" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Depotinformation.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.id=#Id#
+		</select>
 		<select id="Depotinformation.FindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.address = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.address = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByAddress" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.address = #Address# limit #Limit# offset #Offset# 
+			WHERE depotinformation.address = #Address# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByAddress" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.address = #Address# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByAddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.address=#Address#
 		</select>
 		<select id="Depotinformation.FindByArea" parameterClass="Int32" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.area = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByArea" parameterClass="Int32" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.area = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByArea" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.area = #Area# limit #Limit# offset #Offset# 
+			WHERE depotinformation.area = #Area# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByArea" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.area = #Area# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByAreaCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.area=#Area#
 		</select>
 		<select id="Depotinformation.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
 			WHERE depotinformation.countycode = #value#
 		</select>
+		<select id="Depotinformation.DescendOrderFindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.countycode = #value# ORDER BY id DESC
+		</select>
 		<select id="DepotinformationPagination.FindByCountycode" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
-			WHERE depotinformation.countycode = #Countycode# limit #Limit# offset #Offset# 
+			WHERE depotinformation.countycode = #Countycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="DepotinformationPagination.DescendOrderFindByCountycode" parameterClass="DepotinformationPagination" resultMap="FullResultMap" extends="Depotinformation.FindAll">
+			WHERE depotinformation.countycode = #Countycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Depotinformation.GetFindByCountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM depotinformation WHERE depotinformation.countycode=#Countycode#
 		</select>
 		<insert id="Depotinformation.Insert" parameterClass="Depotinformation">
 			INSERT INTO depotinformation (cellphone,description,validtime,contactperson,userid,useablearea,price,bizscopetype,depottype,title,id,address,area,countycode) VALUES (#Cellphone#,#Description#,#Validtime#,#Contactperson#,#Userid#,#Useablearea#,#Price#,#Bizscopetype#,#Depottype#,#Title#,#Id#,#Address#,#Area#,#Countycode#)

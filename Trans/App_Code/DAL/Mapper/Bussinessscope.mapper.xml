@@ -18,23 +18,53 @@
 		<select id="Bussinessscope.FindAll" resultMap="FullResultMap">
 			SELECT * FROM bussinessscope
 		</select>
+		<select id="Bussinessscope.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM bussinessscope ORDER BY id DESC
+		</select>
 		<select id="Bussinessscope.FindAllPagination" parameterClass="BussinessscopePagination" resultMap="FullResultMap">
 			SELECT * FROM bussinessscope limit #Limit# offset #Offset# 
+		</select>
+		<select id="Bussinessscope.DescendOrderFindAllPagination" parameterClass="BussinessscopePagination" resultMap="FullResultMap">
+			SELECT * FROM bussinessscope ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Bussinessscope.FindByScopename" parameterClass="String" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
 			WHERE bussinessscope.scopename = #value#
 		</select>
+		<select id="Bussinessscope.DescendOrderFindByScopename" parameterClass="String" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.scopename = #value# ORDER BY id DESC
+		</select>
 		<select id="BussinessscopePagination.FindByScopename" parameterClass="BussinessscopePagination" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
-			WHERE bussinessscope.scopename = #Scopename# limit #Limit# offset #Offset# 
+			WHERE bussinessscope.scopename = #Scopename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="BussinessscopePagination.DescendOrderFindByScopename" parameterClass="BussinessscopePagination" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.scopename = #Scopename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Bussinessscope.GetFindByScopenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM bussinessscope WHERE bussinessscope.scopename=#Scopename#
 		</select>
 		<select id="Bussinessscope.Find" parameterClass="Bussinessscope" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
 			WHERE bussinessscope.id=#Id#
 		</select>
+		<select id="Bussinessscope.DescendOrderFind" parameterClass="Bussinessscope" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Bussinessscope.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM bussinessscope WHERE bussinessscope.id=#Id#
+		</select>
 		<select id="Bussinessscope.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
 			WHERE bussinessscope.active = #value#
 		</select>
+		<select id="Bussinessscope.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.active = #value# ORDER BY id DESC
+		</select>
 		<select id="BussinessscopePagination.FindByActive" parameterClass="BussinessscopePagination" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
-			WHERE bussinessscope.active = #Active# limit #Limit# offset #Offset# 
+			WHERE bussinessscope.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="BussinessscopePagination.DescendOrderFindByActive" parameterClass="BussinessscopePagination" resultMap="FullResultMap" extends="Bussinessscope.FindAll">
+			WHERE bussinessscope.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Bussinessscope.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM bussinessscope WHERE bussinessscope.active=#Active#
 		</select>
 		<insert id="Bussinessscope.Insert" parameterClass="Bussinessscope">
 			INSERT INTO bussinessscope (scopename,id,active) VALUES (#Scopename#,#Id#,#Active#)

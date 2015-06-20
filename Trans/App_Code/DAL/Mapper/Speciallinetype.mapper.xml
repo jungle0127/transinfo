@@ -17,17 +17,38 @@
 		<select id="Speciallinetype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM speciallinetype
 		</select>
+		<select id="Speciallinetype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM speciallinetype ORDER BY id DESC
+		</select>
 		<select id="Speciallinetype.FindAllPagination" parameterClass="SpeciallinetypePagination" resultMap="FullResultMap">
 			SELECT * FROM speciallinetype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallinetype.DescendOrderFindAllPagination" parameterClass="SpeciallinetypePagination" resultMap="FullResultMap">
+			SELECT * FROM speciallinetype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Speciallinetype.Find" parameterClass="Speciallinetype" resultMap="FullResultMap" extends="Speciallinetype.FindAll">
 			WHERE speciallinetype.id=#Id#
 		</select>
+		<select id="Speciallinetype.DescendOrderFind" parameterClass="Speciallinetype" resultMap="FullResultMap" extends="Speciallinetype.FindAll">
+			WHERE speciallinetype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Speciallinetype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallinetype WHERE speciallinetype.id=#Id#
+		</select>
 		<select id="Speciallinetype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Speciallinetype.FindAll">
 			WHERE speciallinetype.typename = #value#
 		</select>
+		<select id="Speciallinetype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Speciallinetype.FindAll">
+			WHERE speciallinetype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallinetypePagination.FindByTypename" parameterClass="SpeciallinetypePagination" resultMap="FullResultMap" extends="Speciallinetype.FindAll">
-			WHERE speciallinetype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE speciallinetype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallinetypePagination.DescendOrderFindByTypename" parameterClass="SpeciallinetypePagination" resultMap="FullResultMap" extends="Speciallinetype.FindAll">
+			WHERE speciallinetype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallinetype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallinetype WHERE speciallinetype.typename=#Typename#
 		</select>
 		<insert id="Speciallinetype.Insert" parameterClass="Speciallinetype">
 			INSERT INTO speciallinetype (id,typename) VALUES (#Id#,#Typename#)

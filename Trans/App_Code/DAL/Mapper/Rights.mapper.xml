@@ -19,29 +19,68 @@
 		<select id="Rights.FindAll" resultMap="FullResultMap">
 			SELECT * FROM rights
 		</select>
+		<select id="Rights.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM rights ORDER BY id DESC
+		</select>
 		<select id="Rights.FindAllPagination" parameterClass="RightsPagination" resultMap="FullResultMap">
 			SELECT * FROM rights limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.DescendOrderFindAllPagination" parameterClass="RightsPagination" resultMap="FullResultMap">
+			SELECT * FROM rights ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Rights.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rights.FindAll">
 			WHERE rights.active = #value#
 		</select>
+		<select id="Rights.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.active = #value# ORDER BY id DESC
+		</select>
 		<select id="RightsPagination.FindByActive" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
-			WHERE rights.active = #Active# limit #Limit# offset #Offset# 
+			WHERE rights.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightsPagination.DescendOrderFindByActive" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM rights WHERE rights.active=#Active#
 		</select>
 		<select id="Rights.Find" parameterClass="Rights" resultMap="FullResultMap" extends="Rights.FindAll">
 			WHERE rights.id=#Id#
 		</select>
+		<select id="Rights.DescendOrderFind" parameterClass="Rights" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Rights.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM rights WHERE rights.id=#Id#
+		</select>
 		<select id="Rights.FindByRighturl" parameterClass="String" resultMap="FullResultMap" extends="Rights.FindAll">
 			WHERE rights.righturl = #value#
 		</select>
+		<select id="Rights.DescendOrderFindByRighturl" parameterClass="String" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.righturl = #value# ORDER BY id DESC
+		</select>
 		<select id="RightsPagination.FindByRighturl" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
-			WHERE rights.righturl = #Righturl# limit #Limit# offset #Offset# 
+			WHERE rights.righturl = #Righturl# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightsPagination.DescendOrderFindByRighturl" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.righturl = #Righturl# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.GetFindByRighturlCount" resultClass="System.Int32">
+			SELECT count(*) FROM rights WHERE rights.righturl=#Righturl#
 		</select>
 		<select id="Rights.FindByRightname" parameterClass="String" resultMap="FullResultMap" extends="Rights.FindAll">
 			WHERE rights.rightname = #value#
 		</select>
+		<select id="Rights.DescendOrderFindByRightname" parameterClass="String" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.rightname = #value# ORDER BY id DESC
+		</select>
 		<select id="RightsPagination.FindByRightname" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
-			WHERE rights.rightname = #Rightname# limit #Limit# offset #Offset# 
+			WHERE rights.rightname = #Rightname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightsPagination.DescendOrderFindByRightname" parameterClass="RightsPagination" resultMap="FullResultMap" extends="Rights.FindAll">
+			WHERE rights.rightname = #Rightname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rights.GetFindByRightnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM rights WHERE rights.rightname=#Rightname#
 		</select>
 		<insert id="Rights.Insert" parameterClass="Rights">
 			INSERT INTO rights (active,id,righturl,rightname) VALUES (#Active#,#Id#,#Righturl#,#Rightname#)

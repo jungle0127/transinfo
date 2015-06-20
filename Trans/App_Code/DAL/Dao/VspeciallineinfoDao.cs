@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Vspeciallineinfo result = this.sqlMapper.QueryForObject<Vspeciallineinfo>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Vspeciallineinfo.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindAll() {
 			String stmtId = "Vspeciallineinfo.FindAll";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleasedate(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySpeciallinetypename(String speciallinetypename) {
 			String stmtId = "Vspeciallineinfo.FindBySpeciallinetypename";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypename);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySpeciallinetypename(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySpeciallinetypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrccontactpersonname(String srccontactpersonname) {
 			String stmtId = "Vspeciallineinfo.FindBySrccontactpersonname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactpersonname);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccontactpersonname(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrccontactpersonnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDescription(String description) {
 			String stmtId = "Vspeciallineinfo.FindByDescription";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, description);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDescription(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDescriptionCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByUserid(Int64 userid) {
 			String stmtId = "Vspeciallineinfo.FindByUserid";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, userid);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrccontactphone(String srccontactphone) {
 			String stmtId = "Vspeciallineinfo.FindBySrccontactphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactphone);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccontactphone(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrccontactphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByVolumeprice(Int32 volumeprice) {
 			String stmtId = "Vspeciallineinfo.FindByVolumeprice";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, volumeprice);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByVolumeprice(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByVolumepriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstcontactpersonname(String dstcontactpersonname) {
 			String stmtId = "Vspeciallineinfo.FindByDstcontactpersonname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactpersonname);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcontactpersonname(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstcontactpersonnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrcplaceaddress(String srcplaceaddress) {
 			String stmtId = "Vspeciallineinfo.FindBySrcplaceaddress";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srcplaceaddress);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrcplaceaddress(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrcplaceaddressCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByWeightprice(Int32 weightprice) {
 			String stmtId = "Vspeciallineinfo.FindByWeightprice";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, weightprice);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByWeightprice(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByWeightpriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrccontactcellphone(String srccontactcellphone) {
 			String stmtId = "Vspeciallineinfo.FindBySrccontactcellphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactcellphone);
@@ -152,6 +207,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccontactcellphone(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrccontactcellphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrccityname(String srccityname) {
 			String stmtId = "Vspeciallineinfo.FindBySrccityname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccityname);
@@ -162,6 +222,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccityname(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrccitynameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrccitycode(String srccitycode) {
 			String stmtId = "Vspeciallineinfo.FindBySrccitycode";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccitycode);
@@ -172,6 +237,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccitycode(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrccitycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindBySrcregionname(String srcregionname) {
 			String stmtId = "Vspeciallineinfo.FindBySrcregionname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srcregionname);
@@ -182,6 +252,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrcregionname(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySrcregionnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstcontactphone(String dstcontactphone) {
 			String stmtId = "Vspeciallineinfo.FindByDstcontactphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactphone);
@@ -192,6 +267,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcontactphone(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstcontactphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindById(Int64 id) {
 			String stmtId = "Vspeciallineinfo.FindById";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, id);
@@ -202,6 +282,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountById(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstregionname(String dstregionname) {
 			String stmtId = "Vspeciallineinfo.FindByDstregionname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstregionname);
@@ -212,6 +297,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstregionname(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstregionnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDeparturetypename(String departuretypename) {
 			String stmtId = "Vspeciallineinfo.FindByDeparturetypename";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, departuretypename);
@@ -222,6 +312,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDeparturetypename(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDeparturetypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstplaceaddress(String dstplaceaddress) {
 			String stmtId = "Vspeciallineinfo.FindByDstplaceaddress";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstplaceaddress);
@@ -232,6 +327,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstplaceaddress(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstplaceaddressCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstcityname(String dstcityname) {
 			String stmtId = "Vspeciallineinfo.FindByDstcityname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcityname);
@@ -242,6 +342,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcityname(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstcitynameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstcitycode(String dstcitycode) {
 			String stmtId = "Vspeciallineinfo.FindByDstcitycode";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcitycode);
@@ -252,6 +357,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcitycode(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstcitycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByTitle(String title) {
 			String stmtId = "Vspeciallineinfo.FindByTitle";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, title);
@@ -262,6 +372,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDstcontactcellphone(String dstcontactcellphone) {
 			String stmtId = "Vspeciallineinfo.FindByDstcontactcellphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactcellphone);
@@ -272,6 +387,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcontactcellphone(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDstcontactcellphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByUsername(String username) {
 			String stmtId = "Vspeciallineinfo.FindByUsername";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, username);
@@ -282,6 +402,11 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUsername(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByUsernameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Vspeciallineinfo obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Vspeciallineinfo.Find";

@@ -18,23 +18,53 @@
 		<select id="Role.FindAll" resultMap="FullResultMap">
 			SELECT * FROM role
 		</select>
+		<select id="Role.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM role ORDER BY id DESC
+		</select>
 		<select id="Role.FindAllPagination" parameterClass="RolePagination" resultMap="FullResultMap">
 			SELECT * FROM role limit #Limit# offset #Offset# 
+		</select>
+		<select id="Role.DescendOrderFindAllPagination" parameterClass="RolePagination" resultMap="FullResultMap">
+			SELECT * FROM role ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Role.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Role.FindAll">
 			WHERE role.active = #value#
 		</select>
+		<select id="Role.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.active = #value# ORDER BY id DESC
+		</select>
 		<select id="RolePagination.FindByActive" parameterClass="RolePagination" resultMap="FullResultMap" extends="Role.FindAll">
-			WHERE role.active = #Active# limit #Limit# offset #Offset# 
+			WHERE role.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RolePagination.DescendOrderFindByActive" parameterClass="RolePagination" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Role.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM role WHERE role.active=#Active#
 		</select>
 		<select id="Role.Find" parameterClass="Role" resultMap="FullResultMap" extends="Role.FindAll">
 			WHERE role.id=#Id#
 		</select>
+		<select id="Role.DescendOrderFind" parameterClass="Role" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Role.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM role WHERE role.id=#Id#
+		</select>
 		<select id="Role.FindByRolename" parameterClass="String" resultMap="FullResultMap" extends="Role.FindAll">
 			WHERE role.rolename = #value#
 		</select>
+		<select id="Role.DescendOrderFindByRolename" parameterClass="String" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.rolename = #value# ORDER BY id DESC
+		</select>
 		<select id="RolePagination.FindByRolename" parameterClass="RolePagination" resultMap="FullResultMap" extends="Role.FindAll">
-			WHERE role.rolename = #Rolename# limit #Limit# offset #Offset# 
+			WHERE role.rolename = #Rolename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RolePagination.DescendOrderFindByRolename" parameterClass="RolePagination" resultMap="FullResultMap" extends="Role.FindAll">
+			WHERE role.rolename = #Rolename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Role.GetFindByRolenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM role WHERE role.rolename=#Rolename#
 		</select>
 		<insert id="Role.Insert" parameterClass="Role">
 			INSERT INTO role (active,id,rolename) VALUES (#Active#,#Id#,#Rolename#)

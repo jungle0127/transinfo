@@ -18,23 +18,53 @@
 		<select id="Rightgroup.FindAll" resultMap="FullResultMap">
 			SELECT * FROM rightgroup
 		</select>
+		<select id="Rightgroup.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM rightgroup ORDER BY id DESC
+		</select>
 		<select id="Rightgroup.FindAllPagination" parameterClass="RightgroupPagination" resultMap="FullResultMap">
 			SELECT * FROM rightgroup limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgroup.DescendOrderFindAllPagination" parameterClass="RightgroupPagination" resultMap="FullResultMap">
+			SELECT * FROM rightgroup ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Rightgroup.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rightgroup.FindAll">
 			WHERE rightgroup.active = #value#
 		</select>
+		<select id="Rightgroup.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.active = #value# ORDER BY id DESC
+		</select>
 		<select id="RightgroupPagination.FindByActive" parameterClass="RightgroupPagination" resultMap="FullResultMap" extends="Rightgroup.FindAll">
-			WHERE rightgroup.active = #Active# limit #Limit# offset #Offset# 
+			WHERE rightgroup.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightgroupPagination.DescendOrderFindByActive" parameterClass="RightgroupPagination" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgroup.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup WHERE rightgroup.active=#Active#
 		</select>
 		<select id="Rightgroup.Find" parameterClass="Rightgroup" resultMap="FullResultMap" extends="Rightgroup.FindAll">
 			WHERE rightgroup.id=#Id#
 		</select>
+		<select id="Rightgroup.DescendOrderFind" parameterClass="Rightgroup" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Rightgroup.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup WHERE rightgroup.id=#Id#
+		</select>
 		<select id="Rightgroup.FindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Rightgroup.FindAll">
 			WHERE rightgroup.groupname = #value#
 		</select>
+		<select id="Rightgroup.DescendOrderFindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.groupname = #value# ORDER BY id DESC
+		</select>
 		<select id="RightgroupPagination.FindByGroupname" parameterClass="RightgroupPagination" resultMap="FullResultMap" extends="Rightgroup.FindAll">
-			WHERE rightgroup.groupname = #Groupname# limit #Limit# offset #Offset# 
+			WHERE rightgroup.groupname = #Groupname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="RightgroupPagination.DescendOrderFindByGroupname" parameterClass="RightgroupPagination" resultMap="FullResultMap" extends="Rightgroup.FindAll">
+			WHERE rightgroup.groupname = #Groupname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Rightgroup.GetFindByGroupnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM rightgroup WHERE rightgroup.groupname=#Groupname#
 		</select>
 		<insert id="Rightgroup.Insert" parameterClass="Rightgroup">
 			INSERT INTO rightgroup (active,id,groupname) VALUES (#Active#,#Id#,#Groupname#)

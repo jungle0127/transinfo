@@ -17,17 +17,38 @@
 		<select id="Trunktimetype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunktimetype
 		</select>
+		<select id="Trunktimetype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunktimetype ORDER BY id DESC
+		</select>
 		<select id="Trunktimetype.FindAllPagination" parameterClass="TrunktimetypePagination" resultMap="FullResultMap">
 			SELECT * FROM trunktimetype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunktimetype.DescendOrderFindAllPagination" parameterClass="TrunktimetypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunktimetype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunktimetype.Find" parameterClass="Trunktimetype" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
 			WHERE trunktimetype.id=#Id#
 		</select>
+		<select id="Trunktimetype.DescendOrderFind" parameterClass="Trunktimetype" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
+			WHERE trunktimetype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunktimetype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunktimetype WHERE trunktimetype.id=#Id#
+		</select>
 		<select id="Trunktimetype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
 			WHERE trunktimetype.typename = #value#
 		</select>
+		<select id="Trunktimetype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
+			WHERE trunktimetype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunktimetypePagination.FindByTypename" parameterClass="TrunktimetypePagination" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
-			WHERE trunktimetype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE trunktimetype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunktimetypePagination.DescendOrderFindByTypename" parameterClass="TrunktimetypePagination" resultMap="FullResultMap" extends="Trunktimetype.FindAll">
+			WHERE trunktimetype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunktimetype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunktimetype WHERE trunktimetype.typename=#Typename#
 		</select>
 		<insert id="Trunktimetype.Insert" parameterClass="Trunktimetype">
 			INSERT INTO trunktimetype (id,typename) VALUES (#Id#,#Typename#)

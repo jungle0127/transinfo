@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Placeinfo result = this.sqlMapper.QueryForObject<Placeinfo>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Placeinfo.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Placeinfo> FindAll() {
 			String stmtId = "Placeinfo.FindAll";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByAddress(Placeinfo obj){
+			String stmtId = "Placeinfo.GetFindByAddressCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Placeinfo> FindByContactpersonname(String contactpersonname) {
 			String stmtId = "Placeinfo.FindByContactpersonname";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactpersonname);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContactpersonname(Placeinfo obj){
+			String stmtId = "Placeinfo.GetFindByContactpersonnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Placeinfo> FindByContactphone(String contactphone) {
 			String stmtId = "Placeinfo.FindByContactphone";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactphone);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContactphone(Placeinfo obj){
+			String stmtId = "Placeinfo.GetFindByContactphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Placeinfo> FindByContactcellphone(String contactcellphone) {
 			String stmtId = "Placeinfo.FindByContactcellphone";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactcellphone);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContactcellphone(Placeinfo obj){
+			String stmtId = "Placeinfo.GetFindByContactcellphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Placeinfo> FindByCountycode(String countycode) {
 			String stmtId = "Placeinfo.FindByCountycode";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, countycode);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCountycode(Placeinfo obj){
+			String stmtId = "Placeinfo.GetFindByCountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Placeinfo obj) {
 			String stmtId = "Placeinfo.Update";
 			this.sqlMapper.Update(stmtId, obj);

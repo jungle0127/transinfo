@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Vtrunkmetadata result = this.sqlMapper.QueryForObject<Vtrunkmetadata>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Vtrunkmetadata.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindAll() {
 			String stmtId = "Vtrunkmetadata.FindAll";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByVantypename(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByVantypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByContactpersonname(String contactpersonname) {
 			String stmtId = "Vtrunkmetadata.FindByContactpersonname";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, contactpersonname);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContactpersonname(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByContactpersonnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByTrunktypename(String trunktypename) {
 			String stmtId = "Vtrunkmetadata.FindByTrunktypename";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, trunktypename);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTrunktypename(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByTrunktypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByConatactphone(String conatactphone) {
 			String stmtId = "Vtrunkmetadata.FindByConatactphone";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, conatactphone);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByConatactphone(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByConatactphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByVolume(String volume) {
 			String stmtId = "Vtrunkmetadata.FindByVolume";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, volume);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByVolume(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByVolumeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByNumber(String number) {
 			String stmtId = "Vtrunkmetadata.FindByNumber";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, number);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNumber(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByNumberCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByBrand(String brand) {
 			String stmtId = "Vtrunkmetadata.FindByBrand";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, brand);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByBrand(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByBrandCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByLength(String length) {
 			String stmtId = "Vtrunkmetadata.FindByLength";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, length);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByLength(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByLengthCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri) {
 			String stmtId = "Vtrunkmetadata.FindByVanimageuri";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByVanimageuri(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByVanimageuriCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByCountyname(String countyname) {
 			String stmtId = "Vtrunkmetadata.FindByCountyname";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, countyname);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCountyname(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByCountynameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByWeightcapacity(String weightcapacity) {
 			String stmtId = "Vtrunkmetadata.FindByWeightcapacity";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, weightcapacity);
@@ -152,6 +207,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByWeightcapacity(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByWeightcapacityCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindById(Int64 id) {
 			String stmtId = "Vtrunkmetadata.FindById";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, id);
@@ -162,6 +222,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountById(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByPrefixname(String prefixname) {
 			String stmtId = "Vtrunkmetadata.FindByPrefixname";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, prefixname);
@@ -172,6 +237,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPrefixname(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByPrefixnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByLicenseuri(String licenseuri) {
 			String stmtId = "Vtrunkmetadata.FindByLicenseuri";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, licenseuri);
@@ -182,6 +252,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByLicenseuri(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByLicenseuriCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByTrunkidentifynumber(String trunkidentifynumber) {
 			String stmtId = "Vtrunkmetadata.FindByTrunkidentifynumber";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, trunkidentifynumber);
@@ -192,6 +267,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTrunkidentifynumber(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByTrunkidentifynumberCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByCountycode(String countycode) {
 			String stmtId = "Vtrunkmetadata.FindByCountycode";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, countycode);
@@ -202,6 +282,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCountycode(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByCountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByLocation(String location) {
 			String stmtId = "Vtrunkmetadata.FindByLocation";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, location);
@@ -212,6 +297,11 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
+		public int FindCountByLocation(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByLocationCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Vtrunkmetadata obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Vtrunkmetadata.Find";

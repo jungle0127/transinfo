@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Varticleinfo result = this.sqlMapper.QueryForObject<Varticleinfo>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Varticleinfo.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Varticleinfo> FindAll() {
 			String stmtId = "Varticleinfo.FindAll";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByHittimes(Int64 hittimes) {
 			String stmtId = "Varticleinfo.FindByHittimes";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, hittimes);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByHittimes(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByHittimesCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByUsername(String username) {
 			String stmtId = "Varticleinfo.FindByUsername";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, username);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUsername(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByUsernameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindById(Int64 id) {
 			String stmtId = "Varticleinfo.FindById";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, id);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountById(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByTitlecolor(String titlecolor) {
 			String stmtId = "Varticleinfo.FindByTitlecolor";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, titlecolor);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitlecolor(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByTitlecolorCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByTypeid(Int64 typeid) {
 			String stmtId = "Varticleinfo.FindByTypeid";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, typeid);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypeid(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByTypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByContent(String content) {
 			String stmtId = "Varticleinfo.FindByContent";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, content);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContent(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByContentCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByReleaseip(String releaseip) {
 			String stmtId = "Varticleinfo.FindByReleaseip";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, releaseip);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleaseip(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByReleaseipCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Varticleinfo> FindByReleasedate(DateTime releasedate) {
 			String stmtId = "Varticleinfo.FindByReleasedate";
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, releasedate);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Varticleinfo> result = this.sqlMapper.QueryForList<Varticleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleasedate(Varticleinfo obj){
+			String stmtId = "Varticleinfo.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Varticleinfo obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Varticleinfo.Find";

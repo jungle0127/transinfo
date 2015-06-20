@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Trunktimetype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Trunktimetype> FindAll();
 
 		IList<Trunktimetype> PaginationFindAll(TrunktimetypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Trunktimetype> FindByTypename(String typename);
 
 		IList<Trunktimetype> PaginationFindByTypename(TrunktimetypePagination obj);
+
+		int FindCountByTypename(Trunktimetype obj);
 
 		void Insert(Trunktimetype obj);
 

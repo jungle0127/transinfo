@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Depotinformation Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Depotinformation> FindAll();
 
 		IList<Depotinformation> PaginationFindAll(DepotinformationPagination obj);
@@ -21,53 +23,79 @@ namespace Trans.DAL.Dao
 
 		IList<Depotinformation> PaginationFindByCellphone(DepotinformationPagination obj);
 
+		int FindCountByCellphone(Depotinformation obj);
+
 		IList<Depotinformation> FindByDescription(String description);
 
 		IList<Depotinformation> PaginationFindByDescription(DepotinformationPagination obj);
+
+		int FindCountByDescription(Depotinformation obj);
 
 		IList<Depotinformation> FindByValidtime(String validtime);
 
 		IList<Depotinformation> PaginationFindByValidtime(DepotinformationPagination obj);
 
+		int FindCountByValidtime(Depotinformation obj);
+
 		IList<Depotinformation> FindByContactperson(String contactperson);
 
 		IList<Depotinformation> PaginationFindByContactperson(DepotinformationPagination obj);
+
+		int FindCountByContactperson(Depotinformation obj);
 
 		IList<Depotinformation> FindByUserid(Int64 userid);
 
 		IList<Depotinformation> PaginationFindByUserid(DepotinformationPagination obj);
 
+		int FindCountByUserid(Depotinformation obj);
+
 		IList<Depotinformation> FindByUseablearea(Int32 useablearea);
 
 		IList<Depotinformation> PaginationFindByUseablearea(DepotinformationPagination obj);
+
+		int FindCountByUseablearea(Depotinformation obj);
 
 		IList<Depotinformation> FindByPrice(String price);
 
 		IList<Depotinformation> PaginationFindByPrice(DepotinformationPagination obj);
 
+		int FindCountByPrice(Depotinformation obj);
+
 		IList<Depotinformation> FindByBizscopetype(Int64 bizscopetype);
 
 		IList<Depotinformation> PaginationFindByBizscopetype(DepotinformationPagination obj);
+
+		int FindCountByBizscopetype(Depotinformation obj);
 
 		IList<Depotinformation> FindByDepottype(Int64 depottype);
 
 		IList<Depotinformation> PaginationFindByDepottype(DepotinformationPagination obj);
 
+		int FindCountByDepottype(Depotinformation obj);
+
 		IList<Depotinformation> FindByTitle(String title);
 
 		IList<Depotinformation> PaginationFindByTitle(DepotinformationPagination obj);
+
+		int FindCountByTitle(Depotinformation obj);
 
 		IList<Depotinformation> FindByAddress(String address);
 
 		IList<Depotinformation> PaginationFindByAddress(DepotinformationPagination obj);
 
+		int FindCountByAddress(Depotinformation obj);
+
 		IList<Depotinformation> FindByArea(Int32 area);
 
 		IList<Depotinformation> PaginationFindByArea(DepotinformationPagination obj);
 
+		int FindCountByArea(Depotinformation obj);
+
 		IList<Depotinformation> FindByCountycode(String countycode);
 
 		IList<Depotinformation> PaginationFindByCountycode(DepotinformationPagination obj);
+
+		int FindCountByCountycode(Depotinformation obj);
 
 		void Insert(Depotinformation obj);
 

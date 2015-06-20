@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Vantype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Vantype> FindAll();
 
 		IList<Vantype> PaginationFindAll(VantypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Vantype> FindByTypename(String typename);
 
 		IList<Vantype> PaginationFindByTypename(VantypePagination obj);
+
+		int FindCountByTypename(Vantype obj);
 
 		void Reload(Vantype obj);
 	}

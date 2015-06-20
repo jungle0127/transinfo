@@ -17,17 +17,38 @@
 		<select id="Trunkreturntype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunkreturntype
 		</select>
+		<select id="Trunkreturntype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunkreturntype ORDER BY id DESC
+		</select>
 		<select id="Trunkreturntype.FindAllPagination" parameterClass="TrunkreturntypePagination" resultMap="FullResultMap">
 			SELECT * FROM trunkreturntype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkreturntype.DescendOrderFindAllPagination" parameterClass="TrunkreturntypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunkreturntype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkreturntype.Find" parameterClass="Trunkreturntype" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
 			WHERE trunkreturntype.id=#Id#
 		</select>
+		<select id="Trunkreturntype.DescendOrderFind" parameterClass="Trunkreturntype" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
+			WHERE trunkreturntype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunkreturntype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkreturntype WHERE trunkreturntype.id=#Id#
+		</select>
 		<select id="Trunkreturntype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
 			WHERE trunkreturntype.typename = #value#
 		</select>
+		<select id="Trunkreturntype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
+			WHERE trunkreturntype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkreturntypePagination.FindByTypename" parameterClass="TrunkreturntypePagination" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
-			WHERE trunkreturntype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE trunkreturntype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkreturntypePagination.DescendOrderFindByTypename" parameterClass="TrunkreturntypePagination" resultMap="FullResultMap" extends="Trunkreturntype.FindAll">
+			WHERE trunkreturntype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkreturntype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkreturntype WHERE trunkreturntype.typename=#Typename#
 		</select>
 		<insert id="Trunkreturntype.Insert" parameterClass="Trunkreturntype">
 			INSERT INTO trunkreturntype (id,typename) VALUES (#Id#,#Typename#)

@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Rolehasrights result = this.sqlMapper.QueryForObject<Rolehasrights>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Rolehasrights.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Rolehasrights> FindAll() {
 			String stmtId = "Rolehasrights.FindAll";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Rolehasrights obj){
+			String stmtId = "Rolehasrights.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rolehasrights> FindByRightid(Int64 rightid) {
 			String stmtId = "Rolehasrights.FindByRightid";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, rightid);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRightid(Rolehasrights obj){
+			String stmtId = "Rolehasrights.GetFindByRightidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rolehasrights> FindByRoleid(Int64 roleid) {
 			String stmtId = "Rolehasrights.FindByRoleid";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, roleid);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRoleid(Rolehasrights obj){
+			String stmtId = "Rolehasrights.GetFindByRoleidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Rolehasrights obj) {
 			String stmtId = "Rolehasrights.Update";
 			this.sqlMapper.Update(stmtId, obj);

@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Depotinformation result = this.sqlMapper.QueryForObject<Depotinformation>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Depotinformation.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Depotinformation> FindAll() {
 			String stmtId = "Depotinformation.FindAll";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCellphone(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByCellphoneCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByDescription(String description) {
 			String stmtId = "Depotinformation.FindByDescription";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, description);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDescription(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByDescriptionCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByValidtime(String validtime) {
 			String stmtId = "Depotinformation.FindByValidtime";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, validtime);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByValidtime(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByValidtimeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByContactperson(String contactperson) {
 			String stmtId = "Depotinformation.FindByContactperson";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, contactperson);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContactperson(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByContactpersonCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByUserid(Int64 userid) {
 			String stmtId = "Depotinformation.FindByUserid";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, userid);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByUseablearea(Int32 useablearea) {
 			String stmtId = "Depotinformation.FindByUseablearea";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, useablearea);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUseablearea(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByUseableareaCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByPrice(String price) {
 			String stmtId = "Depotinformation.FindByPrice";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, price);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPrice(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByPriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByBizscopetype(Int64 bizscopetype) {
 			String stmtId = "Depotinformation.FindByBizscopetype";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, bizscopetype);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByBizscopetype(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByBizscopetypeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByDepottype(Int64 depottype) {
 			String stmtId = "Depotinformation.FindByDepottype";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, depottype);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDepottype(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByDepottypeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByTitle(String title) {
 			String stmtId = "Depotinformation.FindByTitle";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, title);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByAddress(String address) {
 			String stmtId = "Depotinformation.FindByAddress";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, address);
@@ -152,6 +207,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByAddress(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByAddressCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByArea(Int32 area) {
 			String stmtId = "Depotinformation.FindByArea";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, area);
@@ -162,6 +222,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByArea(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByAreaCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depotinformation> FindByCountycode(String countycode) {
 			String stmtId = "Depotinformation.FindByCountycode";
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, countycode);
@@ -172,6 +237,11 @@ namespace Trans.DAL.Dao
 			IList<Depotinformation> result = this.sqlMapper.QueryForList<Depotinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCountycode(Depotinformation obj){
+			String stmtId = "Depotinformation.GetFindByCountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Depotinformation obj) {
 			String stmtId = "Depotinformation.Update";
 			this.sqlMapper.Update(stmtId, obj);

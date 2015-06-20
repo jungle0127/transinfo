@@ -19,32 +19,74 @@
 		<select id="Vvehiclenumber.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_vehicle_number
 		</select>
+		<select id="Vvehiclenumber.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_vehicle_number ORDER BY id DESC
+		</select>
 		<select id="Vvehiclenumber.FindAllPagination" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap">
 			SELECT * FROM v_vehicle_number limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.DescendOrderFindAllPagination" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap">
+			SELECT * FROM v_vehicle_number ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vvehiclenumber.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
 			WHERE v_vehicle_number.userid = #value#
 		</select>
+		<select id="Vvehiclenumber.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="VvehiclenumberPagination.FindByUserid" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
-			WHERE v_vehicle_number.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE v_vehicle_number.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VvehiclenumberPagination.DescendOrderFindByUserid" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_vehicle_number WHERE v_vehicle_number.userid=#Userid#
 		</select>
 		<select id="Vvehiclenumber.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
 			WHERE v_vehicle_number.id = #value#
 		</select>
+		<select id="Vvehiclenumber.DescendOrderFindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.id = #value# ORDER BY id DESC
+		</select>
 		<select id="VvehiclenumberPagination.FindById" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
-			WHERE v_vehicle_number.id = #Id# limit #Limit# offset #Offset# 
+			WHERE v_vehicle_number.id = #Id# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VvehiclenumberPagination.DescendOrderFindById" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.id = #Id# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.GetFindByIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_vehicle_number WHERE v_vehicle_number.id=#Id#
 		</select>
 		<select id="Vvehiclenumber.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
 			WHERE v_vehicle_number.prefixname = #value#
 		</select>
+		<select id="Vvehiclenumber.DescendOrderFindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.prefixname = #value# ORDER BY id DESC
+		</select>
 		<select id="VvehiclenumberPagination.FindByPrefixname" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
-			WHERE v_vehicle_number.prefixname = #Prefixname# limit #Limit# offset #Offset# 
+			WHERE v_vehicle_number.prefixname = #Prefixname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VvehiclenumberPagination.DescendOrderFindByPrefixname" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.prefixname = #Prefixname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.GetFindByPrefixnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_vehicle_number WHERE v_vehicle_number.prefixname=#Prefixname#
 		</select>
 		<select id="Vvehiclenumber.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
 			WHERE v_vehicle_number.number = #value#
 		</select>
+		<select id="Vvehiclenumber.DescendOrderFindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.number = #value# ORDER BY id DESC
+		</select>
 		<select id="VvehiclenumberPagination.FindByNumber" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
-			WHERE v_vehicle_number.number = #Number# limit #Limit# offset #Offset# 
+			WHERE v_vehicle_number.number = #Number# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VvehiclenumberPagination.DescendOrderFindByNumber" parameterClass="VvehiclenumberPagination" resultMap="FullResultMap" extends="Vvehiclenumber.FindAll">
+			WHERE v_vehicle_number.number = #Number# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vvehiclenumber.GetFindByNumberCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_vehicle_number WHERE v_vehicle_number.number=#Number#
 		</select>
 	</statements>
 </sqlMap>

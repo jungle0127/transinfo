@@ -763,6 +763,7 @@
     <Content Include="admin\personalinfo\updatepwd.aspx" />
     <Content Include="admin\promulagate\newslist.aspx" />
     <Content Include="admin\promulagate\newspublisher.aspx" />
+    <Content Include="admin\promulagate\NotificationList.aspx" />
     <Content Include="admin\rightmanager\addrole.aspx" />
     <Content Include="admin\rightmanager\rolemanagement.aspx" />
     <Content Include="admin\rightmanager\rolerightsmanagement.aspx" />
@@ -813,6 +814,13 @@
     </Compile>
     <Compile Include="admin\promulagate\NewsListHandler.ashx.cs">
       <DependentUpon>NewsListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\promulagate\NotificationList.aspx.cs">
+      <DependentUpon>NotificationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\promulagate\NotificationList.aspx.designer.cs">
+      <DependentUpon>NotificationList.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Biz\Common\SessionCheckPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -1216,7 +1224,11 @@
     <Content Include="InfoList\NewsList.aspx" />
     <Content Include="InfoList\SpeciallineInfoList.aspx" />
     <Content Include="InfoList\TrunkInfoList.aspx" />
+    <Content Include="InfoShow\Corporation\CompanyContact.aspx" />
+    <Content Include="InfoShow\Corporation\CompanyHornor.aspx" />
+    <Content Include="InfoShow\Corporation\CompanyIntroduction.aspx" />
     <Content Include="InfoShow\DepotInfoDetail.aspx" />
+    <Content Include="InfoShow\DetailInfoFrame.aspx" />
     <Content Include="InfoShow\GoodsInfoDetail.aspx" />
     <Content Include="InfoShow\NewsInfoDetail.aspx" />
     <Content Include="InfoShow\SpeciallineInfoDetail.aspx" />
@@ -1925,12 +1937,40 @@
     <Compile Include="InfoList\TrunkInfoList.aspx.designer.cs">
       <DependentUpon>TrunkInfoList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InfoShow\Corporation\CompanyContact.aspx.cs">
+      <DependentUpon>CompanyContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Corporation\CompanyContact.aspx.designer.cs">
+      <DependentUpon>CompanyContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\Corporation\CompanyHornor.aspx.cs">
+      <DependentUpon>CompanyHornor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Corporation\CompanyHornor.aspx.designer.cs">
+      <DependentUpon>CompanyHornor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\Corporation\CompanyIntroduction.aspx.cs">
+      <DependentUpon>CompanyIntroduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Corporation\CompanyIntroduction.aspx.designer.cs">
+      <DependentUpon>CompanyIntroduction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InfoShow\DepotInfoDetail.aspx.cs">
       <DependentUpon>DepotInfoDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="InfoShow\DepotInfoDetail.aspx.designer.cs">
       <DependentUpon>DepotInfoDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\DetailInfoFrame.aspx.cs">
+      <DependentUpon>DetailInfoFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoShow\DetailInfoFrame.aspx.designer.cs">
+      <DependentUpon>DetailInfoFrame.aspx</DependentUpon>
     </Compile>
     <Compile Include="InfoShow\GoodsInfoDetail.aspx.cs">
       <DependentUpon>GoodsInfoDetail.aspx</DependentUpon>

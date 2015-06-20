@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Rightgroup result = this.sqlMapper.QueryForObject<Rightgroup>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Rightgroup.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Rightgroup> FindAll() {
 			String stmtId = "Rightgroup.FindAll";
 			IList<Rightgroup> result = this.sqlMapper.QueryForList<Rightgroup>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Rightgroup> result = this.sqlMapper.QueryForList<Rightgroup>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Rightgroup obj){
+			String stmtId = "Rightgroup.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rightgroup> FindByGroupname(String groupname) {
 			String stmtId = "Rightgroup.FindByGroupname";
 			IList<Rightgroup> result = this.sqlMapper.QueryForList<Rightgroup>(stmtId, groupname);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Rightgroup> result = this.sqlMapper.QueryForList<Rightgroup>(stmtId, obj);
 			return result;
         }
+		public int FindCountByGroupname(Rightgroup obj){
+			String stmtId = "Rightgroup.GetFindByGroupnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Rightgroup obj) {
 			String stmtId = "Rightgroup.Update";
 			this.sqlMapper.Update(stmtId, obj);

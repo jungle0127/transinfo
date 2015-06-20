@@ -17,17 +17,38 @@
 		<select id="Goodstype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM goodstype
 		</select>
+		<select id="Goodstype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM goodstype ORDER BY id DESC
+		</select>
 		<select id="Goodstype.FindAllPagination" parameterClass="GoodstypePagination" resultMap="FullResultMap">
 			SELECT * FROM goodstype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodstype.DescendOrderFindAllPagination" parameterClass="GoodstypePagination" resultMap="FullResultMap">
+			SELECT * FROM goodstype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Goodstype.Find" parameterClass="Goodstype" resultMap="FullResultMap" extends="Goodstype.FindAll">
 			WHERE goodstype.id=#Id#
 		</select>
+		<select id="Goodstype.DescendOrderFind" parameterClass="Goodstype" resultMap="FullResultMap" extends="Goodstype.FindAll">
+			WHERE goodstype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Goodstype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodstype WHERE goodstype.id=#Id#
+		</select>
 		<select id="Goodstype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Goodstype.FindAll">
 			WHERE goodstype.typename = #value#
 		</select>
+		<select id="Goodstype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Goodstype.FindAll">
+			WHERE goodstype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodstypePagination.FindByTypename" parameterClass="GoodstypePagination" resultMap="FullResultMap" extends="Goodstype.FindAll">
-			WHERE goodstype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE goodstype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodstypePagination.DescendOrderFindByTypename" parameterClass="GoodstypePagination" resultMap="FullResultMap" extends="Goodstype.FindAll">
+			WHERE goodstype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodstype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodstype WHERE goodstype.typename=#Typename#
 		</select>
 		<insert id="Goodstype.Insert" parameterClass="Goodstype">
 			INSERT INTO goodstype (id,typename) VALUES (#Id#,#Typename#)

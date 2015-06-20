@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Departuretype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Departuretype> FindAll();
 
 		IList<Departuretype> PaginationFindAll(DeparturetypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Departuretype> FindByTypename(String typename);
 
 		IList<Departuretype> PaginationFindByTypename(DeparturetypePagination obj);
+
+		int FindCountByTypename(Departuretype obj);
 
 		void Insert(Departuretype obj);
 

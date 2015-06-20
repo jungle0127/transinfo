@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Depottype result = this.sqlMapper.QueryForObject<Depottype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Depottype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Depottype> FindAll() {
 			String stmtId = "Depottype.FindAll";
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Depottype obj){
+			String stmtId = "Depottype.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Depottype> FindByTypename(String typename) {
 			String stmtId = "Depottype.FindByTypename";
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, typename);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Depottype obj){
+			String stmtId = "Depottype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Depottype obj) {
 			String stmtId = "Depottype.Update";
 			this.sqlMapper.Update(stmtId, obj);

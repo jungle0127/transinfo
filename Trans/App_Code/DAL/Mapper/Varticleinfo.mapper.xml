@@ -24,62 +24,149 @@
 		<select id="Varticleinfo.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_articleinfo
 		</select>
+		<select id="Varticleinfo.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_articleinfo ORDER BY id DESC
+		</select>
 		<select id="Varticleinfo.FindAllPagination" parameterClass="VarticleinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_articleinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.DescendOrderFindAllPagination" parameterClass="VarticleinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_articleinfo ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Varticleinfo.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.title = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.title = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByTitle" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.title = #Title# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByTitle" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.title=#Title#
 		</select>
 		<select id="Varticleinfo.FindByHittimes" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.hittimes = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByHittimes" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.hittimes = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByHittimes" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.hittimes = #Hittimes# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.hittimes = #Hittimes# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByHittimes" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.hittimes = #Hittimes# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByHittimesCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.hittimes=#Hittimes#
 		</select>
 		<select id="Varticleinfo.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.username = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.username = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByUsername" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.username = #Username# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.username = #Username# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByUsername" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.username = #Username# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByUsernameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.username=#Username#
 		</select>
 		<select id="Varticleinfo.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.id = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindById" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.id = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindById" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.id = #Id# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.id = #Id# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindById" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.id = #Id# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.id=#Id#
 		</select>
 		<select id="Varticleinfo.FindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.titlecolor = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.titlecolor = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByTitlecolor" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.titlecolor = #Titlecolor# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.titlecolor = #Titlecolor# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByTitlecolor" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.titlecolor = #Titlecolor# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByTitlecolorCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.titlecolor=#Titlecolor#
 		</select>
 		<select id="Varticleinfo.FindByTypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.typeid = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByTypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.typeid = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByTypeid" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.typeid = #Typeid# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.typeid = #Typeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByTypeid" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.typeid = #Typeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByTypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.typeid=#Typeid#
 		</select>
 		<select id="Varticleinfo.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.content = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByContent" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.content = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByContent" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.content = #Content# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.content = #Content# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByContent" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.content = #Content# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByContentCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.content=#Content#
 		</select>
 		<select id="Varticleinfo.FindByReleaseip" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.releaseip = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByReleaseip" parameterClass="String" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releaseip = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByReleaseip" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.releaseip = #Releaseip# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.releaseip = #Releaseip# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByReleaseip" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releaseip = #Releaseip# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByReleaseipCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.releaseip=#Releaseip#
 		</select>
 		<select id="Varticleinfo.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
 			WHERE v_articleinfo.releasedate = #value#
 		</select>
+		<select id="Varticleinfo.DescendOrderFindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releasedate = #value# ORDER BY id DESC
+		</select>
 		<select id="VarticleinfoPagination.FindByReleasedate" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
-			WHERE v_articleinfo.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+			WHERE v_articleinfo.releasedate = #Releasedate# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VarticleinfoPagination.DescendOrderFindByReleasedate" parameterClass="VarticleinfoPagination" resultMap="FullResultMap" extends="Varticleinfo.FindAll">
+			WHERE v_articleinfo.releasedate = #Releasedate# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Varticleinfo.GetFindByReleasedateCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_articleinfo WHERE v_articleinfo.releasedate=#Releasedate#
 		</select>
 	</statements>
 </sqlMap>

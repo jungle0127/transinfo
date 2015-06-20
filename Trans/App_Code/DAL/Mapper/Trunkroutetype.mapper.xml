@@ -17,17 +17,38 @@
 		<select id="Trunkroutetype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunkroutetype
 		</select>
+		<select id="Trunkroutetype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunkroutetype ORDER BY id DESC
+		</select>
 		<select id="Trunkroutetype.FindAllPagination" parameterClass="TrunkroutetypePagination" resultMap="FullResultMap">
 			SELECT * FROM trunkroutetype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkroutetype.DescendOrderFindAllPagination" parameterClass="TrunkroutetypePagination" resultMap="FullResultMap">
+			SELECT * FROM trunkroutetype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkroutetype.Find" parameterClass="Trunkroutetype" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
 			WHERE trunkroutetype.id=#Id#
 		</select>
+		<select id="Trunkroutetype.DescendOrderFind" parameterClass="Trunkroutetype" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
+			WHERE trunkroutetype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunkroutetype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkroutetype WHERE trunkroutetype.id=#Id#
+		</select>
 		<select id="Trunkroutetype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
 			WHERE trunkroutetype.typename = #value#
 		</select>
+		<select id="Trunkroutetype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
+			WHERE trunkroutetype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkroutetypePagination.FindByTypename" parameterClass="TrunkroutetypePagination" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
-			WHERE trunkroutetype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE trunkroutetype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkroutetypePagination.DescendOrderFindByTypename" parameterClass="TrunkroutetypePagination" resultMap="FullResultMap" extends="Trunkroutetype.FindAll">
+			WHERE trunkroutetype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkroutetype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkroutetype WHERE trunkroutetype.typename=#Typename#
 		</select>
 		<insert id="Trunkroutetype.Insert" parameterClass="Trunkroutetype">
 			INSERT INTO trunkroutetype (id,typename) VALUES (#Id#,#Typename#)

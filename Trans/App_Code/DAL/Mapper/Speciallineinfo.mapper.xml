@@ -26,71 +26,173 @@
 		<select id="Speciallineinfo.FindAll" resultMap="FullResultMap">
 			SELECT * FROM speciallineinfo
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM speciallineinfo ORDER BY id DESC
+		</select>
 		<select id="Speciallineinfo.FindAllPagination" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM speciallineinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.DescendOrderFindAllPagination" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM speciallineinfo ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Speciallineinfo.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.userid = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByUserid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByUserid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.userid=#Userid#
 		</select>
 		<select id="Speciallineinfo.FindByDestinationplaceinfoid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.destinationplaceinfoid = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByDestinationplaceinfoid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.destinationplaceinfoid = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByDestinationplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.destinationplaceinfoid = #Destinationplaceinfoid# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.destinationplaceinfoid = #Destinationplaceinfoid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByDestinationplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.destinationplaceinfoid = #Destinationplaceinfoid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByDestinationplaceinfoidCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.destinationplaceinfoid=#Destinationplaceinfoid#
 		</select>
 		<select id="Speciallineinfo.FindByDeparturetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.departuretypeid = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByDeparturetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.departuretypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByDeparturetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.departuretypeid = #Departuretypeid# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.departuretypeid = #Departuretypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByDeparturetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.departuretypeid = #Departuretypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByDeparturetypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.departuretypeid=#Departuretypeid#
 		</select>
 		<select id="Speciallineinfo.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.title = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.title = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByTitle" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.title = #Title# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByTitle" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.title=#Title#
 		</select>
 		<select id="Speciallineinfo.FindByVolumeprice" parameterClass="Int32" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.volumeprice = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByVolumeprice" parameterClass="Int32" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.volumeprice = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByVolumeprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.volumeprice = #Volumeprice# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.volumeprice = #Volumeprice# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByVolumeprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.volumeprice = #Volumeprice# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByVolumepriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.volumeprice=#Volumeprice#
 		</select>
 		<select id="Speciallineinfo.Find" parameterClass="Speciallineinfo" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.id=#Id#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFind" parameterClass="Speciallineinfo" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Speciallineinfo.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.id=#Id#
+		</select>
 		<select id="Speciallineinfo.FindByWeightprice" parameterClass="Int32" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.weightprice = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByWeightprice" parameterClass="Int32" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.weightprice = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByWeightprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.weightprice = #Weightprice# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.weightprice = #Weightprice# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByWeightprice" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.weightprice = #Weightprice# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByWeightpriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.weightprice=#Weightprice#
 		</select>
 		<select id="Speciallineinfo.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.description = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.description = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByDescription" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.description = #Description# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.description = #Description# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByDescription" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.description = #Description# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByDescriptionCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.description=#Description#
 		</select>
 		<select id="Speciallineinfo.FindBySourceplaceinfoid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.sourceplaceinfoid = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindBySourceplaceinfoid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.sourceplaceinfoid = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindBySourceplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.sourceplaceinfoid = #Sourceplaceinfoid# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.sourceplaceinfoid = #Sourceplaceinfoid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindBySourceplaceinfoid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.sourceplaceinfoid = #Sourceplaceinfoid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindBySourceplaceinfoidCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.sourceplaceinfoid=#Sourceplaceinfoid#
 		</select>
 		<select id="Speciallineinfo.FindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.speciallinetypeid = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.speciallinetypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindBySpeciallinetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindBySpeciallinetypeid" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.speciallinetypeid = #Speciallinetypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindBySpeciallinetypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.speciallinetypeid=#Speciallinetypeid#
 		</select>
 		<select id="Speciallineinfo.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
 			WHERE speciallineinfo.releasedate = #value#
 		</select>
+		<select id="Speciallineinfo.DescendOrderFindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.releasedate = #value# ORDER BY id DESC
+		</select>
 		<select id="SpeciallineinfoPagination.FindByReleasedate" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
-			WHERE speciallineinfo.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+			WHERE speciallineinfo.releasedate = #Releasedate# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="SpeciallineinfoPagination.DescendOrderFindByReleasedate" parameterClass="SpeciallineinfoPagination" resultMap="FullResultMap" extends="Speciallineinfo.FindAll">
+			WHERE speciallineinfo.releasedate = #Releasedate# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Speciallineinfo.GetFindByReleasedateCount" resultClass="System.Int32">
+			SELECT count(*) FROM speciallineinfo WHERE speciallineinfo.releasedate=#Releasedate#
 		</select>
 		<insert id="Speciallineinfo.Insert" parameterClass="Speciallineinfo">
 			INSERT INTO speciallineinfo (userid,destinationplaceinfoid,departuretypeid,title,volumeprice,id,weightprice,description,sourceplaceinfoid,speciallinetypeid,releasedate) VALUES (#Userid#,#Destinationplaceinfoid#,#Departuretypeid#,#Title#,#Volumeprice#,#Id#,#Weightprice#,#Description#,#Sourceplaceinfoid#,#Speciallinetypeid#,#Releasedate#)

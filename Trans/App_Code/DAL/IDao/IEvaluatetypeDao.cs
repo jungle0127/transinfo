@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Evaluatetype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Evaluatetype> FindAll();
 
 		IList<Evaluatetype> PaginationFindAll(EvaluatetypePagination obj);
@@ -21,9 +23,13 @@ namespace Trans.DAL.Dao
 
 		IList<Evaluatetype> PaginationFindByActive(EvaluatetypePagination obj);
 
+		int FindCountByActive(Evaluatetype obj);
+
 		IList<Evaluatetype> FindByName(String name);
 
 		IList<Evaluatetype> PaginationFindByName(EvaluatetypePagination obj);
+
+		int FindCountByName(Evaluatetype obj);
 
 		void Insert(Evaluatetype obj);
 

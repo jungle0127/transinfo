@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Trunkmetadata Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Trunkmetadata> FindAll();
 
 		IList<Trunkmetadata> PaginationFindAll(TrunkmetadataPagination obj);
@@ -21,61 +23,91 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkmetadata> PaginationFindByConatactphone(TrunkmetadataPagination obj);
 
+		int FindCountByConatactphone(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByVolume(String volume);
 
 		IList<Trunkmetadata> PaginationFindByVolume(TrunkmetadataPagination obj);
+
+		int FindCountByVolume(Trunkmetadata obj);
 
 		IList<Trunkmetadata> FindByNumberid(Int64 numberid);
 
 		IList<Trunkmetadata> PaginationFindByNumberid(TrunkmetadataPagination obj);
 
+		int FindCountByNumberid(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByBrand(String brand);
 
 		IList<Trunkmetadata> PaginationFindByBrand(TrunkmetadataPagination obj);
+
+		int FindCountByBrand(Trunkmetadata obj);
 
 		IList<Trunkmetadata> FindByLength(String length);
 
 		IList<Trunkmetadata> PaginationFindByLength(TrunkmetadataPagination obj);
 
+		int FindCountByLength(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByTrunktypeid(Int64 trunktypeid);
 
 		IList<Trunkmetadata> PaginationFindByTrunktypeid(TrunkmetadataPagination obj);
+
+		int FindCountByTrunktypeid(Trunkmetadata obj);
 
 		IList<Trunkmetadata> FindByContactpersonname(String contactpersonname);
 
 		IList<Trunkmetadata> PaginationFindByContactpersonname(TrunkmetadataPagination obj);
 
+		int FindCountByContactpersonname(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByActive(Byte active);
 
 		IList<Trunkmetadata> PaginationFindByActive(TrunkmetadataPagination obj);
+
+		int FindCountByActive(Trunkmetadata obj);
 
 		IList<Trunkmetadata> FindByVanimageuri(String vanimageuri);
 
 		IList<Trunkmetadata> PaginationFindByVanimageuri(TrunkmetadataPagination obj);
 
+		int FindCountByVanimageuri(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByWeightcapacity(String weightcapacity);
 
 		IList<Trunkmetadata> PaginationFindByWeightcapacity(TrunkmetadataPagination obj);
+
+		int FindCountByWeightcapacity(Trunkmetadata obj);
 
 		IList<Trunkmetadata> FindByVantypeid(Int64 vantypeid);
 
 		IList<Trunkmetadata> PaginationFindByVantypeid(TrunkmetadataPagination obj);
 
+		int FindCountByVantypeid(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByLicenseuri(String licenseuri);
 
 		IList<Trunkmetadata> PaginationFindByLicenseuri(TrunkmetadataPagination obj);
+
+		int FindCountByLicenseuri(Trunkmetadata obj);
 
 		IList<Trunkmetadata> FindByTrunkidentifynumber(String trunkidentifynumber);
 
 		IList<Trunkmetadata> PaginationFindByTrunkidentifynumber(TrunkmetadataPagination obj);
 
+		int FindCountByTrunkidentifynumber(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByCountycode(String countycode);
 
 		IList<Trunkmetadata> PaginationFindByCountycode(TrunkmetadataPagination obj);
 
+		int FindCountByCountycode(Trunkmetadata obj);
+
 		IList<Trunkmetadata> FindByLocation(String location);
 
 		IList<Trunkmetadata> PaginationFindByLocation(TrunkmetadataPagination obj);
+
+		int FindCountByLocation(Trunkmetadata obj);
 
 		void Insert(Trunkmetadata obj);
 

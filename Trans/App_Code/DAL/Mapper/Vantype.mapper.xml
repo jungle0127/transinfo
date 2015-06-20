@@ -17,17 +17,38 @@
 		<select id="Vantype.FindAll" resultMap="FullResultMap">
 			SELECT * FROM vantype
 		</select>
+		<select id="Vantype.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM vantype ORDER BY id DESC
+		</select>
 		<select id="Vantype.FindAllPagination" parameterClass="VantypePagination" resultMap="FullResultMap">
 			SELECT * FROM vantype limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vantype.DescendOrderFindAllPagination" parameterClass="VantypePagination" resultMap="FullResultMap">
+			SELECT * FROM vantype ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vantype.Find" parameterClass="Vantype" resultMap="FullResultMap" extends="Vantype.FindAll">
 			WHERE vantype.id=#Id#
 		</select>
+		<select id="Vantype.DescendOrderFind" parameterClass="Vantype" resultMap="FullResultMap" extends="Vantype.FindAll">
+			WHERE vantype.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Vantype.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM vantype WHERE vantype.id=#Id#
+		</select>
 		<select id="Vantype.FindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Vantype.FindAll">
 			WHERE vantype.typename = #value#
 		</select>
+		<select id="Vantype.DescendOrderFindByTypename" parameterClass="String" resultMap="FullResultMap" extends="Vantype.FindAll">
+			WHERE vantype.typename = #value# ORDER BY id DESC
+		</select>
 		<select id="VantypePagination.FindByTypename" parameterClass="VantypePagination" resultMap="FullResultMap" extends="Vantype.FindAll">
-			WHERE vantype.typename = #Typename# limit #Limit# offset #Offset# 
+			WHERE vantype.typename = #Typename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VantypePagination.DescendOrderFindByTypename" parameterClass="VantypePagination" resultMap="FullResultMap" extends="Vantype.FindAll">
+			WHERE vantype.typename = #Typename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vantype.GetFindByTypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM vantype WHERE vantype.typename=#Typename#
 		</select>
 	</statements>
 </sqlMap>

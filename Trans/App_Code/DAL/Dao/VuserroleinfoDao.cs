@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Vuserroleinfo result = this.sqlMapper.QueryForObject<Vuserroleinfo>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Vuserroleinfo.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Vuserroleinfo> FindAll() {
 			String stmtId = "Vuserroleinfo.FindAll";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Vuserroleinfo obj){
+			String stmtId = "Vuserroleinfo.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vuserroleinfo> FindByLoginname(String loginname) {
 			String stmtId = "Vuserroleinfo.FindByLoginname";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, loginname);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByLoginname(Vuserroleinfo obj){
+			String stmtId = "Vuserroleinfo.GetFindByLoginnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vuserroleinfo> FindByUsername(String username) {
 			String stmtId = "Vuserroleinfo.FindByUsername";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, username);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUsername(Vuserroleinfo obj){
+			String stmtId = "Vuserroleinfo.GetFindByUsernameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vuserroleinfo> FindByRoleid(Int64 roleid) {
 			String stmtId = "Vuserroleinfo.FindByRoleid";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, roleid);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRoleid(Vuserroleinfo obj){
+			String stmtId = "Vuserroleinfo.GetFindByRoleidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vuserroleinfo> FindByRolename(String rolename) {
 			String stmtId = "Vuserroleinfo.FindByRolename";
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, rolename);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Vuserroleinfo> result = this.sqlMapper.QueryForList<Vuserroleinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRolename(Vuserroleinfo obj){
+			String stmtId = "Vuserroleinfo.GetFindByRolenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Vuserroleinfo obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Vuserroleinfo.Find";

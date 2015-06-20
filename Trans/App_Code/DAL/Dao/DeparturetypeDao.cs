@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Departuretype result = this.sqlMapper.QueryForObject<Departuretype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Departuretype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Departuretype> FindAll() {
 			String stmtId = "Departuretype.FindAll";
 			IList<Departuretype> result = this.sqlMapper.QueryForList<Departuretype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Departuretype> result = this.sqlMapper.QueryForList<Departuretype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Departuretype obj){
+			String stmtId = "Departuretype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Departuretype obj) {
 			String stmtId = "Departuretype.Update";
 			this.sqlMapper.Update(stmtId, obj);

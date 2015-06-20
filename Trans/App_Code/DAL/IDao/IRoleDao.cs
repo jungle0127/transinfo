@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Role Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Role> FindAll();
 
 		IList<Role> PaginationFindAll(RolePagination obj);
@@ -21,9 +23,13 @@ namespace Trans.DAL.Dao
 
 		IList<Role> PaginationFindByActive(RolePagination obj);
 
+		int FindCountByActive(Role obj);
+
 		IList<Role> FindByRolename(String rolename);
 
 		IList<Role> PaginationFindByRolename(RolePagination obj);
+
+		int FindCountByRolename(Role obj);
 
 		void Insert(Role obj);
 

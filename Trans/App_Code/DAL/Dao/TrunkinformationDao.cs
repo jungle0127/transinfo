@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Trunkinformation result = this.sqlMapper.QueryForObject<Trunkinformation>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Trunkinformation.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Trunkinformation> FindAll() {
 			String stmtId = "Trunkinformation.FindAll";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccountycode(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindBySrccountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByMarketprice(String marketprice) {
 			String stmtId = "Trunkinformation.FindByMarketprice";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, marketprice);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByMarketprice(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByMarketpriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByTimetypeid(Int64 timetypeid) {
 			String stmtId = "Trunkinformation.FindByTimetypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, timetypeid);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTimetypeid(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByTimetypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByTakeofftime(DateTime takeofftime) {
 			String stmtId = "Trunkinformation.FindByTakeofftime";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, takeofftime);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTakeofftime(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByTakeofftimeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByRouter(String router) {
 			String stmtId = "Trunkinformation.FindByRouter";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, router);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRouter(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByRouterCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByUserid(Int64 userid) {
 			String stmtId = "Trunkinformation.FindByUserid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, userid);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByNegotiateprice(String negotiateprice) {
 			String stmtId = "Trunkinformation.FindByNegotiateprice";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, negotiateprice);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNegotiateprice(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByNegotiatepriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByReturntypeid(Int64 returntypeid) {
 			String stmtId = "Trunkinformation.FindByReturntypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, returntypeid);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReturntypeid(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByReturntypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByActive(Byte active) {
 			String stmtId = "Trunkinformation.FindByActive";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, active);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByTrunkid(Int64 trunkid) {
 			String stmtId = "Trunkinformation.FindByTrunkid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, trunkid);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTrunkid(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByTrunkidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByTitle(String title) {
 			String stmtId = "Trunkinformation.FindByTitle";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, title);
@@ -152,6 +207,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByDstcountycode(String dstcountycode) {
 			String stmtId = "Trunkinformation.FindByDstcountycode";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, dstcountycode);
@@ -162,6 +222,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcountycode(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByDstcountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByReleasedate(DateTime releasedate) {
 			String stmtId = "Trunkinformation.FindByReleasedate";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, releasedate);
@@ -172,6 +237,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleasedate(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByDescription(String description) {
 			String stmtId = "Trunkinformation.FindByDescription";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, description);
@@ -182,6 +252,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDescription(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByDescriptionCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunkinformation> FindByRoutetypeid(Int64 routetypeid) {
 			String stmtId = "Trunkinformation.FindByRoutetypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, routetypeid);
@@ -192,6 +267,11 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRoutetypeid(Trunkinformation obj){
+			String stmtId = "Trunkinformation.GetFindByRoutetypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Trunkinformation obj) {
 			String stmtId = "Trunkinformation.Update";
 			this.sqlMapper.Update(stmtId, obj);

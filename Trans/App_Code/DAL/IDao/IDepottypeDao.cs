@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Depottype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Depottype> FindAll();
 
 		IList<Depottype> PaginationFindAll(DepottypePagination obj);
@@ -21,9 +23,13 @@ namespace Trans.DAL.Dao
 
 		IList<Depottype> PaginationFindByActive(DepottypePagination obj);
 
+		int FindCountByActive(Depottype obj);
+
 		IList<Depottype> FindByTypename(String typename);
 
 		IList<Depottype> PaginationFindByTypename(DepottypePagination obj);
+
+		int FindCountByTypename(Depottype obj);
 
 		void Insert(Depottype obj);
 

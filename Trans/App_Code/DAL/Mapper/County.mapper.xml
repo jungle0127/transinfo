@@ -19,29 +19,68 @@
 		<select id="County.FindAll" resultMap="FullResultMap">
 			SELECT * FROM county
 		</select>
+		<select id="County.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM county ORDER BY id DESC
+		</select>
 		<select id="County.FindAllPagination" parameterClass="CountyPagination" resultMap="FullResultMap">
 			SELECT * FROM county limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.DescendOrderFindAllPagination" parameterClass="CountyPagination" resultMap="FullResultMap">
+			SELECT * FROM county ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="County.FindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
 			WHERE county.citycode = #value#
 		</select>
+		<select id="County.DescendOrderFindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.citycode = #value# ORDER BY id DESC
+		</select>
 		<select id="CountyPagination.FindByCitycode" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
-			WHERE county.citycode = #Citycode# limit #Limit# offset #Offset# 
+			WHERE county.citycode = #Citycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CountyPagination.DescendOrderFindByCitycode" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.citycode = #Citycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.GetFindByCitycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM county WHERE county.citycode=#Citycode#
 		</select>
 		<select id="County.Find" parameterClass="County" resultMap="FullResultMap" extends="County.FindAll">
 			WHERE county.id=#Id#
 		</select>
+		<select id="County.DescendOrderFind" parameterClass="County" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="County.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM county WHERE county.id=#Id#
+		</select>
 		<select id="County.FindByCode" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
 			WHERE county.code = #value#
 		</select>
+		<select id="County.DescendOrderFindByCode" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.code = #value# ORDER BY id DESC
+		</select>
 		<select id="CountyPagination.FindByCode" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
-			WHERE county.code = #Code# limit #Limit# offset #Offset# 
+			WHERE county.code = #Code# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CountyPagination.DescendOrderFindByCode" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.code = #Code# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.GetFindByCodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM county WHERE county.code=#Code#
 		</select>
 		<select id="County.FindByName" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
 			WHERE county.name = #value#
 		</select>
+		<select id="County.DescendOrderFindByName" parameterClass="String" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.name = #value# ORDER BY id DESC
+		</select>
 		<select id="CountyPagination.FindByName" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
-			WHERE county.name = #Name# limit #Limit# offset #Offset# 
+			WHERE county.name = #Name# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CountyPagination.DescendOrderFindByName" parameterClass="CountyPagination" resultMap="FullResultMap" extends="County.FindAll">
+			WHERE county.name = #Name# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="County.GetFindByNameCount" resultClass="System.Int32">
+			SELECT count(*) FROM county WHERE county.name=#Name#
 		</select>
 		<insert id="County.Insert" parameterClass="County">
 			INSERT INTO county (citycode,id,code,name) VALUES (#Citycode#,#Id#,#Code#,#Name#)

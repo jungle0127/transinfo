@@ -31,104 +31,254 @@
 		<select id="Vdepotinformation.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_depotinformation
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_depotinformation ORDER BY id DESC
+		</select>
 		<select id="Vdepotinformation.FindAllPagination" parameterClass="VdepotinformationPagination" resultMap="FullResultMap">
 			SELECT * FROM v_depotinformation limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.DescendOrderFindAllPagination" parameterClass="VdepotinformationPagination" resultMap="FullResultMap">
+			SELECT * FROM v_depotinformation ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vdepotinformation.FindByCellphone" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.cellphone = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByCellphone" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.cellphone = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByCellphone" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.cellphone = #Cellphone# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.cellphone = #Cellphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByCellphone" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.cellphone = #Cellphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByCellphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.cellphone=#Cellphone#
 		</select>
 		<select id="Vdepotinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.description = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.description = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByDescription" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.description = #Description# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.description = #Description# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByDescription" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.description = #Description# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByDescriptionCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.description=#Description#
 		</select>
 		<select id="Vdepotinformation.FindByValidtime" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.validtime = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByValidtime" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.validtime = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByValidtime" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.validtime = #Validtime# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.validtime = #Validtime# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByValidtime" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.validtime = #Validtime# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByValidtimeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.validtime=#Validtime#
 		</select>
 		<select id="Vdepotinformation.FindByCityname" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.cityname = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByCityname" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.cityname = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByCityname" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.cityname = #Cityname# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.cityname = #Cityname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByCityname" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.cityname = #Cityname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByCitynameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.cityname=#Cityname#
 		</select>
 		<select id="Vdepotinformation.FindByUseablearea" parameterClass="Int32" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.useablearea = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByUseablearea" parameterClass="Int32" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.useablearea = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByUseablearea" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.useablearea = #Useablearea# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.useablearea = #Useablearea# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByUseablearea" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.useablearea = #Useablearea# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByUseableareaCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.useablearea=#Useablearea#
 		</select>
 		<select id="Vdepotinformation.FindByScopename" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.scopename = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByScopename" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.scopename = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByScopename" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.scopename = #Scopename# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.scopename = #Scopename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByScopename" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.scopename = #Scopename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByScopenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.scopename=#Scopename#
 		</select>
 		<select id="Vdepotinformation.FindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.price = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.price = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByPrice" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.price = #Price# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.price = #Price# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByPrice" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.price = #Price# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByPriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.price=#Price#
 		</select>
 		<select id="Vdepotinformation.FindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.contactperson = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.contactperson = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByContactperson" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.contactperson = #Contactperson# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.contactperson = #Contactperson# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByContactperson" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.contactperson = #Contactperson# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByContactpersonCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.contactperson=#Contactperson#
 		</select>
 		<select id="Vdepotinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.title = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.title = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByTitle" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.title = #Title# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByTitle" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.title=#Title#
 		</select>
 		<select id="Vdepotinformation.FindByRegionname" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.regionname = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByRegionname" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.regionname = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByRegionname" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.regionname = #Regionname# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.regionname = #Regionname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByRegionname" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.regionname = #Regionname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByRegionnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.regionname=#Regionname#
 		</select>
 		<select id="Vdepotinformation.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.id = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.id = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindById" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.id = #Id# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.id = #Id# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindById" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.id = #Id# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.id=#Id#
 		</select>
 		<select id="Vdepotinformation.FindByDepottypename" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.depottypename = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByDepottypename" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.depottypename = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByDepottypename" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.depottypename = #Depottypename# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.depottypename = #Depottypename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByDepottypename" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.depottypename = #Depottypename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByDepottypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.depottypename=#Depottypename#
 		</select>
 		<select id="Vdepotinformation.FindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.address = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.address = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByAddress" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.address = #Address# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.address = #Address# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByAddress" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.address = #Address# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByAddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.address=#Address#
 		</select>
 		<select id="Vdepotinformation.FindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.citycode = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByCitycode" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.citycode = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByCitycode" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.citycode = #Citycode# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.citycode = #Citycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByCitycode" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.citycode = #Citycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByCitycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.citycode=#Citycode#
 		</select>
 		<select id="Vdepotinformation.FindByArea" parameterClass="Int32" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.area = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByArea" parameterClass="Int32" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.area = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByArea" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.area = #Area# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.area = #Area# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByArea" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.area = #Area# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByAreaCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.area=#Area#
 		</select>
 		<select id="Vdepotinformation.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
 			WHERE v_depotinformation.username = #value#
 		</select>
+		<select id="Vdepotinformation.DescendOrderFindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.username = #value# ORDER BY id DESC
+		</select>
 		<select id="VdepotinformationPagination.FindByUsername" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
-			WHERE v_depotinformation.username = #Username# limit #Limit# offset #Offset# 
+			WHERE v_depotinformation.username = #Username# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VdepotinformationPagination.DescendOrderFindByUsername" parameterClass="VdepotinformationPagination" resultMap="FullResultMap" extends="Vdepotinformation.FindAll">
+			WHERE v_depotinformation.username = #Username# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vdepotinformation.GetFindByUsernameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_depotinformation WHERE v_depotinformation.username=#Username#
 		</select>
 	</statements>
 </sqlMap>

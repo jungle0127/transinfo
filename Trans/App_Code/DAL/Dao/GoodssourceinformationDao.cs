@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Goodssourceinformation result = this.sqlMapper.QueryForObject<Goodssourceinformation>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Goodssourceinformation.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindAll() {
 			String stmtId = "Goodssourceinformation.FindAll";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCautiontypeid(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByCautiontypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume) {
 			String stmtId = "Goodssourceinformation.FindByNeedtrunkvolume";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, needtrunkvolume);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNeedtrunkvolume(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByNeedtrunkvolumeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByDeadline(DateTime deadline) {
 			String stmtId = "Goodssourceinformation.FindByDeadline";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, deadline);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDeadline(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByDeadlineCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByNeedtrunkweight(Int64 needtrunkweight) {
 			String stmtId = "Goodssourceinformation.FindByNeedtrunkweight";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, needtrunkweight);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNeedtrunkweight(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByNeedtrunkweightCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByReleasedate(DateTime releasedate) {
 			String stmtId = "Goodssourceinformation.FindByReleasedate";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, releasedate);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleasedate(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByUserid(Int64 userid) {
 			String stmtId = "Goodssourceinformation.FindByUserid";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, userid);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByNeedtrunklength(Int64 needtrunklength) {
 			String stmtId = "Goodssourceinformation.FindByNeedtrunklength";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, needtrunklength);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNeedtrunklength(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByNeedtrunklengthCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByPrice(String price) {
 			String stmtId = "Goodssourceinformation.FindByPrice";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, price);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPrice(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByPriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByGoodsname(String goodsname) {
 			String stmtId = "Goodssourceinformation.FindByGoodsname";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, goodsname);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByGoodsname(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByGoodsnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByTitle(String title) {
 			String stmtId = "Goodssourceinformation.FindByTitle";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, title);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByTransporttypeid(Int64 transporttypeid) {
 			String stmtId = "Goodssourceinformation.FindByTransporttypeid";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, transporttypeid);
@@ -152,6 +207,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTransporttypeid(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByTransporttypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByContent(String content) {
 			String stmtId = "Goodssourceinformation.FindByContent";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, content);
@@ -162,6 +222,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByContent(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByContentCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindBySrccountycode(String srccountycode) {
 			String stmtId = "Goodssourceinformation.FindBySrccountycode";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, srccountycode);
@@ -172,6 +237,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySrccountycode(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindBySrccountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByDstcountycode(String dstcountycode) {
 			String stmtId = "Goodssourceinformation.FindByDstcountycode";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, dstcountycode);
@@ -182,6 +252,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDstcountycode(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByDstcountycodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByActive(Byte active) {
 			String stmtId = "Goodssourceinformation.FindByActive";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, active);
@@ -192,6 +267,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByGoodstypeid(Int64 goodstypeid) {
 			String stmtId = "Goodssourceinformation.FindByGoodstypeid";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, goodstypeid);
@@ -202,6 +282,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByGoodstypeid(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByGoodstypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Goodssourceinformation> FindByTitlecolor(String titlecolor) {
 			String stmtId = "Goodssourceinformation.FindByTitlecolor";
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, titlecolor);
@@ -212,6 +297,11 @@ namespace Trans.DAL.Dao
 			IList<Goodssourceinformation> result = this.sqlMapper.QueryForList<Goodssourceinformation>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitlecolor(Goodssourceinformation obj){
+			String stmtId = "Goodssourceinformation.GetFindByTitlecolorCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Goodssourceinformation obj) {
 			String stmtId = "Goodssourceinformation.Update";
 			this.sqlMapper.Update(stmtId, obj);

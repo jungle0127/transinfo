@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Vvehiclenumber result = this.sqlMapper.QueryForObject<Vvehiclenumber>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Vvehiclenumber.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Vvehiclenumber> FindAll() {
 			String stmtId = "Vvehiclenumber.FindAll";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Vvehiclenumber obj){
+			String stmtId = "Vvehiclenumber.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vvehiclenumber> FindById(Int64 id) {
 			String stmtId = "Vvehiclenumber.FindById";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, id);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountById(Vvehiclenumber obj){
+			String stmtId = "Vvehiclenumber.GetFindByIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vvehiclenumber> FindByPrefixname(String prefixname) {
 			String stmtId = "Vvehiclenumber.FindByPrefixname";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, prefixname);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPrefixname(Vvehiclenumber obj){
+			String stmtId = "Vvehiclenumber.GetFindByPrefixnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vvehiclenumber> FindByNumber(String number) {
 			String stmtId = "Vvehiclenumber.FindByNumber";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, number);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNumber(Vvehiclenumber obj){
+			String stmtId = "Vvehiclenumber.GetFindByNumberCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Reload(Vvehiclenumber obj) {
 			if (obj == null) throw new ArgumentNullException("obj");
 			String stmtId = "Vvehiclenumber.Find";

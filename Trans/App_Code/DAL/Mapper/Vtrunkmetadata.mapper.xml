@@ -32,110 +32,269 @@
 		<select id="Vtrunkmetadata.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_trunkmetadata
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_trunkmetadata ORDER BY id DESC
+		</select>
 		<select id="Vtrunkmetadata.FindAllPagination" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap">
 			SELECT * FROM v_trunkmetadata limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindAllPagination" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap">
+			SELECT * FROM v_trunkmetadata ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vtrunkmetadata.FindByVantypename" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.vantypename = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByVantypename" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vantypename = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByVantypename" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.vantypename = #Vantypename# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.vantypename = #Vantypename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByVantypename" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vantypename = #Vantypename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByVantypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.vantypename=#Vantypename#
 		</select>
 		<select id="Vtrunkmetadata.FindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.contactpersonname = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByContactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.contactpersonname = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByContactpersonname" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.contactpersonname = #Contactpersonname# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.contactpersonname = #Contactpersonname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByContactpersonname" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.contactpersonname = #Contactpersonname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByContactpersonnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.contactpersonname=#Contactpersonname#
 		</select>
 		<select id="Vtrunkmetadata.FindByTrunktypename" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.trunktypename = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByTrunktypename" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunktypename = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByTrunktypename" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.trunktypename = #Trunktypename# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.trunktypename = #Trunktypename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByTrunktypename" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunktypename = #Trunktypename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByTrunktypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.trunktypename=#Trunktypename#
 		</select>
 		<select id="Vtrunkmetadata.FindByConatactphone" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.conatactphone = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByConatactphone" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.conatactphone = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByConatactphone" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.conatactphone = #Conatactphone# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.conatactphone = #Conatactphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByConatactphone" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.conatactphone = #Conatactphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByConatactphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.conatactphone=#Conatactphone#
 		</select>
 		<select id="Vtrunkmetadata.FindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.volume = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.volume = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByVolume" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.volume = #Volume# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.volume = #Volume# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByVolume" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.volume = #Volume# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByVolumeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.volume=#Volume#
 		</select>
 		<select id="Vtrunkmetadata.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.number = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.number = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByNumber" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.number = #Number# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.number = #Number# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByNumber" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.number = #Number# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByNumberCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.number=#Number#
 		</select>
 		<select id="Vtrunkmetadata.FindByBrand" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.brand = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByBrand" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.brand = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByBrand" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.brand = #Brand# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.brand = #Brand# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByBrand" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.brand = #Brand# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByBrandCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.brand=#Brand#
 		</select>
 		<select id="Vtrunkmetadata.FindByLength" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.length = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByLength" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.length = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByLength" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.length = #Length# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.length = #Length# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByLength" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.length = #Length# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByLengthCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.length=#Length#
 		</select>
 		<select id="Vtrunkmetadata.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.vanimageuri = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vanimageuri = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByVanimageuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByVanimageuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByVanimageuriCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.vanimageuri=#Vanimageuri#
 		</select>
 		<select id="Vtrunkmetadata.FindByCountyname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.countyname = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByCountyname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.countyname = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByCountyname" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.countyname = #Countyname# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.countyname = #Countyname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByCountyname" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.countyname = #Countyname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByCountynameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.countyname=#Countyname#
 		</select>
 		<select id="Vtrunkmetadata.FindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.weightcapacity = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.weightcapacity = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByWeightcapacity" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.weightcapacity = #Weightcapacity# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.weightcapacity = #Weightcapacity# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByWeightcapacity" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.weightcapacity = #Weightcapacity# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByWeightcapacityCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.weightcapacity=#Weightcapacity#
 		</select>
 		<select id="Vtrunkmetadata.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.id = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.id = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindById" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.id = #Id# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.id = #Id# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindById" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.id = #Id# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.id=#Id#
 		</select>
 		<select id="Vtrunkmetadata.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.prefixname = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.prefixname = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByPrefixname" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.prefixname = #Prefixname# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.prefixname = #Prefixname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByPrefixname" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.prefixname = #Prefixname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByPrefixnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.prefixname=#Prefixname#
 		</select>
 		<select id="Vtrunkmetadata.FindByLicenseuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.licenseuri = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByLicenseuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.licenseuri = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByLicenseuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.licenseuri = #Licenseuri# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.licenseuri = #Licenseuri# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByLicenseuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.licenseuri = #Licenseuri# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByLicenseuriCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.licenseuri=#Licenseuri#
 		</select>
 		<select id="Vtrunkmetadata.FindByTrunkidentifynumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.trunkidentifynumber = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByTrunkidentifynumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunkidentifynumber = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByTrunkidentifynumber" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.trunkidentifynumber = #Trunkidentifynumber# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.trunkidentifynumber = #Trunkidentifynumber# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByTrunkidentifynumber" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunkidentifynumber = #Trunkidentifynumber# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByTrunkidentifynumberCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.trunkidentifynumber=#Trunkidentifynumber#
 		</select>
 		<select id="Vtrunkmetadata.FindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.countycode = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByCountycode" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.countycode = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByCountycode" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.countycode = #Countycode# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.countycode = #Countycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByCountycode" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.countycode = #Countycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByCountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.countycode=#Countycode#
 		</select>
 		<select id="Vtrunkmetadata.FindByLocation" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.location = #value#
 		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByLocation" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.location = #value# ORDER BY id DESC
+		</select>
 		<select id="VtrunkmetadataPagination.FindByLocation" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.location = #Location# limit #Limit# offset #Offset# 
+			WHERE v_trunkmetadata.location = #Location# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByLocation" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.location = #Location# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByLocationCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.location=#Location#
 		</select>
 	</statements>
 </sqlMap>

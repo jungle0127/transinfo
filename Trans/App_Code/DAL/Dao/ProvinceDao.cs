@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Province result = this.sqlMapper.QueryForObject<Province>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Province.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Province> FindAll() {
 			String stmtId = "Province.FindAll";
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
 			return result;
         }
+		public int FindCountByCode(Province obj){
+			String stmtId = "Province.GetFindByCodeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Province> FindByName(String name) {
 			String stmtId = "Province.FindByName";
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, name);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
 			return result;
         }
+		public int FindCountByName(Province obj){
+			String stmtId = "Province.GetFindByNameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Province obj) {
 			String stmtId = "Province.Update";
 			this.sqlMapper.Update(stmtId, obj);

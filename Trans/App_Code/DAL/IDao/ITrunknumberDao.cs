@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Trunknumber Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Trunknumber> FindAll();
 
 		IList<Trunknumber> PaginationFindAll(TrunknumberPagination obj);
@@ -21,17 +23,25 @@ namespace Trans.DAL.Dao
 
 		IList<Trunknumber> PaginationFindByNumber(TrunknumberPagination obj);
 
+		int FindCountByNumber(Trunknumber obj);
+
 		IList<Trunknumber> FindByUserid(Int64 userid);
 
 		IList<Trunknumber> PaginationFindByUserid(TrunknumberPagination obj);
+
+		int FindCountByUserid(Trunknumber obj);
 
 		IList<Trunknumber> FindByPrefixid(Int64 prefixid);
 
 		IList<Trunknumber> PaginationFindByPrefixid(TrunknumberPagination obj);
 
+		int FindCountByPrefixid(Trunknumber obj);
+
 		IList<Trunknumber> FindByActive(Byte active);
 
 		IList<Trunknumber> PaginationFindByActive(TrunknumberPagination obj);
+
+		int FindCountByActive(Trunknumber obj);
 
 		void Insert(Trunknumber obj);
 

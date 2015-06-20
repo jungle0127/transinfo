@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Trunknumber result = this.sqlMapper.QueryForObject<Trunknumber>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Trunknumber.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Trunknumber> FindAll() {
 			String stmtId = "Trunknumber.FindAll";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByNumber(Trunknumber obj){
+			String stmtId = "Trunknumber.GetFindByNumberCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunknumber> FindByUserid(Int64 userid) {
 			String stmtId = "Trunknumber.FindByUserid";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, userid);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Trunknumber obj){
+			String stmtId = "Trunknumber.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunknumber> FindByPrefixid(Int64 prefixid) {
 			String stmtId = "Trunknumber.FindByPrefixid";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, prefixid);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByPrefixid(Trunknumber obj){
+			String stmtId = "Trunknumber.GetFindByPrefixidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Trunknumber> FindByActive(Byte active) {
 			String stmtId = "Trunknumber.FindByActive";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, active);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Trunknumber obj){
+			String stmtId = "Trunknumber.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Trunknumber obj) {
 			String stmtId = "Trunknumber.Update";
 			this.sqlMapper.Update(stmtId, obj);

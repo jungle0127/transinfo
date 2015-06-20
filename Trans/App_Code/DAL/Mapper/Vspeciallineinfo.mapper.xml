@@ -39,152 +39,374 @@
 		<select id="Vspeciallineinfo.FindAll" resultMap="FullResultMap">
 			SELECT * FROM v_speciallineinfo
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM v_speciallineinfo ORDER BY id DESC
+		</select>
 		<select id="Vspeciallineinfo.FindAllPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_speciallineinfo limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindAllPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_speciallineinfo ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Vspeciallineinfo.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.releasedate = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.releasedate = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByReleasedate" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.releasedate = #Releasedate# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByReleasedate" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.releasedate = #Releasedate# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByReleasedateCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.releasedate=#Releasedate#
 		</select>
 		<select id="Vspeciallineinfo.FindBySpeciallinetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.speciallinetypename = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySpeciallinetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypename = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySpeciallinetypename" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.speciallinetypename = #Speciallinetypename# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.speciallinetypename = #Speciallinetypename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySpeciallinetypename" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypename = #Speciallinetypename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySpeciallinetypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.speciallinetypename=#Speciallinetypename#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrccontactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srccontactpersonname = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrccontactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactpersonname = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrccontactpersonname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srccontactpersonname = #Srccontactpersonname# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srccontactpersonname = #Srccontactpersonname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrccontactpersonname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactpersonname = #Srccontactpersonname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrccontactpersonnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srccontactpersonname=#Srccontactpersonname#
 		</select>
 		<select id="Vspeciallineinfo.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.description = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.description = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDescription" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.description = #Description# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.description = #Description# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDescription" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.description = #Description# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDescriptionCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.description=#Description#
 		</select>
 		<select id="Vspeciallineinfo.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.userid = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByUserid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByUserid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.userid=#Userid#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrccontactphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srccontactphone = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrccontactphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactphone = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrccontactphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srccontactphone = #Srccontactphone# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srccontactphone = #Srccontactphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrccontactphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactphone = #Srccontactphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrccontactphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srccontactphone=#Srccontactphone#
 		</select>
 		<select id="Vspeciallineinfo.FindByVolumeprice" parameterClass="Int32" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.volumeprice = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByVolumeprice" parameterClass="Int32" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.volumeprice = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByVolumeprice" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.volumeprice = #Volumeprice# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.volumeprice = #Volumeprice# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByVolumeprice" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.volumeprice = #Volumeprice# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByVolumepriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.volumeprice=#Volumeprice#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstcontactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstcontactpersonname = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstcontactpersonname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactpersonname = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstcontactpersonname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstcontactpersonname = #Dstcontactpersonname# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstcontactpersonname = #Dstcontactpersonname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstcontactpersonname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactpersonname = #Dstcontactpersonname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstcontactpersonnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstcontactpersonname=#Dstcontactpersonname#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrcplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srcplaceaddress = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrcplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srcplaceaddress = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrcplaceaddress" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srcplaceaddress = #Srcplaceaddress# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srcplaceaddress = #Srcplaceaddress# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrcplaceaddress" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srcplaceaddress = #Srcplaceaddress# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrcplaceaddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srcplaceaddress=#Srcplaceaddress#
 		</select>
 		<select id="Vspeciallineinfo.FindByWeightprice" parameterClass="Int32" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.weightprice = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByWeightprice" parameterClass="Int32" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.weightprice = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByWeightprice" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.weightprice = #Weightprice# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.weightprice = #Weightprice# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByWeightprice" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.weightprice = #Weightprice# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByWeightpriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.weightprice=#Weightprice#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrccontactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srccontactcellphone = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrccontactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactcellphone = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrccontactcellphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srccontactcellphone = #Srccontactcellphone# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srccontactcellphone = #Srccontactcellphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrccontactcellphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccontactcellphone = #Srccontactcellphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrccontactcellphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srccontactcellphone=#Srccontactcellphone#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrccityname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srccityname = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrccityname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccityname = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrccityname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srccityname = #Srccityname# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srccityname = #Srccityname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrccityname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccityname = #Srccityname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrccitynameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srccityname=#Srccityname#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrccitycode" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srccitycode = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrccitycode" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccitycode = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrccitycode" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srccitycode = #Srccitycode# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srccitycode = #Srccitycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrccitycode" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srccitycode = #Srccitycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrccitycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srccitycode=#Srccitycode#
 		</select>
 		<select id="Vspeciallineinfo.FindBySrcregionname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.srcregionname = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySrcregionname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srcregionname = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindBySrcregionname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.srcregionname = #Srcregionname# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.srcregionname = #Srcregionname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySrcregionname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.srcregionname = #Srcregionname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySrcregionnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srcregionname=#Srcregionname#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstcontactphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstcontactphone = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstcontactphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactphone = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstcontactphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstcontactphone = #Dstcontactphone# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstcontactphone = #Dstcontactphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstcontactphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactphone = #Dstcontactphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstcontactphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstcontactphone=#Dstcontactphone#
 		</select>
 		<select id="Vspeciallineinfo.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.id = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.id = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindById" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.id = #Id# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.id = #Id# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindById" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.id = #Id# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.id=#Id#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstregionname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstregionname = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstregionname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstregionname = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstregionname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstregionname = #Dstregionname# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstregionname = #Dstregionname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstregionname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstregionname = #Dstregionname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstregionnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstregionname=#Dstregionname#
 		</select>
 		<select id="Vspeciallineinfo.FindByDeparturetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.departuretypename = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDeparturetypename" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypename = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDeparturetypename" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.departuretypename = #Departuretypename# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.departuretypename = #Departuretypename# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDeparturetypename" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypename = #Departuretypename# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDeparturetypenameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.departuretypename=#Departuretypename#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstplaceaddress = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstplaceaddress = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstplaceaddress" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstplaceaddress = #Dstplaceaddress# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstplaceaddress = #Dstplaceaddress# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstplaceaddress" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstplaceaddress = #Dstplaceaddress# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstplaceaddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstplaceaddress=#Dstplaceaddress#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstcityname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstcityname = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstcityname" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcityname = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstcityname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstcityname = #Dstcityname# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstcityname = #Dstcityname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstcityname" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcityname = #Dstcityname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstcitynameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstcityname=#Dstcityname#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstcitycode" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstcitycode = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstcitycode" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcitycode = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstcitycode" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstcitycode = #Dstcitycode# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstcitycode = #Dstcitycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstcitycode" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcitycode = #Dstcitycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstcitycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstcitycode=#Dstcitycode#
 		</select>
 		<select id="Vspeciallineinfo.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.title = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.title = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByTitle" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.title = #Title# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByTitle" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.title=#Title#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstcontactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstcontactcellphone = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDstcontactcellphone" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactcellphone = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByDstcontactcellphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.dstcontactcellphone = #Dstcontactcellphone# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.dstcontactcellphone = #Dstcontactcellphone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDstcontactcellphone" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.dstcontactcellphone = #Dstcontactcellphone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDstcontactcellphoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.dstcontactcellphone=#Dstcontactcellphone#
 		</select>
 		<select id="Vspeciallineinfo.FindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.username = #value#
 		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByUsername" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.username = #value# ORDER BY id DESC
+		</select>
 		<select id="VspeciallineinfoPagination.FindByUsername" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
-			WHERE v_speciallineinfo.username = #Username# limit #Limit# offset #Offset# 
+			WHERE v_speciallineinfo.username = #Username# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByUsername" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.username = #Username# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByUsernameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.username=#Username#
 		</select>
 	</statements>
 </sqlMap>

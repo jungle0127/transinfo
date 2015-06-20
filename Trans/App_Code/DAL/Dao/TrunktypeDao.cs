@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Trunktype result = this.sqlMapper.QueryForObject<Trunktype>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Trunktype.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Trunktype> FindAll() {
 			String stmtId = "Trunktype.FindAll";
 			IList<Trunktype> result = this.sqlMapper.QueryForList<Trunktype>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Trunktype> result = this.sqlMapper.QueryForList<Trunktype>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTypename(Trunktype obj){
+			String stmtId = "Trunktype.GetFindByTypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Trunktype obj) {
 			String stmtId = "Trunktype.Update";
 			this.sqlMapper.Update(stmtId, obj);

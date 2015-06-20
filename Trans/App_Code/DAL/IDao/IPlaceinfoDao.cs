@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Placeinfo Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Placeinfo> FindAll();
 
 		IList<Placeinfo> PaginationFindAll(PlaceinfoPagination obj);
@@ -21,21 +23,31 @@ namespace Trans.DAL.Dao
 
 		IList<Placeinfo> PaginationFindByAddress(PlaceinfoPagination obj);
 
+		int FindCountByAddress(Placeinfo obj);
+
 		IList<Placeinfo> FindByContactpersonname(String contactpersonname);
 
 		IList<Placeinfo> PaginationFindByContactpersonname(PlaceinfoPagination obj);
+
+		int FindCountByContactpersonname(Placeinfo obj);
 
 		IList<Placeinfo> FindByContactphone(String contactphone);
 
 		IList<Placeinfo> PaginationFindByContactphone(PlaceinfoPagination obj);
 
+		int FindCountByContactphone(Placeinfo obj);
+
 		IList<Placeinfo> FindByContactcellphone(String contactcellphone);
 
 		IList<Placeinfo> PaginationFindByContactcellphone(PlaceinfoPagination obj);
 
+		int FindCountByContactcellphone(Placeinfo obj);
+
 		IList<Placeinfo> FindByCountycode(String countycode);
 
 		IList<Placeinfo> PaginationFindByCountycode(PlaceinfoPagination obj);
+
+		int FindCountByCountycode(Placeinfo obj);
 
 		void Insert(Placeinfo obj);
 

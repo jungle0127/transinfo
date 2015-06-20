@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Rightgrouphasrights result = this.sqlMapper.QueryForObject<Rightgrouphasrights>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Rightgrouphasrights.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Rightgrouphasrights> FindAll() {
 			String stmtId = "Rightgrouphasrights.FindAll";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByActive(Rightgrouphasrights obj){
+			String stmtId = "Rightgrouphasrights.GetFindByActiveCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rightgrouphasrights> FindByRightid(Int64 rightid) {
 			String stmtId = "Rightgrouphasrights.FindByRightid";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, rightid);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByRightid(Rightgrouphasrights obj){
+			String stmtId = "Rightgrouphasrights.GetFindByRightidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Rightgrouphasrights> FindByGroupid(Int64 groupid) {
 			String stmtId = "Rightgrouphasrights.FindByGroupid";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, groupid);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }
+		public int FindCountByGroupid(Rightgrouphasrights obj){
+			String stmtId = "Rightgrouphasrights.GetFindByGroupidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Rightgrouphasrights obj) {
 			String stmtId = "Rightgrouphasrights.Update";
 			this.sqlMapper.Update(stmtId, obj);

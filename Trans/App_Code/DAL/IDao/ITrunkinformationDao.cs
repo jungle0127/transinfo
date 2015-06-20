@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Trunkinformation Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Trunkinformation> FindAll();
 
 		IList<Trunkinformation> PaginationFindAll(TrunkinformationPagination obj);
@@ -21,61 +23,91 @@ namespace Trans.DAL.Dao
 
 		IList<Trunkinformation> PaginationFindBySrccountycode(TrunkinformationPagination obj);
 
+		int FindCountBySrccountycode(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByMarketprice(String marketprice);
 
 		IList<Trunkinformation> PaginationFindByMarketprice(TrunkinformationPagination obj);
+
+		int FindCountByMarketprice(Trunkinformation obj);
 
 		IList<Trunkinformation> FindByTimetypeid(Int64 timetypeid);
 
 		IList<Trunkinformation> PaginationFindByTimetypeid(TrunkinformationPagination obj);
 
+		int FindCountByTimetypeid(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByTakeofftime(DateTime takeofftime);
 
 		IList<Trunkinformation> PaginationFindByTakeofftime(TrunkinformationPagination obj);
+
+		int FindCountByTakeofftime(Trunkinformation obj);
 
 		IList<Trunkinformation> FindByRouter(String router);
 
 		IList<Trunkinformation> PaginationFindByRouter(TrunkinformationPagination obj);
 
+		int FindCountByRouter(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByUserid(Int64 userid);
 
 		IList<Trunkinformation> PaginationFindByUserid(TrunkinformationPagination obj);
+
+		int FindCountByUserid(Trunkinformation obj);
 
 		IList<Trunkinformation> FindByNegotiateprice(String negotiateprice);
 
 		IList<Trunkinformation> PaginationFindByNegotiateprice(TrunkinformationPagination obj);
 
+		int FindCountByNegotiateprice(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByReturntypeid(Int64 returntypeid);
 
 		IList<Trunkinformation> PaginationFindByReturntypeid(TrunkinformationPagination obj);
+
+		int FindCountByReturntypeid(Trunkinformation obj);
 
 		IList<Trunkinformation> FindByActive(Byte active);
 
 		IList<Trunkinformation> PaginationFindByActive(TrunkinformationPagination obj);
 
+		int FindCountByActive(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByTrunkid(Int64 trunkid);
 
 		IList<Trunkinformation> PaginationFindByTrunkid(TrunkinformationPagination obj);
+
+		int FindCountByTrunkid(Trunkinformation obj);
 
 		IList<Trunkinformation> FindByTitle(String title);
 
 		IList<Trunkinformation> PaginationFindByTitle(TrunkinformationPagination obj);
 
+		int FindCountByTitle(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByDstcountycode(String dstcountycode);
 
 		IList<Trunkinformation> PaginationFindByDstcountycode(TrunkinformationPagination obj);
+
+		int FindCountByDstcountycode(Trunkinformation obj);
 
 		IList<Trunkinformation> FindByReleasedate(DateTime releasedate);
 
 		IList<Trunkinformation> PaginationFindByReleasedate(TrunkinformationPagination obj);
 
+		int FindCountByReleasedate(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByDescription(String description);
 
 		IList<Trunkinformation> PaginationFindByDescription(TrunkinformationPagination obj);
 
+		int FindCountByDescription(Trunkinformation obj);
+
 		IList<Trunkinformation> FindByRoutetypeid(Int64 routetypeid);
 
 		IList<Trunkinformation> PaginationFindByRoutetypeid(TrunkinformationPagination obj);
+
+		int FindCountByRoutetypeid(Trunkinformation obj);
 
 		void Insert(Trunkinformation obj);
 

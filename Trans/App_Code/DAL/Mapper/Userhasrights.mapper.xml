@@ -19,29 +19,68 @@
 		<select id="Userhasrights.FindAll" resultMap="FullResultMap">
 			SELECT * FROM user_has_rights
 		</select>
+		<select id="Userhasrights.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM user_has_rights ORDER BY id DESC
+		</select>
 		<select id="Userhasrights.FindAllPagination" parameterClass="UserhasrightsPagination" resultMap="FullResultMap">
 			SELECT * FROM user_has_rights limit #Limit# offset #Offset# 
+		</select>
+		<select id="Userhasrights.DescendOrderFindAllPagination" parameterClass="UserhasrightsPagination" resultMap="FullResultMap">
+			SELECT * FROM user_has_rights ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Userhasrights.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Userhasrights.FindAll">
 			WHERE user_has_rights.userid = #value#
 		</select>
+		<select id="Userhasrights.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="UserhasrightsPagination.FindByUserid" parameterClass="UserhasrightsPagination" resultMap="FullResultMap" extends="Userhasrights.FindAll">
-			WHERE user_has_rights.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE user_has_rights.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UserhasrightsPagination.DescendOrderFindByUserid" parameterClass="UserhasrightsPagination" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Userhasrights.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM user_has_rights WHERE user_has_rights.userid=#Userid#
 		</select>
 		<select id="Userhasrights.Find" parameterClass="Userhasrights" resultMap="FullResultMap" extends="Userhasrights.FindAll">
 			WHERE user_has_rights.id=#Id#
 		</select>
+		<select id="Userhasrights.DescendOrderFind" parameterClass="Userhasrights" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Userhasrights.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM user_has_rights WHERE user_has_rights.id=#Id#
+		</select>
 		<select id="Userhasrights.FindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Userhasrights.FindAll">
 			WHERE user_has_rights.rightid = #value#
 		</select>
+		<select id="Userhasrights.DescendOrderFindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.rightid = #value# ORDER BY id DESC
+		</select>
 		<select id="UserhasrightsPagination.FindByRightid" parameterClass="UserhasrightsPagination" resultMap="FullResultMap" extends="Userhasrights.FindAll">
-			WHERE user_has_rights.rightid = #Rightid# limit #Limit# offset #Offset# 
+			WHERE user_has_rights.rightid = #Rightid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UserhasrightsPagination.DescendOrderFindByRightid" parameterClass="UserhasrightsPagination" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.rightid = #Rightid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Userhasrights.GetFindByRightidCount" resultClass="System.Int32">
+			SELECT count(*) FROM user_has_rights WHERE user_has_rights.rightid=#Rightid#
 		</select>
 		<select id="Userhasrights.FindByAcitve" parameterClass="Byte" resultMap="FullResultMap" extends="Userhasrights.FindAll">
 			WHERE user_has_rights.acitve = #value#
 		</select>
+		<select id="Userhasrights.DescendOrderFindByAcitve" parameterClass="Byte" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.acitve = #value# ORDER BY id DESC
+		</select>
 		<select id="UserhasrightsPagination.FindByAcitve" parameterClass="UserhasrightsPagination" resultMap="FullResultMap" extends="Userhasrights.FindAll">
-			WHERE user_has_rights.acitve = #Acitve# limit #Limit# offset #Offset# 
+			WHERE user_has_rights.acitve = #Acitve# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="UserhasrightsPagination.DescendOrderFindByAcitve" parameterClass="UserhasrightsPagination" resultMap="FullResultMap" extends="Userhasrights.FindAll">
+			WHERE user_has_rights.acitve = #Acitve# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Userhasrights.GetFindByAcitveCount" resultClass="System.Int32">
+			SELECT count(*) FROM user_has_rights WHERE user_has_rights.acitve=#Acitve#
 		</select>
 		<insert id="Userhasrights.Insert" parameterClass="Userhasrights">
 			INSERT INTO user_has_rights (userid,id,rightid,acitve) VALUES (#Userid#,#Id#,#Rightid#,#Acitve#)

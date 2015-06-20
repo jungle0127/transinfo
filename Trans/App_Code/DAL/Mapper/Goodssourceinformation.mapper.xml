@@ -33,113 +33,278 @@
 		<select id="Goodssourceinformation.FindAll" resultMap="FullResultMap">
 			SELECT * FROM goodssourceinformation
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM goodssourceinformation ORDER BY id DESC
+		</select>
 		<select id="Goodssourceinformation.FindAllPagination" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap">
 			SELECT * FROM goodssourceinformation limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.DescendOrderFindAllPagination" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap">
+			SELECT * FROM goodssourceinformation ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Goodssourceinformation.FindByCautiontypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.cautiontypeid = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByCautiontypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.cautiontypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByCautiontypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.cautiontypeid = #Cautiontypeid# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.cautiontypeid = #Cautiontypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByCautiontypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.cautiontypeid = #Cautiontypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByCautiontypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.cautiontypeid=#Cautiontypeid#
 		</select>
 		<select id="Goodssourceinformation.FindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.needtrunkvolume = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.needtrunkvolume = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByNeedtrunkvolume" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.needtrunkvolume = #Needtrunkvolume# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.needtrunkvolume = #Needtrunkvolume# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByNeedtrunkvolume" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.needtrunkvolume = #Needtrunkvolume# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByNeedtrunkvolumeCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.needtrunkvolume=#Needtrunkvolume#
 		</select>
 		<select id="Goodssourceinformation.Find" parameterClass="Goodssourceinformation" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.id=#Id#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFind" parameterClass="Goodssourceinformation" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Goodssourceinformation.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.id=#Id#
+		</select>
 		<select id="Goodssourceinformation.FindByDeadline" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.deadline = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByDeadline" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.deadline = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByDeadline" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.deadline = #Deadline# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.deadline = #Deadline# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByDeadline" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.deadline = #Deadline# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByDeadlineCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.deadline=#Deadline#
 		</select>
 		<select id="Goodssourceinformation.FindByNeedtrunkweight" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.needtrunkweight = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByNeedtrunkweight" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.needtrunkweight = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByNeedtrunkweight" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.needtrunkweight = #Needtrunkweight# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.needtrunkweight = #Needtrunkweight# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByNeedtrunkweight" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.needtrunkweight = #Needtrunkweight# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByNeedtrunkweightCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.needtrunkweight=#Needtrunkweight#
 		</select>
 		<select id="Goodssourceinformation.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.releasedate = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.releasedate = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByReleasedate" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.releasedate = #Releasedate# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByReleasedate" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.releasedate = #Releasedate# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByReleasedateCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.releasedate=#Releasedate#
 		</select>
 		<select id="Goodssourceinformation.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.userid = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByUserid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByUserid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.userid=#Userid#
 		</select>
 		<select id="Goodssourceinformation.FindByNeedtrunklength" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.needtrunklength = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByNeedtrunklength" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.needtrunklength = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByNeedtrunklength" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.needtrunklength = #Needtrunklength# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.needtrunklength = #Needtrunklength# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByNeedtrunklength" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.needtrunklength = #Needtrunklength# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByNeedtrunklengthCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.needtrunklength=#Needtrunklength#
 		</select>
 		<select id="Goodssourceinformation.FindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.price = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByPrice" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.price = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByPrice" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.price = #Price# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.price = #Price# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByPrice" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.price = #Price# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByPriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.price=#Price#
 		</select>
 		<select id="Goodssourceinformation.FindByGoodsname" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.goodsname = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByGoodsname" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.goodsname = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByGoodsname" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.goodsname = #Goodsname# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.goodsname = #Goodsname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByGoodsname" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.goodsname = #Goodsname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByGoodsnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.goodsname=#Goodsname#
 		</select>
 		<select id="Goodssourceinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.title = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.title = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByTitle" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.title = #Title# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByTitle" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.title=#Title#
 		</select>
 		<select id="Goodssourceinformation.FindByTransporttypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.transporttypeid = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByTransporttypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.transporttypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByTransporttypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.transporttypeid = #Transporttypeid# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.transporttypeid = #Transporttypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByTransporttypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.transporttypeid = #Transporttypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByTransporttypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.transporttypeid=#Transporttypeid#
 		</select>
 		<select id="Goodssourceinformation.FindByContent" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.content = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByContent" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.content = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByContent" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.content = #Content# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.content = #Content# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByContent" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.content = #Content# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByContentCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.content=#Content#
 		</select>
 		<select id="Goodssourceinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.srccountycode = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.srccountycode = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindBySrccountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.srccountycode = #Srccountycode# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.srccountycode = #Srccountycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindBySrccountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.srccountycode = #Srccountycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindBySrccountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.srccountycode=#Srccountycode#
 		</select>
 		<select id="Goodssourceinformation.FindByDstcountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.dstcountycode = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByDstcountycode" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.dstcountycode = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByDstcountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.dstcountycode = #Dstcountycode# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.dstcountycode = #Dstcountycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByDstcountycode" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.dstcountycode = #Dstcountycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByDstcountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.dstcountycode=#Dstcountycode#
 		</select>
 		<select id="Goodssourceinformation.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.active = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.active = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByActive" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.active = #Active# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByActive" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.active=#Active#
 		</select>
 		<select id="Goodssourceinformation.FindByGoodstypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.goodstypeid = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByGoodstypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.goodstypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByGoodstypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.goodstypeid = #Goodstypeid# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.goodstypeid = #Goodstypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByGoodstypeid" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.goodstypeid = #Goodstypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByGoodstypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.goodstypeid=#Goodstypeid#
 		</select>
 		<select id="Goodssourceinformation.FindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
 			WHERE goodssourceinformation.titlecolor = #value#
 		</select>
+		<select id="Goodssourceinformation.DescendOrderFindByTitlecolor" parameterClass="String" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.titlecolor = #value# ORDER BY id DESC
+		</select>
 		<select id="GoodssourceinformationPagination.FindByTitlecolor" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
-			WHERE goodssourceinformation.titlecolor = #Titlecolor# limit #Limit# offset #Offset# 
+			WHERE goodssourceinformation.titlecolor = #Titlecolor# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="GoodssourceinformationPagination.DescendOrderFindByTitlecolor" parameterClass="GoodssourceinformationPagination" resultMap="FullResultMap" extends="Goodssourceinformation.FindAll">
+			WHERE goodssourceinformation.titlecolor = #Titlecolor# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Goodssourceinformation.GetFindByTitlecolorCount" resultClass="System.Int32">
+			SELECT count(*) FROM goodssourceinformation WHERE goodssourceinformation.titlecolor=#Titlecolor#
 		</select>
 		<insert id="Goodssourceinformation.Insert" parameterClass="Goodssourceinformation">
 			INSERT INTO goodssourceinformation (cautiontypeid,needtrunkvolume,id,deadline,needtrunkweight,releasedate,userid,needtrunklength,price,goodsname,title,transporttypeid,content,srccountycode,dstcountycode,active,goodstypeid,titlecolor) VALUES (#Cautiontypeid#,#Needtrunkvolume#,#Id#,#Deadline#,#Needtrunkweight#,#Releasedate#,#Userid#,#Needtrunklength#,#Price#,#Goodsname#,#Title#,#Transporttypeid#,#Content#,#Srccountycode#,#Dstcountycode#,#Active#,#Goodstypeid#,#Titlecolor#)

@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
 		Trunkroutetype Find(Int64 id);
 
+		int GetFindCount(Int64 id);
+
 		IList<Trunkroutetype> FindAll();
 
 		IList<Trunkroutetype> PaginationFindAll(TrunkroutetypePagination obj);
@@ -20,6 +22,8 @@ namespace Trans.DAL.Dao
 		IList<Trunkroutetype> FindByTypename(String typename);
 
 		IList<Trunkroutetype> PaginationFindByTypename(TrunkroutetypePagination obj);
+
+		int FindCountByTypename(Trunkroutetype obj);
 
 		void Insert(Trunkroutetype obj);
 

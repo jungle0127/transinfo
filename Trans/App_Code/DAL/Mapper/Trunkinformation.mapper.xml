@@ -31,101 +31,248 @@
 		<select id="Trunkinformation.FindAll" resultMap="FullResultMap">
 			SELECT * FROM trunkinformation
 		</select>
+		<select id="Trunkinformation.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM trunkinformation ORDER BY id DESC
+		</select>
 		<select id="Trunkinformation.FindAllPagination" parameterClass="TrunkinformationPagination" resultMap="FullResultMap">
 			SELECT * FROM trunkinformation limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.DescendOrderFindAllPagination" parameterClass="TrunkinformationPagination" resultMap="FullResultMap">
+			SELECT * FROM trunkinformation ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
 		<select id="Trunkinformation.FindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.srccountycode = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindBySrccountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.srccountycode = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindBySrccountycode" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.srccountycode = #Srccountycode# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.srccountycode = #Srccountycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindBySrccountycode" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.srccountycode = #Srccountycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindBySrccountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.srccountycode=#Srccountycode#
 		</select>
 		<select id="Trunkinformation.FindByMarketprice" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.marketprice = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByMarketprice" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.marketprice = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByMarketprice" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.marketprice = #Marketprice# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.marketprice = #Marketprice# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByMarketprice" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.marketprice = #Marketprice# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByMarketpriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.marketprice=#Marketprice#
 		</select>
 		<select id="Trunkinformation.FindByTimetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.timetypeid = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByTimetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.timetypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByTimetypeid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.timetypeid = #Timetypeid# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.timetypeid = #Timetypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByTimetypeid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.timetypeid = #Timetypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByTimetypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.timetypeid=#Timetypeid#
 		</select>
 		<select id="Trunkinformation.FindByTakeofftime" parameterClass="DateTime" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.takeofftime = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByTakeofftime" parameterClass="DateTime" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.takeofftime = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByTakeofftime" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.takeofftime = #Takeofftime# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.takeofftime = #Takeofftime# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByTakeofftime" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.takeofftime = #Takeofftime# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByTakeofftimeCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.takeofftime=#Takeofftime#
 		</select>
 		<select id="Trunkinformation.FindByRouter" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.router = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByRouter" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.router = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByRouter" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.router = #Router# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.router = #Router# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByRouter" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.router = #Router# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByRouterCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.router=#Router#
 		</select>
 		<select id="Trunkinformation.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.userid = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.userid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByUserid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.userid = #Userid# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByUserid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.userid=#Userid#
 		</select>
 		<select id="Trunkinformation.FindByNegotiateprice" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.negotiateprice = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByNegotiateprice" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.negotiateprice = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByNegotiateprice" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.negotiateprice = #Negotiateprice# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.negotiateprice = #Negotiateprice# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByNegotiateprice" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.negotiateprice = #Negotiateprice# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByNegotiatepriceCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.negotiateprice=#Negotiateprice#
 		</select>
 		<select id="Trunkinformation.FindByReturntypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.returntypeid = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByReturntypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.returntypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByReturntypeid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.returntypeid = #Returntypeid# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.returntypeid = #Returntypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByReturntypeid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.returntypeid = #Returntypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByReturntypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.returntypeid=#Returntypeid#
 		</select>
 		<select id="Trunkinformation.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.active = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.active = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByActive" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.active = #Active# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByActive" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.active=#Active#
 		</select>
 		<select id="Trunkinformation.FindByTrunkid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.trunkid = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByTrunkid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.trunkid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByTrunkid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.trunkid = #Trunkid# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.trunkid = #Trunkid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByTrunkid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.trunkid = #Trunkid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByTrunkidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.trunkid=#Trunkid#
 		</select>
 		<select id="Trunkinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.title = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.title = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByTitle" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.title = #Title# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByTitle" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.title=#Title#
 		</select>
 		<select id="Trunkinformation.Find" parameterClass="Trunkinformation" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.id=#Id#
 		</select>
+		<select id="Trunkinformation.DescendOrderFind" parameterClass="Trunkinformation" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Trunkinformation.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.id=#Id#
+		</select>
 		<select id="Trunkinformation.FindByDstcountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.dstcountycode = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByDstcountycode" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.dstcountycode = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByDstcountycode" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.dstcountycode = #Dstcountycode# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.dstcountycode = #Dstcountycode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByDstcountycode" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.dstcountycode = #Dstcountycode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByDstcountycodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.dstcountycode=#Dstcountycode#
 		</select>
 		<select id="Trunkinformation.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.releasedate = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.releasedate = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByReleasedate" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.releasedate = #Releasedate# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.releasedate = #Releasedate# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByReleasedate" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.releasedate = #Releasedate# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByReleasedateCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.releasedate=#Releasedate#
 		</select>
 		<select id="Trunkinformation.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.description = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.description = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByDescription" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.description = #Description# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.description = #Description# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByDescription" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.description = #Description# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByDescriptionCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.description=#Description#
 		</select>
 		<select id="Trunkinformation.FindByRoutetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
 			WHERE trunkinformation.routetypeid = #value#
 		</select>
+		<select id="Trunkinformation.DescendOrderFindByRoutetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.routetypeid = #value# ORDER BY id DESC
+		</select>
 		<select id="TrunkinformationPagination.FindByRoutetypeid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
-			WHERE trunkinformation.routetypeid = #Routetypeid# limit #Limit# offset #Offset# 
+			WHERE trunkinformation.routetypeid = #Routetypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="TrunkinformationPagination.DescendOrderFindByRoutetypeid" parameterClass="TrunkinformationPagination" resultMap="FullResultMap" extends="Trunkinformation.FindAll">
+			WHERE trunkinformation.routetypeid = #Routetypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Trunkinformation.GetFindByRoutetypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM trunkinformation WHERE trunkinformation.routetypeid=#Routetypeid#
 		</select>
 		<insert id="Trunkinformation.Insert" parameterClass="Trunkinformation">
 			INSERT INTO trunkinformation (srccountycode,marketprice,timetypeid,takeofftime,router,userid,negotiateprice,returntypeid,active,trunkid,title,id,dstcountycode,releasedate,description,routetypeid) VALUES (#Srccountycode#,#Marketprice#,#Timetypeid#,#Takeofftime#,#Router#,#Userid#,#Negotiateprice#,#Returntypeid#,#Active#,#Trunkid#,#Title#,#Id#,#Dstcountycode#,#Releasedate#,#Description#,#Routetypeid#)

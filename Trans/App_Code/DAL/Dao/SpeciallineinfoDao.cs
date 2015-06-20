@@ -27,6 +27,11 @@ namespace Trans.DAL.Dao
 			Speciallineinfo result = this.sqlMapper.QueryForObject<Speciallineinfo>(stmtId, id);
 			return result;
         }
+		public int GetFindCount(Int64 id) {
+			String stmtId = "Speciallineinfo.GetFindCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, id);
+			return result;
+		}
 		public IList<Speciallineinfo> FindAll() {
 			String stmtId = "Speciallineinfo.FindAll";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, null);
@@ -52,6 +57,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByUserid(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByUseridCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByDestinationplaceinfoid(Int64 destinationplaceinfoid) {
 			String stmtId = "Speciallineinfo.FindByDestinationplaceinfoid";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, destinationplaceinfoid);
@@ -62,6 +72,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDestinationplaceinfoid(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByDestinationplaceinfoidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByDeparturetypeid(Int64 departuretypeid) {
 			String stmtId = "Speciallineinfo.FindByDeparturetypeid";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, departuretypeid);
@@ -72,6 +87,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDeparturetypeid(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByDeparturetypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByTitle(String title) {
 			String stmtId = "Speciallineinfo.FindByTitle";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, title);
@@ -82,6 +102,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByTitle(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByVolumeprice(Int32 volumeprice) {
 			String stmtId = "Speciallineinfo.FindByVolumeprice";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, volumeprice);
@@ -92,6 +117,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByVolumeprice(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByVolumepriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByWeightprice(Int32 weightprice) {
 			String stmtId = "Speciallineinfo.FindByWeightprice";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, weightprice);
@@ -102,6 +132,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByWeightprice(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByWeightpriceCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByDescription(String description) {
 			String stmtId = "Speciallineinfo.FindByDescription";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, description);
@@ -112,6 +147,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByDescription(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByDescriptionCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindBySourceplaceinfoid(Int64 sourceplaceinfoid) {
 			String stmtId = "Speciallineinfo.FindBySourceplaceinfoid";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, sourceplaceinfoid);
@@ -122,6 +162,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySourceplaceinfoid(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindBySourceplaceinfoidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid) {
 			String stmtId = "Speciallineinfo.FindBySpeciallinetypeid";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, speciallinetypeid);
@@ -132,6 +177,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountBySpeciallinetypeid(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindBySpeciallinetypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Speciallineinfo> FindByReleasedate(DateTime releasedate) {
 			String stmtId = "Speciallineinfo.FindByReleasedate";
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, releasedate);
@@ -142,6 +192,11 @@ namespace Trans.DAL.Dao
 			IList<Speciallineinfo> result = this.sqlMapper.QueryForList<Speciallineinfo>(stmtId, obj);
 			return result;
         }
+		public int FindCountByReleasedate(Speciallineinfo obj){
+			String stmtId = "Speciallineinfo.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public void Update(Speciallineinfo obj) {
 			String stmtId = "Speciallineinfo.Update";
 			this.sqlMapper.Update(stmtId, obj);
