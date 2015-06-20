@@ -12,11 +12,13 @@ using Trans.DAL.IDao.USP;
 using Trans.DAL.Dao.USP;
 using System.Text;
 using Trans.DAL.Entity.USP;
+using log4net;
 
 namespace Trans.admin.information
 {
     public partial class specificlinepublisher : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        private static ILog logger = LogManager.GetLogger(typeof(specificlinepublisher));
         private CityManager cityManager;
         private ISpeciallinetypeDao lineTypeDao;
         private IDeparturetypeDao departureTypeDao;
@@ -27,6 +29,7 @@ namespace Trans.admin.information
             this.lineTypeDao = new SpeciallinetypeDao();
             this.departureTypeDao = new DeparturetypeDao();
             this.uspInsertDao = new UspInsertSpecialineDataDao();
+            logger.Info("Constructor method done.");
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -36,14 +39,25 @@ namespace Trans.admin.information
                 this.initProvince();
                 this.initSpecialLineType();
                 this.initDepartureType();
+                logger.Info("Dropdownlist inited done.");
             }
+            logger.Info("Page loaded done.");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            UspInsertSpecialineData uspParamData = new UspInsertSpecialineData();
-            uspParamData.XmlData = this.loadInfoXML();
-            this.uspInsertDao.RunProc(uspParamData);
+            try
+            {
+                UspInsertSpecialineData uspParamData = new UspInsertSpecialineData();
+                uspParamData.XmlData = this.loadInfoXML();
+                logger.Info("Specialline information with XML style will be inserted:" + uspParamData.XmlData);
+                this.uspInsertDao.RunProc(uspParamData);
+                logger.Info("Specialline information inserted done.");
+            }
+            catch (Exception Ex)
+            {
+                logger.Error("Specialline information inserted failed with excpetion:" + Ex.Message);
+            }
         }
 
         private string loadInfoXML()
@@ -69,7 +83,7 @@ namespace Trans.admin.information
             xmlBuilder.Append("<speciallinetypeid>" + this.ddlLinetype.SelectedValue + "</speciallinetypeid>");
             xmlBuilder.Append("<description>" + this.txtDescription.Text + "</description>");
             xmlBuilder.Append("</speciallinedata>");
-
+            logger.Info("Specialline built done.");
             return xmlBuilder.ToString();
         }
 

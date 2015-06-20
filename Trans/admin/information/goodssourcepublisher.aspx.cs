@@ -26,6 +26,7 @@ namespace Trans.admin.information
             this.goodsTypeDao = new GoodstypeDao();
             this.transportTypeDao = new TransporttypeDao();
             this.cautionTypeDao = new CautiontypeDao();
+            logger.Info("Constructor method done.");
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +36,9 @@ namespace Trans.admin.information
                 this.initGoodstype();
                 this.initTransportType();
                 this.initProvince();
+                logger.Info("Dropdownlist inited done.");
             }
+            logger.Info("Page loaded done.");
         }
         #region 下拉框初始化
         /// <summary>
@@ -191,7 +194,15 @@ namespace Trans.admin.information
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            this.goodsSourceInfoDao.Insert(this.loadGoodsSourceInfoPoco());
+            try
+            {
+                this.goodsSourceInfoDao.Insert(this.loadGoodsSourceInfoPoco());
+                logger.Info("Goods source information inserted done.");
+            }
+            catch (Exception ex)
+            {
+                logger.Info("Goods source information inserted failed with exception:" + ex.Message);
+            }
         }
 
         private Goodssourceinformation loadGoodsSourceInfoPoco()
@@ -211,7 +222,7 @@ namespace Trans.admin.information
             goodsSourceInfoPoco.Goodstypeid = long.Parse(this.ddlGoodsType.SelectedValue);
             goodsSourceInfoPoco.Userid = long.Parse(base.UserId);
             goodsSourceInfoPoco.Releasedate = DateTime.Now;
-
+            logger.Info("Goods source information loaded done.");
             return goodsSourceInfoPoco;
         }
     }

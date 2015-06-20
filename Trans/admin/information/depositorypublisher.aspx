@@ -68,6 +68,23 @@
                     <asp:TextBox ID="txtTitle" class="dfinput" runat="server" name=""> </asp:TextBox>
                 </li>
                 <li>
+                    <label>所在地</label>
+                    <asp:UpdatePanel ID="updatePanelSrcPlace" runat="server">
+                            <ContentTemplate>
+                                <asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True"
+                                    onselectedindexchanged="ddlProvince_SelectedIndexChanged">
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True"  
+                                    onselectedindexchanged="ddlCity_SelectedIndexChanged">
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlCounty" runat="server" AutoPostBack="true" 
+                                    onselectedindexchanged="ddlCounty_SelectedIndexChanged">
+                                </asp:DropDownList>
+                                <asp:TextBox ID="txtSrcPlaceCode" runat="server" ReadOnly="true"></asp:TextBox>
+                            </ContentTemplate>
+                   </asp:UpdatePanel>
+                </li>
+                <li>
                     <label>地址</label>
                     <asp:TextBox ID="txtAddress" class="dfinput" runat="server"></asp:TextBox>
                 </li>

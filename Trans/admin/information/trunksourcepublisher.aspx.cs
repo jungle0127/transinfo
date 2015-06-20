@@ -8,11 +8,14 @@ using Trans.DAL.Dao;
 using Trans.DAL.Entity;
 using System.Collections;
 using Trans.Biz.Common;
+using log4net;
 
 namespace Trans.admin.information
 {
     public partial class trunksourcepublisher : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        private static ILog logger = LogManager.GetLogger(typeof(trunksourcepublisher));
+
         private IVvehiclenumberDao vehicleNumberDao;
         private ITrunkreturntypeDao trunkReturnTypeDao;
         private ITrunkroutetypeDao trunkRouteTypeDao;
@@ -27,22 +30,37 @@ namespace Trans.admin.information
             this.trunkTimeTypeDao = new TrunktimetypeDao();
             this.trunkInformationDao = new TrunkinformationDao();
             this.cityManager = new CityManager();
+            logger.Info("Constructor method init done.");
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 this.initReturnType();
+                logger.Info("Inited return type dropdownlist.");
                 this.initRouteType();
+                logger.Info("Inited route type dropdownlist.");
                 this.initTimeType();
+                logger.Info("Inited time type dropdownlist.");
                 this.initTrunkNumber();
+                logger.Info("Inited trunk number dropdownlist.");
                 this.initProvince();
+                logger.Info("Inited province dropdownlist.");
             }
+            logger.Info("Page load done.");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            this.trunkInformationDao.Insert(this.loadEntity());
+            try
+            {
+                this.trunkInformationDao.Insert(this.loadEntity());
+                logger.Info("Trunk information inserted.");
+            }
+            catch (Exception ex)
+            {
+                logger.Error("Trunk information inserted failed with exception:" + ex.Message);
+            }
         }
 
         private Trunkinformation loadEntity()
@@ -64,6 +82,7 @@ namespace Trans.admin.information
             trunkInformationEntity.Title = this.txtTitle.Text;
             trunkInformationEntity.Trunkid = long.Parse(this.ddlTrunk.SelectedValue);
             trunkInformationEntity.Userid = long.Parse(base.UserId);
+            logger.Info("Information wrapped done.");
             return trunkInformationEntity;
         }
 
