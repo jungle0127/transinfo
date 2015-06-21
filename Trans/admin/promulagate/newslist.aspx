@@ -11,23 +11,33 @@
     <link rel="Stylesheet" type="text/css" href="../../css/style.css" />
 	<script type="text/javascript" src="../../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
-    
+    <script type="text/javascript">
+
+        function page_change() {
+            $.post("ItemsCountHandler.ashx", "1", function (item_count) {
+                $('#pagination_manager').pagination({
+                    total: item_count,
+                    pageSize: 10,
+                    layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
+                    beforePageText: 'Page',
+                    afterPageText: 'of{pages}',
+                    pageList: [10, 20, 50, 100],
+                    onSelectPage: function (pageNumber, pageSize) {
+                        $('#content').panel('refresh', 'NewsListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&type=1");
+                    }
+                });
+
+            }, "text");
+          }
+  </script>
 </head>
-<body>
+<body  onload="page_change()">
     <form id="form1" runat="server">
-        <div id="content" class="easyui-panel" style="height:400px" data-options="href:'NewsListHandler.ashx?pageNumber=1&pageSize=10'"> </div>
-    <div class="easyui-pagination" style="border:1px solid #ccc;" data-options="
-        total: 2000,
-        pageSize: 10,
-        onSelectPage: function(pageNumber, pageSize){
-        $('#content').panel('refresh', 'NewsListHandler.ashx?pageNumber='+pageNumber+'&pageSize='+pageSize);
-        }">
+        <div id="content" class="easyui-panel" style="height:400px" data-options="href:'NewsListHandler.ashx?pageNumber=1&pageSize=10&type=1'"> </div>
+        <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" >
+            
+        </div>
 
-
-
-    </div>
     </form>
-        
-
 </body>
 </html>

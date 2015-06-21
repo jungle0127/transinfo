@@ -805,6 +805,9 @@
     <Compile Include="admin\information\TrunkSourceInformationList.aspx.designer.cs">
       <DependentUpon>TrunkSourceInformationList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\promulagate\ItemsCountHandler.ashx.cs">
+      <DependentUpon>ItemsCountHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="admin\promulagate\newslist.aspx.cs">
       <DependentUpon>newslist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3101,6 +3104,7 @@
     <Content Include="admin\kindeditor\asp.net\file_manager_json.ashx" />
     <Content Include="admin\kindeditor\asp.net\upload_json.ashx" />
     <Content Include="admin\promulagate\NewsListHandler.ashx" />
+    <Content Include="admin\promulagate\ItemsCountHandler.ashx" />
     <None Include="App_Data\initdb.bat" />
     <None Include="imgs\index\temp\hand.psd" />
     <None Include="imgs\index\temp\LOGIN.psd" />

@@ -28,7 +28,7 @@
      <table width="100%">
       <tbody>
       <tr>
-      <td id="logo"><img src="imgs/index/logo.png"/> </td>
+      <td id="logo"><img src="imgs/index/logo.png" alt=""/> </td>
       <td>
        <div id="phoneContainer">
   			<img src="imgs/index/phone.png"/>
@@ -39,7 +39,7 @@
       <td>
          <div id="userI">
          <a href="admin/login.aspx" id="login—index">登陆</a><br /><br />
-         <a href="admin/login.aspx">注册</a>
+         <a href="admin/promulagate/WebForm1.aspx">注册</a>
         </div>
       </td>
       </tr>

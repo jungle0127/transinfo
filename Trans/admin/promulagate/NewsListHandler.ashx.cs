@@ -27,14 +27,16 @@ namespace Trans.admin.promulagate
             logger.Info("Got page number:" + pageNumber);
             string pageSize = context.Request.QueryString["pageSize"].ToString();
             logger.Info("Got page size:" + pageSize);
+            string typeId = context.Request.QueryString["type"].ToString();
+            logger.Info("Got type ID:" + typeId);
             VarticleinfoPagination pageNationPoco = new VarticleinfoPagination();
             pageNationPoco.Limit = int.Parse(pageSize);
             
             pageNationPoco.Offset = (int.Parse(pageNumber) - 1) * pageNationPoco.Limit;
             logger.Info("Got offset:" + pageNationPoco.Offset.ToString());
-            pageNationPoco.Typeid = 1;
+            pageNationPoco.Typeid = long.Parse(typeId);
             IList<Varticleinfo> articleInfoList = this.articleInfoDao.PaginationFindByTypeid(pageNationPoco);
-
+            logger.Info("Got items:" + articleInfoList.Count.ToString());
             context.Response.Write(this.getTableHtml(this.getTableBodyHtml(articleInfoList)));
         }
 
