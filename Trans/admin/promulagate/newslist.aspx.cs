@@ -9,7 +9,7 @@ using Trans.DAL.Entity;
 
 namespace Trans.admin.promulagate
 {
-    public partial class newslist : System.Web.UI.Page
+    public partial class newslist : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

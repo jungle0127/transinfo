@@ -69,7 +69,7 @@ namespace Trans.admin.promulagate
                 bodyBuilder.Append(articleInfoPoco.Username);
                 bodyBuilder.Append("</td>");
                 bodyBuilder.Append("<td>");
-                bodyBuilder.Append("<a href=\"#\" class=\"tablelink\">查看</a>     <a href=\"#\" class=\"tablelink\"> 删除</a>");
+                bodyBuilder.Append("<a href=\"#\" class=\"tablelink\">查看</a>      <a href=\"#\" onclick=\"delete_article(" + articleInfoPoco.Id.ToString() + ")\" class=\"tablelink\"> 删除</a>");
                 bodyBuilder.Append("</td>");
             }
             return bodyBuilder.ToString();

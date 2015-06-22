@@ -12,7 +12,10 @@
 	<script type="text/javascript" src="../../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
     <script type="text/javascript">
-
+        function delete_article(id) {
+            $.post("ArticleDeleteHandler.ashx", String(id), function (msg) { alert(msg); }, "text");
+            page_change();
+        }
         function page_change() {
             $.post("ItemsCountHandler.ashx", "2", function (item_count) {
                 $('#pagination_manager').pagination({

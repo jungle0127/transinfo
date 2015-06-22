@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Trans.admin.promulagate
 {
-    public partial class NotificationList : System.Web.UI.Page
+    public partial class NotificationList : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
