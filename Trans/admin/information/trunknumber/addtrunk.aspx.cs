@@ -12,11 +12,13 @@ using Trans.DAL.Entity.USP;
 using Trans.DAL.Dao.USP;
 using Trans.DAL.IDao.USP;
 using System.Text;
+using log4net;
 
 namespace Trans.admin.information.trunknumber
 {
     public partial class addtrunk : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        private static ILog logger = LogManager.GetLogger(typeof(addtrunk));
         private ITrunktypeDao trunkTypeDao;
         private IVantypeDao vanTypeDao;
         private CityManager cityManager;
@@ -31,6 +33,7 @@ namespace Trans.admin.information.trunknumber
             this.metaDataDao = new UspInsertTrunkMetadataDao();
             this.prefixDao = new TrunknumberprefixDao();
             this.numberDao = new TrunknumberDao();
+            logger.Info("Constructor method done.");
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,7 +44,9 @@ namespace Trans.admin.information.trunknumber
                 this.initVantype();
                 this.initNumberPrefix();
                 this.initNumberCityPrefix();
+                logger.Info("Dropdown list inited doen.");
             }
+            logger.Info("Page loaded doen.");
         }
         /// <summary>
         /// 
@@ -50,14 +55,19 @@ namespace Trans.admin.information.trunknumber
         private UspInsertTrunkMetadata initTrunkMetaEntity()
         {
             string trunkImageFileName =  "~/licenseimage/trunk_" + DateTime.Now.ToFileTime();
+            logger.Info("Trunk image file will be saved as :" + trunkImageFileName);
             string licenseImageFileName = "~/licenseimage/license_" + DateTime.Now.ToFileTime();
+            logger.Info("License image file will be saved as:" + licenseImageFileName);
             if (this.fileUploadTrunkImage.HasFile && this.fileUploadTrunkLicenceImage.HasFile)
             {
                 this.fileUploadTrunkImage.SaveAs(Server.MapPath(trunkImageFileName));
+                logger.Info("trunk image file saved done as:" + trunkImageFileName);
                 this.fileUploadTrunkLicenceImage.SaveAs(Server.MapPath(licenseImageFileName));
+                logger.Info("License image saved done as:" + licenseImageFileName);
             }
             else
             {
+                logger.Error("File upload controld get image file name failed.");
                 return null;
             }
 
@@ -82,9 +92,9 @@ namespace Trans.admin.information.trunknumber
             metadataXmlBuilder.Append("<licenseuri>"+licenseImageFileName+"</licenseuri>");
 
             metadataXmlBuilder.Append("</trunkmetadata>");
-
             UspInsertTrunkMetadata metaData = new UspInsertTrunkMetadata();
             metaData.XmlData = metadataXmlBuilder.ToString();
+            logger.Info("Trunk metadata:" + metaData.XmlData);
             return metaData;
         }
 
@@ -205,7 +215,16 @@ namespace Trans.admin.information.trunknumber
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            this.metaDataDao.RunProc(this.initTrunkMetaEntity());
+            UspInsertTrunkMetadata trunkMetadata = this.initTrunkMetaEntity();
+            try
+            {
+                this.metaDataDao.RunProc(trunkMetadata);
+                logger.Info("Trunk metadata added done.");
+            }
+            catch (Exception ex)
+            {
+                logger.Error("trunk metadata" + trunkMetadata.XmlData + " added failed with exception:" + ex.Message);
+            }
         }
     }
 }

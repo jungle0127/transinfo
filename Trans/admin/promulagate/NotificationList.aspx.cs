@@ -9,6 +9,9 @@ namespace Trans.admin.promulagate
 {
     public partial class NotificationList : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        public NotificationList()
+            : base()
+        { }
         protected void Page_Load(object sender, EventArgs e)
         {
 

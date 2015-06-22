@@ -11,6 +11,9 @@ namespace Trans.admin.promulagate
 {
     public partial class newslist : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        public newslist()
+            : base()
+        { }
         protected void Page_Load(object sender, EventArgs e)
         {
 
