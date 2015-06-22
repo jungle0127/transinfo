@@ -109,7 +109,7 @@ namespace Trans.admin.information
         private void initDepartureType()
         {
             this.ddlDepartureType.Items.Clear();
-            this.ddlDepartureType.Items.Add(new ListItem("", ""));
+            this.ddlDepartureType.Items.Add(new ListItem("请选择...", "-1"));
             IList<Departuretype> departureTypeList = this.departureTypeDao.FindAll();
             foreach (Departuretype departureTypePoco in departureTypeList)
             {

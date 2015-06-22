@@ -78,12 +78,12 @@
             </li>
             <li>
                 <label>选择货车</label>
-                <asp:DropDownList ID="ddlTrunk" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlTrunk" runat="server"  class="dfinput"></asp:DropDownList>
                 <a href="trunknumber/addtrunk.aspx" target="_self">添加货车</a>
             </li>
             <li>
                 <label>类型</label>
-                <asp:DropDownList ID="ddlRouteType" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlRouteType" runat="server"  class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>出发地</label>
@@ -147,11 +147,11 @@
             </li>
             <li>
                 <label>车源类型</label>
-                <asp:DropDownList ID="ddlTimeType" runat="server" ></asp:DropDownList>
+                <asp:DropDownList ID="ddlTimeType" runat="server"  class="dfinput" ></asp:DropDownList>
             </li>
             <li>
                 <label>往返类型</label>
-                <asp:DropDownList ID="ddlReturnType" runat="server" ></asp:DropDownList>
+                <asp:DropDownList ID="ddlReturnType" runat="server"   class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>备注</label>

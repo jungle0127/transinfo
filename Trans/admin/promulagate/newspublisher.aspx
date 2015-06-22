@@ -63,7 +63,7 @@
                 </li>
                 <li>
                     <label>公告类型</label>
-                    <asp:DropDownList runat="server" ID="ddlArticleType">
+                    <asp:DropDownList runat="server" ID="ddlArticleType"  class="dfinput">
                         <asp:ListItem Text="新闻" Value="1"></asp:ListItem>
                         <asp:ListItem Text="公告" Value="2"></asp:ListItem>
                     </asp:DropDownList>

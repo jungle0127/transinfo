@@ -90,12 +90,12 @@
                 </li>
              <li>
                 <label>经营范围</label>
-                <asp:DropDownList ID="ddlBizScope" runat="server">
+                <asp:DropDownList ID="ddlBizScope" runat="server"  class="dfinput">
                 </asp:DropDownList>
             </li>
             <li>
                 <label>仓库类型</label>
-                <asp:DropDownList ID="ddlDepotType" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlDepotType" runat="server"  class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>面积</label>

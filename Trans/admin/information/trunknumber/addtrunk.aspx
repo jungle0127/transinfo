@@ -63,7 +63,7 @@
             </li>
             <li>
                 <label>车辆类型</label>
-                <asp:DropDownList ID="ddlVanType" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlVanType" runat="server"  class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>车辆品牌</label>
@@ -71,7 +71,7 @@
             </li>
             <li>
                 <label>车体类型</label>
-                <asp:DropDownList ID="ddlTrunkType" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlTrunkType" runat="server"  class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>随车联系人</label>

@@ -140,11 +140,11 @@
             </li>
             <li>
                 <label>发车时间</label>
-                <asp:DropDownList ID="ddlDepartureType" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlDepartureType" runat="server"  class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>专线类型</label>
-                <asp:DropDownList ID="ddlLinetype" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlLinetype" runat="server"  class="dfinput"></asp:DropDownList>
             </li>
             <li>
                 <label>专线描述</label>
