@@ -35,7 +35,7 @@
           }
   </script>
 </head>
-<body  onload="page_change()">
+<body style="background:#f0f9fd;" onload="page_change()">
     <form id="form1" runat="server">
         <div id="content" class="easyui-panel" style="height:400px" data-options="href:'NewsListHandler.ashx?pageNumber=1&pageSize=10&type=1'"> </div>
         <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" >

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Trans.admin.metainfo
+namespace Trans.admin.InformationManager
 {
 
 
-    public partial class goodsmetainfomanager
+    public partial class DepositoryList
     {
 
         /// <summary>

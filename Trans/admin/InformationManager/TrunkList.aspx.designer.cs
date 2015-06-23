@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Trans.admin.metainfo
+namespace Trans.admin.InformationManager
 {
 
 
-    public partial class specificlinemetainfomanager
+    public partial class TrunkList
     {
 
         /// <summary>

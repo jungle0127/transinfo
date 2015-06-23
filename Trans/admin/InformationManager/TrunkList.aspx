@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="goodsmetainfomanager.aspx.cs" Inherits="Trans.admin.metainfo.goodsmetainfomanager" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrunkList.aspx.cs" Inherits="Trans.admin.InformationManager.TrunkList" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

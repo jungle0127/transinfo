@@ -3685,13 +3685,13 @@ INSERT INTO rights (rightname ,righturl )
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('专线信息发布','information/specificlinepublisher.aspx'); -- 12
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('仓储信息管理','metainfo/depositorymetainfomanager.aspx'); -- 13
+	VALUES ('仓储信息管理','InformationManager/DepositoryList.aspx'); -- 13
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('货车信息管理','metainfo/trunkmetainfomanager.aspx'); -- 14
+	VALUES ('货车信息管理','InformationManager/TrunkList.aspx'); -- 14
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('专线信息管理','metainfo/specificlinemetainfomanager.aspx'); -- 15
+	VALUES ('专线信息管理','InformationManager/SpeciallineList.aspx'); -- 15
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('货源信息管理','metainfo/goodsmetainfomanager.aspx'); -- 16
+	VALUES ('货源信息管理','InformationManager/GoodsList.aspx'); -- 16
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('车源统计','statistic/trunksourcestatistic.aspx'); -- 17
 INSERT INTO rights (rightname ,righturl ) 

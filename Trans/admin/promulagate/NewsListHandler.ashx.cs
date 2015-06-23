@@ -48,7 +48,6 @@ namespace Trans.admin.promulagate
             sb.Append(@"<th>标题</th>
                         <th>用户</th>
                         <th>操作</th>
-        </tr>
         </thead>");
             sb.Append("<tbody>");
             sb.Append(bodyHtml);
@@ -71,6 +70,7 @@ namespace Trans.admin.promulagate
                 bodyBuilder.Append("<td>");
                 bodyBuilder.Append("<a href=\"#\" class=\"tablelink\">查看</a>      <a href=\"#\" onclick=\"delete_article(" + articleInfoPoco.Id.ToString() + ")\" class=\"tablelink\"> 删除</a>");
                 bodyBuilder.Append("</td>");
+                bodyBuilder.Append("</tr>");
             }
             return bodyBuilder.ToString();
         }
