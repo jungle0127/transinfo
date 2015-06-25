@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, null);
 			return result;
         }
+		public IList<Rightgrouphasrights> DescendOrderFindAll() {
+			String stmtId = "Rightgrouphasrights.DescendOrderFindAll";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, null);
+			return result;
+        }
 		public IList<Rightgrouphasrights> PaginationFindAll(RightgrouphasrightsPagination obj) {
 			String stmtId = "Rightgrouphasrights.FindAllPagination";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rightgrouphasrights> DescendOrderPaginationFindAll(RightgrouphasrightsPagination obj) {
+			String stmtId = "Rightgrouphasrights.DescendOrderFindAllPagination";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, active);
 			return result;
         }
+		public IList<Rightgrouphasrights> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Rightgrouphasrights.DescendOrderFindByActive";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, active);
+			return result;
+        }
 		public IList<Rightgrouphasrights> PaginationFindByActive(RightgrouphasrightsPagination obj) {
 			String stmtId = "RightgrouphasrightsPagination.FindByActive";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rightgrouphasrights> DescendOrderPaginationFindByActive(RightgrouphasrightsPagination obj) {
+			String stmtId = "RightgrouphasrightsPagination.DescendOrderFindByActive";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, rightid);
 			return result;
         }
+		public IList<Rightgrouphasrights> DescendOrderFindByRightid(Int64 rightid) {
+			String stmtId = "Rightgrouphasrights.DescendOrderFindByRightid";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, rightid);
+			return result;
+        }
 		public IList<Rightgrouphasrights> PaginationFindByRightid(RightgrouphasrightsPagination obj) {
 			String stmtId = "RightgrouphasrightsPagination.FindByRightid";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rightgrouphasrights> DescendOrderPaginationFindByRightid(RightgrouphasrightsPagination obj) {
+			String stmtId = "RightgrouphasrightsPagination.DescendOrderFindByRightid";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, groupid);
 			return result;
         }
+		public IList<Rightgrouphasrights> DescendOrderFindByGroupid(Int64 groupid) {
+			String stmtId = "Rightgrouphasrights.DescendOrderFindByGroupid";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, groupid);
+			return result;
+        }
 		public IList<Rightgrouphasrights> PaginationFindByGroupid(RightgrouphasrightsPagination obj) {
 			String stmtId = "RightgrouphasrightsPagination.FindByGroupid";
+			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rightgrouphasrights> DescendOrderPaginationFindByGroupid(RightgrouphasrightsPagination obj) {
+			String stmtId = "RightgrouphasrightsPagination.DescendOrderFindByGroupid";
 			IList<Rightgrouphasrights> result = this.sqlMapper.QueryForList<Rightgrouphasrights>(stmtId, obj);
 			return result;
         }

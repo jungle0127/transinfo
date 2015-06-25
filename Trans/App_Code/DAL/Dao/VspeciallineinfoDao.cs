@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, null);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindAll() {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindAll";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, null);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindAll(VspeciallineinfoPagination obj) {
 			String stmtId = "Vspeciallineinfo.FindAllPagination";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindAll(VspeciallineinfoPagination obj) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindAllPagination";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, releasedate);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByReleasedate(DateTime releasedate) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByReleasedate";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, releasedate);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByReleasedate(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByReleasedate";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByReleasedate(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByReleasedate";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypename);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySpeciallinetypename(String speciallinetypename) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySpeciallinetypename";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypename);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySpeciallinetypename(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySpeciallinetypename";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySpeciallinetypename(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySpeciallinetypename";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactpersonname);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrccontactpersonname(String srccontactpersonname) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrccontactpersonname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactpersonname);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrccontactpersonname(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrccontactpersonname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrccontactpersonname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrccontactpersonname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, description);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDescription(String description) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDescription";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, description);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDescription(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDescription";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDescription(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDescription";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, userid);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByUserid(Int64 userid) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByUserid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, userid);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByUserid(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByUserid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByUserid(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByUserid";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -127,8 +187,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactphone);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrccontactphone(String srccontactphone) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrccontactphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactphone);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrccontactphone(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrccontactphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrccontactphone(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrccontactphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -142,8 +212,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, volumeprice);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByVolumeprice(Int32 volumeprice) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByVolumeprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, volumeprice);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByVolumeprice(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByVolumeprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByVolumeprice(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByVolumeprice";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -157,8 +237,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactpersonname);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstcontactpersonname(String dstcontactpersonname) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstcontactpersonname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactpersonname);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstcontactpersonname(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstcontactpersonname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstcontactpersonname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstcontactpersonname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -172,8 +262,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srcplaceaddress);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrcplaceaddress(String srcplaceaddress) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrcplaceaddress";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srcplaceaddress);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrcplaceaddress(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrcplaceaddress";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrcplaceaddress(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrcplaceaddress";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -187,8 +287,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, weightprice);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByWeightprice(Int32 weightprice) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByWeightprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, weightprice);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByWeightprice(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByWeightprice";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByWeightprice(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByWeightprice";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -202,8 +312,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactcellphone);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrccontactcellphone(String srccontactcellphone) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrccontactcellphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccontactcellphone);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrccontactcellphone(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrccontactcellphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrccontactcellphone(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrccontactcellphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -217,8 +337,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccityname);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrccityname(String srccityname) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrccityname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccityname);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrccityname(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrccityname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrccityname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrccityname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -232,8 +362,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccitycode);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrccitycode(String srccitycode) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrccitycode";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srccitycode);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrccitycode(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrccitycode";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrccitycode(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrccitycode";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -247,8 +387,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srcregionname);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindBySrcregionname(String srcregionname) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySrcregionname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, srcregionname);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindBySrcregionname(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindBySrcregionname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySrcregionname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySrcregionname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -262,8 +412,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactphone);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstcontactphone(String dstcontactphone) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstcontactphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactphone);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstcontactphone(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstcontactphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstcontactphone(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstcontactphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -277,8 +437,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, id);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindById(Int64 id) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindById";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, id);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindById(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindById";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindById(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindById";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -292,8 +462,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstregionname);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstregionname(String dstregionname) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstregionname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstregionname);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstregionname(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstregionname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstregionname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstregionname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -307,8 +487,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, departuretypename);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDeparturetypename(String departuretypename) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDeparturetypename";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, departuretypename);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDeparturetypename(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDeparturetypename";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDeparturetypename(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDeparturetypename";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -322,8 +512,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstplaceaddress);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstplaceaddress(String dstplaceaddress) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstplaceaddress";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstplaceaddress);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstplaceaddress(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstplaceaddress";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstplaceaddress(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstplaceaddress";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -337,8 +537,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcityname);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstcityname(String dstcityname) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstcityname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcityname);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstcityname(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstcityname";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstcityname(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstcityname";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -352,8 +562,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcitycode);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstcitycode(String dstcitycode) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstcitycode";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcitycode);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstcitycode(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstcitycode";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstcitycode(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstcitycode";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -367,8 +587,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, title);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByTitle(String title) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByTitle";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, title);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByTitle(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByTitle";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByTitle(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByTitle";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -382,8 +612,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactcellphone);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByDstcontactcellphone(String dstcontactcellphone) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDstcontactcellphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, dstcontactcellphone);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByDstcontactcellphone(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByDstcontactcellphone";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDstcontactcellphone(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDstcontactcellphone";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }
@@ -397,8 +637,18 @@ namespace Trans.DAL.Dao
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, username);
 			return result;
         }
+		public IList<Vspeciallineinfo> DescendOrderFindByUsername(String username) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByUsername";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, username);
+			return result;
+        }
 		public IList<Vspeciallineinfo> PaginationFindByUsername(VspeciallineinfoPagination obj) {
 			String stmtId = "VspeciallineinfoPagination.FindByUsername";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByUsername(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByUsername";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
 			return result;
         }

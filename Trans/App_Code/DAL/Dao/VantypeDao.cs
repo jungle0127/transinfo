@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, null);
 			return result;
         }
+		public IList<Vantype> DescendOrderFindAll() {
+			String stmtId = "Vantype.DescendOrderFindAll";
+			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, null);
+			return result;
+        }
 		public IList<Vantype> PaginationFindAll(VantypePagination obj) {
 			String stmtId = "Vantype.FindAllPagination";
+			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, obj);
+			return result;
+        }
+		public IList<Vantype> DescendOrderPaginationFindAll(VantypePagination obj) {
+			String stmtId = "Vantype.DescendOrderFindAllPagination";
 			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, typename);
 			return result;
         }
+		public IList<Vantype> DescendOrderFindByTypename(String typename) {
+			String stmtId = "Vantype.DescendOrderFindByTypename";
+			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, typename);
+			return result;
+        }
 		public IList<Vantype> PaginationFindByTypename(VantypePagination obj) {
 			String stmtId = "VantypePagination.FindByTypename";
+			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, obj);
+			return result;
+        }
+		public IList<Vantype> DescendOrderPaginationFindByTypename(VantypePagination obj) {
+			String stmtId = "VantypePagination.DescendOrderFindByTypename";
 			IList<Vantype> result = this.sqlMapper.QueryForList<Vantype>(stmtId, obj);
 			return result;
         }

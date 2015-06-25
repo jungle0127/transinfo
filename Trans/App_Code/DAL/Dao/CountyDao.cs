@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, null);
 			return result;
         }
+		public IList<County> DescendOrderFindAll() {
+			String stmtId = "County.DescendOrderFindAll";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, null);
+			return result;
+        }
 		public IList<County> PaginationFindAll(CountyPagination obj) {
 			String stmtId = "County.FindAllPagination";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
+			return result;
+        }
+		public IList<County> DescendOrderPaginationFindAll(CountyPagination obj) {
+			String stmtId = "County.DescendOrderFindAllPagination";
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, citycode);
 			return result;
         }
+		public IList<County> DescendOrderFindByCitycode(String citycode) {
+			String stmtId = "County.DescendOrderFindByCitycode";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, citycode);
+			return result;
+        }
 		public IList<County> PaginationFindByCitycode(CountyPagination obj) {
 			String stmtId = "CountyPagination.FindByCitycode";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
+			return result;
+        }
+		public IList<County> DescendOrderPaginationFindByCitycode(CountyPagination obj) {
+			String stmtId = "CountyPagination.DescendOrderFindByCitycode";
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, code);
 			return result;
         }
+		public IList<County> DescendOrderFindByCode(String code) {
+			String stmtId = "County.DescendOrderFindByCode";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, code);
+			return result;
+        }
 		public IList<County> PaginationFindByCode(CountyPagination obj) {
 			String stmtId = "CountyPagination.FindByCode";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
+			return result;
+        }
+		public IList<County> DescendOrderPaginationFindByCode(CountyPagination obj) {
+			String stmtId = "CountyPagination.DescendOrderFindByCode";
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, name);
 			return result;
         }
+		public IList<County> DescendOrderFindByName(String name) {
+			String stmtId = "County.DescendOrderFindByName";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, name);
+			return result;
+        }
 		public IList<County> PaginationFindByName(CountyPagination obj) {
 			String stmtId = "CountyPagination.FindByName";
+			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
+			return result;
+        }
+		public IList<County> DescendOrderPaginationFindByName(CountyPagination obj) {
+			String stmtId = "CountyPagination.DescendOrderFindByName";
 			IList<County> result = this.sqlMapper.QueryForList<County>(stmtId, obj);
 			return result;
         }

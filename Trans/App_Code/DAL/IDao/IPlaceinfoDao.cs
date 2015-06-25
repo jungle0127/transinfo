@@ -15,37 +15,61 @@ namespace Trans.DAL.Dao
 
 		IList<Placeinfo> FindAll();
 
+		IList<Placeinfo> DescendOrderFindAll();
+
 		IList<Placeinfo> PaginationFindAll(PlaceinfoPagination obj);
+
+		IList<Placeinfo> DescendOrderPaginationFindAll(PlaceinfoPagination obj);
 
 		IList<Placeinfo> QuickFindAll();
 
 		IList<Placeinfo> FindByAddress(String address);
 
+		IList<Placeinfo> DescendOrderFindByAddress(String address);
+
 		IList<Placeinfo> PaginationFindByAddress(PlaceinfoPagination obj);
+
+		IList<Placeinfo> DescendOrderPaginationFindByAddress(PlaceinfoPagination obj);
 
 		int FindCountByAddress(Placeinfo obj);
 
 		IList<Placeinfo> FindByContactpersonname(String contactpersonname);
 
+		IList<Placeinfo> DescendOrderFindByContactpersonname(String contactpersonname);
+
 		IList<Placeinfo> PaginationFindByContactpersonname(PlaceinfoPagination obj);
+
+		IList<Placeinfo> DescendOrderPaginationFindByContactpersonname(PlaceinfoPagination obj);
 
 		int FindCountByContactpersonname(Placeinfo obj);
 
 		IList<Placeinfo> FindByContactphone(String contactphone);
 
+		IList<Placeinfo> DescendOrderFindByContactphone(String contactphone);
+
 		IList<Placeinfo> PaginationFindByContactphone(PlaceinfoPagination obj);
+
+		IList<Placeinfo> DescendOrderPaginationFindByContactphone(PlaceinfoPagination obj);
 
 		int FindCountByContactphone(Placeinfo obj);
 
 		IList<Placeinfo> FindByContactcellphone(String contactcellphone);
 
+		IList<Placeinfo> DescendOrderFindByContactcellphone(String contactcellphone);
+
 		IList<Placeinfo> PaginationFindByContactcellphone(PlaceinfoPagination obj);
+
+		IList<Placeinfo> DescendOrderPaginationFindByContactcellphone(PlaceinfoPagination obj);
 
 		int FindCountByContactcellphone(Placeinfo obj);
 
 		IList<Placeinfo> FindByCountycode(String countycode);
 
+		IList<Placeinfo> DescendOrderFindByCountycode(String countycode);
+
 		IList<Placeinfo> PaginationFindByCountycode(PlaceinfoPagination obj);
+
+		IList<Placeinfo> DescendOrderPaginationFindByCountycode(PlaceinfoPagination obj);
 
 		int FindCountByCountycode(Placeinfo obj);
 

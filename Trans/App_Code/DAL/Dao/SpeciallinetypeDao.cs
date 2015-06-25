@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, null);
 			return result;
         }
+		public IList<Speciallinetype> DescendOrderFindAll() {
+			String stmtId = "Speciallinetype.DescendOrderFindAll";
+			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, null);
+			return result;
+        }
 		public IList<Speciallinetype> PaginationFindAll(SpeciallinetypePagination obj) {
 			String stmtId = "Speciallinetype.FindAllPagination";
+			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, obj);
+			return result;
+        }
+		public IList<Speciallinetype> DescendOrderPaginationFindAll(SpeciallinetypePagination obj) {
+			String stmtId = "Speciallinetype.DescendOrderFindAllPagination";
 			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, typename);
 			return result;
         }
+		public IList<Speciallinetype> DescendOrderFindByTypename(String typename) {
+			String stmtId = "Speciallinetype.DescendOrderFindByTypename";
+			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, typename);
+			return result;
+        }
 		public IList<Speciallinetype> PaginationFindByTypename(SpeciallinetypePagination obj) {
 			String stmtId = "SpeciallinetypePagination.FindByTypename";
+			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, obj);
+			return result;
+        }
+		public IList<Speciallinetype> DescendOrderPaginationFindByTypename(SpeciallinetypePagination obj) {
+			String stmtId = "SpeciallinetypePagination.DescendOrderFindByTypename";
 			IList<Speciallinetype> result = this.sqlMapper.QueryForList<Speciallinetype>(stmtId, obj);
 			return result;
         }

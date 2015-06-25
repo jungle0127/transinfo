@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, null);
 			return result;
         }
+		public IList<Placeinfo> DescendOrderFindAll() {
+			String stmtId = "Placeinfo.DescendOrderFindAll";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, null);
+			return result;
+        }
 		public IList<Placeinfo> PaginationFindAll(PlaceinfoPagination obj) {
 			String stmtId = "Placeinfo.FindAllPagination";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Placeinfo> DescendOrderPaginationFindAll(PlaceinfoPagination obj) {
+			String stmtId = "Placeinfo.DescendOrderFindAllPagination";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, address);
 			return result;
         }
+		public IList<Placeinfo> DescendOrderFindByAddress(String address) {
+			String stmtId = "Placeinfo.DescendOrderFindByAddress";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, address);
+			return result;
+        }
 		public IList<Placeinfo> PaginationFindByAddress(PlaceinfoPagination obj) {
 			String stmtId = "PlaceinfoPagination.FindByAddress";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Placeinfo> DescendOrderPaginationFindByAddress(PlaceinfoPagination obj) {
+			String stmtId = "PlaceinfoPagination.DescendOrderFindByAddress";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactpersonname);
 			return result;
         }
+		public IList<Placeinfo> DescendOrderFindByContactpersonname(String contactpersonname) {
+			String stmtId = "Placeinfo.DescendOrderFindByContactpersonname";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactpersonname);
+			return result;
+        }
 		public IList<Placeinfo> PaginationFindByContactpersonname(PlaceinfoPagination obj) {
 			String stmtId = "PlaceinfoPagination.FindByContactpersonname";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Placeinfo> DescendOrderPaginationFindByContactpersonname(PlaceinfoPagination obj) {
+			String stmtId = "PlaceinfoPagination.DescendOrderFindByContactpersonname";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactphone);
 			return result;
         }
+		public IList<Placeinfo> DescendOrderFindByContactphone(String contactphone) {
+			String stmtId = "Placeinfo.DescendOrderFindByContactphone";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactphone);
+			return result;
+        }
 		public IList<Placeinfo> PaginationFindByContactphone(PlaceinfoPagination obj) {
 			String stmtId = "PlaceinfoPagination.FindByContactphone";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Placeinfo> DescendOrderPaginationFindByContactphone(PlaceinfoPagination obj) {
+			String stmtId = "PlaceinfoPagination.DescendOrderFindByContactphone";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactcellphone);
 			return result;
         }
+		public IList<Placeinfo> DescendOrderFindByContactcellphone(String contactcellphone) {
+			String stmtId = "Placeinfo.DescendOrderFindByContactcellphone";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, contactcellphone);
+			return result;
+        }
 		public IList<Placeinfo> PaginationFindByContactcellphone(PlaceinfoPagination obj) {
 			String stmtId = "PlaceinfoPagination.FindByContactcellphone";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Placeinfo> DescendOrderPaginationFindByContactcellphone(PlaceinfoPagination obj) {
+			String stmtId = "PlaceinfoPagination.DescendOrderFindByContactcellphone";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, countycode);
 			return result;
         }
+		public IList<Placeinfo> DescendOrderFindByCountycode(String countycode) {
+			String stmtId = "Placeinfo.DescendOrderFindByCountycode";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, countycode);
+			return result;
+        }
 		public IList<Placeinfo> PaginationFindByCountycode(PlaceinfoPagination obj) {
 			String stmtId = "PlaceinfoPagination.FindByCountycode";
+			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Placeinfo> DescendOrderPaginationFindByCountycode(PlaceinfoPagination obj) {
+			String stmtId = "PlaceinfoPagination.DescendOrderFindByCountycode";
 			IList<Placeinfo> result = this.sqlMapper.QueryForList<Placeinfo>(stmtId, obj);
 			return result;
         }

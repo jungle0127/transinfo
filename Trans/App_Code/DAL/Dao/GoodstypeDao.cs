@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, null);
 			return result;
         }
+		public IList<Goodstype> DescendOrderFindAll() {
+			String stmtId = "Goodstype.DescendOrderFindAll";
+			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, null);
+			return result;
+        }
 		public IList<Goodstype> PaginationFindAll(GoodstypePagination obj) {
 			String stmtId = "Goodstype.FindAllPagination";
+			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, obj);
+			return result;
+        }
+		public IList<Goodstype> DescendOrderPaginationFindAll(GoodstypePagination obj) {
+			String stmtId = "Goodstype.DescendOrderFindAllPagination";
 			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, typename);
 			return result;
         }
+		public IList<Goodstype> DescendOrderFindByTypename(String typename) {
+			String stmtId = "Goodstype.DescendOrderFindByTypename";
+			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, typename);
+			return result;
+        }
 		public IList<Goodstype> PaginationFindByTypename(GoodstypePagination obj) {
 			String stmtId = "GoodstypePagination.FindByTypename";
+			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, obj);
+			return result;
+        }
+		public IList<Goodstype> DescendOrderPaginationFindByTypename(GoodstypePagination obj) {
+			String stmtId = "GoodstypePagination.DescendOrderFindByTypename";
 			IList<Goodstype> result = this.sqlMapper.QueryForList<Goodstype>(stmtId, obj);
 			return result;
         }

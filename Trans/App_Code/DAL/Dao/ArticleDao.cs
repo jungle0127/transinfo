@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, null);
 			return result;
         }
+		public IList<Article> DescendOrderFindAll() {
+			String stmtId = "Article.DescendOrderFindAll";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, null);
+			return result;
+        }
 		public IList<Article> PaginationFindAll(ArticlePagination obj) {
 			String stmtId = "Article.FindAllPagination";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindAll(ArticlePagination obj) {
+			String stmtId = "Article.DescendOrderFindAllPagination";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, userid);
 			return result;
         }
+		public IList<Article> DescendOrderFindByUserid(Int64 userid) {
+			String stmtId = "Article.DescendOrderFindByUserid";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, userid);
+			return result;
+        }
 		public IList<Article> PaginationFindByUserid(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByUserid";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByUserid(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByUserid";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, title);
 			return result;
         }
+		public IList<Article> DescendOrderFindByTitle(String title) {
+			String stmtId = "Article.DescendOrderFindByTitle";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, title);
+			return result;
+        }
 		public IList<Article> PaginationFindByTitle(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByTitle";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByTitle(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByTitle";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, hittimes);
 			return result;
         }
+		public IList<Article> DescendOrderFindByHittimes(Int64 hittimes) {
+			String stmtId = "Article.DescendOrderFindByHittimes";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, hittimes);
+			return result;
+        }
 		public IList<Article> PaginationFindByHittimes(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByHittimes";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByHittimes(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByHittimes";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, titlecolor);
 			return result;
         }
+		public IList<Article> DescendOrderFindByTitlecolor(String titlecolor) {
+			String stmtId = "Article.DescendOrderFindByTitlecolor";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, titlecolor);
+			return result;
+        }
 		public IList<Article> PaginationFindByTitlecolor(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByTitlecolor";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByTitlecolor(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByTitlecolor";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, typeid);
 			return result;
         }
+		public IList<Article> DescendOrderFindByTypeid(Int64 typeid) {
+			String stmtId = "Article.DescendOrderFindByTypeid";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, typeid);
+			return result;
+        }
 		public IList<Article> PaginationFindByTypeid(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByTypeid";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByTypeid(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByTypeid";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -127,8 +187,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, istop);
 			return result;
         }
+		public IList<Article> DescendOrderFindByIstop(Byte istop) {
+			String stmtId = "Article.DescendOrderFindByIstop";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, istop);
+			return result;
+        }
 		public IList<Article> PaginationFindByIstop(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByIstop";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByIstop(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByIstop";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -142,8 +212,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, content);
 			return result;
         }
+		public IList<Article> DescendOrderFindByContent(String content) {
+			String stmtId = "Article.DescendOrderFindByContent";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, content);
+			return result;
+        }
 		public IList<Article> PaginationFindByContent(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByContent";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByContent(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByContent";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -157,8 +237,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releaseip);
 			return result;
         }
+		public IList<Article> DescendOrderFindByReleaseip(String releaseip) {
+			String stmtId = "Article.DescendOrderFindByReleaseip";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releaseip);
+			return result;
+        }
 		public IList<Article> PaginationFindByReleaseip(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByReleaseip";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByReleaseip(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByReleaseip";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -172,8 +262,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releasedate);
 			return result;
         }
+		public IList<Article> DescendOrderFindByReleasedate(DateTime releasedate) {
+			String stmtId = "Article.DescendOrderFindByReleasedate";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, releasedate);
+			return result;
+        }
 		public IList<Article> PaginationFindByReleasedate(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByReleasedate";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByReleasedate(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByReleasedate";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }
@@ -187,8 +287,18 @@ namespace Trans.DAL.Dao
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, ispass);
 			return result;
         }
+		public IList<Article> DescendOrderFindByIspass(Byte ispass) {
+			String stmtId = "Article.DescendOrderFindByIspass";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, ispass);
+			return result;
+        }
 		public IList<Article> PaginationFindByIspass(ArticlePagination obj) {
 			String stmtId = "ArticlePagination.FindByIspass";
+			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
+			return result;
+        }
+		public IList<Article> DescendOrderPaginationFindByIspass(ArticlePagination obj) {
+			String stmtId = "ArticlePagination.DescendOrderFindByIspass";
 			IList<Article> result = this.sqlMapper.QueryForList<Article>(stmtId, obj);
 			return result;
         }

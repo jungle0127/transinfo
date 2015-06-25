@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, null);
 			return result;
         }
+		public IList<Trunknumberprefix> DescendOrderFindAll() {
+			String stmtId = "Trunknumberprefix.DescendOrderFindAll";
+			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, null);
+			return result;
+        }
 		public IList<Trunknumberprefix> PaginationFindAll(TrunknumberprefixPagination obj) {
 			String stmtId = "Trunknumberprefix.FindAllPagination";
+			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumberprefix> DescendOrderPaginationFindAll(TrunknumberprefixPagination obj) {
+			String stmtId = "Trunknumberprefix.DescendOrderFindAllPagination";
 			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, prefixname);
 			return result;
         }
+		public IList<Trunknumberprefix> DescendOrderFindByPrefixname(String prefixname) {
+			String stmtId = "Trunknumberprefix.DescendOrderFindByPrefixname";
+			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, prefixname);
+			return result;
+        }
 		public IList<Trunknumberprefix> PaginationFindByPrefixname(TrunknumberprefixPagination obj) {
 			String stmtId = "TrunknumberprefixPagination.FindByPrefixname";
+			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumberprefix> DescendOrderPaginationFindByPrefixname(TrunknumberprefixPagination obj) {
+			String stmtId = "TrunknumberprefixPagination.DescendOrderFindByPrefixname";
 			IList<Trunknumberprefix> result = this.sqlMapper.QueryForList<Trunknumberprefix>(stmtId, obj);
 			return result;
         }

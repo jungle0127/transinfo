@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, null);
 			return result;
         }
+		public IList<Evaluatetype> DescendOrderFindAll() {
+			String stmtId = "Evaluatetype.DescendOrderFindAll";
+			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, null);
+			return result;
+        }
 		public IList<Evaluatetype> PaginationFindAll(EvaluatetypePagination obj) {
 			String stmtId = "Evaluatetype.FindAllPagination";
+			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
+			return result;
+        }
+		public IList<Evaluatetype> DescendOrderPaginationFindAll(EvaluatetypePagination obj) {
+			String stmtId = "Evaluatetype.DescendOrderFindAllPagination";
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, active);
 			return result;
         }
+		public IList<Evaluatetype> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Evaluatetype.DescendOrderFindByActive";
+			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, active);
+			return result;
+        }
 		public IList<Evaluatetype> PaginationFindByActive(EvaluatetypePagination obj) {
 			String stmtId = "EvaluatetypePagination.FindByActive";
+			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
+			return result;
+        }
+		public IList<Evaluatetype> DescendOrderPaginationFindByActive(EvaluatetypePagination obj) {
+			String stmtId = "EvaluatetypePagination.DescendOrderFindByActive";
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, name);
 			return result;
         }
+		public IList<Evaluatetype> DescendOrderFindByName(String name) {
+			String stmtId = "Evaluatetype.DescendOrderFindByName";
+			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, name);
+			return result;
+        }
 		public IList<Evaluatetype> PaginationFindByName(EvaluatetypePagination obj) {
 			String stmtId = "EvaluatetypePagination.FindByName";
+			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
+			return result;
+        }
+		public IList<Evaluatetype> DescendOrderPaginationFindByName(EvaluatetypePagination obj) {
+			String stmtId = "EvaluatetypePagination.DescendOrderFindByName";
 			IList<Evaluatetype> result = this.sqlMapper.QueryForList<Evaluatetype>(stmtId, obj);
 			return result;
         }

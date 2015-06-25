@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, null);
 			return result;
         }
+		public IList<Trunkreturntype> DescendOrderFindAll() {
+			String stmtId = "Trunkreturntype.DescendOrderFindAll";
+			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, null);
+			return result;
+        }
 		public IList<Trunkreturntype> PaginationFindAll(TrunkreturntypePagination obj) {
 			String stmtId = "Trunkreturntype.FindAllPagination";
+			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkreturntype> DescendOrderPaginationFindAll(TrunkreturntypePagination obj) {
+			String stmtId = "Trunkreturntype.DescendOrderFindAllPagination";
 			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, typename);
 			return result;
         }
+		public IList<Trunkreturntype> DescendOrderFindByTypename(String typename) {
+			String stmtId = "Trunkreturntype.DescendOrderFindByTypename";
+			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, typename);
+			return result;
+        }
 		public IList<Trunkreturntype> PaginationFindByTypename(TrunkreturntypePagination obj) {
 			String stmtId = "TrunkreturntypePagination.FindByTypename";
+			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkreturntype> DescendOrderPaginationFindByTypename(TrunkreturntypePagination obj) {
+			String stmtId = "TrunkreturntypePagination.DescendOrderFindByTypename";
 			IList<Trunkreturntype> result = this.sqlMapper.QueryForList<Trunkreturntype>(stmtId, obj);
 			return result;
         }

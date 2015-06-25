@@ -15,13 +15,21 @@ namespace Trans.DAL.Dao
 
 		IList<Speciallinetype> FindAll();
 
+		IList<Speciallinetype> DescendOrderFindAll();
+
 		IList<Speciallinetype> PaginationFindAll(SpeciallinetypePagination obj);
+
+		IList<Speciallinetype> DescendOrderPaginationFindAll(SpeciallinetypePagination obj);
 
 		IList<Speciallinetype> QuickFindAll();
 
 		IList<Speciallinetype> FindByTypename(String typename);
 
+		IList<Speciallinetype> DescendOrderFindByTypename(String typename);
+
 		IList<Speciallinetype> PaginationFindByTypename(SpeciallinetypePagination obj);
+
+		IList<Speciallinetype> DescendOrderPaginationFindByTypename(SpeciallinetypePagination obj);
 
 		int FindCountByTypename(Speciallinetype obj);
 

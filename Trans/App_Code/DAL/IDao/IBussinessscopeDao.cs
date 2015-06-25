@@ -15,19 +15,31 @@ namespace Trans.DAL.Dao
 
 		IList<Bussinessscope> FindAll();
 
+		IList<Bussinessscope> DescendOrderFindAll();
+
 		IList<Bussinessscope> PaginationFindAll(BussinessscopePagination obj);
+
+		IList<Bussinessscope> DescendOrderPaginationFindAll(BussinessscopePagination obj);
 
 		IList<Bussinessscope> QuickFindAll();
 
 		IList<Bussinessscope> FindByScopename(String scopename);
 
+		IList<Bussinessscope> DescendOrderFindByScopename(String scopename);
+
 		IList<Bussinessscope> PaginationFindByScopename(BussinessscopePagination obj);
+
+		IList<Bussinessscope> DescendOrderPaginationFindByScopename(BussinessscopePagination obj);
 
 		int FindCountByScopename(Bussinessscope obj);
 
 		IList<Bussinessscope> FindByActive(Byte active);
 
+		IList<Bussinessscope> DescendOrderFindByActive(Byte active);
+
 		IList<Bussinessscope> PaginationFindByActive(BussinessscopePagination obj);
+
+		IList<Bussinessscope> DescendOrderPaginationFindByActive(BussinessscopePagination obj);
 
 		int FindCountByActive(Bussinessscope obj);
 

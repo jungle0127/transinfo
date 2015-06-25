@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, null);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindAll() {
+			String stmtId = "Trunkinformation.DescendOrderFindAll";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, null);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindAll(TrunkinformationPagination obj) {
 			String stmtId = "Trunkinformation.FindAllPagination";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindAll(TrunkinformationPagination obj) {
+			String stmtId = "Trunkinformation.DescendOrderFindAllPagination";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, srccountycode);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindBySrccountycode(String srccountycode) {
+			String stmtId = "Trunkinformation.DescendOrderFindBySrccountycode";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, srccountycode);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindBySrccountycode(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindBySrccountycode";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindBySrccountycode(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindBySrccountycode";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, marketprice);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByMarketprice(String marketprice) {
+			String stmtId = "Trunkinformation.DescendOrderFindByMarketprice";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, marketprice);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByMarketprice(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByMarketprice";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByMarketprice(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByMarketprice";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, timetypeid);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByTimetypeid(Int64 timetypeid) {
+			String stmtId = "Trunkinformation.DescendOrderFindByTimetypeid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, timetypeid);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByTimetypeid(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByTimetypeid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByTimetypeid(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByTimetypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, takeofftime);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByTakeofftime(DateTime takeofftime) {
+			String stmtId = "Trunkinformation.DescendOrderFindByTakeofftime";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, takeofftime);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByTakeofftime(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByTakeofftime";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByTakeofftime(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByTakeofftime";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, router);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByRouter(String router) {
+			String stmtId = "Trunkinformation.DescendOrderFindByRouter";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, router);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByRouter(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByRouter";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByRouter(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByRouter";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -127,8 +187,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, userid);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByUserid(Int64 userid) {
+			String stmtId = "Trunkinformation.DescendOrderFindByUserid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, userid);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByUserid(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByUserid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByUserid(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByUserid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -142,8 +212,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, negotiateprice);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByNegotiateprice(String negotiateprice) {
+			String stmtId = "Trunkinformation.DescendOrderFindByNegotiateprice";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, negotiateprice);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByNegotiateprice(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByNegotiateprice";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByNegotiateprice(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByNegotiateprice";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -157,8 +237,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, returntypeid);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByReturntypeid(Int64 returntypeid) {
+			String stmtId = "Trunkinformation.DescendOrderFindByReturntypeid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, returntypeid);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByReturntypeid(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByReturntypeid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByReturntypeid(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByReturntypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -172,8 +262,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, active);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Trunkinformation.DescendOrderFindByActive";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, active);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByActive(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByActive";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByActive(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByActive";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -187,8 +287,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, trunkid);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByTrunkid(Int64 trunkid) {
+			String stmtId = "Trunkinformation.DescendOrderFindByTrunkid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, trunkid);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByTrunkid(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByTrunkid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByTrunkid(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByTrunkid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -202,8 +312,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, title);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByTitle(String title) {
+			String stmtId = "Trunkinformation.DescendOrderFindByTitle";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, title);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByTitle(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByTitle";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByTitle(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByTitle";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -217,8 +337,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, dstcountycode);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByDstcountycode(String dstcountycode) {
+			String stmtId = "Trunkinformation.DescendOrderFindByDstcountycode";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, dstcountycode);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByDstcountycode(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByDstcountycode";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByDstcountycode(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByDstcountycode";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -232,8 +362,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, releasedate);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByReleasedate(DateTime releasedate) {
+			String stmtId = "Trunkinformation.DescendOrderFindByReleasedate";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, releasedate);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByReleasedate(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByReleasedate";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByReleasedate(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByReleasedate";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -247,8 +387,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, description);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByDescription(String description) {
+			String stmtId = "Trunkinformation.DescendOrderFindByDescription";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, description);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByDescription(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByDescription";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByDescription(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByDescription";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }
@@ -262,8 +412,18 @@ namespace Trans.DAL.Dao
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, routetypeid);
 			return result;
         }
+		public IList<Trunkinformation> DescendOrderFindByRoutetypeid(Int64 routetypeid) {
+			String stmtId = "Trunkinformation.DescendOrderFindByRoutetypeid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, routetypeid);
+			return result;
+        }
 		public IList<Trunkinformation> PaginationFindByRoutetypeid(TrunkinformationPagination obj) {
 			String stmtId = "TrunkinformationPagination.FindByRoutetypeid";
+			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunkinformation> DescendOrderPaginationFindByRoutetypeid(TrunkinformationPagination obj) {
+			String stmtId = "TrunkinformationPagination.DescendOrderFindByRoutetypeid";
 			IList<Trunkinformation> result = this.sqlMapper.QueryForList<Trunkinformation>(stmtId, obj);
 			return result;
         }

@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, null);
 			return result;
         }
+		public IList<Trunknumber> DescendOrderFindAll() {
+			String stmtId = "Trunknumber.DescendOrderFindAll";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, null);
+			return result;
+        }
 		public IList<Trunknumber> PaginationFindAll(TrunknumberPagination obj) {
 			String stmtId = "Trunknumber.FindAllPagination";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumber> DescendOrderPaginationFindAll(TrunknumberPagination obj) {
+			String stmtId = "Trunknumber.DescendOrderFindAllPagination";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, number);
 			return result;
         }
+		public IList<Trunknumber> DescendOrderFindByNumber(String number) {
+			String stmtId = "Trunknumber.DescendOrderFindByNumber";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, number);
+			return result;
+        }
 		public IList<Trunknumber> PaginationFindByNumber(TrunknumberPagination obj) {
 			String stmtId = "TrunknumberPagination.FindByNumber";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumber> DescendOrderPaginationFindByNumber(TrunknumberPagination obj) {
+			String stmtId = "TrunknumberPagination.DescendOrderFindByNumber";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, userid);
 			return result;
         }
+		public IList<Trunknumber> DescendOrderFindByUserid(Int64 userid) {
+			String stmtId = "Trunknumber.DescendOrderFindByUserid";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, userid);
+			return result;
+        }
 		public IList<Trunknumber> PaginationFindByUserid(TrunknumberPagination obj) {
 			String stmtId = "TrunknumberPagination.FindByUserid";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumber> DescendOrderPaginationFindByUserid(TrunknumberPagination obj) {
+			String stmtId = "TrunknumberPagination.DescendOrderFindByUserid";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, prefixid);
 			return result;
         }
+		public IList<Trunknumber> DescendOrderFindByPrefixid(Int64 prefixid) {
+			String stmtId = "Trunknumber.DescendOrderFindByPrefixid";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, prefixid);
+			return result;
+        }
 		public IList<Trunknumber> PaginationFindByPrefixid(TrunknumberPagination obj) {
 			String stmtId = "TrunknumberPagination.FindByPrefixid";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumber> DescendOrderPaginationFindByPrefixid(TrunknumberPagination obj) {
+			String stmtId = "TrunknumberPagination.DescendOrderFindByPrefixid";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, active);
 			return result;
         }
+		public IList<Trunknumber> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Trunknumber.DescendOrderFindByActive";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, active);
+			return result;
+        }
 		public IList<Trunknumber> PaginationFindByActive(TrunknumberPagination obj) {
 			String stmtId = "TrunknumberPagination.FindByActive";
+			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Trunknumber> DescendOrderPaginationFindByActive(TrunknumberPagination obj) {
+			String stmtId = "TrunknumberPagination.DescendOrderFindByActive";
 			IList<Trunknumber> result = this.sqlMapper.QueryForList<Trunknumber>(stmtId, obj);
 			return result;
         }

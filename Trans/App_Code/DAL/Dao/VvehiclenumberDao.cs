@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, null);
 			return result;
         }
+		public IList<Vvehiclenumber> DescendOrderFindAll() {
+			String stmtId = "Vvehiclenumber.DescendOrderFindAll";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, null);
+			return result;
+        }
 		public IList<Vvehiclenumber> PaginationFindAll(VvehiclenumberPagination obj) {
 			String stmtId = "Vvehiclenumber.FindAllPagination";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Vvehiclenumber> DescendOrderPaginationFindAll(VvehiclenumberPagination obj) {
+			String stmtId = "Vvehiclenumber.DescendOrderFindAllPagination";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, userid);
 			return result;
         }
+		public IList<Vvehiclenumber> DescendOrderFindByUserid(Int64 userid) {
+			String stmtId = "Vvehiclenumber.DescendOrderFindByUserid";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, userid);
+			return result;
+        }
 		public IList<Vvehiclenumber> PaginationFindByUserid(VvehiclenumberPagination obj) {
 			String stmtId = "VvehiclenumberPagination.FindByUserid";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Vvehiclenumber> DescendOrderPaginationFindByUserid(VvehiclenumberPagination obj) {
+			String stmtId = "VvehiclenumberPagination.DescendOrderFindByUserid";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, id);
 			return result;
         }
+		public IList<Vvehiclenumber> DescendOrderFindById(Int64 id) {
+			String stmtId = "Vvehiclenumber.DescendOrderFindById";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, id);
+			return result;
+        }
 		public IList<Vvehiclenumber> PaginationFindById(VvehiclenumberPagination obj) {
 			String stmtId = "VvehiclenumberPagination.FindById";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Vvehiclenumber> DescendOrderPaginationFindById(VvehiclenumberPagination obj) {
+			String stmtId = "VvehiclenumberPagination.DescendOrderFindById";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, prefixname);
 			return result;
         }
+		public IList<Vvehiclenumber> DescendOrderFindByPrefixname(String prefixname) {
+			String stmtId = "Vvehiclenumber.DescendOrderFindByPrefixname";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, prefixname);
+			return result;
+        }
 		public IList<Vvehiclenumber> PaginationFindByPrefixname(VvehiclenumberPagination obj) {
 			String stmtId = "VvehiclenumberPagination.FindByPrefixname";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Vvehiclenumber> DescendOrderPaginationFindByPrefixname(VvehiclenumberPagination obj) {
+			String stmtId = "VvehiclenumberPagination.DescendOrderFindByPrefixname";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, number);
 			return result;
         }
+		public IList<Vvehiclenumber> DescendOrderFindByNumber(String number) {
+			String stmtId = "Vvehiclenumber.DescendOrderFindByNumber";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, number);
+			return result;
+        }
 		public IList<Vvehiclenumber> PaginationFindByNumber(VvehiclenumberPagination obj) {
 			String stmtId = "VvehiclenumberPagination.FindByNumber";
+			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
+			return result;
+        }
+		public IList<Vvehiclenumber> DescendOrderPaginationFindByNumber(VvehiclenumberPagination obj) {
+			String stmtId = "VvehiclenumberPagination.DescendOrderFindByNumber";
 			IList<Vvehiclenumber> result = this.sqlMapper.QueryForList<Vvehiclenumber>(stmtId, obj);
 			return result;
         }

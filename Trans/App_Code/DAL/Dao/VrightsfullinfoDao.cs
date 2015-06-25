@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, null);
 			return result;
         }
+		public IList<Vrightsfullinfo> DescendOrderFindAll() {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindAll";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, null);
+			return result;
+        }
 		public IList<Vrightsfullinfo> PaginationFindAll(VrightsfullinfoPagination obj) {
 			String stmtId = "Vrightsfullinfo.FindAllPagination";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vrightsfullinfo> DescendOrderPaginationFindAll(VrightsfullinfoPagination obj) {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindAllPagination";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, groupname);
 			return result;
         }
+		public IList<Vrightsfullinfo> DescendOrderFindByGroupname(String groupname) {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindByGroupname";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, groupname);
+			return result;
+        }
 		public IList<Vrightsfullinfo> PaginationFindByGroupname(VrightsfullinfoPagination obj) {
 			String stmtId = "VrightsfullinfoPagination.FindByGroupname";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vrightsfullinfo> DescendOrderPaginationFindByGroupname(VrightsfullinfoPagination obj) {
+			String stmtId = "VrightsfullinfoPagination.DescendOrderFindByGroupname";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, rightId);
 			return result;
         }
+		public IList<Vrightsfullinfo> DescendOrderFindByRightId(Int64 rightId) {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindByRightId";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, rightId);
+			return result;
+        }
 		public IList<Vrightsfullinfo> PaginationFindByRightId(VrightsfullinfoPagination obj) {
 			String stmtId = "VrightsfullinfoPagination.FindByRightId";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vrightsfullinfo> DescendOrderPaginationFindByRightId(VrightsfullinfoPagination obj) {
+			String stmtId = "VrightsfullinfoPagination.DescendOrderFindByRightId";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, righturl);
 			return result;
         }
+		public IList<Vrightsfullinfo> DescendOrderFindByRighturl(String righturl) {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindByRighturl";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, righturl);
+			return result;
+        }
 		public IList<Vrightsfullinfo> PaginationFindByRighturl(VrightsfullinfoPagination obj) {
 			String stmtId = "VrightsfullinfoPagination.FindByRighturl";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vrightsfullinfo> DescendOrderPaginationFindByRighturl(VrightsfullinfoPagination obj) {
+			String stmtId = "VrightsfullinfoPagination.DescendOrderFindByRighturl";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, groupId);
 			return result;
         }
+		public IList<Vrightsfullinfo> DescendOrderFindByGroupId(Int64 groupId) {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindByGroupId";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, groupId);
+			return result;
+        }
 		public IList<Vrightsfullinfo> PaginationFindByGroupId(VrightsfullinfoPagination obj) {
 			String stmtId = "VrightsfullinfoPagination.FindByGroupId";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vrightsfullinfo> DescendOrderPaginationFindByGroupId(VrightsfullinfoPagination obj) {
+			String stmtId = "VrightsfullinfoPagination.DescendOrderFindByGroupId";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, rightname);
 			return result;
         }
+		public IList<Vrightsfullinfo> DescendOrderFindByRightname(String rightname) {
+			String stmtId = "Vrightsfullinfo.DescendOrderFindByRightname";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, rightname);
+			return result;
+        }
 		public IList<Vrightsfullinfo> PaginationFindByRightname(VrightsfullinfoPagination obj) {
 			String stmtId = "VrightsfullinfoPagination.FindByRightname";
+			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vrightsfullinfo> DescendOrderPaginationFindByRightname(VrightsfullinfoPagination obj) {
+			String stmtId = "VrightsfullinfoPagination.DescendOrderFindByRightname";
 			IList<Vrightsfullinfo> result = this.sqlMapper.QueryForList<Vrightsfullinfo>(stmtId, obj);
 			return result;
         }

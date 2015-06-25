@@ -15,19 +15,31 @@ namespace Trans.DAL.Dao
 
 		IList<Evaluatetype> FindAll();
 
+		IList<Evaluatetype> DescendOrderFindAll();
+
 		IList<Evaluatetype> PaginationFindAll(EvaluatetypePagination obj);
+
+		IList<Evaluatetype> DescendOrderPaginationFindAll(EvaluatetypePagination obj);
 
 		IList<Evaluatetype> QuickFindAll();
 
 		IList<Evaluatetype> FindByActive(Byte active);
 
+		IList<Evaluatetype> DescendOrderFindByActive(Byte active);
+
 		IList<Evaluatetype> PaginationFindByActive(EvaluatetypePagination obj);
+
+		IList<Evaluatetype> DescendOrderPaginationFindByActive(EvaluatetypePagination obj);
 
 		int FindCountByActive(Evaluatetype obj);
 
 		IList<Evaluatetype> FindByName(String name);
 
+		IList<Evaluatetype> DescendOrderFindByName(String name);
+
 		IList<Evaluatetype> PaginationFindByName(EvaluatetypePagination obj);
+
+		IList<Evaluatetype> DescendOrderPaginationFindByName(EvaluatetypePagination obj);
 
 		int FindCountByName(Evaluatetype obj);
 

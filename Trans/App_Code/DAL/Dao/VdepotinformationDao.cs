@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, null);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindAll() {
+			String stmtId = "Vdepotinformation.DescendOrderFindAll";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, null);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindAll(VdepotinformationPagination obj) {
 			String stmtId = "Vdepotinformation.FindAllPagination";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindAll(VdepotinformationPagination obj) {
+			String stmtId = "Vdepotinformation.DescendOrderFindAllPagination";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cellphone);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByCellphone(String cellphone) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByCellphone";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cellphone);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByCellphone(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByCellphone";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByCellphone(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByCellphone";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, description);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByDescription(String description) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByDescription";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, description);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByDescription(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByDescription";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByDescription(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByDescription";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, validtime);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByValidtime(String validtime) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByValidtime";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, validtime);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByValidtime(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByValidtime";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByValidtime(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByValidtime";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cityname);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByCityname(String cityname) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByCityname";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cityname);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByCityname(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByCityname";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByCityname(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByCityname";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, useablearea);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByUseablearea(Int32 useablearea) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByUseablearea";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, useablearea);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByUseablearea(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByUseablearea";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByUseablearea(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByUseablearea";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -127,8 +187,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, scopename);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByScopename(String scopename) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByScopename";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, scopename);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByScopename(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByScopename";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByScopename(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByScopename";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -142,8 +212,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, price);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByPrice(String price) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByPrice";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, price);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByPrice(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByPrice";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByPrice(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByPrice";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -157,8 +237,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, contactperson);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByContactperson(String contactperson) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByContactperson";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, contactperson);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByContactperson(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByContactperson";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByContactperson(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByContactperson";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -172,8 +262,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, title);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByTitle(String title) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByTitle";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, title);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByTitle(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByTitle";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByTitle(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByTitle";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -187,8 +287,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, regionname);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByRegionname(String regionname) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByRegionname";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, regionname);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByRegionname(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByRegionname";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByRegionname(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByRegionname";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -202,8 +312,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, id);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindById(Int64 id) {
+			String stmtId = "Vdepotinformation.DescendOrderFindById";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, id);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindById(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindById";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindById(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindById";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -217,8 +337,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, depottypename);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByDepottypename(String depottypename) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByDepottypename";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, depottypename);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByDepottypename(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByDepottypename";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByDepottypename(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByDepottypename";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -232,8 +362,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, address);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByAddress(String address) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByAddress";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, address);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByAddress(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByAddress";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByAddress(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByAddress";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -247,8 +387,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, citycode);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByCitycode(String citycode) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByCitycode";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, citycode);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByCitycode(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByCitycode";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByCitycode(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByCitycode";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -262,8 +412,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, area);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByArea(Int32 area) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByArea";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, area);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByArea(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByArea";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByArea(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByArea";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
@@ -277,8 +437,18 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, username);
 			return result;
         }
+		public IList<Vdepotinformation> DescendOrderFindByUsername(String username) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByUsername";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, username);
+			return result;
+        }
 		public IList<Vdepotinformation> PaginationFindByUsername(VdepotinformationPagination obj) {
 			String stmtId = "VdepotinformationPagination.FindByUsername";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByUsername(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByUsername";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }

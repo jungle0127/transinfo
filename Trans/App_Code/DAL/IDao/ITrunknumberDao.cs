@@ -15,31 +15,51 @@ namespace Trans.DAL.Dao
 
 		IList<Trunknumber> FindAll();
 
+		IList<Trunknumber> DescendOrderFindAll();
+
 		IList<Trunknumber> PaginationFindAll(TrunknumberPagination obj);
+
+		IList<Trunknumber> DescendOrderPaginationFindAll(TrunknumberPagination obj);
 
 		IList<Trunknumber> QuickFindAll();
 
 		IList<Trunknumber> FindByNumber(String number);
 
+		IList<Trunknumber> DescendOrderFindByNumber(String number);
+
 		IList<Trunknumber> PaginationFindByNumber(TrunknumberPagination obj);
+
+		IList<Trunknumber> DescendOrderPaginationFindByNumber(TrunknumberPagination obj);
 
 		int FindCountByNumber(Trunknumber obj);
 
 		IList<Trunknumber> FindByUserid(Int64 userid);
 
+		IList<Trunknumber> DescendOrderFindByUserid(Int64 userid);
+
 		IList<Trunknumber> PaginationFindByUserid(TrunknumberPagination obj);
+
+		IList<Trunknumber> DescendOrderPaginationFindByUserid(TrunknumberPagination obj);
 
 		int FindCountByUserid(Trunknumber obj);
 
 		IList<Trunknumber> FindByPrefixid(Int64 prefixid);
 
+		IList<Trunknumber> DescendOrderFindByPrefixid(Int64 prefixid);
+
 		IList<Trunknumber> PaginationFindByPrefixid(TrunknumberPagination obj);
+
+		IList<Trunknumber> DescendOrderPaginationFindByPrefixid(TrunknumberPagination obj);
 
 		int FindCountByPrefixid(Trunknumber obj);
 
 		IList<Trunknumber> FindByActive(Byte active);
 
+		IList<Trunknumber> DescendOrderFindByActive(Byte active);
+
 		IList<Trunknumber> PaginationFindByActive(TrunknumberPagination obj);
+
+		IList<Trunknumber> DescendOrderPaginationFindByActive(TrunknumberPagination obj);
 
 		int FindCountByActive(Trunknumber obj);
 

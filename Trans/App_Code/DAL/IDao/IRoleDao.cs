@@ -15,19 +15,31 @@ namespace Trans.DAL.Dao
 
 		IList<Role> FindAll();
 
+		IList<Role> DescendOrderFindAll();
+
 		IList<Role> PaginationFindAll(RolePagination obj);
+
+		IList<Role> DescendOrderPaginationFindAll(RolePagination obj);
 
 		IList<Role> QuickFindAll();
 
 		IList<Role> FindByActive(Byte active);
 
+		IList<Role> DescendOrderFindByActive(Byte active);
+
 		IList<Role> PaginationFindByActive(RolePagination obj);
+
+		IList<Role> DescendOrderPaginationFindByActive(RolePagination obj);
 
 		int FindCountByActive(Role obj);
 
 		IList<Role> FindByRolename(String rolename);
 
+		IList<Role> DescendOrderFindByRolename(String rolename);
+
 		IList<Role> PaginationFindByRolename(RolePagination obj);
+
+		IList<Role> DescendOrderPaginationFindByRolename(RolePagination obj);
 
 		int FindCountByRolename(Role obj);
 

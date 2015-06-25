@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, null);
 			return result;
         }
+		public IList<Bussinessscope> DescendOrderFindAll() {
+			String stmtId = "Bussinessscope.DescendOrderFindAll";
+			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, null);
+			return result;
+        }
 		public IList<Bussinessscope> PaginationFindAll(BussinessscopePagination obj) {
 			String stmtId = "Bussinessscope.FindAllPagination";
+			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
+			return result;
+        }
+		public IList<Bussinessscope> DescendOrderPaginationFindAll(BussinessscopePagination obj) {
+			String stmtId = "Bussinessscope.DescendOrderFindAllPagination";
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, scopename);
 			return result;
         }
+		public IList<Bussinessscope> DescendOrderFindByScopename(String scopename) {
+			String stmtId = "Bussinessscope.DescendOrderFindByScopename";
+			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, scopename);
+			return result;
+        }
 		public IList<Bussinessscope> PaginationFindByScopename(BussinessscopePagination obj) {
 			String stmtId = "BussinessscopePagination.FindByScopename";
+			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
+			return result;
+        }
+		public IList<Bussinessscope> DescendOrderPaginationFindByScopename(BussinessscopePagination obj) {
+			String stmtId = "BussinessscopePagination.DescendOrderFindByScopename";
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, active);
 			return result;
         }
+		public IList<Bussinessscope> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Bussinessscope.DescendOrderFindByActive";
+			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, active);
+			return result;
+        }
 		public IList<Bussinessscope> PaginationFindByActive(BussinessscopePagination obj) {
 			String stmtId = "BussinessscopePagination.FindByActive";
+			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
+			return result;
+        }
+		public IList<Bussinessscope> DescendOrderPaginationFindByActive(BussinessscopePagination obj) {
+			String stmtId = "BussinessscopePagination.DescendOrderFindByActive";
 			IList<Bussinessscope> result = this.sqlMapper.QueryForList<Bussinessscope>(stmtId, obj);
 			return result;
         }

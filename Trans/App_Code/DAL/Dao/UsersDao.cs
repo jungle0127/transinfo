@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, null);
 			return result;
         }
+		public IList<Users> DescendOrderFindAll() {
+			String stmtId = "Users.DescendOrderFindAll";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, null);
+			return result;
+        }
 		public IList<Users> PaginationFindAll(UsersPagination obj) {
 			String stmtId = "Users.FindAllPagination";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindAll(UsersPagination obj) {
+			String stmtId = "Users.DescendOrderFindAllPagination";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, active);
 			return result;
         }
+		public IList<Users> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Users.DescendOrderFindByActive";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, active);
+			return result;
+        }
 		public IList<Users> PaginationFindByActive(UsersPagination obj) {
 			String stmtId = "UsersPagination.FindByActive";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindByActive(UsersPagination obj) {
+			String stmtId = "UsersPagination.DescendOrderFindByActive";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, username);
 			return result;
         }
+		public IList<Users> DescendOrderFindByUsername(String username) {
+			String stmtId = "Users.DescendOrderFindByUsername";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, username);
+			return result;
+        }
 		public IList<Users> PaginationFindByUsername(UsersPagination obj) {
 			String stmtId = "UsersPagination.FindByUsername";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindByUsername(UsersPagination obj) {
+			String stmtId = "UsersPagination.DescendOrderFindByUsername";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, roleid);
 			return result;
         }
+		public IList<Users> DescendOrderFindByRoleid(Int64 roleid) {
+			String stmtId = "Users.DescendOrderFindByRoleid";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, roleid);
+			return result;
+        }
 		public IList<Users> PaginationFindByRoleid(UsersPagination obj) {
 			String stmtId = "UsersPagination.FindByRoleid";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindByRoleid(UsersPagination obj) {
+			String stmtId = "UsersPagination.DescendOrderFindByRoleid";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, loginname);
 			return result;
         }
+		public IList<Users> DescendOrderFindByLoginname(String loginname) {
+			String stmtId = "Users.DescendOrderFindByLoginname";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, loginname);
+			return result;
+        }
 		public IList<Users> PaginationFindByLoginname(UsersPagination obj) {
 			String stmtId = "UsersPagination.FindByLoginname";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindByLoginname(UsersPagination obj) {
+			String stmtId = "UsersPagination.DescendOrderFindByLoginname";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, note);
 			return result;
         }
+		public IList<Users> DescendOrderFindByNote(String note) {
+			String stmtId = "Users.DescendOrderFindByNote";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, note);
+			return result;
+        }
 		public IList<Users> PaginationFindByNote(UsersPagination obj) {
 			String stmtId = "UsersPagination.FindByNote";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindByNote(UsersPagination obj) {
+			String stmtId = "UsersPagination.DescendOrderFindByNote";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }
@@ -127,8 +187,18 @@ namespace Trans.DAL.Dao
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, password);
 			return result;
         }
+		public IList<Users> DescendOrderFindByPassword(String password) {
+			String stmtId = "Users.DescendOrderFindByPassword";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, password);
+			return result;
+        }
 		public IList<Users> PaginationFindByPassword(UsersPagination obj) {
 			String stmtId = "UsersPagination.FindByPassword";
+			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
+			return result;
+        }
+		public IList<Users> DescendOrderPaginationFindByPassword(UsersPagination obj) {
+			String stmtId = "UsersPagination.DescendOrderFindByPassword";
 			IList<Users> result = this.sqlMapper.QueryForList<Users>(stmtId, obj);
 			return result;
         }

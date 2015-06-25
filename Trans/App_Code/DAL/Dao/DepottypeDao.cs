@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, null);
 			return result;
         }
+		public IList<Depottype> DescendOrderFindAll() {
+			String stmtId = "Depottype.DescendOrderFindAll";
+			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, null);
+			return result;
+        }
 		public IList<Depottype> PaginationFindAll(DepottypePagination obj) {
 			String stmtId = "Depottype.FindAllPagination";
+			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
+			return result;
+        }
+		public IList<Depottype> DescendOrderPaginationFindAll(DepottypePagination obj) {
+			String stmtId = "Depottype.DescendOrderFindAllPagination";
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, active);
 			return result;
         }
+		public IList<Depottype> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Depottype.DescendOrderFindByActive";
+			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, active);
+			return result;
+        }
 		public IList<Depottype> PaginationFindByActive(DepottypePagination obj) {
 			String stmtId = "DepottypePagination.FindByActive";
+			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
+			return result;
+        }
+		public IList<Depottype> DescendOrderPaginationFindByActive(DepottypePagination obj) {
+			String stmtId = "DepottypePagination.DescendOrderFindByActive";
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, typename);
 			return result;
         }
+		public IList<Depottype> DescendOrderFindByTypename(String typename) {
+			String stmtId = "Depottype.DescendOrderFindByTypename";
+			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, typename);
+			return result;
+        }
 		public IList<Depottype> PaginationFindByTypename(DepottypePagination obj) {
 			String stmtId = "DepottypePagination.FindByTypename";
+			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
+			return result;
+        }
+		public IList<Depottype> DescendOrderPaginationFindByTypename(DepottypePagination obj) {
+			String stmtId = "DepottypePagination.DescendOrderFindByTypename";
 			IList<Depottype> result = this.sqlMapper.QueryForList<Depottype>(stmtId, obj);
 			return result;
         }

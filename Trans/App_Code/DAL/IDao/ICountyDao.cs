@@ -15,25 +15,41 @@ namespace Trans.DAL.Dao
 
 		IList<County> FindAll();
 
+		IList<County> DescendOrderFindAll();
+
 		IList<County> PaginationFindAll(CountyPagination obj);
+
+		IList<County> DescendOrderPaginationFindAll(CountyPagination obj);
 
 		IList<County> QuickFindAll();
 
 		IList<County> FindByCitycode(String citycode);
 
+		IList<County> DescendOrderFindByCitycode(String citycode);
+
 		IList<County> PaginationFindByCitycode(CountyPagination obj);
+
+		IList<County> DescendOrderPaginationFindByCitycode(CountyPagination obj);
 
 		int FindCountByCitycode(County obj);
 
 		IList<County> FindByCode(String code);
 
+		IList<County> DescendOrderFindByCode(String code);
+
 		IList<County> PaginationFindByCode(CountyPagination obj);
+
+		IList<County> DescendOrderPaginationFindByCode(CountyPagination obj);
 
 		int FindCountByCode(County obj);
 
 		IList<County> FindByName(String name);
 
+		IList<County> DescendOrderFindByName(String name);
+
 		IList<County> PaginationFindByName(CountyPagination obj);
+
+		IList<County> DescendOrderPaginationFindByName(CountyPagination obj);
 
 		int FindCountByName(County obj);
 

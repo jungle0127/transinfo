@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, null);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindAll() {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindAll";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, null);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindAll(VprovincecitycountyPagination obj) {
 			String stmtId = "Vprovincecitycounty.FindAllPagination";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindAll(VprovincecitycountyPagination obj) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindAllPagination";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, fullname);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByFullname(String fullname) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByFullname";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, fullname);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByFullname(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByFullname";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByFullname(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByFullname";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, cityname);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByCityname(String cityname) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByCityname";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, cityname);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByCityname(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByCityname";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByCityname(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByCityname";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, provincecode);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByProvincecode(String provincecode) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByProvincecode";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, provincecode);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByProvincecode(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByProvincecode";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByProvincecode(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByProvincecode";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -97,8 +137,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, citycode);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByCitycode(String citycode) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByCitycode";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, citycode);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByCitycode(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByCitycode";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByCitycode(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByCitycode";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -112,8 +162,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, countyname);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByCountyname(String countyname) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByCountyname";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, countyname);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByCountyname(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByCountyname";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByCountyname(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByCountyname";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -127,8 +187,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, provincename);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByProvincename(String provincename) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByProvincename";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, provincename);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByProvincename(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByProvincename";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByProvincename(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByProvincename";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }
@@ -142,8 +212,18 @@ namespace Trans.DAL.Dao
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, countycode);
 			return result;
         }
+		public IList<Vprovincecitycounty> DescendOrderFindByCountycode(String countycode) {
+			String stmtId = "Vprovincecitycounty.DescendOrderFindByCountycode";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, countycode);
+			return result;
+        }
 		public IList<Vprovincecitycounty> PaginationFindByCountycode(VprovincecitycountyPagination obj) {
 			String stmtId = "VprovincecitycountyPagination.FindByCountycode";
+			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
+			return result;
+        }
+		public IList<Vprovincecitycounty> DescendOrderPaginationFindByCountycode(VprovincecitycountyPagination obj) {
+			String stmtId = "VprovincecitycountyPagination.DescendOrderFindByCountycode";
 			IList<Vprovincecitycounty> result = this.sqlMapper.QueryForList<Vprovincecitycounty>(stmtId, obj);
 			return result;
         }

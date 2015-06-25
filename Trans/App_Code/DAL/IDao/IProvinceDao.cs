@@ -15,19 +15,31 @@ namespace Trans.DAL.Dao
 
 		IList<Province> FindAll();
 
+		IList<Province> DescendOrderFindAll();
+
 		IList<Province> PaginationFindAll(ProvincePagination obj);
+
+		IList<Province> DescendOrderPaginationFindAll(ProvincePagination obj);
 
 		IList<Province> QuickFindAll();
 
 		IList<Province> FindByCode(String code);
 
+		IList<Province> DescendOrderFindByCode(String code);
+
 		IList<Province> PaginationFindByCode(ProvincePagination obj);
+
+		IList<Province> DescendOrderPaginationFindByCode(ProvincePagination obj);
 
 		int FindCountByCode(Province obj);
 
 		IList<Province> FindByName(String name);
 
+		IList<Province> DescendOrderFindByName(String name);
+
 		IList<Province> PaginationFindByName(ProvincePagination obj);
+
+		IList<Province> DescendOrderPaginationFindByName(ProvincePagination obj);
 
 		int FindCountByName(Province obj);
 

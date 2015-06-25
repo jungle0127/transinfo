@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, null);
 			return result;
         }
+		public IList<Province> DescendOrderFindAll() {
+			String stmtId = "Province.DescendOrderFindAll";
+			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, null);
+			return result;
+        }
 		public IList<Province> PaginationFindAll(ProvincePagination obj) {
 			String stmtId = "Province.FindAllPagination";
+			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
+			return result;
+        }
+		public IList<Province> DescendOrderPaginationFindAll(ProvincePagination obj) {
+			String stmtId = "Province.DescendOrderFindAllPagination";
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, code);
 			return result;
         }
+		public IList<Province> DescendOrderFindByCode(String code) {
+			String stmtId = "Province.DescendOrderFindByCode";
+			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, code);
+			return result;
+        }
 		public IList<Province> PaginationFindByCode(ProvincePagination obj) {
 			String stmtId = "ProvincePagination.FindByCode";
+			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
+			return result;
+        }
+		public IList<Province> DescendOrderPaginationFindByCode(ProvincePagination obj) {
+			String stmtId = "ProvincePagination.DescendOrderFindByCode";
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, name);
 			return result;
         }
+		public IList<Province> DescendOrderFindByName(String name) {
+			String stmtId = "Province.DescendOrderFindByName";
+			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, name);
+			return result;
+        }
 		public IList<Province> PaginationFindByName(ProvincePagination obj) {
 			String stmtId = "ProvincePagination.FindByName";
+			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
+			return result;
+        }
+		public IList<Province> DescendOrderPaginationFindByName(ProvincePagination obj) {
+			String stmtId = "ProvincePagination.DescendOrderFindByName";
 			IList<Province> result = this.sqlMapper.QueryForList<Province>(stmtId, obj);
 			return result;
         }

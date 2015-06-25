@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, null);
 			return result;
         }
+		public IList<Rolehasrights> DescendOrderFindAll() {
+			String stmtId = "Rolehasrights.DescendOrderFindAll";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, null);
+			return result;
+        }
 		public IList<Rolehasrights> PaginationFindAll(RolehasrightsPagination obj) {
 			String stmtId = "Rolehasrights.FindAllPagination";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rolehasrights> DescendOrderPaginationFindAll(RolehasrightsPagination obj) {
+			String stmtId = "Rolehasrights.DescendOrderFindAllPagination";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, active);
 			return result;
         }
+		public IList<Rolehasrights> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Rolehasrights.DescendOrderFindByActive";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, active);
+			return result;
+        }
 		public IList<Rolehasrights> PaginationFindByActive(RolehasrightsPagination obj) {
 			String stmtId = "RolehasrightsPagination.FindByActive";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rolehasrights> DescendOrderPaginationFindByActive(RolehasrightsPagination obj) {
+			String stmtId = "RolehasrightsPagination.DescendOrderFindByActive";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, rightid);
 			return result;
         }
+		public IList<Rolehasrights> DescendOrderFindByRightid(Int64 rightid) {
+			String stmtId = "Rolehasrights.DescendOrderFindByRightid";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, rightid);
+			return result;
+        }
 		public IList<Rolehasrights> PaginationFindByRightid(RolehasrightsPagination obj) {
 			String stmtId = "RolehasrightsPagination.FindByRightid";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rolehasrights> DescendOrderPaginationFindByRightid(RolehasrightsPagination obj) {
+			String stmtId = "RolehasrightsPagination.DescendOrderFindByRightid";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }
@@ -82,8 +112,18 @@ namespace Trans.DAL.Dao
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, roleid);
 			return result;
         }
+		public IList<Rolehasrights> DescendOrderFindByRoleid(Int64 roleid) {
+			String stmtId = "Rolehasrights.DescendOrderFindByRoleid";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, roleid);
+			return result;
+        }
 		public IList<Rolehasrights> PaginationFindByRoleid(RolehasrightsPagination obj) {
 			String stmtId = "RolehasrightsPagination.FindByRoleid";
+			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Rolehasrights> DescendOrderPaginationFindByRoleid(RolehasrightsPagination obj) {
+			String stmtId = "RolehasrightsPagination.DescendOrderFindByRoleid";
 			IList<Rolehasrights> result = this.sqlMapper.QueryForList<Rolehasrights>(stmtId, obj);
 			return result;
         }

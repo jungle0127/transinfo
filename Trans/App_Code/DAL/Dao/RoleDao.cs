@@ -37,8 +37,18 @@ namespace Trans.DAL.Dao
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, null);
 			return result;
         }
+		public IList<Role> DescendOrderFindAll() {
+			String stmtId = "Role.DescendOrderFindAll";
+			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, null);
+			return result;
+        }
 		public IList<Role> PaginationFindAll(RolePagination obj) {
 			String stmtId = "Role.FindAllPagination";
+			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
+			return result;
+        }
+		public IList<Role> DescendOrderPaginationFindAll(RolePagination obj) {
+			String stmtId = "Role.DescendOrderFindAllPagination";
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
 			return result;
         }
@@ -52,8 +62,18 @@ namespace Trans.DAL.Dao
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, active);
 			return result;
         }
+		public IList<Role> DescendOrderFindByActive(Byte active) {
+			String stmtId = "Role.DescendOrderFindByActive";
+			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, active);
+			return result;
+        }
 		public IList<Role> PaginationFindByActive(RolePagination obj) {
 			String stmtId = "RolePagination.FindByActive";
+			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
+			return result;
+        }
+		public IList<Role> DescendOrderPaginationFindByActive(RolePagination obj) {
+			String stmtId = "RolePagination.DescendOrderFindByActive";
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
 			return result;
         }
@@ -67,8 +87,18 @@ namespace Trans.DAL.Dao
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, rolename);
 			return result;
         }
+		public IList<Role> DescendOrderFindByRolename(String rolename) {
+			String stmtId = "Role.DescendOrderFindByRolename";
+			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, rolename);
+			return result;
+        }
 		public IList<Role> PaginationFindByRolename(RolePagination obj) {
 			String stmtId = "RolePagination.FindByRolename";
+			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
+			return result;
+        }
+		public IList<Role> DescendOrderPaginationFindByRolename(RolePagination obj) {
+			String stmtId = "RolePagination.DescendOrderFindByRolename";
 			IList<Role> result = this.sqlMapper.QueryForList<Role>(stmtId, obj);
 			return result;
         }
