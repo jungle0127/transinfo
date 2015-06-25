@@ -25,7 +25,7 @@ namespace TransTest.DAL.Dao
         [Test]
         public void testFindById()
         {
-            IList<Vuserrights> userRights = this.userRightsDao.FindByUserid(1);
+            IList<Vuserrights> userRights = this.userRightsDao.FindById(1);
             Assert.AreEqual(20, userRights.Count);
         }
         [Test]

@@ -29,7 +29,7 @@ namespace Trans.Biz.Right
         public LinkedList<RightsInfo> getRightsByUserId(int userId)
         {
             LinkedList<RightsInfo> rightsInfoList = new LinkedList<RightsInfo>();
-            IList<Vuserrights> userRightList = this.userRightsDao.FindByUserid(userId);
+            IList<Vuserrights> userRightList = this.userRightsDao.DescendOrderFindById(userId);
             Hashtable infoTable = new Hashtable();
 
             foreach (Vuserrights userRight in userRightList)
@@ -81,7 +81,7 @@ namespace Trans.Biz.Right
         public IList<RightsInfo> getRightsFullInfo()
         {
             IList<RightsInfo> rightFullInfoList = new List<RightsInfo>();
-            IList<Vrightsfullinfo> rightInfoList = this.rightsDao.FindAll();
+            IList<Vrightsfullinfo> rightInfoList = this.rightsDao.DescendOrderFindAll();
             Hashtable infoTable = new Hashtable();
             foreach (Vrightsfullinfo rightInfoEntity in rightInfoList)
             {
@@ -135,7 +135,7 @@ namespace Trans.Biz.Right
         public IList<long> getRightIdList(int userId)
         {
             IList<long> rightIdList = new List<long>();
-            IList<Vuserrights> userRightsList = this.userRightsDao.FindByUserid(userId);
+            IList<Vuserrights> userRightsList = this.userRightsDao.DescendOrderFindById(userId);
             foreach (Vuserrights userRightEntity in userRightsList)
             {
                 rightIdList.Add(userRightEntity.Rightid);

@@ -57,28 +57,53 @@ namespace Trans.DAL.Dao
 			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, null);
 			return result;
         }
-		public IList<Vuserrights> FindByUserid(Int64 userid) {
-			String stmtId = "Vuserrights.FindByUserid";
-			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, userid);
+		public IList<Vuserrights> FindByGroupname(String groupname) {
+			String stmtId = "Vuserrights.FindByGroupname";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, groupname);
 			return result;
         }
-		public IList<Vuserrights> DescendOrderFindByUserid(Int64 userid) {
-			String stmtId = "Vuserrights.DescendOrderFindByUserid";
-			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, userid);
+		public IList<Vuserrights> DescendOrderFindByGroupname(String groupname) {
+			String stmtId = "Vuserrights.DescendOrderFindByGroupname";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, groupname);
 			return result;
         }
-		public IList<Vuserrights> PaginationFindByUserid(VuserrightsPagination obj) {
-			String stmtId = "VuserrightsPagination.FindByUserid";
+		public IList<Vuserrights> PaginationFindByGroupname(VuserrightsPagination obj) {
+			String stmtId = "VuserrightsPagination.FindByGroupname";
 			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
 			return result;
         }
-		public IList<Vuserrights> DescendOrderPaginationFindByUserid(VuserrightsPagination obj) {
-			String stmtId = "VuserrightsPagination.DescendOrderFindByUserid";
+		public IList<Vuserrights> DescendOrderPaginationFindByGroupname(VuserrightsPagination obj) {
+			String stmtId = "VuserrightsPagination.DescendOrderFindByGroupname";
 			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
 			return result;
         }
-		public int FindCountByUserid(Vuserrights obj){
-			String stmtId = "Vuserrights.GetFindByUseridCount";
+		public int FindCountByGroupname(Vuserrights obj){
+			String stmtId = "Vuserrights.GetFindByGroupnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vuserrights> FindById(Int64 id) {
+			String stmtId = "Vuserrights.FindById";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, id);
+			return result;
+        }
+		public IList<Vuserrights> DescendOrderFindById(Int64 id) {
+			String stmtId = "Vuserrights.DescendOrderFindById";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, id);
+			return result;
+        }
+		public IList<Vuserrights> PaginationFindById(VuserrightsPagination obj) {
+			String stmtId = "VuserrightsPagination.FindById";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Vuserrights> DescendOrderPaginationFindById(VuserrightsPagination obj) {
+			String stmtId = "VuserrightsPagination.DescendOrderFindById";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
+			return result;
+        }
+		public int FindCountById(Vuserrights obj){
+			String stmtId = "Vuserrights.GetFindByIdCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -129,31 +154,6 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByRighturl(Vuserrights obj){
 			String stmtId = "Vuserrights.GetFindByRighturlCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vuserrights> FindByGroupname(String groupname) {
-			String stmtId = "Vuserrights.FindByGroupname";
-			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, groupname);
-			return result;
-        }
-		public IList<Vuserrights> DescendOrderFindByGroupname(String groupname) {
-			String stmtId = "Vuserrights.DescendOrderFindByGroupname";
-			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, groupname);
-			return result;
-        }
-		public IList<Vuserrights> PaginationFindByGroupname(VuserrightsPagination obj) {
-			String stmtId = "VuserrightsPagination.FindByGroupname";
-			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
-			return result;
-        }
-		public IList<Vuserrights> DescendOrderPaginationFindByGroupname(VuserrightsPagination obj) {
-			String stmtId = "VuserrightsPagination.DescendOrderFindByGroupname";
-			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByGroupname(Vuserrights obj){
-			String stmtId = "Vuserrights.GetFindByGroupnameCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}

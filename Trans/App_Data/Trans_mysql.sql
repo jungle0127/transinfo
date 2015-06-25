@@ -3903,13 +3903,13 @@ JOIN users ON users.id = article.userid;
 DROP VIEW IF EXISTS `V_userrights`;
 CREATE VIEW `V_userrights`
 AS
-select users.id AS userid,rights.id as rightid,rights.rightname,rights.righturl,rightgroup.groupname from role_has_rights
+SELECT users.id,rights.id AS rightid,rights.rightname,rights.righturl,rightgroup.groupname from role_has_rights
 join users  on users.roleid = role_has_rights.roleid
 join rights on role_has_rights.rightid = rights.id
 join rightgroup_has_rights  on rightgroup_has_rights.rightid = rights.id
 join rightgroup on rightgroup.id = rightgroup_has_rights.groupid
-union
-select user_has_rights.userid,rights.id as rightid,rights.righturl,rights.rightname,rightgroup.groupname from user_has_rights 
+UNION
+select user_has_rights.userid AS id,rights.id as rightid,rights.righturl,rights.rightname,rightgroup.groupname from user_has_rights 
 join rights  on user_has_rights.rightid = rights.id
 join rightgroup_has_rights  on rightgroup_has_rights.rightid = rights.id
 join rightgroup  on rightgroup.id = rightgroup_has_rights.groupid;

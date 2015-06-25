@@ -6,10 +6,10 @@
 	</alias>
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Vuserrights">
-			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Groupname" column="groupname" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Rightid" column="rightid" dbType="bigint"/>
 			<result property="Righturl" column="righturl" dbType="varchar"/>
-			<result property="Groupname" column="groupname" dbType="varchar"/>
 			<result property="Rightname" column="rightname" dbType="varchar"/>
 		</resultMap>
 	</resultMaps>
@@ -29,20 +29,35 @@
 		<select id="Vuserrights.DescendOrderFindAllPagination" parameterClass="VuserrightsPagination" resultMap="FullResultMap">
 			SELECT * FROM v_userrights ORDER BY id desc limit #Limit# offset #Offset# 
 		</select>
-		<select id="Vuserrights.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.userid = #value#
+		<select id="Vuserrights.FindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupname = #value#
 		</select>
-		<select id="Vuserrights.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.userid = #value# ORDER BY id DESC
+		<select id="Vuserrights.DescendOrderFindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupname = #value# ORDER BY id DESC
 		</select>
-		<select id="VuserrightsPagination.FindByUserid" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		<select id="VuserrightsPagination.FindByGroupname" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupname = #Groupname# LIMIT #Limit# OFFSET #Offset# 
 		</select>
-		<select id="VuserrightsPagination.DescendOrderFindByUserid" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		<select id="VuserrightsPagination.DescendOrderFindByGroupname" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupname = #Groupname# ORDER BY id DESC limit #Limit# offset #Offset# 
 		</select>
-		<select id="Vuserrights.GetFindByUseridCount" resultClass="System.Int32">
-			SELECT count(*) FROM v_userrights WHERE v_userrights.userid=#Userid#
+		<select id="Vuserrights.GetFindByGroupnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userrights WHERE v_userrights.groupname=#Groupname#
+		</select>
+		<select id="Vuserrights.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.id = #value#
+		</select>
+		<select id="Vuserrights.DescendOrderFindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.id = #value# ORDER BY id DESC
+		</select>
+		<select id="VuserrightsPagination.FindById" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.id = #Id# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserrightsPagination.DescendOrderFindById" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.id = #Id# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserrights.GetFindByIdCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userrights WHERE v_userrights.id=#Id#
 		</select>
 		<select id="Vuserrights.FindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
 			WHERE v_userrights.rightid = #value#
@@ -73,21 +88,6 @@
 		</select>
 		<select id="Vuserrights.GetFindByRighturlCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_userrights WHERE v_userrights.righturl=#Righturl#
-		</select>
-		<select id="Vuserrights.FindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.groupname = #value#
-		</select>
-		<select id="Vuserrights.DescendOrderFindByGroupname" parameterClass="String" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.groupname = #value# ORDER BY id DESC
-		</select>
-		<select id="VuserrightsPagination.FindByGroupname" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.groupname = #Groupname# LIMIT #Limit# OFFSET #Offset# 
-		</select>
-		<select id="VuserrightsPagination.DescendOrderFindByGroupname" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
-			WHERE v_userrights.groupname = #Groupname# ORDER BY id DESC limit #Limit# offset #Offset# 
-		</select>
-		<select id="Vuserrights.GetFindByGroupnameCount" resultClass="System.Int32">
-			SELECT count(*) FROM v_userrights WHERE v_userrights.groupname=#Groupname#
 		</select>
 		<select id="Vuserrights.FindByRightname" parameterClass="String" resultMap="FullResultMap" extends="Vuserrights.FindAll">
 			WHERE v_userrights.rightname = #value#

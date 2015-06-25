@@ -19,15 +19,25 @@ namespace Trans.DAL.Dao
 
 		IList<Vuserrights> QuickFindAll();
 
-		IList<Vuserrights> FindByUserid(Int64 userid);
+		IList<Vuserrights> FindByGroupname(String groupname);
 
-		IList<Vuserrights> DescendOrderFindByUserid(Int64 userid);
+		IList<Vuserrights> DescendOrderFindByGroupname(String groupname);
 
-		IList<Vuserrights> PaginationFindByUserid(VuserrightsPagination obj);
+		IList<Vuserrights> PaginationFindByGroupname(VuserrightsPagination obj);
 
-		IList<Vuserrights> DescendOrderPaginationFindByUserid(VuserrightsPagination obj);
+		IList<Vuserrights> DescendOrderPaginationFindByGroupname(VuserrightsPagination obj);
 
-		int FindCountByUserid(Vuserrights obj);
+		int FindCountByGroupname(Vuserrights obj);
+
+		IList<Vuserrights> FindById(Int64 id);
+
+		IList<Vuserrights> DescendOrderFindById(Int64 id);
+
+		IList<Vuserrights> PaginationFindById(VuserrightsPagination obj);
+
+		IList<Vuserrights> DescendOrderPaginationFindById(VuserrightsPagination obj);
+
+		int FindCountById(Vuserrights obj);
 
 		IList<Vuserrights> FindByRightid(Int64 rightid);
 
@@ -48,16 +58,6 @@ namespace Trans.DAL.Dao
 		IList<Vuserrights> DescendOrderPaginationFindByRighturl(VuserrightsPagination obj);
 
 		int FindCountByRighturl(Vuserrights obj);
-
-		IList<Vuserrights> FindByGroupname(String groupname);
-
-		IList<Vuserrights> DescendOrderFindByGroupname(String groupname);
-
-		IList<Vuserrights> PaginationFindByGroupname(VuserrightsPagination obj);
-
-		IList<Vuserrights> DescendOrderPaginationFindByGroupname(VuserrightsPagination obj);
-
-		int FindCountByGroupname(Vuserrights obj);
 
 		IList<Vuserrights> FindByRightname(String rightname);
 
