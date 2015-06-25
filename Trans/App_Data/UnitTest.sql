@@ -37,38 +37,35 @@ values (1,'110101','110103','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110')
 insert into goodssourceinformation(userid,srccountycode,dstcountycode,title,goodsname,transporttypeid,cautiontypeid,goodstypeid,price)
 values (1,'110102','110103','有13吨设备,求17.5米前四后八1辆','设备',1,1,1,'110');
 
-INSERT INTO depotinformation
-(
-	`userid`,
-	`title`,
-	`countycode`,
-	`address`,
-	`bizscopetype`,
-	`depottype`,
-	`area`,
-	`useablearea`,
-	`price`,
-	`contactperson`,
-	`cellphone`,
-	`validtime`,
-	`description`
-)
-VALUES
-(
-1,
-'仓储信息测试',
-'110102',
-'仓库地址',
-1,
-1,
-23,
-22,
-32,
-'联系人',
-'13888888888',
-'2015-05-29',
-'描述信息：这是测试数据，请删除'
-);
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+INSERT INTO depotinformation(`userid`,`title`,`countycode`,`address`,`bizscopetype`,`depottype`,`area`,`useablearea`,`price`,`contactperson`,`cellphone`,`validtime`,`description`)
+VALUES(1,'仓储信息测试','110102','仓库地址',1,1,23,22,32,'联系人','13888888888','2015-05-29','描述信息：这是测试数据，请删除');
+
 
 
 call uspInsertSpecialineData(' <speciallinedata>

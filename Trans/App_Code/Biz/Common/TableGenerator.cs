@@ -87,20 +87,20 @@ namespace Trans.Biz.Common
             operationBuilder.Append("<td>");
             foreach (TableOperationInfo operation in operations)
             {
-                operationBuilder.Append("<a href=\"");
+                operationBuilder.Append(" <a href=\"");
                 operationBuilder.Append(operation.HyperLink.Replace("#id#",id));
                 operationBuilder.Append("\" target=\"");
                 operationBuilder.Append(operation.HyperLinkType);
                 operationBuilder.Append("\"");
-                if (null != operation.OnClick && "" != operation.OnClick.Replace("#id#",id))
+                if (null != operation.OnClick && "" != operation.OnClick)
                 {
                     operationBuilder.Append(" onclick=\"");
-                    operationBuilder.Append(operation.OnClick);
+                    operationBuilder.Append(operation.OnClick.Replace("#id#", id));
                     operationBuilder.Append("\"");
                 }
                 operationBuilder.Append("  class=\"tablelink\">");
                 operationBuilder.Append(operation.OperationName);
-                operationBuilder.Append("</a>");
+                operationBuilder.Append("</a>&nbsp;&nbsp;");
             }
             operationBuilder.Append("</td>");
             logger.Info("Got operation html:" + operationBuilder.ToString());
