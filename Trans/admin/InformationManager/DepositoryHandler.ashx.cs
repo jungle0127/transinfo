@@ -25,7 +25,7 @@ namespace Trans.admin.InformationManager
         public void ProcessRequest(HttpContext context)
         {
             if (context.Request.HttpMethod == "POST")
-            {
+            {// Items count
                 logger.Info("Request type is POST.");
                 StreamReader streamReader = new StreamReader(context.Request.InputStream);
                 string parameter = streamReader.ReadToEnd();
@@ -45,7 +45,7 @@ namespace Trans.admin.InformationManager
                     logger.Info("Request parameter:" + parameterName + ", with value:" + context.Request.QueryString[parameterName].ToString());
                 }
                 if (context.Request.QueryString.Count == 4)
-                {
+                {// Pagination data retrieve
                     logger.Info("Pagination query.");
                     string pageNumber = context.Request.QueryString["pageNumber"].ToString();
                     string pageSize = context.Request.QueryString["pageSize"].ToString();
@@ -55,7 +55,7 @@ namespace Trans.admin.InformationManager
                     context.Response.Write(htmlData);
                 }
                 else
-                {
+                {// Delete item 
                     logger.Info("delete item");
                     string id = context.Request.QueryString["id"].ToString();
                     string result = this.deleteItem(id);

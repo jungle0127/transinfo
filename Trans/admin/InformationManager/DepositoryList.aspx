@@ -38,10 +38,11 @@
 </head>
 <body style="background:#f0f9fd;" onload="page_change()">
     <form id="form1" runat="server">
-    <div id="content" class="easyui-panel" style="height:400px" data-options="href:'DepositoryHandler.ashx?pageNumber=1&pageSize=10&userid=1'"> </div>
-    <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" >
+        <div id="content" class="easyui-panel" style="height:400px" data-options="href:'DepositoryHandler.ashx?pageNumber=1&pageSize=10&userid=' + get_user_id()">
+        </div>
+        <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" >
         
-    </div>
+        </div>
     </form>
 </body>
 </html>

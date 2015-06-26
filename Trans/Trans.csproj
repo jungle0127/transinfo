@@ -800,6 +800,9 @@
     <Compile Include="admin\InformationManager\GoodsList.aspx.designer.cs">
       <DependentUpon>GoodsList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\InformationManager\GoodsListHandler.ashx.cs">
+      <DependentUpon>GoodsListHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="admin\InformationManager\SpeciallineList.aspx.cs">
       <DependentUpon>SpeciallineList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3108,6 +3111,7 @@
     <Content Include="admin\promulagate\ItemsCountHandler.ashx" />
     <Content Include="admin\promulagate\ArticleDeleteHandler.ashx" />
     <Content Include="admin\InformationManager\DepositoryHandler.ashx" />
+    <Content Include="admin\InformationManager\GoodsListHandler.ashx" />
     <None Include="App_Data\initdb.bat" />
     <None Include="imgs\index\temp\hand.psd" />
     <None Include="imgs\index\temp\LOGIN.psd" />

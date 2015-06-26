@@ -7,8 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Trans.admin.InformationManager
 {
-    public partial class GoodsList : System.Web.UI.Page
+    public partial class GoodsList : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        public GoodsList()
+            : base()
+        { }
         protected void Page_Load(object sender, EventArgs e)
         {
 
