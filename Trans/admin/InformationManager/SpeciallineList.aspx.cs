@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Trans.admin.InformationManager
 {
-    public partial class SpeciallineList : System.Web.UI.Page
+    public partial class SpeciallineList : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

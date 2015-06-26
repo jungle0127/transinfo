@@ -15,6 +15,9 @@
         function get_user_id() {
             return <%=UserId %>;
         }
+        function delete_item(id){
+            $.get("GoodsListHandler.ashx?id=" + String(id),function(msg){alert(msg);},"text");
+        }
         function page_change(){
             var user_id = this.get_user_id();
             $.post("GoodsListHandler.ashx",String(user_id),function(item_count){

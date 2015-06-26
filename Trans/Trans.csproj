@@ -810,12 +810,18 @@
     <Compile Include="admin\InformationManager\SpeciallineList.aspx.designer.cs">
       <DependentUpon>SpeciallineList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\InformationManager\SpeciallineListHandler.ashx.cs">
+      <DependentUpon>SpeciallineListHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="admin\InformationManager\TrunkList.aspx.cs">
       <DependentUpon>TrunkList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\InformationManager\TrunkList.aspx.designer.cs">
       <DependentUpon>TrunkList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\InformationManager\TrunkListHandler.ashx.cs">
+      <DependentUpon>TrunkListHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="admin\information\trunknumber\addtrunk.aspx.cs">
       <DependentUpon>addtrunk.aspx</DependentUpon>
@@ -3112,6 +3118,8 @@
     <Content Include="admin\promulagate\ArticleDeleteHandler.ashx" />
     <Content Include="admin\InformationManager\DepositoryHandler.ashx" />
     <Content Include="admin\InformationManager\GoodsListHandler.ashx" />
+    <Content Include="admin\InformationManager\SpeciallineListHandler.ashx" />
+    <Content Include="admin\InformationManager\TrunkListHandler.ashx" />
     <None Include="App_Data\initdb.bat" />
     <None Include="imgs\index\temp\hand.psd" />
     <None Include="imgs\index\temp\LOGIN.psd" />

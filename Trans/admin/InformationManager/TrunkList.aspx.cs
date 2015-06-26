@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Trans.admin.InformationManager
 {
-    public partial class TrunkList : System.Web.UI.Page
+    public partial class TrunkList : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
