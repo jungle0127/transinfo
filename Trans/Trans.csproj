@@ -913,6 +913,7 @@
     <Compile Include="App_Code\DAL\Dao\USP\UspInsertSpecialineDataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\USP\UspInsertTrunkMetadataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\USP\UspUpdateRoleHasRightsDao.cs" />
+    <Compile Include="App_Code\DAL\Dao\USP\UspUpdateUserHasRightsDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VarticleinfoDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VdepotinformationDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VgoodssourceinformationDao.cs" />
@@ -1003,6 +1004,7 @@
     <Content Include="App_Code\DAL\Mapper\USP\UspInsertSpecialineData.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\USP\UspInsertTrunkMetadata.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\USP\UspUpdateRoleHasRights.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\USP\UspUpdateUserHasRights.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Vantype.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1846,6 +1848,7 @@
     <Compile Include="App_Code\DAL\Entity\USP\USPInsertSpecialineData.cs" />
     <Compile Include="App_Code\DAL\Entity\USP\UspInsertTrunkMetadata.cs" />
     <Compile Include="App_Code\DAL\Entity\USP\UspUpdateRoleHasRights.cs" />
+    <Compile Include="App_Code\DAL\Entity\USP\UspUpdateUserHasRights.cs" />
     <Compile Include="App_Code\DAL\Entity\Vantype.cs" />
     <Compile Include="App_Code\DAL\Entity\Varticleinfo.cs" />
     <Compile Include="App_Code\DAL\Entity\Vdepotinformation.cs" />
@@ -1905,6 +1908,7 @@
     <Compile Include="App_Code\DAL\IDao\USP\IUspInsertSpecialineDataDao.cs" />
     <Compile Include="App_Code\DAL\IDao\USP\IUspInsertTrunkMetadataDao.cs" />
     <Compile Include="App_Code\DAL\IDao\USP\IUspUpdateRoleHasRightsDao.cs" />
+    <Compile Include="App_Code\DAL\IDao\USP\IUspUpdateUserHasRightsDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

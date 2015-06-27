@@ -19,16 +19,6 @@ namespace Trans.DAL.Dao
 
 		IList<Vuserrights> QuickFindAll();
 
-		IList<Vuserrights> FindByGroupname(String groupname);
-
-		IList<Vuserrights> DescendOrderFindByGroupname(String groupname);
-
-		IList<Vuserrights> PaginationFindByGroupname(VuserrightsPagination obj);
-
-		IList<Vuserrights> DescendOrderPaginationFindByGroupname(VuserrightsPagination obj);
-
-		int FindCountByGroupname(Vuserrights obj);
-
 		IList<Vuserrights> FindById(Int64 id);
 
 		IList<Vuserrights> DescendOrderFindById(Int64 id);
@@ -39,15 +29,15 @@ namespace Trans.DAL.Dao
 
 		int FindCountById(Vuserrights obj);
 
-		IList<Vuserrights> FindByRightid(Int64 rightid);
+		IList<Vuserrights> FindByRightname(String rightname);
 
-		IList<Vuserrights> DescendOrderFindByRightid(Int64 rightid);
+		IList<Vuserrights> DescendOrderFindByRightname(String rightname);
 
-		IList<Vuserrights> PaginationFindByRightid(VuserrightsPagination obj);
+		IList<Vuserrights> PaginationFindByRightname(VuserrightsPagination obj);
 
-		IList<Vuserrights> DescendOrderPaginationFindByRightid(VuserrightsPagination obj);
+		IList<Vuserrights> DescendOrderPaginationFindByRightname(VuserrightsPagination obj);
 
-		int FindCountByRightid(Vuserrights obj);
+		int FindCountByRightname(Vuserrights obj);
 
 		IList<Vuserrights> FindByRighturl(String righturl);
 
@@ -59,15 +49,35 @@ namespace Trans.DAL.Dao
 
 		int FindCountByRighturl(Vuserrights obj);
 
-		IList<Vuserrights> FindByRightname(String rightname);
+		IList<Vuserrights> FindByRightid(Int64 rightid);
 
-		IList<Vuserrights> DescendOrderFindByRightname(String rightname);
+		IList<Vuserrights> DescendOrderFindByRightid(Int64 rightid);
 
-		IList<Vuserrights> PaginationFindByRightname(VuserrightsPagination obj);
+		IList<Vuserrights> PaginationFindByRightid(VuserrightsPagination obj);
 
-		IList<Vuserrights> DescendOrderPaginationFindByRightname(VuserrightsPagination obj);
+		IList<Vuserrights> DescendOrderPaginationFindByRightid(VuserrightsPagination obj);
 
-		int FindCountByRightname(Vuserrights obj);
+		int FindCountByRightid(Vuserrights obj);
+
+		IList<Vuserrights> FindByRighttype(Int64 righttype);
+
+		IList<Vuserrights> DescendOrderFindByRighttype(Int64 righttype);
+
+		IList<Vuserrights> PaginationFindByRighttype(VuserrightsPagination obj);
+
+		IList<Vuserrights> DescendOrderPaginationFindByRighttype(VuserrightsPagination obj);
+
+		int FindCountByRighttype(Vuserrights obj);
+
+		IList<Vuserrights> FindByGroupname(String groupname);
+
+		IList<Vuserrights> DescendOrderFindByGroupname(String groupname);
+
+		IList<Vuserrights> PaginationFindByGroupname(VuserrightsPagination obj);
+
+		IList<Vuserrights> DescendOrderPaginationFindByGroupname(VuserrightsPagination obj);
+
+		int FindCountByGroupname(Vuserrights obj);
 
 		void Reload(Vuserrights obj);
 	}
