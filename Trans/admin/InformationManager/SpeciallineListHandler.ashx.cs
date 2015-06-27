@@ -154,7 +154,7 @@ namespace Trans.admin.InformationManager
             TableOperationInfo viewOperation = new TableOperationInfo();
             viewOperation.OperationName = "查看";
             viewOperation.HyperLinkType = "_blank";
-            viewOperation.HyperLink = "viewtest.aspx?id=#id#";
+            viewOperation.HyperLink = "../../InfoShow/DetailInfoFrame.aspx?type=line&id=#id#";
             operationInfoList.Add(viewOperation);
 
             TableOperationInfo deleteOperation = new TableOperationInfo();

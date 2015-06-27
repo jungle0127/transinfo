@@ -14,6 +14,7 @@
     <script type="text/javascript">
         function delete_item(id){
             $.get("DepositoryHandler.ashx?id=" + String(id),function(msg){alert(msg);},"text");
+             page_change();
         }
         function get_user_id() {
             return <%=UserId %>;

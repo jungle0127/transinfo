@@ -13,12 +13,12 @@ namespace Trans.admin.rightmanager
     public partial class usermanagement : System.Web.UI.Page
     {
         private static ILog logger = LogManager.GetLogger(typeof(usermanagement));
-        private IUsersDao usersDao;
+        private IVuserroleinfoDao userInfoDao;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.usersDao = new UsersDao();
-            IList<Users> userList = this.usersDao.FindAll();
-            this.gvUser.DataSource = userList;
+            this.userInfoDao = new VuserroleinfoDao();
+            IList<Vuserroleinfo> userInfoList = this.userInfoDao.FindAll();
+            this.gvUser.DataSource = userInfoList;
             this.gvUser.DataBind();
         }
 
@@ -37,6 +37,11 @@ namespace Trans.admin.rightmanager
                     logger.Info("Role with Id:" + e.CommandArgument.ToString() + " deleted.");
                 }
             }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

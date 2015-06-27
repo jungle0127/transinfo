@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" language= "javascript ">
             function QueryDelete() {
                 if (!confirm("确认要删除吗？")) {
@@ -19,11 +20,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
+        <table>
+        <tr>
+            <td style="width:50">&nbsp;</td>
+            <td>
         <asp:GridView ID="gvUser" AutoGenerateColumns="false" runat="server" 
             CellPadding="4" ForeColor="#333333" 
-            GridLines="None" onrowcommand="gvUser_RowCommand">
+            GridLines="None" onrowcommand="gvUser_RowCommand" Width="523px" Height="125px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -36,7 +39,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             <Columns>
-                    <asp:BoundField DataField="Id" SortExpression="Id" ReadOnly="true" Visible="false" />
+                    <asp:BoundField DataField="UserId" SortExpression="UserId" ReadOnly="true" Visible="false" />
                     <asp:BoundField DataField="Roleid" SortExpression="Roleid" ReadOnly="true" Visible="false" />
                     <asp:BoundField DataField="Loginname" ReadOnly="true" HeaderText="登录名称" />
                     <asp:BoundField DataField="Username" ReadOnly="true" HeaderText="用户名称" />
@@ -54,7 +57,18 @@
 
 
         </asp:GridView>
+        </td>
+        </tr>
+        </table>
+
+    <div class="formbody">
     
+        <ul class="forminfo">
+            <li>
+               <label>&nbsp;</label><asp:Button runat="server" ID="btnSubmit" name="" 
+            class="btn" Text="添加角色" onclick="btnSubmit_Click" ></asp:Button>
+            </li>
+        </ul>
     </div>
     </form>
 </body>

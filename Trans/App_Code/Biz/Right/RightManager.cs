@@ -20,6 +20,7 @@ namespace Trans.Biz.Right
             this.userRightsDao = new VuserrightsDao();
             this.rightsDao = new VrightsfullinfoDao();
             this.rightGroupDao = new RightgroupDao();
+            logger.Info("Constructor method done.");
         }
         /// <summary>
         /// Get all the rights of an user according to user ID.
@@ -81,7 +82,7 @@ namespace Trans.Biz.Right
         public IList<RightsInfo> getRightsFullInfo()
         {
             IList<RightsInfo> rightFullInfoList = new List<RightsInfo>();
-            IList<Vrightsfullinfo> rightInfoList = this.rightsDao.DescendOrderFindAll();
+            IList<Vrightsfullinfo> rightInfoList = this.rightsDao.FindAll();
             Hashtable infoTable = new Hashtable();
             foreach (Vrightsfullinfo rightInfoEntity in rightInfoList)
             {

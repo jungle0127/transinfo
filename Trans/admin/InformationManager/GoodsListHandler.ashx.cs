@@ -96,6 +96,7 @@ namespace Trans.admin.InformationManager
                 return "删除失败:" + ex.Message;
             }
         }
+        #region table builder
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +120,6 @@ namespace Trans.admin.InformationManager
             logger.Info("Build table HTML done:" + tableHTML);
             return tableHTML;
         }
-        #region table builder
         private IList<string> getTableHeader()
         {
             IList<string> columnHeaderList = new List<string>();
@@ -148,7 +148,7 @@ namespace Trans.admin.InformationManager
             TableOperationInfo viewOperation = new TableOperationInfo();
             viewOperation.OperationName = "查看";
             viewOperation.HyperLinkType = "_blank";
-            viewOperation.HyperLink = "viewtest.aspx?id=#id#";
+            viewOperation.HyperLink = "../../InfoShow/DetailInfoFrame.aspx?type=goods&id=#id#";
             operationInfoList.Add(viewOperation);
 
             TableOperationInfo deleteOperation = new TableOperationInfo();
