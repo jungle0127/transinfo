@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="UspUpdateUserHasRights" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="UspUpdateUserHasRights" type="Trans.DAL.Entity.USP.UspUpdateUserHasRights" />
+  </alias>
+  <parameterMaps>
+  <parameterMap id="uspUpdateUserHasRights_data" class="UspUpdateUserHasRights">
+      <parameter property="XmlData" dbType="text" direction="Input"></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <statements>
+    <procedure id="uspUpdateUserHasRightsid" parameterMap="uspUpdateUserHasRights_data">
+uspUpdateUserHasRights
+    </procedure>
+  </statements>
+</sqlMap>

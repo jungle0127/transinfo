@@ -4,12 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>用户权限管理</title>
+    <link href="../../css/style.css" type="text/css" />
 </head>
-<body>
+<body style="background:#f0f9fd;">
     <form id="form1" runat="server">
     <div>
-    用户权限管理
+        <asp:Panel runat="server" ID="rightPanel">
+        </asp:Panel>
     </div>
     </form>
 </body>

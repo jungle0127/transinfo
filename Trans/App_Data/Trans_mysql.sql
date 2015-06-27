@@ -3959,7 +3959,9 @@ LEFT JOIN county ON county.citycode = city.code;
 -- ----------------------------------------------------------------------------------
 -- ----------------------------USP Related-------------------------------------------
 -- ----------------------------------------------------------------------------------
-
+--
+-- role rights management
+--
 DROP PROCEDURE IF EXISTS `uspUpdateRoleHasRights`;
 DELIMITER //
 CREATE PROCEDURE `uspUpdateRoleHasRights`(IN xmlData text)
@@ -3973,8 +3975,8 @@ COMMENT
 </rights>
 '
 BEGIN
-select @roleId := EXTRACTVALUE(xmlData,'/rights/roleid');
-select @rightIds := EXTRACTVALUE(xmlData,'/rights/rightid');
+SELECT @roleId := EXTRACTVALUE(xmlData,'/rights/roleid');
+SELECT @rightIds := EXTRACTVALUE(xmlData,'/rights/rightid');
 
 SET @index = 1;
 SET @right_id_count = CHAR_LENGTH(@rightids) - CHAR_LENGTH(REPLACE(@rightIds,' ','')) + 1;
@@ -3985,5 +3987,36 @@ INSERT INTO role_has_rights(roleid,rightid) VALUES(@roleId,SUBSTRING_INDEX(SUBST
 SET @index = @index + 1;
 END WHILE;
 
+END //
+DELIMITER ;
+
+--
+-- User rights management
+--
+DROP PROCEDURE IF EXISTS `uspUpdateUserHasRights`;
+DELIMITER //
+CREATE PROCEDURE `uspUpdateUserHasRights`(IN xmlData text)
+COMMENT
+'
+<rights>
+<userid>1</userid>
+<rightid>1</rightid>
+<rightid>2</rightid>
+<rightid>3</rightid>
+<rightid>4</rightid>
+</rights>
+'
+BEGIN
+	SELECT @userId := EXTRACTVALUE(xmlData,'/rights/userid');
+	SELECT @rightIds := EXTRACTVALUE(xmlData,'/rights/rightid');
+	
+	SET @index = 1;
+	SET @rightIdCount = CHAR_LENGTH(@rightids) - CHAR_LENGTH(REPLACE(@rightIds,' ','')) + 1;
+	DELETE FROM user_has_rights WHERE userid = @userId;
+	WHILE @index <= @rightIdCount
+	DO
+	INSERT INTO user_has_rights(userid,rightid) VALUES (@userId,SUBSTRING_INDEX(SUBSTRING_INDEX(@rightIds,' ',@index),' ',-1));
+	SET @index = @index + 1;
+	END WHILE;
 END //
 DELIMITER ;

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>角色权限管理</title>
     <link href="../../css/style.css" type="text/css" />
 </head>
 <body style="background:#f0f9fd;">

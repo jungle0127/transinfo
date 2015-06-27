@@ -65,6 +65,7 @@
 	  <sqlMap resource = "App_Code/DAL/Mapper/Vantype.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/usp/UspInsertTrunkMetadata.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/usp/UspInsertSpecialineData.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/usp/UspUpdateUserHasRights.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/usp/UspUpdateRoleHasRights.mapper.xml"/>
   </sqlMaps>
 
