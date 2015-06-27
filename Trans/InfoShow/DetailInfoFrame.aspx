@@ -30,7 +30,7 @@
             $("#frameInfoDetail").attr("src", "SpeciallineInfoDetail.aspx?id=" + id);
         }
         else if (type == "trunk") {
-            $("#frameInfoDetail").attr("src", "SpeciallineInfoDetail.aspx?id=" + id);
+            $("#frameInfoDetail").attr("src", "TrunkInfoDetail.aspx?id=" + id);
         }
         else if (type == "news") {
             $("#frameInfoDetail").attr("src", "newsinfodetail.aspx?id=" + id);

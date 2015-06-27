@@ -10,7 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="currentLoc">您当前浏览的是：<span class="spancurrentLoc">货源详细信息</span></div><!--可选，根据之前点击的对象由程序生成当前的位置信息--->
+    <div class="currentLoc">您当前浏览的是：车源详细信息</div><!--可选，根据之前点击的对象由程序生成当前的位置信息--->
 <table class="right-bottom">
 <tbody>
     <%--<tr>
