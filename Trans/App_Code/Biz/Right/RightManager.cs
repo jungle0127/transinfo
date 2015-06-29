@@ -39,27 +39,27 @@ namespace Trans.Biz.Right
                 rightBasicInfo.RightUrl = userRight.Righturl;
                 rightBasicInfo.RightName = userRight.Rightname;
                 rightBasicInfo.RightId = userRight.Rightid;
-
-                if (infoTable.ContainsKey(userRight.Groupname))
+                rightBasicInfo.RightType = userRight.Righttype;
+                if (infoTable.ContainsKey(userRight.Groupid))
                 {
-                    LinkedList<RightBasicInfo> rightBasicInfoList = infoTable[userRight.Groupname] as LinkedList<RightBasicInfo>;
+                    LinkedList<RightBasicInfo> rightBasicInfoList = infoTable[userRight.Groupid] as LinkedList<RightBasicInfo>;
                     rightBasicInfoList.AddLast(rightBasicInfo);
-                    infoTable[userRight.Groupname] = rightBasicInfoList;
+                    infoTable[userRight.Groupid] = rightBasicInfoList;
                 }
                 else
                 {
                     LinkedList<RightBasicInfo> rightBasicInfoList = new LinkedList<RightBasicInfo>();
                     rightBasicInfoList.AddLast(rightBasicInfo);
-                    infoTable[userRight.Groupname] = rightBasicInfoList;
+                    infoTable[userRight.Groupid] = rightBasicInfoList;
                 }
             }
-            foreach (String groupName in infoTable.Keys)
+            foreach (long groupId in infoTable.Keys)
             {
                 RightsInfo rightsInfo = new RightsInfo();
 
-                LinkedList<RightBasicInfo> rightBasicInfoList = infoTable[groupName] as LinkedList<RightBasicInfo>;
+                LinkedList<RightBasicInfo> rightBasicInfoList = infoTable[groupId] as LinkedList<RightBasicInfo>;
                 Rightgroup rightGroup = new Rightgroup();
-                rightGroup.Groupname = groupName;
+                rightGroup.Id = groupId;
                 rightsInfo.RightGroup = rightGroup;
                 IList<Rights> rightList = new List<Rights>();
                 foreach (RightBasicInfo rightBasicInfo in rightBasicInfoList)
@@ -170,6 +170,14 @@ namespace Trans.Biz.Right
         {
             get { return rightId; }
             set { rightId = value; }
+        }
+
+        private Int64 rightType;
+
+        public Int64 RightType
+        {
+            get { return rightType; }
+            set { rightType = value; }
         }
 
         private String rightName;

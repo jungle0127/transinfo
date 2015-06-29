@@ -132,6 +132,31 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
+		public IList<Vuserrights> FindByGroupid(Int64 groupid) {
+			String stmtId = "Vuserrights.FindByGroupid";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, groupid);
+			return result;
+        }
+		public IList<Vuserrights> DescendOrderFindByGroupid(Int64 groupid) {
+			String stmtId = "Vuserrights.DescendOrderFindByGroupid";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, groupid);
+			return result;
+        }
+		public IList<Vuserrights> PaginationFindByGroupid(VuserrightsPagination obj) {
+			String stmtId = "VuserrightsPagination.FindByGroupid";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
+			return result;
+        }
+		public IList<Vuserrights> DescendOrderPaginationFindByGroupid(VuserrightsPagination obj) {
+			String stmtId = "VuserrightsPagination.DescendOrderFindByGroupid";
+			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByGroupid(Vuserrights obj){
+			String stmtId = "Vuserrights.GetFindByGroupidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vuserrights> FindByRightid(Int64 rightid) {
 			String stmtId = "Vuserrights.FindByRightid";
 			IList<Vuserrights> result = this.sqlMapper.QueryForList<Vuserrights>(stmtId, rightid);

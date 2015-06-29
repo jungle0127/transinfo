@@ -49,6 +49,16 @@ namespace Trans.DAL.Dao
 
 		int FindCountByRighturl(Vuserrights obj);
 
+		IList<Vuserrights> FindByGroupid(Int64 groupid);
+
+		IList<Vuserrights> DescendOrderFindByGroupid(Int64 groupid);
+
+		IList<Vuserrights> PaginationFindByGroupid(VuserrightsPagination obj);
+
+		IList<Vuserrights> DescendOrderPaginationFindByGroupid(VuserrightsPagination obj);
+
+		int FindCountByGroupid(Vuserrights obj);
+
 		IList<Vuserrights> FindByRightid(Int64 rightid);
 
 		IList<Vuserrights> DescendOrderFindByRightid(Int64 rightid);

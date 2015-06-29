@@ -7,10 +7,11 @@ using System.Web.UI.WebControls;
 using Trans.Biz.Right;
 using Trans.DAL.Entity;
 using System.Text;
+using System.Collections;
 
 namespace Trans.admin
 {
-    public partial class leftmenu : System.Web.UI.Page
+    public partial class leftmenu : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
         private IRightManager rightManager;
         private string rightMenuContent;
@@ -23,15 +24,17 @@ namespace Trans.admin
         protected void Page_Load(object sender, EventArgs e)
         {
             this.rightManager = new RightManager();
-            this.rightMenuContent = this.getRightMenuContent(1);
+            this.rightMenuContent = this.getRightMenuContent(int.Parse(base.UserId));
         }
         private string getRightMenuContent(int userId)
         {
             StringBuilder rightMenuBuilder = new StringBuilder();
             LinkedList<RightsInfo> rightInfoList = rightManager.getRightsByUserId(userId);
+            Hashtable rightGroupMap = this.rightManager.getRightGroupMap();
             foreach (RightsInfo rightInfo in rightInfoList)
             {
-                rightMenuBuilder.Append(this.getRightgroupItem(rightInfo.RightGroup.Groupname));
+                Rightgroup rightGroupPoco = rightGroupMap[rightInfo.RightGroup.Id] as Rightgroup;
+                rightMenuBuilder.Append(this.getRightgroupItem(rightGroupPoco.Groupname));
                 rightMenuBuilder.Append("<ul class=\"menuson\">");
                 foreach (Rights rightPojo in rightInfo.RightList)
                 {

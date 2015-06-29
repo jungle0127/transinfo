@@ -24,6 +24,12 @@ namespace Trans.DAL.Entity
 			get { return m_righturl; }
 			set { m_righturl = value;}
 		}
+		private Int64 m_groupid;
+		public Int64 Groupid
+		{
+			get { return m_groupid; }
+			set { m_groupid = value;}
+		}
 		private Int64 m_rightid;
 		public Int64 Rightid
 		{

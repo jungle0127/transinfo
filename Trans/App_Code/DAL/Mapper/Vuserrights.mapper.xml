@@ -9,6 +9,7 @@
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Rightname" column="rightname" dbType="varchar"/>
 			<result property="Righturl" column="righturl" dbType="varchar"/>
+			<result property="Groupid" column="groupid" dbType="bigint"/>
 			<result property="Rightid" column="rightid" dbType="bigint"/>
 			<result property="Righttype" column="righttype" dbType="bigint"/>
 			<result property="Groupname" column="groupname" dbType="varchar"/>
@@ -74,6 +75,21 @@
 		</select>
 		<select id="Vuserrights.GetFindByRighturlCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_userrights WHERE v_userrights.righturl=#Righturl#
+		</select>
+		<select id="Vuserrights.FindByGroupid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupid = #value#
+		</select>
+		<select id="Vuserrights.DescendOrderFindByGroupid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupid = #value# ORDER BY id DESC
+		</select>
+		<select id="VuserrightsPagination.FindByGroupid" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupid = #Groupid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VuserrightsPagination.DescendOrderFindByGroupid" parameterClass="VuserrightsPagination" resultMap="FullResultMap" extends="Vuserrights.FindAll">
+			WHERE v_userrights.groupid = #Groupid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vuserrights.GetFindByGroupidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_userrights WHERE v_userrights.groupid=#Groupid#
 		</select>
 		<select id="Vuserrights.FindByRightid" parameterClass="Int64" resultMap="FullResultMap" extends="Vuserrights.FindAll">
 			WHERE v_userrights.rightid = #value#
