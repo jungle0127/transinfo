@@ -15,11 +15,15 @@ namespace Trans.Biz.Right
         private IVuserrightsDao userRightsDao;
         private IVrightsfullinfoDao rightsDao;
         private IRightgroupDao rightGroupDao;
+        private IUserhasrightsDao userHasRightsDao;
+        private IRolehasrightsDao roleHasRightsDao;
         public RightManager()
         {
             this.userRightsDao = new VuserrightsDao();
             this.rightsDao = new VrightsfullinfoDao();
             this.rightGroupDao = new RightgroupDao();
+            this.userHasRightsDao = new UserhasrightsDao();
+            this.roleHasRightsDao = new RolehasrightsDao();
             logger.Info("Constructor method done.");
         }
         /// <summary>
@@ -110,7 +114,7 @@ namespace Trans.Biz.Right
             foreach (long groupId in infoTable.Keys)
             {
                 LinkedList<RightBasicInfo> rightBasicInfoList = infoTable[groupId] as LinkedList<RightBasicInfo>;
-                RightsInfo rightsInfoEntity = new RightsInfo();
+                RightsInfo rightsInfoEntity = new RightsInfo();// Includes RightGroup and its rights list.
                 Rightgroup rightGroup = new Rightgroup();
                 rightGroup.Id = groupId;
                 rightsInfoEntity.RightGroup = rightGroup;
@@ -140,6 +144,26 @@ namespace Trans.Biz.Right
             foreach (Vuserrights userRightEntity in userRightsList)
             {
                 rightIdList.Add(userRightEntity.Rightid);
+            }
+            return rightIdList;
+        }
+        public IList<long> getRightIdListByRoleId(int roleId)
+        {
+            IList<long> rightIdList = new List<long>();
+            IList<Rolehasrights> roleHasRightsPocoList = this.roleHasRightsDao.FindByRoleid(roleId);
+            foreach (Rolehasrights roleHasRightsPoco in roleHasRightsPocoList)
+            {
+                rightIdList.Add(roleHasRightsPoco.Rightid);
+            }
+            return rightIdList;
+        }
+        public IList<long> getRightIdListByUserId(int userId)
+        {
+            IList<long> rightIdList = new List<long>();
+            IList<Userhasrights> userHasRightsPocoList = this.userHasRightsDao.FindByUserid(userId);
+            foreach(Userhasrights userHasRightPoco in userHasRightsPocoList)
+            {
+                rightIdList.Add(userHasRightPoco.Rightid);
             }
             return rightIdList;
         }

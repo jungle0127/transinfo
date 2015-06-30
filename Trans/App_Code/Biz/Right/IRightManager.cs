@@ -13,5 +13,7 @@ namespace Trans.Biz.Right
         IList<RightsInfo> getRightsFullInfo();
         Hashtable getRightGroupMap();
         IList<long> getRightIdList(int userId);
+        IList<long> getRightIdListByUserId(int userId);
+        IList<long> getRightIdListByRoleId(int roleId);
     }
 }

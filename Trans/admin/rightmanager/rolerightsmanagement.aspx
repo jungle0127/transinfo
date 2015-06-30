@@ -10,6 +10,13 @@
 <body style="background:#f0f9fd;">
     <form id="form1" runat="server">
     <div>
+        <asp:Panel runat = "server" ID="rolePanel">
+            <label>角色选择</label>
+            <asp:DropDownList ID="ddlRole" runat="server"  AutoPostBack="true"
+                onselectedindexchanged="ddlRole_SelectedIndexChanged">
+            
+            </asp:DropDownList>
+        </asp:Panel>
         <asp:Panel runat="server" ID="rightPanel">
         </asp:Panel>
     </div>
