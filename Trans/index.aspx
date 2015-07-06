@@ -187,7 +187,7 @@
              <td>
 				<div class="listnr news">
                 <ul>
-                 <li> <a href="#" target="_blank"><font class="newsTitle">关于提高货源车源信息质量提高物流币竞价通知</font></a>
+                 <li> <a href="InfoList/NewsList.aspx" target="_blank"><font class="newsTitle">关于提高货源车源信息质量提高物流币竞价通知</font></a>
                  <div class="listneir"><a href="#" target="_blank" class="newsContentLink links green">非常感谢广大用户长期对中国物通网的鼎力支持和关爱，竞价排名做为当前营销中效果最好的推广工具之一，深得客户青睐，但有部分客户利用竞价排名推广其虚假货源信息、车源线路，造成了广大用户搜索使用上的困扰。为了<span class="more green">...更多&gt;&gt;</span></a></div>
                  </li>
                  </ul>
