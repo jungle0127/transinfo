@@ -13,18 +13,30 @@ namespace Trans.Biz.Right
     {
         private static ILog logger = LogManager.GetLogger(typeof(RightManager));
         private IVuserrightsDao userRightsDao;
-        private IVrightsfullinfoDao rightsDao;
+        private IVrightsfullinfoDao vrightsDao;
         private IRightgroupDao rightGroupDao;
         private IUserhasrightsDao userHasRightsDao;
         private IRolehasrightsDao roleHasRightsDao;
+        private IRightsDao rightsDao;
         public RightManager()
         {
             this.userRightsDao = new VuserrightsDao();
-            this.rightsDao = new VrightsfullinfoDao();
+            this.vrightsDao = new VrightsfullinfoDao();
             this.rightGroupDao = new RightgroupDao();
             this.userHasRightsDao = new UserhasrightsDao();
             this.roleHasRightsDao = new RolehasrightsDao();
+            this.rightsDao = new RightsDao();
             logger.Info("Constructor method done.");
+        }
+        public IList<long> getAllRightIdList()
+        {
+            IList<long> rightIdList = new List<long>();
+            IList<Rights> rightsPocoList = this.rightsDao.FindAll();
+            foreach (Rights rightPoco in rightsPocoList)
+            {
+                rightIdList.Add(rightPoco.Id);
+            }
+            return rightIdList;
         }
         /// <summary>
         /// Get all the rights of an user according to user ID.
@@ -86,7 +98,7 @@ namespace Trans.Biz.Right
         public IList<RightsInfo> getRightsFullInfo()
         {
             IList<RightsInfo> rightFullInfoList = new List<RightsInfo>();
-            IList<Vrightsfullinfo> rightInfoList = this.rightsDao.FindAll();
+            IList<Vrightsfullinfo> rightInfoList = this.vrightsDao.FindAll();
             Hashtable infoTable = new Hashtable();
             foreach (Vrightsfullinfo rightInfoEntity in rightInfoList)
             {
@@ -147,7 +159,7 @@ namespace Trans.Biz.Right
             }
             return rightIdList;
         }
-        public IList<long> getRightIdListByRoleId(int roleId)
+        public IList<long> getRightIdListByRoleId(long roleId)
         {
             IList<long> rightIdList = new List<long>();
             IList<Rolehasrights> roleHasRightsPocoList = this.roleHasRightsDao.FindByRoleid(roleId);
@@ -157,7 +169,7 @@ namespace Trans.Biz.Right
             }
             return rightIdList;
         }
-        public IList<long> getRightIdListByUserId(int userId)
+        public IList<long> getRightIdListByUserId(long userId)
         {
             IList<long> rightIdList = new List<long>();
             IList<Userhasrights> userHasRightsPocoList = this.userHasRightsDao.FindByUserid(userId);

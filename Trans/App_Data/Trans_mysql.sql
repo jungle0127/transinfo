@@ -3667,7 +3667,7 @@ INSERT INTO rights (rightname ,righturl )
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('角色权限','rightmanager/rolerightsmanagement.aspx');	-- 3
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('用户权限','rightmanager/userrightsmanagement.aspx');	-- 4
+	VALUES ('用户权限','rightmanager/UserRightManager.aspx');	-- 4
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('角色管理','rightmanager/rolemanagement.aspx');	 -- 5
 INSERT INTO rights (rightname ,righturl ) 
