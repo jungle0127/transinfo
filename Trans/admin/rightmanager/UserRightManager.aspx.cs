@@ -49,10 +49,12 @@ namespace Trans.admin.rightmanager
             {
                 this.uspUserRightsDao.RunProc(uspUpdateUserHasRights);
                 logger.Info("Rights of user updated done.");
+                this.labelNotification.Text = "权限更新成功";
             }
             catch (Exception ex)
             {
                 logger.Error("Update the rights failed with exception:" + ex.Message);
+                this.labelNotification.Text = "权限更新失败，错误信息：" + ex.Message;
             }
         }
 
@@ -151,6 +153,7 @@ namespace Trans.admin.rightmanager
 
         protected void ddlUser_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.labelNotification.Text = "";
             if (this.ddlUser.SelectedValue == "-1")
             {
                 logger.Info("The first item is not a user, ignore it.");

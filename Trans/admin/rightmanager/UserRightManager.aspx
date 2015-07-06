@@ -14,6 +14,8 @@
         <asp:UpdatePanel ID="updatePanel" runat="server">
             <ContentTemplate>
                 <asp:Panel runat="server" ID="userPanel">
+                    <label style="color: #FFFF00">友情提示：用户所属角色拥有的权限在本页面不可更改，请至角色权限管理更改。</label>
+                    <br />
                     <label>用户选择</label>
                     <asp:DropDownList ID="ddlUser" runat="server" AutoPostBack="true"
                         onselectedindexchanged="ddlUser_SelectedIndexChanged"></asp:DropDownList>
@@ -21,6 +23,7 @@
                 </asp:Panel>
                 <asp:Panel ID="rightPanel" runat="server">
                 </asp:Panel>
+                <asp:Label ID="labelNotification" runat="server" ForeColor="Red" ></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
