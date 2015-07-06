@@ -23,7 +23,7 @@
 
           </label>
           <%--<input id="searchBtn" class="anniu  inputSeachBtn" value="搜搜看" type="button">--%>
-          <asp:Button ID="searchBtn" class="anniu  inputSeachBtn" value="搜搜看" runat="server"  />
+          <asp:Button ID="searchBtn" class="anniu  inputSeachBtn"  value="搜搜看" runat="server"  />
 
       </div>
   </div>
