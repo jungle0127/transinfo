@@ -168,6 +168,7 @@ namespace Trans.admin.rightmanager
             logger.Info("Rights item count of user's role:" + roleRightIdList.Count.ToString());
             this.updateRights(roleRightIdList, true, false);
             IList<long> userRightIdList = this.rightManager.getRightIdListByUserId(userPoco.Id);
+            logger.Info("Rights item count of user:" + userRightIdList.Count.ToString());
             this.updateRights(userRightIdList, true, true);
         }
     }

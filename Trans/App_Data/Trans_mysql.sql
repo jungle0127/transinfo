@@ -3665,7 +3665,7 @@ INSERT INTO rights (rightname ,righturl )
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('新闻发布','promulagate/newspublisher.aspx?id=1'); -- 2
 INSERT INTO rights (rightname ,righturl ) 
-	VALUES ('角色权限','rightmanager/rolerightsmanagement.aspx');	-- 3
+	VALUES ('角色权限','rightmanager/RoleRightManager.aspx');	-- 3
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('用户权限','rightmanager/UserRightManager.aspx');	-- 4
 INSERT INTO rights (rightname ,righturl ) 
