@@ -52,9 +52,11 @@
                     </td>
                     <td width="3%">&nbsp;</td>
                     <td id="newsContent">
-                    	<a  href="#" class="newsTitle" id="newsTitle">河南省运输管理局一行考察川北物流平台</a>
+                    	<%--<a  href="#" class="newsTitle" id="newsTitle">河南省运输管理局一行考察川北物流平台</a>
                         <h5 class="gray">发布日期：<span id="deliverDate">2015-4-20</span></h5>
-                        <p class="newsContent">4月16日，河南省道路运输管理局副局长龚全武同志、河南省“八挂来网”信息平台总经理侯爱民同志一行到“湖南平台”进行考察交流。 双方就落实交通运输部“1+32+nX”区域节点部署工作、区域平台创新发展和运行模式、“互联网+物流+金融”物流生态系统建设等事项进行了深入交流与探讨。双方一致认为，..</p>
+                        <p class="newsContent">4月16日，河南省道路运输管理局副局长龚全武同志、河南省“八挂来网”信息平台总经理侯爱民同志一行到“湖南平台”进行考察交流。 双方就落实交通运输部“1+32+nX”区域节点部署工作、区域平台创新发展和运行模式、“互联网+物流+金融”物流生态系统建设等事项进行了深入交流与探讨。双方一致认为，..</p>--%>
+                        <%=this.MessageBodyFront %>
+
                      <%--<input id="btnlookIntoNews" class="item btn120 btnGreen2" value="立即查看" type="button">--%>
                      <asp:Button ID="btnlookIntoNews" class="item btn120 btnGreen2" Text="立即查看" runat="server"  />
                   	</td>
@@ -72,11 +74,11 @@
                               <div class="tableContainer">
                                   <table class="table table-hover newsList">
                                       <tbody>
-                                      <tr>
+                                      <%--<tr>
                                       <td width="90%"><a href="thirdLevel/newsContent.html">促进湖南内河航运发展研讨会在长沙召开【图】</a></td>
                                       <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      
+                                      </tr>--%>
+                                      <%=this.NoticeMessFront %>
                                       </tbody>
                                   </table>
                                  
@@ -85,11 +87,12 @@
                           <div class="tab-pane" id="notice">
                              <div class="tableContainer">
                                   <table class="table table-hover noticeList">
-                                      <tbody>
+                                      <%--<tbody>
                                       <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
+                                      <td width="90%"><a href="../InfoShow/NewsInfoDetail.aspx">促进湖南内河航运发展研讨会在长沙召开</a></td>
                                       <td width="10%">2015-5-2</td>
-                                      </tr>
+                                      </tr>--%>
+                                      <%=this.AnnounceMessFront %>
                                       
                                       </tbody>
                                   </table>
