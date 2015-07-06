@@ -765,10 +765,12 @@
     <Content Include="admin\promulagate\NotificationList.aspx" />
     <Content Include="admin\rightmanager\addrole.aspx" />
     <Content Include="admin\rightmanager\rolemanagement.aspx" />
+    <Content Include="admin\rightmanager\RoleRightManager.aspx" />
     <Content Include="admin\rightmanager\rolerightsmanagement.aspx" />
     <Content Include="admin\rightmanager\updaterolename.aspx" />
     <Content Include="admin\rightmanager\updateuser.aspx" />
     <Content Include="admin\rightmanager\usermanagement.aspx" />
+    <Content Include="admin\rightmanager\UserRightManager.aspx" />
     <Content Include="admin\rightmanager\userrightsmanagement.aspx" />
     <Content Include="admin\statistic\depositorysourcestatistic.aspx" />
     <Content Include="admin\statistic\goodssourcestatistic.aspx" />
@@ -859,6 +861,20 @@
     </Compile>
     <Compile Include="admin\promulagate\NotificationList.aspx.designer.cs">
       <DependentUpon>NotificationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rightmanager\RoleRightManager.aspx.cs">
+      <DependentUpon>RoleRightManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rightmanager\RoleRightManager.aspx.designer.cs">
+      <DependentUpon>RoleRightManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rightmanager\UserRightManager.aspx.cs">
+      <DependentUpon>UserRightManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rightmanager\UserRightManager.aspx.designer.cs">
+      <DependentUpon>UserRightManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Biz\Common\ITableGenerator.cs" />
     <Compile Include="App_Code\Biz\Common\SessionCheckPageBase.cs">
