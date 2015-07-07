@@ -13,6 +13,7 @@ using System.Text;
 using System.Collections;
 using Trans.DAL.Entity;
 using Trans.DAL.Entity.USP;
+using Trans.DAL.Dao;
 
 namespace Trans.admin.rightmanager
 {
@@ -21,25 +22,27 @@ namespace Trans.admin.rightmanager
         private static ILog logger = LogManager.GetLogger(typeof(userrightsmanagement));
         private IRightManager rightManager;
         private IUspUpdateUserHasRightsDao uspUserRightsDao;
+        private IUsersDao usersDao;
         public userrightsmanagement()
         {
             this.rightManager = new RightManager();
             this.uspUserRightsDao = new UspUpdateUserHasRightsDao();
+            this.usersDao = new UsersDao();
             logger.Info("Construct method done.");
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.initRights();
+            this.initUserList();
             logger.Info("init controls done.");
         }
 
-        private void initRights()
+        private void initRights(string userId)
         {
             logger.Info("Begin init rights of User.");
             Hashtable rightGroupMap = this.rightManager.getRightGroupMap();
             logger.Info("Got right group information with count:" + rightGroupMap.Count.ToString());
-            IList<long> userRightIdList = this.rightManager.getRightIdList(Int16.Parse(base.UserId));
-            LinkedList<RightsInfo> rightInfoList = this.rightManager.getRightsByUserId(int.Parse(base.UserId));
+            IList<long> userRightIdList = this.rightManager.getRightIdList(int.Parse(userId));
+            LinkedList<RightsInfo> rightInfoList = this.rightManager.getRightsByUserId(int.Parse(userId));
             foreach (RightsInfo rightsInfo in rightInfoList)
             {
                 Label rightGroupLabel = new Label();
@@ -105,6 +108,21 @@ namespace Trans.admin.rightmanager
         {
             string[] strs = cbId.Split('_');
             return strs[2];
+        }
+
+        private void initUserList()
+        {
+            this.ddlUser.Items.Clear();
+            this.ddlUser.Items.Add(new ListItem("请选择...", "-1"));
+            IList<Users> usersPocoList = this.usersDao.FindAll();
+            foreach (Users userPoco in usersPocoList)
+            {
+                this.ddlUser.Items.Add(new ListItem(userPoco.Loginname, userPoco.Id.ToString()));
+            }
+        }
+        protected void ddlUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.initRights(this.ddlUser.SelectedValue);
         }
     }
 }
