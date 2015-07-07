@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>新闻公告内容</title>
+    <title>新闻公告</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
@@ -74,15 +74,6 @@
             </div>
           </div>
 	</div>
-
-
-
-
-
-
-
-
-
     </form>
 </body>
 </html>
