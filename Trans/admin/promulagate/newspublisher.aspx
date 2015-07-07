@@ -52,7 +52,6 @@
             prettyPrint();
         });
     </script>
-
 </head>
 <body style="background:#f0f9fd;">
     <form id="form1" runat="server">
@@ -61,6 +60,8 @@
                 <li>
                     <label>标题</label>
                     <asp:TextBox ID="txtTitle" class="dfinput" runat="server" name=""> </asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtTitle" ErrorMessage="标题不可为空" ForeColor="Red" runat="server"></asp:RequiredFieldValidator>
+                    
                 </li>
                 <li>
                     <label>公告类型</label>
@@ -76,15 +77,17 @@
                 <li>
                         <label></label>
                         <asp:TextBox runat="server" ID="txtContent" TextMode="MultiLine" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ControlToValidate="txtContent" ErrorMessage="内容不可为空" ForeColor="Red" runat="server"></asp:RequiredFieldValidator>
                 </li>
                 <li>
                     <label>&nbsp;</label>
-                    <asp:Button runat="server" ID="btnSubmit" name="" 
+                    <asp:Button runat="server" ID="btnSubmit" name=""  onclientclick="validateInput()"
                             class="btn" Text="提交" onclick="btnSubmit_Click" ></asp:Button>
-                    
                 </li>
             </ul>
         </div>
+        <asp:RequiredFieldValidator ControlToValidate="txtTitle" Text="标题不可为空" runat="server"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ControlToValidate="txtContent" Text="内容不可为空" runat="server"></asp:RequiredFieldValidator>
     </form>
 </body>
 </html>

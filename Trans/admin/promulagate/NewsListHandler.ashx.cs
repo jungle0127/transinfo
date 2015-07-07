@@ -35,7 +35,7 @@ namespace Trans.admin.promulagate
             pageNationPoco.Offset = (int.Parse(pageNumber) - 1) * pageNationPoco.Limit;
             logger.Info("Got offset:" + pageNationPoco.Offset.ToString());
             pageNationPoco.Typeid = long.Parse(typeId);
-            IList<Varticleinfo> articleInfoList = this.articleInfoDao.PaginationFindByTypeid(pageNationPoco);
+            IList<Varticleinfo> articleInfoList = this.articleInfoDao.DescendOrderPaginationFindByTypeid(pageNationPoco);
             logger.Info("Got items:" + articleInfoList.Count.ToString());
             context.Response.Write(this.getTableHtml(this.getTableBodyHtml(articleInfoList)));
         }

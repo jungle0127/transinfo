@@ -6,18 +6,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Trans.DAL.Dao;
 using Trans.DAL.Entity;
+using log4net;
 
 namespace Trans.admin.promulagate
 {
     public partial class newspublisher : Trans.App_Code.Biz.Common.SessionCheckPageBase
     {
+        private static ILog logger = LogManager.GetLogger(typeof(newspublisher));
         private string userId;
         private IArticleDao articleDao;
         public newspublisher() : base()
         {
-
             this.userId = base.UserId;
             this.articleDao = new ArticleDao();
+            logger.Info("Construct method done.");
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,10 +30,12 @@ namespace Trans.admin.promulagate
                 if (requestType == "1")
                 {
                     this.ddlArticleType.SelectedIndex = 0;
+                    logger.Info("News publisher");
                 }
                 else
                 {
                     this.ddlArticleType.SelectedIndex = 1;
+                    logger.Info("Notification publisher.");
                 }
             }
             
@@ -57,7 +61,21 @@ namespace Trans.admin.promulagate
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            this.insertArticle();
+            try
+            {
+                this.insertArticle();
+                logger.Info("Article inserted succeed.");
+                if (this.ddlArticleType.SelectedValue == "1")
+                    Response.Redirect("newslist.aspx");
+                else
+                    Response.Redirect("NotificationList.aspx");
+            }
+            catch (Exception ex)
+            {
+                logger.Error("Article inserted failed with exception:" + ex.Message );
+                logger.Error("title:" + this.txtTitle.Text);
+                logger.Error("Content:" + this.txtContent.Text);
+            }
         }
 
     }
