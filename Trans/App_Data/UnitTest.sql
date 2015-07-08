@@ -88,6 +88,28 @@ call uspInsertSpecialineData(' <speciallinedata>
 	<description>测试存储过程插入数据</description>
  </speciallinedata>');
  
+ call uspInsertSpecialineData('
+<speciallinedata>
+<userid>1</userid>
+<title>专线测试数据0909</title>
+<srcaddress>起始地址</srcaddress>
+<srccontactperson>连系人</srccontactperson>
+<srccontactcellphone>13036251452</srccontactcellphone>
+<srccontactphone>13036251452</srccontactphone>
+<srccountycode>230227</srccountycode>
+<dstaddress>目的地址</dstaddress>
+<dstcontactperson>连目的</dstcontactperson>
+<dstcontactcellphone>13532651245</dstcontactcellphone>
+<dstcontactphone>13532651245</dstcontactphone>
+<dstcountycode>140802</dstcountycode>
+<weightprice>23</weightprice>
+<volumeprice>32</volumeprice>
+<departuretypeid>2</departuretypeid>
+<speciallinetypeid>1</speciallinetypeid>
+<description>测试数据，请删除</description>
+</speciallinedata>
+')
+ 
  call uspUpdateRoleHasRights('
  <rights>
 <roleid>1</roleid>
