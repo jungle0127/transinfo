@@ -766,12 +766,10 @@
     <Content Include="admin\rightmanager\addrole.aspx" />
     <Content Include="admin\rightmanager\rolemanagement.aspx" />
     <Content Include="admin\rightmanager\RoleRightManager.aspx" />
-    <Content Include="admin\rightmanager\rolerightsmanagement.aspx" />
     <Content Include="admin\rightmanager\updaterolename.aspx" />
     <Content Include="admin\rightmanager\updateuser.aspx" />
     <Content Include="admin\rightmanager\usermanagement.aspx" />
     <Content Include="admin\rightmanager\UserRightManager.aspx" />
-    <Content Include="admin\rightmanager\userrightsmanagement.aspx" />
     <Content Include="admin\statistic\depositorysourcestatistic.aspx" />
     <Content Include="admin\statistic\goodssourcestatistic.aspx" />
     <Content Include="admin\statistic\specificlinesourcestatistic.aspx" />
@@ -1218,6 +1216,7 @@
     <Content Include="imgs\backIndex.png" />
     <Content Include="imgs\backTop.png" />
     <Content Include="imgs\bg.jpg" />
+    <Content Include="imgs\bg3.jpg" />
     <Content Include="imgs\boxshadow.png" />
     <Content Include="imgs\box_fragile.png" />
     <Content Include="imgs\companys\1.jpg" />
@@ -1243,6 +1242,7 @@
     <Content Include="imgs\companys\img8.jpg" />
     <Content Include="imgs\companys\img9.jpg" />
     <Content Include="imgs\companys\next.png" />
+    <Content Include="imgs\companys\no-goods.jpg" />
     <Content Include="imgs\companys\prev.png" />
     <Content Include="imgs\index\baymax.png" />
     <Content Include="imgs\index\bgnew.png" />
@@ -1253,6 +1253,7 @@
     <Content Include="imgs\index\loginBtn.png" />
     <Content Include="imgs\index\loginOverBtn.png" />
     <Content Include="imgs\index\logo.png" />
+    <Content Include="imgs\index\noPic.png" />
     <Content Include="imgs\index\outBtn.png" />
     <Content Include="imgs\index\outOverBtn.png" />
     <Content Include="imgs\index\phone.png" />
@@ -1689,13 +1690,6 @@
     <Compile Include="admin\rightmanager\rolemanagement.aspx.designer.cs">
       <DependentUpon>rolemanagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\rightmanager\rolerightsmanagement.aspx.cs">
-      <DependentUpon>rolerightsmanagement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\rightmanager\rolerightsmanagement.aspx.designer.cs">
-      <DependentUpon>rolerightsmanagement.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\rightmanager\updaterolename.aspx.cs">
       <DependentUpon>updaterolename.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1716,13 +1710,6 @@
     </Compile>
     <Compile Include="admin\rightmanager\usermanagement.aspx.designer.cs">
       <DependentUpon>usermanagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\rightmanager\userrightsmanagement.aspx.cs">
-      <DependentUpon>userrightsmanagement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\rightmanager\userrightsmanagement.aspx.designer.cs">
-      <DependentUpon>userrightsmanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\statistic\depositorysourcestatistic.aspx.cs">
       <DependentUpon>depositorysourcestatistic.aspx</DependentUpon>
