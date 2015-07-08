@@ -47,7 +47,7 @@
 			<div class="tm-right-inner-container">
             	<div class="picNewsFrame">
             	</div>
-                <div class="searchSelectionFrame infoDetail">
+                <%--<div class="searchSelectionFrame infoDetail">
                 	<p class="newsTitle" id="title">河南省运输管理局一行考察川北物流平台</p>
                     <center><p>发布日期：<span id="deliverDate" class="gray">2015-4-20</span>&nbsp;&nbsp;访问次数：<span id="visitTimes" class="gray">2333</span></p></center><!--动态获取时间，访问次数--->
                     <table width="100%">
@@ -58,7 +58,7 @@
                     </table>
                     <hr style="margin-top:5px;">
                     <div class="newsContent newsDetail">
-                    	<div class="pictureNews"><img  id="newsPicture" src="../../imgs/newsPic.jpg"></div><!--动态添加新闻图片，若无图片则不显示-->			<div id="content"> 4月16日，河南省道路运输管理局副局长龚全武同志、河南省“八挂来网”信息平台总经理侯爱民同志一行到“湖南平台”进行考察交流。
+                    	<div id="content"> 4月16日，河南省道路运输管理局副局长龚全武同志、河南省“八挂来网”信息平台总经理侯爱民同志一行到“湖南平台”进行考察交流。
 双方就落实交通运输部“1+32+nX”区域节点部署工作、区域平台创新发展和运行模式、“互联网+物流+金融”物流生态系统建设等事项进行了深入交流与探讨。双方一致认为，应加大整合区域内交通行政信息资源和物流市场信息资源的力度。下阶段将在两省省际之间率先实现物流园区信息互联。
 湖南省联合运输办公室副主任卢勤学同志出席交流会。
 						</div><!--动态加载带格式的文章-->
@@ -70,7 +70,8 @@
                         <td class="nextSwitch"><a class="green" href="#">下一篇:<span id="nextArticle">部科学研究院来湘专题调研“湖南平台”建设与应用推进..</span></a></td><!--动态加载--若没有上一篇或者下一篇，则不显示-->
                       </tr>
                     </table>
-                </div>
+                </div>--%>
+                <%=this.MessageBodyFront %>
             </div>
           </div>
 	</div>
