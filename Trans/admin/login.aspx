@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>川北物流首页</title>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="javascript" src="../js/bootstrap.min.js"></script>
     <script language="javascript" src="../js/js.js"></script>
     <link rel="stylesheet" href="../css/index_login.css" />
@@ -17,8 +17,11 @@
         });
     </script>
 </head>
-<body  style="background-color:#1c77ac; background-image:url(../imgs/bg3.jpg); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
+<%--style="background-color:#1c77ac; background-image:url(../imgs/bg3.jpg); background-repeat:no-repeat; background-position:center top; overflow:hidden;"--%>
+<body>
     <form id="form1" runat="server">
+    <img id="background" src="../imgs/bg3.jpg" alt="" />
+
     <table width="100%" class="homeBg" cellspacing="0">
   <tbody>
      <tr>
@@ -37,7 +40,7 @@
                 <td><p class="whiteBold">用户名：</p></td>
                 <td>
                 <%--<input type="text" id="userNameInput" class="userNameInput"/>--%>
-                <asp:TextBox ID="userNameInput" runat="server" class="userNameInput" value="admin" ></asp:TextBox>
+               <asp:TextBox ID="userNameInputLogin" runat="server" class="userNameInput" value="admin" ></asp:TextBox>
                 </td>
                 </tr>
                  <tr>
@@ -63,7 +66,7 @@
 
                  <td>
                  <%--<input  type="button" id="exitBtn" class="exitBtn" onclick="toIndex(this)">--%>
-                 <asp:Button runat="server" id="exitBtn" class="exitBtn"  />
+                 <asp:Button runat="server" id="exitBtnLogin" class="exitBtn"  />
 
                  </td>
                  </tr>
@@ -75,7 +78,7 @@
                  <tbody>
                   <tr>
                     <td><p class="whiteBold">用户名：</p></td>
-                    <td><input type="text" id="userNameInput" class="registerNameInput"/></td>
+                    <td><input type="text" id="userNameInputRegister" class="registerNameInput"/></td>
                   </tr>
                    <tr>
                      <td><p class="whiteBold">输入密码：</p></td>
@@ -97,7 +100,7 @@
                    </tr>
                    <tr>
                      <td><input  type="button" id="registerBtn" class="registerBtn"/></td>
-                     <td><input  type="button" id="exitBtn" class="exitBtn" onclick="toIndex(this)"></td>
+                     <td><input  type="button" id="exitBtnRegister" class="exitBtn" onclick="toIndex(this)" /></td>
                    </tr>
                   </tbody>
                </table>

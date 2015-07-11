@@ -22,13 +22,13 @@ namespace Trans.admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// userNameInput control.
+        /// userNameInputLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userNameInput;
+        protected global::System.Web.UI.WebControls.TextBox userNameInputLogin;
         
         /// <summary>
         /// passwordInput control.
@@ -49,12 +49,12 @@ namespace Trans.admin {
         protected global::System.Web.UI.WebControls.Button loginBtn;
         
         /// <summary>
-        /// exitBtn control.
+        /// exitBtnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button exitBtn;
+        protected global::System.Web.UI.WebControls.Button exitBtnLogin;
     }
 }

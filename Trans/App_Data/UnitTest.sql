@@ -108,7 +108,7 @@ call uspInsertSpecialineData(' <speciallinedata>
 <speciallinetypeid>1</speciallinetypeid>
 <description>²âÊÔÊı¾İ£¬ÇëÉ¾³ı</description>
 </speciallinedata>
-')
+');
  
  call uspUpdateRoleHasRights('
  <rights>
