@@ -80,7 +80,7 @@ namespace Trans.InfoList
             {
                 htmlBuilder.Append("<tr>");
                 htmlBuilder.Append("<td>");
-                htmlBuilder.Append("<a href=\"../thirdLevel/goodsDetail.html\" target=\"infoDetails\" class=\"infoTitle goodsInfoTitle\">");
+                htmlBuilder.Append("<a href=\"../InfoShow/DetailInfoFrame.aspx?type=goods&id=" + poco.Id.ToString() + "\" target=\"infoDetails\" class=\"infoTitle goodsInfoTitle\">");
                 htmlBuilder.Append(poco.Title);
                 htmlBuilder.Append("</a>");
                 htmlBuilder.Append("<p>");
@@ -104,7 +104,7 @@ namespace Trans.InfoList
                 htmlBuilder.Append(poco.Srcregionname);
                 htmlBuilder.Append("</span></td>");
                 htmlBuilder.Append("<td>");
-                htmlBuilder.Append("<a class=\"moreBottn\" href=\"#\" target=\"_blank\"><img src=\"../imgs/plus_alt.png\" id=\"moreBtn\"></a>");
+                htmlBuilder.Append("<a class=\"moreBottn\" href=\"../InfoShow/DetailInfoFrame.aspx?type=goods&id=" + poco.Id.ToString() + "\" target=\"_blank\"><img src=\"../imgs/plus_alt.png\" id=\"moreBtn\"></a>");
                 htmlBuilder.Append("</td>");
                 htmlBuilder.Append("</tr>");
             }

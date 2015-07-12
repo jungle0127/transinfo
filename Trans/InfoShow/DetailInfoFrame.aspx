@@ -69,9 +69,9 @@
                     <ul class="nav nav-stacked templatemo-nav">
                       <li class="titles"><i class="fa fa-medium"></i>平台导航</li>
                       <li><a href="../../index.html"><i class="fa fa-medium"></i>返回首页</a></li>
-                      <li><a href="../info.html"><i class="fa fa-medium"></i>信息共享</a></li>
-                      <li><a href="../news.html"><i class="fa  fa-medium"></i>新闻中心</a></li>
-                      <li><a href="../news.html"><i class="fa fa-medium"></i>公告中心</a></li>
+                      <li><a href="#"><i class="fa fa-medium"></i>信息共享</a></li>
+                      <li><a href="#"><i class="fa  fa-medium"></i>新闻中心</a></li>
+                      <li><a href="#"><i class="fa fa-medium"></i>公告中心</a></li>
                       <li><a href="#"><i class="fa fa-medium"></i>我要发布</a></li>
                       <li><a href="#"><i class="fa fa-medium"></i>个人中心</a></li>
                     </ul>
@@ -80,7 +80,7 @@
             </td>
             <td  class="right-side" id="frameBox">
 				<div class="companyPic"><img alt="" src="../imgs/companys/2.jpg" class="imgComPic"/></div>
-              	<iframe src="GoodsInfoDetail.aspx" name="infoDetails" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
+              	<iframe src="#" name="infoDetails" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
             </td>
         </tr>
       </tbody>

@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         function page_change(){
-            $.post("GoodsInformationHandler.ashx", "", function (item_count) {
+            $.post("GoodsInformationHandler.ashx", "1", function (item_count) {
                 $('#pagination_manager').pagination({
                     total: item_count,
                     pageSize: 10,
@@ -31,7 +31,7 @@
         }
     </script>
 </head>
-<body onload="page_load()">
+<body onload="page_change()">
     <form id="form1" runat="server">
         <div class="searchFrame">
       <div class="totalInfo">
@@ -112,7 +112,9 @@
   </div>
         
         <div class="infoListFrame">
-            <div id="front_goods_pagination_content" class="tableContainer TC2 easyui-panel">test</div>
+            <div id="front_goods_pagination_content" class="tableContainer TC2 easyui-panel">
+                <%=this.FirstPageInformation %>
+            </div>
             <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;"></div>
         </div>
     </form>
