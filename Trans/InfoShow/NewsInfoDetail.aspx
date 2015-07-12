@@ -23,7 +23,7 @@
     <form id="form1" runat="server">
     
     	<div id="top">
-    <p style="display: block;" id="back-to-lastPage"><a href="../news.html"><span></span>返回上级</a></p>
+    <p style="display: block;" id="back-to-lastPage"><a href="../InfoList/NotificationList.aspx"><span></span>返回上级</a></p>
     <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
     <table width="100%">
       <tbody>
@@ -32,9 +32,9 @@
       <img src="../../imgs/index/logo.png"/>
       </td>
       <td><ul class="nav nav-tabs floating">
-      			<li><a href="../../index.html">返回首页</a></li>
-                <li><a href="../info.html">信息共享</a></li>
-                <li><a href="../logistics.html">物流黄页</a></li>
+      			<li><a href="../index.aspx">返回首页</a></li>
+                <li><a href="#">信息共享</a></li>
+                <li><a href="#">物流黄页</a></li>
                 <li><a href="#">我要发布</a></li>
          	</ul></td>
       </tr>
