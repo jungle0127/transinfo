@@ -6,9 +6,38 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>车源信息列表</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../css/main_style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/main_style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+
+        function delete_item(id){
+            $.get("TrunkInfoListHandler.ashx?id=" + String(id),function(msg){alert(msg);},"text");
+        }
+        function page_change(){
+            var user_id = this.get_user_id();
+            $.post("TrunkInfoListHandler.ashx",String(user_id),function(item_count){
+                $("#pagination_manager").pagination({
+                    total: item_count,
+                    pageSize: 10,
+                    layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
+                    beforePageText: 'Page',
+                    afterPageText: 'of{pages}',
+                    pageList: [10, 20, 50, 100],
+                    onSelectPage: function (pageNumber, pageSize) {
+                        $('#content').panel('refresh', 'TrunkInfoListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize);
+                    }
+                });
+            },"text");
+        }
+    </script>
+
+
+
+
 </head>
+
+
 <body>
     <form id="form1" runat="server">
       <div class="searchFrame">
@@ -114,7 +143,7 @@
         <div id="tableCaption" style="padding-top:3px;"><img src="../../imgs/lorry.png">车源信息</div>
         <span class="tableMiddle"><div class="tableMiddle">相信您在这可以很快找到心仪的货源，祝您生活愉快！</div></span>
         </caption>
-        <thead>
+        <%--<thead>
           <tr class="headTr">
              <th>信息内容</th>
              <th>发布时间</th>
@@ -123,7 +152,7 @@
           </tr>
         </thead>
         <tbody>
-          <%--<tr>
+          <tr>
              <td>
              <a href="../InfoShow/TrunkInfoDetail.aspx" class="infoTitle h4LorryInfoTitle">湖南省长沙市→黑龙江省哈尔滨市,有17.5米半挂,求10吨货</a>
              <p><span class="light-info">车辆长度：</span><span class="infos spanLorryLength" id="carLength">17.5米</span>|
@@ -135,13 +164,17 @@
              <td>
              <a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a>
              </td>
-          </tr>--%>
+          </tr>
           <%=this.Message1 %>
           
-       </tbody>
+       </tbody>--%>
+       <div id="content" class="easyui-panel" style="height:400px" data-options="href:'TrunkInfoListHandler.ashx?pageNumber=1&pageSize=10"> </div>
+       <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" >
+
+
     </table>
     </div>
-    <div class="fenye"><!-----分页-------->
+    <%--<div class="fenye"><!-----分页-------->
       <div id="page">
           <a class="now_page">1</a>
           <a href="# p=2">2</a>
@@ -152,7 +185,7 @@
           <a href="#?p=14">14</a>
           <a href="#?p=2">&gt;</a>
       </div>
-   </div>
+   </div>--%>
    </div>
 
     </form>
