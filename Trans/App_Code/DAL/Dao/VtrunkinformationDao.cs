@@ -57,28 +57,103 @@ namespace Trans.DAL.Dao
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, null);
 			return result;
         }
-		public IList<Vtrunkinformation> FindByVantypename(String vantypename) {
-			String stmtId = "Vtrunkinformation.FindByVantypename";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vantypename);
+		public IList<Vtrunkinformation> FindByTakeofftime(DateTime takeofftime) {
+			String stmtId = "Vtrunkinformation.FindByTakeofftime";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, takeofftime);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindByVantypename(String vantypename) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByVantypename";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vantypename);
+		public IList<Vtrunkinformation> DescendOrderFindByTakeofftime(DateTime takeofftime) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByTakeofftime";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, takeofftime);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByVantypename(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByVantypename";
+		public IList<Vtrunkinformation> PaginationFindByTakeofftime(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByTakeofftime";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByVantypename(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByVantypename";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByTakeofftime(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTakeofftime";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByVantypename(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByVantypenameCount";
+		public int FindCountByTakeofftime(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByTakeofftimeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByLicenseuri(String licenseuri) {
+			String stmtId = "Vtrunkinformation.FindByLicenseuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, licenseuri);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByLicenseuri(String licenseuri) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByLicenseuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, licenseuri);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByLicenseuri(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByLicenseuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByLicenseuri(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByLicenseuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByLicenseuri(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByLicenseuriCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindBySrcregionname(String srcregionname) {
+			String stmtId = "Vtrunkinformation.FindBySrcregionname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, srcregionname);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindBySrcregionname(String srcregionname) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindBySrcregionname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, srcregionname);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindBySrcregionname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindBySrcregionname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindBySrcregionname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindBySrcregionname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountBySrcregionname(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindBySrcregionnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByTitle(String title) {
+			String stmtId = "Vtrunkinformation.FindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, title);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByTitle(String title) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, title);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByTitle(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByTitle(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByTitle(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByTitleCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -107,6 +182,81 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
+		public IList<Vtrunkinformation> FindByReleasedate(DateTime releasedate) {
+			String stmtId = "Vtrunkinformation.FindByReleasedate";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, releasedate);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByReleasedate(DateTime releasedate) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByReleasedate";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, releasedate);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByReleasedate(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByReleasedate";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByReleasedate(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByReleasedate";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByReleasedate(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByReleasedateCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByDstcityname(String dstcityname) {
+			String stmtId = "Vtrunkinformation.FindByDstcityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstcityname);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByDstcityname(String dstcityname) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByDstcityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstcityname);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByDstcityname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByDstcityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByDstcityname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByDstcityname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByDstcityname(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByDstcitynameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindById(Int64 id) {
+			String stmtId = "Vtrunkinformation.FindById";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, id);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindById(Int64 id) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindById";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, id);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindById(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindById";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindById(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindById";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountById(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByIdCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkinformation> FindByDstregionname(String dstregionname) {
 			String stmtId = "Vtrunkinformation.FindByDstregionname";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstregionname);
@@ -132,103 +282,28 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkinformation> FindByVolume(String volume) {
-			String stmtId = "Vtrunkinformation.FindByVolume";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, volume);
+		public IList<Vtrunkinformation> FindByTrunkcountyname(String trunkcountyname) {
+			String stmtId = "Vtrunkinformation.FindByTrunkcountyname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkcountyname);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindByVolume(String volume) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByVolume";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, volume);
+		public IList<Vtrunkinformation> DescendOrderFindByTrunkcountyname(String trunkcountyname) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByTrunkcountyname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkcountyname);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByVolume(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByVolume";
+		public IList<Vtrunkinformation> PaginationFindByTrunkcountyname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByTrunkcountyname";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByVolume(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByVolume";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkcountyname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTrunkcountyname";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByVolume(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByVolumeCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByNumber(String number) {
-			String stmtId = "Vtrunkinformation.FindByNumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, number);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByNumber(String number) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByNumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, number);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByNumber(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByNumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByNumber(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByNumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByNumber(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByNumberCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByBrand(String brand) {
-			String stmtId = "Vtrunkinformation.FindByBrand";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, brand);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByBrand(String brand) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByBrand";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, brand);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByBrand(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByBrand";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByBrand(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByBrand";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByBrand(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByBrandCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByLength(String length) {
-			String stmtId = "Vtrunkinformation.FindByLength";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, length);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByLength(String length) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByLength";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, length);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByLength(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByLength";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByLength(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByLength";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByLength(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByLengthCount";
+		public int FindCountByTrunkcountyname(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByTrunkcountynameCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -257,53 +332,78 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname) {
-			String stmtId = "Vtrunkinformation.FindByContactpersonname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, contactpersonname);
+		public IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri) {
+			String stmtId = "Vtrunkinformation.FindByVanimageuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vanimageuri);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindByContactpersonname(String contactpersonname) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByContactpersonname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, contactpersonname);
+		public IList<Vtrunkinformation> DescendOrderFindByVanimageuri(String vanimageuri) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByVanimageuri";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vanimageuri);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByContactpersonname";
+		public IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByVanimageuri";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByContactpersonname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByContactpersonname";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByVanimageuri(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByVanimageuri";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByContactpersonname(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByContactpersonnameCount";
+		public int FindCountByVanimageuri(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByVanimageuriCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkinformation> FindByLocation(String location) {
-			String stmtId = "Vtrunkinformation.FindByLocation";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, location);
+		public IList<Vtrunkinformation> FindByPrefixname(String prefixname) {
+			String stmtId = "Vtrunkinformation.FindByPrefixname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, prefixname);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindByLocation(String location) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByLocation";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, location);
+		public IList<Vtrunkinformation> DescendOrderFindByPrefixname(String prefixname) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByPrefixname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, prefixname);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByLocation";
+		public IList<Vtrunkinformation> PaginationFindByPrefixname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByPrefixname";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByLocation(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByLocation";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByPrefixname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByPrefixname";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByLocation(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByLocationCount";
+		public int FindCountByPrefixname(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByPrefixnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByLength(String length) {
+			String stmtId = "Vtrunkinformation.FindByLength";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, length);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByLength(String length) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByLength";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, length);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByLength(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByLength";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByLength(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByLength";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByLength(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByLengthCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -357,28 +457,53 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkinformation> FindBySrcregionname(String srcregionname) {
-			String stmtId = "Vtrunkinformation.FindBySrcregionname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, srcregionname);
+		public IList<Vtrunkinformation> FindByTrunkidentifynumber(String trunkidentifynumber) {
+			String stmtId = "Vtrunkinformation.FindByTrunkidentifynumber";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkidentifynumber);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindBySrcregionname(String srcregionname) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindBySrcregionname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, srcregionname);
+		public IList<Vtrunkinformation> DescendOrderFindByTrunkidentifynumber(String trunkidentifynumber) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByTrunkidentifynumber";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkidentifynumber);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindBySrcregionname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindBySrcregionname";
+		public IList<Vtrunkinformation> PaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByTrunkidentifynumber";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindBySrcregionname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindBySrcregionname";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTrunkidentifynumber";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountBySrcregionname(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindBySrcregionnameCount";
+		public int FindCountByTrunkidentifynumber(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByTrunkidentifynumberCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByVantypename(String vantypename) {
+			String stmtId = "Vtrunkinformation.FindByVantypename";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vantypename);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByVantypename(String vantypename) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByVantypename";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vantypename);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByVantypename(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByVantypename";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByVantypename(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByVantypename";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByVantypename(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByVantypenameCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -407,178 +532,28 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkinformation> FindByTrunkcountyname(String trunkcountyname) {
-			String stmtId = "Vtrunkinformation.FindByTrunkcountyname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkcountyname);
+		public IList<Vtrunkinformation> FindByNumber(String number) {
+			String stmtId = "Vtrunkinformation.FindByNumber";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, number);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindByTrunkcountyname(String trunkcountyname) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByTrunkcountyname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkcountyname);
+		public IList<Vtrunkinformation> DescendOrderFindByNumber(String number) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByNumber";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, number);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByTrunkcountyname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByTrunkcountyname";
+		public IList<Vtrunkinformation> PaginationFindByNumber(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByNumber";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkcountyname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTrunkcountyname";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByNumber(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByNumber";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByTrunkcountyname(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByTrunkcountynameCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindById(Int64 id) {
-			String stmtId = "Vtrunkinformation.FindById";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, id);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindById(Int64 id) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindById";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, id);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindById(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindById";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindById(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindById";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountById(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByIdCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByPrefixname(String prefixname) {
-			String stmtId = "Vtrunkinformation.FindByPrefixname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, prefixname);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByPrefixname(String prefixname) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByPrefixname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, prefixname);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByPrefixname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByPrefixname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByPrefixname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByPrefixname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByPrefixname(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByPrefixnameCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri) {
-			String stmtId = "Vtrunkinformation.FindByVanimageuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vanimageuri);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByVanimageuri(String vanimageuri) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByVanimageuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, vanimageuri);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByVanimageuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByVanimageuri(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByVanimageuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByVanimageuri(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByVanimageuriCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByLicenseuri(String licenseuri) {
-			String stmtId = "Vtrunkinformation.FindByLicenseuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, licenseuri);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByLicenseuri(String licenseuri) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByLicenseuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, licenseuri);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByLicenseuri(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByLicenseuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByLicenseuri(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByLicenseuri";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByLicenseuri(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByLicenseuriCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByTrunkidentifynumber(String trunkidentifynumber) {
-			String stmtId = "Vtrunkinformation.FindByTrunkidentifynumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkidentifynumber);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByTrunkidentifynumber(String trunkidentifynumber) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByTrunkidentifynumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, trunkidentifynumber);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByTrunkidentifynumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTrunkidentifynumber";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByTrunkidentifynumber(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByTrunkidentifynumberCount";
-			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
-			return result;
-		}
-		public IList<Vtrunkinformation> FindByDstcityname(String dstcityname) {
-			String stmtId = "Vtrunkinformation.FindByDstcityname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstcityname);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderFindByDstcityname(String dstcityname) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByDstcityname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, dstcityname);
-			return result;
-        }
-		public IList<Vtrunkinformation> PaginationFindByDstcityname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByDstcityname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByDstcityname(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByDstcityname";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
-			return result;
-        }
-		public int FindCountByDstcityname(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByDstcitynameCount";
+		public int FindCountByNumber(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByNumberCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -607,28 +582,78 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkinformation> FindByTitle(String title) {
-			String stmtId = "Vtrunkinformation.FindByTitle";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, title);
+		public IList<Vtrunkinformation> FindByVolume(String volume) {
+			String stmtId = "Vtrunkinformation.FindByVolume";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, volume);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderFindByTitle(String title) {
-			String stmtId = "Vtrunkinformation.DescendOrderFindByTitle";
-			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, title);
+		public IList<Vtrunkinformation> DescendOrderFindByVolume(String volume) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByVolume";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, volume);
 			return result;
         }
-		public IList<Vtrunkinformation> PaginationFindByTitle(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.FindByTitle";
+		public IList<Vtrunkinformation> PaginationFindByVolume(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByVolume";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkinformation> DescendOrderPaginationFindByTitle(VtrunkinformationPagination obj) {
-			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTitle";
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByVolume(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByVolume";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByTitle(Vtrunkinformation obj){
-			String stmtId = "Vtrunkinformation.GetFindByTitleCount";
+		public int FindCountByVolume(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByVolumeCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname) {
+			String stmtId = "Vtrunkinformation.FindByContactpersonname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, contactpersonname);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByContactpersonname(String contactpersonname) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByContactpersonname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, contactpersonname);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByContactpersonname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByContactpersonname(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByContactpersonname";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByContactpersonname(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByContactpersonnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByBrand(String brand) {
+			String stmtId = "Vtrunkinformation.FindByBrand";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, brand);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByBrand(String brand) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByBrand";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, brand);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByBrand(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByBrand";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByBrand(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByBrand";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByBrand(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByBrandCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -679,6 +704,31 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByUsername(Vtrunkinformation obj){
 			String stmtId = "Vtrunkinformation.GetFindByUsernameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkinformation> FindByLocation(String location) {
+			String stmtId = "Vtrunkinformation.FindByLocation";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, location);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByLocation(String location) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByLocation";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, location);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByLocation";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByLocation(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByLocation";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByLocation(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByLocationCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}

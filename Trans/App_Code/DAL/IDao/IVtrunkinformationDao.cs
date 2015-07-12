@@ -19,15 +19,45 @@ namespace Trans.DAL.Dao
 
 		IList<Vtrunkinformation> QuickFindAll();
 
-		IList<Vtrunkinformation> FindByVantypename(String vantypename);
+		IList<Vtrunkinformation> FindByTakeofftime(DateTime takeofftime);
 
-		IList<Vtrunkinformation> DescendOrderFindByVantypename(String vantypename);
+		IList<Vtrunkinformation> DescendOrderFindByTakeofftime(DateTime takeofftime);
 
-		IList<Vtrunkinformation> PaginationFindByVantypename(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByTakeofftime(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindByVantypename(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByTakeofftime(VtrunkinformationPagination obj);
 
-		int FindCountByVantypename(Vtrunkinformation obj);
+		int FindCountByTakeofftime(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByLicenseuri(String licenseuri);
+
+		IList<Vtrunkinformation> DescendOrderFindByLicenseuri(String licenseuri);
+
+		IList<Vtrunkinformation> PaginationFindByLicenseuri(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByLicenseuri(VtrunkinformationPagination obj);
+
+		int FindCountByLicenseuri(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindBySrcregionname(String srcregionname);
+
+		IList<Vtrunkinformation> DescendOrderFindBySrcregionname(String srcregionname);
+
+		IList<Vtrunkinformation> PaginationFindBySrcregionname(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindBySrcregionname(VtrunkinformationPagination obj);
+
+		int FindCountBySrcregionname(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByTitle(String title);
+
+		IList<Vtrunkinformation> DescendOrderFindByTitle(String title);
+
+		IList<Vtrunkinformation> PaginationFindByTitle(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByTitle(VtrunkinformationPagination obj);
+
+		int FindCountByTitle(Vtrunkinformation obj);
 
 		IList<Vtrunkinformation> FindByTrunktypename(String trunktypename);
 
@@ -39,6 +69,36 @@ namespace Trans.DAL.Dao
 
 		int FindCountByTrunktypename(Vtrunkinformation obj);
 
+		IList<Vtrunkinformation> FindByReleasedate(DateTime releasedate);
+
+		IList<Vtrunkinformation> DescendOrderFindByReleasedate(DateTime releasedate);
+
+		IList<Vtrunkinformation> PaginationFindByReleasedate(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByReleasedate(VtrunkinformationPagination obj);
+
+		int FindCountByReleasedate(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByDstcityname(String dstcityname);
+
+		IList<Vtrunkinformation> DescendOrderFindByDstcityname(String dstcityname);
+
+		IList<Vtrunkinformation> PaginationFindByDstcityname(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByDstcityname(VtrunkinformationPagination obj);
+
+		int FindCountByDstcityname(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindById(Int64 id);
+
+		IList<Vtrunkinformation> DescendOrderFindById(Int64 id);
+
+		IList<Vtrunkinformation> PaginationFindById(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindById(VtrunkinformationPagination obj);
+
+		int FindCountById(Vtrunkinformation obj);
+
 		IList<Vtrunkinformation> FindByDstregionname(String dstregionname);
 
 		IList<Vtrunkinformation> DescendOrderFindByDstregionname(String dstregionname);
@@ -49,45 +109,15 @@ namespace Trans.DAL.Dao
 
 		int FindCountByDstregionname(Vtrunkinformation obj);
 
-		IList<Vtrunkinformation> FindByVolume(String volume);
+		IList<Vtrunkinformation> FindByTrunkcountyname(String trunkcountyname);
 
-		IList<Vtrunkinformation> DescendOrderFindByVolume(String volume);
+		IList<Vtrunkinformation> DescendOrderFindByTrunkcountyname(String trunkcountyname);
 
-		IList<Vtrunkinformation> PaginationFindByVolume(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByTrunkcountyname(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindByVolume(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkcountyname(VtrunkinformationPagination obj);
 
-		int FindCountByVolume(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByNumber(String number);
-
-		IList<Vtrunkinformation> DescendOrderFindByNumber(String number);
-
-		IList<Vtrunkinformation> PaginationFindByNumber(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByNumber(VtrunkinformationPagination obj);
-
-		int FindCountByNumber(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByBrand(String brand);
-
-		IList<Vtrunkinformation> DescendOrderFindByBrand(String brand);
-
-		IList<Vtrunkinformation> PaginationFindByBrand(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByBrand(VtrunkinformationPagination obj);
-
-		int FindCountByBrand(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByLength(String length);
-
-		IList<Vtrunkinformation> DescendOrderFindByLength(String length);
-
-		IList<Vtrunkinformation> PaginationFindByLength(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByLength(VtrunkinformationPagination obj);
-
-		int FindCountByLength(Vtrunkinformation obj);
+		int FindCountByTrunkcountyname(Vtrunkinformation obj);
 
 		IList<Vtrunkinformation> FindByConatactphone(String conatactphone);
 
@@ -99,25 +129,35 @@ namespace Trans.DAL.Dao
 
 		int FindCountByConatactphone(Vtrunkinformation obj);
 
-		IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname);
+		IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri);
 
-		IList<Vtrunkinformation> DescendOrderFindByContactpersonname(String contactpersonname);
+		IList<Vtrunkinformation> DescendOrderFindByVanimageuri(String vanimageuri);
 
-		IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindByContactpersonname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByVanimageuri(VtrunkinformationPagination obj);
 
-		int FindCountByContactpersonname(Vtrunkinformation obj);
+		int FindCountByVanimageuri(Vtrunkinformation obj);
 
-		IList<Vtrunkinformation> FindByLocation(String location);
+		IList<Vtrunkinformation> FindByPrefixname(String prefixname);
 
-		IList<Vtrunkinformation> DescendOrderFindByLocation(String location);
+		IList<Vtrunkinformation> DescendOrderFindByPrefixname(String prefixname);
 
-		IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByPrefixname(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindByLocation(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByPrefixname(VtrunkinformationPagination obj);
 
-		int FindCountByLocation(Vtrunkinformation obj);
+		int FindCountByPrefixname(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByLength(String length);
+
+		IList<Vtrunkinformation> DescendOrderFindByLength(String length);
+
+		IList<Vtrunkinformation> PaginationFindByLength(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByLength(VtrunkinformationPagination obj);
+
+		int FindCountByLength(Vtrunkinformation obj);
 
 		IList<Vtrunkinformation> FindBySrccityname(String srccityname);
 
@@ -139,15 +179,25 @@ namespace Trans.DAL.Dao
 
 		int FindCountBySrccitycode(Vtrunkinformation obj);
 
-		IList<Vtrunkinformation> FindBySrcregionname(String srcregionname);
+		IList<Vtrunkinformation> FindByTrunkidentifynumber(String trunkidentifynumber);
 
-		IList<Vtrunkinformation> DescendOrderFindBySrcregionname(String srcregionname);
+		IList<Vtrunkinformation> DescendOrderFindByTrunkidentifynumber(String trunkidentifynumber);
 
-		IList<Vtrunkinformation> PaginationFindBySrcregionname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindBySrcregionname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj);
 
-		int FindCountBySrcregionname(Vtrunkinformation obj);
+		int FindCountByTrunkidentifynumber(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByVantypename(String vantypename);
+
+		IList<Vtrunkinformation> DescendOrderFindByVantypename(String vantypename);
+
+		IList<Vtrunkinformation> PaginationFindByVantypename(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByVantypename(VtrunkinformationPagination obj);
+
+		int FindCountByVantypename(Vtrunkinformation obj);
 
 		IList<Vtrunkinformation> FindByWeightcapacity(String weightcapacity);
 
@@ -159,75 +209,15 @@ namespace Trans.DAL.Dao
 
 		int FindCountByWeightcapacity(Vtrunkinformation obj);
 
-		IList<Vtrunkinformation> FindByTrunkcountyname(String trunkcountyname);
+		IList<Vtrunkinformation> FindByNumber(String number);
 
-		IList<Vtrunkinformation> DescendOrderFindByTrunkcountyname(String trunkcountyname);
+		IList<Vtrunkinformation> DescendOrderFindByNumber(String number);
 
-		IList<Vtrunkinformation> PaginationFindByTrunkcountyname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByNumber(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkcountyname(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByNumber(VtrunkinformationPagination obj);
 
-		int FindCountByTrunkcountyname(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindById(Int64 id);
-
-		IList<Vtrunkinformation> DescendOrderFindById(Int64 id);
-
-		IList<Vtrunkinformation> PaginationFindById(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindById(VtrunkinformationPagination obj);
-
-		int FindCountById(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByPrefixname(String prefixname);
-
-		IList<Vtrunkinformation> DescendOrderFindByPrefixname(String prefixname);
-
-		IList<Vtrunkinformation> PaginationFindByPrefixname(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByPrefixname(VtrunkinformationPagination obj);
-
-		int FindCountByPrefixname(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByVanimageuri(String vanimageuri);
-
-		IList<Vtrunkinformation> DescendOrderFindByVanimageuri(String vanimageuri);
-
-		IList<Vtrunkinformation> PaginationFindByVanimageuri(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByVanimageuri(VtrunkinformationPagination obj);
-
-		int FindCountByVanimageuri(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByLicenseuri(String licenseuri);
-
-		IList<Vtrunkinformation> DescendOrderFindByLicenseuri(String licenseuri);
-
-		IList<Vtrunkinformation> PaginationFindByLicenseuri(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByLicenseuri(VtrunkinformationPagination obj);
-
-		int FindCountByLicenseuri(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByTrunkidentifynumber(String trunkidentifynumber);
-
-		IList<Vtrunkinformation> DescendOrderFindByTrunkidentifynumber(String trunkidentifynumber);
-
-		IList<Vtrunkinformation> PaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByTrunkidentifynumber(VtrunkinformationPagination obj);
-
-		int FindCountByTrunkidentifynumber(Vtrunkinformation obj);
-
-		IList<Vtrunkinformation> FindByDstcityname(String dstcityname);
-
-		IList<Vtrunkinformation> DescendOrderFindByDstcityname(String dstcityname);
-
-		IList<Vtrunkinformation> PaginationFindByDstcityname(VtrunkinformationPagination obj);
-
-		IList<Vtrunkinformation> DescendOrderPaginationFindByDstcityname(VtrunkinformationPagination obj);
-
-		int FindCountByDstcityname(Vtrunkinformation obj);
+		int FindCountByNumber(Vtrunkinformation obj);
 
 		IList<Vtrunkinformation> FindByDstcitycode(String dstcitycode);
 
@@ -239,15 +229,35 @@ namespace Trans.DAL.Dao
 
 		int FindCountByDstcitycode(Vtrunkinformation obj);
 
-		IList<Vtrunkinformation> FindByTitle(String title);
+		IList<Vtrunkinformation> FindByVolume(String volume);
 
-		IList<Vtrunkinformation> DescendOrderFindByTitle(String title);
+		IList<Vtrunkinformation> DescendOrderFindByVolume(String volume);
 
-		IList<Vtrunkinformation> PaginationFindByTitle(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> PaginationFindByVolume(VtrunkinformationPagination obj);
 
-		IList<Vtrunkinformation> DescendOrderPaginationFindByTitle(VtrunkinformationPagination obj);
+		IList<Vtrunkinformation> DescendOrderPaginationFindByVolume(VtrunkinformationPagination obj);
 
-		int FindCountByTitle(Vtrunkinformation obj);
+		int FindCountByVolume(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByContactpersonname(String contactpersonname);
+
+		IList<Vtrunkinformation> DescendOrderFindByContactpersonname(String contactpersonname);
+
+		IList<Vtrunkinformation> PaginationFindByContactpersonname(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByContactpersonname(VtrunkinformationPagination obj);
+
+		int FindCountByContactpersonname(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByBrand(String brand);
+
+		IList<Vtrunkinformation> DescendOrderFindByBrand(String brand);
+
+		IList<Vtrunkinformation> PaginationFindByBrand(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByBrand(VtrunkinformationPagination obj);
+
+		int FindCountByBrand(Vtrunkinformation obj);
 
 		IList<Vtrunkinformation> FindByRoutetype(String routetype);
 
@@ -268,6 +278,16 @@ namespace Trans.DAL.Dao
 		IList<Vtrunkinformation> DescendOrderPaginationFindByUsername(VtrunkinformationPagination obj);
 
 		int FindCountByUsername(Vtrunkinformation obj);
+
+		IList<Vtrunkinformation> FindByLocation(String location);
+
+		IList<Vtrunkinformation> DescendOrderFindByLocation(String location);
+
+		IList<Vtrunkinformation> PaginationFindByLocation(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByLocation(VtrunkinformationPagination obj);
+
+		int FindCountByLocation(Vtrunkinformation obj);
 
 		void Reload(Vtrunkinformation obj);
 	}

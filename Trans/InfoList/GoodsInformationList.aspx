@@ -31,7 +31,7 @@
         }
     </script>
 </head>
-<body>
+<body onload="page_load()">
     <form id="form1" runat="server">
         <div class="searchFrame">
       <div class="totalInfo">
@@ -112,8 +112,8 @@
   </div>
         
         <div class="infoListFrame">
-            <div id="front_goods_pagination_content" class="tableContainer TC2 easyui-panel"></div>
-            <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
+            <div id="front_goods_pagination_content" class="tableContainer TC2 easyui-panel">test</div>
+            <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;"></div>
         </div>
     </form>
 </body>
