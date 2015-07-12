@@ -239,6 +239,16 @@ namespace Trans.DAL.Dao
 
 		int FindCountByDstcitycode(Vtrunkinformation obj);
 
+		IList<Vtrunkinformation> FindByTitle(String title);
+
+		IList<Vtrunkinformation> DescendOrderFindByTitle(String title);
+
+		IList<Vtrunkinformation> PaginationFindByTitle(VtrunkinformationPagination obj);
+
+		IList<Vtrunkinformation> DescendOrderPaginationFindByTitle(VtrunkinformationPagination obj);
+
+		int FindCountByTitle(Vtrunkinformation obj);
+
 		IList<Vtrunkinformation> FindByRoutetype(String routetype);
 
 		IList<Vtrunkinformation> DescendOrderFindByRoutetype(String routetype);

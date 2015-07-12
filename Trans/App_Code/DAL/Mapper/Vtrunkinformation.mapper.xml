@@ -28,6 +28,7 @@
 			<result property="Trunkidentifynumber" column="trunkidentifynumber" dbType="varchar"/>
 			<result property="Dstcityname" column="dstcityname" dbType="varchar"/>
 			<result property="Dstcitycode" column="dstcitycode" dbType="varchar"/>
+			<result property="Title" column="title" dbType="varchar"/>
 			<result property="Routetype" column="routetype" dbType="varchar"/>
 			<result property="Username" column="username" dbType="varchar"/>
 		</resultMap>
@@ -377,6 +378,21 @@
 		</select>
 		<select id="Vtrunkinformation.GetFindByDstcitycodeCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.dstcitycode=#Dstcitycode#
+		</select>
+		<select id="Vtrunkinformation.FindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.title = #value#
+		</select>
+		<select id="Vtrunkinformation.DescendOrderFindByTitle" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.title = #value# ORDER BY id DESC
+		</select>
+		<select id="VtrunkinformationPagination.FindByTitle" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.title = #Title# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkinformationPagination.DescendOrderFindByTitle" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.title = #Title# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.GetFindByTitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.title=#Title#
 		</select>
 		<select id="Vtrunkinformation.FindByRoutetype" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.routetype = #value#

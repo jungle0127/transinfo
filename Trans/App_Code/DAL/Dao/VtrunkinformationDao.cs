@@ -607,6 +607,31 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
+		public IList<Vtrunkinformation> FindByTitle(String title) {
+			String stmtId = "Vtrunkinformation.FindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, title);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderFindByTitle(String title) {
+			String stmtId = "Vtrunkinformation.DescendOrderFindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, title);
+			return result;
+        }
+		public IList<Vtrunkinformation> PaginationFindByTitle(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.FindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkinformation> DescendOrderPaginationFindByTitle(VtrunkinformationPagination obj) {
+			String stmtId = "VtrunkinformationPagination.DescendOrderFindByTitle";
+			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByTitle(Vtrunkinformation obj){
+			String stmtId = "Vtrunkinformation.GetFindByTitleCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkinformation> FindByRoutetype(String routetype) {
 			String stmtId = "Vtrunkinformation.FindByRoutetype";
 			IList<Vtrunkinformation> result = this.sqlMapper.QueryForList<Vtrunkinformation>(stmtId, routetype);

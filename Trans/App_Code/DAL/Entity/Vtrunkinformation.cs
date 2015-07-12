@@ -138,6 +138,12 @@ namespace Trans.DAL.Entity
 			get { return m_dstcitycode; }
 			set { m_dstcitycode = value;}
 		}
+		private String m_title;
+		public String Title
+		{
+			get { return m_title; }
+			set { m_title = value;}
+		}
 		private String m_routetype;
 		public String Routetype
 		{

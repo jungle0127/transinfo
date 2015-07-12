@@ -279,6 +279,7 @@ AS
 SELECT 
 users.username,
 trunkinformation.id,
+trunkinformation.title,
 V_provincecitycounty.fullname AS srcregionname,
 dstregion.fullname AS dstregionname,
 V_provincecitycounty.cityname AS srccityname,

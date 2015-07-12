@@ -16,10 +16,10 @@
 	<link href="../css/main_style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css" />
 	<link rel="stylesheet" type="text/css" href="../themes/icon.css" />
-	<%--<link rel="Stylesheet" type="text/css" href="../css/demo.css" />--%>
-    
+	<link rel="Stylesheet" type="text/css" href="../css/demo.css" />
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             backToTop();
@@ -32,8 +32,8 @@
                     total: item_count,
                     pageSize: 10,
                     layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
-                    beforePageText: 'Page',
-                    afterPageText: 'of {pages}',
+                    beforePageText: '第',
+                    afterPageText: '页，共 {pages}页',
                     pageList: [10, 20, 50, 100],
                     onSelectPage: function (pageNumber, pageSize) {
                         $('#news_content').panel('refresh', 'ArticleListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&type=1");
@@ -42,11 +42,30 @@
 
             }, "text");
         }
-        
+        function notification_page_change() {
+            $.post("ArticleItemsHandler.ashx", "2", function (item_count) {
+                $('#pagination_manager_notification').pagination({
+                    total: item_count,
+                    pageSize: 10,
+                    layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
+                    beforePageText: '第',
+                    afterPageText: '页，共 {pages}页',
+                    pageList: [10, 20, 50, 100],
+                    onSelectPage: function (pageNumber, pageSize) {
+                        $('#notification_content_list').panel('refresh', 'ArticleListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&type=2");
+                    }
+                });
+
+            }, "text");
+        }
+        function page_load() {
+            news_page_change();
+            notification_page_change();
+        }
     </script>
 
 </head>
-<body  onload="news_page_change()">
+<body  onload="page_load()">
     <form id="form1" runat="server">
 	    <div id="top">
         <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
@@ -94,76 +113,15 @@
                       </ul>
                       <div class="tab-content">
                           <div class="tab-pane active" id="news">
-                                
                               <div class="tableContainer">
-                                  <!--<marquee height=100% behavior=scroll direction=up width=100% scrollamount=1 scrolldelay=2 onmouseover='this.stop()' 	 	onmouseout='this.start()'>-->
                                   <div id="news_content" class="easyui-panel"> <%=this.NewsFirstPageHtml%> </div>
                                   <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
-                                  <!--</marquee>-->
                               </div>
                           </div>
-                          <div class="tab-pane" id="notice">
+                          <div class="tab-pane " id="notice">
                              <div class="tableContainer">
-                                  <table class="table table-hover noticeList">
-                                      <tbody>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2014-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2013-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2012-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2011-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2010-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2012-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2018-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      <tr>
-                                      <td width="90%"><a href="#">促进湖南内河航运发展研讨会在长沙召开</a></td>
-                                      <td width="10%">2015-5-2</td>
-                                      </tr>
-                                      </tbody>
-                                  </table>
+                                  <div id="notification_content_list"> <%=this.NotificationFirstPageHtml%> </div>
+                                  <div id="pagination_manager_notification" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
                               </div>
                           </div>
                       </div>

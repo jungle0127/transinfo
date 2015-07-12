@@ -42,14 +42,21 @@ namespace Trans.InfoList
             pageNationPoco.Typeid = long.Parse(typeId);
             IList<Varticleinfo> articleInfoList = this.vArticleInfoDao.DescendOrderPaginationFindByTypeid(pageNationPoco);
             logger.Info("Got items:" + articleInfoList.Count.ToString());
-            string tableHtml = this.getTableHtml(this.getTableBodyHtml(articleInfoList));
+            string tableHtml = this.getTableHtml(this.getTableBodyHtml(articleInfoList),typeId);
             logger.Info("table html:" + tableHtml);
             return tableHtml;
         }
-        private string getTableHtml(string bodyHtml)
+        private string getTableHtml(string bodyHtml,string typeId)
         {
             StringBuilder htmlBuilder = new StringBuilder();
-            htmlBuilder.Append("<table class=\"table table-hover newsList\">");
+            if (typeId == "1")
+            {
+                htmlBuilder.Append("<table class=\"table table-hover newsList\">");
+            }
+            else
+            {
+                htmlBuilder.Append("<table class=\"table table-hover noticeList\">");
+            }
             htmlBuilder.Append("<tbody>");
             //htmlBuilder.Append("<thead>");
             //htmlBuilder.Append("<th  width=\"90%\">标题");

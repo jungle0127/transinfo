@@ -51,6 +51,9 @@
      <li><a href="Corporation/CompanyIntroduction.aspx" target="infoDetails" >公司简介</a></li>
      <li><a href="Corporation/CompanyHornor.aspx" target="infoDetails">荣誉资质</a></li>
      <li><a href="Corporation/CompanyContact.aspx" target="infoDetails">联系我们</a></li>
+     <li><a href="companyInfoHistory.html" target="infoDetails">仓储信息</a></li>
+     <li><a href="companyInfoHistory.html" target="infoDetails">专线信息</a></li>
+     <li><a href="companyInfoHistory.html" target="infoDetails">车源信息</a></li>
      </ul>
     </td>
     </tr>
@@ -77,7 +80,7 @@
             </td>
             <td  class="right-side" id="frameBox">
 				<div class="companyPic"><img alt="" src="../imgs/companys/2.jpg" class="imgComPic"/></div>
-              	<iframe src="#" name="infoDetails" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
+              	<iframe src="GoodsInfoDetail.aspx" name="infoDetails" frameborder="0" width="100%" id="frameInfoDetail" class="frameInfoDetail" onload="frameHeight()" scrolling="no"></iframe>
             </td>
         </tr>
       </tbody>

@@ -1043,7 +1043,6 @@
     <Content Include="App_Code\DAL\Mapper\Vvehiclenumber.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="App_Data\Trans.sql" />
     <Content Include="App_Data\Trans_mysql.sql" />
     <Content Include="App_Data\trunkrelatedinfo.sql" />
     <Content Include="css\admin-style.css" />
@@ -1282,11 +1281,13 @@
     <Content Include="index.aspx" />
     <Content Include="InfoList\DepotInfoList.aspx" />
     <Content Include="InfoList\GoodsInfoList.aspx" />
+    <Content Include="InfoList\GoodsInformationList.aspx" />
     <Content Include="InfoList\info.html" />
     <Content Include="InfoList\NewsList.aspx" />
     <Content Include="InfoList\NotificationList.aspx" />
     <Content Include="InfoList\SpeciallineInfoList.aspx" />
     <Content Include="InfoList\TrunkInfoList.aspx" />
+    <Content Include="InfoShow\companyInfoHistory.html" />
     <Content Include="InfoShow\Corporation\CompanyContact.aspx" />
     <Content Include="InfoShow\Corporation\CompanyHornor.aspx" />
     <Content Include="InfoShow\Corporation\CompanyIntroduction.aspx" />
@@ -1299,6 +1300,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Chart.js" />
     <Content Include="js\cloud.js" />
+    <Content Include="js\easyui-lang-zh_CN.js" />
     <Content Include="js\format+zh_CN,default,corechart.I.js" />
     <Content Include="js\jquery.ba-resize.min.js" />
     <Content Include="js\jquery.easyui.min.js" />
@@ -1944,6 +1946,16 @@
     </Compile>
     <Compile Include="InfoList\GoodsInfoList.aspx.designer.cs">
       <DependentUpon>GoodsInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\GoodsInformationHandler.ashx.cs">
+      <DependentUpon>GoodsInformationHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\GoodsInformationList.aspx.cs">
+      <DependentUpon>GoodsInformationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoList\GoodsInformationList.aspx.designer.cs">
+      <DependentUpon>GoodsInformationList.aspx</DependentUpon>
     </Compile>
     <Compile Include="InfoList\NewsList.aspx.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>
@@ -3155,6 +3167,7 @@
     <None Include="imgs\index\temp\thumb3.psd" />
     <Content Include="InfoList\ArticleListHandler.ashx" />
     <Content Include="InfoList\ArticleItemsHandler.ashx" />
+    <Content Include="InfoList\GoodsInformationHandler.ashx" />
     <None Include="Trans.build">
       <SubType>Designer</SubType>
     </None>

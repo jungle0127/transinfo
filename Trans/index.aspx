@@ -194,7 +194,7 @@
                  </ul>
                 </div>
               </td>
-              <td><a href="InfoList/NewsList.aspx"><img alt="" src="imgs/plus_alt.png" /></a></td>
+              <td><a href="InfoList/NotificationList.aspx"><img alt="" src="imgs/plus_alt.png" /></a></td>
              </tr>
              </tbody>
             </table>

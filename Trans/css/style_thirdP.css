@@ -5,7 +5,7 @@ body{ margin:0;}
 .top{max-height:150px; height:auto; padding-top:15px; padding-bottom:15px; width:100%;}
 .top table{ margin:0 auto; height:100%;}
 .logo{ width:auto; max-width:600px; height:auto; max-height:120px; margin:0 auto;}
-.tab{ width:auto; max-width:600px;}
+.tab{ width:auto; max-width:700px;}
 .menus li{ float:right; font-color:#060; list-style:none; font-weight:bold; margin-left:50px;}
 .left-side{ background:#cff; width:15%; height:100%; padding-top:20px;}
 .right-side{ background:#CfF; width:85% height:100%;}
@@ -41,3 +41,17 @@ p{margin:0 auto; text-align:center;}
 #comHonor img{ width:100%; height:100%;}
 
 caption{ height:30px; width:100%; background:#CCC;}
+/*-----------------companyInfoHistory----------------------------------*/
+.infoListFrame{ height:700px;margin-left:5%;}
+#tableCaption{ width:130px; float:left; height:42px;}
+#tableCaption, thead{ background:#9CC;text-align:left;}
+.tableContainer{ border:1px #EBE5E5 solid;width:95%; border-top-color:#060; border-top-width:thick;}
+caption{ background: #9CF;}
+.tableMiddle{ font-style:italic; width:auto; color:#fff; height:42px; display:-moz-inline-box; display:inline-block; padding-top:5px;}
+.moreBottn{ width:32px; height:32px; margin:10px 8px;}
+#moreBtn:hover,.moreBottn:hover{width:40px; height:40px;}
+.TC2{ margin-top:10px;}
+.table-hover tr{ height:90px; padding-top:0; text-align:left;}
+.table-hover .headTr{ height:30px;}
+.infos{ color:#060;}
+.infoTitle{font-weight:bold; color:#060;}
