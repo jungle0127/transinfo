@@ -72,7 +72,7 @@ namespace Trans.InfoList
         private string getTableHtml(string bodyHtml)
         {
             StringBuilder htmlBuilder = new StringBuilder();
-            htmlBuilder.Append("<table class=\"table table-hover lorryList\"><caption><div id=\"tableCaption\" style=\"padding-top:3px;\"><img src=\"../../imgs/lorry.png\">车源信息</div><span class=\"tableMiddle\"><div class=\"tableMiddle\">相信您在这可以很快找到心仪的货源，祝您生活愉快！</div></span></caption>");
+            htmlBuilder.Append("<table class=\"table table-hover lorryList\"><caption><div id=\"tableCaption\" style=\"padding-top:3px;\"><img src=\"../../imgs/lorry.png\">车源信息</div><span class=\"tableMiddle\"><div class=\"tableMiddle\">相信您在这可以很快找到心仪的货源，祝您生活愉快！</div></span></caption><thead><tr class=\"headTr\"><th>信息内容</th><th>发布时间</th><th>所在地</th><th>立即查看</th></tr></thead>");
             htmlBuilder.Append("<tbody>");
             //htmlBuilder.Append("<thead>");
             //htmlBuilder.Append("<th  width=\"90%\">标题");
@@ -92,8 +92,8 @@ namespace Trans.InfoList
             foreach (Vtrunkinformation trunksInfoPoco in trunksInfoList)
             {
                 bodyBuilder.Append("<tr>");
-                bodyBuilder.Append("<td  width=\"90%\">");
-                bodyBuilder.Append("<a target=\"_blank\" href=\"../InfoShow/TrunkInfoDetail.aspx?id=" + trunksInfoPoco.Id.ToString() + "\" class=\"infoTitle h4LorryInfoTitle\" >");
+                bodyBuilder.Append("<td  width=\"50%\">");
+                bodyBuilder.Append("<a target=\"_blank\" href=\"../InfoShow/DetailInfoFrame.aspx?type=trunk&id=" + trunksInfoPoco.Id.ToString() + "\" class=\"infoTitle h4LorryInfoTitle\" >");
                 bodyBuilder.Append(trunksInfoPoco.Title);
                 bodyBuilder.Append("</a><p><span class=\"light-info\">车辆长度：</span><span class=\"infos spanLorryLength\" id=\"carLength\">");
                 bodyBuilder.Append(trunksInfoPoco.Length);
@@ -103,7 +103,9 @@ namespace Trans.InfoList
                 bodyBuilder.Append(trunksInfoPoco.Username);
                 bodyBuilder.Append("</a></p></td><td><span class=\"infos lorryPublishTime\" id=\"publishTime\">");
                 bodyBuilder.Append(trunksInfoPoco.Releasedate);
-                bodyBuilder.Append("</span></td><td><span  class=\"spanLorryPlace\">湖南长沙</span></td><td><a class=\"moreBottn\" href=\"#\" target=\"_blank\"><img src=\"../../imgs/plus_alt.png\" id=\"moreBtn\"></a></td></tr>");
+                bodyBuilder.Append("</span></td><td><span  class=\"spanLorryPlace\">");
+                bodyBuilder.Append(trunksInfoPoco.Srccityname);
+                bodyBuilder.Append("</span></td><td><a class=\"moreBottn\" href=\"../InfoShow/DetailInfoFrame.aspx?type=trunk&id=" + trunksInfoPoco.Id.ToString() + "\" target=\"_blank\"><img src=\"../../imgs/plus_alt.png\" id=\"moreBtn\"></a></td></tr>");
 
             }
             return bodyBuilder.ToString();
