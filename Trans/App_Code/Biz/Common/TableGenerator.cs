@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 using log4net;
+using System.Collections;
 
 namespace Trans.Biz.Common
 {
@@ -23,6 +24,49 @@ namespace Trans.Biz.Common
             string tableBodyHtml = this.getTableBodyHtml(values, operations);
             return this.getTable(columnHeader, tableBodyHtml);
         }
+        public string getTableHTML(Hashtable columnHeader, IList<IList<string>> values, IList<TableOperationInfo> operations)
+        {
+            logger.Info("Begin constructor method.");
+            string tableBodyHtml = this.getTableBodyHtml(values, operations);
+            return this.getTable(columnHeader, tableBodyHtml);
+        }
+        /// <summary>
+        /// Get table with column width
+        /// </summary>
+        /// <param name="columnHeader">A hashtable object with Key:Value = header name:column width;
+        /// Item of hashtable: (news title:90)
+        /// It will be: <th width="90%">news title</th>
+        /// 
+        /// </param>
+        /// <param name="bodyHtml">Html code of table body.</param>
+        /// <returns>Complete html code of table.</returns>
+        private string getTable(Hashtable columnHeader, string bodyHtml)
+        {
+            logger.Info("Begin build table with html:" + bodyHtml);
+            StringBuilder headHtmlBuilder = new StringBuilder();
+            headHtmlBuilder.Append("<table class=\"tablelist\">");
+            headHtmlBuilder.Append("<thead>");
+            foreach (DictionaryEntry headerItem in columnHeader)
+            {
+                headHtmlBuilder.Append("<th  width=\"" + headerItem.Value.ToString() + "%\">");
+                headHtmlBuilder.Append(headerItem.Key.ToString());
+                headHtmlBuilder.Append("</th>");
+            }
+            headHtmlBuilder.Append("</thead>");
+            logger.Info("Got HTML header html code:" + headHtmlBuilder.ToString());
+            headHtmlBuilder.Append("<tbody>");
+            headHtmlBuilder.Append(bodyHtml);
+            headHtmlBuilder.Append("</tbody>");
+            headHtmlBuilder.Append("</table>");
+            logger.Info("Got table HTML:" + headHtmlBuilder.ToString());
+            return headHtmlBuilder.ToString();
+        }
+        /// <summary>
+        /// Get table html code.
+        /// </summary>
+        /// <param name="columnHeader">string list of table header.</param>
+        /// <param name="bodyHtml">Table body html code.</param>
+        /// <returns>Complete html code of body.</returns>
         private string getTable(IList<string> columnHeader,string bodyHtml)
         {
             logger.Info("Begin build table with body html:" + bodyHtml);
@@ -54,10 +98,6 @@ namespace Trans.Biz.Common
             {
                 logger.Warn("No rows of data.");
             }
-            if (null == operations || operations.Count < 1)
-            {
-                logger.Warn("There is no perations data.");
-            }
             StringBuilder htmlBuilder = new StringBuilder();
             try
             {
@@ -70,7 +110,14 @@ namespace Trans.Biz.Common
                         htmlBuilder.Append(columnValues[index]);
                         htmlBuilder.Append("</td>");
                     }
-                    htmlBuilder.Append(this.getOperationColumn(operations, columnValues[0]));
+                    if (null != operations && operations.Count > 0)
+                    {
+                        htmlBuilder.Append(this.getOperationColumn(operations, columnValues[0]));
+                    }
+                    else
+                    {
+                        logger.Warn("There is no perations data.");
+                    }
                     htmlBuilder.Append("</tr>");
                 }
             }

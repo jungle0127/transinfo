@@ -19,7 +19,8 @@
     });
 </script>
 </head>
-<body style=" background-image:url(imgs/bg.jpg)";>
+<body>
+    <img id="background" src="imgs/bg.jpg" />
     <form id="form1" runat="server">
         <table width="100%" class="homeBg" cellspacing="0">
              <tbody>
@@ -39,7 +40,7 @@
       <td>
          <div id="userI">
          <a href="admin/login.aspx" id="login—index">登陆</a><br /><br />
-         <a href="admin/promulagate/WebForm1.aspx">注册</a>
+         <a href="InfoList/NotificationList.aspx">注册</a>
         </div>
       </td>
       </tr>
@@ -94,7 +95,7 @@
                  </ul>
                 </div>
               </td>
-              <td><a href="InfoList/NewsList.aspx?type=2"><img alt="" src="imgs/plus_alt.png" /></a></td>
+              <td><a href="InfoList/NotificationList.aspx"><img alt="" src="imgs/plus_alt.png" /></a></td>
              </tr>
              </tbody>
             </table>
@@ -193,7 +194,7 @@
                  </ul>
                 </div>
               </td>
-              <td><a href="InfoList/NewsList.aspx?type=1"><img alt="" src="imgs/plus_alt.png" /></a></td>
+              <td><a href="InfoList/NewsList.aspx"><img alt="" src="imgs/plus_alt.png" /></a></td>
              </tr>
              </tbody>
             </table>

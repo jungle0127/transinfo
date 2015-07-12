@@ -30,7 +30,7 @@ namespace Trans.InfoShow
         public string GetMessageBody()
         {
             StringBuilder MessageShow = new StringBuilder();
-            Int32 idformes = Convert.ToInt32(Request.QueryString["id".ToString()]);
+            Int32 idformes = Convert.ToInt32(Request.QueryString["id"].ToString());
             IList<Varticleinfo> articleDetail = this.articleInfos.FindById(idformes);
             int preNum=0, nextNum = 0;
 

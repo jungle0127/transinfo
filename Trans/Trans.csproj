@@ -874,6 +874,8 @@
     <Compile Include="admin\rightmanager\UserRightManager.aspx.designer.cs">
       <DependentUpon>UserRightManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\Biz\Common\FrontTableGenerator.cs" />
+    <Compile Include="App_Code\Biz\Common\IFrontTableGenerator.cs" />
     <Compile Include="App_Code\Biz\Common\ITableGenerator.cs" />
     <Compile Include="App_Code\Biz\Common\SessionCheckPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -1282,6 +1284,7 @@
     <Content Include="InfoList\GoodsInfoList.aspx" />
     <Content Include="InfoList\info.html" />
     <Content Include="InfoList\NewsList.aspx" />
+    <Content Include="InfoList\NotificationList.aspx" />
     <Content Include="InfoList\SpeciallineInfoList.aspx" />
     <Content Include="InfoList\TrunkInfoList.aspx" />
     <Content Include="InfoShow\Corporation\CompanyContact.aspx" />
@@ -1922,6 +1925,12 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InfoList\ArticleItemsHandler.ashx.cs">
+      <DependentUpon>ArticleItemsHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\ArticleListHandler.ashx.cs">
+      <DependentUpon>ArticleListHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="InfoList\DepotInfoList.aspx.cs">
       <DependentUpon>DepotInfoList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1942,6 +1951,13 @@
     </Compile>
     <Compile Include="InfoList\NewsList.aspx.designer.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\NotificationList.aspx.cs">
+      <DependentUpon>NotificationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoList\NotificationList.aspx.designer.cs">
+      <DependentUpon>NotificationList.aspx</DependentUpon>
     </Compile>
     <Compile Include="InfoList\SpeciallineInfoList.aspx.cs">
       <DependentUpon>SpeciallineInfoList.aspx</DependentUpon>
@@ -3137,6 +3153,8 @@
     <None Include="imgs\index\temp\outOverBtn.psd" />
     <None Include="imgs\index\temp\thumb2.psd" />
     <None Include="imgs\index\temp\thumb3.psd" />
+    <Content Include="InfoList\ArticleListHandler.ashx" />
+    <Content Include="InfoList\ArticleItemsHandler.ashx" />
     <None Include="Trans.build">
       <SubType>Designer</SubType>
     </None>
