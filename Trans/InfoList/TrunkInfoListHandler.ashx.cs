@@ -29,18 +29,31 @@ namespace Trans.InfoList
 
         public void ProcessRequest(HttpContext context)
         {
-            string pageNumber = context.Request.QueryString["pageNumber"].ToString();
-            logger.Info("Got page number:" + pageNumber);
-            string pageSize = context.Request.QueryString["pageSize"].ToString();
-            logger.Info("Got page size:" + pageSize);
-            string typeId = context.Request.QueryString["type"].ToString();
-            logger.Info("Got type ID:" + typeId);
-            string tableHtml = this.generateTrunksInfoHtml(pageNumber, pageSize, typeId);
-            context.Response.ContentType = "text/plain";
-            context.Response.Write(tableHtml);
+            if (context.Request.RequestType == "POST")
+            {// POST
+                StreamReader streamReader = new StreamReader(context.Request.InputStream);
+                string typeId = streamReader.ReadToEnd();
+                logger.Info("Got news type parameter:" + typeId);
+                Vtrunkinformation poco = new Vtrunkinformation();
+
+                int count = this.vTrunkInfoDao.FindAll().Count;
+                logger.Info("got item count:" + count.ToString());
+                context.Response.ContentType = "text/plain";
+                context.Response.Write(count);
+            }
+            else
+            {// GET
+                string pageNumber = context.Request.QueryString["pageNumber"].ToString();
+                logger.Info("Got page number:" + pageNumber);
+                string pageSize = context.Request.QueryString["pageSize"].ToString();
+                logger.Info("Got page size:" + pageSize);
+                string tableHtml = this.generateTrunksInfoHtml(pageNumber, pageSize);
+                context.Response.ContentType = "text/plain";
+                context.Response.Write(tableHtml);
+            }
         }
 
-        public string generateTrunksInfoHtml(string pageNumber, string pageSize, string typeId)
+        public string generateTrunksInfoHtml(string pageNumber, string pageSize)
         {
             VtrunkinformationPagination pageNationPoco = new VtrunkinformationPagination();
             pageNationPoco.Limit = int.Parse(pageSize);
@@ -48,7 +61,7 @@ namespace Trans.InfoList
             pageNationPoco.Offset = (int.Parse(pageNumber) - 1) * pageNationPoco.Limit;
             logger.Info("Got offset:" + pageNationPoco.Offset.ToString());
             //pageNationPoco = long.Parse(typeId);
-            IList<Vtrunkinformation> trunksInfoList = this.vTrunkInfoDao.DescendOrderPaginationFindById(pageNationPoco);
+            IList<Vtrunkinformation> trunksInfoList = this.vTrunkInfoDao.DescendOrderPaginationFindAll(pageNationPoco);
             logger.Info("Got items:" + trunksInfoList.Count.ToString());
             string tableHtml = this.getTableHtml(this.getTableBodyHtml(trunksInfoList));
             logger.Info("table html:" + tableHtml);
@@ -89,17 +102,9 @@ namespace Trans.InfoList
                 bodyBuilder.Append("</span></p><p><span class=\"light-info\">信息来源：</span><a  href=\"#\" class=\"lorryCompanyLink\">");
                 bodyBuilder.Append(trunksInfoPoco.Username);
                 bodyBuilder.Append("</a></p></td><td><span class=\"infos lorryPublishTime\" id=\"publishTime\">");
-                //bodyBuilder.Append(trunksInfoPoco.);
+                bodyBuilder.Append(trunksInfoPoco.Releasedate);
+                bodyBuilder.Append("</span></td><td><span  class=\"spanLorryPlace\">湖南长沙</span></td><td><a class=\"moreBottn\" href=\"#\" target=\"_blank\"><img src=\"../../imgs/plus_alt.png\" id=\"moreBtn\"></a></td></tr>");
 
-
-
-
-                bodyBuilder.Append("</a>");
-                bodyBuilder.Append("</td>");
-                bodyBuilder.Append("<td  width=\"10%\">");
-                //bodyBuilder.Append(trunksInfoPoco.Releasedate.ToShortDateString());
-                bodyBuilder.Append("</td>");
-                bodyBuilder.Append("</tr>");
             }
             return bodyBuilder.ToString();
         }

@@ -8,28 +8,44 @@
     <title>车源信息列表</title>
     <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../../css/main_style.css" rel="stylesheet" type="text/css" />
-
+    <meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script  type="text/javascript" language="javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/js.js"></script>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/main_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/icon.css" />
+	<link rel="Stylesheet" type="text/css" href="../css/demo.css" />
+    
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
     <script type="text/javascript">
-
-        function delete_item(id){
-            $.get("TrunkInfoListHandler.ashx?id=" + String(id),function(msg){alert(msg);},"text");
-        }
-        function page_change(){
-            var user_id = this.get_user_id();
-            $.post("TrunkInfoListHandler.ashx",String(user_id),function(item_count){
-                $("#pagination_manager").pagination({
+        $(document).ready(function () {
+            backToTop();
+        });
+	</script>
+    <script type="text/javascript">
+        function trunk_page_change() {
+            $.post("TrunkInfoListHandler.ashx", "1", function (item_count) {
+                $('#pagination_manager').pagination({
                     total: item_count,
                     pageSize: 10,
                     layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
                     beforePageText: 'Page',
-                    afterPageText: 'of{pages}',
+                    afterPageText: 'of {pages}',
                     pageList: [10, 20, 50, 100],
                     onSelectPage: function (pageNumber, pageSize) {
-                        $('#content').panel('refresh', 'TrunkInfoListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize);
+                        $('#trunks_content').panel('refresh', 'TrunkInfoListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize);
                     }
                 });
-            },"text");
+
+            }, "text");
         }
+        
     </script>
 
 
@@ -38,7 +54,7 @@
 </head>
 
 
-<body>
+<body onload="trunk_page_change()">
     <form id="form1" runat="server">
       <div class="searchFrame">
       <div class="totalInfo">
@@ -137,55 +153,10 @@
   </div>
   <div class="infoListFrame">
       <div class="tableContainer TC2">
-      <!-----------------------------------车源信息显示--------------------->
-       <table class="table table-hover lorryList">
-        <caption>
-        <div id="tableCaption" style="padding-top:3px;"><img src="../../imgs/lorry.png">车源信息</div>
-        <span class="tableMiddle"><div class="tableMiddle">相信您在这可以很快找到心仪的货源，祝您生活愉快！</div></span>
-        </caption>
-        <%--<thead>
-          <tr class="headTr">
-             <th>信息内容</th>
-             <th>发布时间</th>
-             <th>所在地</th>
-             <th>立即查看</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-             <td>
-             <a href="../InfoShow/TrunkInfoDetail.aspx" class="infoTitle h4LorryInfoTitle">湖南省长沙市→黑龙江省哈尔滨市,有17.5米半挂,求10吨货</a>
-             <p><span class="light-info">车辆长度：</span><span class="infos spanLorryLength" id="carLength">17.5米</span>|
-             <span class="light-info">载重：</span><span class="infos spanLorryWeight" id="carWeight">13吨</span></p>
-             <p><span class="light-info">信息来源：</span><a  href="#" class="lorryCompanyLink">湖南涟钢物流有限公司</a></p>
-             </td>
-             <td><span class="infos lorryPublishTime" id="publishTime">14小时前</span></td>
-             <td><span  class="spanLorryPlace">湖南长沙</span></td>
-             <td>
-             <a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a>
-             </td>
-          </tr>
-          <%=this.Message1 %>
-          
-       </tbody>--%>
-       <div id="content" class="easyui-panel" style="height:400px" data-options="href:'TrunkInfoListHandler.ashx?pageNumber=1&pageSize=10"> </div>
-       <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" >
+       <div id="trunks_content" class="easyui-panel"> <%=this.TrunksFirstPageHtml%> </div>
+       <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
 
-
-    </table>
     </div>
-    <%--<div class="fenye"><!-----分页-------->
-      <div id="page">
-          <a class="now_page">1</a>
-          <a href="# p=2">2</a>
-          <a href="# p=3">3</a>
-          <a href="#?p=4">4</a>
-          <a href="#?p=5">5</a>
-          <span>...</span>
-          <a href="#?p=14">14</a>
-          <a href="#?p=2">&gt;</a>
-      </div>
-   </div>--%>
    </div>
 
     </form>
