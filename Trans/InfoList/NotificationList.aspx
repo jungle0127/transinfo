@@ -77,9 +77,9 @@
       </td>
       <td><ul class="nav nav-tabs floating">
       			<li><a href="../index.aspx">返回首页</a></li>
-                <li><a href="info.html">信息共享</a></li>
+                <li><a href="info.html?type=car">信息共享</a></li>
                 <li><a href="#">物流黄页</a></li>
-                <li><a href="#">我要发布</a></li>
+                <li><a href="../admin/MainFrame.aspx">我要发布</a></li>
          	</ul></td>
       </tr>
       </tbody>
@@ -92,9 +92,9 @@
             	<div class="picNewsFrame">
                 <table width="100%">
                   <tr>
-                    <td id="newsPic">
+                    <%--<td id="newsPic">
                   		<img id="newsPicture" src="../imgs/index/baymax.png">
-                    </td>
+                    </td>--%>
                     <td width="3%">&nbsp;</td>
                     <td id="newsContent">
                     	<a  href="#" class="newsTitle" id="newsTitle">河南省运输管理局一行考察川北物流平台</a>

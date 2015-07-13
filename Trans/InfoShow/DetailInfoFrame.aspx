@@ -69,11 +69,11 @@
                     <ul class="nav nav-stacked templatemo-nav">
                       <li class="titles"><i class="fa fa-medium"></i>平台导航</li>
                       <li><a href="../index.aspx"><i class="fa fa-medium"></i>返回首页</a></li>
-                      <li><a href="#"><i class="fa fa-medium"></i>信息共享</a></li>
-                      <li><a href="#"><i class="fa  fa-medium"></i>新闻中心</a></li>
-                      <li><a href="#"><i class="fa fa-medium"></i>公告中心</a></li>
-                      <li><a href="#"><i class="fa fa-medium"></i>我要发布</a></li>
-                      <li><a href="#"><i class="fa fa-medium"></i>个人中心</a></li>
+                      <li><a href="../InfoList/info.html?type=car"><i class="fa fa-medium"></i>信息共享</a></li>
+                      <li><a href="../InfoList/NotificationList.aspx"><i class="fa  fa-medium"></i>新闻中心</a></li>
+                      <li><a href="../InfoList/NotificationList.aspx"><i class="fa fa-medium"></i>公告中心</a></li>
+                      <li><a href="../admin/MainFrame.aspx"><i class="fa fa-medium"></i>我要发布</a></li>
+                      <li><a href="../admin/MainFrame.aspx"><i class="fa fa-medium"></i>个人中心</a></li>
                     </ul>
               </div>
             </div>   

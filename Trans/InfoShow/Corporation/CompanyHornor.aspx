@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    企业荣誉信息
     </div>
     </form>
 </body>

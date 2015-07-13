@@ -29,10 +29,10 @@ namespace Trans.admin
             //Response.Write(userPoco.Loginname);
             //Response.Write(userPoco.Password);
 
-            Session["username"] = "ps";
-            Session["userid"] = "2";
+            Session["username"] = "admin";
+            Session["userid"] = "1";
             Session["roleid"] = "1";
-            Response.Redirect("mainframe.htm");
+            Response.Redirect("MainFrame.aspx");
         }
     }
 }

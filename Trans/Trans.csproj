@@ -757,6 +757,7 @@
     <Content Include="admin\kindeditor\themes\simple\simple.css" />
     <Content Include="admin\leftmenu.aspx" />
     <Content Include="admin\login.aspx" />
+    <Content Include="admin\MainFrame.aspx" />
     <Content Include="admin\mainframe.htm" />
     <Content Include="admin\personalinfo\personalinfomanagement.aspx" />
     <Content Include="admin\personalinfo\updatepwd.aspx" />
@@ -836,6 +837,13 @@
     </Compile>
     <Compile Include="admin\information\trunknumber\addtrunknumber.aspx.designer.cs">
       <DependentUpon>addtrunknumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MainFrame.aspx.cs">
+      <DependentUpon>MainFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\MainFrame.aspx.designer.cs">
+      <DependentUpon>MainFrame.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\promulagate\ArticleDeleteHandler.ashx.cs">
       <DependentUpon>ArticleDeleteHandler.ashx</DependentUpon>
@@ -1940,6 +1948,9 @@
     <Compile Include="InfoList\DepotInfoList.aspx.designer.cs">
       <DependentUpon>DepotInfoList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InfoList\DepotListHandler.ashx.cs">
+      <DependentUpon>DepotListHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="InfoList\GoodsInfoList.aspx.cs">
       <DependentUpon>GoodsInfoList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1984,6 +1995,9 @@
     </Compile>
     <Compile Include="InfoList\TrunkInfoList.aspx.designer.cs">
       <DependentUpon>TrunkInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\TrunkInfoListHandler.ashx.cs">
+      <DependentUpon>TrunkInfoListHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="InfoShow\Corporation\CompanyContact.aspx.cs">
       <DependentUpon>CompanyContact.aspx</DependentUpon>
@@ -3168,6 +3182,8 @@
     <Content Include="InfoList\ArticleListHandler.ashx" />
     <Content Include="InfoList\ArticleItemsHandler.ashx" />
     <Content Include="InfoList\GoodsInformationHandler.ashx" />
+    <Content Include="InfoList\TrunkInfoListHandler.ashx" />
+    <Content Include="InfoList\DepotListHandler.ashx" />
     <None Include="Trans.build">
       <SubType>Designer</SubType>
     </None>

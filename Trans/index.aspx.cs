@@ -19,35 +19,27 @@ namespace Trans
     public partial class index : System.Web.UI.Page
     {
         private static ILog logger = LogManager.GetLogger(typeof(index));
-
-        private string topNews;
-
-        public string TopNews
-        {
-            get { return topNews; }
-        }
-
+        private IArticleDao articleDao;
         public index()
         {
-            this.topNews = this.initTopNews();
+            this.articleDao = new ArticleDao();
         }
-
-        private string initTopNews()
-        {
-            StringBuilder newsBuilder = new StringBuilder();
-            for (int i = 0; i < 5; i++)
-            {
-                newsBuilder.Append("<li><a href=\"newsshow.aspx?id=1\">测试新闻数据</a></li>");
-            }
-
-
-            return newsBuilder.ToString();
-        }
-
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+
         }
+
+        #region Property
+        private string buildTopNews()
+        {
+            ArticlePagination articlePoco = new ArticlePagination();
+            articlePoco.Limit = 5;
+            articlePoco.Offset = 0;
+            StringBuilder articleBuilder = new StringBuilder();
+            IList<Article> pocoList = this.articleDao.DescendOrderPaginationFindAll(articlePoco);
+            return articleBuilder.ToString();
+        }
+        #endregion
     }
 }
