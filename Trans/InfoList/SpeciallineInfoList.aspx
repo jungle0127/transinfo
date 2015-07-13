@@ -6,12 +6,55 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>专线信息列表</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../css/main_style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/main_style.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script  type="text/javascript" language="javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/js.js"></script>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/main_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/icon.css" />
+	<link rel="Stylesheet" type="text/css" href="../css/demo.css" />
+    
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            backToTop();
+        });
+	</script>
+    <script type="text/javascript">
+        function line_page_change() {
+            $.post("LineInfoListHandler.ashx", "1", function (item_count) {
+                $('#pagination_manager').pagination({
+                    total: item_count,
+                    pageSize: 10,
+                    layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
+                    beforePageText: 'Page',
+                    afterPageText: 'of {pages}',
+                    pageList: [10, 20, 50, 100],
+                    onSelectPage: function (pageNumber, pageSize, typeName) {
+                        $('#line_content').panel('refresh', 'LineInfoListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + '&typeName=' + typeName);
+                    }
+                });
+
+            }, "text");
+        }
+        
+    </script>
+
+
+
+
 </head>
-<body>
+<body onload="line_page_change()">
     <form id="form1" runat="server">
       <div class="searchFrame">
       <div class="totalInfo">
@@ -80,93 +123,12 @@
 <div class="infoListFrame" id="lineInfo">
 <div class="tableContainer TCline">
     <!-------------------专线信息显示---------------------------->
- <div class='container-fluid' id="showLineInfo">
-  <div class='tabL'>
-    <ul class="nav nav-tabs" id="myTab">
-        <li class="active"><a href="#all" data-toggle='tab' class="allLineLink" id="allLineLink">全部</a></li>
-        <li><a href="#one-way" data-toggle='tab' class="singleLineLink" id="singleLineLink">单程</a></li>
-        <li><a href="#round-way" data-toggle='tab' class="roundWayLineLink" id="roundWayLineLink">往返</a></li>
-    </ul>
-   <div class="tab-content">
-      <div class="tab-pane active all" id="all" class="allLineDiv"><!----所有---->
-            <%--<div id="line_infos" class="line_infos"><!--动态加载--->
-                <p class="NEWSline_text">常德市 <span id="line_kuai"><img class="imgSingleLine" src="../../imgs/signle.jpg" /></span>广州市</p>
-                <p class="title"><a href="http://search.jt56.org/hnftwl.jt56.org" target="_blank">湖南福泰物流有限公司</a></p>
-                <div class="align_left">
-                    <p class="title">发车班次：<span id="Dark">不固定</span></p>
-                    <p class="title">运输时长：<span id="Dark">1天</span></p>
-                    <p class="title">重货：<span id="huo_color">1.05</span>元/公斤</p>
-                </div>
-                <div class="align_left">
-                    <p class="title">是否直达：<span id="Dark">直达</span></p>
-                    <p class="title">运输方式：<span id="Dark">公路运输</span></p>
-                    <p class="title">泡货：<span id="huo_color">221</span>元/方</p>
-                </div>
-                <div class="clear"></div>
-                <div class="NEWS_button"><a href="../InfoShow/SpeciallineInfoDetail.aspx" target="_blank">查看详情</a></div>
-            </div>--%>
-            <%=this.MessageStringhtml%>>
-
-        </div>
-            <div class="tab-pane" id="one-way" class="singleLineDiv"><!------单程------>
-
-              <%--<div id="line_infos" class="line_infos"><!--动态加载--->
-                    <p class="NEWSline_text">常德市 <span id="line_kuai">→</span>广州市</p>
-                    <p class="title"><a href="http://search.jt56.org/hnftwl.jt56.org" target="_blank">湖南福泰物流有限公司</a></p>
-                    <div class="align_left">
-                        <p class="title">发车班次：<span id="Dark">不固定</span></p>
-                        <p class="title">运输时长：<span id="Dark">1天</span></p>
-                        <p class="title">重货：<span id="huo_color">1.05</span>元/公斤</p>
-                    </div>
-                    <div class="align_left">
-                        <p class="title">是否直达：<span id="Dark">直达</span></p>
-                        <p class="title">运输方式：<span id="Dark">公路运输</span></p>
-                        <p class="title">泡货：<span id="huo_color">221</span>元/方</p>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="NEWS_button"><a href="#" target="_blank">查看详情</a></div>
-                </div>--%>
-                <%=this.MessageStringSinglehtml%>
+ 
+    <div id="line_content" class="easyui-panel"> <%=this.TotalPageHtml%> </div>
+       <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
 
 
-            </div>
-            <div class="tab-pane" id="round-way" class="roundWayLineDiv"><!------双程----->
-
-              <%--<div id="line_infos" class="line_infos"><!--动态加载--->
-                    <p class="NEWSline_text">常德市 <span id="line_kuai"><img class="imgRoundWayLine" src="../../imgs/round-way.jpg" /></span>广州市</p>
-                    <p class="title"><a href="http://search.jt56.org/hnftwl.jt56.org" target="_blank">湖南福泰物流有限公司</a></p>
-                    <div class="align_left">
-                        <p class="title">发车班次：<span id="Dark">不固定</span></p>
-                        <p class="title">运输时长：<span id="Dark">1天</span></p>
-                        <p class="title">重货：<span id="huo_color">1.05</span>元/公斤</p>
-                    </div>
-                    <div class="align_left">
-                        <p class="title">是否直达：<span id="Dark">直达</span></p>
-                        <p class="title">运输方式：<span id="Dark">公路运输</span></p>
-                        <p class="title">泡货：<span id="huo_color">221</span>元/方</p>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="NEWS_button"><a href="#" target="_blank">查看详情</a></div>
-                </div>--%>
-                <%=this.MessageStringGBHtml%>
-
-            </div>
-      </div>
-    </div>
    </div>
-  </div>
-  <div class="fenye"><!-----分页-------->
-    <div id="page">
-        <a class="now_page">1</a>
-        <a href="# p=2">2</a>
-        <a href="# p=3">3</a>
-        <a href="#?p=4">4</a>
-        <a href="#?p=5">5</a>
-        <span>...</span>
-        <a href="#?p=14">14</a>
-        <a href="#?p=2">&gt;</a>
-    </div>
- </div>
   </div>
 
     </form>
