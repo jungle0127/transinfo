@@ -132,6 +132,7 @@ namespace Trans.admin.information
             {
                 this.depotInfoDao.Insert(this.loadEntity());
                 logger.Info("Depository information inserted doen.");
+                Response.Redirect("../InformationManager/DepositoryList.aspx");
             }
             catch (Exception ex)
             {

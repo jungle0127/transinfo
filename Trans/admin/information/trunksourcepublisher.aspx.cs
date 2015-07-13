@@ -56,6 +56,7 @@ namespace Trans.admin.information
             {
                 this.trunkInformationDao.Insert(this.loadEntity());
                 logger.Info("Trunk information inserted.");
+                Response.Redirect("../InformationManager/TrunkList.aspx");
             }
             catch (Exception ex)
             {

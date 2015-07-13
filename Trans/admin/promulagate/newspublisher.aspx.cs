@@ -44,7 +44,7 @@ namespace Trans.admin.promulagate
         private void insertArticle()
         {
             Article articlePoco = new Article();
-            articlePoco.Userid = long.Parse(this.userId);
+            articlePoco.Userid = long.Parse(base.UserId);
             articlePoco.Typeid = long.Parse(this.ddlArticleType.SelectedValue);
             articlePoco.Title = this.txtTitle.Text;
             articlePoco.Releaseip = this.Request.UserHostAddress;

@@ -198,6 +198,7 @@ namespace Trans.admin.information
             {
                 this.goodsSourceInfoDao.Insert(this.loadGoodsSourceInfoPoco());
                 logger.Info("Goods source information inserted done.");
+                Response.Redirect("../InformationManager/GoodsList.aspx");
             }
             catch (Exception ex)
             {

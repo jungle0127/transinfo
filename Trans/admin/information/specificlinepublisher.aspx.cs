@@ -53,6 +53,7 @@ namespace Trans.admin.information
                 logger.Info("Specialline information with XML style will be inserted:" + uspParamData.XmlData);
                 this.uspInsertDao.RunProc(uspParamData);
                 logger.Info("Specialline information inserted done.");
+                Response.Redirect("../InformationManager/SpeciallineList.aspx");
             }
             catch (Exception Ex)
             {
