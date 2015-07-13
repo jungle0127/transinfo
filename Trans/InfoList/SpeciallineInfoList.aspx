@@ -37,8 +37,8 @@
                     total: item_count,
                     pageSize: 10,
                     layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
-                    beforePageText: 'Page',
-                    afterPageText: 'of {pages}',
+                    beforePageText: '第',
+                    afterPageText: '页，共 {pages}页',
                     pageList: [10, 20, 50, 100],
                     onSelectPage: function (pageNumber, pageSize, typeName) {
                         $('#line_content').panel('refresh', 'LineInfoListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + '&typeName=' + typeName);

@@ -1968,6 +1968,9 @@
     <Compile Include="InfoList\GoodsInformationList.aspx.designer.cs">
       <DependentUpon>GoodsInformationList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InfoList\LineInfoListHandler.ashx.cs">
+      <DependentUpon>LineInfoListHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="InfoList\NewsList.aspx.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3184,6 +3187,7 @@
     <Content Include="InfoList\GoodsInformationHandler.ashx" />
     <Content Include="InfoList\TrunkInfoListHandler.ashx" />
     <Content Include="InfoList\DepotListHandler.ashx" />
+    <Content Include="InfoList\LineInfoListHandler.ashx" />
     <None Include="Trans.build">
       <SubType>Designer</SubType>
     </None>
