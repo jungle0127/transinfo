@@ -6,10 +6,52 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>存储信息列表</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../css/main_style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/main_style.css" rel="stylesheet" type="text/css" />
+    <meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script  type="text/javascript" language="javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/js.js"></script>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/main_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/icon.css" />
+	<link rel="Stylesheet" type="text/css" href="../css/demo.css" />
+    
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            backToTop();
+        });
+	</script>
+    <script type="text/javascript">
+        function depot_page_change() {
+            $.post("DepotListHandler.ashx", "1", function (item_count) {
+                $('#pagination_manager').pagination({
+                    total: item_count,
+                    pageSize: 10,
+                    layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
+                    beforePageText: 'Page',
+                    afterPageText: 'of {pages}',
+                    pageList: [10, 20, 50, 100],
+                    onSelectPage: function (pageNumber, pageSize) {
+                        $('#depot_content').panel('refresh', 'DepotListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize);
+                    }
+                });
+
+            }, "text");
+        }
+        
+    </script>
+
+
+
 </head>
-<body>
+<body onload="depot_page_change()" >
     <form id="form1" runat="server">
      <div class="searchFrame">
       <div class="totalInfo">
@@ -63,56 +105,17 @@
   <div class="infoListFrame">
       <div class="tableContainer TC2">
        <!-----------------------------------仓储信息显示--------------------->
-       <table class="table table-hover showStoreInfo">
-            <caption><div id="tableCaption" style="padding-top:3px;"><img src="../../imgs/pack-2.png">仓储信息</div>
-            <span class="tableMiddle"><div class="tableMiddle">相信您在这可以很快找到心仪的货源，祝您生活愉快！</div></span>
-            </caption>
-       <thead>
-          <tr class="headTr">
-             <th>信息内容</th>
-             <th>发布时间</th>
-             <th>参考报价</th>
-             <th>立即查看</th>
-          </tr>
-       </thead>
-        <tbody>
-
-          <%--<tr>
-             <td class="infoDeatil">
-             <div class="storePic"></div>
-             <div class="overFloat">
-                 <a href="../InfoShow/DepotInfoDetail.aspx"><h4 class="infoTitle">福泰仓储5号库</h4></a>
-                 <span class="light-info">面积：</span><span class="infos" id="totalArea">1500平米</span>|
-                 <span class="light-info">可用面积：</span><span class="infos" id="useableArea">1300平米</span>|
-                 <span class="light-info">经营范围：</span><span class="infos" id="storeScorp">自有仓库</span>
-                 <p><span class="light-info">仓库类型：</span><span class="infos" id="storeType">冷藏</span>|
-                 <span class="light-info">信息来源：</span><a  href="#" class="infos_companyN">湖南涟钢物流有限公司</a></p>
-             </div>
-             </td>
-             <td><span class="infos" id="publishTime">14小时前</span></td>
-             <td><span  id="prePrice">湖南长沙</span></td>
-             <td><a class="moreBottn" href="#" target="_blank"><img src="../../imgs/plus_alt.png" id="moreBtn"></a></td>
-          </tr>--%>
-
-          <%=this.MessageHtmlDepot %>
-        
+       
+       <div id="depot_content" class="easyui-panel"> <%=this.DepotFirstPageHtml%> </div>
+       <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
 
 
-       </tbody>
-    </table>
+
+
+
+
     </div>
-    <div class="fenye"><!-----分页-------->
-      <div id="page">
-          <a class="now_page">1</a>
-          <a href="# p=2">2</a>
-          <a href="# p=3">3</a>
-          <a href="#?p=4">4</a>
-          <a href="#?p=5">5</a>
-          <span>...</span>
-          <a href="#?p=14">14</a>
-          <a href="#?p=2">&gt;</a>
-      </div>
-  </div>
+    
   </div>
 
     </form>
