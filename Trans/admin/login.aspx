@@ -29,7 +29,7 @@
  	 <div class='container-fluid loginAndRegister'>
     	<div class='tabL'>
             <ul class="nav nav-tabs" id="myTab">
-                <li class="active"><a href="#" data-toggle='tab' class="loginLink">登陆</a></li>
+                <li class="active"><a href="#login" data-toggle='tab' class="loginLink">登陆</a></li>
                 <li><a href="#register" data-toggle='tab' class="registerLink">注册</a></li>
             </ul>
             <div class="tab-content">
@@ -66,7 +66,7 @@
 
                  <td>
                  <%--<input  type="button" id="exitBtn" class="exitBtn" onclick="toIndex(this)">--%>
-                 <asp:Button runat="server" Visible="false" id="exitBtnLogin" class="exitBtn"  />
+                 <asp:Button runat="server" id="exitBtnLogin" class="exitBtn"  />
 
                  </td>
                  </tr>

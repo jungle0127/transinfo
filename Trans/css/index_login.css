@@ -137,7 +137,7 @@ thead{ background:#B1B0B0;text-align:left;}
 .rember{ margin-right:50px; margin-left:5px;}
 #loginBtn{ background:url(../imgs/index/loginBtn.png); width:80px; height:36px; border:none;}
 #loginBtn:hover{ background:url(../imgs/index/loginOverBtn.png);}
-#exitBtn{ background:url(../imgs/index/outBtn.png);width:80px; height:36px; border:none;}
-#exitBtn:hover{ background:url(../imgs/index/outOverBtn.png);}
-#registerBtn{ background: url(../imgs/index/registerBtn.png);width:80px; height:36px; border:none;}
-#registerBtn:hover{ background:url(../imgs/index/registerOverBtn.png);}
+.exitBtn{ background:url(../imgs/index/outBtn.png);width:80px; height:36px; border:none;}
+.exitBtn:hover{ background:url(../imgs/index/outOverBtn.png);}
+.registerBtn{ background: url(../imgs/index/registerBtn.png);width:80px; height:36px; border:none;}
+.registerBtn:hover{ background:url(../imgs/index/registerOverBtn.png);}
