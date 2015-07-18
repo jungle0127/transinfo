@@ -894,6 +894,8 @@
     <Compile Include="App_Code\DAL\Dao\CityDao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="App_Code\DAL\Dao\CorporationhonorDao.cs" />
+    <Compile Include="App_Code\DAL\Dao\CorporationmetadataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\CountyDao.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -901,6 +903,7 @@
     <Compile Include="App_Code\DAL\Dao\DepotinformationDao.cs" />
     <Compile Include="App_Code\DAL\Dao\DepottypeDao.cs" />
     <Compile Include="App_Code\DAL\Dao\EvaluatetypeDao.cs" />
+    <Compile Include="App_Code\DAL\Dao\LogisticscorDao.cs" />
     <Compile Include="App_Code\DAL\Dao\PlaceinfoDao.cs" />
     <Compile Include="App_Code\DAL\Dao\ProvinceDao.cs">
       <SubType>Code</SubType>
@@ -961,6 +964,8 @@
     <Content Include="App_Code\DAL\Mapper\City.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Code\DAL\Mapper\Corporationhonor.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\Corporationmetadata.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\County.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -975,6 +980,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Code\DAL\Mapper\Logisticscor.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Placeinfo.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Province.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1785,11 +1791,16 @@
     <Compile Include="App_Code\DAL\Dao\VtrunkmetadataDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VuserroleinfoDao.cs" />
     <Compile Include="App_Code\DAL\Dao\VvehiclenumberDao.cs" />
+    <Compile Include="App_Code\DAL\Entity\Corporationhonor.cs" />
+    <Compile Include="App_Code\DAL\Entity\Corporationmetadata.cs" />
+    <Compile Include="App_Code\DAL\Entity\Logisticscor.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\ArticlePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\ArticletypePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\BussinessscopePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\CautiontypePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\CityPagination.cs" />
+    <Compile Include="App_Code\DAL\Entity\Pagination\CorporationhonorPagination.cs" />
+    <Compile Include="App_Code\DAL\Entity\Pagination\CorporationmetadataPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\CountyPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\DeparturetypePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\DepotinformationPagination.cs" />
@@ -1797,6 +1808,7 @@
     <Compile Include="App_Code\DAL\Entity\Pagination\EvaluatetypePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\GoodssourceinformationPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\GoodstypePagination.cs" />
+    <Compile Include="App_Code\DAL\Entity\Pagination\LogisticscorPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\PlaceinfoPagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\ProvincePagination.cs" />
     <Compile Include="App_Code\DAL\Entity\Pagination\RightgrouphasrightsPagination.cs" />
@@ -1882,6 +1894,8 @@
     <Compile Include="App_Code\DAL\IDao\IBussinessscopeDao.cs" />
     <Compile Include="App_Code\DAL\IDao\ICautiontypeDao.cs" />
     <Compile Include="App_Code\DAL\IDao\ICityDao.cs" />
+    <Compile Include="App_Code\DAL\IDao\ICorporationhonorDao.cs" />
+    <Compile Include="App_Code\DAL\IDao\ICorporationmetadataDao.cs" />
     <Compile Include="App_Code\DAL\IDao\ICountyDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IDeparturetypeDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IDepotinformationDao.cs" />
@@ -1889,6 +1903,7 @@
     <Compile Include="App_Code\DAL\IDao\IEvaluatetypeDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IGoodssourceinformationDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IGoodstypeDao.cs" />
+    <Compile Include="App_Code\DAL\IDao\ILogisticscorDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IPlaceinfoDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IProvinceDao.cs" />
     <Compile Include="App_Code\DAL\IDao\IRightgroupDao.cs" />

@@ -131,7 +131,7 @@ CREATE TABLE `trunkmetadata`(
 	`trunkidentifynumber` varchar(100) NULL, -- 车辆识别代号（？）
 	`vanimageuri` varchar(200) NULL, -- 车辆图片
 	`licenseuri` varchar(200) NULL, -- 行车证图片
-	`active` tinyint DEFAULT 1 NOT NULL,
+	`active` tinyint DEFAULT 0 NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY (numberid) REFERENCES trunknumber(id),
 	FOREIGN KEY(vantypeid) REFERENCES vantype(id),

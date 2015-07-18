@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Logisticscor" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Logisticscor" type="Trans.DAL.Entity.Logisticscor" />
+		<typeAlias alias="LogisticscorPagination" type="Trans.DAL.Entity.LogisticscorPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Logisticscor">
+			<result property="Address" column="address" dbType="varchar"/>
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Licenseurl" column="licenseurl" dbType="varchar"/>
+			<result property="Corporationname" column="corporationname" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Contactperson" column="contactperson" dbType="varchar"/>
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Telephone" column="telephone" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Logisticscor.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor 
+		</select>
+		<select id="Logisticscor.FindAll" resultMap="FullResultMap">
+			SELECT * FROM logisticscor
+		</select>
+		<select id="Logisticscor.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM logisticscor ORDER BY id DESC
+		</select>
+		<select id="Logisticscor.FindAllPagination" parameterClass="LogisticscorPagination" resultMap="FullResultMap">
+			SELECT * FROM logisticscor limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.DescendOrderFindAllPagination" parameterClass="LogisticscorPagination" resultMap="FullResultMap">
+			SELECT * FROM logisticscor ORDER BY id desc limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.FindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.address = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.address = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByAddress" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.address = #Address# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByAddress" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.address = #Address# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByAddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.address=#Address#
+		</select>
+		<select id="Logisticscor.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.active = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.active = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByActive" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByActive" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.active=#Active#
+		</select>
+		<select id="Logisticscor.FindByLicenseurl" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.licenseurl = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByLicenseurl" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.licenseurl = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByLicenseurl" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.licenseurl = #Licenseurl# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByLicenseurl" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.licenseurl = #Licenseurl# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByLicenseurlCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.licenseurl=#Licenseurl#
+		</select>
+		<select id="Logisticscor.FindByCorporationname" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.corporationname = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByCorporationname" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.corporationname = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByCorporationname" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.corporationname = #Corporationname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByCorporationname" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.corporationname = #Corporationname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByCorporationnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.corporationname=#Corporationname#
+		</select>
+		<select id="Logisticscor.Find" parameterClass="Logisticscor" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.id=#Id#
+		</select>
+		<select id="Logisticscor.DescendOrderFind" parameterClass="Logisticscor" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Logisticscor.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.id=#Id#
+		</select>
+		<select id="Logisticscor.FindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.contactperson = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByContactperson" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.contactperson = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByContactperson" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.contactperson = #Contactperson# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByContactperson" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.contactperson = #Contactperson# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByContactpersonCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.contactperson=#Contactperson#
+		</select>
+		<select id="Logisticscor.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.userid = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.userid = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByUserid" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByUserid" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.userid=#Userid#
+		</select>
+		<select id="Logisticscor.FindByTelephone" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.telephone = #value#
+		</select>
+		<select id="Logisticscor.DescendOrderFindByTelephone" parameterClass="String" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.telephone = #value# ORDER BY id DESC
+		</select>
+		<select id="LogisticscorPagination.FindByTelephone" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.telephone = #Telephone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="LogisticscorPagination.DescendOrderFindByTelephone" parameterClass="LogisticscorPagination" resultMap="FullResultMap" extends="Logisticscor.FindAll">
+			WHERE logisticscor.telephone = #Telephone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Logisticscor.GetFindByTelephoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM logisticscor WHERE logisticscor.telephone=#Telephone#
+		</select>
+		<insert id="Logisticscor.Insert" parameterClass="Logisticscor">
+			INSERT INTO logisticscor (address,active,licenseurl,corporationname,id,contactperson,userid,telephone) VALUES (#Address#,#Active#,#Licenseurl#,#Corporationname#,#Id#,#Contactperson#,#Userid#,#Telephone#)
+		</insert>
+		<update id="Logisticscor.Update" parameterClass="Logisticscor">
+			UPDATE logisticscor SET address=#Address#,active=#Active#,licenseurl=#Licenseurl#,corporationname=#Corporationname#,contactperson=#Contactperson#,userid=#Userid#,telephone=#Telephone# WHERE id=#Id#
+		</update>
+		<delete id="Logisticscor.DeleteByAddress" parameterClass="String">
+			DELETE FROM logisticscor WHERE address=#value# 
+		</delete>
+		<delete id="Logisticscor.DeleteByActive" parameterClass="Byte">
+			DELETE FROM logisticscor WHERE active=#value# 
+		</delete>
+		<delete id="Logisticscor.DeleteByLicenseurl" parameterClass="String">
+			DELETE FROM logisticscor WHERE licenseurl=#value# 
+		</delete>
+		<delete id="Logisticscor.DeleteByCorporationname" parameterClass="String">
+			DELETE FROM logisticscor WHERE corporationname=#value# 
+		</delete>
+		<delete id="Logisticscor.Delete" parameterClass="Logisticscor">
+			DELETE FROM logisticscor WHERE id=#Id#
+		</delete>
+		<delete id="Logisticscor.DeleteByContactperson" parameterClass="String">
+			DELETE FROM logisticscor WHERE contactperson=#value# 
+		</delete>
+		<delete id="Logisticscor.DeleteByUserid" parameterClass="Int64">
+			DELETE FROM logisticscor WHERE userid=#value# 
+		</delete>
+		<delete id="Logisticscor.DeleteByTelephone" parameterClass="String">
+			DELETE FROM logisticscor WHERE telephone=#value# 
+		</delete>
+	</statements>
+</sqlMap>

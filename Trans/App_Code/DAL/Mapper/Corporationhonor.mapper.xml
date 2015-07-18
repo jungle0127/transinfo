@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Corporationhonor" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Corporationhonor" type="Trans.DAL.Entity.Corporationhonor" />
+		<typeAlias alias="CorporationhonorPagination" type="Trans.DAL.Entity.CorporationhonorPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Corporationhonor">
+			<result property="Corporationid" column="corporationid" dbType="bigint"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="Honortitle" column="honortitle" dbType="varchar"/>
+			<result property="Honorimageurl" column="honorimageurl" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Corporationhonor.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationhonor 
+		</select>
+		<select id="Corporationhonor.FindAll" resultMap="FullResultMap">
+			SELECT * FROM corporationhonor
+		</select>
+		<select id="Corporationhonor.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM corporationhonor ORDER BY id DESC
+		</select>
+		<select id="Corporationhonor.FindAllPagination" parameterClass="CorporationhonorPagination" resultMap="FullResultMap">
+			SELECT * FROM corporationhonor limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationhonor.DescendOrderFindAllPagination" parameterClass="CorporationhonorPagination" resultMap="FullResultMap">
+			SELECT * FROM corporationhonor ORDER BY id desc limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationhonor.FindByCorporationid" parameterClass="Int64" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.corporationid = #value#
+		</select>
+		<select id="Corporationhonor.DescendOrderFindByCorporationid" parameterClass="Int64" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.corporationid = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationhonorPagination.FindByCorporationid" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.corporationid = #Corporationid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationhonorPagination.DescendOrderFindByCorporationid" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.corporationid = #Corporationid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationhonor.GetFindByCorporationidCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationhonor WHERE corporationhonor.corporationid=#Corporationid#
+		</select>
+		<select id="Corporationhonor.Find" parameterClass="Corporationhonor" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.id=#Id#
+		</select>
+		<select id="Corporationhonor.DescendOrderFind" parameterClass="Corporationhonor" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Corporationhonor.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationhonor WHERE corporationhonor.id=#Id#
+		</select>
+		<select id="Corporationhonor.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.active = #value#
+		</select>
+		<select id="Corporationhonor.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.active = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationhonorPagination.FindByActive" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationhonorPagination.DescendOrderFindByActive" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationhonor.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationhonor WHERE corporationhonor.active=#Active#
+		</select>
+		<select id="Corporationhonor.FindByHonortitle" parameterClass="String" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honortitle = #value#
+		</select>
+		<select id="Corporationhonor.DescendOrderFindByHonortitle" parameterClass="String" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honortitle = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationhonorPagination.FindByHonortitle" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honortitle = #Honortitle# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationhonorPagination.DescendOrderFindByHonortitle" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honortitle = #Honortitle# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationhonor.GetFindByHonortitleCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationhonor WHERE corporationhonor.honortitle=#Honortitle#
+		</select>
+		<select id="Corporationhonor.FindByHonorimageurl" parameterClass="String" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honorimageurl = #value#
+		</select>
+		<select id="Corporationhonor.DescendOrderFindByHonorimageurl" parameterClass="String" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honorimageurl = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationhonorPagination.FindByHonorimageurl" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honorimageurl = #Honorimageurl# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationhonorPagination.DescendOrderFindByHonorimageurl" parameterClass="CorporationhonorPagination" resultMap="FullResultMap" extends="Corporationhonor.FindAll">
+			WHERE corporationhonor.honorimageurl = #Honorimageurl# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationhonor.GetFindByHonorimageurlCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationhonor WHERE corporationhonor.honorimageurl=#Honorimageurl#
+		</select>
+		<insert id="Corporationhonor.Insert" parameterClass="Corporationhonor">
+			INSERT INTO corporationhonor (corporationid,id,active,honortitle,honorimageurl) VALUES (#Corporationid#,#Id#,#Active#,#Honortitle#,#Honorimageurl#)
+		</insert>
+		<update id="Corporationhonor.Update" parameterClass="Corporationhonor">
+			UPDATE corporationhonor SET corporationid=#Corporationid#,active=#Active#,honortitle=#Honortitle#,honorimageurl=#Honorimageurl# WHERE id=#Id#
+		</update>
+		<delete id="Corporationhonor.DeleteByCorporationid" parameterClass="Int64">
+			DELETE FROM corporationhonor WHERE corporationid=#value# 
+		</delete>
+		<delete id="Corporationhonor.Delete" parameterClass="Corporationhonor">
+			DELETE FROM corporationhonor WHERE id=#Id#
+		</delete>
+		<delete id="Corporationhonor.DeleteByActive" parameterClass="Byte">
+			DELETE FROM corporationhonor WHERE active=#value# 
+		</delete>
+		<delete id="Corporationhonor.DeleteByHonortitle" parameterClass="String">
+			DELETE FROM corporationhonor WHERE honortitle=#value# 
+		</delete>
+		<delete id="Corporationhonor.DeleteByHonorimageurl" parameterClass="String">
+			DELETE FROM corporationhonor WHERE honorimageurl=#value# 
+		</delete>
+	</statements>
+</sqlMap>

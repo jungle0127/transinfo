@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqlMap namespace="Corporationmetadata" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Corporationmetadata" type="Trans.DAL.Entity.Corporationmetadata" />
+		<typeAlias alias="CorporationmetadataPagination" type="Trans.DAL.Entity.CorporationmetadataPagination" />
+	</alias>
+	<resultMaps>
+		<resultMap id="FullResultMap" class="Corporationmetadata">
+			<result property="Bizcontactperson" column="bizcontactperson" dbType="varchar"/>
+			<result property="Postcode" column="postcode" dbType="varchar"/>
+			<result property="Corporationname" column="corporationname" dbType="varchar"/>
+			<result property="Userid" column="userid" dbType="bigint"/>
+			<result property="Logourl" column="logourl" dbType="varchar"/>
+			<result property="Active" column="active" dbType="tinyint"/>
+			<result property="CustomerQQ" column="customerQQ" dbType="varchar"/>
+			<result property="Biztelephone" column="biztelephone" dbType="varchar"/>
+			<result property="Url" column="url" dbType="varchar"/>
+			<result property="Id" column="id" dbType="bigint"/>
+			<result property="Address" column="address" dbType="varchar"/>
+			<result property="Introduction" column="introduction" dbType="text"/>
+			<result property="CustomerEmail" column="customerEmail" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="Corporationmetadata.GetCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata 
+		</select>
+		<select id="Corporationmetadata.FindAll" resultMap="FullResultMap">
+			SELECT * FROM corporationmetadata
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindAll" resultMap="FullResultMap">
+			SELECT * FROM corporationmetadata ORDER BY id DESC
+		</select>
+		<select id="Corporationmetadata.FindAllPagination" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap">
+			SELECT * FROM corporationmetadata limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindAllPagination" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap">
+			SELECT * FROM corporationmetadata ORDER BY id desc limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.FindByBizcontactperson" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.bizcontactperson = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByBizcontactperson" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.bizcontactperson = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByBizcontactperson" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.bizcontactperson = #Bizcontactperson# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByBizcontactperson" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.bizcontactperson = #Bizcontactperson# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByBizcontactpersonCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.bizcontactperson=#Bizcontactperson#
+		</select>
+		<select id="Corporationmetadata.FindByPostcode" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.postcode = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByPostcode" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.postcode = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByPostcode" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.postcode = #Postcode# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByPostcode" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.postcode = #Postcode# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByPostcodeCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.postcode=#Postcode#
+		</select>
+		<select id="Corporationmetadata.FindByCorporationname" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.corporationname = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByCorporationname" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.corporationname = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByCorporationname" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.corporationname = #Corporationname# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByCorporationname" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.corporationname = #Corporationname# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByCorporationnameCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.corporationname=#Corporationname#
+		</select>
+		<select id="Corporationmetadata.FindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.userid = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByUserid" parameterClass="Int64" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.userid = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByUserid" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.userid = #Userid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByUserid" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.userid = #Userid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByUseridCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.userid=#Userid#
+		</select>
+		<select id="Corporationmetadata.FindByLogourl" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.logourl = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByLogourl" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.logourl = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByLogourl" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.logourl = #Logourl# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByLogourl" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.logourl = #Logourl# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByLogourlCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.logourl=#Logourl#
+		</select>
+		<select id="Corporationmetadata.FindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.active = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByActive" parameterClass="Byte" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.active = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByActive" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.active = #Active# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByActive" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.active = #Active# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByActiveCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.active=#Active#
+		</select>
+		<select id="Corporationmetadata.FindByCustomerQQ" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerQQ = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByCustomerQQ" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerQQ = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByCustomerQQ" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerQQ = #CustomerQQ# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByCustomerQQ" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerQQ = #CustomerQQ# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByCustomerQQCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.customerQQ=#CustomerQQ#
+		</select>
+		<select id="Corporationmetadata.FindByBiztelephone" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.biztelephone = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByBiztelephone" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.biztelephone = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByBiztelephone" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.biztelephone = #Biztelephone# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByBiztelephone" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.biztelephone = #Biztelephone# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByBiztelephoneCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.biztelephone=#Biztelephone#
+		</select>
+		<select id="Corporationmetadata.FindByUrl" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.url = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByUrl" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.url = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByUrl" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.url = #Url# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByUrl" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.url = #Url# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByUrlCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.url=#Url#
+		</select>
+		<select id="Corporationmetadata.Find" parameterClass="Corporationmetadata" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.id=#Id#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFind" parameterClass="Corporationmetadata" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.id=#Id# ORDER BY id DESC
+		</select>
+		<select id="Corporationmetadata.GetFindCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.id=#Id#
+		</select>
+		<select id="Corporationmetadata.FindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.address = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByAddress" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.address = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByAddress" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.address = #Address# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByAddress" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.address = #Address# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByAddressCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.address=#Address#
+		</select>
+		<select id="Corporationmetadata.FindByIntroduction" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.introduction = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByIntroduction" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.introduction = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByIntroduction" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.introduction = #Introduction# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByIntroduction" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.introduction = #Introduction# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByIntroductionCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.introduction=#Introduction#
+		</select>
+		<select id="Corporationmetadata.FindByCustomerEmail" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerEmail = #value#
+		</select>
+		<select id="Corporationmetadata.DescendOrderFindByCustomerEmail" parameterClass="String" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerEmail = #value# ORDER BY id DESC
+		</select>
+		<select id="CorporationmetadataPagination.FindByCustomerEmail" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerEmail = #CustomerEmail# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="CorporationmetadataPagination.DescendOrderFindByCustomerEmail" parameterClass="CorporationmetadataPagination" resultMap="FullResultMap" extends="Corporationmetadata.FindAll">
+			WHERE corporationmetadata.customerEmail = #CustomerEmail# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Corporationmetadata.GetFindByCustomerEmailCount" resultClass="System.Int32">
+			SELECT count(*) FROM corporationmetadata WHERE corporationmetadata.customerEmail=#CustomerEmail#
+		</select>
+		<insert id="Corporationmetadata.Insert" parameterClass="Corporationmetadata">
+			INSERT INTO corporationmetadata (bizcontactperson,postcode,corporationname,userid,logourl,active,customerQQ,biztelephone,url,id,address,introduction,customerEmail) VALUES (#Bizcontactperson#,#Postcode#,#Corporationname#,#Userid#,#Logourl#,#Active#,#CustomerQQ#,#Biztelephone#,#Url#,#Id#,#Address#,#Introduction#,#CustomerEmail#)
+		</insert>
+		<update id="Corporationmetadata.Update" parameterClass="Corporationmetadata">
+			UPDATE corporationmetadata SET bizcontactperson=#Bizcontactperson#,postcode=#Postcode#,corporationname=#Corporationname#,userid=#Userid#,logourl=#Logourl#,active=#Active#,customerQQ=#CustomerQQ#,biztelephone=#Biztelephone#,url=#Url#,address=#Address#,introduction=#Introduction#,customerEmail=#CustomerEmail# WHERE id=#Id#
+		</update>
+		<delete id="Corporationmetadata.DeleteByBizcontactperson" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE bizcontactperson=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByPostcode" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE postcode=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByCorporationname" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE corporationname=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByUserid" parameterClass="Int64">
+			DELETE FROM corporationmetadata WHERE userid=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByLogourl" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE logourl=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByActive" parameterClass="Byte">
+			DELETE FROM corporationmetadata WHERE active=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByCustomerQQ" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE customerQQ=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByBiztelephone" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE biztelephone=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByUrl" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE url=#value# 
+		</delete>
+		<delete id="Corporationmetadata.Delete" parameterClass="Corporationmetadata">
+			DELETE FROM corporationmetadata WHERE id=#Id#
+		</delete>
+		<delete id="Corporationmetadata.DeleteByAddress" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE address=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByIntroduction" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE introduction=#value# 
+		</delete>
+		<delete id="Corporationmetadata.DeleteByCustomerEmail" parameterClass="String">
+			DELETE FROM corporationmetadata WHERE customerEmail=#value# 
+		</delete>
+	</statements>
+</sqlMap>
