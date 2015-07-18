@@ -24,6 +24,8 @@
 	  <sqlMap resource = "App_Code/DAL/Mapper/Bussinessscope.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Cautiontype.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/City.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/Corporationhonor.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/Corporationmetadata.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/County.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Departuretype.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Depotinformation.mapper.xml"/>
@@ -31,6 +33,7 @@
 	  <sqlMap resource = "App_Code/DAL/Mapper/Evaluatetype.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Goodssourceinformation.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Goodstype.mapper.xml"/>
+	  <sqlMap resource = "App_Code/DAL/Mapper/Logisticscor.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Placeinfo.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Province.mapper.xml"/>
 	  <sqlMap resource = "App_Code/DAL/Mapper/Rightgroup.mapper.xml"/>
