@@ -26,8 +26,8 @@
         });
 	</script>
     <script type="text/javascript">
-        function news_page_change() {
-            $.post("ArticleItemsHandler.ashx", "1", function (item_count) {
+        function news_page_change(article_type) {
+            $.post("ArticleItemsHandler.ashx", article_type, function (item_count) {
                 $('#pagination_manager').pagination({
                     total: item_count,
                     pageSize: 10,
@@ -36,36 +36,32 @@
                     afterPageText: '页，共 {pages}页',
                     pageList: [10, 20, 50, 100],
                     onSelectPage: function (pageNumber, pageSize) {
-                        $('#news_content').panel('refresh', 'ArticleListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&type=1");
+                        $('#news_content').panel('refresh', 'ArticleListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&type=" + article_type);
                     }
                 });
 
             }, "text");
         }
-        function notification_page_change() {
-            $.post("ArticleItemsHandler.ashx", "2", function (item_count) {
-                $('#pagination_manager_notification').pagination({
-                    total: item_count,
-                    pageSize: 10,
-                    layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
-                    beforePageText: '第',
-                    afterPageText: '页，共 {pages}页',
-                    pageList: [10, 20, 50, 100],
-                    onSelectPage: function (pageNumber, pageSize) {
-                        $('#notification_content_list').panel('refresh', 'ArticleListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&type=2");
-                    }
-                });
-
-            }, "text");
+        function news_show() {
+            var btnSet = $("#article_type").attr("value", "1");
+            $.get("ArticleListHandler.ashx?pageNumber=1&pageSize=10&type=1", function (data) {
+                $("#news_content").html(data);
+            });
+            var article_type = $("#article_type").val();
+            news_page_change(article_type);
         }
-        function page_load() {
-            news_page_change();
-            notification_page_change();
+        function notification_show() {
+            var btnSet = $("#article_type").attr("value", "2");
+            $.get("ArticleListHandler.ashx?pageNumber=1&pageSize=10&type=2", function (data) {
+                $("#news_content").html(data);
+            });
+            var article_type = $("#article_type").val();
+            news_page_change(article_type);
         }
     </script>
 
 </head>
-<body  onload="page_load()">
+<body  onload="news_show()">
     <form id="form1" runat="server">
 	    <div id="top">
         <p style="display: block;" id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
@@ -108,22 +104,18 @@
                 <div class='container-fluid infoList'>
     				<div class='tabL'>
                       <ul class="nav nav-tabs" id="myTab">
-                          <li class="active"><a href="#news" data-toggle='tab'>新闻中心</a></li>
-                          <li><a href="#notice" data-toggle='tab'>公告中心</a></li>
+                          <li class="active"><a onclick="news_show()" data-toggle='tab'>新闻中心</a></li>
+                          <li><a onclick="notification_show()" data-toggle='tab'>公告中心</a></li>
                       </ul>
                       <div class="tab-content">
                           <div class="tab-pane active" id="news">
                               <div class="tableContainer">
-                                  <div id="news_content" class="easyui-panel"> <%=this.NewsFirstPageHtml%> </div>
+                                  <div id="news_content" class="easyui-panel">  </div>
                                   <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
+                                  <input type="hidden" id="article_type" name="article_type" />
                               </div>
                           </div>
-                          <div class="tab-pane " id="notice">
-                             <div class="tableContainer">
-                                  <div id="notification_content_list"> <%=this.NotificationFirstPageHtml%> </div>
-                                  <div id="pagination_manager_notification" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
-                              </div>
-                          </div>
+                          
                       </div>
                    </div>
                 </div>
