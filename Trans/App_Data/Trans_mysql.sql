@@ -3706,6 +3706,8 @@ INSERT INTO rights (rightname ,righturl )
 	VALUES ('新闻管理','promulagate/newslist.aspx'); -- 22
 INSERT INTO rights (rightname ,righturl ) 
 	VALUES ('添加货车','information/trunknumber/addtrunk.aspx'); -- 23
+INSERT INTO rights (rightname,righturl)
+	VALUES ('资质审核','personalinfo/CoporationAuditInfoRequest.aspx'); -- 24
 
 	
 --
@@ -3750,10 +3752,13 @@ CREATE INDEX IX_rightgrouphasrights_rightid ON rightgroup_has_rights (rightid);
 
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(1,1);
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(1,8);
+INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(1,24);
+
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(2,9);
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(2,10);
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(2,11);
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(2,12);
+
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(3,3);
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(3,4);
 INSERT INTO rightgroup_has_rights (groupid ,rightid ) VALUES(3,5);
@@ -3818,6 +3823,7 @@ INSERT INTO role_has_rights (roleid ,rightid ) VALUES (1,20);
 INSERT INTO role_has_rights (roleid ,rightid ) VALUES (1,21);
 INSERT INTO role_has_rights (roleid ,rightid ) VALUES (1,22);
 INSERT INTO role_has_rights (roleid ,rightid ) VALUES (1,23);
+INSERT INTO role_has_rights (roleid ,rightid ) VALUES (1,24);
 INSERT INTO role_has_rights (roleid ,rightid ) VALUES (2,1);
 
 --

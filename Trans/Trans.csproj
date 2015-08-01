@@ -759,6 +759,7 @@
     <Content Include="admin\login.aspx" />
     <Content Include="admin\MainFrame.aspx" />
     <Content Include="admin\mainframe.htm" />
+    <Content Include="admin\personalinfo\CoporationAuditInfoRequest.aspx" />
     <Content Include="admin\personalinfo\personalinfomanagement.aspx" />
     <Content Include="admin\personalinfo\updatepwd.aspx" />
     <Content Include="admin\promulagate\newslist.aspx" />
@@ -844,6 +845,13 @@
     </Compile>
     <Compile Include="admin\MainFrame.aspx.designer.cs">
       <DependentUpon>MainFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\personalinfo\CoporationAuditInfoRequest.aspx.cs">
+      <DependentUpon>CoporationAuditInfoRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\personalinfo\CoporationAuditInfoRequest.aspx.designer.cs">
+      <DependentUpon>CoporationAuditInfoRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\promulagate\ArticleDeleteHandler.ashx.cs">
       <DependentUpon>ArticleDeleteHandler.ashx</DependentUpon>

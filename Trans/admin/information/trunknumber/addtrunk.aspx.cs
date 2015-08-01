@@ -54,7 +54,7 @@ namespace Trans.admin.information.trunknumber
         /// <returns></returns>
         private UspInsertTrunkMetadata initTrunkMetaEntity()
         {
-            string trunkImageFileName =  "~/licenseimage/trunk_" + DateTime.Now.ToFileTime();
+            string trunkImageFileName = "~/licenseimage/trunk_" + DateTime.Now.ToFileTime();
             logger.Info("Trunk image file will be saved as :" + trunkImageFileName);
             string licenseImageFileName = "~/licenseimage/license_" + DateTime.Now.ToFileTime();
             logger.Info("License image file will be saved as:" + licenseImageFileName);
@@ -74,22 +74,22 @@ namespace Trans.admin.information.trunknumber
             StringBuilder metadataXmlBuilder = new StringBuilder();
             metadataXmlBuilder.Append("<trunkmetadata>");
 
-            metadataXmlBuilder.Append("<userid>"+base.UserId+"</userid>");
-            metadataXmlBuilder.Append("<numberprefixid>"+this.ddlNumberPrefix.SelectedValue+"</numberprefixid>");
-            metadataXmlBuilder.Append("<trunknumber>"+this.ddlNumberCityPrefix.SelectedItem.Text + " " + this.txtNumber.Text+"</trunknumber>");
-            metadataXmlBuilder.Append("<length>"+this.txtTrunkLength.Text+"</length>");
-            metadataXmlBuilder.Append("<weightcapacity>"+this.txtTrunkCapacity.Text+"</weightcapacity>");
-            metadataXmlBuilder.Append("<volume>"+this.txtTrunkVolume.Text+"</volume>");
-            metadataXmlBuilder.Append("<countycode>"+this.txtPlaceCode.Text+"</countycode>");
-            metadataXmlBuilder.Append("<location>"+this.txtAddress.Text+"</location>");
-            metadataXmlBuilder.Append("<vantypeid>"+this.ddlVanType.SelectedValue+"</vantypeid>");
-            metadataXmlBuilder.Append("<brand>"+this.txtBrand.Text+"</brand>");
-            metadataXmlBuilder.Append("<trunktypeid>"+this.ddlTrunkType.SelectedValue+"</trunktypeid>");
-            metadataXmlBuilder.Append("<contactpersonname>"+this.txtContactPerson.Text+"</contactpersonname>");
-            metadataXmlBuilder.Append("<contactphone>"+this.txtContactPerson.Text+"</contactphone>");
-            metadataXmlBuilder.Append("<trunkidentifynumber>"+this.txtIdentificationCode.Text+"</trunkidentifynumber>");
-            metadataXmlBuilder.Append("<vanimageuri>"+trunkImageFileName+"</vanimageuri>");
-            metadataXmlBuilder.Append("<licenseuri>"+licenseImageFileName+"</licenseuri>");
+            metadataXmlBuilder.Append("<userid>" + base.UserId + "</userid>");
+            metadataXmlBuilder.Append("<numberprefixid>" + this.ddlNumberPrefix.SelectedValue + "</numberprefixid>");
+            metadataXmlBuilder.Append("<trunknumber>" + this.ddlNumberCityPrefix.SelectedItem.Text + " " + this.txtNumber.Text + "</trunknumber>");
+            metadataXmlBuilder.Append("<length>" + this.txtTrunkLength.Text + "</length>");
+            metadataXmlBuilder.Append("<weightcapacity>" + this.txtTrunkCapacity.Text + "</weightcapacity>");
+            metadataXmlBuilder.Append("<volume>" + this.txtTrunkVolume.Text + "</volume>");
+            metadataXmlBuilder.Append("<countycode>" + this.txtPlaceCode.Text + "</countycode>");
+            metadataXmlBuilder.Append("<location>" + this.txtAddress.Text + "</location>");
+            metadataXmlBuilder.Append("<vantypeid>" + this.ddlVanType.SelectedValue + "</vantypeid>");
+            metadataXmlBuilder.Append("<brand>" + this.txtBrand.Text + "</brand>");
+            metadataXmlBuilder.Append("<trunktypeid>" + this.ddlTrunkType.SelectedValue + "</trunktypeid>");
+            metadataXmlBuilder.Append("<contactpersonname>" + this.txtContactPerson.Text + "</contactpersonname>");
+            metadataXmlBuilder.Append("<contactphone>" + this.txtContactPerson.Text + "</contactphone>");
+            metadataXmlBuilder.Append("<trunkidentifynumber>" + this.txtIdentificationCode.Text + "</trunkidentifynumber>");
+            metadataXmlBuilder.Append("<vanimageuri>" + trunkImageFileName + "</vanimageuri>");
+            metadataXmlBuilder.Append("<licenseuri>" + licenseImageFileName + "</licenseuri>");
 
             metadataXmlBuilder.Append("</trunkmetadata>");
             UspInsertTrunkMetadata metaData = new UspInsertTrunkMetadata();
