@@ -564,7 +564,9 @@ dstcounty.citycode AS dstcitycode,
 weightprice,
 volumeprice,
 departuretype.typename AS departuretypename, 
+departuretype.id AS departuretypeid,
 speciallinetype.typename AS speciallinetypename,
+speciallinetype.id AS speciallinetypeid,
 description,
 speciallineinfo.releasedate
 FROM placeinfo

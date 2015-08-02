@@ -24,6 +24,12 @@ namespace Trans.DAL.Entity
 			get { return m_srccontactpersonname; }
 			set { m_srccontactpersonname = value;}
 		}
+		private Int64 m_departuretypeid;
+		public Int64 Departuretypeid
+		{
+			get { return m_departuretypeid; }
+			set { m_departuretypeid = value;}
+		}
 		private String m_description;
 		public String Description
 		{
@@ -113,6 +119,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_departuretypename; }
 			set { m_departuretypename = value;}
+		}
+		private Int64 m_speciallinetypeid;
+		public Int64 Speciallinetypeid
+		{
+			get { return m_speciallinetypeid; }
+			set { m_speciallinetypeid = value;}
 		}
 		private String m_dstplaceaddress;
 		public String Dstplaceaddress

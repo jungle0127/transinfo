@@ -132,6 +132,31 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
+		public IList<Vspeciallineinfo> FindByDeparturetypeid(Int64 departuretypeid) {
+			String stmtId = "Vspeciallineinfo.FindByDeparturetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, departuretypeid);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderFindByDeparturetypeid(Int64 departuretypeid) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindByDeparturetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, departuretypeid);
+			return result;
+        }
+		public IList<Vspeciallineinfo> PaginationFindByDeparturetypeid(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindByDeparturetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindByDeparturetypeid(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindByDeparturetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByDeparturetypeid(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindByDeparturetypeidCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vspeciallineinfo> FindByDescription(String description) {
 			String stmtId = "Vspeciallineinfo.FindByDescription";
 			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, description);
@@ -504,6 +529,31 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByDeparturetypename(Vspeciallineinfo obj){
 			String stmtId = "Vspeciallineinfo.GetFindByDeparturetypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vspeciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid) {
+			String stmtId = "Vspeciallineinfo.FindBySpeciallinetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypeid);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderFindBySpeciallinetypeid(Int64 speciallinetypeid) {
+			String stmtId = "Vspeciallineinfo.DescendOrderFindBySpeciallinetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, speciallinetypeid);
+			return result;
+        }
+		public IList<Vspeciallineinfo> PaginationFindBySpeciallinetypeid(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.FindBySpeciallinetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public IList<Vspeciallineinfo> DescendOrderPaginationFindBySpeciallinetypeid(VspeciallineinfoPagination obj) {
+			String stmtId = "VspeciallineinfoPagination.DescendOrderFindBySpeciallinetypeid";
+			IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
+			return result;
+        }
+		public int FindCountBySpeciallinetypeid(Vspeciallineinfo obj){
+			String stmtId = "Vspeciallineinfo.GetFindBySpeciallinetypeidCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}

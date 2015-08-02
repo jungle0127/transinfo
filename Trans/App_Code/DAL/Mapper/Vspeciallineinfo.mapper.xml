@@ -9,6 +9,7 @@
 			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 			<result property="Speciallinetypename" column="speciallinetypename" dbType="varchar"/>
 			<result property="Srccontactpersonname" column="srccontactpersonname" dbType="varchar"/>
+			<result property="Departuretypeid" column="departuretypeid" dbType="bigint"/>
 			<result property="Description" column="description" dbType="text"/>
 			<result property="Userid" column="userid" dbType="bigint"/>
 			<result property="Srccontactphone" column="srccontactphone" dbType="varchar"/>
@@ -24,6 +25,7 @@
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Dstregionname" column="dstregionname" dbType="varchar"/>
 			<result property="Departuretypename" column="departuretypename" dbType="varchar"/>
+			<result property="Speciallinetypeid" column="speciallinetypeid" dbType="bigint"/>
 			<result property="Dstplaceaddress" column="dstplaceaddress" dbType="varchar"/>
 			<result property="Dstcityname" column="dstcityname" dbType="varchar"/>
 			<result property="Dstcitycode" column="dstcitycode" dbType="varchar"/>
@@ -92,6 +94,21 @@
 		</select>
 		<select id="Vspeciallineinfo.GetFindBySrccontactpersonnameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.srccontactpersonname=#Srccontactpersonname#
+		</select>
+		<select id="Vspeciallineinfo.FindByDeparturetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypeid = #value#
+		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindByDeparturetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypeid = #value# ORDER BY id DESC
+		</select>
+		<select id="VspeciallineinfoPagination.FindByDeparturetypeid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypeid = #Departuretypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindByDeparturetypeid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.departuretypeid = #Departuretypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindByDeparturetypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.departuretypeid=#Departuretypeid#
 		</select>
 		<select id="Vspeciallineinfo.FindByDescription" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.description = #value#
@@ -317,6 +334,21 @@
 		</select>
 		<select id="Vspeciallineinfo.GetFindByDeparturetypenameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.departuretypename=#Departuretypename#
+		</select>
+		<select id="Vspeciallineinfo.FindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypeid = #value#
+		</select>
+		<select id="Vspeciallineinfo.DescendOrderFindBySpeciallinetypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypeid = #value# ORDER BY id DESC
+		</select>
+		<select id="VspeciallineinfoPagination.FindBySpeciallinetypeid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypeid = #Speciallinetypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VspeciallineinfoPagination.DescendOrderFindBySpeciallinetypeid" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
+			WHERE v_speciallineinfo.speciallinetypeid = #Speciallinetypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vspeciallineinfo.GetFindBySpeciallinetypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_speciallineinfo WHERE v_speciallineinfo.speciallinetypeid=#Speciallinetypeid#
 		</select>
 		<select id="Vspeciallineinfo.FindByDstplaceaddress" parameterClass="String" resultMap="FullResultMap" extends="Vspeciallineinfo.FindAll">
 			WHERE v_speciallineinfo.dstplaceaddress = #value#

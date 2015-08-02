@@ -49,6 +49,16 @@ namespace Trans.DAL.Dao
 
 		int FindCountBySrccontactpersonname(Vspeciallineinfo obj);
 
+		IList<Vspeciallineinfo> FindByDeparturetypeid(Int64 departuretypeid);
+
+		IList<Vspeciallineinfo> DescendOrderFindByDeparturetypeid(Int64 departuretypeid);
+
+		IList<Vspeciallineinfo> PaginationFindByDeparturetypeid(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> DescendOrderPaginationFindByDeparturetypeid(VspeciallineinfoPagination obj);
+
+		int FindCountByDeparturetypeid(Vspeciallineinfo obj);
+
 		IList<Vspeciallineinfo> FindByDescription(String description);
 
 		IList<Vspeciallineinfo> DescendOrderFindByDescription(String description);
@@ -198,6 +208,16 @@ namespace Trans.DAL.Dao
 		IList<Vspeciallineinfo> DescendOrderPaginationFindByDeparturetypename(VspeciallineinfoPagination obj);
 
 		int FindCountByDeparturetypename(Vspeciallineinfo obj);
+
+		IList<Vspeciallineinfo> FindBySpeciallinetypeid(Int64 speciallinetypeid);
+
+		IList<Vspeciallineinfo> DescendOrderFindBySpeciallinetypeid(Int64 speciallinetypeid);
+
+		IList<Vspeciallineinfo> PaginationFindBySpeciallinetypeid(VspeciallineinfoPagination obj);
+
+		IList<Vspeciallineinfo> DescendOrderPaginationFindBySpeciallinetypeid(VspeciallineinfoPagination obj);
+
+		int FindCountBySpeciallinetypeid(Vspeciallineinfo obj);
 
 		IList<Vspeciallineinfo> FindByDstplaceaddress(String dstplaceaddress);
 
