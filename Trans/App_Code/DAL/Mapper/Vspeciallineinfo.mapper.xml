@@ -35,6 +35,16 @@
 		</resultMap>
 	</resultMaps>
 	<statements>
+		<select id="Vspeciallineinfo.DynamicQueryPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
+			SELECT * FROM v_speciallineinfo
+			<dynamic prepend="WHERE">
+				<isNotNull prepend="AND" property="Speciallinetypeid">
+					speciallinetypeid = #Speciallinetypeid#
+				</isNotNull>
+
+			</dynamic>
+			ORDER BY id DESC
+		</select>
 		<select id="Vspeciallineinfo.GetCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_speciallineinfo 
 		</select>

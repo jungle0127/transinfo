@@ -111,6 +111,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Content Include="admin\evaluation\EvaluateInformation.aspx" />
     <Content Include="admin\fckeditor\editor\css\behaviors\disablehandles.htc" />
     <Content Include="admin\fckeditor\editor\css\behaviors\showtableborders.htc" />
@@ -1053,7 +1060,9 @@
     <Content Include="App_Code\DAL\Mapper\Vrightsfullinfo.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="App_Code\DAL\Mapper\Vspeciallineinfo.mapper.xml" />
+    <Content Include="App_Code\DAL\Mapper\Vspeciallineinfo.mapper.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Code\DAL\Mapper\Vtrunkinformation.mapper.xml" />
     <Content Include="App_Code\DAL\Mapper\Vtrunkmetadata.mapper.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1638,6 +1647,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\information\depositorypublisher.aspx.cs">

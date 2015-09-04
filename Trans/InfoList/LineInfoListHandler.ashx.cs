@@ -37,7 +37,7 @@ namespace Trans.InfoList
             {// POST
                 StreamReader streamReader = new StreamReader(context.Request.InputStream);
                 string typeId = streamReader.ReadToEnd();
-                logger.Info("Got news type parameter:" + typeId);
+                logger.Info("Got special line type parameter:" + typeId);
                 Vspeciallineinfo poco = new Vspeciallineinfo();
 
                 int count = this.vLineInfoDao.FindAll().Count;
@@ -51,26 +51,26 @@ namespace Trans.InfoList
                 logger.Info("Got page number:" + pageNumber);
                 string pageSize = context.Request.QueryString["pageSize"].ToString();
                 logger.Info("Got page size:" + pageSize);
-                string typeName = context.Request.QueryString["typeName"].ToString();
-                logger.Info("Got type Name:" + pageSize);
-                string tableHtml = this.generateLineInfoHtml(pageNumber, pageSize, typeName);
+                string typeId = context.Request.QueryString["typeId"].ToString();
+                logger.Info("Got type Name:" + typeId);
+                string tableHtml = this.generateLineInfoHtml(pageNumber, pageSize, typeId);
                 context.Response.ContentType = "text/plain";
                 context.Response.Write(tableHtml);
             }
         }
 
 
-        public string generateLineInfoHtml(string pageNumber, string pageSize, string typeName)
+        public string generateLineInfoHtml(string pageNumber, string pageSize, string typeId)
         {
             VspeciallineinfoPagination pageNationPoco = new VspeciallineinfoPagination();
             pageNationPoco.Limit = int.Parse(pageSize);
 
             pageNationPoco.Offset = (int.Parse(pageNumber) - 1) * pageNationPoco.Limit;
             logger.Info("Got offset:" + pageNationPoco.Offset.ToString());
-            pageNationPoco.Speciallinetypename = typeName;
+            pageNationPoco.Speciallinetypename = typeId;
             IList<Vspeciallineinfo> lineInfoList = this.vLineInfoDao.DescendOrderPaginationFindAll(pageNationPoco);
             logger.Info("Got items:" + lineInfoList.Count.ToString());
-            string tableHtml = this.getTableHtml(this.getTableBodyHtml(lineInfoList), typeName);
+            string tableHtml = this.getTableHtml(this.getTableBodyHtml(lineInfoList), typeId);
             logger.Info("table html:" + tableHtml);
             return tableHtml;
         }

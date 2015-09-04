@@ -9,6 +9,8 @@ namespace Trans.DAL.Dao
     {
 		int GetCount();
 
+        IList<Vspeciallineinfo> DynamicQuery(VspeciallineinfoPagination obj);
+
 		IList<Vspeciallineinfo> FindAll();
 
 		IList<Vspeciallineinfo> DescendOrderFindAll();

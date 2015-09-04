@@ -31,7 +31,7 @@
         });
 	</script>
     <script type="text/javascript">
-        function line_page_change() {
+        function line_page_change(typeName) {
             $.post("LineInfoListHandler.ashx", "1", function (item_count) {
                 $('#pagination_manager').pagination({
                     total: item_count,
@@ -54,7 +54,7 @@
 
 
 </head>
-<body onload="line_page_change()">
+<body onload="line_page_change('1')">
     <form id="form1" runat="server">
       <div class="searchFrame">
       <div class="totalInfo">
