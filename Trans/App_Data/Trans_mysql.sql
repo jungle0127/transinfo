@@ -19,6 +19,7 @@ CREATE TABLE `province`(
 -- Create index for province code.
 --
 CREATE INDEX IX_Province_code ON province(code);
+CREATE INDEX IX_Province_name ON province(name);
 
 --
 -- Init table province.
@@ -76,6 +77,7 @@ CREATE TABLE `city`(
 -- Create index for city
 --
 CREATE INDEX IX_City_code ON city(code);
+CREATE INDEX IX_City_name ON city(name);
 CREATE INDEX IX_City_provincecode ON city(provincecode);
 
 INSERT INTO city (code, name, provincecode) VALUES
@@ -440,7 +442,8 @@ CREATE TABLE `county`(
 --
 -- CREATE index for county;
 --
-CREATE INDEX IX_County_code ON county(code);
+CREATE INDEX IX_county_code ON county(code);
+CREATE INDEX IX_county_name ON county(name);
 CREATE INDEX IX_County_citycode ON county(citycode);
 
 INSERT INTO county (code, name, citycode) VALUES 

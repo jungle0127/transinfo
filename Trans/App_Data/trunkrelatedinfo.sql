@@ -267,6 +267,7 @@ CREATE INDEX IX_trunkinfo_src ON trunkinformation (srccountycode);
 CREATE INDEX IX_trunkinfo_dst ON trunkinformation (dstcountycode);
 CREATE INDEX IX_trunkinfo_timetype ON trunkinformation (timetypeid);
 CREATE INDEX IX_trunkinfo_returntype ON trunkinformation (returntypeid);
+CREATE INDEX IX_trunkinfo_trunkid ON trunkinformation(trunkid);
 
 GO
 
