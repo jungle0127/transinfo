@@ -94,7 +94,7 @@ namespace Trans.admin.rightmanager
             rightBuilder.Append("</rights>");
             return rightBuilder.ToString();
         }
-        private void updateRights(IList<long?> rightIdList, bool isChecked, bool isEnable)
+        private void updateRights(IList<long> rightIdList, bool isChecked, bool isEnable)
         {
             foreach (long rightId in rightIdList)
             {
@@ -160,14 +160,14 @@ namespace Trans.admin.rightmanager
                 return;
             }
             logger.Info("Selected user with ID:" + this.ddlUser.SelectedValue);
-            IList<Int64?> allRightIdList = this.rightManager.getAllRightIdList();
+            IList<Int64> allRightIdList = this.rightManager.getAllRightIdList();
             this.updateRights(allRightIdList, false, true);
             Users userPoco = this.usersDao.Find(long.Parse(this.ddlUser.SelectedValue));
             logger.Info("The role ID of the user:" + userPoco.Roleid.ToString());
-            IList<long?> roleRightIdList = this.rightManager.getRightIdListByRoleId(userPoco.Roleid);
+            IList<long> roleRightIdList = this.rightManager.getRightIdListByRoleId(userPoco.Roleid);
             logger.Info("Rights item count of user's role:" + roleRightIdList.Count.ToString());
             this.updateRights(roleRightIdList, true, false);
-            IList<long?> userRightIdList = this.rightManager.getRightIdListByUserId(userPoco.Id);
+            IList<long> userRightIdList = this.rightManager.getRightIdListByUserId(userPoco.Id);
             logger.Info("Rights item count of user:" + userRightIdList.Count.ToString());
             this.updateRights(userRightIdList, true, true);
         }

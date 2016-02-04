@@ -15,7 +15,7 @@ namespace Trans
         {
             IVspeciallineinfoDao lineDao = new VspeciallineinfoDao();
             VspeciallineinfoPagination linePoco = new VspeciallineinfoPagination();
-            linePoco.Speciallinetypeid = null;
+            linePoco.Speciallinetypeid = 2;
             IList<Vspeciallineinfo> pocoList = lineDao.DynamicQuery(linePoco);
             foreach (Vspeciallineinfo poco in pocoList)
             {

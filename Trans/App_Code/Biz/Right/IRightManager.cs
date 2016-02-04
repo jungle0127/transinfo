@@ -12,9 +12,9 @@ namespace Trans.Biz.Right
         LinkedList<RightsInfo> getRightsByUserId(int userId);
         IList<RightsInfo> getRightsFullInfo();
         Hashtable getRightGroupMap();
-        IList<Int64?> getRightIdList(int userId);
-        IList<Int64?> getRightIdListByUserId(long? userId);
-        IList<Int64?> getRightIdListByRoleId(long? roleId);
-        IList<Int64?> getAllRightIdList();
+        IList<Int64> getRightIdList(int userId);
+        IList<Int64> getRightIdListByUserId(long userId);
+        IList<Int64> getRightIdListByRoleId(long roleId);
+        IList<Int64> getAllRightIdList();
     }
 }

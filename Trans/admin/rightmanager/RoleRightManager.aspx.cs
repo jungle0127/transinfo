@@ -116,7 +116,7 @@ namespace Trans.admin.rightmanager
         /// <param name="rightIdList">right id list</param>
         /// <param name="isChecked">if it's true, the right of rightID list will be set to checked.</param>
         /// <param name="isEnable">if it's true, the right of the rightID list will set enabled.</param>
-        private void updateRights(IList<long?> rightIdList, bool isChecked, bool isEnable)
+        private void updateRights(IList<long> rightIdList, bool isChecked, bool isEnable)
         {
             foreach (long rightId in rightIdList)
             {
@@ -166,10 +166,10 @@ namespace Trans.admin.rightmanager
                 logger.Info("The first item is not a role, ignore it.");
                 return;
             }
-            IList<long?> allRightIdList = this.rightManager.getAllRightIdList();
+            IList<long> allRightIdList = this.rightManager.getAllRightIdList();
             this.updateRights(allRightIdList, false, true);
             logger.Info("Clear all the checkboxes.");
-            IList<long?> rightIdList = this.rightManager.getRightIdListByRoleId(long.Parse(this.ddlRole.SelectedValue));
+            IList<long> rightIdList = this.rightManager.getRightIdListByRoleId(long.Parse(this.ddlRole.SelectedValue));
             this.updateRights(rightIdList, true, true);
             logger.Info("Rights updated done.");
         }

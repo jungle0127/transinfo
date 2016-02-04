@@ -38,9 +38,9 @@
 		<select id="Vspeciallineinfo.DynamicQueryPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_speciallineinfo
 			<dynamic prepend="WHERE">
-				<isNotNull prepend="AND" property="Speciallinetypeid">
+				<isNotEqual prepend="AND" property="Speciallinetypeid" compareValue="-1">
 					speciallinetypeid = #Speciallinetypeid#
-				</isNotNull>
+				</isNotEqual>
 
 			</dynamic>
 			ORDER BY id DESC
