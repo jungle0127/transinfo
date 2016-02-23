@@ -8,6 +8,9 @@ using System.IO;
 using Trans.DAL.Entity;
 using Trans.Biz.Common;
 using System.Text;
+using System.Collections;
+using Newtonsoft.Json;
+using Trans.Biz.ListshowPojo;
 
 
 
@@ -19,7 +22,7 @@ namespace Trans.InfoList
     /// </summary>
     public class DepotListHandler : IHttpHandler
     {
-        private static ILog logger = LogManager.GetLogger(typeof(ArticleListHandler));
+        private static ILog logger = LogManager.GetLogger(typeof(DepotListHandler));
         private IVdepotinformationDao vDepotInfoDao;
 
         public DepotListHandler()
@@ -27,22 +30,43 @@ namespace Trans.InfoList
             this.vDepotInfoDao = new VdepotinformationDao();
         }
 
-
-
-
         public void ProcessRequest(HttpContext context)
         {
             if (context.Request.RequestType == "POST")
             {// POST
                 StreamReader streamReader = new StreamReader(context.Request.InputStream);
-                string typeId = streamReader.ReadToEnd();
-                logger.Info("Got news type parameter:" + typeId);
-                Vtrunkinformation poco = new Vtrunkinformation();
-
-                int count = this.vDepotInfoDao.FindAll().Count;
-                logger.Info("got item count:" + count.ToString());
+                string parameters = streamReader.ReadToEnd();
+                logger.Info("Got post parameters:" + parameters);
+                VdepotinformationPagination poco = new VdepotinformationPagination();
+                Hashtable data = (Hashtable)JsonConvert.DeserializeObject<Hashtable>(parameters);
+                if (data == null || data.Count < 1)
+                {
+                    data = new Hashtable();
+                    int count = this.vDepotInfoDao.GetCount();
+                    data.Add("item_count", count.ToString());
+                    logger.Info("got item count:" + count.ToString());
+                    data.Add("params", "0-0-0-0");
+                }
+                else 
+                {
+                    string bitMap = this.hashtable2BitMap(data);
+                    poco.Citycode = data["cityId"] == null ? null : data["cityId"].ToString();
+                    poco.Depottypeid = data["typeId"] == null ? 0 : long.Parse(data["typeId"].ToString());
+                    poco.Scopeid = data["scopeId"] == null ? 0 : long.Parse(data["scopeId"].ToString());
+                    string area = data["area"] == null ? "0" : data["area"].ToString();
+                    Hashtable areaMap = this.areaMap(area);
+                    poco.AreaLow = int.Parse(areaMap["low"].ToString());
+                    poco.AreaHigh = int.Parse(areaMap["high"].ToString());
+                    poco.Area = int.Parse(area);
+                    int count = this.vDepotInfoDao.DynamicCount(poco);
+                    logger.Info("Got items count:" + count.ToString());
+                    data = new Hashtable();
+                    data.Add("item_count", count.ToString());
+                    data.Add("params", bitMap);
+                    logger.Info("Post back bitMap:" + bitMap);
+                }
                 context.Response.ContentType = "text/plain";
-                context.Response.Write(count);
+                context.Response.Write(JsonConvert.SerializeObject(data));
             }
             else
             {// GET
@@ -50,21 +74,31 @@ namespace Trans.InfoList
                 logger.Info("Got page number:" + pageNumber);
                 string pageSize = context.Request.QueryString["pageSize"].ToString();
                 logger.Info("Got page size:" + pageSize);
-                string tableHtml = this.generateDepotInfoHtml(pageNumber, pageSize);
+                string bitParams = context.Request.QueryString["bitparams"].ToString();//null
+                logger.Info("Got bitmap params:" + bitParams);
+                string tableHtml = this.generateDepotInfoHtml(pageNumber, pageSize,bitParams);
                 context.Response.ContentType = "text/plain";
                 context.Response.Write(tableHtml);
             }
         }
 
-        public string generateDepotInfoHtml(string pageNumber, string pageSize)
+        public string generateDepotInfoHtml(string pageNumber, string pageSize,string bitParams)
         {
+            pageNumber = int.Parse(pageNumber) < 0 ? "0" : pageNumber;
             VdepotinformationPagination pageNationPoco = new VdepotinformationPagination();
             pageNationPoco.Limit = int.Parse(pageSize);
 
             pageNationPoco.Offset = (int.Parse(pageNumber) - 1) * pageNationPoco.Limit;
             logger.Info("Got offset:" + pageNationPoco.Offset.ToString());
-            //pageNationPoco = long.Parse(typeId);
-            IList<Vdepotinformation> trunksInfoList = this.vDepotInfoDao.DescendOrderPaginationFindAll(pageNationPoco);
+            DepotParamPojo pojo = this.paramBitMapParser(bitParams);
+            pageNationPoco.Area = int.Parse(pojo.Area);
+            Hashtable areaMap = this.areaMap(pojo.Area);
+            pageNationPoco.AreaLow = int.Parse(areaMap["low"].ToString());
+            pageNationPoco.AreaHigh = int.Parse(areaMap["high"].ToString());
+            pageNationPoco.Citycode = pojo.CityId;
+            pageNationPoco.Depottypeid = long.Parse(pojo.TypeId);
+            pageNationPoco.Scopeid = long.Parse(pojo.ScopeId);
+            IList<Vdepotinformation> trunksInfoList = this.vDepotInfoDao.DynamicQuery(pageNationPoco);
             logger.Info("Got items:" + trunksInfoList.Count.ToString());
             string tableHtml = this.getTableHtml(this.getTableBodyHtml(trunksInfoList));
             logger.Info("table html:" + tableHtml);
@@ -117,14 +151,91 @@ namespace Trans.InfoList
             }
             return bodyBuilder.ToString();
         }
+        private Hashtable areaMap(string src)
+        {
+            Hashtable map = new Hashtable();
+            if (src == null || src == "0" || src == "")
+            {
+                map.Add("low", "0");
+                map.Add("high", "0");
+                return map;
+            }
+            if (src == "1")
+            {
+                map.Add("low", "0");
+                map.Add("high", "10");
+            }
+            if (src == "2")
+            {
+                map.Add("low", "10");
+                map.Add("high", "50");
+            }
+            if (src == "3")
+            {
+                map.Add("low", "50");
+                map.Add("high", "90");
+            }
+            if (src == "4")
+            {
+                map.Add("low", "90");
+                map.Add("high", "150");
+            }
+            if (src == "5")
+            {
+                map.Add("low", "150");
+                map.Add("high", "250");
+            }
+            if (src == "6")
+            {
+                map.Add("low", "250");
+                map.Add("high", "350");
+            }
+            if (src == "7")
+            {
+                map.Add("low", "350");
+                map.Add("high", "550");
+            }
+            if (src == "8")
+            {
+                map.Add("low", "550");
+                map.Add("high", "2147483647");
+            }
+            return map;
+        }
+        private string hashtable2BitMap(Hashtable ht)
+        {
+            if (ht.Count < 1)
+            {
+                return "0-0-0-0";
+            }
 
-
-
-
-
-
-
-
+            StringBuilder bitMapBuilder = new StringBuilder();
+            bitMapBuilder.Append(ht["cityId"] == null ? "0" : ht["cityId"].ToString());
+            bitMapBuilder.Append("-");
+            bitMapBuilder.Append(ht["scopeId"] == null ? "0" : ht["scopeId"].ToString());
+            bitMapBuilder.Append("-");
+            bitMapBuilder.Append(ht["typeId"] == null ? "0" : ht["typeId"].ToString());
+            bitMapBuilder.Append("-");
+            bitMapBuilder.Append(ht["area"] == null ? "0" : ht["area"].ToString());
+            return bitMapBuilder.ToString();
+        }
+        /// <summary>
+        /// parameters format: cityId-scopeId-typeId-area
+        /// </summary>
+        /// <param name="bitMap"></param>
+        /// <returns></returns>
+        private DepotParamPojo paramBitMapParser(string bitMap)
+        {
+            DepotParamPojo paramPojo = new DepotParamPojo();
+            string[] paramArray = bitMap.Split('-');
+            if (paramArray.Length != 4)
+                return null;
+            paramPojo.CityId = paramArray[0] == "0" ? null : paramArray[0];
+            paramPojo.ScopeId = paramArray[1];
+            paramPojo.TypeId = paramArray[2];
+            paramPojo.Area = paramArray[3];
+            return paramPojo;
+        }
         public bool IsReusable
         {
             get

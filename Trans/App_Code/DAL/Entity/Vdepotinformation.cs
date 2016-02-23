@@ -6,11 +6,11 @@ namespace Trans.DAL.Entity
 	[Serializable]
 	public class Vdepotinformation
 	{
-		private String m_cellphone;
-		public String Cellphone
+		private Int64 m_scopeid;
+		public Int64 Scopeid
 		{
-			get { return m_cellphone; }
-			set { m_cellphone = value;}
+			get { return m_scopeid; }
+			set { m_scopeid = value;}
 		}
 		private String m_description;
 		public String Description
@@ -35,6 +35,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_useablearea; }
 			set { m_useablearea = value;}
+		}
+		private Int64 m_depottypeid;
+		public Int64 Depottypeid
+		{
+			get { return m_depottypeid; }
+			set { m_depottypeid = value;}
 		}
 		private String m_scopename;
 		public String Scopename
@@ -77,6 +83,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_depottypename; }
 			set { m_depottypename = value;}
+		}
+		private String m_cellphone;
+		public String Cellphone
+		{
+			get { return m_cellphone; }
+			set { m_cellphone = value;}
 		}
 		private String m_address;
 		public String Address

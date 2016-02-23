@@ -77,7 +77,7 @@
                             <asp:DropDownList ID="ddlCounty" runat="server" AutoPostBack="true" 
                                 onselectedindexchanged="ddlCounty_SelectedIndexChanged">
                             </asp:DropDownList>
-                            <asp:TextBox ID="txtSrcPlaceCode" runat="server" ReadOnly="true"></asp:TextBox>
+                            <asp:TextBox ID="txtSrcPlaceCode" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
                         </ContentTemplate>
                </asp:UpdatePanel>
             </li>

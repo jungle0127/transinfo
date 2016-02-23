@@ -8,6 +8,7 @@
     <title>货源信息列表</title>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/main_style.css" />
+    
 </head>
 <body>
     <form id="form1" runat="server">

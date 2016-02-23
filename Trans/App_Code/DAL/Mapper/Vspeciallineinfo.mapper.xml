@@ -38,13 +38,38 @@
 		<select id="Vspeciallineinfo.DynamicQueryPagination" parameterClass="VspeciallineinfoPagination" resultMap="FullResultMap">
 			SELECT * FROM v_speciallineinfo
 			<dynamic prepend="WHERE">
-				<isNotEqual prepend="AND" property="Speciallinetypeid" compareValue="-1">
-					speciallinetypeid = #Speciallinetypeid#
-				</isNotEqual>
-
+        <isNotEqual prepend="AND" property="Speciallinetypeid" compareValue="0">
+          speciallinetypeid = #Speciallinetypeid#
+        </isNotEqual>
+        <isNotNull prepend="AND" property="Srccitycode">
+          srccitycode=#Srccitycode#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Dstcitycode">
+          dstcitycode=#Dstcitycode#
+        </isNotNull>
+        <isNotEqual prepend="AND" property="Departuretypeid" compareValue="0">
+          departuretypeid=#Departuretypeid#
+        </isNotEqual>
 			</dynamic>
-			ORDER BY id DESC
-		</select>
+      ORDER BY id DESC limit #Limit# offset #Offset#
+    </select>
+    <select id="Vspeciallineinfo.DynamicCount" parameterClass="VspeciallineinfoPagination" resultClass="System.Int32">
+      SELECT count(*) FROM v_speciallineinfo
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="AND" property="Speciallinetypeid" compareValue="0">
+          speciallinetypeid = #Speciallinetypeid#
+        </isNotEqual>
+        <isNotNull prepend="AND" property="Srccitycode">
+          srccitycode=#Srccitycode#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Dstcitycode">
+          dstcitycode=#Dstcitycode#
+        </isNotNull>
+        <isNotEqual prepend="AND" property="Departuretypeid" compareValue="0">
+          departuretypeid=#Departuretypeid#
+        </isNotEqual>
+      </dynamic>
+    </select>
 		<select id="Vspeciallineinfo.GetCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_speciallineinfo 
 		</select>

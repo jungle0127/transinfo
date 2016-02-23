@@ -16,7 +16,6 @@ CREATE TABLE `bussinessscope`(
 	PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 
-INSERT INTO bussinessscope(scopename) VALUES('不限');
 INSERT INTO bussinessscope(scopename) VALUES('自有仓库');
 INSERT INTO bussinessscope(scopename) VALUES('租用仓库');
 
@@ -31,7 +30,7 @@ CREATE TABLE `depottype`(
 	PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 
-INSERT INTO depottype(typename) VALUES('不限');
+
 INSERT INTO depottype(typename) VALUES('普通');
 INSERT INTO depottype(typename) VALUES('综合');
 INSERT INTO depottype(typename) VALUES('保税');
@@ -95,7 +94,9 @@ depotinformation.id,
  V_provincecitycounty.citycode,
  depotinformation.address,
  depottype.typename AS depottypename,
+ depottype.id AS depottypeid,
  bussinessscope.scopename,
+ bussinessscope.id AS scopeid,
  depotinformation.area,
  depotinformation.useablearea,
  depotinformation.price,

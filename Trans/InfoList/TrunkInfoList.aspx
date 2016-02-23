@@ -12,7 +12,7 @@
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script  type="text/javascript" language="javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" language="javascript" src="../js/js.js"></script>	
 	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -20,9 +20,8 @@
     <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css" />
 	<link rel="stylesheet" type="text/css" href="../themes/icon.css" />
 	<link rel="Stylesheet" type="text/css" href="../css/demo.css" />
-    
-	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             backToTop();
@@ -35,8 +34,8 @@
                     total: item_count,
                     pageSize: 10,
                     layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
-                    beforePageText: 'Page',
-                    afterPageText: 'of {pages}',
+                    beforePageText: '第',
+                    afterPageText: '页，共 {pages}页',
                     pageList: [10, 20, 50, 100],
                     onSelectPage: function (pageNumber, pageSize) {
                         $('#trunks_content').panel('refresh', 'TrunkInfoListHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize);
@@ -60,14 +59,6 @@
       <div class="totalInfo">
       在线车源：<span id="totalLorry" class="red spanTotalLorry">333333</span>
       实时货源：<span id="totalGoods" class="red spanTotalGoods">888888</span>
-      </div>
-      <div class="dainput">
-          <label class="left">
-          <%--<input id="keyword" placeholder="请输入关键字查询" class="inputSearchKey" type="text">--%>
-          <asp:TextBox ID="keyword" placeholder="请输入关键字查询" class="inputSearchKey"  runat="server"></asp:TextBox>
-          </label>
-          <%--<input id="searchBtn" class="anniu  inputSeachBtn" value="搜搜看" type="button">--%>
-          <asp:Button ID="Button1" class="anniu  inputSeachBtn" Text="搜搜看" runat="server"  />
       </div>
   </div>
   

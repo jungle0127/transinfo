@@ -11,6 +11,7 @@
     <link rel="Stylesheet" type="text/css" href="../../css/style.css" />
 	<script type="text/javascript" src="../../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         function delete_item(id){
             $.get("DepositoryHandler.ashx?id=" + String(id),function(msg){alert(msg);},"text");
@@ -26,8 +27,8 @@
                     total: item_count,
                     pageSize: 10,
                     layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep', 'refresh'],
-                    beforePageText: 'Page',
-                    afterPageText: 'of{pages}',
+                    beforePageText: '第',
+                    afterPageText: '页，共 {pages}页',
                     pageList: [10, 20, 50, 100],
                     onSelectPage: function (pageNumber, pageSize) {
                         $('#content').panel('refresh', 'DepositoryHandler.ashx?pageNumber=' + pageNumber + '&pageSize=' + pageSize + "&userid=" + user_id);

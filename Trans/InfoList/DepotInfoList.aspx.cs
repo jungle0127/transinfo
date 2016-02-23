@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 using Trans.DAL.Entity;
 using Trans.DAL.Dao;
 using System.Text;
-using Trans.DAL.Dao;
-using Trans.DAL.Entity;
-using System.Text;
 using log4net;
 using Trans.InfoList;
+using Trans.Biz.Common;
+using System.Collections;
 
 
 namespace Trans.InfoList
@@ -20,24 +19,85 @@ namespace Trans.InfoList
     {
         private static ILog logger = LogManager.GetLogger(typeof(TrunkInfoList));
         private DepotListHandler DepotListHandler;
-        private string depotFirstPageHtml;
-
-        public string DepotFirstPageHtml
-        {
-            get { return depotFirstPageHtml; }
-            set { depotFirstPageHtml = value; }
-        }
+        private CityManager cityManager;
 
         public DepotInfoList()
         {
             this.DepotListHandler = new DepotListHandler();
-            this.depotFirstPageHtml = this.DepotListHandler.generateDepotInfoHtml("1", "10");
+            this.cityManager = new CityManager();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                this.initProvince();
+            }
 
         }
+        #region 行政区初始化
+        /// <summary>
+        /// 省份
+        /// </summary>
+        private void initProvince()
+        {
+            this.ddlProvince.Items.Clear();
+            this.ddlCity.Items.Clear();
+            this.ddlCounty.Items.Clear();
+            this.ddlProvince.Items.Add(new ListItem("请选择...", "-1"));
+            this.ddlCity.Items.Add(new ListItem("请选择...", "-1"));
+            this.ddlCounty.Items.Add(new ListItem("请选择...", "-1"));
+            Hashtable provinceMap = this.cityManager.getAllProvince();
+            foreach (DictionaryEntry de in provinceMap)
+            {
+                this.ddlProvince.Items.Add(new ListItem(de.Value.ToString(), de.Key.ToString()));
+            }
+        }
+
+        protected void ddlCounty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.txtSrcPlaceCode.Text = this.ddlCounty.SelectedValue;
+        }
+
+        protected void ddlProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ddlCity.Items.Clear();
+            this.ddlCounty.Items.Clear();
+            this.ddlCity.Items.Add(new ListItem("请选择...", "-1"));
+            this.ddlCounty.Items.Add(new ListItem("请选择...", "-1"));
+            this.txtSrcPlaceCode.Text = this.ddlProvince.SelectedValue;
+            this.initCity(this.ddlCity, this.ddlProvince.SelectedValue);
+
+        }
+
+        protected void ddlCity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ddlCounty.Items.Clear();
+            this.ddlCounty.Items.Add(new ListItem("请选择...", "-1"));
+            this.txtSrcPlaceCode.Text = this.ddlCity.SelectedValue;
+            this.initCounty(this.ddlCounty, this.ddlCity.SelectedValue);
+
+        }
+
+
+        private void initCity(DropDownList ddl, string provinceCode)
+        {
+            Hashtable cityMap = this.cityManager.getCityByProvinceCode(provinceCode);
+            foreach (DictionaryEntry de in cityMap)
+            {
+                ddl.Items.Add(new ListItem(de.Value.ToString(), de.Key.ToString()));
+            }
+        }
+        private void initCounty(DropDownList ddl, string cityCode)
+        {
+            Hashtable countyMap = this.cityManager.getCountyByCityCode(cityCode);
+            foreach (DictionaryEntry de in countyMap)
+            {
+                ddl.Items.Add(new ListItem(de.Value.ToString(), de.Key.ToString()));
+            }
+        }
+
+        #endregion
+   
     }
 }

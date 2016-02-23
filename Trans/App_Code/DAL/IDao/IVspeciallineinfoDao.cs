@@ -11,6 +11,8 @@ namespace Trans.DAL.Dao
 
         IList<Vspeciallineinfo> DynamicQuery(VspeciallineinfoPagination obj);
 
+        int DynamicCount(VspeciallineinfoPagination obj);
+
 		IList<Vspeciallineinfo> FindAll();
 
 		IList<Vspeciallineinfo> DescendOrderFindAll();

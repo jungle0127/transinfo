@@ -9,6 +9,10 @@ namespace Trans.DAL.Dao
     {
 		int GetCount();
 
+        IList<Vdepotinformation> DynamicQuery(VdepotinformationPagination obj);
+
+        int DynamicCount(VdepotinformationPagination obj);
+
 		IList<Vdepotinformation> FindAll();
 
 		IList<Vdepotinformation> DescendOrderFindAll();
@@ -19,15 +23,15 @@ namespace Trans.DAL.Dao
 
 		IList<Vdepotinformation> QuickFindAll();
 
-		IList<Vdepotinformation> FindByCellphone(String cellphone);
+		IList<Vdepotinformation> FindByScopeid(Int64 scopeid);
 
-		IList<Vdepotinformation> DescendOrderFindByCellphone(String cellphone);
+		IList<Vdepotinformation> DescendOrderFindByScopeid(Int64 scopeid);
 
-		IList<Vdepotinformation> PaginationFindByCellphone(VdepotinformationPagination obj);
+		IList<Vdepotinformation> PaginationFindByScopeid(VdepotinformationPagination obj);
 
-		IList<Vdepotinformation> DescendOrderPaginationFindByCellphone(VdepotinformationPagination obj);
+		IList<Vdepotinformation> DescendOrderPaginationFindByScopeid(VdepotinformationPagination obj);
 
-		int FindCountByCellphone(Vdepotinformation obj);
+		int FindCountByScopeid(Vdepotinformation obj);
 
 		IList<Vdepotinformation> FindByDescription(String description);
 
@@ -68,6 +72,16 @@ namespace Trans.DAL.Dao
 		IList<Vdepotinformation> DescendOrderPaginationFindByUseablearea(VdepotinformationPagination obj);
 
 		int FindCountByUseablearea(Vdepotinformation obj);
+
+		IList<Vdepotinformation> FindByDepottypeid(Int64 depottypeid);
+
+		IList<Vdepotinformation> DescendOrderFindByDepottypeid(Int64 depottypeid);
+
+		IList<Vdepotinformation> PaginationFindByDepottypeid(VdepotinformationPagination obj);
+
+		IList<Vdepotinformation> DescendOrderPaginationFindByDepottypeid(VdepotinformationPagination obj);
+
+		int FindCountByDepottypeid(Vdepotinformation obj);
 
 		IList<Vdepotinformation> FindByScopename(String scopename);
 
@@ -138,6 +152,16 @@ namespace Trans.DAL.Dao
 		IList<Vdepotinformation> DescendOrderPaginationFindByDepottypename(VdepotinformationPagination obj);
 
 		int FindCountByDepottypename(Vdepotinformation obj);
+
+		IList<Vdepotinformation> FindByCellphone(String cellphone);
+
+		IList<Vdepotinformation> DescendOrderFindByCellphone(String cellphone);
+
+		IList<Vdepotinformation> PaginationFindByCellphone(VdepotinformationPagination obj);
+
+		IList<Vdepotinformation> DescendOrderPaginationFindByCellphone(VdepotinformationPagination obj);
+
+		int FindCountByCellphone(Vdepotinformation obj);
 
 		IList<Vdepotinformation> FindByAddress(String address);
 

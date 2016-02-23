@@ -27,6 +27,12 @@ namespace Trans.DAL.Dao
             IList<Vspeciallineinfo> result = this.sqlMapper.QueryForList<Vspeciallineinfo>(stmtId, obj);
             return result;
         }
+        public int DynamicCount(VspeciallineinfoPagination obj)
+        {
+            String stmtId = "Vspeciallineinfo.DynamicCount";
+            int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+            return result;
+        }
 		public Vspeciallineinfo Find(Int64 id) 
         {
 			String stmtId = "Vspeciallineinfo.Find";

@@ -21,6 +21,18 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, null);
 			return result;
 		}
+        public IList<Vdepotinformation> DynamicQuery(VdepotinformationPagination obj)
+        {
+            String stmtId = "Vdepotinformation.DynamicQuery";
+            IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+            return result;
+        }
+        public int DynamicCount(VdepotinformationPagination obj)
+        {
+            String stmtId = "Vdepotinformation.DynamicCount";
+            int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+            return result;
+        }
 		public Vdepotinformation Find(Int64 id) 
         {
 			String stmtId = "Vdepotinformation.Find";
@@ -57,28 +69,28 @@ namespace Trans.DAL.Dao
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, null);
 			return result;
         }
-		public IList<Vdepotinformation> FindByCellphone(String cellphone) {
-			String stmtId = "Vdepotinformation.FindByCellphone";
-			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cellphone);
+		public IList<Vdepotinformation> FindByScopeid(Int64 scopeid) {
+			String stmtId = "Vdepotinformation.FindByScopeid";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, scopeid);
 			return result;
         }
-		public IList<Vdepotinformation> DescendOrderFindByCellphone(String cellphone) {
-			String stmtId = "Vdepotinformation.DescendOrderFindByCellphone";
-			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cellphone);
+		public IList<Vdepotinformation> DescendOrderFindByScopeid(Int64 scopeid) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByScopeid";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, scopeid);
 			return result;
         }
-		public IList<Vdepotinformation> PaginationFindByCellphone(VdepotinformationPagination obj) {
-			String stmtId = "VdepotinformationPagination.FindByCellphone";
+		public IList<Vdepotinformation> PaginationFindByScopeid(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.FindByScopeid";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vdepotinformation> DescendOrderPaginationFindByCellphone(VdepotinformationPagination obj) {
-			String stmtId = "VdepotinformationPagination.DescendOrderFindByCellphone";
+		public IList<Vdepotinformation> DescendOrderPaginationFindByScopeid(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByScopeid";
 			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByCellphone(Vdepotinformation obj){
-			String stmtId = "Vdepotinformation.GetFindByCellphoneCount";
+		public int FindCountByScopeid(Vdepotinformation obj){
+			String stmtId = "Vdepotinformation.GetFindByScopeidCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -179,6 +191,31 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByUseablearea(Vdepotinformation obj){
 			String stmtId = "Vdepotinformation.GetFindByUseableareaCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vdepotinformation> FindByDepottypeid(Int64 depottypeid) {
+			String stmtId = "Vdepotinformation.FindByDepottypeid";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, depottypeid);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderFindByDepottypeid(Int64 depottypeid) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByDepottypeid";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, depottypeid);
+			return result;
+        }
+		public IList<Vdepotinformation> PaginationFindByDepottypeid(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.FindByDepottypeid";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByDepottypeid(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByDepottypeid";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByDepottypeid(Vdepotinformation obj){
+			String stmtId = "Vdepotinformation.GetFindByDepottypeidCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -354,6 +391,31 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByDepottypename(Vdepotinformation obj){
 			String stmtId = "Vdepotinformation.GetFindByDepottypenameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vdepotinformation> FindByCellphone(String cellphone) {
+			String stmtId = "Vdepotinformation.FindByCellphone";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cellphone);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderFindByCellphone(String cellphone) {
+			String stmtId = "Vdepotinformation.DescendOrderFindByCellphone";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, cellphone);
+			return result;
+        }
+		public IList<Vdepotinformation> PaginationFindByCellphone(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.FindByCellphone";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vdepotinformation> DescendOrderPaginationFindByCellphone(VdepotinformationPagination obj) {
+			String stmtId = "VdepotinformationPagination.DescendOrderFindByCellphone";
+			IList<Vdepotinformation> result = this.sqlMapper.QueryForList<Vdepotinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByCellphone(Vdepotinformation obj){
+			String stmtId = "Vdepotinformation.GetFindByCellphoneCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
