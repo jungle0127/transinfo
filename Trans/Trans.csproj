@@ -111,6 +111,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Biz\ListshowPojo\DepotParamPojo.cs" />
+    <Compile Include="App_Code\Biz\ListshowPojo\SpecialineParamPojo.cs" />
+    <Compile Include="InfoList\NewsContent.aspx.cs">
+      <DependentUpon>NewsContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\NewsContent.aspx.designer.cs">
+      <DependentUpon>NewsContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\NotificationContent.aspx.cs">
+      <DependentUpon>NotificationContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoList\NotificationContent.aspx.designer.cs">
+      <DependentUpon>NotificationContent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1314,7 +1328,9 @@
     <Content Include="InfoList\GoodsInfoList.aspx" />
     <Content Include="InfoList\GoodsInformationList.aspx" />
     <Content Include="InfoList\info.html" />
+    <Content Include="InfoList\NewsContent.aspx" />
     <Content Include="InfoList\NewsList.aspx" />
+    <Content Include="InfoList\NotificationContent.aspx" />
     <Content Include="InfoList\NotificationList.aspx" />
     <Content Include="InfoList\SpeciallineInfoList.aspx" />
     <Content Include="InfoList\TrunkInfoList.aspx" />
