@@ -99,15 +99,15 @@ namespace Trans.DAL.Dao
 
 		int FindCountByLength(Vtrunkmetadata obj);
 
-		IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri);
+		IList<Vtrunkmetadata> FindByTrunktypeid(Int64 trunktypeid);
 
-		IList<Vtrunkmetadata> DescendOrderFindByVanimageuri(String vanimageuri);
+		IList<Vtrunkmetadata> DescendOrderFindByTrunktypeid(Int64 trunktypeid);
 
-		IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj);
+		IList<Vtrunkmetadata> PaginationFindByTrunktypeid(VtrunkmetadataPagination obj);
 
-		IList<Vtrunkmetadata> DescendOrderPaginationFindByVanimageuri(VtrunkmetadataPagination obj);
+		IList<Vtrunkmetadata> DescendOrderPaginationFindByTrunktypeid(VtrunkmetadataPagination obj);
 
-		int FindCountByVanimageuri(Vtrunkmetadata obj);
+		int FindCountByTrunktypeid(Vtrunkmetadata obj);
 
 		IList<Vtrunkmetadata> FindByCountyname(String countyname);
 
@@ -119,6 +119,16 @@ namespace Trans.DAL.Dao
 
 		int FindCountByCountyname(Vtrunkmetadata obj);
 
+		IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri);
+
+		IList<Vtrunkmetadata> DescendOrderFindByVanimageuri(String vanimageuri);
+
+		IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj);
+
+		IList<Vtrunkmetadata> DescendOrderPaginationFindByVanimageuri(VtrunkmetadataPagination obj);
+
+		int FindCountByVanimageuri(Vtrunkmetadata obj);
+
 		IList<Vtrunkmetadata> FindByWeightcapacity(String weightcapacity);
 
 		IList<Vtrunkmetadata> DescendOrderFindByWeightcapacity(String weightcapacity);
@@ -128,6 +138,16 @@ namespace Trans.DAL.Dao
 		IList<Vtrunkmetadata> DescendOrderPaginationFindByWeightcapacity(VtrunkmetadataPagination obj);
 
 		int FindCountByWeightcapacity(Vtrunkmetadata obj);
+
+		IList<Vtrunkmetadata> FindByVantypeid(Int64 vantypeid);
+
+		IList<Vtrunkmetadata> DescendOrderFindByVantypeid(Int64 vantypeid);
+
+		IList<Vtrunkmetadata> PaginationFindByVantypeid(VtrunkmetadataPagination obj);
+
+		IList<Vtrunkmetadata> DescendOrderPaginationFindByVantypeid(VtrunkmetadataPagination obj);
+
+		int FindCountByVantypeid(Vtrunkmetadata obj);
 
 		IList<Vtrunkmetadata> FindById(Int64 id);
 

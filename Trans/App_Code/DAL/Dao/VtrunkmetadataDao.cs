@@ -257,28 +257,28 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri) {
-			String stmtId = "Vtrunkmetadata.FindByVanimageuri";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
+		public IList<Vtrunkmetadata> FindByTrunktypeid(Int64 trunktypeid) {
+			String stmtId = "Vtrunkmetadata.FindByTrunktypeid";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, trunktypeid);
 			return result;
         }
-		public IList<Vtrunkmetadata> DescendOrderFindByVanimageuri(String vanimageuri) {
-			String stmtId = "Vtrunkmetadata.DescendOrderFindByVanimageuri";
-			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
+		public IList<Vtrunkmetadata> DescendOrderFindByTrunktypeid(Int64 trunktypeid) {
+			String stmtId = "Vtrunkmetadata.DescendOrderFindByTrunktypeid";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, trunktypeid);
 			return result;
         }
-		public IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj) {
-			String stmtId = "VtrunkmetadataPagination.FindByVanimageuri";
+		public IList<Vtrunkmetadata> PaginationFindByTrunktypeid(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByTrunktypeid";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
-		public IList<Vtrunkmetadata> DescendOrderPaginationFindByVanimageuri(VtrunkmetadataPagination obj) {
-			String stmtId = "VtrunkmetadataPagination.DescendOrderFindByVanimageuri";
+		public IList<Vtrunkmetadata> DescendOrderPaginationFindByTrunktypeid(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.DescendOrderFindByTrunktypeid";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
 			return result;
         }
-		public int FindCountByVanimageuri(Vtrunkmetadata obj){
-			String stmtId = "Vtrunkmetadata.GetFindByVanimageuriCount";
+		public int FindCountByTrunktypeid(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByTrunktypeidCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -307,6 +307,31 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
+		public IList<Vtrunkmetadata> FindByVanimageuri(String vanimageuri) {
+			String stmtId = "Vtrunkmetadata.FindByVanimageuri";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
+			return result;
+        }
+		public IList<Vtrunkmetadata> DescendOrderFindByVanimageuri(String vanimageuri) {
+			String stmtId = "Vtrunkmetadata.DescendOrderFindByVanimageuri";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vanimageuri);
+			return result;
+        }
+		public IList<Vtrunkmetadata> PaginationFindByVanimageuri(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByVanimageuri";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkmetadata> DescendOrderPaginationFindByVanimageuri(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.DescendOrderFindByVanimageuri";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByVanimageuri(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByVanimageuriCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
 		public IList<Vtrunkmetadata> FindByWeightcapacity(String weightcapacity) {
 			String stmtId = "Vtrunkmetadata.FindByWeightcapacity";
 			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, weightcapacity);
@@ -329,6 +354,31 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByWeightcapacity(Vtrunkmetadata obj){
 			String stmtId = "Vtrunkmetadata.GetFindByWeightcapacityCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vtrunkmetadata> FindByVantypeid(Int64 vantypeid) {
+			String stmtId = "Vtrunkmetadata.FindByVantypeid";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vantypeid);
+			return result;
+        }
+		public IList<Vtrunkmetadata> DescendOrderFindByVantypeid(Int64 vantypeid) {
+			String stmtId = "Vtrunkmetadata.DescendOrderFindByVantypeid";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, vantypeid);
+			return result;
+        }
+		public IList<Vtrunkmetadata> PaginationFindByVantypeid(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.FindByVantypeid";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public IList<Vtrunkmetadata> DescendOrderPaginationFindByVantypeid(VtrunkmetadataPagination obj) {
+			String stmtId = "VtrunkmetadataPagination.DescendOrderFindByVantypeid";
+			IList<Vtrunkmetadata> result = this.sqlMapper.QueryForList<Vtrunkmetadata>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByVantypeid(Vtrunkmetadata obj){
+			String stmtId = "Vtrunkmetadata.GetFindByVantypeidCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}

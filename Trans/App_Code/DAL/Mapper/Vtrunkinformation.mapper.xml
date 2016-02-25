@@ -20,16 +20,16 @@
 			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
 			<result property="Trunktypeid" column="trunktypeid" dbType="bigint"/>
 			<result property="Prefixname" column="prefixname" dbType="varchar"/>
-			<result property="Length" column="length" dbType="varchar"/>
+			<result property="Length" column="length" dbType="int"/>
 			<result property="Srccityname" column="srccityname" dbType="varchar"/>
 			<result property="Srccitycode" column="srccitycode" dbType="varchar"/>
 			<result property="Trunkidentifynumber" column="trunkidentifynumber" dbType="varchar"/>
 			<result property="Vantypename" column="vantypename" dbType="varchar"/>
-			<result property="Weightcapacity" column="weightcapacity" dbType="varchar"/>
+			<result property="Weightcapacity" column="weightcapacity" dbType="int"/>
 			<result property="Vantypeid" column="vantypeid" dbType="bigint"/>
 			<result property="Number" column="number" dbType="varchar"/>
 			<result property="Dstcitycode" column="dstcitycode" dbType="varchar"/>
-			<result property="Volume" column="volume" dbType="varchar"/>
+			<result property="Volume" column="volume" dbType="int"/>
 			<result property="Contactpersonname" column="contactpersonname" dbType="varchar"/>
 			<result property="Brand" column="brand" dbType="varchar"/>
 			<result property="Routetype" column="routetype" dbType="varchar"/>
@@ -38,7 +38,54 @@
 		</resultMap>
 	</resultMaps>
 	<statements>
-		<select id="Vtrunkinformation.GetCount" resultClass="System.Int32">
+    <select id="Vtrunkinformation.DynamicQuery" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap">
+      SELECT * FROM v_trunkinformation
+      <dynamic prepend="WHERE">
+        <isNotNull prepend="AND" property="Srccitycode">
+          srccitycode = #Srccitycode#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Dstcitycode">
+          dstcitycode=#Dstcitycode#
+        </isNotNull>
+        <isNotEqual prepend="AND" property="Length" compareValue="0">
+          length BETWEEN #Lengthlow# AND #Lengthhigh#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Vantypeid" compareValue="0">
+          vantypeid=#Vantypeid#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Trunktypeid" compareValue="0">
+          trunktypeid=#Trunktypeid#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Weightcapacity" compareValue="0">
+          weightcapacity BETWEEN #Weightlow# AND #Weighthigh#
+        </isNotEqual>
+      </dynamic>
+      ORDER BY id DESC limit #Limit# offset #Offset#
+    </select>
+    <select id="Vtrunkinformation.DynamicCount" parameterClass="VtrunkinformationPagination" resultClass="System.Int32">
+      SELECT count(*) FROM v_trunkinformation
+      <dynamic prepend="WHERE">
+        <isNotNull prepend="AND" property="Srccitycode">
+          srccitycode = #Srccitycode#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Dstcitycode">
+          dstcitycode=#Dstcitycode#
+        </isNotNull>
+        <isNotEqual prepend="AND" property="Length" compareValue="0">
+          length BETWEEN #Lengthlow# AND #Lengthhigh#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Vantypeid" compareValue="0">
+          vantypeid=#Vantypeid#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Trunktypeid" compareValue="0">
+          trunktypeid=#Trunktypeid#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Weightcapacity" compareValue="0">
+          weightcapacity BETWEEN #Weightlow# AND #Weighthigh#
+        </isNotEqual>
+      </dynamic>
+    </select>
+    <select id="Vtrunkinformation.GetCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation 
 		</select>
 		<select id="Vtrunkinformation.FindAll" resultMap="FullResultMap">
@@ -263,10 +310,10 @@
 		<select id="Vtrunkinformation.GetFindByPrefixnameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.prefixname=#Prefixname#
 		</select>
-		<select id="Vtrunkinformation.FindByLength" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+		<select id="Vtrunkinformation.FindByLength" parameterClass="Int32" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.length = #value#
 		</select>
-		<select id="Vtrunkinformation.DescendOrderFindByLength" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+		<select id="Vtrunkinformation.DescendOrderFindByLength" parameterClass="Int32" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.length = #value# ORDER BY id DESC
 		</select>
 		<select id="VtrunkinformationPagination.FindByLength" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
@@ -338,10 +385,10 @@
 		<select id="Vtrunkinformation.GetFindByVantypenameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.vantypename=#Vantypename#
 		</select>
-		<select id="Vtrunkinformation.FindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+		<select id="Vtrunkinformation.FindByWeightcapacity" parameterClass="Int32" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.weightcapacity = #value#
 		</select>
-		<select id="Vtrunkinformation.DescendOrderFindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+		<select id="Vtrunkinformation.DescendOrderFindByWeightcapacity" parameterClass="Int32" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.weightcapacity = #value# ORDER BY id DESC
 		</select>
 		<select id="VtrunkinformationPagination.FindByWeightcapacity" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
@@ -398,10 +445,10 @@
 		<select id="Vtrunkinformation.GetFindByDstcitycodeCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.dstcitycode=#Dstcitycode#
 		</select>
-		<select id="Vtrunkinformation.FindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+		<select id="Vtrunkinformation.FindByVolume" parameterClass="Int32" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.volume = #value#
 		</select>
-		<select id="Vtrunkinformation.DescendOrderFindByVolume" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+		<select id="Vtrunkinformation.DescendOrderFindByVolume" parameterClass="Int32" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.volume = #value# ORDER BY id DESC
 		</select>
 		<select id="VtrunkinformationPagination.FindByVolume" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">

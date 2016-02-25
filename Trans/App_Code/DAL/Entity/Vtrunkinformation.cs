@@ -78,14 +78,20 @@ namespace Trans.DAL.Entity
 			get { return m_vanimageuri; }
 			set { m_vanimageuri = value;}
 		}
+		private Int64 m_trunktypeid;
+		public Int64 Trunktypeid
+		{
+			get { return m_trunktypeid; }
+			set { m_trunktypeid = value;}
+		}
 		private String m_prefixname;
 		public String Prefixname
 		{
 			get { return m_prefixname; }
 			set { m_prefixname = value;}
 		}
-		private String m_length;
-		public String Length
+		private Int32 m_length;
+		public Int32 Length
 		{
 			get { return m_length; }
 			set { m_length = value;}
@@ -114,11 +120,17 @@ namespace Trans.DAL.Entity
 			get { return m_vantypename; }
 			set { m_vantypename = value;}
 		}
-		private String m_weightcapacity;
-		public String Weightcapacity
+		private Int32 m_weightcapacity;
+		public Int32 Weightcapacity
 		{
 			get { return m_weightcapacity; }
 			set { m_weightcapacity = value;}
+		}
+		private Int64 m_vantypeid;
+		public Int64 Vantypeid
+		{
+			get { return m_vantypeid; }
+			set { m_vantypeid = value;}
 		}
 		private String m_number;
 		public String Number
@@ -132,8 +144,8 @@ namespace Trans.DAL.Entity
 			get { return m_dstcitycode; }
 			set { m_dstcitycode = value;}
 		}
-		private String m_volume;
-		public String Volume
+		private Int32 m_volume;
+		public Int32 Volume
 		{
 			get { return m_volume; }
 			set { m_volume = value;}

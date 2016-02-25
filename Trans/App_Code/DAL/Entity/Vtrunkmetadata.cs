@@ -54,11 +54,11 @@ namespace Trans.DAL.Entity
 			get { return m_length; }
 			set { m_length = value;}
 		}
-		private String m_vanimageuri;
-		public String Vanimageuri
+		private Int64 m_trunktypeid;
+		public Int64 Trunktypeid
 		{
-			get { return m_vanimageuri; }
-			set { m_vanimageuri = value;}
+			get { return m_trunktypeid; }
+			set { m_trunktypeid = value;}
 		}
 		private String m_countyname;
 		public String Countyname
@@ -66,11 +66,23 @@ namespace Trans.DAL.Entity
 			get { return m_countyname; }
 			set { m_countyname = value;}
 		}
+		private String m_vanimageuri;
+		public String Vanimageuri
+		{
+			get { return m_vanimageuri; }
+			set { m_vanimageuri = value;}
+		}
 		private String m_weightcapacity;
 		public String Weightcapacity
 		{
 			get { return m_weightcapacity; }
 			set { m_weightcapacity = value;}
+		}
+		private Int64 m_vantypeid;
+		public Int64 Vantypeid
+		{
+			get { return m_vantypeid; }
+			set { m_vantypeid = value;}
 		}
 		private Int64 m_id;
 		public Int64 Id
