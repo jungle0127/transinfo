@@ -18,6 +18,7 @@
 			<result property="Trunkcountyname" column="trunkcountyname" dbType="varchar"/>
 			<result property="Conatactphone" column="conatactphone" dbType="varchar"/>
 			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
+			<result property="Trunktypeid" column="trunktypeid" dbType="bigint"/>
 			<result property="Prefixname" column="prefixname" dbType="varchar"/>
 			<result property="Length" column="length" dbType="varchar"/>
 			<result property="Srccityname" column="srccityname" dbType="varchar"/>
@@ -25,6 +26,7 @@
 			<result property="Trunkidentifynumber" column="trunkidentifynumber" dbType="varchar"/>
 			<result property="Vantypename" column="vantypename" dbType="varchar"/>
 			<result property="Weightcapacity" column="weightcapacity" dbType="varchar"/>
+			<result property="Vantypeid" column="vantypeid" dbType="bigint"/>
 			<result property="Number" column="number" dbType="varchar"/>
 			<result property="Dstcitycode" column="dstcitycode" dbType="varchar"/>
 			<result property="Volume" column="volume" dbType="varchar"/>
@@ -231,6 +233,21 @@
 		<select id="Vtrunkinformation.GetFindByVanimageuriCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.vanimageuri=#Vanimageuri#
 		</select>
+		<select id="Vtrunkinformation.FindByTrunktypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunktypeid = #value#
+		</select>
+		<select id="Vtrunkinformation.DescendOrderFindByTrunktypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunktypeid = #value# ORDER BY id DESC
+		</select>
+		<select id="VtrunkinformationPagination.FindByTrunktypeid" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunktypeid = #Trunktypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkinformationPagination.DescendOrderFindByTrunktypeid" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.trunktypeid = #Trunktypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.GetFindByTrunktypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.trunktypeid=#Trunktypeid#
+		</select>
 		<select id="Vtrunkinformation.FindByPrefixname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.prefixname = #value#
 		</select>
@@ -335,6 +352,21 @@
 		</select>
 		<select id="Vtrunkinformation.GetFindByWeightcapacityCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.weightcapacity=#Weightcapacity#
+		</select>
+		<select id="Vtrunkinformation.FindByVantypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vantypeid = #value#
+		</select>
+		<select id="Vtrunkinformation.DescendOrderFindByVantypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vantypeid = #value# ORDER BY id DESC
+		</select>
+		<select id="VtrunkinformationPagination.FindByVantypeid" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vantypeid = #Vantypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkinformationPagination.DescendOrderFindByVantypeid" parameterClass="VtrunkinformationPagination" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
+			WHERE v_trunkinformation.vantypeid = #Vantypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkinformation.GetFindByVantypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkinformation WHERE v_trunkinformation.vantypeid=#Vantypeid#
 		</select>
 		<select id="Vtrunkinformation.FindByNumber" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkinformation.FindAll">
 			WHERE v_trunkinformation.number = #value#

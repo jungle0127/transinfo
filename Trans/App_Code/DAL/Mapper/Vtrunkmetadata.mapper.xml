@@ -14,9 +14,11 @@
 			<result property="Number" column="number" dbType="varchar"/>
 			<result property="Brand" column="brand" dbType="varchar"/>
 			<result property="Length" column="length" dbType="varchar"/>
-			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
+			<result property="Trunktypeid" column="trunktypeid" dbType="bigint"/>
 			<result property="Countyname" column="countyname" dbType="varchar"/>
+			<result property="Vanimageuri" column="vanimageuri" dbType="varchar"/>
 			<result property="Weightcapacity" column="weightcapacity" dbType="varchar"/>
+			<result property="Vantypeid" column="vantypeid" dbType="bigint"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Prefixname" column="prefixname" dbType="varchar"/>
 			<result property="Licenseuri" column="licenseuri" dbType="varchar"/>
@@ -161,20 +163,20 @@
 		<select id="Vtrunkmetadata.GetFindByLengthCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.length=#Length#
 		</select>
-		<select id="Vtrunkmetadata.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.vanimageuri = #value#
+		<select id="Vtrunkmetadata.FindByTrunktypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunktypeid = #value#
 		</select>
-		<select id="Vtrunkmetadata.DescendOrderFindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.vanimageuri = #value# ORDER BY id DESC
+		<select id="Vtrunkmetadata.DescendOrderFindByTrunktypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunktypeid = #value# ORDER BY id DESC
 		</select>
-		<select id="VtrunkmetadataPagination.FindByVanimageuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# LIMIT #Limit# OFFSET #Offset# 
+		<select id="VtrunkmetadataPagination.FindByTrunktypeid" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunktypeid = #Trunktypeid# LIMIT #Limit# OFFSET #Offset# 
 		</select>
-		<select id="VtrunkmetadataPagination.DescendOrderFindByVanimageuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
-			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# ORDER BY id DESC limit #Limit# offset #Offset# 
+		<select id="VtrunkmetadataPagination.DescendOrderFindByTrunktypeid" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.trunktypeid = #Trunktypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
 		</select>
-		<select id="Vtrunkmetadata.GetFindByVanimageuriCount" resultClass="System.Int32">
-			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.vanimageuri=#Vanimageuri#
+		<select id="Vtrunkmetadata.GetFindByTrunktypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.trunktypeid=#Trunktypeid#
 		</select>
 		<select id="Vtrunkmetadata.FindByCountyname" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.countyname = #value#
@@ -191,6 +193,21 @@
 		<select id="Vtrunkmetadata.GetFindByCountynameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.countyname=#Countyname#
 		</select>
+		<select id="Vtrunkmetadata.FindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vanimageuri = #value#
+		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByVanimageuri" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vanimageuri = #value# ORDER BY id DESC
+		</select>
+		<select id="VtrunkmetadataPagination.FindByVanimageuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByVanimageuri" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vanimageuri = #Vanimageuri# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByVanimageuriCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.vanimageuri=#Vanimageuri#
+		</select>
 		<select id="Vtrunkmetadata.FindByWeightcapacity" parameterClass="String" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.weightcapacity = #value#
 		</select>
@@ -205,6 +222,21 @@
 		</select>
 		<select id="Vtrunkmetadata.GetFindByWeightcapacityCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.weightcapacity=#Weightcapacity#
+		</select>
+		<select id="Vtrunkmetadata.FindByVantypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vantypeid = #value#
+		</select>
+		<select id="Vtrunkmetadata.DescendOrderFindByVantypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vantypeid = #value# ORDER BY id DESC
+		</select>
+		<select id="VtrunkmetadataPagination.FindByVantypeid" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vantypeid = #Vantypeid# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VtrunkmetadataPagination.DescendOrderFindByVantypeid" parameterClass="VtrunkmetadataPagination" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
+			WHERE v_trunkmetadata.vantypeid = #Vantypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vtrunkmetadata.GetFindByVantypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_trunkmetadata WHERE v_trunkmetadata.vantypeid=#Vantypeid#
 		</select>
 		<select id="Vtrunkmetadata.FindById" parameterClass="Int64" resultMap="FullResultMap" extends="Vtrunkmetadata.FindAll">
 			WHERE v_trunkmetadata.id = #value#

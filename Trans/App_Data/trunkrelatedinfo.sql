@@ -118,9 +118,9 @@ DROP TABLE IF EXISTS `trunkmetadata`;
 CREATE TABLE `trunkmetadata`(
 	`id` bigint(20) auto_increment,
 	`numberid` bigint NOT NULL, -- （车牌号）
-	`length` varchar(10) NOT NULL, -- 车长（米）
-	`weightcapacity` varchar(10) NOT NULL, -- 载重（吨）
-	`volume` varchar(10) NULL, -- 容积
+	`length` int NOT NULL, -- 车长（米）
+	`weightcapacity` int NOT NULL, -- 载重（吨）
+	`volume` int NULL, -- 容积
 	`countycode` varchar(6) NOT NULL, -- 车辆驻地
 	`location` varchar(200) NULL, -- 车辆常停放位置（如：XX物流园区）	
 	`vantypeid` bigint NOT NULL, -- 车辆类型
@@ -441,6 +441,7 @@ CREATE INDEX IX_goodssrcinfo_needtrunkvolume ON goodssourceinformation(needtrunk
  transporttype.typename AS transporttypename,
  cautiontype.typename AS cautiontypename,
  goodstype.typename AS goodstypename,
+ goodstype.id AS goodstypeid,
  goodssourceinformation.price,
  goodssourceinformation.needtrunklength,
  goodssourceinformation.needtrunkweight,
