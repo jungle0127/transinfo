@@ -58,8 +58,6 @@ namespace Trans.InfoList
         protected void ddlCounty_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.txtSrcPlaceCode.Text = this.ddlCounty.SelectedValue;
-            ScriptManager.RegisterStartupScript(this.updatePanelLocatedPlace, this.GetType(), "", "<script type=text/javascript>alert('1');test();alert('2');</script>", true);
-
         }
 
         protected void ddlProvince_SelectedIndexChanged(object sender, EventArgs e)

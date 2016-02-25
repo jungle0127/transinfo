@@ -16,6 +16,19 @@ namespace Trans.DAL.Dao
             DomSqlMapBuilder sqlMapBuilder = new DomSqlMapBuilder();
             this.sqlMapper = sqlMapBuilder.Configure("etc/mybatis.sqlmap.cfg.xml");
         }
+        public IList<Vgoodssourceinformation> DynamicQuery(VgoodssourceinformationPagination obj)
+        {
+            String stmtId = "Vgoodssourceinformation.DynamicQuery";
+            IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+            return result;
+        }
+
+        public int DynamicCount(VgoodssourceinformationPagination obj)
+        {
+            String stmtId = "Vgoodssourceinformation.DynamicCount";
+            int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+            return result;
+        }
 		public int GetCount() {
 			String stmtId = "Vgoodssourceinformation.GetCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, null);
@@ -82,28 +95,28 @@ namespace Trans.DAL.Dao
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
-		public IList<Vgoodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume) {
-			String stmtId = "Vgoodssourceinformation.FindByNeedtrunkvolume";
-			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, needtrunkvolume);
+		public IList<Vgoodssourceinformation> FindByGoodstypeid(Int64 goodstypeid) {
+			String stmtId = "Vgoodssourceinformation.FindByGoodstypeid";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, goodstypeid);
 			return result;
         }
-		public IList<Vgoodssourceinformation> DescendOrderFindByNeedtrunkvolume(Int64 needtrunkvolume) {
-			String stmtId = "Vgoodssourceinformation.DescendOrderFindByNeedtrunkvolume";
-			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, needtrunkvolume);
+		public IList<Vgoodssourceinformation> DescendOrderFindByGoodstypeid(Int64 goodstypeid) {
+			String stmtId = "Vgoodssourceinformation.DescendOrderFindByGoodstypeid";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, goodstypeid);
 			return result;
         }
-		public IList<Vgoodssourceinformation> PaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj) {
-			String stmtId = "VgoodssourceinformationPagination.FindByNeedtrunkvolume";
+		public IList<Vgoodssourceinformation> PaginationFindByGoodstypeid(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByGoodstypeid";
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
-		public IList<Vgoodssourceinformation> DescendOrderPaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj) {
-			String stmtId = "VgoodssourceinformationPagination.DescendOrderFindByNeedtrunkvolume";
+		public IList<Vgoodssourceinformation> DescendOrderPaginationFindByGoodstypeid(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.DescendOrderFindByGoodstypeid";
 			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
 			return result;
         }
-		public int FindCountByNeedtrunkvolume(Vgoodssourceinformation obj){
-			String stmtId = "Vgoodssourceinformation.GetFindByNeedtrunkvolumeCount";
+		public int FindCountByGoodstypeid(Vgoodssourceinformation obj){
+			String stmtId = "Vgoodssourceinformation.GetFindByGoodstypeidCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}
@@ -429,6 +442,31 @@ namespace Trans.DAL.Dao
         }
 		public int FindCountByDstregionname(Vgoodssourceinformation obj){
 			String stmtId = "Vgoodssourceinformation.GetFindByDstregionnameCount";
+			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
+			return result;
+		}
+		public IList<Vgoodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume) {
+			String stmtId = "Vgoodssourceinformation.FindByNeedtrunkvolume";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, needtrunkvolume);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> DescendOrderFindByNeedtrunkvolume(Int64 needtrunkvolume) {
+			String stmtId = "Vgoodssourceinformation.DescendOrderFindByNeedtrunkvolume";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, needtrunkvolume);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> PaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.FindByNeedtrunkvolume";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public IList<Vgoodssourceinformation> DescendOrderPaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj) {
+			String stmtId = "VgoodssourceinformationPagination.DescendOrderFindByNeedtrunkvolume";
+			IList<Vgoodssourceinformation> result = this.sqlMapper.QueryForList<Vgoodssourceinformation>(stmtId, obj);
+			return result;
+        }
+		public int FindCountByNeedtrunkvolume(Vgoodssourceinformation obj){
+			String stmtId = "Vgoodssourceinformation.GetFindByNeedtrunkvolumeCount";
 			int result = this.sqlMapper.QueryForObject<int>(stmtId, obj);
 			return result;
 		}

@@ -7,6 +7,10 @@ namespace Trans.DAL.Dao
 {
     public partial interface IVgoodssourceinformationDao
     {
+        IList<Vgoodssourceinformation> DynamicQuery(VgoodssourceinformationPagination obj);
+
+        int DynamicCount(VgoodssourceinformationPagination obj);
+
 		int GetCount();
 
 		IList<Vgoodssourceinformation> FindAll();
@@ -29,15 +33,15 @@ namespace Trans.DAL.Dao
 
 		int FindCountByGoodstypename(Vgoodssourceinformation obj);
 
-		IList<Vgoodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume);
+		IList<Vgoodssourceinformation> FindByGoodstypeid(Int64 goodstypeid);
 
-		IList<Vgoodssourceinformation> DescendOrderFindByNeedtrunkvolume(Int64 needtrunkvolume);
+		IList<Vgoodssourceinformation> DescendOrderFindByGoodstypeid(Int64 goodstypeid);
 
-		IList<Vgoodssourceinformation> PaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj);
+		IList<Vgoodssourceinformation> PaginationFindByGoodstypeid(VgoodssourceinformationPagination obj);
 
-		IList<Vgoodssourceinformation> DescendOrderPaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj);
+		IList<Vgoodssourceinformation> DescendOrderPaginationFindByGoodstypeid(VgoodssourceinformationPagination obj);
 
-		int FindCountByNeedtrunkvolume(Vgoodssourceinformation obj);
+		int FindCountByGoodstypeid(Vgoodssourceinformation obj);
 
 		IList<Vgoodssourceinformation> FindByDeadline(DateTime deadline);
 
@@ -168,6 +172,16 @@ namespace Trans.DAL.Dao
 		IList<Vgoodssourceinformation> DescendOrderPaginationFindByDstregionname(VgoodssourceinformationPagination obj);
 
 		int FindCountByDstregionname(Vgoodssourceinformation obj);
+
+		IList<Vgoodssourceinformation> FindByNeedtrunkvolume(Int64 needtrunkvolume);
+
+		IList<Vgoodssourceinformation> DescendOrderFindByNeedtrunkvolume(Int64 needtrunkvolume);
+
+		IList<Vgoodssourceinformation> PaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj);
+
+		IList<Vgoodssourceinformation> DescendOrderPaginationFindByNeedtrunkvolume(VgoodssourceinformationPagination obj);
+
+		int FindCountByNeedtrunkvolume(Vgoodssourceinformation obj);
 
 		IList<Vgoodssourceinformation> FindByReleasedate(DateTime releasedate);
 

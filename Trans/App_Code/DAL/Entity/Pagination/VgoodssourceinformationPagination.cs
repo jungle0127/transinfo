@@ -12,11 +12,11 @@ namespace Trans.DAL.Entity
 			get { return m_goodstypename; }
 			set { m_goodstypename = value;}
 		}
-		private Int64 m_needtrunkvolume;
-		public Int64 Needtrunkvolume
+		private Int64 m_goodstypeid;
+		public Int64 Goodstypeid
 		{
-			get { return m_needtrunkvolume; }
-			set { m_needtrunkvolume = value;}
+			get { return m_goodstypeid; }
+			set { m_goodstypeid = value;}
 		}
 		private DateTime m_deadline;
 		public DateTime Deadline
@@ -30,6 +30,20 @@ namespace Trans.DAL.Entity
 			get { return m_needtrunkweight; }
 			set { m_needtrunkweight = value;}
 		}
+        private Int32 m_weighthigh;
+
+        public Int32 Weighthigh
+        {
+            get { return m_weighthigh; }
+            set { m_weighthigh = value; }
+        }
+        private Int32 m_weightlow;
+
+        public Int32 Weightlow
+        {
+            get { return m_weightlow; }
+            set { m_weightlow = value; }
+        }
 		private String m_transporttypename;
 		public String Transporttypename
 		{
@@ -95,6 +109,12 @@ namespace Trans.DAL.Entity
 		{
 			get { return m_dstregionname; }
 			set { m_dstregionname = value;}
+		}
+		private Int64 m_needtrunkvolume;
+		public Int64 Needtrunkvolume
+		{
+			get { return m_needtrunkvolume; }
+			set { m_needtrunkvolume = value;}
 		}
 		private DateTime m_releasedate;
 		public DateTime Releasedate

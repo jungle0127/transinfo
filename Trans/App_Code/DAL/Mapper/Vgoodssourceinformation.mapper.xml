@@ -7,7 +7,7 @@
 	<resultMaps>
 		<resultMap id="FullResultMap" class="Vgoodssourceinformation">
 			<result property="Goodstypename" column="goodstypename" dbType="varchar"/>
-			<result property="Needtrunkvolume" column="needtrunkvolume" dbType="bigint"/>
+			<result property="Goodstypeid" column="goodstypeid" dbType="bigint"/>
 			<result property="Deadline" column="deadline" dbType="datetime"/>
 			<result property="Needtrunkweight" column="needtrunkweight" dbType="bigint"/>
 			<result property="Transporttypename" column="transporttypename" dbType="varchar"/>
@@ -21,6 +21,7 @@
 			<result property="Content" column="content" dbType="text"/>
 			<result property="Id" column="id" dbType="bigint"/>
 			<result property="Dstregionname" column="dstregionname" dbType="varchar"/>
+			<result property="Needtrunkvolume" column="needtrunkvolume" dbType="bigint"/>
 			<result property="Releasedate" column="releasedate" dbType="datetime"/>
 			<result property="Dstcityname" column="dstcityname" dbType="varchar"/>
 			<result property="Dstcitycode" column="dstcitycode" dbType="varchar"/>
@@ -30,6 +31,41 @@
 		</resultMap>
 	</resultMaps>
 	<statements>
+    <select id="Vgoodssourceinformation.DynamicCount" resultClass="System.Int32" parameterClass="VgoodssourceinformationPagination">
+      SELECT COUNT(*) FROM v_goodssourceinformation
+      <dynamic prepend="WHERE">
+        <isNotNull prepend="AND" property="Srccitycode">
+          srccitycode = #Srccitycode#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Dstcitycode">
+          dstcitycode=#Dstcitycode#
+        </isNotNull>
+        <isNotEqual prepend="AND" property="Goodstypeid" compareValue="0">
+          goodstypeid=#Goodstypeid#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Needtrunkweight" compareValue="0">
+          needtrunkweight BETWEEN #Weighthigh# AND #Weightlow#
+        </isNotEqual>
+      </dynamic>
+    </select>
+    <select id="Vgoodssourceinformation.DynamicQuery" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap">
+      SELECT * FROM v_goodssourceinformation
+      <dynamic prepend="WHERE">
+        <isNotNull prepend="AND" property="Srccitycode">
+          srccitycode = #Srccitycode#
+        </isNotNull>
+        <isNotNull prepend="AND" property="Dstcitycode">
+          dstcitycode=#Dstcitycode#
+        </isNotNull>
+        <isNotEqual prepend="AND" property="Goodstypeid" compareValue="0">
+          goodstypeid=#Goodstypeid#
+        </isNotEqual>
+        <isNotEqual prepend="AND" property="Needtrunkweight" compareValue="0">
+          needtrunkweight BETWEEN #Weighthigh# AND #Weightlow#
+        </isNotEqual>
+      </dynamic>
+      ORDER BY id DESC limit #Limit# offset #Offset#
+    </select>
 		<select id="Vgoodssourceinformation.GetCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_goodssourceinformation 
 		</select>
@@ -60,20 +96,20 @@
 		<select id="Vgoodssourceinformation.GetFindByGoodstypenameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_goodssourceinformation WHERE v_goodssourceinformation.goodstypename=#Goodstypename#
 		</select>
-		<select id="Vgoodssourceinformation.FindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
-			WHERE v_goodssourceinformation.needtrunkvolume = #value#
+		<select id="Vgoodssourceinformation.FindByGoodstypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodstypeid = #value#
 		</select>
-		<select id="Vgoodssourceinformation.DescendOrderFindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
-			WHERE v_goodssourceinformation.needtrunkvolume = #value# ORDER BY id DESC
+		<select id="Vgoodssourceinformation.DescendOrderFindByGoodstypeid" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodstypeid = #value# ORDER BY id DESC
 		</select>
-		<select id="VgoodssourceinformationPagination.FindByNeedtrunkvolume" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
-			WHERE v_goodssourceinformation.needtrunkvolume = #Needtrunkvolume# LIMIT #Limit# OFFSET #Offset# 
+		<select id="VgoodssourceinformationPagination.FindByGoodstypeid" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodstypeid = #Goodstypeid# LIMIT #Limit# OFFSET #Offset# 
 		</select>
-		<select id="VgoodssourceinformationPagination.DescendOrderFindByNeedtrunkvolume" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
-			WHERE v_goodssourceinformation.needtrunkvolume = #Needtrunkvolume# ORDER BY id DESC limit #Limit# offset #Offset# 
+		<select id="VgoodssourceinformationPagination.DescendOrderFindByGoodstypeid" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.goodstypeid = #Goodstypeid# ORDER BY id DESC limit #Limit# offset #Offset# 
 		</select>
-		<select id="Vgoodssourceinformation.GetFindByNeedtrunkvolumeCount" resultClass="System.Int32">
-			SELECT count(*) FROM v_goodssourceinformation WHERE v_goodssourceinformation.needtrunkvolume=#Needtrunkvolume#
+		<select id="Vgoodssourceinformation.GetFindByGoodstypeidCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_goodssourceinformation WHERE v_goodssourceinformation.goodstypeid=#Goodstypeid#
 		</select>
 		<select id="Vgoodssourceinformation.FindByDeadline" parameterClass="DateTime" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
 			WHERE v_goodssourceinformation.deadline = #value#
@@ -269,6 +305,21 @@
 		</select>
 		<select id="Vgoodssourceinformation.GetFindByDstregionnameCount" resultClass="System.Int32">
 			SELECT count(*) FROM v_goodssourceinformation WHERE v_goodssourceinformation.dstregionname=#Dstregionname#
+		</select>
+		<select id="Vgoodssourceinformation.FindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkvolume = #value#
+		</select>
+		<select id="Vgoodssourceinformation.DescendOrderFindByNeedtrunkvolume" parameterClass="Int64" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkvolume = #value# ORDER BY id DESC
+		</select>
+		<select id="VgoodssourceinformationPagination.FindByNeedtrunkvolume" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkvolume = #Needtrunkvolume# LIMIT #Limit# OFFSET #Offset# 
+		</select>
+		<select id="VgoodssourceinformationPagination.DescendOrderFindByNeedtrunkvolume" parameterClass="VgoodssourceinformationPagination" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
+			WHERE v_goodssourceinformation.needtrunkvolume = #Needtrunkvolume# ORDER BY id DESC limit #Limit# offset #Offset# 
+		</select>
+		<select id="Vgoodssourceinformation.GetFindByNeedtrunkvolumeCount" resultClass="System.Int32">
+			SELECT count(*) FROM v_goodssourceinformation WHERE v_goodssourceinformation.needtrunkvolume=#Needtrunkvolume#
 		</select>
 		<select id="Vgoodssourceinformation.FindByReleasedate" parameterClass="DateTime" resultMap="FullResultMap" extends="Vgoodssourceinformation.FindAll">
 			WHERE v_goodssourceinformation.releasedate = #value#

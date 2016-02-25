@@ -1,7 +1,7 @@
 ﻿/*
 * srcCityId-dstCityId-weight-typeId
 */
-function deformatJson(jsonData) {
+function deformatJSON(jsonData) {
     var jsonStr = '';
     var jsonArray = new Array();
     if (jsonData.srcCityId) {
@@ -36,7 +36,7 @@ function deformatJson(jsonData) {
 /*
 * srcCityId-dstCityId-weight-typeId
 */
-function formatJSON(bitMap) {
+function formatJSON(bitmap) {
     var jsonObj = {};
     var paramArray = bitmap.split('-');
     if (paramArray.length != 4) {
