@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using log4net;
 using Trans.Biz.Common;
 using System.Collections;
+using Trans.Biz.ResourceStatistic;
 
 namespace Trans.InfoList
 {
@@ -14,9 +15,25 @@ namespace Trans.InfoList
     {
         private static ILog logger = LogManager.GetLogger(typeof(GoodsInformationList));
         private CityManager cityManager;
+        private Statistic statistic;
+        private string totalLorry;
+
+        public string TotalLorry
+        {
+            get { return totalLorry; }
+        }
+        private string totalGoods;
+
+        public string TotalGoods
+        {
+            get { return totalGoods; }
+        }
         public GoodsInformationList()
         {
             this.cityManager = new CityManager();
+            this.statistic = new Statistic();
+            this.totalGoods = this.statistic.TotalGoods;
+            this.totalLorry = this.statistic.TotalLorry;
         }
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -94,11 +94,11 @@
     </asp:ScriptManager>
 
       <div class="searchFrame">
-      <div class="totalInfo">
-      在线车源：<span id="totalLorry" class="red spanTotalLorry"> <%=this.TotalLorry %> </span>
-      实时货源：<span id="totalGoods" class="red spanTotalGoods"><%=this.TotalGoods %></span>
+          <div  id="infoStatistic"  class="totalInfo">
+          在线车源：<span id="totalLorry" class="red spanTotalLorry"> <%=this.TotalLorry %> </span>
+          实时货源：<span id="totalGoods" class="red spanTotalGoods"><%=this.TotalGoods %></span>
+          </div>
       </div>
-  </div>
 
       <div class="searchSelectionFrame">
   <!--当专线信息按钮被按下时显示该专线信息-->
@@ -163,16 +163,13 @@
   </table>
   </div>
 <div class="infoListFrame" id="lineInfo">
-<div class="tableContainer TCline">
+    <div class="tableContainer TCline">
     <!-------------------专线信息显示---------------------------->
- 
-    <div id="line_content" class="easyui-panel" data-options="href:'LineInfoListHandler.ashx?pageNumber=1&pageSize=10&bitparams=0-0-0-0'">
-    </div>
-    <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
-
-
+        <div id="line_content" class="easyui-panel" data-options="href:'LineInfoListHandler.ashx?pageNumber=1&pageSize=10&bitparams=0-0-0-0'">
+        </div>
+        <div id="pagination_manager" class="easyui-pagination" style="border:1px solid #ccc;" ></div>
    </div>
-  </div>
+ </div>
 
     </form>
     <input id="tmpStore" type="hidden" value="" />

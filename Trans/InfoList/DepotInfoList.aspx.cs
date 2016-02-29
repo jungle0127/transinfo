@@ -11,6 +11,7 @@ using log4net;
 using Trans.InfoList;
 using Trans.Biz.Common;
 using System.Collections;
+using Trans.Biz.ResourceStatistic;
 
 
 namespace Trans.InfoList
@@ -18,13 +19,26 @@ namespace Trans.InfoList
     public partial class DepotInfoList : System.Web.UI.Page
     {
         private static ILog logger = LogManager.GetLogger(typeof(TrunkInfoList));
-        private DepotListHandler DepotListHandler;
         private CityManager cityManager;
+        private Statistic statistic;
+        private string totalLorry;
 
+        public string TotalLorry
+        {
+            get { return totalLorry; }
+        }
+        private string totalGoods;
+
+        public string TotalGoods
+        {
+            get { return totalGoods; }
+        }
         public DepotInfoList()
         {
-            this.DepotListHandler = new DepotListHandler();
             this.cityManager = new CityManager();
+            this.statistic = new Statistic();
+            this.totalGoods = this.statistic.TotalGoods;
+            this.totalLorry = this.statistic.TotalLorry;
         }
 
         protected void Page_Load(object sender, EventArgs e)

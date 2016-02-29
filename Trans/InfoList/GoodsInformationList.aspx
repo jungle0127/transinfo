@@ -84,8 +84,8 @@
     </asp:ScriptManager>
         <div class="searchFrame">
       <div class="totalInfo">
-      在线车源：<span id="totalLorry" class="red spanTotalLorry">333333</span>
-      实时货源：<span id="totalGoods" class="red spanTotalGoods">888888</span>
+      在线车源：<span id="totalLorry" class="red spanTotalLorry"><%=this.TotalLorry %></span>
+      实时货源：<span id="totalGoods" class="red spanTotalGoods"><%=this.TotalGoods %></span>
       </div>
   </div>
   

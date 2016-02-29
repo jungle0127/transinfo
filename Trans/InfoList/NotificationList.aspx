@@ -81,7 +81,7 @@
       </tbody>
     </table>
     </div>
-        <div id="shadow"><center><p id="announcement">紧要公告：本站于22222将进行维修</p></center></div><!--若无最新公告则不显示，最新公告显示时间至公告失效-->
+        <div id="shadow"><%--<center><p id="announcement">紧要公告：本站于22222将进行维修</p></center>--%></div><!--若无最新公告则不显示，最新公告显示时间至公告失效-->
 	    <div class="homepage-container">
           <div class=" white-bg right-container">
 			<div class="tm-right-inner-container">

@@ -92,9 +92,6 @@
             $('#depot_content').panel('refresh', 'DepotListHandler.ashx?pageNumber=1&pageSize=10&bitparams=' + $("#tmpStore").val());
         }
     </script>
-
-
-
 </head>
 <body onload="initiate_load()" >
     <form id="form1" runat="server">
@@ -102,8 +99,8 @@
     </asp:ScriptManager>
      <div class="searchFrame">
       <div class="totalInfo">
-      在线车源：<span id="totalLorry" class="red spanTotalLorry">333333</span>
-      实时货源：<span id="totalGoods" class="red spanTotalGoods">888888</span>
+      在线车源：<span id="totalLorry" class="red spanTotalLorry"><%=this.TotalLorry %></span>
+      实时货源：<span id="totalGoods" class="red spanTotalGoods"><%=this.TotalGoods %></span>
       </div>
   </div>
   <div class="searchSelectionFrame">

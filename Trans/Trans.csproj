@@ -113,14 +113,24 @@
   <ItemGroup>
     <Compile Include="App_Code\Biz\ListshowPojo\DepotParamPojo.cs" />
     <Compile Include="App_Code\Biz\ListshowPojo\SpecialineParamPojo.cs" />
+    <Compile Include="App_Code\Biz\ResourceStatistic\Statistic.cs" />
+    <Compile Include="InfoList\InfoWelcome.aspx.cs">
+      <DependentUpon>InfoWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoList\InfoWelcome.aspx.designer.cs">
+      <DependentUpon>InfoWelcome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InfoList\NewsContent.aspx.cs">
       <DependentUpon>NewsContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="InfoList\NewsContent.aspx.designer.cs">
       <DependentUpon>NewsContent.aspx</DependentUpon>
     </Compile>
     <Compile Include="InfoList\NotificationContent.aspx.cs">
       <DependentUpon>NotificationContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="InfoList\NotificationContent.aspx.designer.cs">
       <DependentUpon>NotificationContent.aspx</DependentUpon>
@@ -1328,6 +1338,7 @@
     <Content Include="InfoList\GoodsInfoList.aspx" />
     <Content Include="InfoList\GoodsInformationList.aspx" />
     <Content Include="InfoList\info.html" />
+    <Content Include="InfoList\InfoWelcome.aspx" />
     <Content Include="InfoList\NewsContent.aspx" />
     <Content Include="InfoList\NewsList.aspx" />
     <Content Include="InfoList\NotificationContent.aspx" />

@@ -11,6 +11,7 @@ using log4net;
 using Trans.InfoList;
 using System.Collections;
 using Trans.Biz.Common;
+using Trans.Biz.ResourceStatistic;
 
 
 namespace Trans.InfoList
@@ -19,8 +20,7 @@ namespace Trans.InfoList
     {
         private static ILog logger = LogManager.GetLogger(typeof(SpeciallineInfoList));
         private CityManager cityManager;
-        private ITrunkinformationDao trunkInfoDao;
-        private IGoodssourceinformationDao goodsInfoDao;
+        private Statistic statistic;
         private string totalLorry;
 
         public string TotalLorry
@@ -37,10 +37,9 @@ namespace Trans.InfoList
         public SpeciallineInfoList()
         {
             this.cityManager = new CityManager();
-            this.trunkInfoDao = new TrunkinformationDao();
-            this.goodsInfoDao = new GoodssourceinformationDao();
-            this.totalLorry = this.trunkInfoDao.GetCount().ToString();
-            this.totalGoods = this.goodsInfoDao.GetCount().ToString();
+            this.statistic = new Statistic();
+            this.totalLorry = this.statistic.TotalLorry;
+            this.totalGoods = this.statistic.TotalGoods;
         }
 
 
